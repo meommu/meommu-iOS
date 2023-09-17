@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
+		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
 		F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A02AB73982006EDA07 /* SceneDelegate.swift */; };
-		F933D8A32AB73982006EDA07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A22AB73982006EDA07 /* ViewController.swift */; };
-		F933D8A62AB73982006EDA07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A42AB73982006EDA07 /* Main.storyboard */; };
+		F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A22AB73982006EDA07 /* LoginViewController.swift */; };
+		F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A42AB73982006EDA07 /* Login.storyboard */; };
 		F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A72AB73983006EDA07 /* Assets.xcassets */; };
 		F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
+		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F933D89B2AB73982006EDA07 /* meommu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meommu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F933D89E2AB73982006EDA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F933D8A02AB73982006EDA07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F933D8A22AB73982006EDA07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F933D8A52AB73982006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F933D8A22AB73982006EDA07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F933D8A52AB73982006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		F933D8A72AB73983006EDA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F933D8AA2AB73983006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F933D8AC2AB73983006EDA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +41,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F90743792AB73BFF00F7C503 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F907437A2AB73C0900F7C503 /* View */,
+				F907437B2AB73C4C00F7C503 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F907437A2AB73C0900F7C503 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F933D8A42AB73982006EDA07 /* Login.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F907437B2AB73C4C00F7C503 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F933D8A22AB73982006EDA07 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F907437C2AB73C6700F7C503 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				F907437D2AB73C7400F7C503 /* View */,
+				F907437E2AB73C7F00F7C503 /* Controller */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		F907437D2AB73C7400F7C503 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F907437F2AB73CAD00F7C503 /* Diary.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F907437E2AB73C7F00F7C503 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F90743812AB73CBF00F7C503 /* DiaryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F933D8922AB73982006EDA07 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +110,12 @@
 		F933D89D2AB73982006EDA07 /* meommu-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F90743792AB73BFF00F7C503 /* Login */,
+				F907437C2AB73C6700F7C503 /* Diary */,
 				F933D89E2AB73982006EDA07 /* AppDelegate.swift */,
 				F933D8A02AB73982006EDA07 /* SceneDelegate.swift */,
-				F933D8A22AB73982006EDA07 /* ViewController.swift */,
-				F933D8A42AB73982006EDA07 /* Main.storyboard */,
-				F933D8A72AB73983006EDA07 /* Assets.xcassets */,
 				F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */,
+				F933D8A72AB73983006EDA07 /* Assets.xcassets */,
 				F933D8AC2AB73983006EDA07 /* Info.plist */,
 			);
 			path = "meommu-iOS";
@@ -125,9 +179,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
 				F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */,
-				F933D8A62AB73982006EDA07 /* Main.storyboard in Resources */,
+				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F933D8A32AB73982006EDA07 /* ViewController.swift in Sources */,
+				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
+				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,12 +203,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F933D8A42AB73982006EDA07 /* Main.storyboard */ = {
+		F933D8A42AB73982006EDA07 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F933D8A52AB73982006EDA07 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */ = {
@@ -291,7 +347,7 @@
 				INFOPLIST_FILE = "meommu-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,7 +377,7 @@
 				INFOPLIST_FILE = "meommu-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

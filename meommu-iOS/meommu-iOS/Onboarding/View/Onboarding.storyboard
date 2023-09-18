@@ -16,25 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Oqm-IB-4c7">
-                                <rect key="frame" x="20" y="114" width="254" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Oqm-IB-4c7">
+                                <rect key="frame" x="20" y="114" width="335" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록을 남기고 싶은 날짜를" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85b-Ba-PZ5">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멈무일기에서 만들어봐요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0x-Nq-tHe">
-                                        <rect key="frame" x="0.0" y="30" width="251" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="H0x-Nq-tHe" firstAttribute="top" secondItem="85b-Ba-PZ5" secondAttribute="bottom" constant="64" id="n09-yB-jAo"/>
-                                </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding1" translatesAutoresizingMaskIntoConstraints="NO" id="1jL-t5-38u">
                                 <rect key="frame" x="20" y="252" width="335" height="335"/>
@@ -61,13 +58,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3bM-Y6-6mK" kind="presentation" modalPresentationStyle="fullScreen" id="y1h-tf-m4W"/>
+                                    <segue destination="3bM-Y6-6mK" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="y1h-tf-m4W"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Oqm-IB-4c7" secondAttribute="trailing" constant="20" id="MUl-6Q-P8j"/>
                             <constraint firstItem="s2K-d9-CaM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="OCp-If-XEa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1jL-t5-38u" secondAttribute="trailing" constant="20" id="WXY-Dr-r7w"/>
                             <constraint firstItem="wLS-y9-J40" firstAttribute="top" secondItem="s2K-d9-CaM" secondAttribute="bottom" constant="31" id="afQ-wf-fYk"/>
@@ -95,24 +93,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mom-PF-QHW">
-                                <rect key="frame" x="20" y="64" width="283.66666666666669" height="60"/>
+                                <rect key="frame" x="20" y="64" width="335" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동을 카테고리에 따라" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pus-Ni-sF5">
-                                        <rect key="frame" x="0.0" y="0.0" width="283.66666666666669" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPT로 간단하게 완성해봐요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxK-DQ-Ydn">
-                                        <rect key="frame" x="0.0" y="30" width="283.66666666666669" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="FxK-DQ-Ydn" firstAttribute="top" secondItem="Pus-Ni-sF5" secondAttribute="bottom" constant="64" id="PE5-Cr-GWX"/>
-                                </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding2" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-u3-tiP">
                                 <rect key="frame" x="20" y="202" width="335" height="335"/>
@@ -153,6 +148,7 @@
                             <constraint firstItem="hPv-u3-tiP" firstAttribute="top" secondItem="Mom-PF-QHW" secondAttribute="bottom" constant="78" id="V9v-2H-Sj2"/>
                             <constraint firstItem="uZY-L7-twn" firstAttribute="trailing" secondItem="VKX-dH-zZE" secondAttribute="trailing" constant="20" id="YRy-cp-VMs"/>
                             <constraint firstItem="VKX-dH-zZE" firstAttribute="top" secondItem="hrs-RE-U9j" secondAttribute="bottom" constant="31" id="Ydh-Rh-hlU"/>
+                            <constraint firstItem="uZY-L7-twn" firstAttribute="trailing" secondItem="Mom-PF-QHW" secondAttribute="trailing" constant="20" id="YoO-PN-age"/>
                             <constraint firstItem="hrs-RE-U9j" firstAttribute="centerX" secondItem="yPa-xu-Ps3" secondAttribute="centerX" id="ZOT-wr-Qd7"/>
                             <constraint firstItem="hPv-u3-tiP" firstAttribute="leading" secondItem="uZY-L7-twn" secondAttribute="leading" constant="20" id="dWz-GG-2jx"/>
                             <constraint firstItem="uZY-L7-twn" firstAttribute="bottom" secondItem="VKX-dH-zZE" secondAttribute="bottom" constant="5" id="hVa-j3-Ee7"/>
@@ -173,25 +169,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="YmU-Zz-0Wj">
-                                <rect key="frame" x="20" y="64" width="254" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YmU-Zz-0Wj">
+                                <rect key="frame" x="20" y="64" width="335" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글과 사진을 함께 구성하여" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5l-B6-RSy">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지루하지 않게 꾸며봐요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd7-4R-Vdf">
-                                        <rect key="frame" x="0.0" y="30" width="235" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Hd7-4R-Vdf" firstAttribute="top" secondItem="x5l-B6-RSy" secondAttribute="bottom" constant="64" id="qw3-0c-stw"/>
-                                </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="PUD-Oh-bfr">
                                 <rect key="frame" x="20" y="202" width="335" height="335"/>
@@ -226,6 +219,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QcA-2h-OLW" firstAttribute="leading" secondItem="cQy-fi-MCO" secondAttribute="leading" constant="20" id="2w6-pj-3Gq"/>
+                            <constraint firstItem="cQy-fi-MCO" firstAttribute="trailing" secondItem="YmU-Zz-0Wj" secondAttribute="trailing" constant="20" id="4Cq-M6-XbS"/>
                             <constraint firstItem="cQy-fi-MCO" firstAttribute="bottom" secondItem="QcA-2h-OLW" secondAttribute="bottom" constant="5" id="BNy-NU-RUo"/>
                             <constraint firstItem="bfy-5h-gZ3" firstAttribute="centerX" secondItem="FKW-mn-vKp" secondAttribute="centerX" id="Fb4-mv-66F"/>
                             <constraint firstItem="QcA-2h-OLW" firstAttribute="top" secondItem="bfy-5h-gZ3" secondAttribute="bottom" constant="31" id="KY9-5t-aqM"/>
@@ -238,15 +232,16 @@
                             <constraint firstItem="YmU-Zz-0Wj" firstAttribute="leading" secondItem="cQy-fi-MCO" secondAttribute="leading" constant="20" id="yjy-fy-vt1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ctr-eb-2Hn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKi-Bz-gJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1929" y="-38"/>
         </scene>
-        <!--LoginViewController-->
+        <!--LoginFirstViewController-->
         <scene sceneID="b1a-8X-HUC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LoginViewController" id="oDc-zd-WpY" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LoginFirstViewController" id="oDc-zd-WpY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5S-cN-Ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2766" y="-30"/>

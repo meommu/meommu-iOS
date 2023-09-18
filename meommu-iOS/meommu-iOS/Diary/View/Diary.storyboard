@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--멈무유치원 일기-->
+        <!--meom-mu-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="DiaryViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,26 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2023년 9월" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-Gg-Neg">
-                                <rect key="frame" x="123" y="94" width="110" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="BG2-He-UUv"/>
-                                    <constraint firstAttribute="width" constant="110" id="cCn-Pp-qvq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                <rect key="frame" x="234" y="102" width="18" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
-                                    <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="CaretDown"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rTJ-n5-XJh">
-                                <rect key="frame" x="0.0" y="136" width="375" height="585"/>
+                                <rect key="frame" x="0.0" y="123" width="375" height="585"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="ats-4H-5jn"/>
@@ -56,23 +38,59 @@
                                     <color key="baseBackgroundColor" name="ButtonColor"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
+                                <rect key="frame" x="228" y="95" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
+                                    <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="CaretDown"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2023년" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
+                                <rect key="frame" x="139.66666666666666" y="94" width="54" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="9월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
+                                <rect key="frame" x="198.66666666666663" y="94" width="24.333333333333343" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-Gg-Neg">
+                                <rect key="frame" x="129" y="94" width="97" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="07U-6G-2LE"/>
+                                    <constraint firstAttribute="width" constant="97" id="lec-3d-RF0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="123" id="BwD-7u-oKk"/>
-                            <constraint firstItem="S6T-Gg-Neg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="GeD-mY-m4L"/>
-                            <constraint firstItem="63J-kF-Ica" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="HQj-QY-EdM"/>
-                            <constraint firstItem="rTJ-n5-XJh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="L5Q-aT-654"/>
-                            <constraint firstItem="63J-kF-Ica" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="NSx-Qg-4Fy"/>
-                            <constraint firstItem="rTJ-n5-XJh" firstAttribute="top" secondItem="S6T-Gg-Neg" secondAttribute="bottom" constant="8" symbolic="YES" id="ajN-k5-2g9"/>
-                            <constraint firstItem="rTJ-n5-XJh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gKP-DI-rya"/>
-                            <constraint firstItem="PNC-wB-wNv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="lSE-sk-8qF"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="63J-kF-Ica" secondAttribute="trailing" constant="14" id="pJY-W8-W2w"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PNC-wB-wNv" secondAttribute="trailing" constant="123" id="rfp-dE-yub"/>
+                            <constraint firstItem="rTJ-n5-XJh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="089-wZ-U4Y"/>
+                            <constraint firstItem="63J-kF-Ica" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="3TN-Hc-ezx"/>
+                            <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4ys-mv-dsJ"/>
+                            <constraint firstItem="rTJ-n5-XJh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BDW-u0-ktQ"/>
+                            <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="129" id="DfI-gF-kOb"/>
+                            <constraint firstItem="63J-kF-Ica" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="IdA-Xw-xGR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="63J-kF-Ica" secondAttribute="trailing" constant="14" id="IuL-oL-dcs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PNC-wB-wNv" secondAttribute="trailing" constant="129" id="KD6-Yd-ebk"/>
+                            <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="5" id="LGj-Rw-3lO"/>
+                            <constraint firstItem="S6T-Gg-Neg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cfz-2I-vnD"/>
+                            <constraint firstItem="PNC-wB-wNv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="1" id="dXg-5W-ktZ"/>
+                            <constraint firstItem="63J-kF-Ica" firstAttribute="top" secondItem="rTJ-n5-XJh" secondAttribute="bottom" constant="22" id="e5w-4q-I19"/>
+                            <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gGh-Si-Ca7"/>
+                            <constraint firstItem="y9z-8z-5jf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="139.66999999999999" id="n6v-we-dEP"/>
+                            <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="5" id="pmI-DE-U8f"/>
+                            <constraint firstItem="PNC-wB-wNv" firstAttribute="leading" secondItem="wzA-5h-5jg" secondAttribute="trailing" constant="5" id="ydY-sD-ApT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="멈무유치원 일기" id="a8X-05-jCe">
+                    <navigationItem key="navigationItem" title="meom-mu" id="a8X-05-jCe">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="rQY-Nj-9MF">
                             <imageReference key="image" image="circle.fill" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="systemGreenColor"/>
@@ -81,6 +99,10 @@
                     <connections>
                         <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="gPB-5J-nRW"/>
                         <outlet property="DiaryWriteButton" destination="63J-kF-Ica" id="ihY-49-KcY"/>
+                        <outlet property="diaryDatePickerButton" destination="PNC-wB-wNv" id="M7J-wI-zQK"/>
+                        <outlet property="diaryDateTextField" destination="S6T-Gg-Neg" id="d4M-6I-dYu"/>
+                        <outlet property="monthLabel" destination="wzA-5h-5jg" id="XiO-Nf-vQ1"/>
+                        <outlet property="yearLabel" destination="y9z-8z-5jf" id="bfB-gq-Tzx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

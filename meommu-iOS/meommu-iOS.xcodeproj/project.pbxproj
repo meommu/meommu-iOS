@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26215E372AB87FD300F28FBF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26215E362AB87FD300F28FBF /* Onboarding.storyboard */; };
+		26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26215E362AB87FD300F28FBF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F933D89B2AB73982006EDA07 /* meommu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meommu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +45,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26215E352AB87F9B00F28FBF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				26215E382AB883F600F28FBF /* View */,
+				26215E392AB8840200F28FBF /* Controller */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		26215E382AB883F600F28FBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26215E362AB87FD300F28FBF /* Onboarding.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26215E392AB8840200F28FBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F90743792AB73BFF00F7C503 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +139,7 @@
 		F933D89D2AB73982006EDA07 /* meommu-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				26215E352AB87F9B00F28FBF /* Onboarding */,
 				F90743792AB73BFF00F7C503 /* Login */,
 				F907437C2AB73C6700F7C503 /* Diary */,
 				F933D89E2AB73982006EDA07 /* AppDelegate.swift */,
@@ -180,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
+				26215E372AB87FD300F28FBF /* Onboarding.storyboard in Resources */,
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
 				F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
@@ -195,6 +226,7 @@
 			files = (
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
+				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 			);

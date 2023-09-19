@@ -37,6 +37,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" name="ButtonColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnClick_DiaryWriteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wjd-cw-dHI"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" id="dq1-UA-5ew">
                                 <rect key="frame" x="0.0" y="94" width="375" height="44"/>

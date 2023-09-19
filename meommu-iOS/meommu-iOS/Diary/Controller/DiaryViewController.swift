@@ -11,8 +11,6 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet var DiaryWriteButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +24,16 @@ class DiaryViewController: UIViewController {
         createPickerView()
     }
     
+    // -----------------------------------------
+    // 작성하기 버튼 클릭 시 화면 전환
+    @IBAction func OnClick_DiaryWriteButton(_ sender: Any) {
+        let diarysendStoryboard = UIStoryboard(name: "DiarySend", bundle: nil)
+        let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendViewController")
+        diarysendVC.modalPresentationStyle = .fullScreen
+        self.present(diarysendVC, animated: true, completion: nil)
+        
+        //navigationController?.show(diarysendVC, sender: nil)
+    }
     // -----------------------------------------
     // DatePicker 기능
     

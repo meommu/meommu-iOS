@@ -245,7 +245,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UdB-QF-syy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DnQ-rg-hco" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DiaryWriteViewController" automaticallyAdjustsScrollViewInsets="NO" id="DnQ-rg-hco" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wVh-Lb-mMi">
                         <rect key="frame" x="0.0" y="50" width="375" height="44"/>

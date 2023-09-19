@@ -8,7 +8,14 @@
 import UIKit
 
 class DiarySendViewController: UIViewController {
-
+    
+    
+    @IBOutlet var backButton: UIBarButtonItem!
+    
+    @IBAction func OnClick_backButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

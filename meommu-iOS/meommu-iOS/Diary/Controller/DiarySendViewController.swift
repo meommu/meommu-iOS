@@ -10,6 +10,7 @@ import UIKit
 class DiarySendViewController: UIViewController {
     
     
+    
     @IBOutlet var backButton: UIBarButtonItem!
     
     @IBAction func OnClick_backButton(_ sender: UIBarButtonItem) {

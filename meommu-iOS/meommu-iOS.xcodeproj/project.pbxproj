@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
+		F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
 		F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A02AB73982006EDA07 /* SceneDelegate.swift */; };
 		F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A22AB73982006EDA07 /* LoginViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendNameViewController.swift; sourceTree = "<group>"; };
 		F933D89B2AB73982006EDA07 /* meommu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meommu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F933D89E2AB73982006EDA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F933D8A02AB73982006EDA07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				F90743812AB73CBF00F7C503 /* DiaryViewController.swift */,
 				F953DD622AB82B58009F3B52 /* DiarySendViewController.swift */,
+				F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */,
 				F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */,
 			);
 			path = Controller;
@@ -253,6 +256,7 @@
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
+				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
 			);

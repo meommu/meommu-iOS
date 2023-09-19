@@ -36,6 +36,7 @@
 		F933D8A72AB73983006EDA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F933D8AA2AB73983006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F933D8AC2AB73983006EDA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93D6FA62AB964FD00591C21 /* HUScribble150.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HUScribble150.otf; sourceTree = "<group>"; };
 		F953DD602AB82B22009F3B52 /* DiarySend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiarySend.storyboard; sourceTree = "<group>"; };
 		F953DD622AB82B58009F3B52 /* DiarySendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendViewController.swift; sourceTree = "<group>"; };
 		F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainEmptyTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 				F933D8A02AB73982006EDA07 /* SceneDelegate.swift */,
 				F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */,
 				F933D8A72AB73983006EDA07 /* Assets.xcassets */,
+				F93D6FA62AB964FD00591C21 /* HUScribble150.otf */,
 				F933D8AC2AB73983006EDA07 /* Info.plist */,
 			);
 			path = "meommu-iOS";

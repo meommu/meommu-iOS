@@ -51,13 +51,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                        <rect key="frame" x="127" y="13" width="18" height="18"/>
+                                        <rect key="frame" x="110" y="13" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
                                             <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="CaretDown"/>
+                                        <state key="normal" image="arrow_drop_down"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
                                         <rect key="frame" x="21.999999999999996" y="11" width="50.666666666666657" height="22"/>
@@ -72,10 +72,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-Gg-Neg">
-                                        <rect key="frame" x="16" y="12" width="135" height="21"/>
+                                        <rect key="frame" x="16" y="12" width="114" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="07U-6G-2LE"/>
-                                            <constraint firstAttribute="width" constant="135" id="n1W-Fg-PYT"/>
+                                            <constraint firstAttribute="width" constant="114" id="WPz-S7-YcJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -86,7 +86,7 @@
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="8" symbolic="YES" id="19I-o4-ynS"/>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
-                                    <constraint firstAttribute="trailing" secondItem="PNC-wB-wNv" secondAttribute="trailing" constant="230" id="83T-TA-vR7"/>
+                                    <constraint firstAttribute="trailing" secondItem="PNC-wB-wNv" secondAttribute="trailing" constant="247" id="5V2-6q-8wz"/>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="22" id="F2z-AW-yNI"/>
                                     <constraint firstItem="PNC-wB-wNv" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="13" id="KzM-qG-OjY"/>
                                     <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="RWk-RT-SNU"/>
@@ -150,7 +150,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CaretDown" width="28" height="28"/>
+        <image name="arrow_drop_down" width="32" height="32"/>
         <image name="circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="ButtonColor">
             <color red="0.2352941036" green="0.2352941036" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

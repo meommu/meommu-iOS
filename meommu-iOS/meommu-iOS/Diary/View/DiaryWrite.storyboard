@@ -232,11 +232,17 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" id="pyF-fs-WAh">
                             <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
                             <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="OnClick_backButton:" destination="Y6W-OH-hqX" id="s2v-mT-R6e"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="완료" id="QCi-Pm-iAW">
                             <color key="tintColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

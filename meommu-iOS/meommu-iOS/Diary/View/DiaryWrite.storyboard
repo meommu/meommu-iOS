@@ -212,6 +212,15 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fb-Br-kHL">
+                                <rect key="frame" x="126" y="707" width="124" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="BottomSheet"/>
+                                <connections>
+                                    <action selector="OnClick_bottomOneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="D9k-di-MPm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,6 +251,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
+                        <outlet property="bottomOneButton" destination="0fb-Br-kHL" id="mba-aL-o7r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

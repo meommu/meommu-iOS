@@ -17,6 +17,7 @@
 		F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A42AB73982006EDA07 /* Login.storyboard */; };
 		F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A72AB73983006EDA07 /* Assets.xcassets */; };
 		F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */; };
+		F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BCF82ABC655300D60041 /* StepOneViewController.swift */; };
 		F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */; };
 		F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */; };
 		F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F953DD602AB82B22009F3B52 /* DiarySend.storyboard */; };
@@ -27,6 +28,7 @@
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
+		F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,7 @@
 		F933D8A72AB73983006EDA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F933D8AA2AB73983006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F933D8AC2AB73983006EDA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F937BCF82ABC655300D60041 /* StepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneViewController.swift; sourceTree = "<group>"; };
 		F93D6FA62AB964FD00591C21 /* HUScribble150.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HUScribble150.otf; sourceTree = "<group>"; };
 		F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryWrite.storyboard; sourceTree = "<group>"; };
 		F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableViewCell.swift; sourceTree = "<group>"; };
 		F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableViewCell.xib; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepOne.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +87,6 @@
 				64FB55F7D4664777B6499B34 /* Pods-meommu-iOS.debug.xcconfig */,
 				E532A93DB70E9F801754787C /* Pods-meommu-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,6 +129,7 @@
 		F907437D2AB73C7400F7C503 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F9BC8E782ABC0EA6000D90D1 /* BottomSheet */,
 				F907437F2AB73CAD00F7C503 /* Diary.storyboard */,
 				F953DD602AB82B22009F3B52 /* DiarySend.storyboard */,
 				F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */,
@@ -136,6 +140,7 @@
 		F907437E2AB73C7F00F7C503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F9BC8E7B2ABC0EBC000D90D1 /* BottomSheet */,
 				F90743812AB73CBF00F7C503 /* DiaryViewController.swift */,
 				F953DD622AB82B58009F3B52 /* DiarySendViewController.swift */,
 				F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */,
@@ -195,6 +200,22 @@
 				F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F9BC8E782ABC0EA6000D90D1 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		F9BC8E7B2ABC0EBC000D90D1 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				F937BCF82ABC655300D60041 /* StepOneViewController.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +286,7 @@
 				F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */,
 				F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
+				F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +345,7 @@
 				F953DD632AB82B58009F3B52 /* DiarySendViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
+				F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,

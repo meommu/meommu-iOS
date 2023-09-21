@@ -11,6 +11,8 @@
 		26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */; };
 		26215E3E2AB895C500F28FBF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3D2AB895C500F28FBF /* Helper.swift */; };
 		26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */; };
+		26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */; };
+		26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		26215E3D2AB895C500F28FBF /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstViewController.swift; sourceTree = "<group>"; };
+		26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecondViewController.swift; sourceTree = "<group>"; };
+		26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdViewController.swift; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F933D89B2AB73982006EDA07 /* meommu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meommu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,8 +106,10 @@
 		F907437B2AB73C4C00F7C503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F933D8A22AB73982006EDA07 /* LoginViewController.swift */,
 				26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */,
+				26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */,
+				26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */,
+				F933D8A22AB73982006EDA07 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
+				26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */,
+				26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */,
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

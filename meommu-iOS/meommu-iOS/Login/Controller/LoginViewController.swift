@@ -36,5 +36,11 @@ class LoginViewController: UIViewController {
         self.changeRootViewController(newViewController)
     }
     
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
+    
 }
 

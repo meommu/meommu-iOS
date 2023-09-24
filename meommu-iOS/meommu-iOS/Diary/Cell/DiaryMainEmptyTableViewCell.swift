@@ -9,6 +9,15 @@ import UIKit
 
 class DiaryMainEmptyTableViewCell: UITableViewCell {
 
+    @IBOutlet var View: UIView!
+    @IBOutlet var meommuImage: UIImageView!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        View.layer.cornerRadius = 30
+        meommuImage.layer.cornerRadius = 30
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

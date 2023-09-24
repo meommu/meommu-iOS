@@ -51,14 +51,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+//MARK: - 앱 초기 화면 설정 
 extension SceneDelegate {
     private func setupRootViewControllerOnFirstLaunch(_ scene: UIScene){
         if Storage.isFirstTime() {
-            print(1)
             setRootViewController(scene, name: "Onboarding",
                                   identifier: "OnboardingViewController")
         } else {
-            print(2)
             setRootViewController(scene, name: "Login",
                                   identifier: "LoginFirstViewController")
         }

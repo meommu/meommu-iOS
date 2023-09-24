@@ -19,6 +19,7 @@ class LoginSecondViewController: UIViewController {
     
     @IBOutlet weak var termsAndPrivacyButton: UIButton!
     
+    
     // 약관 동의 확인을 위한 변수
     var termsAndPrivacyButtonIsAgreed = false
     
@@ -40,13 +41,14 @@ class LoginSecondViewController: UIViewController {
     
     
     //MARK: - 초기 세팅 메서드
-
+    
     func configureView() {
         termsAndPrivacyButton.tintColor = .lightGray
         termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
     }
     
     //MARK: - 약관 동의 관련 메서드
+    
     @objc func buttonToggleAgreement() {
         if termsAndPrivacyButtonIsAgreed {
             // Tint 색 비활성화
@@ -65,7 +67,14 @@ class LoginSecondViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    
+    //MARK: - 약관 관련 모든 내용이 담긴 페이지 보여주는 메서드
+
+    @IBAction func presentTermsAndPrivacyPage(_ sender: UIButton) {
+        
+        guard let url = URL(string: "https://www.naver.com")   else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
+    }
     
     
 }
@@ -107,17 +116,17 @@ extension LoginSecondViewController: UITextViewDelegate {
     }
     
     // UITextView에서 하이퍼링크 클릭을 감지하는 메서드
-        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-            if URL.scheme == "https" {
-                // https 스킴을 가진 URL을 클릭한 경우 Safari로 엽니다.
-                let safariViewController = SFSafariViewController(url: URL)
-                present(safariViewController, animated: true, completion: nil)
-                return false // UITextView의 기본 동작을 중단합니다.
-            }
-            return true // 다른 URL 스킴은 기본 동작을 유지합니다.
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        if URL.scheme == "https" {
+            // https 스킴을 가진 URL을 클릭한 경우 Safari로 엽니다.
+            let safariViewController = SFSafariViewController(url: URL)
+            present(safariViewController, animated: true, completion: nil)
+            return false // UITextView의 기본 동작을 중단합니다.
         }
-
-
-
+        return true // 다른 URL 스킴은 기본 동작을 유지합니다.
+    }
+    
+    
+    
     
 }

@@ -190,7 +190,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     // TableViewCell 개수
     func numberOfSections(in tableView: UITableView) -> Int {
-        if diaryList.isEmpty == true{
+        if diaryList.count == 0 {
             return 1
         } else {
             return diaryList.count
@@ -200,7 +200,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     // TableViewCell 높이 조절
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if diaryList.isEmpty == true{
+        if diaryList.count == 0 {
             return 585
         } else {
             return 483
@@ -210,7 +210,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     // TableView 출력
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if diaryList.isEmpty == true {
+        if diaryList.count == 0 {
             
             let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: emptycellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
             

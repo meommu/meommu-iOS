@@ -10,6 +10,8 @@
 		0F4279EEA8B1A215B0C463E0 /* Pods_meommu_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59DE82A8992E2D6C15B5F1 /* Pods_meommu_iOS.framework */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
+		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
+		F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */; };
 		F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
 		F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A02AB73982006EDA07 /* SceneDelegate.swift */; };
@@ -37,6 +39,8 @@
 		E532A93DB70E9F801754787C /* Pods-meommu-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meommu-iOS.release.xcconfig"; path = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneTableViewCell.swift; sourceTree = "<group>"; };
+		F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepOneTableViewCell.xib; sourceTree = "<group>"; };
 		F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendNameViewController.swift; sourceTree = "<group>"; };
 		F933D89B2AB73982006EDA07 /* meommu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meommu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F933D89E2AB73982006EDA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F90CDEA82ABFF910008ED1A2 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */,
+				F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		F933D8922AB73982006EDA07 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 		F979D7A42AB7DFC300C52C47 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F90CDEA82ABFF910008ED1A2 /* BottomSheet */,
 				F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */,
 				F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */,
 				F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */,
@@ -287,6 +301,7 @@
 				F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */,
+				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +361,7 @@
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */,
+				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,

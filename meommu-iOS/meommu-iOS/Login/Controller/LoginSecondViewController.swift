@@ -17,10 +17,17 @@ class LoginSecondViewController: UIViewController {
     
     
     @IBOutlet weak var termsAndPrivacyButton: UIButton!
+    
+    // 약관 동의 확인을 위한 변수
+    var termsAndPrivacyButtonIsAgreed = false
+    
     @IBOutlet weak var agreedToTermsText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureView()
+        
         agreedToTermsText.delegate = self
         agreedToTermsText.isEditable = false
         agreedToTermsText.textContainerInset = .zero
@@ -31,10 +38,34 @@ class LoginSecondViewController: UIViewController {
     }
     
     
+    //MARK: - 초기 세팅 메서드
+
+    func configureView() {
+        termsAndPrivacyButton.tintColor = .lightGray
+        termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
+    }
+    
+    //MARK: - 약관 동의 관련 메서드
+    @objc func buttonToggleAgreement() {
+        if termsAndPrivacyButtonIsAgreed {
+            // Tint 색 비활성화
+            termsAndPrivacyButton.tintColor = .lightGray // 원하는 비활성화된 Tint 색상 설정
+        } else {
+            // Tint 색 활성화
+            termsAndPrivacyButton.tintColor = .black // 원하는 활성화된 Tint 색상 설정
+        }
+        
+        // Tint 색의 상태를 토글
+        termsAndPrivacyButtonIsAgreed.toggle()
+    }
+    
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    
+    
+    
     
 }
 

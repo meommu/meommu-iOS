@@ -25,6 +25,7 @@
 		F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A1522AB8157E009D90A8 /* DiaryModel.swift */; };
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
+		F97DDC0E2AC06FE4002ECEB5 /* MainEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = F97DDC0D2AC06FE4002ECEB5 /* MainEmpty.png */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		F959A1522AB8157E009D90A8 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableViewCell.swift; sourceTree = "<group>"; };
 		F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableViewCell.xib; sourceTree = "<group>"; };
+		F97DDC0D2AC06FE4002ECEB5 /* MainEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainEmpty.png; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 		F979D7A42AB7DFC300C52C47 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F97DDC0D2AC06FE4002ECEB5 /* MainEmpty.png */,
 				F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */,
 				F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */,
 				F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */,
@@ -234,6 +237,7 @@
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
+				F97DDC0E2AC06FE4002ECEB5 /* MainEmpty.png in Resources */,
 				F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */,
 				F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */,
 				F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */,

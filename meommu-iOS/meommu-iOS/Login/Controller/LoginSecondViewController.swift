@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class LoginSecondViewController: UIViewController {
     
@@ -104,5 +105,19 @@ extension LoginSecondViewController: UITextViewDelegate {
         
         agreedToTermsText.attributedText = attributedString
     }
+    
+    // UITextView에서 하이퍼링크 클릭을 감지하는 메서드
+        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+            if URL.scheme == "https" {
+                // https 스킴을 가진 URL을 클릭한 경우 Safari로 엽니다.
+                let safariViewController = SFSafariViewController(url: URL)
+                present(safariViewController, animated: true, completion: nil)
+                return false // UITextView의 기본 동작을 중단합니다.
+            }
+            return true // 다른 URL 스킴은 기본 동작을 유지합니다.
+        }
+
+
+
     
 }

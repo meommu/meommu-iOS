@@ -25,10 +25,9 @@ class DiaryWriteViewController: UIViewController {
         
     }
     
-    @IBOutlet var bottomOneButton: UIButton!
+    @IBOutlet var bottomGuideButton: UIButton!
     
-
-    @IBAction func OnClick_bottomOneButton(_ sender: Any) {
+    @IBAction func OnClick_bottomGuidButton(_ sender: Any) {
         let vc = UIStoryboard(name: "StepOne", bundle: nil).instantiateViewController(identifier: "StepOneViewController") as! StepOneViewController
         
         presentPanModal(vc)

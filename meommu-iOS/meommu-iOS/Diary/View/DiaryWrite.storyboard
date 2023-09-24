@@ -212,14 +212,20 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
-                                <rect key="frame" x="13" y="730" width="348" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
+                                <rect key="frame" x="13.666666666666657" y="730" width="348" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="348" id="ScH-WA-qAa"/>
+                                    <constraint firstAttribute="height" constant="48" id="W0E-0Z-kni"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.2352941036" green="0.2352941036" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnClick_bottomGuidButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OTa-5d-dOa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -227,13 +233,16 @@
                         <constraints>
                             <constraint firstItem="ERx-jz-qxc" firstAttribute="top" secondItem="czk-cs-GIG" secondAttribute="bottom" constant="15" id="0kU-ht-zkZ"/>
                             <constraint firstItem="czk-cs-GIG" firstAttribute="top" secondItem="8ux-sH-DIZ" secondAttribute="bottom" constant="5" id="4Fs-lW-v9Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SYv-T2-0TZ" secondAttribute="trailing" constant="13.5" id="I3M-zA-2r1"/>
                             <constraint firstItem="8ux-sH-DIZ" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yr8-YO-VIw"/>
                             <constraint firstItem="ERx-jz-qxc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="ZQp-Wh-xtc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="czk-cs-GIG" secondAttribute="trailing" constant="11.5" id="aqB-W3-nle"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="13.5" id="eiI-wb-MpY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8ux-sH-DIZ" secondAttribute="trailing" constant="25" id="gMK-gh-Pme"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
                             <constraint firstItem="czk-cs-GIG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="11.5" id="m2W-hD-UaQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ERx-jz-qxc" secondAttribute="trailing" constant="25" id="nl2-Uq-GVG"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rEb-SY-PNb"/>
                             <constraint firstItem="8ux-sH-DIZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="x6z-po-5IX"/>
                         </constraints>
                     </view>
@@ -251,6 +260,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
+                        <outlet property="bottomGuideButton" destination="SYv-T2-0TZ" id="pOn-WD-6z9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -231,4 +231,23 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
+    
+    // 정보전달
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.section)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? DiaryDetailViewController
+            
+            if let index = sender as? Int{
+                vc?.Image = diaryList[index].diaryImage
+                vc?.Title = diaryList[index].diaryTitle
+                vc?.Detail = diaryList[index].diaryDetail
+                vc?.Date = diaryList[index].diaryDate
+            }
+        }
+    }
+    
 }

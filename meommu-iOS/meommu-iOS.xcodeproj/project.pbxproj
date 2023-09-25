@@ -17,11 +17,12 @@
 		F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A02AB73982006EDA07 /* SceneDelegate.swift */; };
 		F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A22AB73982006EDA07 /* LoginViewController.swift */; };
 		F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A42AB73982006EDA07 /* Login.storyboard */; };
-		F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A72AB73983006EDA07 /* Assets.xcassets */; };
 		F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */; };
 		F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BCF82ABC655300D60041 /* StepOneViewController.swift */; };
 		F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */; };
 		F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */; };
+		F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */; };
+		F948D8512AC171AB00F965E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F948D8502AC171AB00F965E6 /* Assets.xcassets */; };
 		F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F953DD602AB82B22009F3B52 /* DiarySend.storyboard */; };
 		F953DD632AB82B58009F3B52 /* DiarySendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953DD622AB82B58009F3B52 /* DiarySendViewController.swift */; };
 		F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */; };
@@ -50,13 +51,14 @@
 		F933D8A02AB73982006EDA07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F933D8A22AB73982006EDA07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F933D8A52AB73982006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		F933D8A72AB73983006EDA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F933D8AA2AB73983006EDA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F933D8AC2AB73983006EDA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F937BCF82ABC655300D60041 /* StepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneViewController.swift; sourceTree = "<group>"; };
 		F93D6FA62AB964FD00591C21 /* HUScribble150.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HUScribble150.otf; sourceTree = "<group>"; };
 		F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryWrite.storyboard; sourceTree = "<group>"; };
 		F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
+		F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		F948D8502AC171AB00F965E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F953DD602AB82B22009F3B52 /* DiarySend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiarySend.storyboard; sourceTree = "<group>"; };
 		F953DD622AB82B58009F3B52 /* DiarySendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendViewController.swift; sourceTree = "<group>"; };
 		F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainEmptyTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				F9BC8E7B2ABC0EBC000D90D1 /* BottomSheet */,
 				F90743812AB73CBF00F7C503 /* DiaryViewController.swift */,
+				F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */,
 				F953DD622AB82B58009F3B52 /* DiarySendViewController.swift */,
 				F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */,
 				F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */,
@@ -194,8 +197,8 @@
 				F933D89E2AB73982006EDA07 /* AppDelegate.swift */,
 				F933D8A02AB73982006EDA07 /* SceneDelegate.swift */,
 				F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */,
-				F933D8A72AB73983006EDA07 /* Assets.xcassets */,
 				F93D6FA62AB964FD00591C21 /* HUScribble150.otf */,
+				F948D8502AC171AB00F965E6 /* Assets.xcassets */,
 				F933D8AC2AB73983006EDA07 /* Info.plist */,
 			);
 			path = "meommu-iOS";
@@ -308,10 +311,10 @@
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
 				F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */,
 				F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */,
-				F933D8A82AB73983006EDA07 /* Assets.xcassets in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
+				F948D8512AC171AB00F965E6 /* Assets.xcassets in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
+				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
 				F953DD632AB82B58009F3B52 /* DiarySendViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Step One View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StepOneViewController" id="Y6W-OH-hqX" customClass="StepOneViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멈무일기 가이드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTU-Qn-oOb">
+                                <rect key="frame" x="124.66666666666669" y="80" width="126" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 강아지에게 어떤 일상이 있었나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTN-FZ-dRb">
+                                <rect key="frame" x="79.666666666666686" y="109" width="216" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.43921568989999998" green="0.4588235021" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uuM-qL-NA2">
+                                <rect key="frame" x="12.666666666666657" y="141" width="350" height="280"/>
+                                <color key="backgroundColor" red="0.109803915" green="0.1176470518" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="SdF-2Q-B8k"/>
+                                    <constraint firstAttribute="width" constant="350" id="SzV-y9-sM6"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-VM-49Z">
+                                <rect key="frame" x="193" y="483" width="163" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="9a7-bV-wg9"/>
+                                    <constraint firstAttribute="height" constant="48" id="dP5-TQ-gam"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="다음">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseBackgroundColor" red="0.33333334329999997" green="0.49803921579999999" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-ay-oLa">
+                                <rect key="frame" x="19" y="483" width="163" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Kgp-0J-c4L"/>
+                                    <constraint firstAttribute="width" constant="163" id="QOv-U2-6RV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="이전">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseBackgroundColor" red="0.21568629149999999" green="0.21960783" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImJ-C2-1wm">
+                                <rect key="frame" x="158.66666666666666" y="446" width="58" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="TTK-Q8-vle"/>
+                                    <constraint firstAttribute="height" constant="17" id="VzU-3K-FQ0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.43921568989999998" green="0.4588235021" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.109803915" green="0.1176470518" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="JOd-VM-49Z" firstAttribute="top" secondItem="ImJ-C2-1wm" secondAttribute="bottom" constant="20" id="0ez-Kn-AWu"/>
+                            <constraint firstItem="JOd-VM-49Z" firstAttribute="leading" secondItem="4ME-ay-oLa" secondAttribute="trailing" constant="11" id="2Nt-d5-Hzb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ImJ-C2-1wm" secondAttribute="trailing" constant="158.5" id="6SV-g3-zaU"/>
+                            <constraint firstItem="OTN-FZ-dRb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="79.5" id="8qz-0e-cvd"/>
+                            <constraint firstItem="ImJ-C2-1wm" firstAttribute="top" secondItem="uuM-qL-NA2" secondAttribute="bottom" constant="25" id="9Rz-eB-EoY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iTU-Qn-oOb" secondAttribute="trailing" constant="124.5" id="9hw-Ym-6pJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OTN-FZ-dRb" secondAttribute="trailing" constant="79.5" id="ADz-yv-oMi"/>
+                            <constraint firstItem="iTU-Qn-oOb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="124.5" id="KEN-jd-OkY"/>
+                            <constraint firstItem="uuM-qL-NA2" firstAttribute="top" secondItem="OTN-FZ-dRb" secondAttribute="bottom" constant="15" id="KHc-84-5ll"/>
+                            <constraint firstItem="OTN-FZ-dRb" firstAttribute="top" secondItem="iTU-Qn-oOb" secondAttribute="bottom" constant="5" id="Mzy-37-Npz"/>
+                            <constraint firstItem="ImJ-C2-1wm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="158.5" id="Tw0-2g-4ZN"/>
+                            <constraint firstItem="iTU-Qn-oOb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="bv1-4M-SX2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JOd-VM-49Z" secondAttribute="trailing" constant="19" id="ePv-jl-fFH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uuM-qL-NA2" secondAttribute="trailing" constant="12.5" id="gmA-fr-QEJ"/>
+                            <constraint firstItem="4ME-ay-oLa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="19" id="nGG-OW-Wuz"/>
+                            <constraint firstItem="uuM-qL-NA2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12.5" id="pwh-r1-kOB"/>
+                            <constraint firstItem="4ME-ay-oLa" firstAttribute="top" secondItem="ImJ-C2-1wm" secondAttribute="bottom" constant="20" id="tfY-eh-B4D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="steponeTableVlew" destination="uuM-qL-NA2" id="qo0-x5-AIW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="-2.2167487684729066"/>
+        </scene>
+    </scenes>
+</document>

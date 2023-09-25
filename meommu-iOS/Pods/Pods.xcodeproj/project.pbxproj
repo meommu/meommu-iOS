@@ -1,0 +1,1269 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		007925CB7B373CEF2457BA29EB21F36C /* MaterialElevation.h in Headers */ = {isa = PBXBuildFile; fileRef = E0AA6F9A49BFC6836C31E32D753DDA23 /* MaterialElevation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07951EFE16A7D338F37AD4F558E70DA7 /* UIViewController+MaterialBottomSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DD60216A7C04D2C7D23DDE7EF5F6D6 /* UIViewController+MaterialBottomSheet.m */; };
+		0857F4A0A5170223519A541324D501D1 /* UIViewController+MaterialBottomSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 45117B9B0B66AD4C02009485387E1220 /* UIViewController+MaterialBottomSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08784BF9A2CD964B6C9CD6576E15828E /* MaterialShadowElevationsDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4607E702D1FD424B65187BDD3FD6E38 /* MaterialShadowElevationsDummy.m */; };
+		0A4E8662941AEB6D26C19AFEBC8BB768 /* MDCShapeMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = FF23589DBA8A02D647E699E493E793BD /* MDCShapeMediator.m */; };
+		0C76EEF9FC8B4C12C73B071124D2443F /* MDCEdgeTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2ED9E11838EEBB63175B7AFC4D6796 /* MDCEdgeTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10B800F3E36C80713AB589FA1CF47441 /* UIColor+MaterialBlending.h in Headers */ = {isa = PBXBuildFile; fileRef = 85F8AB7A609C55A4F07E949E1514C49D /* UIColor+MaterialBlending.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11E0F8B5E2D4ABF76318A5DA04D260A0 /* MDCDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C69F9BAD003963D29E0E90D2B8B01512 /* MDCDraggableView.m */; };
+		166896F7614D238E033F84793B537BC7 /* MDCSheetBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = B903C88A7D442AF4552279DED7521C1E /* MDCSheetBehavior.m */; };
+		18B4F45884A1AE821C55D92A82BA16EC /* MaterialBottomSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 91DB42F88A52D2F7F400D2F313F29711 /* MaterialBottomSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18F9C48B43DB0B16D3424333B6F88A4A /* MDCPathGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = B4421D25A3C3153F65F7A35274C30DB9 /* MDCPathGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D8154A1F1429CDE453FBA64EE7395F7 /* PanModal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41724834A57D2B57691F1D0F2F81C25F /* PanModal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E324ECCB96F9FD656C9C37AC22A9594 /* MDCBottomSheetControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5101E7DC365C70878FF25C594DFAC07F /* MDCBottomSheetControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F36D0C890E2A668177CBD17D1E30BC2 /* MDCCurvedCornerTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E4C957E183541F3CBBF81BC4606017A /* MDCCurvedCornerTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2077B0D839DB673DFC4929A50A93264F /* MaterialShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 49927EE247E015A4B3752C1673CF472F /* MaterialShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21C2DF0761AA28A45A9F6C8DAC8BB95F /* MaterialComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DA9A20CF0B8032E169656541FB8ADA /* MaterialComponents-dummy.m */; };
+		23480436FE20EA0D43B753E874EAE238 /* MDCCurvedRectShapeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C12B209431ABDCCE1BC1775B185842 /* MDCCurvedRectShapeGenerator.m */; };
+		27E454E5203F8CC37F6E43B6FC72CAAF /* MaterialApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 613D27D7150F4D5517B3C86593242DAD /* MaterialApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29FA283FBA299EBC5B6A60875DC88ED0 /* PanModal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C387AAE454C62E35CE7B3DC35A018BB3 /* PanModal-dummy.m */; };
+		2E623866A2E10A536A1C5A81A1484BEB /* MaterialShapeLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0CFE2610672D83A1060176D8FD2B6E /* MaterialShapeLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36F6459C1BE3BD22E1ED697E8E7B86E6 /* PanModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF8362EDC46352DCD7726BEC712A69 /* PanModalPresentationDelegate.swift */; };
+		375F34D3C70C6F1417B405DFD82628A2 /* Pods-meommu-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 816299C9A56D1A5474C3B8023F08A32E /* Pods-meommu-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37AA6396F6D320D153938BD000054926 /* PanModalPresentable+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33DC6A5FE2DC1A12A736262D594CF3 /* PanModalPresentable+Defaults.swift */; };
+		39C5445892CB72E2BB1FB1BA1F38CF30 /* MDCShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A733770CAE88B6E24AAA00CD0B94F7 /* MDCShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D1F5CF84D1D9A5411C289107D5E46C4 /* MDCCurvedCornerTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FBF8BAF226D71E479E059B1EE2C9F5 /* MDCCurvedCornerTreatment.m */; };
+		4168DDEDC0ABE4FF5BC9A2E0F7735654 /* MDCCornerTreatment+CornerTypeInitalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A8E83B4BA0E8720343FF0CB5493002 /* MDCCornerTreatment+CornerTypeInitalizer.m */; };
+		43006ED7C7394CBC703AA58549754752 /* UIColor+MaterialDynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EEE8580B8C0632F4052EA58CF9A8A5 /* UIColor+MaterialDynamic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45FF31796FDBEA072DA417A10FC1D13E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D20E8E61FE391C0ED97D6F5A9EEEFD /* Foundation.framework */; };
+		4893BBF093F4F86CB3DE86CE7804B490 /* MDCRectangleShapeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E953C362977AF9D4B8546412E6C18FD /* MDCRectangleShapeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49FC201598AEF40C60C2496FE369489C /* PanModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F546EE3FD5361F02ED847F1AE107106 /* PanModalPresentationAnimator.swift */; };
+		4A929112636F1B03B707BCCDFAFA9DF1 /* UIColor+MaterialElevation.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BE7ED325DAB75A511A97A52DC1B8FF /* UIColor+MaterialElevation.m */; };
+		4BAF48DA30068EF9E7BCEA8A62BC910D /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE350F5AACDE37F88FCA851CF8E463 /* DimmedView.swift */; };
+		4CC566ECE05D4C6389ADA085AE960827 /* MDCKeyboardWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B871518B8231684CDF318F7D02AC3A8C /* MDCKeyboardWatcher.m */; };
+		4D9FA5F2E011B000FDD15FF6C101DA60 /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9963D4AF48C8AC2FDDB00B995A34 /* PanModalPresentationController.swift */; };
+		4DBFE5EE09B12554C4D605AE2A7F030F /* MDCBottomSheetTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BF01F9BFAFA67FE67ED1B928BD8FF /* MDCBottomSheetTransitionController.m */; };
+		556FE452E5E60A7FEA0A78EDCF8E97F6 /* MDCRoundedCornerTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = FC11CE33B0BFC92C3A2AE93D162709A0 /* MDCRoundedCornerTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55F1D2607A532B555F1B182EE095A044 /* MDCBottomSheetTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ACD73CC2902921FFFB4D05020732DF5 /* MDCBottomSheetTransitionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		595D3A56309AEA817F55172459ED16CE /* MaterialMath.h in Headers */ = {isa = PBXBuildFile; fileRef = D22938EB7563C300F09FE82C54218E87 /* MaterialMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59FD7DC38FBCC9C83454E82DAD24CAFC /* MDCShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A245105036530803CC07AE56E33C8078 /* MDCShadowLayer.m */; };
+		5C620577848BDFE5534C453A6E2F1D30 /* MDCCornerTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = 439ED6986118AFD4B7A0E94C3A6D4C7C /* MDCCornerTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EDD936E994705CFF1381A7695F76204 /* MaterialKeyboardWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E8E67EEC3DEFB62EEFC8AC3F10E875 /* MaterialKeyboardWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F9F3A5F2887FFF46A0702548D18E111 /* MDCSlantedRectShapeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = D4950A07A98C56D55D04786C8198A645 /* MDCSlantedRectShapeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6152798C1B26D94BC915C7FC204D9F82 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB655F8A3B9F0C3DB37D349580B2779 /* WebKit.framework */; };
+		62D2C55C5E6053CDBFD4F7357147B223 /* MaterialComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB695C80D2CE21AB3F93DA39A103445 /* MaterialComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69D61566CEC2C01D069BE1912F9C2257 /* MDCCutCornerTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA96DEAAA96CD03F2C0C9C7DB03BA0 /* MDCCutCornerTreatment.m */; };
+		6BEA016BDC68F0E57CDF6FE36D00D570 /* MDCSheetContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE18F0A3CF97C79AA15F81D2349EC68 /* MDCSheetContainerView.m */; };
+		707FE0F6AC7C1374623F18647434352B /* PanModalPresentable+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B6F0007711799CDA2A923E54E955F /* PanModalPresentable+UIViewController.swift */; };
+		714FC92F814E85A5B5405501E0FF1BF4 /* UIApplication+MDCAppExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D9EB822BD51A3880520127097CCF6B6C /* UIApplication+MDCAppExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7304DEE9E6B0BA2AD94CA5AE59851AC6 /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9DB148A18FA90DCFCF427E05D607B /* UIViewController+PanModalPresenter.swift */; };
+		73072DE782AA0A5FA4533D4073422AC4 /* MDCKeyboardWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 489385A42D96C2EC327657E15BA96F7A /* MDCKeyboardWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77DCE2EEB10AF4A0C22A604066A18233 /* UIApplication+MDCAppExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E363435EDA861B1383B82F09BF00933 /* UIApplication+MDCAppExtensions.m */; };
+		787EAA9A8DC2F09D51D359554BE06216 /* MDCSlantedRectShapeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBE7118897ACED1C0AB53333997A1E /* MDCSlantedRectShapeGenerator.m */; };
+		8A72888924AEBB46318C07E7BD6DEE10 /* MDCBottomSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = C7530624D402FED108C0131C579995B0 /* MDCBottomSheetController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93D82E2FA5AA7944649C58B8A5DB4F6E /* MDCSheetBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 1236A6E9C56B079892048B144F87ADDB /* MDCSheetBehavior.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		96CDABA4192AA7208615DD0AB48C430E /* PanModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEDFA19EE0BB9B8EB45659CB4CD21A /* PanModalAnimator.swift */; };
+		9F80D19FEC3FDBA2EC0BDFE424C14FBB /* UIColor+MaterialBlending.m in Sources */ = {isa = PBXBuildFile; fileRef = A30D0D469739C48EAF3B120143E2F4A1 /* UIColor+MaterialBlending.m */; };
+		A003960743CDDEA027F6585C6E66D1AA /* MDCPillShapeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A011DDCE8CC03466847E7AF39B8B697 /* MDCPillShapeGenerator.m */; };
+		A17B1E5CB0D295F3A4C99DB6A61BCF78 /* MDCShapeMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 75FC04CAB759CACF878E3A3E36E851B3 /* MDCShapeMediator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A24B021BE5D40DCCCD0102E31E468D77 /* MaterialAvailability.h in Headers */ = {isa = PBXBuildFile; fileRef = 1229D0DA9136F733CDCC8D9B19E52D39 /* MaterialAvailability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A25BE1CE5E3EB7E7857BBAD0944841AE /* MDCElevationOverriding.h in Headers */ = {isa = PBXBuildFile; fileRef = CB4C8AEC8640E9C855BC801CFD1AD6D9 /* MDCElevationOverriding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A46A2C1156C2EE6C28099360F7266381 /* MDCShadowElevations.h in Headers */ = {isa = PBXBuildFile; fileRef = 0452FA825FF5E617F631286EAF8ACB6A /* MDCShadowElevations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5178ED16462078EEFE039750F3FD979 /* MDCCornerTreatment+CornerTypeInitalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = D219BB7E2CA7C90CD3CBBDAE719A086D /* MDCCornerTreatment+CornerTypeInitalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A60161C5BADF9BB8676622C8D417F49C /* UIColor+MaterialDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD435133491C6A476D1217BB65211E /* UIColor+MaterialDynamic.m */; };
+		A7B07794DA08C3E7E1DB357AEBDF0910 /* PanModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7D9FA4E6E00723D76A8D49B90F8E7C /* PanModalHeight.swift */; };
+		AAC97DF8936D6329568DB243D04281B1 /* MaterialShadowElevations.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC589190F69F94187F27F9D4F2E64A1 /* MaterialShadowElevations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC21AEC54003057F322B352C400BCE1A /* MDCShapedView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB53D62ADD882B9E8762063B3D1216DF /* MDCShapedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACA03AC6678121C34C9751694E174DEC /* MDCBottomSheetPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 148A19ED5B09E4AFCB2A011228CC7B52 /* MDCBottomSheetPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B26879960B2F95DAA5612C90EF65DBC9 /* PanModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1F27C485E5904833C2F515DD19FA3 /* PanModalPresentable.swift */; };
+		B349DFD123428C60FB84208D7495124F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D20E8E61FE391C0ED97D6F5A9EEEFD /* Foundation.framework */; };
+		B46758C812C6906AD0270ED781633E6F /* MaterialShapes.h in Headers */ = {isa = PBXBuildFile; fileRef = 16926CA60BF24DEE1935C4D48E9FC001 /* MaterialShapes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4889B8C013EC29C883C1F1B7CE9598F /* MDCShapedShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D664D107678D195092CE44302BA30EC3 /* MDCShapedShadowLayer.m */; };
+		B584746C59CE44E5CDF9A5C865E14AB8 /* MDCPillShapeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B75E2AA22CDF75F00748E4E8329BFC5 /* MDCPillShapeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7CC774FEF04EC4A5A47F24FD0D68AD3 /* MDCDraggableView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A93647DEA7B705BD5379220A719FBD /* MDCDraggableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BE55C082EC58C1E0D77D119C3D52D13B /* MDCBottomSheetPresentationControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BB84F55B267E7D293D1F8FCC4F1F525D /* MDCBottomSheetPresentationControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C14DEA45483C8F5C1B6739CAC43C02F8 /* MDCCurvedRectShapeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = C5CC5BC95DC154E69F7891B56E75A4DC /* MDCCurvedRectShapeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1F089DA25E38A92807D5A23CDA23A83 /* MDCPathGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB17D1AE11E428F3BF8A66514933707 /* MDCPathGenerator.m */; };
+		C35E010C63E824F3D00B67D4C5E0159E /* MDCDraggableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66636A7A0EB96C9D2301410699F29506 /* MDCDraggableViewDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C45FA039C0EA19762B0FC4963582F5F6 /* MDCShapedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 540342027450D4BEBB3203D2BEE83E54 /* MDCShapedView.m */; };
+		C4839299FFC04CC32EE57EE475609956 /* MDCMath.h in Headers */ = {isa = PBXBuildFile; fileRef = D92E03DDC98C98A08C6152807D596CD8 /* MDCMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4E352D5A722245E05AF0853BA30CF99 /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3534451283514EDFE317A28944AB921 /* PanContainerView.swift */; };
+		C5AC46DC289D3E4B0C363182182D52B7 /* PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E828EDCF61B3ECAA1C0C5F5958B53 /* PanModalPresenter.swift */; };
+		C7459A453B5A596D1F88B4ECA19A266C /* MDCBottomSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68D257F538795787D733B86995FC044 /* MDCBottomSheetController.m */; };
+		C8F0F085A4D93EFA7D77D622698C0951 /* MDCElevatable.h in Headers */ = {isa = PBXBuildFile; fileRef = FC25AAFCFAF6DE2058C4D726B623CA87 /* MDCElevatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA783762E9CE22EC71B1EC5FE8BC34D2 /* MDCCornerTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 519986F19B57A172E3F89DC65B19F3FF /* MDCCornerTreatment.m */; };
+		CAC33CCE1FEFD437D50AE236282065DD /* MaterialColor.h in Headers */ = {isa = PBXBuildFile; fileRef = BCC9D9D00BF6A4B8B57F470B6CCAEBB0 /* MaterialColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD136E74E4DABD689B8CF1D6115F9830 /* MDCSheetState.h in Headers */ = {isa = PBXBuildFile; fileRef = 1256BD00A55A6E39BDDFC732CE05359A /* MDCSheetState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE20EB03AF371BBD3F666011BC36143B /* PanModalPresentable+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A553BE5E9E898F619A1BE5F6FAC79BC1 /* PanModalPresentable+LayoutHelpers.swift */; };
+		CE7F3874F5E191A93827397D3C7E79AB /* MDCEdgeTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4713687EF4FBFD5238CEDC4BBD3BAA29 /* MDCEdgeTreatment.m */; };
+		CF9B0C54F50D9E0DECDBCE387C15C527 /* Pods-meommu-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 759ADF2388757FE991A7752A01D8930D /* Pods-meommu-iOS-dummy.m */; };
+		D1703BED647A3E4280F987F8B29B7E17 /* MDCBottomSheetPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B398A283E0E4048EC6C3245BE78206 /* MDCBottomSheetPresentationController.m */; };
+		D27AA32D14580AC0753DCF15CB0BAD0B /* UIColor+MaterialElevation.h in Headers */ = {isa = PBXBuildFile; fileRef = AE803BC10C22C8BDF3A903581828232F /* UIColor+MaterialElevation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4EB9484C1E6F8B076FB379E9A47C191 /* MDCShapedShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 80FEB381A3983EA4340CCFF1184160B8 /* MDCShapedShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4FB61A1028C0DB237F361088D2EA3C2 /* MDCTriangleEdgeTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE349A15DADD0BB9C213F8DC105A2A /* MDCTriangleEdgeTreatment.m */; };
+		D5F176895ACE0E36002E762A311F2D23 /* MDCSheetContainerViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B6BE238C78FE7FD475A2CE0B03E8AF /* MDCSheetContainerViewDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D8030EC717AFD50138FA1A12BDA85A7A /* MDCCutCornerTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA089FA5E538F7FB91DCAC4DF9A0FE7 /* MDCCutCornerTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA12283CA4873463ED2EF22DC6636F4F /* UIView+MaterialElevationResponding.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F047B61F66373172BEA4529CE71101C /* UIView+MaterialElevationResponding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4CB3D731330D33F7F2A87BDF02E1A44 /* MDCRoundedCornerTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = D4401C1874ED6001B1F0D80296C2E2C3 /* MDCRoundedCornerTreatment.m */; };
+		E78AAB1EDC765339242F9C5F53EEE76C /* MDCSheetContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B9108AAFA298A03E5E096BE9526EA3C /* MDCSheetContainerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E79131FF7E60950C31430BD4D9BB7520 /* MDCRectangleShapeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CA9982516224788ED70166D5456E5 /* MDCRectangleShapeGenerator.m */; };
+		ED2CDFAC7C9C9E3FDB95A031B8380E25 /* UIView+MaterialElevationResponding.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61920A5956722AF5F980DD5356FF7E /* UIView+MaterialElevationResponding.m */; };
+		EEAF36B9898DAEBE499577EA4699DBE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D20E8E61FE391C0ED97D6F5A9EEEFD /* Foundation.framework */; };
+		F075E0626B9906C0B26DAFB35893F031 /* MDCShapeGenerating.h in Headers */ = {isa = PBXBuildFile; fileRef = 525FE666C7F10F8133590C870808E842 /* MDCShapeGenerating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F405D02F5D0CAC7B45605E8DAA390011 /* MDCAvailability.h in Headers */ = {isa = PBXBuildFile; fileRef = 4892B5EBA94166BFF6D3DD9A0F441019 /* MDCAvailability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F68093DB103F95209DE487501DB4D8E7 /* MDCTriangleEdgeTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = 10035D122D6FC98CD10BF217E9CDB7B2 /* MDCTriangleEdgeTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBC9948E28523D40349053038524CE98 /* MaterialMathDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 471644368766CFECCC135C9A9CEFAB2C /* MaterialMathDummy.m */; };
+		FCFCAE00865FC19DD045D344B7618209 /* PanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 106E806E6CABD558B9ED902055313AEA /* PanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F1EF8895F82A666455D2875718A563C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4723B5744013DF08BE3A5FEAA286944;
+			remoteInfo = MaterialComponents;
+		};
+		F7B2AE009AC42F993A70217C80729B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD16B149CC82594F15860A512FDBB6B9;
+			remoteInfo = PanModal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		013E828EDCF61B3ECAA1C0C5F5958B53 /* PanModalPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresenter.swift; path = PanModal/Presenter/PanModalPresenter.swift; sourceTree = "<group>"; };
+		0452FA825FF5E617F631286EAF8ACB6A /* MDCShadowElevations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShadowElevations.h; path = components/ShadowElevations/src/MDCShadowElevations.h; sourceTree = "<group>"; };
+		05A733770CAE88B6E24AAA00CD0B94F7 /* MDCShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShadowLayer.h; path = components/ShadowLayer/src/MDCShadowLayer.h; sourceTree = "<group>"; };
+		0964C1A39077DC5F0496C6C5E51EB4F3 /* PanModal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PanModal-Info.plist"; sourceTree = "<group>"; };
+		0A011DDCE8CC03466847E7AF39B8B697 /* MDCPillShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPillShapeGenerator.m; path = components/ShapeLibrary/src/MDCPillShapeGenerator.m; sourceTree = "<group>"; };
+		0A78FFAFADF87E54D224154C7EC5CA7D /* MaterialComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialComponents.release.xcconfig; sourceTree = "<group>"; };
+		0B9108AAFA298A03E5E096BE9526EA3C /* MDCSheetContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSheetContainerView.h; path = components/BottomSheet/src/private/MDCSheetContainerView.h; sourceTree = "<group>"; };
+		0BF6E4B84C2D79F8365CC7F3DEE07303 /* PanModal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PanModal-prefix.pch"; sourceTree = "<group>"; };
+		0FAA96DEAAA96CD03F2C0C9C7DB03BA0 /* MDCCutCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCutCornerTreatment.m; path = components/ShapeLibrary/src/MDCCutCornerTreatment.m; sourceTree = "<group>"; };
+		10035D122D6FC98CD10BF217E9CDB7B2 /* MDCTriangleEdgeTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTriangleEdgeTreatment.h; path = components/ShapeLibrary/src/MDCTriangleEdgeTreatment.h; sourceTree = "<group>"; };
+		106E806E6CABD558B9ED902055313AEA /* PanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PanModal.h; path = PanModal/PanModal.h; sourceTree = "<group>"; };
+		1229D0DA9136F733CDCC8D9B19E52D39 /* MaterialAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialAvailability.h; path = components/Availability/src/MaterialAvailability.h; sourceTree = "<group>"; };
+		1236A6E9C56B079892048B144F87ADDB /* MDCSheetBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSheetBehavior.h; path = components/BottomSheet/src/private/MDCSheetBehavior.h; sourceTree = "<group>"; };
+		1256BD00A55A6E39BDDFC732CE05359A /* MDCSheetState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSheetState.h; path = components/BottomSheet/src/MDCSheetState.h; sourceTree = "<group>"; };
+		148A19ED5B09E4AFCB2A011228CC7B52 /* MDCBottomSheetPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCBottomSheetPresentationController.h; path = components/BottomSheet/src/MDCBottomSheetPresentationController.h; sourceTree = "<group>"; };
+		161277983660BBB6908A635083708CFB /* PanModal */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PanModal; path = PanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16918BF4F8612F968862712249E01897 /* MaterialComponents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MaterialComponents-Info.plist"; sourceTree = "<group>"; };
+		16926CA60BF24DEE1935C4D48E9FC001 /* MaterialShapes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShapes.h; path = components/Shapes/src/MaterialShapes.h; sourceTree = "<group>"; };
+		1D3E9963D4AF48C8AC2FDDB00B995A34 /* PanModalPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresentationController.swift; path = PanModal/Controller/PanModalPresentationController.swift; sourceTree = "<group>"; };
+		1DAF8362EDC46352DCD7726BEC712A69 /* PanModalPresentationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresentationDelegate.swift; path = PanModal/Delegate/PanModalPresentationDelegate.swift; sourceTree = "<group>"; };
+		1E363435EDA861B1383B82F09BF00933 /* UIApplication+MDCAppExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+MDCAppExtensions.m"; path = "components/private/Application/src/UIApplication+MDCAppExtensions.m"; sourceTree = "<group>"; };
+		1F047B61F66373172BEA4529CE71101C /* UIView+MaterialElevationResponding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MaterialElevationResponding.h"; path = "components/Elevation/src/UIView+MaterialElevationResponding.h"; sourceTree = "<group>"; };
+		1FEE350F5AACDE37F88FCA851CF8E463 /* DimmedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DimmedView.swift; path = PanModal/View/DimmedView.swift; sourceTree = "<group>"; };
+		22389BCE3CA743868E09185D0EC5D724 /* PanModal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PanModal.modulemap; sourceTree = "<group>"; };
+		26B6BE238C78FE7FD475A2CE0B03E8AF /* MDCSheetContainerViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSheetContainerViewDelegate.h; path = components/BottomSheet/src/private/MDCSheetContainerViewDelegate.h; sourceTree = "<group>"; };
+		2ACD73CC2902921FFFB4D05020732DF5 /* MDCBottomSheetTransitionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCBottomSheetTransitionController.h; path = components/BottomSheet/src/MDCBottomSheetTransitionController.h; sourceTree = "<group>"; };
+		2BB655F8A3B9F0C3DB37D349580B2779 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		2E4C957E183541F3CBBF81BC4606017A /* MDCCurvedCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCurvedCornerTreatment.h; path = components/ShapeLibrary/src/MDCCurvedCornerTreatment.h; sourceTree = "<group>"; };
+		32D20E8E61FE391C0ED97D6F5A9EEEFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		32D9DB148A18FA90DCFCF427E05D607B /* UIViewController+PanModalPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+PanModalPresenter.swift"; path = "PanModal/Presenter/UIViewController+PanModalPresenter.swift"; sourceTree = "<group>"; };
+		3BFD435133491C6A476D1217BB65211E /* UIColor+MaterialDynamic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialDynamic.m"; path = "components/private/Color/src/UIColor+MaterialDynamic.m"; sourceTree = "<group>"; };
+		3DC9D7E95A9C473309D21E18DB6B8B77 /* MaterialComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialComponents.modulemap; sourceTree = "<group>"; };
+		40B398A283E0E4048EC6C3245BE78206 /* MDCBottomSheetPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCBottomSheetPresentationController.m; path = components/BottomSheet/src/MDCBottomSheetPresentationController.m; sourceTree = "<group>"; };
+		41724834A57D2B57691F1D0F2F81C25F /* PanModal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PanModal-umbrella.h"; sourceTree = "<group>"; };
+		439ED6986118AFD4B7A0E94C3A6D4C7C /* MDCCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCornerTreatment.h; path = components/Shapes/src/MDCCornerTreatment.h; sourceTree = "<group>"; };
+		45117B9B0B66AD4C02009485387E1220 /* UIViewController+MaterialBottomSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MaterialBottomSheet.h"; path = "components/BottomSheet/src/UIViewController+MaterialBottomSheet.h"; sourceTree = "<group>"; };
+		45DA9A20CF0B8032E169656541FB8ADA /* MaterialComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialComponents-dummy.m"; sourceTree = "<group>"; };
+		4713687EF4FBFD5238CEDC4BBD3BAA29 /* MDCEdgeTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCEdgeTreatment.m; path = components/Shapes/src/MDCEdgeTreatment.m; sourceTree = "<group>"; };
+		471644368766CFECCC135C9A9CEFAB2C /* MaterialMathDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MaterialMathDummy.m; path = components/private/Math/src/MaterialMathDummy.m; sourceTree = "<group>"; };
+		4892B5EBA94166BFF6D3DD9A0F441019 /* MDCAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCAvailability.h; path = components/Availability/src/MDCAvailability.h; sourceTree = "<group>"; };
+		489385A42D96C2EC327657E15BA96F7A /* MDCKeyboardWatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCKeyboardWatcher.h; path = components/private/KeyboardWatcher/src/MDCKeyboardWatcher.h; sourceTree = "<group>"; };
+		48E8E67EEC3DEFB62EEFC8AC3F10E875 /* MaterialKeyboardWatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialKeyboardWatcher.h; path = components/private/KeyboardWatcher/src/MaterialKeyboardWatcher.h; sourceTree = "<group>"; };
+		49927EE247E015A4B3752C1673CF472F /* MaterialShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShadowLayer.h; path = components/ShadowLayer/src/MaterialShadowLayer.h; sourceTree = "<group>"; };
+		49FBE7118897ACED1C0AB53333997A1E /* MDCSlantedRectShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSlantedRectShapeGenerator.m; path = components/ShapeLibrary/src/MDCSlantedRectShapeGenerator.m; sourceTree = "<group>"; };
+		4B0B6F0007711799CDA2A923E54E955F /* PanModalPresentable+UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PanModalPresentable+UIViewController.swift"; path = "PanModal/Presentable/PanModalPresentable+UIViewController.swift"; sourceTree = "<group>"; };
+		4EB17D1AE11E428F3BF8A66514933707 /* MDCPathGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPathGenerator.m; path = components/Shapes/src/MDCPathGenerator.m; sourceTree = "<group>"; };
+		4EE18F0A3CF97C79AA15F81D2349EC68 /* MDCSheetContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSheetContainerView.m; path = components/BottomSheet/src/private/MDCSheetContainerView.m; sourceTree = "<group>"; };
+		4EFF9323B2ABE3CF7F95C8E76B3AB154 /* Pods-meommu-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-meommu-iOS-Info.plist"; sourceTree = "<group>"; };
+		4F546EE3FD5361F02ED847F1AE107106 /* PanModalPresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresentationAnimator.swift; path = PanModal/Animator/PanModalPresentationAnimator.swift; sourceTree = "<group>"; };
+		5101E7DC365C70878FF25C594DFAC07F /* MDCBottomSheetControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCBottomSheetControllerDelegate.h; path = components/BottomSheet/src/MDCBottomSheetControllerDelegate.h; sourceTree = "<group>"; };
+		519986F19B57A172E3F89DC65B19F3FF /* MDCCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCornerTreatment.m; path = components/Shapes/src/MDCCornerTreatment.m; sourceTree = "<group>"; };
+		525FE666C7F10F8133590C870808E842 /* MDCShapeGenerating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapeGenerating.h; path = components/Shapes/src/MDCShapeGenerating.h; sourceTree = "<group>"; };
+		540342027450D4BEBB3203D2BEE83E54 /* MDCShapedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapedView.m; path = components/Shapes/src/MDCShapedView.m; sourceTree = "<group>"; };
+		5994859EE2561CD940A55F888022242A /* Pods-meommu-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-meommu-iOS"; path = Pods_meommu_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6CA9982516224788ED70166D5456E5 /* MDCRectangleShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRectangleShapeGenerator.m; path = components/Shapes/src/MDCRectangleShapeGenerator.m; sourceTree = "<group>"; };
+		5BB695C80D2CE21AB3F93DA39A103445 /* MaterialComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialComponents-umbrella.h"; sourceTree = "<group>"; };
+		5E953C362977AF9D4B8546412E6C18FD /* MDCRectangleShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRectangleShapeGenerator.h; path = components/Shapes/src/MDCRectangleShapeGenerator.h; sourceTree = "<group>"; };
+		613D27D7150F4D5517B3C86593242DAD /* MaterialApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialApplication.h; path = components/private/Application/src/MaterialApplication.h; sourceTree = "<group>"; };
+		66636A7A0EB96C9D2301410699F29506 /* MDCDraggableViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCDraggableViewDelegate.h; path = components/BottomSheet/src/private/MDCDraggableViewDelegate.h; sourceTree = "<group>"; };
+		68C12B209431ABDCCE1BC1775B185842 /* MDCCurvedRectShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCurvedRectShapeGenerator.m; path = components/ShapeLibrary/src/MDCCurvedRectShapeGenerator.m; sourceTree = "<group>"; };
+		6DC783549375FDCE7D990CDF7BE5206B /* PanModal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PanModal.debug.xcconfig; sourceTree = "<group>"; };
+		72BE7ED325DAB75A511A97A52DC1B8FF /* UIColor+MaterialElevation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialElevation.m"; path = "components/Elevation/src/UIColor+MaterialElevation.m"; sourceTree = "<group>"; };
+		73EEE8580B8C0632F4052EA58CF9A8A5 /* UIColor+MaterialDynamic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialDynamic.h"; path = "components/private/Color/src/UIColor+MaterialDynamic.h"; sourceTree = "<group>"; };
+		759ADF2388757FE991A7752A01D8930D /* Pods-meommu-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-meommu-iOS-dummy.m"; sourceTree = "<group>"; };
+		75FC04CAB759CACF878E3A3E36E851B3 /* MDCShapeMediator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapeMediator.h; path = components/Shapes/src/MDCShapeMediator.h; sourceTree = "<group>"; };
+		78FBF8BAF226D71E479E059B1EE2C9F5 /* MDCCurvedCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCurvedCornerTreatment.m; path = components/ShapeLibrary/src/MDCCurvedCornerTreatment.m; sourceTree = "<group>"; };
+		80FEB381A3983EA4340CCFF1184160B8 /* MDCShapedShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapedShadowLayer.h; path = components/Shapes/src/MDCShapedShadowLayer.h; sourceTree = "<group>"; };
+		816299C9A56D1A5474C3B8023F08A32E /* Pods-meommu-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-meommu-iOS-umbrella.h"; sourceTree = "<group>"; };
+		85F8AB7A609C55A4F07E949E1514C49D /* UIColor+MaterialBlending.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialBlending.h"; path = "components/private/Color/src/UIColor+MaterialBlending.h"; sourceTree = "<group>"; };
+		8B75E2AA22CDF75F00748E4E8329BFC5 /* MDCPillShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCPillShapeGenerator.h; path = components/ShapeLibrary/src/MDCPillShapeGenerator.h; sourceTree = "<group>"; };
+		91DB42F88A52D2F7F400D2F313F29711 /* MaterialBottomSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialBottomSheet.h; path = components/BottomSheet/src/MaterialBottomSheet.h; sourceTree = "<group>"; };
+		9ABE349A15DADD0BB9C213F8DC105A2A /* MDCTriangleEdgeTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTriangleEdgeTreatment.m; path = components/ShapeLibrary/src/MDCTriangleEdgeTreatment.m; sourceTree = "<group>"; };
+		9CA089FA5E538F7FB91DCAC4DF9A0FE7 /* MDCCutCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCutCornerTreatment.h; path = components/ShapeLibrary/src/MDCCutCornerTreatment.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F5B84963E4EB8AE7124C2D343A371C8 /* Pods-meommu-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-meommu-iOS-frameworks.sh"; sourceTree = "<group>"; };
+		A245105036530803CC07AE56E33C8078 /* MDCShadowLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShadowLayer.m; path = components/ShadowLayer/src/MDCShadowLayer.m; sourceTree = "<group>"; };
+		A30D0D469739C48EAF3B120143E2F4A1 /* UIColor+MaterialBlending.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialBlending.m"; path = "components/private/Color/src/UIColor+MaterialBlending.m"; sourceTree = "<group>"; };
+		A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MaterialComponents; path = MaterialComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A553BE5E9E898F619A1BE5F6FAC79BC1 /* PanModalPresentable+LayoutHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PanModalPresentable+LayoutHelpers.swift"; path = "PanModal/Presentable/PanModalPresentable+LayoutHelpers.swift"; sourceTree = "<group>"; };
+		A89BF01F9BFAFA67FE67ED1B928BD8FF /* MDCBottomSheetTransitionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCBottomSheetTransitionController.m; path = components/BottomSheet/src/MDCBottomSheetTransitionController.m; sourceTree = "<group>"; };
+		AB61920A5956722AF5F980DD5356FF7E /* UIView+MaterialElevationResponding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MaterialElevationResponding.m"; path = "components/Elevation/src/UIView+MaterialElevationResponding.m"; sourceTree = "<group>"; };
+		AE2ED9E11838EEBB63175B7AFC4D6796 /* MDCEdgeTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCEdgeTreatment.h; path = components/Shapes/src/MDCEdgeTreatment.h; sourceTree = "<group>"; };
+		AE803BC10C22C8BDF3A903581828232F /* UIColor+MaterialElevation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialElevation.h"; path = "components/Elevation/src/UIColor+MaterialElevation.h"; sourceTree = "<group>"; };
+		B4421D25A3C3153F65F7A35274C30DB9 /* MDCPathGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCPathGenerator.h; path = components/Shapes/src/MDCPathGenerator.h; sourceTree = "<group>"; };
+		B5A93647DEA7B705BD5379220A719FBD /* MDCDraggableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCDraggableView.h; path = components/BottomSheet/src/private/MDCDraggableView.h; sourceTree = "<group>"; };
+		B871518B8231684CDF318F7D02AC3A8C /* MDCKeyboardWatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCKeyboardWatcher.m; path = components/private/KeyboardWatcher/src/MDCKeyboardWatcher.m; sourceTree = "<group>"; };
+		B903C88A7D442AF4552279DED7521C1E /* MDCSheetBehavior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSheetBehavior.m; path = components/BottomSheet/src/private/MDCSheetBehavior.m; sourceTree = "<group>"; };
+		B9526B3FA3A86A9FA6C762F4D966FF88 /* Pods-meommu-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-meommu-iOS.modulemap"; sourceTree = "<group>"; };
+		BB53D62ADD882B9E8762063B3D1216DF /* MDCShapedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapedView.h; path = components/Shapes/src/MDCShapedView.h; sourceTree = "<group>"; };
+		BB84F55B267E7D293D1F8FCC4F1F525D /* MDCBottomSheetPresentationControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCBottomSheetPresentationControllerDelegate.h; path = components/BottomSheet/src/MDCBottomSheetPresentationControllerDelegate.h; sourceTree = "<group>"; };
+		BCC9D9D00BF6A4B8B57F470B6CCAEBB0 /* MaterialColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialColor.h; path = components/private/Color/src/MaterialColor.h; sourceTree = "<group>"; };
+		BE184C5BD6D5C65743DF9F97245B61F7 /* Pods-meommu-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-meommu-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BF60607B3DB93CC495F436FC25092002 /* Pods-meommu-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-meommu-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BFDCCFF95C94547204BD683545673749 /* MaterialComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialComponents-prefix.pch"; sourceTree = "<group>"; };
+		C00FCDA06F3752E26321A02FA7F3CC6D /* MaterialComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialComponents.debug.xcconfig; sourceTree = "<group>"; };
+		C387AAE454C62E35CE7B3DC35A018BB3 /* PanModal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PanModal-dummy.m"; sourceTree = "<group>"; };
+		C5CC5BC95DC154E69F7891B56E75A4DC /* MDCCurvedRectShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCurvedRectShapeGenerator.h; path = components/ShapeLibrary/src/MDCCurvedRectShapeGenerator.h; sourceTree = "<group>"; };
+		C68D257F538795787D733B86995FC044 /* MDCBottomSheetController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCBottomSheetController.m; path = components/BottomSheet/src/MDCBottomSheetController.m; sourceTree = "<group>"; };
+		C69F9BAD003963D29E0E90D2B8B01512 /* MDCDraggableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCDraggableView.m; path = components/BottomSheet/src/private/MDCDraggableView.m; sourceTree = "<group>"; };
+		C7530624D402FED108C0131C579995B0 /* MDCBottomSheetController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCBottomSheetController.h; path = components/BottomSheet/src/MDCBottomSheetController.h; sourceTree = "<group>"; };
+		CB4C8AEC8640E9C855BC801CFD1AD6D9 /* MDCElevationOverriding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCElevationOverriding.h; path = components/Elevation/src/MDCElevationOverriding.h; sourceTree = "<group>"; };
+		CEBEDFA19EE0BB9B8EB45659CB4CD21A /* PanModalAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalAnimator.swift; path = PanModal/Animator/PanModalAnimator.swift; sourceTree = "<group>"; };
+		D219BB7E2CA7C90CD3CBBDAE719A086D /* MDCCornerTreatment+CornerTypeInitalizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MDCCornerTreatment+CornerTypeInitalizer.h"; path = "components/ShapeLibrary/src/MDCCornerTreatment+CornerTypeInitalizer.h"; sourceTree = "<group>"; };
+		D22938EB7563C300F09FE82C54218E87 /* MaterialMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialMath.h; path = components/private/Math/src/MaterialMath.h; sourceTree = "<group>"; };
+		D4401C1874ED6001B1F0D80296C2E2C3 /* MDCRoundedCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRoundedCornerTreatment.m; path = components/ShapeLibrary/src/MDCRoundedCornerTreatment.m; sourceTree = "<group>"; };
+		D4950A07A98C56D55D04786C8198A645 /* MDCSlantedRectShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSlantedRectShapeGenerator.h; path = components/ShapeLibrary/src/MDCSlantedRectShapeGenerator.h; sourceTree = "<group>"; };
+		D5A8E83B4BA0E8720343FF0CB5493002 /* MDCCornerTreatment+CornerTypeInitalizer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MDCCornerTreatment+CornerTypeInitalizer.m"; path = "components/ShapeLibrary/src/MDCCornerTreatment+CornerTypeInitalizer.m"; sourceTree = "<group>"; };
+		D5D1F27C485E5904833C2F515DD19FA3 /* PanModalPresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresentable.swift; path = PanModal/Presentable/PanModalPresentable.swift; sourceTree = "<group>"; };
+		D664D107678D195092CE44302BA30EC3 /* MDCShapedShadowLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapedShadowLayer.m; path = components/Shapes/src/MDCShapedShadowLayer.m; sourceTree = "<group>"; };
+		D92E03DDC98C98A08C6152807D596CD8 /* MDCMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCMath.h; path = components/private/Math/src/MDCMath.h; sourceTree = "<group>"; };
+		D9EB822BD51A3880520127097CCF6B6C /* UIApplication+MDCAppExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+MDCAppExtensions.h"; path = "components/private/Application/src/UIApplication+MDCAppExtensions.h"; sourceTree = "<group>"; };
+		DACD95149207A0E0101CD497374E7412 /* Pods-meommu-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-meommu-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		DD0CFE2610672D83A1060176D8FD2B6E /* MaterialShapeLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShapeLibrary.h; path = components/ShapeLibrary/src/MaterialShapeLibrary.h; sourceTree = "<group>"; };
+		E0AA6F9A49BFC6836C31E32D753DDA23 /* MaterialElevation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialElevation.h; path = components/Elevation/src/MaterialElevation.h; sourceTree = "<group>"; };
+		E0B0DE539977D38C9EB63CD257855EA7 /* PanModal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PanModal.release.xcconfig; sourceTree = "<group>"; };
+		EA33DC6A5FE2DC1A12A736262D594CF3 /* PanModalPresentable+Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PanModalPresentable+Defaults.swift"; path = "PanModal/Presentable/PanModalPresentable+Defaults.swift"; sourceTree = "<group>"; };
+		EB7D9FA4E6E00723D76A8D49B90F8E7C /* PanModalHeight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalHeight.swift; path = PanModal/Presentable/PanModalHeight.swift; sourceTree = "<group>"; };
+		F0DD60216A7C04D2C7D23DDE7EF5F6D6 /* UIViewController+MaterialBottomSheet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MaterialBottomSheet.m"; path = "components/BottomSheet/src/UIViewController+MaterialBottomSheet.m"; sourceTree = "<group>"; };
+		F3534451283514EDFE317A28944AB921 /* PanContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanContainerView.swift; path = PanModal/View/PanContainerView.swift; sourceTree = "<group>"; };
+		F4607E702D1FD424B65187BDD3FD6E38 /* MaterialShadowElevationsDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MaterialShadowElevationsDummy.m; path = components/ShadowElevations/src/MaterialShadowElevationsDummy.m; sourceTree = "<group>"; };
+		FAC589190F69F94187F27F9D4F2E64A1 /* MaterialShadowElevations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShadowElevations.h; path = components/ShadowElevations/src/MaterialShadowElevations.h; sourceTree = "<group>"; };
+		FC11CE33B0BFC92C3A2AE93D162709A0 /* MDCRoundedCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRoundedCornerTreatment.h; path = components/ShapeLibrary/src/MDCRoundedCornerTreatment.h; sourceTree = "<group>"; };
+		FC25AAFCFAF6DE2058C4D726B623CA87 /* MDCElevatable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCElevatable.h; path = components/Elevation/src/MDCElevatable.h; sourceTree = "<group>"; };
+		FE2378C2A294B1FC134587177162CCFB /* Pods-meommu-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-meommu-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FF23589DBA8A02D647E699E493E793BD /* MDCShapeMediator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapeMediator.m; path = components/Shapes/src/MDCShapeMediator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7060DC64F8345EF9C6D34F618D558AEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEAF36B9898DAEBE499577EA4699DBE5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		806EAF997244349F9700E5E8B7E5CC0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B349DFD123428C60FB84208D7495124F /* Foundation.framework in Frameworks */,
+				6152798C1B26D94BC915C7FC204D9F82 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7088DB1467566C0402756B900F06DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45FF31796FDBEA072DA417A10FC1D13E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BF2F2CCCAFA75E6006E044C32AB7C2E /* PanModal */ = {
+			isa = PBXGroup;
+			children = (
+				1FEE350F5AACDE37F88FCA851CF8E463 /* DimmedView.swift */,
+				F3534451283514EDFE317A28944AB921 /* PanContainerView.swift */,
+				106E806E6CABD558B9ED902055313AEA /* PanModal.h */,
+				CEBEDFA19EE0BB9B8EB45659CB4CD21A /* PanModalAnimator.swift */,
+				EB7D9FA4E6E00723D76A8D49B90F8E7C /* PanModalHeight.swift */,
+				D5D1F27C485E5904833C2F515DD19FA3 /* PanModalPresentable.swift */,
+				EA33DC6A5FE2DC1A12A736262D594CF3 /* PanModalPresentable+Defaults.swift */,
+				A553BE5E9E898F619A1BE5F6FAC79BC1 /* PanModalPresentable+LayoutHelpers.swift */,
+				4B0B6F0007711799CDA2A923E54E955F /* PanModalPresentable+UIViewController.swift */,
+				4F546EE3FD5361F02ED847F1AE107106 /* PanModalPresentationAnimator.swift */,
+				1D3E9963D4AF48C8AC2FDDB00B995A34 /* PanModalPresentationController.swift */,
+				1DAF8362EDC46352DCD7726BEC712A69 /* PanModalPresentationDelegate.swift */,
+				013E828EDCF61B3ECAA1C0C5F5958B53 /* PanModalPresenter.swift */,
+				32D9DB148A18FA90DCFCF427E05D607B /* UIViewController+PanModalPresenter.swift */,
+				87DEB251F7DA03A01A113CAF5B86EC30 /* Support Files */,
+			);
+			name = PanModal;
+			path = PanModal;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4666CE1A84ECF5C342FAD3C508C69DE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CAF47F0EE09AB643395190C5D209AD5 /* ShapeLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				DD0CFE2610672D83A1060176D8FD2B6E /* MaterialShapeLibrary.h */,
+				D219BB7E2CA7C90CD3CBBDAE719A086D /* MDCCornerTreatment+CornerTypeInitalizer.h */,
+				D5A8E83B4BA0E8720343FF0CB5493002 /* MDCCornerTreatment+CornerTypeInitalizer.m */,
+				2E4C957E183541F3CBBF81BC4606017A /* MDCCurvedCornerTreatment.h */,
+				78FBF8BAF226D71E479E059B1EE2C9F5 /* MDCCurvedCornerTreatment.m */,
+				C5CC5BC95DC154E69F7891B56E75A4DC /* MDCCurvedRectShapeGenerator.h */,
+				68C12B209431ABDCCE1BC1775B185842 /* MDCCurvedRectShapeGenerator.m */,
+				9CA089FA5E538F7FB91DCAC4DF9A0FE7 /* MDCCutCornerTreatment.h */,
+				0FAA96DEAAA96CD03F2C0C9C7DB03BA0 /* MDCCutCornerTreatment.m */,
+				8B75E2AA22CDF75F00748E4E8329BFC5 /* MDCPillShapeGenerator.h */,
+				0A011DDCE8CC03466847E7AF39B8B697 /* MDCPillShapeGenerator.m */,
+				FC11CE33B0BFC92C3A2AE93D162709A0 /* MDCRoundedCornerTreatment.h */,
+				D4401C1874ED6001B1F0D80296C2E2C3 /* MDCRoundedCornerTreatment.m */,
+				D4950A07A98C56D55D04786C8198A645 /* MDCSlantedRectShapeGenerator.h */,
+				49FBE7118897ACED1C0AB53333997A1E /* MDCSlantedRectShapeGenerator.m */,
+				10035D122D6FC98CD10BF217E9CDB7B2 /* MDCTriangleEdgeTreatment.h */,
+				9ABE349A15DADD0BB9C213F8DC105A2A /* MDCTriangleEdgeTreatment.m */,
+			);
+			name = ShapeLibrary;
+			sourceTree = "<group>";
+		};
+		22F18E1ED2501485394B9FC8CA70FE5C /* KeyboardWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				48E8E67EEC3DEFB62EEFC8AC3F10E875 /* MaterialKeyboardWatcher.h */,
+				489385A42D96C2EC327657E15BA96F7A /* MDCKeyboardWatcher.h */,
+				B871518B8231684CDF318F7D02AC3A8C /* MDCKeyboardWatcher.m */,
+			);
+			name = KeyboardWatcher;
+			sourceTree = "<group>";
+		};
+		300D60FAD39AF3C0064B7BE6CD9D8A09 /* ShadowLayer */ = {
+			isa = PBXGroup;
+			children = (
+				49927EE247E015A4B3752C1673CF472F /* MaterialShadowLayer.h */,
+				05A733770CAE88B6E24AAA00CD0B94F7 /* MDCShadowLayer.h */,
+				A245105036530803CC07AE56E33C8078 /* MDCShadowLayer.m */,
+			);
+			name = ShadowLayer;
+			sourceTree = "<group>";
+		};
+		386E70FEF6B526FBE3291A4EC5ACF151 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DC9D7E95A9C473309D21E18DB6B8B77 /* MaterialComponents.modulemap */,
+				45DA9A20CF0B8032E169656541FB8ADA /* MaterialComponents-dummy.m */,
+				16918BF4F8612F968862712249E01897 /* MaterialComponents-Info.plist */,
+				BFDCCFF95C94547204BD683545673749 /* MaterialComponents-prefix.pch */,
+				5BB695C80D2CE21AB3F93DA39A103445 /* MaterialComponents-umbrella.h */,
+				C00FCDA06F3752E26321A02FA7F3CC6D /* MaterialComponents.debug.xcconfig */,
+				0A78FFAFADF87E54D224154C7EC5CA7D /* MaterialComponents.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MaterialComponents";
+			sourceTree = "<group>";
+		};
+		448CAA9272F036F5E2BD9ED1425BE8E6 /* Pods-meommu-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B9526B3FA3A86A9FA6C762F4D966FF88 /* Pods-meommu-iOS.modulemap */,
+				BE184C5BD6D5C65743DF9F97245B61F7 /* Pods-meommu-iOS-acknowledgements.markdown */,
+				DACD95149207A0E0101CD497374E7412 /* Pods-meommu-iOS-acknowledgements.plist */,
+				759ADF2388757FE991A7752A01D8930D /* Pods-meommu-iOS-dummy.m */,
+				9F5B84963E4EB8AE7124C2D343A371C8 /* Pods-meommu-iOS-frameworks.sh */,
+				4EFF9323B2ABE3CF7F95C8E76B3AB154 /* Pods-meommu-iOS-Info.plist */,
+				816299C9A56D1A5474C3B8023F08A32E /* Pods-meommu-iOS-umbrella.h */,
+				FE2378C2A294B1FC134587177162CCFB /* Pods-meommu-iOS.debug.xcconfig */,
+				BF60607B3DB93CC495F436FC25092002 /* Pods-meommu-iOS.release.xcconfig */,
+			);
+			name = "Pods-meommu-iOS";
+			path = "Target Support Files/Pods-meommu-iOS";
+			sourceTree = "<group>";
+		};
+		536AE2886A554B3BBC2775CCB0124316 /* Availability */ = {
+			isa = PBXGroup;
+			children = (
+				1229D0DA9136F733CDCC8D9B19E52D39 /* MaterialAvailability.h */,
+				4892B5EBA94166BFF6D3DD9A0F441019 /* MDCAvailability.h */,
+			);
+			name = Availability;
+			sourceTree = "<group>";
+		};
+		6F1D5B3FD6386115DA6B081DD0495404 /* MaterialComponents */ = {
+			isa = PBXGroup;
+			children = (
+				536AE2886A554B3BBC2775CCB0124316 /* Availability */,
+				C0A69E82B386427EE7415E1158BD268A /* BottomSheet */,
+				9E38705420F05B2834187724A096FF96 /* Elevation */,
+				CE203C609F24D6A1A9729774F4A6B70A /* private */,
+				8BB0A48762BCF600DA5875C3FA7C16AD /* ShadowElevations */,
+				300D60FAD39AF3C0064B7BE6CD9D8A09 /* ShadowLayer */,
+				1CAF47F0EE09AB643395190C5D209AD5 /* ShapeLibrary */,
+				979B46649BE0A3A4E642822E860692D9 /* Shapes */,
+				386E70FEF6B526FBE3291A4EC5ACF151 /* Support Files */,
+			);
+			name = MaterialComponents;
+			path = MaterialComponents;
+			sourceTree = "<group>";
+		};
+		87DEB251F7DA03A01A113CAF5B86EC30 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				22389BCE3CA743868E09185D0EC5D724 /* PanModal.modulemap */,
+				C387AAE454C62E35CE7B3DC35A018BB3 /* PanModal-dummy.m */,
+				0964C1A39077DC5F0496C6C5E51EB4F3 /* PanModal-Info.plist */,
+				0BF6E4B84C2D79F8365CC7F3DEE07303 /* PanModal-prefix.pch */,
+				41724834A57D2B57691F1D0F2F81C25F /* PanModal-umbrella.h */,
+				6DC783549375FDCE7D990CDF7BE5206B /* PanModal.debug.xcconfig */,
+				E0B0DE539977D38C9EB63CD257855EA7 /* PanModal.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PanModal";
+			sourceTree = "<group>";
+		};
+		8BB0A48762BCF600DA5875C3FA7C16AD /* ShadowElevations */ = {
+			isa = PBXGroup;
+			children = (
+				FAC589190F69F94187F27F9D4F2E64A1 /* MaterialShadowElevations.h */,
+				F4607E702D1FD424B65187BDD3FD6E38 /* MaterialShadowElevationsDummy.m */,
+				0452FA825FF5E617F631286EAF8ACB6A /* MDCShadowElevations.h */,
+			);
+			name = ShadowElevations;
+			sourceTree = "<group>";
+		};
+		8FA20C58032D5DCA6A6905E20F0ED064 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				613D27D7150F4D5517B3C86593242DAD /* MaterialApplication.h */,
+				D9EB822BD51A3880520127097CCF6B6C /* UIApplication+MDCAppExtensions.h */,
+				1E363435EDA861B1383B82F09BF00933 /* UIApplication+MDCAppExtensions.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		979B46649BE0A3A4E642822E860692D9 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				16926CA60BF24DEE1935C4D48E9FC001 /* MaterialShapes.h */,
+				439ED6986118AFD4B7A0E94C3A6D4C7C /* MDCCornerTreatment.h */,
+				519986F19B57A172E3F89DC65B19F3FF /* MDCCornerTreatment.m */,
+				AE2ED9E11838EEBB63175B7AFC4D6796 /* MDCEdgeTreatment.h */,
+				4713687EF4FBFD5238CEDC4BBD3BAA29 /* MDCEdgeTreatment.m */,
+				B4421D25A3C3153F65F7A35274C30DB9 /* MDCPathGenerator.h */,
+				4EB17D1AE11E428F3BF8A66514933707 /* MDCPathGenerator.m */,
+				5E953C362977AF9D4B8546412E6C18FD /* MDCRectangleShapeGenerator.h */,
+				5B6CA9982516224788ED70166D5456E5 /* MDCRectangleShapeGenerator.m */,
+				80FEB381A3983EA4340CCFF1184160B8 /* MDCShapedShadowLayer.h */,
+				D664D107678D195092CE44302BA30EC3 /* MDCShapedShadowLayer.m */,
+				BB53D62ADD882B9E8762063B3D1216DF /* MDCShapedView.h */,
+				540342027450D4BEBB3203D2BEE83E54 /* MDCShapedView.m */,
+				525FE666C7F10F8133590C870808E842 /* MDCShapeGenerating.h */,
+				75FC04CAB759CACF878E3A3E36E851B3 /* MDCShapeMediator.h */,
+				FF23589DBA8A02D647E699E493E793BD /* MDCShapeMediator.m */,
+			);
+			name = Shapes;
+			sourceTree = "<group>";
+		};
+		9E38705420F05B2834187724A096FF96 /* Elevation */ = {
+			isa = PBXGroup;
+			children = (
+				E0AA6F9A49BFC6836C31E32D753DDA23 /* MaterialElevation.h */,
+				FC25AAFCFAF6DE2058C4D726B623CA87 /* MDCElevatable.h */,
+				CB4C8AEC8640E9C855BC801CFD1AD6D9 /* MDCElevationOverriding.h */,
+				AE803BC10C22C8BDF3A903581828232F /* UIColor+MaterialElevation.h */,
+				72BE7ED325DAB75A511A97A52DC1B8FF /* UIColor+MaterialElevation.m */,
+				1F047B61F66373172BEA4529CE71101C /* UIView+MaterialElevationResponding.h */,
+				AB61920A5956722AF5F980DD5356FF7E /* UIView+MaterialElevationResponding.m */,
+			);
+			name = Elevation;
+			sourceTree = "<group>";
+		};
+		9E955F7B8ECDD99CE3C8208899977E92 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				BCC9D9D00BF6A4B8B57F470B6CCAEBB0 /* MaterialColor.h */,
+				85F8AB7A609C55A4F07E949E1514C49D /* UIColor+MaterialBlending.h */,
+				A30D0D469739C48EAF3B120143E2F4A1 /* UIColor+MaterialBlending.m */,
+				73EEE8580B8C0632F4052EA58CF9A8A5 /* UIColor+MaterialDynamic.h */,
+				3BFD435133491C6A476D1217BB65211E /* UIColor+MaterialDynamic.m */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		A3F8C51F61047A82B451488AAD3373A6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				448CAA9272F036F5E2BD9ED1425BE8E6 /* Pods-meommu-iOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B3CB66FA022C492FD0153AB3EE423714 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				D22938EB7563C300F09FE82C54218E87 /* MaterialMath.h */,
+				471644368766CFECCC135C9A9CEFAB2C /* MaterialMathDummy.m */,
+				D92E03DDC98C98A08C6152807D596CD8 /* MDCMath.h */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		B8B145CA9F87D4FDC395C9D0530F6ED7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents */,
+				161277983660BBB6908A635083708CFB /* PanModal */,
+				5994859EE2561CD940A55F888022242A /* Pods-meommu-iOS */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0A69E82B386427EE7415E1158BD268A /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				91DB42F88A52D2F7F400D2F313F29711 /* MaterialBottomSheet.h */,
+				C7530624D402FED108C0131C579995B0 /* MDCBottomSheetController.h */,
+				C68D257F538795787D733B86995FC044 /* MDCBottomSheetController.m */,
+				5101E7DC365C70878FF25C594DFAC07F /* MDCBottomSheetControllerDelegate.h */,
+				148A19ED5B09E4AFCB2A011228CC7B52 /* MDCBottomSheetPresentationController.h */,
+				40B398A283E0E4048EC6C3245BE78206 /* MDCBottomSheetPresentationController.m */,
+				BB84F55B267E7D293D1F8FCC4F1F525D /* MDCBottomSheetPresentationControllerDelegate.h */,
+				2ACD73CC2902921FFFB4D05020732DF5 /* MDCBottomSheetTransitionController.h */,
+				A89BF01F9BFAFA67FE67ED1B928BD8FF /* MDCBottomSheetTransitionController.m */,
+				B5A93647DEA7B705BD5379220A719FBD /* MDCDraggableView.h */,
+				C69F9BAD003963D29E0E90D2B8B01512 /* MDCDraggableView.m */,
+				66636A7A0EB96C9D2301410699F29506 /* MDCDraggableViewDelegate.h */,
+				1236A6E9C56B079892048B144F87ADDB /* MDCSheetBehavior.h */,
+				B903C88A7D442AF4552279DED7521C1E /* MDCSheetBehavior.m */,
+				0B9108AAFA298A03E5E096BE9526EA3C /* MDCSheetContainerView.h */,
+				4EE18F0A3CF97C79AA15F81D2349EC68 /* MDCSheetContainerView.m */,
+				26B6BE238C78FE7FD475A2CE0B03E8AF /* MDCSheetContainerViewDelegate.h */,
+				1256BD00A55A6E39BDDFC732CE05359A /* MDCSheetState.h */,
+				45117B9B0B66AD4C02009485387E1220 /* UIViewController+MaterialBottomSheet.h */,
+				F0DD60216A7C04D2C7D23DDE7EF5F6D6 /* UIViewController+MaterialBottomSheet.m */,
+			);
+			name = BottomSheet;
+			sourceTree = "<group>";
+		};
+		C8D3DF6E0620F0472A3D386B332DC62C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F1D5B3FD6386115DA6B081DD0495404 /* MaterialComponents */,
+				0BF2F2CCCAFA75E6006E044C32AB7C2E /* PanModal */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE203C609F24D6A1A9729774F4A6B70A /* private */ = {
+			isa = PBXGroup;
+			children = (
+				8FA20C58032D5DCA6A6905E20F0ED064 /* Application */,
+				9E955F7B8ECDD99CE3C8208899977E92 /* Color */,
+				22F18E1ED2501485394B9FC8CA70FE5C /* KeyboardWatcher */,
+				B3CB66FA022C492FD0153AB3EE423714 /* Math */,
+			);
+			name = private;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				C8D3DF6E0620F0472A3D386B332DC62C /* Pods */,
+				B8B145CA9F87D4FDC395C9D0530F6ED7 /* Products */,
+				A3F8C51F61047A82B451488AAD3373A6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D4666CE1A84ECF5C342FAD3C508C69DE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				32D20E8E61FE391C0ED97D6F5A9EEEFD /* Foundation.framework */,
+				2BB655F8A3B9F0C3DB37D349580B2779 /* WebKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7EEFF4FF12D3504C958FB85458E21F59 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375F34D3C70C6F1417B405DFD82628A2 /* Pods-meommu-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2C834900360FF5E542C7190489A751E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFCAE00865FC19DD045D344B7618209 /* PanModal.h in Headers */,
+				1D8154A1F1429CDE453FBA64EE7395F7 /* PanModal-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3CDDC65E7CD101F46D811CF6488BDA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E454E5203F8CC37F6E43B6FC72CAAF /* MaterialApplication.h in Headers */,
+				A24B021BE5D40DCCCD0102E31E468D77 /* MaterialAvailability.h in Headers */,
+				18B4F45884A1AE821C55D92A82BA16EC /* MaterialBottomSheet.h in Headers */,
+				CAC33CCE1FEFD437D50AE236282065DD /* MaterialColor.h in Headers */,
+				62D2C55C5E6053CDBFD4F7357147B223 /* MaterialComponents-umbrella.h in Headers */,
+				007925CB7B373CEF2457BA29EB21F36C /* MaterialElevation.h in Headers */,
+				5EDD936E994705CFF1381A7695F76204 /* MaterialKeyboardWatcher.h in Headers */,
+				595D3A56309AEA817F55172459ED16CE /* MaterialMath.h in Headers */,
+				AAC97DF8936D6329568DB243D04281B1 /* MaterialShadowElevations.h in Headers */,
+				2077B0D839DB673DFC4929A50A93264F /* MaterialShadowLayer.h in Headers */,
+				2E623866A2E10A536A1C5A81A1484BEB /* MaterialShapeLibrary.h in Headers */,
+				B46758C812C6906AD0270ED781633E6F /* MaterialShapes.h in Headers */,
+				F405D02F5D0CAC7B45605E8DAA390011 /* MDCAvailability.h in Headers */,
+				8A72888924AEBB46318C07E7BD6DEE10 /* MDCBottomSheetController.h in Headers */,
+				1E324ECCB96F9FD656C9C37AC22A9594 /* MDCBottomSheetControllerDelegate.h in Headers */,
+				ACA03AC6678121C34C9751694E174DEC /* MDCBottomSheetPresentationController.h in Headers */,
+				BE55C082EC58C1E0D77D119C3D52D13B /* MDCBottomSheetPresentationControllerDelegate.h in Headers */,
+				55F1D2607A532B555F1B182EE095A044 /* MDCBottomSheetTransitionController.h in Headers */,
+				5C620577848BDFE5534C453A6E2F1D30 /* MDCCornerTreatment.h in Headers */,
+				A5178ED16462078EEFE039750F3FD979 /* MDCCornerTreatment+CornerTypeInitalizer.h in Headers */,
+				1F36D0C890E2A668177CBD17D1E30BC2 /* MDCCurvedCornerTreatment.h in Headers */,
+				C14DEA45483C8F5C1B6739CAC43C02F8 /* MDCCurvedRectShapeGenerator.h in Headers */,
+				D8030EC717AFD50138FA1A12BDA85A7A /* MDCCutCornerTreatment.h in Headers */,
+				B7CC774FEF04EC4A5A47F24FD0D68AD3 /* MDCDraggableView.h in Headers */,
+				C35E010C63E824F3D00B67D4C5E0159E /* MDCDraggableViewDelegate.h in Headers */,
+				0C76EEF9FC8B4C12C73B071124D2443F /* MDCEdgeTreatment.h in Headers */,
+				C8F0F085A4D93EFA7D77D622698C0951 /* MDCElevatable.h in Headers */,
+				A25BE1CE5E3EB7E7857BBAD0944841AE /* MDCElevationOverriding.h in Headers */,
+				73072DE782AA0A5FA4533D4073422AC4 /* MDCKeyboardWatcher.h in Headers */,
+				C4839299FFC04CC32EE57EE475609956 /* MDCMath.h in Headers */,
+				18F9C48B43DB0B16D3424333B6F88A4A /* MDCPathGenerator.h in Headers */,
+				B584746C59CE44E5CDF9A5C865E14AB8 /* MDCPillShapeGenerator.h in Headers */,
+				4893BBF093F4F86CB3DE86CE7804B490 /* MDCRectangleShapeGenerator.h in Headers */,
+				556FE452E5E60A7FEA0A78EDCF8E97F6 /* MDCRoundedCornerTreatment.h in Headers */,
+				A46A2C1156C2EE6C28099360F7266381 /* MDCShadowElevations.h in Headers */,
+				39C5445892CB72E2BB1FB1BA1F38CF30 /* MDCShadowLayer.h in Headers */,
+				D4EB9484C1E6F8B076FB379E9A47C191 /* MDCShapedShadowLayer.h in Headers */,
+				AC21AEC54003057F322B352C400BCE1A /* MDCShapedView.h in Headers */,
+				F075E0626B9906C0B26DAFB35893F031 /* MDCShapeGenerating.h in Headers */,
+				A17B1E5CB0D295F3A4C99DB6A61BCF78 /* MDCShapeMediator.h in Headers */,
+				93D82E2FA5AA7944649C58B8A5DB4F6E /* MDCSheetBehavior.h in Headers */,
+				E78AAB1EDC765339242F9C5F53EEE76C /* MDCSheetContainerView.h in Headers */,
+				D5F176895ACE0E36002E762A311F2D23 /* MDCSheetContainerViewDelegate.h in Headers */,
+				CD136E74E4DABD689B8CF1D6115F9830 /* MDCSheetState.h in Headers */,
+				5F9F3A5F2887FFF46A0702548D18E111 /* MDCSlantedRectShapeGenerator.h in Headers */,
+				F68093DB103F95209DE487501DB4D8E7 /* MDCTriangleEdgeTreatment.h in Headers */,
+				714FC92F814E85A5B5405501E0FF1BF4 /* UIApplication+MDCAppExtensions.h in Headers */,
+				10B800F3E36C80713AB589FA1CF47441 /* UIColor+MaterialBlending.h in Headers */,
+				43006ED7C7394CBC703AA58549754752 /* UIColor+MaterialDynamic.h in Headers */,
+				D27AA32D14580AC0753DCF15CB0BAD0B /* UIColor+MaterialElevation.h in Headers */,
+				DA12283CA4873463ED2EF22DC6636F4F /* UIView+MaterialElevationResponding.h in Headers */,
+				0857F4A0A5170223519A541324D501D1 /* UIViewController+MaterialBottomSheet.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AD16B149CC82594F15860A512FDBB6B9 /* PanModal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4E99B9DCEA3533FA1F4F49092623186 /* Build configuration list for PBXNativeTarget "PanModal" */;
+			buildPhases = (
+				D2C834900360FF5E542C7190489A751E /* Headers */,
+				AFADEA848CD67A53B6AC46621E7BD31E /* Sources */,
+				AD7088DB1467566C0402756B900F06DB /* Frameworks */,
+				7A768A314A05426B463265BD3CEC84FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PanModal;
+			productName = PanModal;
+			productReference = 161277983660BBB6908A635083708CFB /* PanModal */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3430A461777558B27370E1B4231C5B1E /* Build configuration list for PBXNativeTarget "MaterialComponents" */;
+			buildPhases = (
+				F3CDDC65E7CD101F46D811CF6488BDA6 /* Headers */,
+				0E70C541B1BA5DCB244FDBB0909C272D /* Sources */,
+				806EAF997244349F9700E5E8B7E5CC0D /* Frameworks */,
+				E47546D5007EB72514DFA3633A6A4A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaterialComponents;
+			productName = MaterialComponents;
+			productReference = A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents */;
+			productType = "com.apple.product-type.framework";
+		};
+		F90B004A91AD86D8939504D28B6545B7 /* Pods-meommu-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A6949C8B09FAC5A3787C7AEB5B6B22 /* Build configuration list for PBXNativeTarget "Pods-meommu-iOS" */;
+			buildPhases = (
+				7EEFF4FF12D3504C958FB85458E21F59 /* Headers */,
+				98C8E8B066DFFAA908975E2149B13C16 /* Sources */,
+				7060DC64F8345EF9C6D34F618D558AEA /* Frameworks */,
+				C01F0075250738C0958BD2B8D6176EEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17DD8A6027517B21212685B16894706B /* PBXTargetDependency */,
+				F33FD0D0BDF1C0485A9E29B39B4A58B1 /* PBXTargetDependency */,
+			);
+			name = "Pods-meommu-iOS";
+			productName = Pods_meommu_iOS;
+			productReference = 5994859EE2561CD940A55F888022242A /* Pods-meommu-iOS */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = B8B145CA9F87D4FDC395C9D0530F6ED7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */,
+				AD16B149CC82594F15860A512FDBB6B9 /* PanModal */,
+				F90B004A91AD86D8939504D28B6545B7 /* Pods-meommu-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A768A314A05426B463265BD3CEC84FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C01F0075250738C0958BD2B8D6176EEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47546D5007EB72514DFA3633A6A4A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E70C541B1BA5DCB244FDBB0909C272D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21C2DF0761AA28A45A9F6C8DAC8BB95F /* MaterialComponents-dummy.m in Sources */,
+				FBC9948E28523D40349053038524CE98 /* MaterialMathDummy.m in Sources */,
+				08784BF9A2CD964B6C9CD6576E15828E /* MaterialShadowElevationsDummy.m in Sources */,
+				C7459A453B5A596D1F88B4ECA19A266C /* MDCBottomSheetController.m in Sources */,
+				D1703BED647A3E4280F987F8B29B7E17 /* MDCBottomSheetPresentationController.m in Sources */,
+				4DBFE5EE09B12554C4D605AE2A7F030F /* MDCBottomSheetTransitionController.m in Sources */,
+				CA783762E9CE22EC71B1EC5FE8BC34D2 /* MDCCornerTreatment.m in Sources */,
+				4168DDEDC0ABE4FF5BC9A2E0F7735654 /* MDCCornerTreatment+CornerTypeInitalizer.m in Sources */,
+				3D1F5CF84D1D9A5411C289107D5E46C4 /* MDCCurvedCornerTreatment.m in Sources */,
+				23480436FE20EA0D43B753E874EAE238 /* MDCCurvedRectShapeGenerator.m in Sources */,
+				69D61566CEC2C01D069BE1912F9C2257 /* MDCCutCornerTreatment.m in Sources */,
+				11E0F8B5E2D4ABF76318A5DA04D260A0 /* MDCDraggableView.m in Sources */,
+				CE7F3874F5E191A93827397D3C7E79AB /* MDCEdgeTreatment.m in Sources */,
+				4CC566ECE05D4C6389ADA085AE960827 /* MDCKeyboardWatcher.m in Sources */,
+				C1F089DA25E38A92807D5A23CDA23A83 /* MDCPathGenerator.m in Sources */,
+				A003960743CDDEA027F6585C6E66D1AA /* MDCPillShapeGenerator.m in Sources */,
+				E79131FF7E60950C31430BD4D9BB7520 /* MDCRectangleShapeGenerator.m in Sources */,
+				E4CB3D731330D33F7F2A87BDF02E1A44 /* MDCRoundedCornerTreatment.m in Sources */,
+				59FD7DC38FBCC9C83454E82DAD24CAFC /* MDCShadowLayer.m in Sources */,
+				B4889B8C013EC29C883C1F1B7CE9598F /* MDCShapedShadowLayer.m in Sources */,
+				C45FA039C0EA19762B0FC4963582F5F6 /* MDCShapedView.m in Sources */,
+				0A4E8662941AEB6D26C19AFEBC8BB768 /* MDCShapeMediator.m in Sources */,
+				166896F7614D238E033F84793B537BC7 /* MDCSheetBehavior.m in Sources */,
+				6BEA016BDC68F0E57CDF6FE36D00D570 /* MDCSheetContainerView.m in Sources */,
+				787EAA9A8DC2F09D51D359554BE06216 /* MDCSlantedRectShapeGenerator.m in Sources */,
+				D4FB61A1028C0DB237F361088D2EA3C2 /* MDCTriangleEdgeTreatment.m in Sources */,
+				77DCE2EEB10AF4A0C22A604066A18233 /* UIApplication+MDCAppExtensions.m in Sources */,
+				9F80D19FEC3FDBA2EC0BDFE424C14FBB /* UIColor+MaterialBlending.m in Sources */,
+				A60161C5BADF9BB8676622C8D417F49C /* UIColor+MaterialDynamic.m in Sources */,
+				4A929112636F1B03B707BCCDFAFA9DF1 /* UIColor+MaterialElevation.m in Sources */,
+				ED2CDFAC7C9C9E3FDB95A031B8380E25 /* UIView+MaterialElevationResponding.m in Sources */,
+				07951EFE16A7D338F37AD4F558E70DA7 /* UIViewController+MaterialBottomSheet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98C8E8B066DFFAA908975E2149B13C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9B0C54F50D9E0DECDBCE387C15C527 /* Pods-meommu-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFADEA848CD67A53B6AC46621E7BD31E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BAF48DA30068EF9E7BCEA8A62BC910D /* DimmedView.swift in Sources */,
+				C4E352D5A722245E05AF0853BA30CF99 /* PanContainerView.swift in Sources */,
+				29FA283FBA299EBC5B6A60875DC88ED0 /* PanModal-dummy.m in Sources */,
+				96CDABA4192AA7208615DD0AB48C430E /* PanModalAnimator.swift in Sources */,
+				A7B07794DA08C3E7E1DB357AEBDF0910 /* PanModalHeight.swift in Sources */,
+				B26879960B2F95DAA5612C90EF65DBC9 /* PanModalPresentable.swift in Sources */,
+				37AA6396F6D320D153938BD000054926 /* PanModalPresentable+Defaults.swift in Sources */,
+				CE20EB03AF371BBD3F666011BC36143B /* PanModalPresentable+LayoutHelpers.swift in Sources */,
+				707FE0F6AC7C1374623F18647434352B /* PanModalPresentable+UIViewController.swift in Sources */,
+				49FC201598AEF40C60C2496FE369489C /* PanModalPresentationAnimator.swift in Sources */,
+				4D9FA5F2E011B000FDD15FF6C101DA60 /* PanModalPresentationController.swift in Sources */,
+				36F6459C1BE3BD22E1ED697E8E7B86E6 /* PanModalPresentationDelegate.swift in Sources */,
+				C5AC46DC289D3E4B0C363182182D52B7 /* PanModalPresenter.swift in Sources */,
+				7304DEE9E6B0BA2AD94CA5AE59851AC6 /* UIViewController+PanModalPresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17DD8A6027517B21212685B16894706B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MaterialComponents;
+			target = B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */;
+			targetProxy = 6F1EF8895F82A666455D2875718A563C /* PBXContainerItemProxy */;
+		};
+		F33FD0D0BDF1C0485A9E29B39B4A58B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PanModal;
+			target = AD16B149CC82594F15860A512FDBB6B9 /* PanModal */;
+			targetProxy = F7B2AE009AC42F993A70217C80729B55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14FBE588F15922F4E18A5B0FAB81D76F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B0DE539977D38C9EB63CD257855EA7 /* PanModal.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PanModal/PanModal-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PanModal/PanModal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PanModal/PanModal.modulemap";
+				PRODUCT_MODULE_NAME = PanModal;
+				PRODUCT_NAME = PanModal;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8ACB16A4352C17A16971FCF8E85D8FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A78FFAFADF87E54D224154C7EC5CA7D /* MaterialComponents.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
+				PRODUCT_MODULE_NAME = MaterialComponents;
+				PRODUCT_NAME = MaterialComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9553C89E183877A5CB2F3C6801BEC129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AC022EF9E947409EF8F0B441AC2AB850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF60607B3DB93CC495F436FC25092002 /* Pods-meommu-iOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B72FB33FD6F6E113C96F39CC53FDD48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C00FCDA06F3752E26321A02FA7F3CC6D /* MaterialComponents.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
+				PRODUCT_MODULE_NAME = MaterialComponents;
+				PRODUCT_NAME = MaterialComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B7B9D58AA5C1EA8309A27538ACAEE4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC783549375FDCE7D990CDF7BE5206B /* PanModal.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PanModal/PanModal-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PanModal/PanModal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PanModal/PanModal.modulemap";
+				PRODUCT_MODULE_NAME = PanModal;
+				PRODUCT_NAME = PanModal;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CCCFF114F0E4BCF059FE1104B87FA7AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2378C2A294B1FC134587177162CCFB /* Pods-meommu-iOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3430A461777558B27370E1B4231C5B1E /* Build configuration list for PBXNativeTarget "MaterialComponents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B72FB33FD6F6E113C96F39CC53FDD48D /* Debug */,
+				8ACB16A4352C17A16971FCF8E85D8FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
+				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4E99B9DCEA3533FA1F4F49092623186 /* Build configuration list for PBXNativeTarget "PanModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B9D58AA5C1EA8309A27538ACAEE4CA /* Debug */,
+				14FBE588F15922F4E18A5B0FAB81D76F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A6949C8B09FAC5A3787C7AEB5B6B22 /* Build configuration list for PBXNativeTarget "Pods-meommu-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCCFF114F0E4BCF059FE1104B87FA7AC /* Debug */,
+				AC022EF9E947409EF8F0B441AC2AB850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

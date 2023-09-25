@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PanModal
 
 class DiaryWriteViewController: UIViewController {
 
@@ -15,12 +16,20 @@ class DiaryWriteViewController: UIViewController {
     @IBAction func OnClick_backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }
     
-
-
+    @IBOutlet var bottomGuideButton: UIButton!
+    
+    @IBAction func OnClick_bottomGuidButton(_ sender: Any) {
+        let vc = UIStoryboard(name: "StepOne", bundle: nil).instantiateViewController(identifier: "StepOneViewController") as! StepOneViewController
+        
+        presentPanModal(vc)
+    }
 }

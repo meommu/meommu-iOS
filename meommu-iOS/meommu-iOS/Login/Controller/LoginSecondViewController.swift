@@ -10,14 +10,16 @@ import SafariServices
 
 class LoginSecondViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    
     @IBOutlet weak var termsAndPrivacyButton: UIButton!
+    
+    @IBOutlet weak var emailStatusLabel: UILabel!
+    @IBOutlet weak var emailDuplicateCheckButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
     
     
     // 약관 동의 확인을 위한 변수
@@ -25,18 +27,24 @@ class LoginSecondViewController: UIViewController {
     
     @IBOutlet weak var agreedToTermsText: UITextView!
     
+    //MARK: - viewDidLoad()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
         
+        // 약관 동의 텍스트 뷰 delegate 설정
         agreedToTermsText.delegate = self
         agreedToTermsText.isEditable = false
         agreedToTermsText.textContainerInset = .zero
         
+        // 텍스트 필드의 delegate 설정
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        
         addAttributesToText()
-        
-        
     }
     
     
@@ -45,6 +53,14 @@ class LoginSecondViewController: UIViewController {
     func configureView() {
         termsAndPrivacyButton.tintColor = .lightGray
         termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
+        
+        // 이메일 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가
+        emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
+        
+        // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가
+        emailTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
     }
     
     //MARK: - 약관 동의 관련 메서드
@@ -68,13 +84,14 @@ class LoginSecondViewController: UIViewController {
     }
     
     //MARK: - 약관 관련 모든 내용이 담긴 페이지 보여주는 메서드
-
+    
     @IBAction func presentTermsAndPrivacyPage(_ sender: UIButton) {
         
         guard let url = URL(string: "https://www.naver.com")   else { return }
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true, completion: nil)
     }
+    
     
     
 }
@@ -125,8 +142,71 @@ extension LoginSecondViewController: UITextViewDelegate {
         }
         return true // 다른 URL 스킴은 기본 동작을 유지합니다.
     }
+}
+
+//MARK: - UITextFieldDelegate 확장
+
+extension LoginSecondViewController: UITextFieldDelegate {
+    
+    // 이메일 형식 확인 메서드
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
+    // 비밀번호 형식 확인 메서드
+    func isValidPassword(_ password: String) -> Bool {
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9!@#$%^~*+=-])[A-Za-z0-9!@#$%^~*+=-]{8,20}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+    }
     
     
+    // 이메일 텍스트 필드의 입력이 변경될 때 호출되는 메서드
+    @objc func emailTextFieldDidChange(_ textField: UITextField) {
+        if let email = textField.text {
+            if isValidEmail(email) {
+                // 유효한 이메일 주소인 경우
+                emailStatusLabel.text = ""
+            } else {
+                // 유효하지 않은 이메일 주소인 경우
+                emailStatusLabel.text = "유효하지 않은 이메일 주소입니다."
+                emailStatusLabel.textColor = .red
+            }
+        }
+    }
+    
+    // 모든 텍스트 필드 입력 시 버튼 활성화 메서드
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        if emailTextField.text?.count == 1 {
+            if emailTextField.text?.first == " " {
+                emailTextField.text = ""
+                return
+            }
+        }
+        guard
+            let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty,
+            let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty
+        else {
+            nextButton.backgroundColor = .lightGray
+            nextButton.isEnabled = false
+            return
+        }
+        nextButton.backgroundColor = .black
+        nextButton.isEnabled = true
+    }
     
     
+    // UITextFieldDelegate 메서드 - 텍스트 필드에서 리턴(Enter) 키 눌렀을 때 호출
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // 키보드 감추기
+        return true
+    }
+    
+    // 화면에 탭을 감지(UIResponder)하는 메서드
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
+    }
 }

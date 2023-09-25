@@ -60,17 +60,17 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jZW-f6-Zra">
-                                <rect key="frame" x="25.666666666666657" y="190" width="322.33333333333337" height="622"/>
+                                <rect key="frame" x="29" y="173" width="316" height="639"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="622" id="VCd-bj-W32"/>
-                                    <constraint firstAttribute="width" constant="322" id="caH-at-mba"/>
+                                    <constraint firstAttribute="width" constant="316" id="Bw2-Nz-9hz"/>
+                                    <constraint firstAttribute="height" constant="639" id="gwe-xn-Ub5"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="iiO-1q-YVB">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" sectionInsetReference="layoutMargins" id="v54-JK-7gO">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="1" minY="1" maxX="2" maxY="1"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -79,14 +79,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ck7-Lp-2s7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="Bh8-Z9-j40"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jZW-f6-Zra" secondAttribute="trailing" constant="25.5" id="Pmc-YK-Wp4"/>
                             <constraint firstItem="Eyb-Sq-vqw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12.5" id="QqD-OE-yJ4"/>
-                            <constraint firstItem="jZW-f6-Zra" firstAttribute="top" secondItem="ck7-Lp-2s7" secondAttribute="bottom" constant="35" id="TgD-qV-5q3"/>
+                            <constraint firstItem="jZW-f6-Zra" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="29" id="Qwt-64-Utw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ck7-Lp-2s7" secondAttribute="trailing" constant="25.5" id="Uvf-o7-vRd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jZW-f6-Zra" secondAttribute="trailing" constant="28.329999999999998" id="ZJl-FD-CWV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Eyb-Sq-vqw" secondAttribute="bottom" id="a8u-LK-42X"/>
                             <constraint firstItem="ck7-Lp-2s7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25.5" id="dAT-dP-AIV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Eyb-Sq-vqw" secondAttribute="trailing" constant="12.5" id="iIn-a5-YLc"/>
-                            <constraint firstItem="jZW-f6-Zra" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25.5" id="rh8-bD-Btt"/>
+                            <constraint firstItem="jZW-f6-Zra" firstAttribute="top" secondItem="ck7-Lp-2s7" secondAttribute="bottom" constant="18" id="yAl-60-sBt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="누구에게 보낼 건가요?" id="Dx3-ln-JkK">

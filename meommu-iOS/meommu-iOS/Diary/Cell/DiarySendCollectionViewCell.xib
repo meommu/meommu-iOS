@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iA-c8-Jpg">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iA-c8-Jpg">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0q-Ok-aob">
@@ -40,6 +40,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9iA-c8-Jpg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eZB-V5-s4W"/>
+                <constraint firstItem="9iA-c8-Jpg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="gC3-s3-Zei"/>
+            </constraints>
             <connections>
                 <outlet property="characterImage" destination="w0q-Ok-aob" id="mMu-YH-07s"/>
                 <outlet property="characterView" destination="9iA-c8-Jpg" id="b1m-Fl-huO"/>

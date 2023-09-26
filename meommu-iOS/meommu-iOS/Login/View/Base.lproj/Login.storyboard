@@ -562,8 +562,8 @@
                                     <constraint firstAttribute="height" constant="116" id="Niw-03-o2W"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loginImage" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
-                                <rect key="frame" x="20" y="256" width="335" height="321"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩2 1" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
+                                <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bYo-wA-Lbj"/>
@@ -571,12 +571,13 @@
                         <constraints>
                             <constraint firstItem="ApU-uJ-Jz8" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="39c-8V-xCY"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="ApU-uJ-Jz8" secondAttribute="trailing" constant="20" id="3E8-P5-JxQ"/>
-                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="top" secondItem="aHt-g8-puf" secondAttribute="bottom" constant="45" id="5Df-zh-CAQ"/>
+                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="top" secondItem="bYo-wA-Lbj" secondAttribute="top" id="C4M-Qp-ITW"/>
+                            <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="6uK-ut-Tbw" secondAttribute="trailing" id="Ih5-Cb-ThK"/>
+                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" id="RST-et-d67"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="centerX" secondItem="dos-mm-Nxi" secondAttribute="centerX" id="aeG-dk-YFQ"/>
-                            <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="6uK-ut-Tbw" secondAttribute="trailing" constant="20" id="eTX-xd-SdR"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="top" secondItem="bYo-wA-Lbj" secondAttribute="top" constant="45" id="j9J-37-kra"/>
+                            <constraint firstItem="bYo-wA-Lbj" firstAttribute="bottom" secondItem="6uK-ut-Tbw" secondAttribute="bottom" id="k9m-8y-JOE"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="bottom" secondItem="ApU-uJ-Jz8" secondAttribute="bottom" constant="5" id="lQw-O8-pJL"/>
-                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="vB9-C5-dMJ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -590,7 +591,7 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="loginImage" width="350" height="331"/>
+        <image name="온보딩2 1" width="390" height="844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

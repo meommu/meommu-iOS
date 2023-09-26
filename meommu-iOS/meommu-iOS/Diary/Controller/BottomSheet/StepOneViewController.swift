@@ -52,7 +52,17 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-
+    
+    
+    @IBOutlet var nextButton: UIButton!
+    
+    @IBAction func OnClick_nextButton(_ sender: Any) {
+        let vc = UIStoryboard(name: "StepTwo", bundle: nil).instantiateViewController(identifier: "StepTwoViewController") as! StepTwoViewController
+        
+        presentPanModal(vc)
+    }
+    
+    
 }
 
 extension StepOneViewController: PanModalPresentable {

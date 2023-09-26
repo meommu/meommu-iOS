@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--meom-mu-->
+        <!--Diary View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="DiaryViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,14 +166,14 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
-                                        <rect key="frame" x="22" y="11" width="55.666666666666657" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
+                                        <rect key="frame" x="22" y="11" width="48" height="22"/>
                                         <attributedString key="attributedText">
                                             <fragment content="2023">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <font key="NSFont" size="17" name="HUScribble150"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="년">
@@ -181,20 +181,24 @@
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <font key="NSFont" size="17" name="HUScribble150"/>
                                                     <font key="NSOriginalFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="9월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
-                                        <rect key="frame" x="86" y="11" width="36" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
+                                        <rect key="frame" x="78" y="11" width="36" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="g3I-4y-NIg"/>
+                                            <constraint firstAttribute="width" constant="36" id="rKc-dA-HDJ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                        <rect key="frame" x="122" y="13" width="18" height="18"/>
+                                        <rect key="frame" x="112" y="13" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
                                             <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
@@ -205,16 +209,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="8" symbolic="YES" id="19I-o4-ynS"/>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
+                                    <constraint firstItem="PNC-wB-wNv" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="42" id="BFZ-qN-7UL"/>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="22" id="F2z-AW-yNI"/>
                                     <constraint firstItem="PNC-wB-wNv" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="13" id="KzM-qG-OjY"/>
+                                    <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="8" symbolic="YES" id="NDo-xY-N3w"/>
                                     <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="RWk-RT-SNU"/>
-                                    <constraint firstItem="PNC-wB-wNv" firstAttribute="leading" secondItem="wzA-5h-5jg" secondAttribute="trailing" id="Vsv-sT-tKN"/>
+                                    <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="W6S-4O-vET"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="12" id="Wwq-xB-iTU"/>
                                     <constraint firstAttribute="bottom" secondItem="S6T-Gg-Neg" secondAttribute="bottom" constant="11" id="cBE-mJ-jVy"/>
-                                    <constraint firstAttribute="trailing" secondItem="PNC-wB-wNv" secondAttribute="trailing" constant="235" id="n5H-ha-gfc"/>
+                                    <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="pP4-yD-hL9"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="rkt-SS-v4Z"/>
                                     <constraint firstAttribute="bottom" secondItem="PNC-wB-wNv" secondAttribute="bottom" constant="13" id="sE6-ma-itz"/>
                                     <constraint firstAttribute="height" constant="44" id="tMs-zi-mSc"/>
@@ -234,11 +239,21 @@
                             <constraint firstItem="63J-kF-Ica" firstAttribute="top" secondItem="rTJ-n5-XJh" secondAttribute="bottom" constant="22" id="e5w-4q-I19"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="meom-mu" id="a8X-05-jCe">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="rQY-Nj-9MF">
-                            <imageReference key="image" image="circle.fill" catalog="system" symbolScale="large"/>
-                            <color key="tintColor" systemColor="systemGreenColor"/>
+                    <navigationItem key="navigationItem" id="a8X-05-jCe">
+                        <barButtonItem key="leftBarButtonItem" title="meom-mu" id="rQY-Nj-9MF">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
+                        <centerItemGroups>
+                            <barButtonItemGroup customizationDisposition="fixed" id="4Bb-ck-HBu"/>
+                        </centerItemGroups>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Plus" id="hoF-uc-poh">
+                                <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="UserCircle" id="f0L-c0-MhX">
+                                <color key="tintColor" red="0.59215688710000003" green="0.59215688710000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="gPB-5J-nRW"/>
@@ -261,7 +276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-PW-Pqk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-PW-Pqk">
                                 <rect key="frame" x="0.0" y="94" width="375" height="495"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="495" id="0cv-pt-7I3"/>
@@ -364,7 +379,9 @@
                                 <action selector="OnClick_BackButton:" destination="0qe-i2-VpE" id="LNd-5h-Kv6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="ljb-ex-HcK" id="0Vb-gB-57H"/>
@@ -400,11 +417,11 @@
     <resources>
         <image name="DotsThreeVertical" width="40" height="40"/>
         <image name="DotsThreeVertical 1" width="20" height="20"/>
+        <image name="Plus" width="24" height="24"/>
+        <image name="UserCircle" width="24" height="24"/>
         <image name="Vector" width="30.5" height="30.5"/>
         <image name="arrow_drop_down" width="32" height="32"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
-        <image name="circle.fill" catalog="system" width="128" height="123"/>
-        <image name="image.png" width="390" height="509"/>
         <namedColor name="ButtonColor">
             <color red="0.2352941036" green="0.2352941036" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -416,9 +433,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

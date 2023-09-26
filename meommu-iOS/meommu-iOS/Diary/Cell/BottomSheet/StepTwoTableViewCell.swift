@@ -1,16 +1,15 @@
 //
-//  StepOneTableViewCell.swift
+//  StepTwoTableViewCell.swift
 //  meommu-iOS
 //
-//  Created by 이예빈 on 2023/09/24.
+//  Created by 이예빈 on 2023/09/26.
 //
 
 import UIKit
 
-class StepOneTableViewCell: UITableViewCell {
+class StepTwoTableViewCell: UITableViewCell {
     
     @IBOutlet var detailLabel: UILabel!
-    @IBOutlet var emojiLabel: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -22,6 +21,7 @@ class StepOneTableViewCell: UITableViewCell {
         layer.masksToBounds = false
         layer.cornerRadius = 5
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

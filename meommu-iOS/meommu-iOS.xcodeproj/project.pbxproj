@@ -28,11 +28,20 @@
 		F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */; };
 		F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */; };
 		F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A1522AB8157E009D90A8 /* DiaryModel.swift */; };
+		F979AF912AC183FC0083E4D1 /* HUScribble150.otf in Resources */ = {isa = PBXBuildFile; fileRef = F93D6FA62AB964FD00591C21 /* HUScribble150.otf */; };
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
 		F98923782AC111C70078AD80 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98923772AC111C70078AD80 /* CharacterModel.swift */; };
 		F989237B2AC118240078AD80 /* DiarySendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98923792AC118240078AD80 /* DiarySendCollectionViewCell.swift */; };
 		F989237C2AC118240078AD80 /* DiarySendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F989237A2AC118240078AD80 /* DiarySendCollectionViewCell.xib */; };
+		F9947A142AC2638C000F11BD /* StepTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9947A132AC2638C000F11BD /* StepTwo.storyboard */; };
+		F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A152AC265D7000F11BD /* StepTwoViewController.swift */; };
+		F9947A192AC2678E000F11BD /* StepTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */; };
+		F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */; };
+		F9947A1F2AC26B1C000F11BD /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1B2AC26B1B000F11BD /* image5.png */; };
+		F9947A202AC26B1C000F11BD /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1C2AC26B1B000F11BD /* image2.png */; };
+		F9947A212AC26B1C000F11BD /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1D2AC26B1C000F11BD /* image4.png */; };
+		F9947A222AC26B1C000F11BD /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1E2AC26B1C000F11BD /* image3.png */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
 		F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */; };
 /* End PBXBuildFile section */
@@ -69,6 +78,14 @@
 		F98923772AC111C70078AD80 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		F98923792AC118240078AD80 /* DiarySendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendCollectionViewCell.swift; sourceTree = "<group>"; };
 		F989237A2AC118240078AD80 /* DiarySendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarySendCollectionViewCell.xib; sourceTree = "<group>"; };
+		F9947A132AC2638C000F11BD /* StepTwo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepTwo.storyboard; sourceTree = "<group>"; };
+		F9947A152AC265D7000F11BD /* StepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoViewController.swift; sourceTree = "<group>"; };
+		F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoTableViewCell.swift; sourceTree = "<group>"; };
+		F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepTwoTableViewCell.xib; sourceTree = "<group>"; };
+		F9947A1B2AC26B1B000F11BD /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image5.png; sourceTree = "<group>"; };
+		F9947A1C2AC26B1B000F11BD /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		F9947A1D2AC26B1C000F11BD /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
+		F9947A1E2AC26B1C000F11BD /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepOne.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +184,8 @@
 			children = (
 				F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */,
 				F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */,
+				F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */,
+				F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -210,6 +229,10 @@
 				F959A1522AB8157E009D90A8 /* DiaryModel.swift */,
 				F98923772AC111C70078AD80 /* CharacterModel.swift */,
 				F9B1E1E72AB824AB00ABA4D6 /* image.png */,
+				F9947A1C2AC26B1B000F11BD /* image2.png */,
+				F9947A1E2AC26B1C000F11BD /* image3.png */,
+				F9947A1D2AC26B1C000F11BD /* image4.png */,
+				F9947A1B2AC26B1B000F11BD /* image5.png */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */,
+				F9947A132AC2638C000F11BD /* StepTwo.storyboard */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -240,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				F937BCF82ABC655300D60041 /* StepOneViewController.swift */,
+				F9947A152AC265D7000F11BD /* StepTwoViewController.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -304,13 +329,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9947A212AC26B1C000F11BD /* image4.png in Resources */,
+				F9947A222AC26B1C000F11BD /* image3.png in Resources */,
+				F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */,
+				F979AF912AC183FC0083E4D1 /* HUScribble150.otf in Resources */,
 				F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */,
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
 				F989237C2AC118240078AD80 /* DiarySendCollectionViewCell.xib in Resources */,
+				F9947A1F2AC26B1C000F11BD /* image5.png in Resources */,
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
+				F9947A142AC2638C000F11BD /* StepTwo.storyboard in Resources */,
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
 				F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */,
 				F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */,
+				F9947A202AC26B1C000F11BD /* image2.png in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
@@ -368,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9947A192AC2678E000F11BD /* StepTwoTableViewCell.swift in Sources */,
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
@@ -379,6 +412,7 @@
 				F98923782AC111C70078AD80 /* CharacterModel.swift in Sources */,
 				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
+				F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,

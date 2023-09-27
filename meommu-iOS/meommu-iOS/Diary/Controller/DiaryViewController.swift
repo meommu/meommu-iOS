@@ -22,6 +22,25 @@ class DiaryViewController: UIViewController {
         
         setAvailableDate()
         createPickerView()
+        
+        todayMonthSet()
+    }
+    
+    // -----------------------------------------
+    // 오늘 날짜 출력하기
+    func todayMonthSet(){
+        //년
+        let formatter_year = DateFormatter()
+        formatter_year.dateFormat = "yyyy"
+        let current_year = formatter_year.string(from: Date())
+        
+        //월
+        let formatter_month = DateFormatter()
+        formatter_month.dateFormat = "MM"
+        let current_month = formatter_month.string(from: Date())
+        
+        yearLabel.text = "\(current_year)년"
+        monthLabel.text = "\(current_month)월"
     }
     
     // -----------------------------------------
@@ -34,6 +53,7 @@ class DiaryViewController: UIViewController {
         
         //navigationController?.show(diarysendVC, sender: nil)
     }
+    
     // -----------------------------------------
     // DatePicker 기능
     
@@ -133,6 +153,7 @@ class DiaryViewController: UIViewController {
     }
 }
 
+// -----------------------------------------
 // Date Picker 설정
 extension DiaryViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -181,6 +202,7 @@ extension DiaryViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
+// -----------------------------------------
 // TableView 설정
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     // TableViewCell 행

@@ -10,9 +10,6 @@ import PanModal
 
 class DiaryWriteViewController: UIViewController {
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,29 +19,30 @@ class DiaryWriteViewController: UIViewController {
         todayDateSet()
     }
     
+    // -----------------------------------------
+    // 오늘 날짜 출력하기
     func todayDateSet(){
-    
-        // 오늘 날짜 출력하기
         // 년
-        var formatter_year = DateFormatter()
+        let formatter_year = DateFormatter()
         formatter_year.dateFormat = "yyyy"
-        var current_year = formatter_year.string(from: Date())
+        let current_year = formatter_year.string(from: Date())
         
         // 월
-        var formatter_month = DateFormatter()
+        let formatter_month = DateFormatter()
         formatter_month.dateFormat = "MM"
-        var current_month = formatter_month.string(from: Date())
+        let current_month = formatter_month.string(from: Date())
         
         // 일
-        var formatter_date = DateFormatter()
+        let formatter_date = DateFormatter()
         formatter_date.dateFormat = "dd"
-        var current_date = formatter_date.string(from: Date())
+        let current_date = formatter_date.string(from: Date())
         
         yearLabel.text = "\(current_year)년"
         monthLabel.text = "\(current_month)월"
         dateLabel.text = "\(current_date)일"
     }
     
+    // -----------------------------------------
     // 뒤로가기 버튼
     @IBOutlet var backButton: UIBarButtonItem!
     
@@ -133,7 +131,7 @@ class DiaryWriteViewController: UIViewController {
         selectedDate = Int(todayDate)!
     }
         
-
+    // -----------------------------------------
     // 바텀시트
     @IBOutlet var bottomGuideButton: UIButton!
     
@@ -144,6 +142,7 @@ class DiaryWriteViewController: UIViewController {
     }
 }
 
+// -----------------------------------------
 // Date Picker 설정
 extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     

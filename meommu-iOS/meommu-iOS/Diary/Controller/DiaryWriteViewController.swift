@@ -18,18 +18,32 @@ class DiaryWriteViewController: UIViewController {
 
         setAvailableDate()
         createPickerView()
+        
+        todayDateSet()
     }
     
-    /*
-    func todayDate(){
+    func todayDateSet(){
     
         // 오늘 날짜 출력하기
+        // 년
+        var formatter_year = DateFormatter()
+        formatter_year.dateFormat = "yyyy"
+        var current_year = formatter_year.string(from: Date())
         
+        // 월
+        var formatter_month = DateFormatter()
+        formatter_month.dateFormat = "MM"
+        var current_month = formatter_month.string(from: Date())
         
-        yearLabel.text = "\()년"
-        monthLabel.text = "\()월"
-        dateLabel.text = "\()일"
-    }*/
+        // 일
+        var formatter_date = DateFormatter()
+        formatter_date.dateFormat = "dd"
+        var current_date = formatter_date.string(from: Date())
+        
+        yearLabel.text = "\(current_year)년"
+        monthLabel.text = "\(current_month)월"
+        dateLabel.text = "\(current_date)일"
+    }
     
     // 뒤로가기 버튼
     @IBOutlet var backButton: UIBarButtonItem!
@@ -111,7 +125,7 @@ class DiaryWriteViewController: UIViewController {
             
         // 선택 가능한 일 설정
         let formatterDate = DateFormatter()
-        formatterDate.dateFormat = "DD"
+        formatterDate.dateFormat = "dd"
         todayDate = formatterDate.string(from: Date())
                     
         selectedYear = Int(todayYear)!

@@ -48,6 +48,12 @@
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-rC-yMC">
+                                        <rect key="frame" x="112.33333333333333" y="11" width="29.666666666666671" height="22"/>
+                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
+                                        <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AdS-fq-82y">
                                         <rect key="frame" x="16" y="12" width="150" height="21"/>
                                         <constraints>
@@ -57,12 +63,6 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-rC-yMC">
-                                        <rect key="frame" x="112.33333333333333" y="11" width="29.666666666666671" height="22"/>
-                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
-                                        <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -261,6 +261,10 @@
                     <connections>
                         <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
                         <outlet property="bottomGuideButton" destination="SYv-T2-0TZ" id="pOn-WD-6z9"/>
+                        <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
+                        <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
+                        <outlet property="monthLabel" destination="v3L-xe-weQ" id="ztH-Zn-GTW"/>
+                        <outlet property="yearLabel" destination="CoC-az-mNw" id="3Bf-0a-sDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

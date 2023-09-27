@@ -23,19 +23,19 @@ class DiaryWriteViewController: UIViewController {
     // 오늘 날짜 출력하기
     func todayDateSet(){
         // 년
-        var formatter_year = DateFormatter()
+        let formatter_year = DateFormatter()
         formatter_year.dateFormat = "yyyy"
-        var current_year = formatter_year.string(from: Date())
+        let current_year = formatter_year.string(from: Date())
         
         // 월
-        var formatter_month = DateFormatter()
+        let formatter_month = DateFormatter()
         formatter_month.dateFormat = "MM"
-        var current_month = formatter_month.string(from: Date())
+        let current_month = formatter_month.string(from: Date())
         
         // 일
-        var formatter_date = DateFormatter()
+        let formatter_date = DateFormatter()
         formatter_date.dateFormat = "dd"
-        var current_date = formatter_date.string(from: Date())
+        let current_date = formatter_date.string(from: Date())
         
         yearLabel.text = "\(current_year)년"
         monthLabel.text = "\(current_month)월"

@@ -19,7 +19,7 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         steponeTableVlew.dataSource = self
     }
     
-
+    
     @IBOutlet var steponeTableVlew: UITableView!
     
     var detailData: [String] = ["산책에 관한 일상", "낮잠에 관한 일상", "놀이에 관한 일상", "간식에 관한 일상", "표현(기분)에 관한 일상"]

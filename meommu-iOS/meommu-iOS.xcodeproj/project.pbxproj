@@ -44,6 +44,8 @@
 		F9947A222AC26B1C000F11BD /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1E2AC26B1C000F11BD /* image3.png */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
 		F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */; };
+		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
+		F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		F9947A1E2AC26B1C000F11BD /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepOne.storyboard; sourceTree = "<group>"; };
+		F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryRevise.storyboard; sourceTree = "<group>"; };
+		F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReviseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +260,7 @@
 			children = (
 				F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */,
 				F9947A132AC2638C000F11BD /* StepTwo.storyboard */,
+				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			children = (
 				F937BCF82ABC655300D60041 /* StepOneViewController.swift */,
 				F9947A152AC265D7000F11BD /* StepTwoViewController.swift */,
+				F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */,
 				F9947A212AC26B1C000F11BD /* image4.png in Resources */,
 				F9947A222AC26B1C000F11BD /* image3.png in Resources */,
 				F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */,
@@ -404,6 +411,7 @@
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
+				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
 				F953DD632AB82B58009F3B52 /* DiarySendViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				F989237B2AC118240078AD80 /* DiarySendCollectionViewCell.swift in Sources */,

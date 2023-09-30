@@ -381,6 +381,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="OnClick_diaryRiviseButton:" destination="0qe-i2-VpE" id="uWQ-mC-77B"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -388,6 +391,7 @@
                         <outlet property="diaryDate" destination="KSJ-xP-O2E" id="Zgk-JJ-Z5Q"/>
                         <outlet property="diaryDetail" destination="8s8-lS-wwI" id="EVw-Yw-hLG"/>
                         <outlet property="diaryImageView" destination="pEp-PW-Pqk" id="v02-Iu-emT"/>
+                        <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="ndg-7n-e1W"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
                     </connections>
                 </viewController>

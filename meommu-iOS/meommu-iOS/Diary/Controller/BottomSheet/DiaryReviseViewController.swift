@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PanModal
 
 class DiaryReviseViewController: UIViewController {
 
@@ -14,8 +15,26 @@ class DiaryReviseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
+}
+
+extension DiaryReviseViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return nil
+    }
     
-
-    // 162
-
+    // 접혔을 때
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(200)
+    }
+    
+    // 펼쳐졌을 때
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(612)
+    }
+    
+    // 최상단 스크롤 불가
+    var anchorModalToLongForm: Bool {
+        return true
+    }
 }

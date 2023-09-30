@@ -67,8 +67,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="선택하기">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseForegroundColor" red="0.67450982329999998" green="0.69019609689999994" blue="0.7254902124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.71764707569999997" green="0.71764707569999997" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="wD9-MX-iAF" kind="show" id="2f8-7K-SN8"/>

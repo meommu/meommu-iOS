@@ -17,6 +17,7 @@ extension Character {
         Character(image: "char2"),
         Character(image: "char3"),
         Character(image: "char4"),
-        Character(image: "char5")
+        Character(image: "char5"),
+        Character(image: "char1")
     ]
 }

@@ -19,6 +19,9 @@ class LoginSecondViewController: UIViewController {
     @IBOutlet weak var emailStatusLabel: UILabel!
     @IBOutlet weak var emailDuplicateCheckButton: UIButton!
     
+    @IBOutlet weak var passwordStatusLabel: UILabel!
+    @IBOutlet weak var confirmPasswordStatusLabel: UILabel!
+    
     @IBOutlet weak var nextButton: UIButton!
     
     
@@ -54,10 +57,12 @@ class LoginSecondViewController: UIViewController {
         termsAndPrivacyButton.tintColor = .lightGray
         termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
         
-        // 이메일 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가
+        // 이메일, 비밀 번호 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 설명 레이블 수정
         emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
         
-        // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가
+        
+        // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         emailTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
@@ -131,7 +136,7 @@ extension LoginSecondViewController: UITextViewDelegate {
         
         agreedToTermsText.attributedText = attributedString
     }
-    
+
     // UITextView에서 하이퍼링크 클릭을 감지하는 메서드
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "https" {
@@ -175,6 +180,20 @@ extension LoginSecondViewController: UITextFieldDelegate {
         }
     }
     
+    // 비밀번호 텍스트 필드의 입력이 변경될 때 호출되는 메서드
+    @objc func passwordTextFieldDidChange(_ textField: UITextField) {
+        if let password = textField.text {
+            if isValidPassword(password) {
+                // 유효한 이메일 주소인 경우
+                passwordStatusLabel.text = ""
+            } else {
+                // 유효하지 않은 이메일 주소인 경우
+                passwordStatusLabel.text = "비밀번호를 다시 입력해주세요."
+                passwordStatusLabel.textColor = .red
+            }
+        }
+    }
+    
     // 모든 텍스트 필드 입력 시 버튼 활성화 메서드
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         if emailTextField.text?.count == 1 {
@@ -196,12 +215,20 @@ extension LoginSecondViewController: UITextFieldDelegate {
         nextButton.isEnabled = true
     }
     
-    
-    // UITextFieldDelegate 메서드 - 텍스트 필드에서 리턴(Enter) 키 눌렀을 때 호출
+    // 델리게이트 메서드 - 텍스트 필드 리턴 시 다음 텍스트 필드 활성화
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // 키보드 감추기
+        if textField == emailTextField {
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+            confirmPasswordTextField.becomeFirstResponder()
+        } else if textField == confirmPasswordTextField {
+            confirmPasswordTextField.resignFirstResponder()
+        }
         return true
     }
+     
     
     // 화면에 탭을 감지(UIResponder)하는 메서드
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

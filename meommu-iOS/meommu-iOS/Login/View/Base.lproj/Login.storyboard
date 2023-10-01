@@ -29,7 +29,7 @@
                                     <action selector="backButtonTapped:" destination="ZGi-i8-t6y" eventType="touchUpInside" id="o0G-61-YAT"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-CI-BVw">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-CI-BVw" userLabel="Label Stack View">
                                 <rect key="frame" x="20" y="44" width="335" height="87"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QwO-8z-CEs">
@@ -71,10 +71,10 @@
                                     <segue destination="nEs-ef-h8Y" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Jad-Vf-8qX"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-eP-AZc">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-eP-AZc" userLabel="Email Stack View">
                                 <rect key="frame" x="20" y="189" width="335" height="55"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K83-gC-4Pc">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K83-gC-4Pc" userLabel="Email Label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 주소를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSa-eK-4ZJ">
@@ -123,15 +123,26 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-vU-5GD">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-vU-5GD" userLabel="Password Stack View">
                                 <rect key="frame" x="20" y="262" width="335" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oz-YQ-r1n">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Ui-7O-Som" userLabel="Password Label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oz-YQ-r1n">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 이메일입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-Dd-uwv">
+                                                <rect key="frame" x="170" y="0.0" width="165" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPb-fm-u3V">
                                         <rect key="frame" x="0.0" y="27" width="335" height="38"/>
                                         <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -151,7 +162,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-ac-WcH">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-ac-WcH" userLabel="Confirm Password Stack View">
                                 <rect key="frame" x="20" y="381" width="335" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaP-Ne-t0d">
@@ -171,7 +182,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JgH-Qe-RSx">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JgH-Qe-RSx" userLabel="Terms and Privacy Stack View">
                                 <rect key="frame" x="20" y="482" width="335" height="20"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqE-u2-2ac">
@@ -248,6 +259,7 @@
                         <outlet property="emailStatusLabel" destination="VbV-j5-iUd" id="mIZ-JI-5qv"/>
                         <outlet property="emailTextField" destination="irH-aL-Q3g" id="IhI-sc-7IW"/>
                         <outlet property="nextButton" destination="XsZ-Wb-a61" id="7ww-Xl-PjJ"/>
+                        <outlet property="passwordStatusLabel" destination="BJc-Dd-uwv" id="NXk-J1-OmE"/>
                         <outlet property="passwordTextField" destination="HPb-fm-u3V" id="5dh-ga-tOO"/>
                         <outlet property="termsAndPrivacyButton" destination="CqE-u2-2ac" id="zUX-DO-fc7"/>
                     </connections>
@@ -402,6 +414,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="83W-om-CyU"/>
+                    <connections>
+                        <outlet property="kindergartenNameTextField" destination="7kW-N3-VL9" id="sUe-eg-097"/>
+                        <outlet property="nextButton" destination="5RG-sP-EZW" id="hL9-i6-78V"/>
+                        <outlet property="phoneNumberTextField" destination="uPI-iA-0pV" id="4W4-i2-48m"/>
+                        <outlet property="representativeNameTextField" destination="MtU-NE-1nZ" id="KKz-iJ-rrs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46o-Rh-Ggy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

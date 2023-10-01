@@ -36,17 +36,7 @@ class LoginSecondViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
-        
-        // 약관 동의 텍스트 뷰 delegate 설정
-        agreedToTermsText.delegate = self
-        agreedToTermsText.isEditable = false
-        agreedToTermsText.textContainerInset = .zero
-        
-        // 텍스트 필드의 delegate 설정
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        confirmPasswordTextField.delegate = self
-        
+        setupDelegate()
         addAttributesToText()
     }
     
@@ -54,6 +44,11 @@ class LoginSecondViewController: UIViewController {
     //MARK: - 초기 세팅 메서드
     
     func configureView() {
+        
+        // 약관 관련 텍스트 뷰 세팅
+        agreedToTermsText.isEditable = false
+        agreedToTermsText.textContainerInset = .zero
+        
         termsAndPrivacyButton.tintColor = .lightGray
         termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
         
@@ -67,6 +62,20 @@ class LoginSecondViewController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
     }
+    
+    //MARK: - 델리게이트 설정 메서드
+    
+    func setupDelegate() {
+        
+        // 약관 동의 텍스트 뷰 delegate 설정
+        agreedToTermsText.delegate = self
+        
+        // 텍스트 필드의 delegate 설정
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+    }
+
     
     //MARK: - 약관 동의 관련 메서드
     

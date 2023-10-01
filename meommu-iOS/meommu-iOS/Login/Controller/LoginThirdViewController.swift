@@ -20,14 +20,13 @@ class LoginThirdViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
-        // Do any additional setup after loading the view.
+        setupDelegate()
+        
     }
     
+    //MARK: - 초기 세팅 메서드
+
     func configureView() {
-        
-        kindergartenNameTextField.delegate = self
-        representativeNameTextField.delegate = self
-        phoneNumberTextField.delegate = self
         
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         kindergartenNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
@@ -39,6 +38,15 @@ class LoginThirdViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    //MARK: - 델리게이트 설정 메서드
+    
+    func setupDelegate() {
+        
+        // 텍스트 필드 delegate 설정
+        kindergartenNameTextField.delegate = self
+        representativeNameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+    }
     
 }
 

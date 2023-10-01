@@ -5,7 +5,7 @@
 //  Created by zaehorang on 2023/09/18.
 //
 
-import Foundation
+import UIKit
 
 
 public class Storage {
@@ -22,5 +22,3 @@ public class Storage {
     }
     
 }
-
-

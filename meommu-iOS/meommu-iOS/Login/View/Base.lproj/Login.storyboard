@@ -517,6 +517,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="ec3-tN-seU" id="s61-L1-yNS"/>
+                        <outlet property="nextButton" destination="ec3-tN-seU" id="JrK-FD-MbW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

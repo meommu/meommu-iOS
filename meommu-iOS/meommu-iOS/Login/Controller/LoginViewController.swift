@@ -9,12 +9,21 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setCornerRadius()
     }
 
+    //MARK: - 코너 레디어스 값 설정 메서드
+    
+    func setCornerRadius() {
+        
+        nextButton.setCornerRadius(6.0)
+    }
+    
     // 화면 전환
     @IBOutlet var loginButton: UIButton!
 
@@ -40,6 +49,8 @@ class LoginViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    
+    
     
     
 }

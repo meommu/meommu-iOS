@@ -36,8 +36,10 @@ class LoginSecondViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
+        setCornerRadius()
         setupDelegate()
         addAttributesToText()
+        
     }
     
     
@@ -76,6 +78,19 @@ class LoginSecondViewController: UIViewController {
         confirmPasswordTextField.delegate = self
     }
 
+    //MARK: - 코너 레디어스 값 설정 메서드
+    
+    func setCornerRadius() {
+        
+        emailDuplicateCheckButton.setCornerRadius(4.0)
+        nextButton.setCornerRadius(6.0)
+        
+        emailTextField.setCornerRadius(4.0)
+        passwordTextField.setCornerRadius(4.0)
+        confirmPasswordTextField.setCornerRadius(4.0)
+        
+    }
+
     
     //MARK: - 약관 동의 관련 메서드
     
@@ -110,6 +125,7 @@ class LoginSecondViewController: UIViewController {
     
     @IBAction func isEmailDuplicate(_ sender: UIButton) {
         
+        UITextField.BorderStyle.roundedRect
         // 서버 통신 관련 코드는 나중에 작성
         var isEmailDuplicate = true
         

@@ -20,6 +20,7 @@ class LoginThirdViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
+        setCornerRadius()
         setupDelegate()
         
     }
@@ -32,6 +33,18 @@ class LoginThirdViewController: UIViewController {
         kindergartenNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         representativeNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         phoneNumberTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+    }
+    
+    //MARK: - 코너 레디어스 값 설정 메서드
+    
+    func setCornerRadius() {
+        
+        nextButton.setCornerRadius(6.0)
+        
+        kindergartenNameTextField.setCornerRadius(4.0)
+        representativeNameTextField.setCornerRadius(4.0)
+        phoneNumberTextField.setCornerRadius(4.0)
+        
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

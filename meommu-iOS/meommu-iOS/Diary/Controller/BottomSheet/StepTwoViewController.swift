@@ -73,4 +73,14 @@ extension StepTwoViewController: PanModalPresentable {
     var anchorModalToLongForm: Bool {
         return true
     }
+    
+    // 드래그로 내려도 화면이 사라지지 않음
+    var allowsDragToDismiss: Bool {
+        return false
+    }
+    
+    // BottomSheet 호출 시 백그라운드 색상 지정
+    var panModalBackgroundColor: UIColor {
+        return UIColor.black.withAlphaComponent(0.5)
+    }
 }

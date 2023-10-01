@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-Lp-2s7">
-                                <rect key="frame" x="25.666666666666657" y="109" width="322.33333333333337" height="46"/>
+                                <rect key="frame" x="25.666666666666657" y="109" width="324" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip! 보내는 강아지와 비슷한 캐릭터로 골라주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9j-2g-UNi">
-                                        <rect key="frame" x="22" y="14" width="278.33333333333331" height="18"/>
+                                        <rect key="frame" x="22" y="14" width="280" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <color key="textColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60784316059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jZW-f6-Zra">
-                                <rect key="frame" x="29" y="173" width="316" height="639"/>
+                                <rect key="frame" x="29" y="173" width="317.66666666666669" height="639"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="316" id="Bw2-Nz-9hz"/>
@@ -59,7 +59,7 @@
                                 <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyb-Sq-vqw">
-                                <rect key="frame" x="12.666666666666657" y="730" width="348.33333333333337" height="48"/>
+                                <rect key="frame" x="12.666666666666657" y="730" width="350" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Tnd-s7-5mf"/>
                                     <constraint firstAttribute="width" constant="350" id="rIr-XI-Zp6"/>
@@ -138,6 +138,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohV-Fe-NXs">
                                         <rect key="frame" x="94" y="77" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="강아지 이름 (0/10)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnV-SB-5Sf">
                                         <rect key="frame" x="78" y="283" width="192" height="33"/>
@@ -172,6 +173,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="Fyr-Rj-Kyo" id="kBO-iT-OKE"/>
+                        <outlet property="profileImageView" destination="ohV-Fe-NXs" id="2sT-Nm-TZv"/>
                         <outlet property="writeButton" destination="9mv-0D-NJX" id="Pf9-9p-hKv"/>
                     </connections>
                 </viewController>

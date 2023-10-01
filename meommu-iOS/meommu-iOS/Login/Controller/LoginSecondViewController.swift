@@ -106,6 +106,36 @@ class LoginSecondViewController: UIViewController {
         present(safariViewController, animated: true, completion: nil)
     }
     
+    //MARK: - 이메일 중복 확인 메서드
+    
+    @IBAction func isEmailDuplicate(_ sender: UIButton) {
+        
+        // 서버 통신 관련 코드는 나중에 작성
+        var isEmailDuplicate = true
+        
+        if isEmailDuplicate {
+            // 이메일 사용 가능
+            emailStatusLabel.text = "사용 가능한 이메일입니다."
+            emailStatusLabel.textColor = .green
+            
+            emailDuplicateCheckButton.setTitleColor(.green, for: .normal)
+            emailDuplicateCheckButton.layer.borderColor = UIColor.green.cgColor
+            emailDuplicateCheckButton.layer.borderWidth = 2
+            
+            // 회원 정보 모델에 중복 확인 했다는 것을 넘겨주는 기능이 필요할 듯 -> 확인 후 버튼 활성화
+            // 비밀번호도 마찬가지
+            
+            
+        } else {
+            // 이메일 사용 불가능
+            emailStatusLabel.text = "사용 불가능한 이메일입니다."
+            emailStatusLabel.textColor = .red
+            
+            emailDuplicateCheckButton.setTitleColor(.red, for: .normal)
+            emailDuplicateCheckButton.layer.borderColor = UIColor.red.cgColor
+            emailDuplicateCheckButton.layer.borderWidth = 2
+        }
+    }
     
     
 }
@@ -220,6 +250,10 @@ extension LoginSecondViewController: UITextFieldDelegate {
             nextButton.isEnabled = false
             return
         }
+        
+        // 이메일 중복 확인, 비밀번호 중복 확인 로직도 필요
+        // 회원 정보 모델에 추가된 값으로 확인하고 데이터를 다음 하면에 넘겨줘야 한다.
+        
         nextButton.backgroundColor = .black
         nextButton.isEnabled = true
     }

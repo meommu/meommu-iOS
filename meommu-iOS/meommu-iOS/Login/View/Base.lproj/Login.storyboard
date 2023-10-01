@@ -115,6 +115,9 @@
                                                 <state key="normal" title="중복확인">
                                                     <color key="titleColor" red="0.71764707569999997" green="0.71764707569999997" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="isEmailDuplicate:" destination="ZGi-i8-t6y" eventType="touchUpInside" id="cYv-7N-7Si"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

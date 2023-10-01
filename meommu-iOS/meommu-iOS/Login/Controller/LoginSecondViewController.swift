@@ -47,6 +47,11 @@ class LoginSecondViewController: UIViewController {
     
     func configureView() {
         
+        emailStatusLabel.text = ""
+        passwordStatusLabel.text = ""
+        
+        nextButton.isEnabled = false
+        
         // 약관 관련 텍스트 뷰 세팅
         agreedToTermsText.isEditable = false
         agreedToTermsText.textContainerInset = .zero

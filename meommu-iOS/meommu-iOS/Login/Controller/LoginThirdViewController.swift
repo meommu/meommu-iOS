@@ -29,6 +29,8 @@ class LoginThirdViewController: UIViewController {
 
     func configureView() {
         
+        nextButton.isEnabled = false
+        
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         kindergartenNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         representativeNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)

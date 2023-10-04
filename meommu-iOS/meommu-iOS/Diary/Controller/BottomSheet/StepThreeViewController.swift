@@ -13,6 +13,7 @@ class StepThreeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DiaryTextFieldSetting()
     }
     
     // 텍스트필드 설정

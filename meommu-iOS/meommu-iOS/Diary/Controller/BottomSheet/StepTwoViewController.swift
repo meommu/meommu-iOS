@@ -19,6 +19,15 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         steptwoTableVlew.dataSource = self
     }
     
+    @IBOutlet var nextButton: UIButton!
+    
+    @IBAction func OnClick_nextButton(_ sender: Any) {
+        let vc = UIStoryboard(name: "StepThree", bundle: nil).instantiateViewController(identifier: "StepThreeViewController") as! StepThreeViewController
+        
+        presentPanModal(vc)
+    }
+    
+    // TableView 설정
     @IBOutlet var steptwoTableVlew: UITableView!
     
     var detailData: [String] = ["산책을 오래 했어요", "산책 중 맛있는 간식을 많이 먹었어요", "산책 중 친한 강아지를 만나 대화 했어요", "걸음을 아주 천천히 걸었어요", "나만의 문장 추가하기"]

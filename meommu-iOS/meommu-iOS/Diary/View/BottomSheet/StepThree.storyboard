@@ -52,15 +52,24 @@
                                 <color key="textColor" red="0.43921568989999998" green="0.4588235021" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="top" placeholder="GPT가 자동으로 만들어 드릴게요! (0/150)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-ck-ZmY">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="top" usesAttributedText="YES" placeholder="GPT가 자동으로 만들어 드릴게요! (0/150)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-ck-ZmY">
                                 <rect key="frame" x="12.666666666666657" y="141" width="350" height="163"/>
                                 <color key="backgroundColor" red="0.21568629149999999" green="0.2352941036" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="CPr-a5-KLB"/>
                                     <constraint firstAttribute="height" constant="163" id="aSd-g0-c52"/>
                                 </constraints>
-                                <color key="textColor" red="0.52549022440000004" green="0.5411764979" blue="0.56862747670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기ㅍ글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.53333336109999996" green="0.55686277149999996" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="PretendardVariable-Bold"/>
+                                            <font key="NSOriginalFont" metaFont="smallSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" spellCheckingType="yes"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">

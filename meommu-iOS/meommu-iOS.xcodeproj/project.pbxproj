@@ -31,6 +31,7 @@
 		F979AF912AC183FC0083E4D1 /* HUScribble150.otf in Resources */ = {isa = PBXBuildFile; fileRef = F93D6FA62AB964FD00591C21 /* HUScribble150.otf */; };
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
+		F985A3562ACCE81400D8637A /* StepThree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F985A3552ACCE81400D8637A /* StepThree.storyboard */; };
 		F98923782AC111C70078AD80 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98923772AC111C70078AD80 /* CharacterModel.swift */; };
 		F989237B2AC118240078AD80 /* DiarySendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98923792AC118240078AD80 /* DiarySendCollectionViewCell.swift */; };
 		F989237C2AC118240078AD80 /* DiarySendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F989237A2AC118240078AD80 /* DiarySendCollectionViewCell.xib */; };
@@ -42,6 +43,7 @@
 		F9947A202AC26B1C000F11BD /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1C2AC26B1B000F11BD /* image2.png */; };
 		F9947A212AC26B1C000F11BD /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1D2AC26B1C000F11BD /* image4.png */; };
 		F9947A222AC26B1C000F11BD /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1E2AC26B1C000F11BD /* image3.png */; };
+		F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
 		F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */; };
 		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
@@ -77,6 +79,7 @@
 		F959A1522AB8157E009D90A8 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableViewCell.swift; sourceTree = "<group>"; };
 		F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableViewCell.xib; sourceTree = "<group>"; };
+		F985A3552ACCE81400D8637A /* StepThree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepThree.storyboard; sourceTree = "<group>"; };
 		F98923772AC111C70078AD80 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		F98923792AC118240078AD80 /* DiarySendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendCollectionViewCell.swift; sourceTree = "<group>"; };
 		F989237A2AC118240078AD80 /* DiarySendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarySendCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		F9947A1C2AC26B1B000F11BD /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 		F9947A1D2AC26B1C000F11BD /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
 		F9947A1E2AC26B1C000F11BD /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeViewController.swift; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepOne.storyboard; sourceTree = "<group>"; };
 		F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryRevise.storyboard; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			children = (
 				F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */,
 				F9947A132AC2638C000F11BD /* StepTwo.storyboard */,
+				F985A3552ACCE81400D8637A /* StepThree.storyboard */,
 				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 			);
 			path = BottomSheet;
@@ -270,6 +275,7 @@
 			children = (
 				F937BCF82ABC655300D60041 /* StepOneViewController.swift */,
 				F9947A152AC265D7000F11BD /* StepTwoViewController.swift */,
+				F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */,
 				F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */,
 			);
 			path = BottomSheet;
@@ -344,6 +350,7 @@
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
 				F989237C2AC118240078AD80 /* DiarySendCollectionViewCell.xib in Resources */,
 				F9947A1F2AC26B1C000F11BD /* image5.png in Resources */,
+				F985A3562ACCE81400D8637A /* StepThree.storyboard in Resources */,
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
 				F9947A142AC2638C000F11BD /* StepTwo.storyboard in Resources */,
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
@@ -425,6 +432,7 @@
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
+				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

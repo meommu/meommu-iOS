@@ -346,6 +346,8 @@ extension LoginSecondViewController: UITextFieldDelegate {
             confirmPasswordTextField.becomeFirstResponder()
         } else if textField == confirmPasswordTextField {
             confirmPasswordTextField.resignFirstResponder()
+            // 다음 버튼 활성화 확인 메서드
+            updateNextButtonState()
         }
         return true
     }
@@ -356,5 +358,8 @@ extension LoginSecondViewController: UITextFieldDelegate {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         confirmPasswordTextField.resignFirstResponder()
+        
+        // 다음 버튼 활성화 확인 메서드
+        updateNextButtonState()
     }
 }

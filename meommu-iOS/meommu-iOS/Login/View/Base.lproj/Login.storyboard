@@ -315,7 +315,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tG2-aZ-wtN"/>
+                                    <action selector="nextButtonTapped:" destination="nEs-ef-h8Y" eventType="touchUpInside" id="QpW-6T-nvM"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-aw-ytF">
@@ -435,6 +435,7 @@
                         <outlet property="nextButton" destination="5RG-sP-EZW" id="hL9-i6-78V"/>
                         <outlet property="phoneNumberTextField" destination="uPI-iA-0pV" id="4W4-i2-48m"/>
                         <outlet property="representativeNameTextField" destination="MtU-NE-1nZ" id="KKz-iJ-rrs"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLoginFourthVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="yhF-ov-Umj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46o-Rh-Ggy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

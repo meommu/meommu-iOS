@@ -270,10 +270,10 @@
                         <outlet property="agreedToTermsText" destination="yon-zn-ipg" id="b7H-Gq-ywo"/>
                         <outlet property="confirmPasswordStatusLabel" destination="rk5-mt-Ee3" id="Q0B-2f-Vms"/>
                         <outlet property="confirmPasswordTextField" destination="zrw-UU-DRZ" id="Iqu-Lu-fsP"/>
-                        <outlet property="emailDuplicateCheckButton" destination="LLg-d2-Oxt" id="rqc-bQ-HfK"/>
+                        <outlet property="emailDuplicateCheckButton" destination="LLg-d2-Oxt" id="95b-fT-JAf"/>
                         <outlet property="emailStatusLabel" destination="VbV-j5-iUd" id="mIZ-JI-5qv"/>
                         <outlet property="emailTextField" destination="irH-aL-Q3g" id="IhI-sc-7IW"/>
-                        <outlet property="nextButton" destination="XsZ-Wb-a61" id="7ww-Xl-PjJ"/>
+                        <outlet property="nextButton" destination="XsZ-Wb-a61" id="Lzi-cD-yYa"/>
                         <outlet property="passwordStatusLabel" destination="BJc-Dd-uwv" id="NXk-J1-OmE"/>
                         <outlet property="passwordTextField" destination="HPb-fm-u3V" id="5dh-ga-tOO"/>
                         <outlet property="termsAndPrivacyButton" destination="CqE-u2-2ac" id="zUX-DO-fc7"/>

@@ -116,7 +116,7 @@
                                                     <color key="titleColor" red="0.71764707569999997" green="0.71764707569999997" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="isEmailDuplicate:" destination="ZGi-i8-t6y" eventType="touchUpInside" id="cYv-7N-7Si"/>
+                                                    <action selector="checkEmailDuplication:" destination="ZGi-i8-t6y" eventType="touchUpInside" id="A28-q2-Ruz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -168,12 +168,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-ac-WcH" userLabel="Confirm Password Stack View">
                                 <rect key="frame" x="20" y="381" width="335" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaP-Ne-t0d">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-f7-ohh" userLabel="Confirm password label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaP-Ne-t0d">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 이메일입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-mt-Ee3">
+                                                <rect key="frame" x="170" y="0.0" width="165" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrw-UU-DRZ">
                                         <rect key="frame" x="0.0" y="27" width="335" height="38"/>
                                         <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -257,6 +268,7 @@
                     <navigationItem key="navigationItem" id="fnO-zm-fbf"/>
                     <connections>
                         <outlet property="agreedToTermsText" destination="yon-zn-ipg" id="b7H-Gq-ywo"/>
+                        <outlet property="confirmPasswordStatusLabel" destination="rk5-mt-Ee3" id="Q0B-2f-Vms"/>
                         <outlet property="confirmPasswordTextField" destination="zrw-UU-DRZ" id="Iqu-Lu-fsP"/>
                         <outlet property="emailDuplicateCheckButton" destination="LLg-d2-Oxt" id="rqc-bQ-HfK"/>
                         <outlet property="emailStatusLabel" destination="VbV-j5-iUd" id="mIZ-JI-5qv"/>

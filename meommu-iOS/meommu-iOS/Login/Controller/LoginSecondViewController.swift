@@ -10,6 +10,15 @@ import SafariServices
 
 class LoginSecondViewController: UIViewController {
     
+    // 이메일 중복 확인을 위한 변수
+    private var isEmailDuplicate = false
+    
+    // 비밀번호 확인을 위함 변수
+    private var isPasswordConfirm = false
+    
+    // 약관 동의 확인을 위한 변수
+    private var IsTermsAndPrivacyButtonAgreed = false
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -23,10 +32,6 @@ class LoginSecondViewController: UIViewController {
     @IBOutlet weak var confirmPasswordStatusLabel: UILabel!
     
     @IBOutlet weak var nextButton: UIButton!
-    
-    
-    // 약관 동의 확인을 위한 변수
-    var termsAndPrivacyButtonIsAgreed = false
     
     @IBOutlet weak var agreedToTermsText: UITextView!
     
@@ -59,10 +64,13 @@ class LoginSecondViewController: UIViewController {
         termsAndPrivacyButton.tintColor = .lightGray
         termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
         
-        // 이메일, 비밀 번호 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 설명 레이블 수정
-        emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
         
+        // 이메일, 비밀 번호, 비밀번호 확인 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 설명 레이블 수정
+        emailTextField.addTarget(self, action: #selector(emailTextFieldDidBegin(_:)), for: .editingDidBegin)
+        /*
+         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
+         confirmPasswordTextField.addTarget(self, action: #selector(confirmPasswordTextFieldDidChange(_:)), for: .editingChanged)
+         */
         
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         emailTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
@@ -82,7 +90,7 @@ class LoginSecondViewController: UIViewController {
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
     }
-
+    
     //MARK: - 코너 레디어스 값 설정 메서드
     
     func setCornerRadius() {
@@ -95,12 +103,12 @@ class LoginSecondViewController: UIViewController {
         confirmPasswordTextField.setCornerRadius(4.0)
         
     }
-
+    
     
     //MARK: - 약관 동의 관련 메서드
     
     @objc func buttonToggleAgreement() {
-        if termsAndPrivacyButtonIsAgreed {
+        if IsTermsAndPrivacyButtonAgreed {
             // Tint 색 비활성화
             termsAndPrivacyButton.tintColor = .lightGray // 원하는 비활성화된 Tint 색상 설정
         } else {
@@ -109,7 +117,7 @@ class LoginSecondViewController: UIViewController {
         }
         
         // Tint 색의 상태를 토글
-        termsAndPrivacyButtonIsAgreed.toggle()
+        IsTermsAndPrivacyButtonAgreed.toggle()
     }
     
     
@@ -128,13 +136,24 @@ class LoginSecondViewController: UIViewController {
     
     //MARK: - 이메일 중복 확인 메서드
     
-    @IBAction func isEmailDuplicate(_ sender: UIButton) {
+    @IBAction func checkEmailDuplication(_ sender: UIButton) {
         
-        UITextField.BorderStyle.roundedRect
-        // 서버 통신 관련 코드는 나중에 작성
-        var isEmailDuplicate = true
+        guard let email = emailTextField.text else { return }
         
-        if isEmailDuplicate {
+        
+        // 서버 통신 관련 코드는 나중에 작성(이메일 중복 메서드 실행)
+        // 이메일 사용이 가능하면 isEmailDuplicate에 true 리턴
+        isEmailDuplicate = true
+        
+        if !isValidEmail(email) {
+            emailStatusLabel.text = "이메일을 알맞게 입력해주세요."
+            emailStatusLabel.textColor = .red
+            
+            emailDuplicateCheckButton.setTitleColor(.red, for: .normal)
+            emailDuplicateCheckButton.layer.borderColor = UIColor.red.cgColor
+            emailDuplicateCheckButton.layer.borderWidth = 2
+            
+        } else if isEmailDuplicate {
             // 이메일 사용 가능
             emailStatusLabel.text = "사용 가능한 이메일입니다."
             emailStatusLabel.textColor = .green
@@ -155,10 +174,11 @@ class LoginSecondViewController: UIViewController {
             emailDuplicateCheckButton.setTitleColor(.red, for: .normal)
             emailDuplicateCheckButton.layer.borderColor = UIColor.red.cgColor
             emailDuplicateCheckButton.layer.borderWidth = 2
+            
         }
+        
+        emailTextField.resignFirstResponder()
     }
-    
-    
 }
 
 //MARK: - UITextViewDelegate 확장
@@ -196,7 +216,7 @@ extension LoginSecondViewController: UITextViewDelegate {
         
         agreedToTermsText.attributedText = attributedString
     }
-
+    
     // UITextView에서 하이퍼링크 클릭을 감지하는 메서드
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "https" {
@@ -227,32 +247,61 @@ extension LoginSecondViewController: UITextFieldDelegate {
     
     
     // 이메일 텍스트 필드의 입력이 변경될 때 호출되는 메서드
-    @objc func emailTextFieldDidChange(_ textField: UITextField) {
-        if let email = textField.text {
-            if isValidEmail(email) {
-                // 유효한 이메일 주소인 경우
-                emailStatusLabel.text = ""
-            } else {
-                // 유효하지 않은 이메일 주소인 경우
-                emailStatusLabel.text = "유효하지 않은 이메일 주소입니다."
-                emailStatusLabel.textColor = .red
-            }
-        }
-    }
+    // 중복 확인 후 수정이 진행되면 중복확인 false 교체
     
-    // 비밀번호 텍스트 필드의 입력이 변경될 때 호출되는 메서드
-    @objc func passwordTextFieldDidChange(_ textField: UITextField) {
-        if let password = textField.text {
-            if isValidPassword(password) {
-                // 유효한 이메일 주소인 경우
-                passwordStatusLabel.text = ""
-            } else {
-                // 유효하지 않은 이메일 주소인 경우
-                passwordStatusLabel.text = "비밀번호를 다시 입력해주세요."
-                passwordStatusLabel.textColor = .red
-            }
-        }
+    @objc func emailTextFieldDidBegin(_ textField: UITextField) {
+        
+        textField.text = ""
+        emailStatusLabel.text = ""
+        
+        emailDuplicateCheckButton.setTitleColor(.lightGray, for: .normal)
+        emailDuplicateCheckButton.layer.borderColor = nil
+        emailDuplicateCheckButton.layer.borderWidth = 0.0
+        
+        isEmailDuplicate = false
     }
+    /*
+     // 비밀번호 텍스트 필드의 입력이 변경될 때 호출되는 메서드
+     @objc func passwordTextFieldDidChange(_ textField: UITextField) {
+     if let password = textField.text {
+     if !isValidPassword(password) {
+     passwordStatusLabel.text = "비밀번호를 다시 입력해주세요."
+     passwordStatusLabel.textColor = .red
+     isPasswordConfirm = false
+     } else if isValidEmail(password) && password != confirmPasswordTextField.text {
+     guard let confrimPassword = confirmPasswordTextField.text else {
+     passwordStatusLabel.text = ""
+     passwordStatusLabel.textColor = .red
+     isPasswordConfirm = false
+     return
+     }
+     passwordStatusLabel.text = "비밀번호가 동일하지 않습니다."
+     passwordStatusLabel.textColor = .red
+     isPasswordConfirm = false
+     } else {
+     passwordStatusLabel.text = "비밀번호가 동일합니다."
+     passwordStatusLabel.textColor = .green
+     isPasswordConfirm = true
+     }
+     }
+     }
+     
+     // 비밀번호 확인 텍스트 필드의 입력이 변경될 때 호출되는 메서드
+     @objc func confirmPasswordTextFieldDidChange(_ textField: UITextField) {
+     if let confirmPassword = textField.text {
+     if isValidPassword(confirmPassword) && passwordTextField.text == confirmPassword {
+     passwordStatusLabel.text = "비밀번호가 동일합니다."
+     passwordStatusLabel.textColor = .green
+     isPasswordConfirm = true
+     } else if let password = passwordTextField.text, password != confirmPassword && isValidPassword(password) {
+     passwordStatusLabel.text = "비밀번호가 동일하지 않습니다."
+     passwordStatusLabel.textColor = .red
+     isPasswordConfirm = false
+     }
+     }
+     }
+     
+     */
     
     // 모든 텍스트 필드 입력 시 버튼 활성화 메서드
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
@@ -283,7 +332,6 @@ extension LoginSecondViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             emailTextField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.becomeFirstResponder()
@@ -292,7 +340,7 @@ extension LoginSecondViewController: UITextFieldDelegate {
         }
         return true
     }
-     
+    
     
     // 화면에 탭을 감지(UIResponder)하는 메서드
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

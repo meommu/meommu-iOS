@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.8.0)
   - MaterialComponents/Availability (124.2.0)
   - MaterialComponents/BottomSheet (124.2.0):
     - MaterialComponents/Elevation
@@ -29,20 +30,27 @@ PODS:
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
   - PanModal (1.2.7)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire (= 5.8)
   - MaterialComponents/BottomSheet
   - PanModal
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - MaterialComponents
     - PanModal
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 72209460891341d06912b4d80848256eaddc03a9
+PODFILE CHECKSUM: 4739aa18a76bc26754890640a99abcbc7ceec958
 
 COCOAPODS: 1.12.1

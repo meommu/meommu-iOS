@@ -299,6 +299,8 @@
 			dependencies = (
 			);
 			name = "meommu-iOS";
+			packageProductDependencies = (
+			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -327,6 +329,8 @@
 				Base,
 			);
 			mainGroup = F933D8922AB73982006EDA07;
+			packageReferences = (
+			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

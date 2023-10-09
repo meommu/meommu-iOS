@@ -8,18 +8,29 @@
 import UIKit
 
 class LoginThirdViewController: UIViewController {
-    
+    // 버튼 프로퍼티
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
+    // 입력 텍스트 필드 프로퍼티
     @IBOutlet weak var kindergartenNameTextField: UITextField!
     @IBOutlet weak var representativeNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
+    // 제목 레이블 프로퍼티
+    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
+    
+    // 질문 레이블 프로터피
+    @IBOutlet weak var kindergartenNameLabel: UILabel!
+    @IBOutlet weak var representativeNameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupButton()
+        setupLabel()
         setupTextFields()
         setupCornerRadius()
         setupDelegate()
@@ -28,11 +39,33 @@ class LoginThirdViewController: UIViewController {
     
     //MARK: - 초기 세팅 메서드
     private func setupButton() {
+        // 다음 버튼 색상 설정
+        nextButton.backgroundColor = Color.darkGray.buttonColor
+        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        
+        // 백 버튼 색상 설정
+        backButton.tintColor = Color.darkGray.buttonColor
+        
         nextButton.isEnabled = false
+    }
+    
+    //MARK: - 레이블 셋업 메서드
+    func setupLabel() {
+        mainLabel.textColor = Color.black.textColor
+        subLabel.textColor = Color.darkGray.textColor
+        
+        kindergartenNameLabel.textColor = Color.black.textColor
+        representativeNameLabel.textColor = Color.black.textColor
+        phoneNumberLabel.textColor = Color.black.textColor
     }
     
     //MARK: - 텍스트 필드 셋업 메서드
     private func setupTextFields(){
+        // 텍스트 필드 백그라운드 컬러 설정
+        kindergartenNameTextField.backgroundColor = Color.lightGray.backgroundColor
+        representativeNameTextField.backgroundColor = Color.lightGray.backgroundColor
+        phoneNumberTextField.backgroundColor = Color.lightGray.backgroundColor
+        
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         kindergartenNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         representativeNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
@@ -78,11 +111,11 @@ extension LoginThirdViewController: UITextFieldDelegate {
               let representativeName = representativeNameTextField.text, !representativeName.isEmpty,
               let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty
         else {
-            nextButton.backgroundColor = .lightGray
+            nextButton.backgroundColor = Color.darkGray.buttonColor
             nextButton.isEnabled = false
             return
         }
-        nextButton.backgroundColor = .black
+        nextButton.backgroundColor = Color.purple.buttonColor
         nextButton.isEnabled = true
     }
     

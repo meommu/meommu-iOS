@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩 1" translatesAutoresizingMaskIntoConstraints="NO" id="1jL-t5-38u">
-                                <rect key="frame" x="20" y="238.66666666666663" width="335" height="335"/>
+                                <rect key="frame" x="20" y="253" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1jL-t5-38u" secondAttribute="height" multiplier="1:1" id="Kbk-kK-Ou5"/>
                                 </constraints>
@@ -77,10 +77,10 @@
                             <constraint firstItem="Oqm-IB-4c7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="64" id="eY0-q8-CkV"/>
                             <constraint firstItem="1jL-t5-38u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="fVD-0y-b1u"/>
                             <constraint firstItem="wLS-y9-J40" firstAttribute="top" secondItem="s2K-d9-CaM" secondAttribute="bottom" constant="31" id="rvu-u3-ISt"/>
-                            <constraint firstItem="1jL-t5-38u" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="vM0-Ej-HOH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wLS-y9-J40" secondAttribute="trailing" constant="20" id="vbm-c2-keq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="wLS-y9-J40" secondAttribute="bottom" constant="5" id="x0m-UV-g7d"/>
                             <constraint firstItem="Oqm-IB-4c7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="yPU-63-N4i"/>
+                            <constraint firstItem="1jL-t5-38u" firstAttribute="top" secondItem="Oqm-IB-4c7" secondAttribute="bottom" constant="75" id="yTG-Pt-ayW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩2" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-u3-tiP">
-                                <rect key="frame" x="20" y="238.66666666666663" width="335" height="335"/>
+                                <rect key="frame" x="20" y="203" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hPv-u3-tiP" secondAttribute="height" id="AbM-jv-tou"/>
                                 </constraints>
@@ -164,9 +164,9 @@
                             <constraint firstItem="VKX-dH-zZE" firstAttribute="top" secondItem="hrs-RE-U9j" secondAttribute="bottom" constant="31" id="Ydh-Rh-hlU"/>
                             <constraint firstItem="uZY-L7-twn" firstAttribute="trailing" secondItem="Mom-PF-QHW" secondAttribute="trailing" constant="20" id="YoO-PN-age"/>
                             <constraint firstItem="hrs-RE-U9j" firstAttribute="centerX" secondItem="yPa-xu-Ps3" secondAttribute="centerX" id="ZOT-wr-Qd7"/>
+                            <constraint firstItem="hPv-u3-tiP" firstAttribute="top" secondItem="Mom-PF-QHW" secondAttribute="bottom" constant="75" id="e1h-Q5-n25"/>
                             <constraint firstItem="uZY-L7-twn" firstAttribute="bottom" secondItem="VKX-dH-zZE" secondAttribute="bottom" constant="5" id="hVa-j3-Ee7"/>
                             <constraint firstItem="hrs-RE-U9j" firstAttribute="top" secondItem="uZY-L7-twn" secondAttribute="bottom" constant="-90" id="jTy-sL-UmQ"/>
-                            <constraint firstItem="hPv-u3-tiP" firstAttribute="centerY" secondItem="yPa-xu-Ps3" secondAttribute="centerY" id="pxT-y8-DDX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pv9-aS-AOL"/>
@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩3" translatesAutoresizingMaskIntoConstraints="NO" id="PUD-Oh-bfr">
-                                <rect key="frame" x="20" y="238.66666666666663" width="335" height="335"/>
+                                <rect key="frame" x="20" y="203" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PUD-Oh-bfr" secondAttribute="height" id="Pce-Sn-I5R"/>
                                 </constraints>
@@ -251,7 +251,7 @@
                             <constraint firstItem="PUD-Oh-bfr" firstAttribute="leading" secondItem="cQy-fi-MCO" secondAttribute="leading" constant="20" id="SgC-4V-ZDv"/>
                             <constraint firstItem="cQy-fi-MCO" firstAttribute="trailing" secondItem="QcA-2h-OLW" secondAttribute="trailing" constant="20" id="eZ3-xk-gMG"/>
                             <constraint firstItem="cQy-fi-MCO" firstAttribute="trailing" secondItem="PUD-Oh-bfr" secondAttribute="trailing" constant="20" id="lGf-kP-Ohw"/>
-                            <constraint firstItem="PUD-Oh-bfr" firstAttribute="centerY" secondItem="FKW-mn-vKp" secondAttribute="centerY" id="rhi-pN-Z68"/>
+                            <constraint firstItem="PUD-Oh-bfr" firstAttribute="top" secondItem="YmU-Zz-0Wj" secondAttribute="bottom" constant="75" id="nHl-Pj-Di0"/>
                             <constraint firstItem="YmU-Zz-0Wj" firstAttribute="leading" secondItem="cQy-fi-MCO" secondAttribute="leading" constant="20" id="yjy-fy-vt1"/>
                         </constraints>
                     </view>

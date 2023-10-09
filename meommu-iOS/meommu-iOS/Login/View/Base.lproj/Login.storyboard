@@ -624,7 +624,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="로그인" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
-                                <rect key="frame" x="20" y="238.66666666666663" width="335" height="335"/>
+                                <rect key="frame" x="20" y="256" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6uK-ut-Tbw" secondAttribute="height" id="wTF-dT-LSQ"/>
                                 </constraints>
@@ -633,11 +633,11 @@
                         <viewLayoutGuide key="safeArea" id="bYo-wA-Lbj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="centerY" secondItem="dos-mm-Nxi" secondAttribute="centerY" id="0By-72-a8T"/>
                             <constraint firstItem="ApU-uJ-Jz8" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="39c-8V-xCY"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="ApU-uJ-Jz8" secondAttribute="trailing" constant="20" id="3E8-P5-JxQ"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="centerX" secondItem="dos-mm-Nxi" secondAttribute="centerX" id="aeG-dk-YFQ"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="top" secondItem="bYo-wA-Lbj" secondAttribute="top" constant="45" id="j9J-37-kra"/>
+                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="top" secondItem="aHt-g8-puf" secondAttribute="bottom" constant="45" id="jDM-Hu-xgY"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="bottom" secondItem="ApU-uJ-Jz8" secondAttribute="bottom" constant="5" id="lQw-O8-pJL"/>
                             <constraint firstItem="6uK-ut-Tbw" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="mRN-vm-p1f"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="6uK-ut-Tbw" secondAttribute="trailing" constant="20" id="yfl-5V-yTe"/>

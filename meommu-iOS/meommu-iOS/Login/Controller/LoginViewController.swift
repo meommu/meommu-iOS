@@ -12,7 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
     override func viewDidLoad() {
@@ -37,7 +38,8 @@ class LoginViewController: UIViewController {
     }
 
     func setupLebel() {
-        mainLabel.textColor = Color.black.textColor
+        firstMainLabel.textColor = Color.black.textColor
+        secondMainLabel.textColor = Color.black.textColor
         subLabel.textColor = Color.darkGray.textColor
     }
     

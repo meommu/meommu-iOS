@@ -18,7 +18,8 @@ class LoginThirdViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
     // 제목 레이블 프로퍼티
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
     // 질문 레이블 프로터피
@@ -51,7 +52,8 @@ class LoginThirdViewController: UIViewController {
     
     //MARK: - 레이블 셋업 메서드
     func setupLabel() {
-        mainLabel.textColor = Color.black.textColor
+        firstMainLabel.textColor = Color.black.textColor
+        secondMainLabel.textColor = Color.black.textColor
         subLabel.textColor = Color.darkGray.textColor
         
         kindergartenNameLabel.textColor = Color.black.textColor

@@ -11,7 +11,8 @@ class LoginFirstViewController: UIViewController {
     
     
     @IBOutlet weak var mainTitleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var firstSubTitleLabel: UILabel!
+    @IBOutlet weak var secondSubTitleLabel: UILabel!
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
@@ -42,7 +43,7 @@ class LoginFirstViewController: UIViewController {
         mainTitleLabel.textColor = Color.black.textColor
         mainTitleLabel.textColor = Color.black.textColor
         
-        subTitleLabel.textColor = Color.black.textColor
-        subTitleLabel.textColor = Color.black.textColor
+        firstSubTitleLabel.textColor = Color.black.textColor
+        secondSubTitleLabel.textColor = Color.black.textColor
     }
 }

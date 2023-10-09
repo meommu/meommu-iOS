@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P0k-CI-BVw" userLabel="Label Stack View">
-                                <rect key="frame" x="20" y="44" width="335" height="87"/>
+                                <rect key="frame" x="20" y="64" width="335" height="87"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QwO-8z-CEs">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
@@ -73,7 +73,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-eP-AZc" userLabel="Email Stack View">
-                                <rect key="frame" x="20" y="189" width="335" height="65"/>
+                                <rect key="frame" x="20" y="209" width="335" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K83-gC-4Pc" userLabel="Email Label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -128,7 +128,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-vU-5GD" userLabel="Password Stack View">
-                                <rect key="frame" x="20" y="272" width="335" height="65"/>
+                                <rect key="frame" x="20" y="292" width="335" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Ui-7O-Som" userLabel="Password Label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -159,7 +159,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlP-gg-F6D">
-                                <rect key="frame" x="30" y="349" width="310" height="24"/>
+                                <rect key="frame" x="30" y="369" width="310" height="24"/>
                                 <string key="text">*영문 대/소문자, 숫자, 기호(!@#$%^~*+=-) 사용하여 8~20 글자 사이의 
 비밀번호를 사용하세요. 숫자와 특수기호가 한 글자 이상 포함되어야합니다.</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
@@ -167,7 +167,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-ac-WcH" userLabel="Confirm Password Stack View">
-                                <rect key="frame" x="20" y="391" width="335" height="65"/>
+                                <rect key="frame" x="20" y="411" width="335" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-f7-ohh" userLabel="Confirm password label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -198,7 +198,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JgH-Qe-RSx" userLabel="Terms and Privacy Stack View">
-                                <rect key="frame" x="20" y="492" width="335" height="26"/>
+                                <rect key="frame" x="20" y="512" width="335" height="26"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqE-u2-2ac">
                                         <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
@@ -214,7 +214,7 @@
                                         </state>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="서비스 이용 및 개인정보 수집약관에 동의합니다." translatesAutoresizingMaskIntoConstraints="NO" id="yon-zn-ipg">
-                                        <rect key="frame" x="31" y="4.6666666666666856" width="279" height="17"/>
+                                        <rect key="frame" x="31" y="4.6666666666666288" width="279" height="17"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -253,7 +253,7 @@
                             <constraint firstItem="WcS-vc-a7L" firstAttribute="trailing" secondItem="JgH-Qe-RSx" secondAttribute="trailing" constant="20" id="6jS-9S-QWf"/>
                             <constraint firstItem="JgH-Qe-RSx" firstAttribute="leading" secondItem="WcS-vc-a7L" secondAttribute="leading" constant="20" id="6rZ-LW-HP9"/>
                             <constraint firstItem="sQf-vU-5GD" firstAttribute="leading" secondItem="WcS-vc-a7L" secondAttribute="leading" constant="20" id="8QP-yL-flg"/>
-                            <constraint firstItem="P0k-CI-BVw" firstAttribute="top" secondItem="upm-GV-YDL" secondAttribute="top" constant="30" id="8oT-VR-bVe"/>
+                            <constraint firstItem="P0k-CI-BVw" firstAttribute="top" secondItem="upm-GV-YDL" secondAttribute="bottom" constant="30" id="8oT-VR-bVe"/>
                             <constraint firstItem="WcS-vc-a7L" firstAttribute="trailing" secondItem="XsZ-Wb-a61" secondAttribute="trailing" constant="20" id="GYJ-7y-huJ"/>
                             <constraint firstItem="LOF-eP-AZc" firstAttribute="leading" secondItem="WcS-vc-a7L" secondAttribute="leading" constant="20" id="GzI-WH-290"/>
                             <constraint firstItem="QlP-gg-F6D" firstAttribute="leading" secondItem="H9c-Ig-gtb" secondAttribute="leading" constant="30" id="JLF-8H-Wwc"/>
@@ -281,12 +281,13 @@
                         <outlet property="emailLabel" destination="SSa-eK-4ZJ" id="tIt-f6-n7b"/>
                         <outlet property="emailStatusLabel" destination="VbV-j5-iUd" id="mIZ-JI-5qv"/>
                         <outlet property="emailTextField" destination="irH-aL-Q3g" id="IhI-sc-7IW"/>
-                        <outlet property="mainLabel" destination="904-TH-L65" id="iIw-qi-dRn"/>
+                        <outlet property="firstMainLabel" destination="OKD-wz-3Ci" id="nOK-1E-HDo"/>
                         <outlet property="nextButton" destination="XsZ-Wb-a61" id="Lzi-cD-yYa"/>
                         <outlet property="passwordLabel" destination="4oz-YQ-r1n" id="ya3-bf-Ssd"/>
                         <outlet property="passwordRequirementsLabel" destination="QlP-gg-F6D" id="CEB-Ry-VIx"/>
                         <outlet property="passwordStatusLabel" destination="BJc-Dd-uwv" id="NXk-J1-OmE"/>
                         <outlet property="passwordTextField" destination="HPb-fm-u3V" id="5dh-ga-tOO"/>
+                        <outlet property="secondMainLabel" destination="904-TH-L65" id="pBG-Bi-h2C"/>
                         <outlet property="subLabel" destination="Soi-KD-9IT" id="LuT-L3-I4V"/>
                         <outlet property="termsAndPrivacyButton" destination="CqE-u2-2ac" id="zUX-DO-fc7"/>
                         <segue destination="nEs-ef-h8Y" kind="presentation" identifier="toLoginThirdVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RYl-7B-Rfe"/>
@@ -331,7 +332,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-aw-ytF">
-                                <rect key="frame" x="20" y="44" width="335" height="87"/>
+                                <rect key="frame" x="20" y="64" width="335" height="87"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DxL-xA-ckz">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
@@ -359,7 +360,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kAq-ci-x4X">
-                                <rect key="frame" x="20" y="189" width="335" height="65"/>
+                                <rect key="frame" x="20" y="209" width="335" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유치원 이름을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nh-Dk-mPs">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -379,7 +380,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="phw-8u-w1A">
-                                <rect key="frame" x="20" y="272" width="335" height="65"/>
+                                <rect key="frame" x="20" y="292" width="335" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표자 이름을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-41-Ka4">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -399,7 +400,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rk1-f0-KKV">
-                                <rect key="frame" x="20" y="355" width="335" height="65"/>
+                                <rect key="frame" x="20" y="375" width="335" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEd-LC-oCq">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -423,7 +424,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WLn-jX-2cI" firstAttribute="trailing" secondItem="5RG-sP-EZW" secondAttribute="trailing" constant="20" id="6MC-6W-CjG"/>
-                            <constraint firstItem="mcW-aw-ytF" firstAttribute="top" secondItem="rwg-T4-XcA" secondAttribute="top" constant="30" id="7cS-PO-ofQ"/>
+                            <constraint firstItem="mcW-aw-ytF" firstAttribute="top" secondItem="rwg-T4-XcA" secondAttribute="bottom" constant="30" id="7cS-PO-ofQ"/>
                             <constraint firstItem="Rk1-f0-KKV" firstAttribute="leading" secondItem="WLn-jX-2cI" secondAttribute="leading" constant="20" id="8YY-Zv-Rvz"/>
                             <constraint firstItem="mcW-aw-ytF" firstAttribute="leading" secondItem="WLn-jX-2cI" secondAttribute="leading" constant="20" id="B1E-dz-ONt"/>
                             <constraint firstItem="rwg-T4-XcA" firstAttribute="top" secondItem="WLn-jX-2cI" secondAttribute="top" constant="14" id="Biv-rs-nhN"/>
@@ -444,14 +445,15 @@
                     <navigationItem key="navigationItem" id="83W-om-CyU"/>
                     <connections>
                         <outlet property="backButton" destination="rwg-T4-XcA" id="k3R-lD-D96"/>
+                        <outlet property="firstMainLabel" destination="2mx-Xz-HPi" id="ACR-37-RaV"/>
                         <outlet property="kindergartenNameLabel" destination="5nh-Dk-mPs" id="alI-xW-PV7"/>
                         <outlet property="kindergartenNameTextField" destination="7kW-N3-VL9" id="sUe-eg-097"/>
-                        <outlet property="mainLabel" destination="B3B-Ha-5ZJ" id="zqX-sh-utW"/>
                         <outlet property="nextButton" destination="5RG-sP-EZW" id="hL9-i6-78V"/>
                         <outlet property="phoneNumberLabel" destination="QEd-LC-oCq" id="e8s-W4-o97"/>
                         <outlet property="phoneNumberTextField" destination="uPI-iA-0pV" id="4W4-i2-48m"/>
                         <outlet property="representativeNameLabel" destination="M3Z-41-Ka4" id="2dS-mz-uQw"/>
                         <outlet property="representativeNameTextField" destination="MtU-NE-1nZ" id="KKz-iJ-rrs"/>
+                        <outlet property="secondMainLabel" destination="B3B-Ha-5ZJ" id="nkO-8d-7hM"/>
                         <outlet property="subLabel" destination="3p6-ZK-SSB" id="krl-XK-jbQ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLoginFourthVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="yhF-ov-Umj"/>
                     </connections>
@@ -495,7 +497,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OTa-ai-IW5">
-                                <rect key="frame" x="20" y="44" width="335" height="91"/>
+                                <rect key="frame" x="20" y="64" width="335" height="91"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5TB-g0-K2k">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="64"/>
@@ -539,7 +541,7 @@
                             <constraint firstItem="tbc-Ac-Y39" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="8ud-DL-ixm"/>
                             <constraint firstItem="ec3-tN-seU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="91S-Ub-Vbx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ec3-tN-seU" secondAttribute="bottom" constant="5" id="HqD-1d-3nG"/>
-                            <constraint firstItem="OTa-ai-IW5" firstAttribute="top" secondItem="tbc-Ac-Y39" secondAttribute="top" constant="30" id="OiC-12-qmp"/>
+                            <constraint firstItem="OTa-ai-IW5" firstAttribute="top" secondItem="tbc-Ac-Y39" secondAttribute="bottom" constant="30" id="OiC-12-qmp"/>
                             <constraint firstItem="OTa-ai-IW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tne-0B-ojo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9aH-ql-PDT" secondAttribute="trailing" constant="20" id="VOj-o4-JTg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ec3-tN-seU" secondAttribute="trailing" constant="20" id="bXi-CA-eGg"/>
@@ -551,8 +553,9 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="tbc-Ac-Y39" id="kDI-rO-RFf"/>
-                        <outlet property="mainLabel" destination="NZh-Oi-uhf" id="dDF-Gg-k6j"/>
+                        <outlet property="firstMainLabel" destination="m6h-6q-YeM" id="RAQ-vF-OT6"/>
                         <outlet property="nextButton" destination="ec3-tN-seU" id="JrK-FD-MbW"/>
+                        <outlet property="secondMainLabel" destination="NZh-Oi-uhf" id="ZbM-tV-W27"/>
                         <outlet property="subLabel" destination="NTz-HZ-eGA" id="ren-GG-7dj"/>
                     </connections>
                 </viewController>
@@ -642,10 +645,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstSubTitleLabel" destination="BDR-do-UZW" id="x1P-ju-RCf"/>
                         <outlet property="mainTitleLabel" destination="IJx-Gz-OID" id="zA9-7g-ueS"/>
+                        <outlet property="secondSubTitleLabel" destination="vfD-b6-15z" id="6a9-tb-Shd"/>
                         <outlet property="signupButton" destination="NZE-1e-FRA" id="d1g-nS-oI4"/>
                         <outlet property="startButton" destination="UeM-bm-vBe" id="Pyz-ZP-lcx"/>
-                        <outlet property="subTitleLabel" destination="vfD-b6-15z" id="jZ9-gH-wv8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ1-qv-uaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

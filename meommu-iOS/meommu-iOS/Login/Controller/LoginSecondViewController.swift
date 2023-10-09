@@ -12,7 +12,8 @@ import UIKit
 final class LoginSecondViewController: UIViewController {
     
     // 레이블 프로퍼티
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
     @IBOutlet weak var emailLabel: UILabel!
@@ -68,7 +69,8 @@ final class LoginSecondViewController: UIViewController {
     //MARK: - 레이블 셋업 메서드
     private func setupLabel() {
         
-        mainLabel.textColor = Color.black.textColor
+        firstMainLabel.textColor = Color.black.textColor
+        secondMainLabel.textColor = Color.black.textColor
         subLabel.textColor = Color.darkGray.textColor
         
         emailLabel.textColor = Color.black.textColor

@@ -129,6 +129,10 @@ final class LoginSecondViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        
+        // 비밀 번호 * 표시를 위한 설정
+        passwordTextField.textContentType = .oneTimeCode
+        confirmPasswordTextField.textContentType = .oneTimeCode
     }
     
     //MARK: - 델리게이트 셋업 메서드

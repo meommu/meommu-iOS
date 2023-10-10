@@ -37,7 +37,7 @@ class DiarySendViewController: UIViewController, UICollectionViewDelegate, UICol
     
     // 데이터의 수에 따라 item 수 정해주기
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        sendList.count
+        return sendList.count
     }
     
     // 커스텀한 cell 적용하기
@@ -51,9 +51,7 @@ class DiarySendViewController: UIViewController, UICollectionViewDelegate, UICol
         
         return cell
     }
-    
-    // cell 여백 설정하기
-    
+
     
     // 뒤로 가기 버튼
     @IBOutlet var backButton: UIBarButtonItem!

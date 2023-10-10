@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */; };
+		261003B42AD3AF07001F5E28 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261003B32AD3AF07001F5E28 /* Color.swift */; };
 		26215E372AB87FD300F28FBF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26215E362AB87FD300F28FBF /* Onboarding.storyboard */; };
 		26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */; };
 		26215E3E2AB895C500F28FBF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3D2AB895C500F28FBF /* Helper.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		261003B32AD3AF07001F5E28 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		26215E362AB87FD300F28FBF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		26215E3D2AB895C500F28FBF /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				26215E3D2AB895C500F28FBF /* Helper.swift */,
 				261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */,
+				261003B32AD3AF07001F5E28 /* Color.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
+				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,
 				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,

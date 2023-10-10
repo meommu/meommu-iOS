@@ -10,23 +10,39 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setCornerRadius()
+        setupLebel()
+        setupButton()
+        setupCornerRadius()
     }
 
     //MARK: - 코너 레디어스 값 설정 메서드
-    
-    func setCornerRadius() {
-        
+    func setupCornerRadius() {
         nextButton.setCornerRadius(6.0)
     }
     
-    // 화면 전환
-    @IBOutlet var loginButton: UIButton!
+    func setupButton() {
+        nextButton.backgroundColor = Color.purple.buttonColor
+        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        
+        // 백 버튼 색상 설정
+        backButton.tintColor = Color.darkGray.buttonColor
+    }
 
+    func setupLebel() {
+        firstMainLabel.textColor = Color.black.textColor
+        secondMainLabel.textColor = Color.black.textColor
+        subLabel.textColor = Color.darkGray.textColor
+    }
+    
     // UIWindow의 rootViewController를 변경하여 화면전환 함수
     func changeRootViewController(_ viewControllerToPresent: UIViewController) {
         if let window = UIApplication.shared.windows.first {

@@ -10,6 +10,18 @@ import UIKit
 
 
 final class LoginSecondViewController: UIViewController {
+    
+    // 레이블 프로퍼티
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var confirmPasswordLabel: UILabel!
+    
+    @IBOutlet weak var passwordRequirementsLabel: UILabel!
+    
     // 이메일 중복 확인을 위한 프로퍼티
     private var isEmailDuplicate = false
     // 비밀번호 확인을 위한 프로퍼티
@@ -28,6 +40,8 @@ final class LoginSecondViewController: UIViewController {
     @IBOutlet weak var emailDuplicateCheckButton: UIButton!
     // 다음 버튼
     @IBOutlet weak var nextButton: UIButton!
+    // 백 버튼
+    @IBOutlet weak var backButton: UIButton!
     
     // 상태 확인을 위한 레이블
     @IBOutlet weak var emailStatusLabel: UILabel!
@@ -54,6 +68,17 @@ final class LoginSecondViewController: UIViewController {
     
     //MARK: - 레이블 셋업 메서드
     private func setupLabel() {
+        
+        firstMainLabel.textColor = Color.black.textColor
+        secondMainLabel.textColor = Color.black.textColor
+        subLabel.textColor = Color.darkGray.textColor
+        
+        emailLabel.textColor = Color.black.textColor
+        passwordLabel.textColor = Color.black.textColor
+        confirmPasswordLabel.textColor = Color.black.textColor
+        
+        passwordRequirementsLabel.textColor = Color.darkGray.textColor
+        
         emailStatusLabel.text = ""
         passwordStatusLabel.text = ""
         confirmPasswordStatusLabel.text = ""
@@ -62,21 +87,39 @@ final class LoginSecondViewController: UIViewController {
     //MARK: - 텍스트뷰 셋업 메서드
     private func setupTextView(){
         // 약관 관련 텍스트 뷰 세팅
+        agreedToTermsText.textColor = Color.black.textColor
         agreedToTermsText.isEditable = false
         agreedToTermsText.textContainerInset = .zero
     }
     
     //MARK: - 버튼 셋업 메서드
     private func setupButtons(){
+        // 다음 버튼 색상
+        nextButton.backgroundColor = Color.darkGray.buttonColor
+        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        
+        // 백 버튼 색상
+        backButton.tintColor = Color.darkGray.buttonColor
+        
+        // 중복 확인 버튼 색상
+        emailDuplicateCheckButton.backgroundColor = Color.lightGray.buttonColor
+        emailDuplicateCheckButton.setTitleColor(Color.darkGray.buttonColor, for: .normal)
+        
         // 다음 버튼 초기 비활성화
         nextButton.isEnabled = false
         
-        termsAndPrivacyButton.tintColor = .lightGray
+        termsAndPrivacyButton.tintColor = Color.lightGray.buttonColor
         termsAndPrivacyButton.addTarget(self, action: #selector(buttonToggleAgreement), for: .touchUpInside)
     }
     
     //MARK: - 텍스트 필드 셋업 메서드
     private func setupTextFields() {
+        
+        // 텍스트 필드 백그라운드 컬러 설정
+        emailTextField.backgroundColor = Color.lightGray.backgroundColor
+        passwordTextField.backgroundColor = Color.lightGray.backgroundColor
+        confirmPasswordTextField.backgroundColor = Color.lightGray.backgroundColor
+        
         // 텍스트 필드가 눌리는 이벤트에 대한 메서드 추가 - 설명 레이블 수정
         emailTextField.addTarget(self, action: #selector(emailTextFieldDidBegin(_:)), for: .editingDidBegin)
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidBegin(_:)), for: .editingDidBegin)
@@ -86,6 +129,10 @@ final class LoginSecondViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        
+        // 비밀 번호 * 표시를 위한 설정
+        passwordTextField.textContentType = .oneTimeCode
+        confirmPasswordTextField.textContentType = .oneTimeCode
     }
     
     //MARK: - 델리게이트 셋업 메서드
@@ -114,10 +161,10 @@ final class LoginSecondViewController: UIViewController {
     @objc private func buttonToggleAgreement() {
         if isTermsAndPrivacyButtonAgreed {
             // Tint 색 비활성화
-            termsAndPrivacyButton.tintColor = .lightGray // 원하는 비활성화된 Tint 색상 설정
+            termsAndPrivacyButton.tintColor = Color.lightGray.buttonColor // 원하는 비활성화된 Tint 색상 설정
         } else {
             // Tint 색 활성화
-            termsAndPrivacyButton.tintColor = .black // 원하는 활성화된 Tint 색상 설정
+            termsAndPrivacyButton.tintColor = Color.black.buttonColor // 원하는 활성화된 Tint 색상 설정
         }
         
         // Tint 색의 상태를 토글
@@ -158,10 +205,10 @@ final class LoginSecondViewController: UIViewController {
         } else if isEmailDuplicate {
             // 이메일 사용 가능
             emailStatusLabel.text = "사용 가능한 이메일입니다."
-            emailStatusLabel.textColor = .green
+            emailStatusLabel.textColor = Color.green.textColor
             
-            emailDuplicateCheckButton.setTitleColor(.green, for: .normal)
-            emailDuplicateCheckButton.layer.borderColor = UIColor.green.cgColor
+            emailDuplicateCheckButton.setTitleColor(Color.green.buttonColor, for: .normal)
+            emailDuplicateCheckButton.layer.borderColor = Color.green.buttonColor.cgColor
             emailDuplicateCheckButton.layer.borderWidth = 2
         } else {
             // 이메일 사용 불가능
@@ -187,11 +234,11 @@ final class LoginSecondViewController: UIViewController {
               isEmailDuplicate,
               isTermsAndPrivacyButtonAgreed
         else {
-            nextButton.backgroundColor = .lightGray
+            nextButton.backgroundColor = Color.darkGray.buttonColor
             nextButton.isEnabled = false
             return
         }
-        nextButton.backgroundColor = .black
+        nextButton.backgroundColor = Color.purple.buttonColor
         nextButton.isEnabled = true
     }
     
@@ -278,7 +325,7 @@ extension LoginSecondViewController: UITextFieldDelegate {
             return false
         } else if password == confirmPassword {
             passwordStatusLabel.text = "사용가능한 비밀번호입니다."
-            passwordStatusLabel.textColor = .green
+            passwordStatusLabel.textColor = Color.green.textColor
             return true
         } else {
             confirmPasswordStatusLabel.text = "비밀번호를 다시 입력해주세요."
@@ -294,7 +341,8 @@ extension LoginSecondViewController: UITextFieldDelegate {
         emailStatusLabel.text = ""
         
         // 중복 확인 버튼 기존 형태로 변경
-        emailDuplicateCheckButton.setTitleColor(.lightGray, for: .normal)
+        emailDuplicateCheckButton.backgroundColor = Color.lightGray.buttonColor
+        emailDuplicateCheckButton.setTitleColor(Color.darkGray.buttonColor, for: .normal)
         emailDuplicateCheckButton.layer.borderColor = nil
         emailDuplicateCheckButton.layer.borderWidth = 0.0
         
@@ -346,6 +394,8 @@ extension LoginSecondViewController: UITextFieldDelegate {
             confirmPasswordTextField.becomeFirstResponder()
         } else if textField == confirmPasswordTextField {
             confirmPasswordTextField.resignFirstResponder()
+            // 다음 버튼 활성화 확인 메서드
+            updateNextButtonState()
         }
         return true
     }
@@ -356,5 +406,8 @@ extension LoginSecondViewController: UITextFieldDelegate {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         confirmPasswordTextField.resignFirstResponder()
+        
+        // 다음 버튼 활성화 확인 메서드
+        updateNextButtonState()
     }
 }

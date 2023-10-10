@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -85,7 +85,7 @@
                                     <constraint firstItem="veU-rC-yMC" firstAttribute="leading" secondItem="v3L-xe-weQ" secondAttribute="trailing" constant="8" id="wC7-45-52d"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-er-gxl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-er-gxl">
                                 <rect key="frame" x="0.0" y="138" width="375" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNt-ET-3Jn">
@@ -235,6 +235,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ERx-jz-qxc" firstAttribute="top" secondItem="czk-cs-GIG" secondAttribute="bottom" constant="15" id="0kU-ht-zkZ"/>
+                            <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="2h1-pS-TZP"/>
                             <constraint firstItem="czk-cs-GIG" firstAttribute="top" secondItem="8ux-sH-DIZ" secondAttribute="bottom" constant="5" id="4Fs-lW-v9Y"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SYv-T2-0TZ" secondAttribute="trailing" constant="13.5" id="I3M-zA-2r1"/>
                             <constraint firstItem="8ux-sH-DIZ" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yr8-YO-VIw"/>
@@ -244,7 +245,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8ux-sH-DIZ" secondAttribute="trailing" constant="25" id="gMK-gh-Pme"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
                             <constraint firstItem="czk-cs-GIG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="11.5" id="m2W-hD-UaQ"/>
+                            <constraint firstItem="8fZ-er-gxl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOo-iK-t9e"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ERx-jz-qxc" secondAttribute="trailing" constant="25" id="nl2-Uq-GVG"/>
+                            <constraint firstItem="8fZ-er-gxl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oWe-i1-C1Z"/>
                             <constraint firstItem="SYv-T2-0TZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rEb-SY-PNb"/>
                             <constraint firstItem="8ux-sH-DIZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="x6z-po-5IX"/>
                         </constraints>

@@ -50,7 +50,23 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.detailLabel.text = detailData[indexPath.section]
         cell.emojiLabel.text = emojiData[indexPath.section]
         
+        // cell 선택 시 배경 컬러 없애기
+        cell.selectionStyle = .none
+        
         return cell
+    }
+    
+    // cell 선택 시 배경색 변경
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
+        cell.contentView.backgroundColor = UIColor(named: "BottomSheetSelectedTableView")
+        cell.detailLabel.textColor = .white
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
+        cell.contentView.backgroundColor = UIColor(named: "BottomSheetTableView")
+        cell.detailLabel.textColor = UIColor(named: "BottomSheetFont")
     }
     
     

@@ -24,6 +24,17 @@ class DiarySendCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 50
     }
     
+    // cell이 선택되었을 때 배경색 변경
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                characterView.backgroundColor = .systemGray5
+            } else {
+                characterView.backgroundColor = .white
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

@@ -56,9 +56,24 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = steptwoTableVlew.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
         cell.detailLabel.text = detailData[indexPath.section]
         
+        // cell 선택 시 배경 컬러 없애기
+        cell.selectionStyle = .none
+        
         return cell
     }
     
+    // cell 선택 시 배경색 변경
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
+        cell.contentView.backgroundColor = UIColor(named: "BottomSheetSelectedTableView")
+        cell.detailLabel.textColor = .white
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
+        cell.contentView.backgroundColor = UIColor(named: "BottomSheetTableView")
+        cell.detailLabel.textColor = UIColor(named: "BottomSheetFont")
+    }
     
 }
 

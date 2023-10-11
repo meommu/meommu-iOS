@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiarySendCell" id="gTV-IL-0wX" customClass="DiarySendCollectionViewCell" customModule="meommu_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iA-c8-Jpg">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0q-Ok-aob">
+                                <rect key="frame" x="5" y="5" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="C7I-XB-lln"/>
+                                    <constraint firstAttribute="height" constant="140" id="hxi-fH-JB2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="w0q-Ok-aob" secondAttribute="trailing" constant="5" id="7rO-nY-7nD"/>
+                            <constraint firstItem="w0q-Ok-aob" firstAttribute="top" secondItem="9iA-c8-Jpg" secondAttribute="top" constant="5" id="Bpr-dX-Hj7"/>
+                            <constraint firstAttribute="bottom" secondItem="w0q-Ok-aob" secondAttribute="bottom" constant="5" id="JDE-Nm-Fyb"/>
+                            <constraint firstItem="w0q-Ok-aob" firstAttribute="leading" secondItem="9iA-c8-Jpg" secondAttribute="leading" constant="5" id="pWQ-EN-nBT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="9iA-c8-Jpg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eZB-V5-s4W"/>
+                <constraint firstItem="9iA-c8-Jpg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="gC3-s3-Zei"/>
+            </constraints>
+            <connections>
+                <outlet property="characterImage" destination="w0q-Ok-aob" id="mMu-YH-07s"/>
+                <outlet property="characterView" destination="9iA-c8-Jpg" id="b1m-Fl-huO"/>
+            </connections>
+            <point key="canvasLocation" x="100.76335877862596" y="19.718309859154932"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -46,4 +46,22 @@ class LoginFirstViewController: UIViewController {
         firstSubTitleLabel.textColor = Color.black.textColor
         secondSubTitleLabel.textColor = Color.black.textColor
     }
+    
+    // UIWindow의 rootViewController를 변경하여 화면전환 함수
+    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = viewControllerToPresent
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+        } else {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func changeWindowButtonToDiary(_ sender: Any) {
+        let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+        self.changeRootViewController(newViewController)
+    }
+    
 }

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */; };
+		261003B42AD3AF07001F5E28 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261003B32AD3AF07001F5E28 /* Color.swift */; };
+		26215E372AB87FD300F28FBF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26215E362AB87FD300F28FBF /* Onboarding.storyboard */; };
+		26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */; };
+		26215E3E2AB895C500F28FBF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3D2AB895C500F28FBF /* Helper.swift */; };
+		26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */; };
+		26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */; };
+		26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */; };
 		0F4279EEA8B1A215B0C463E0 /* Pods_meommu_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59DE82A8992E2D6C15B5F1 /* Pods_meommu_iOS.framework */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
@@ -51,6 +59,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		261003B32AD3AF07001F5E28 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		26215E362AB87FD300F28FBF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		26215E3D2AB895C500F28FBF /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstViewController.swift; sourceTree = "<group>"; };
+		26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecondViewController.swift; sourceTree = "<group>"; };
+		26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdViewController.swift; sourceTree = "<group>"; };
 		3E59DE82A8992E2D6C15B5F1 /* Pods_meommu_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meommu_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FB55F7D4664777B6499B34 /* Pods-meommu-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meommu-iOS.debug.xcconfig"; path = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E532A93DB70E9F801754787C /* Pods-meommu-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meommu-iOS.release.xcconfig"; path = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +126,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26215E352AB87F9B00F28FBF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				26215E382AB883F600F28FBF /* View */,
+				26215E392AB8840200F28FBF /* Controller */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		26215E382AB883F600F28FBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26215E362AB87FD300F28FBF /* Onboarding.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26215E392AB8840200F28FBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26215E3A2AB8843300F28FBF /* OnboardingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		26215E3C2AB895AD00F28FBF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				26215E3D2AB895C500F28FBF /* Helper.swift */,
+				261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */,
+				261003B32AD3AF07001F5E28 /* Color.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		5AB84A51A9428C3E38E268D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +198,9 @@
 		F907437B2AB73C4C00F7C503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */,
+				26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */,
+				26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */,
 				F933D8A22AB73982006EDA07 /* LoginViewController.swift */,
 			);
 			path = Controller;
@@ -219,6 +273,8 @@
 		F933D89D2AB73982006EDA07 /* meommu-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				26215E3C2AB895AD00F28FBF /* Helper */,
+				26215E352AB87F9B00F28FBF /* Onboarding */,
 				F90743792AB73BFF00F7C503 /* Login */,
 				F907437C2AB73C6700F7C503 /* Diary */,
 				F933D89E2AB73982006EDA07 /* AppDelegate.swift */,
@@ -352,6 +408,7 @@
 				F979AF912AC183FC0083E4D1 /* HUScribble150.otf in Resources */,
 				F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */,
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
+				26215E372AB87FD300F28FBF /* Onboarding.storyboard in Resources */,
 				F989237C2AC118240078AD80 /* DiarySendCollectionViewCell.xib in Resources */,
 				F9947A1F2AC26B1C000F11BD /* image5.png in Resources */,
 				F985A3562ACCE81400D8637A /* StepThree.storyboard in Resources */,
@@ -422,11 +479,14 @@
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
+				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,
+				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
 				F953DD632AB82B58009F3B52 /* DiarySendViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				F989237B2AC118240078AD80 /* DiarySendCollectionViewCell.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
+				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,
 				F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */,
 				F98923782AC111C70078AD80 /* CharacterModel.swift in Sources */,
 				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
@@ -435,6 +495,10 @@
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
+				26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */,
+				26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */,
+				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
+				261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
 				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,
 			);

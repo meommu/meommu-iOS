@@ -1,46 +1,50 @@
 //
-//  ViewController.swift
+//  LoginFirstViewController.swift
 //  meommu-iOS
 //
-//  Created by 이예빈 on 2023/09/17.
+//  Created by zaehorang on 2023/09/19.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginFirstViewController: UIViewController {
     
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     
-    @IBOutlet weak var firstMainLabel: UILabel!
-    @IBOutlet weak var secondMainLabel: UILabel!
-    @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet weak var mainTitleLabel: UILabel!
+    @IBOutlet weak var firstSubTitleLabel: UILabel!
+    @IBOutlet weak var secondSubTitleLabel: UILabel!
+    
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupLebel()
         setupButton()
         setupCornerRadius()
     }
+    
 
-    //MARK: - 코너 레디어스 값 설정 메서드
     func setupCornerRadius() {
-        nextButton.setCornerRadius(6.0)
+        startButton.setCornerRadius(6.0)
+        signupButton.setCornerRadius(6.0)
     }
     
     func setupButton() {
-        nextButton.backgroundColor = Color.purple.buttonColor
-        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        startButton.backgroundColor = Color.purple.buttonColor
+        startButton.setTitleColor(Color.white.textColor, for: .normal)
         
-        // 백 버튼 색상 설정
-        backButton.tintColor = Color.darkGray.buttonColor
+        signupButton.backgroundColor = Color.darkGray.buttonColor
+        signupButton.setTitleColor(Color.white.textColor, for: .normal)
     }
 
     func setupLebel() {
-        firstMainLabel.textColor = Color.black.textColor
-        secondMainLabel.textColor = Color.black.textColor
-        subLabel.textColor = Color.darkGray.textColor
+        mainTitleLabel.textColor = Color.black.textColor
+        mainTitleLabel.textColor = Color.black.textColor
+        
+        firstSubTitleLabel.textColor = Color.black.textColor
+        secondSubTitleLabel.textColor = Color.black.textColor
     }
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수
@@ -54,20 +58,10 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // Diary 화면으로 전환
     @IBAction func changeWindowButtonToDiary(_ sender: Any) {
         let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
         let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
         self.changeRootViewController(newViewController)
     }
     
-    
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
-    
-    
-    
-    
 }
-

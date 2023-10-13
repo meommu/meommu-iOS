@@ -226,9 +226,6 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="OnClick_bottomGuidButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OTa-5d-dOa"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -266,7 +263,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
-                        <outlet property="bottomGuideButton" destination="SYv-T2-0TZ" id="pOn-WD-6z9"/>
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
                         <outlet property="monthLabel" destination="v3L-xe-weQ" id="ztH-Zn-GTW"/>

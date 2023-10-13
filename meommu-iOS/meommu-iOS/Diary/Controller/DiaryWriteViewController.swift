@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PanModal
 
 class DiaryWriteViewController: UIViewController {
     
@@ -120,7 +119,7 @@ class DiaryWriteViewController: UIViewController {
         let formatterMonth = DateFormatter()
         formatterMonth.dateFormat = "MM"
         todayMonth = formatterMonth.string(from: Date())
-            
+
         // 선택 가능한 일 설정
         let formatterDate = DateFormatter()
         formatterDate.dateFormat = "dd"
@@ -129,16 +128,6 @@ class DiaryWriteViewController: UIViewController {
         selectedYear = Int(todayYear)!
         selectedMonth = Int(todayMonth)!
         selectedDate = Int(todayDate)!
-    }
-        
-    // -----------------------------------------
-    // 바텀시트
-    @IBOutlet var bottomGuideButton: UIButton!
-    
-    @IBAction func OnClick_bottomGuidButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "StepOne", bundle: nil).instantiateViewController(identifier: "StepOneViewController") as! StepOneViewController
-        
-        presentPanModal(vc)
     }
 }
 

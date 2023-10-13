@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class DiaryWriteViewController: UIViewController {
     
@@ -18,6 +19,9 @@ class DiaryWriteViewController: UIViewController {
         todayDateSet()
     }
 
+    // -----------------------------------------
+    // 바텀 시트 설정하기
+    
     
     
     // -----------------------------------------

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -58,7 +59,7 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BottomSheetSelectedTableView")
+        cell.contentView.backgroundColor = UIColor(named: "SelectedButton")
         cell.detailLabel.textColor = .white
     }
     
@@ -66,14 +67,6 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
         cell.contentView.backgroundColor = UIColor(named: "BottomSheetTableView")
         cell.detailLabel.textColor = UIColor(named: "BottomSheetFont")
-    }
-    
-    
-    @IBOutlet var nextButton: UIButton!
-    
-    @IBAction func OnClick_nextButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "StepTwo", bundle: nil).instantiateViewController(identifier: "StepTwoViewController") as! StepTwoViewController
-                
     }
     
     

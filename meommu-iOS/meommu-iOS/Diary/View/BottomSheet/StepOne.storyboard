@@ -98,7 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="JOd-VM-49Z" id="LZT-tX-gVo"/>
-                        <outlet property="steponeTableVlew" destination="uuM-qL-NA2" id="qo0-x5-AIW"/>
+                        <outlet property="steponeTableVlew" destination="uuM-qL-NA2" id="YwC-XH-N8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

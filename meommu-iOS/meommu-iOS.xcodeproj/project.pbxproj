@@ -20,6 +20,7 @@
 		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
 		F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */; };
 		F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */; };
+		F9115BE22AD98AA100617DD3 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = F9115BE12AD98AA100617DD3 /* FloatingPanel */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
 		F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A02AB73982006EDA07 /* SceneDelegate.swift */; };
 		F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A22AB73982006EDA07 /* LoginViewController.swift */; };
@@ -115,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9115BE22AD98AA100617DD3 /* FloatingPanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +331,9 @@
 			dependencies = (
 			);
 			name = "meommu-iOS";
+			packageProductDependencies = (
+				F9115BE12AD98AA100617DD3 /* FloatingPanel */,
+			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +362,9 @@
 				Base,
 			);
 			mainGroup = F933D8922AB73982006EDA07;
+			packageReferences = (
+				F9115BE02AD98AA100617DD3 /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -650,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9115BE02AD98AA100617DD3 /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scenee/FloatingPanel#swift-package-manager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9115BE12AD98AA100617DD3 /* FloatingPanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9115BE02AD98AA100617DD3 /* XCRemoteSwiftPackageReference "FloatingPanel" */;
+			productName = FloatingPanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F933D8932AB73982006EDA07 /* Project object */;
 }

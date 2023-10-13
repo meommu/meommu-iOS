@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FloatingPanel
 
 class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,14 +17,25 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         steptwoTableVlew.delegate = self
         steptwoTableVlew.dataSource = self
+        
+        // 바텀시트
+        fpc = FloatingPanelController()
+        
+        let storyboard = UIStoryboard(name: "StepThree", bundle: nil)
+        let stepThreeVC = storyboard.instantiateViewController(withIdentifier: "StepThreeViewController") as! StepThreeViewController
+
+        fpc.set(contentViewController: stepThreeVC)
     }
+    
+    // 3단계 바텀시트 생성하기
+    var fpc: FloatingPanelController!
     
     @IBOutlet var nextButton: UIButton!
     
     @IBAction func OnClick_nextButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "StepThree", bundle: nil).instantiateViewController(identifier: "StepThreeViewController") as! StepThreeViewController
-        
+        present(fpc, animated: true, completion: nil)
     }
+
     
     // TableView 설정
     @IBOutlet var steptwoTableVlew: UITableView!
@@ -63,7 +75,7 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BottomSheetSelectedTableView")
+        cell.contentView.backgroundColor = UIColor(named: "SelectedButton")
         cell.detailLabel.textColor = .white
     }
     

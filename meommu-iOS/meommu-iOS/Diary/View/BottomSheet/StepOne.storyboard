@@ -48,7 +48,7 @@
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="OnClick_nextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wnE-fI-ECs"/>
+                                    <action selector="OnClick_nextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VR6-jK-x40"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-ay-oLa">
@@ -97,8 +97,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="JOd-VM-49Z" id="LZT-tX-gVo"/>
-                        <outlet property="steponeTableVlew" destination="uuM-qL-NA2" id="qo0-x5-AIW"/>
+                        <outlet property="nextButton" destination="JOd-VM-49Z" id="c4V-py-led"/>
+                        <outlet property="steponeTableVlew" destination="uuM-qL-NA2" id="YwC-XH-N8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FloatingPanel
 
 class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,8 +17,26 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         steponeTableVlew.delegate = self
         steponeTableVlew.dataSource = self
+        
+        // 바텀시트
+        fpc = FloatingPanelController()
+        
+        let storyboard = UIStoryboard(name: "StepTwo", bundle: nil)
+        let stepTwoVC = storyboard.instantiateViewController(withIdentifier: "StepTwoViewController") as! StepTwoViewController
+
+        fpc.set(contentViewController: stepTwoVC)
     }
     
+    // 2단계 바텀시트 생성하기
+    var fpc: FloatingPanelController!
+    
+    @IBOutlet var nextButton: UIButton!
+    
+    @IBAction func OnClick_nextButton(_ sender: Any) {
+        present(fpc, animated: true, completion: nil)
+    }
+    
+    // TableView 생성하기
     
     @IBOutlet var steponeTableVlew: UITableView!
     
@@ -58,7 +77,7 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BottomSheetSelectedTableView")
+        cell.contentView.backgroundColor = UIColor(named: "SelectedButton")
         cell.detailLabel.textColor = .white
     }
     
@@ -66,14 +85,6 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
         cell.contentView.backgroundColor = UIColor(named: "BottomSheetTableView")
         cell.detailLabel.textColor = UIColor(named: "BottomSheetFont")
-    }
-    
-    
-    @IBOutlet var nextButton: UIButton!
-    
-    @IBAction func OnClick_nextButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "StepTwo", bundle: nil).instantiateViewController(identifier: "StepTwoViewController") as! StepTwoViewController
-                
     }
     
     

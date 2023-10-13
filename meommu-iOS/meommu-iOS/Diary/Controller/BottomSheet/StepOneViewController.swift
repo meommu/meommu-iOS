@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PanModal
 
 class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -80,38 +79,4 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-}
-
-extension StepOneViewController: PanModalPresentable {
-    
-    var panScrollable: UIScrollView? {
-        return nil
-    }
-    
-    //접혔을 때
-    var shortFormHeight: PanModalHeight {
-        
-        return .contentHeight(562)
-    }
-    
-    //펼쳐졌을 때
-    var longFormHeight: PanModalHeight {
-        //위에서부터 떨어지게 설정
-        return .maxHeightWithTopInset(250)
-    }
-    
-    // 최상단 스크롤 불가
-    var anchorModalToLongForm: Bool {
-        return true
-    }
-    
-    // 드래그로 내려도 화면이 사라지지 않음
-    var allowsDragToDismiss: Bool {
-        return false
-    }
-    
-    // BottomSheet 호출 시 백그라운드 색상 지정
-    var panModalBackgroundColor: UIColor {
-        return UIColor.black.withAlphaComponent(0.5)
-    }
 }

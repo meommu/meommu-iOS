@@ -273,6 +273,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
                 vc?.Title = diaryList[index].diaryTitle
                 vc?.Detail = diaryList[index].diaryDetail
                 vc?.Date = diaryList[index].diaryDate
+                vc?.Name = diaryList[index].diaryName
             }
         }
     }

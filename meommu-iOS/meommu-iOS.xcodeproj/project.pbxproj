@@ -15,7 +15,6 @@
 		26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */; };
 		26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */; };
 		26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */; };
-		0F4279EEA8B1A215B0C463E0 /* Pods_meommu_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59DE82A8992E2D6C15B5F1 /* Pods_meommu_iOS.framework */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
@@ -67,9 +66,6 @@
 		26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstViewController.swift; sourceTree = "<group>"; };
 		26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecondViewController.swift; sourceTree = "<group>"; };
 		26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdViewController.swift; sourceTree = "<group>"; };
-		3E59DE82A8992E2D6C15B5F1 /* Pods_meommu_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meommu_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64FB55F7D4664777B6499B34 /* Pods-meommu-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meommu-iOS.debug.xcconfig"; path = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		E532A93DB70E9F801754787C /* Pods-meommu-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meommu-iOS.release.xcconfig"; path = "Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F4279EEA8B1A215B0C463E0 /* Pods_meommu_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,23 +154,6 @@
 				261003B32AD3AF07001F5E28 /* Color.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		5AB84A51A9428C3E38E268D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E59DE82A8992E2D6C15B5F1 /* Pods_meommu_iOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D81AD010A0A55C65DE95EBDB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				64FB55F7D4664777B6499B34 /* Pods-meommu-iOS.debug.xcconfig */,
-				E532A93DB70E9F801754787C /* Pods-meommu-iOS.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		F90743792AB73BFF00F7C503 /* Login */ = {
@@ -257,8 +235,6 @@
 			children = (
 				F933D89D2AB73982006EDA07 /* meommu-iOS */,
 				F933D89C2AB73982006EDA07 /* Products */,
-				D81AD010A0A55C65DE95EBDB /* Pods */,
-				5AB84A51A9428C3E38E268D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,19 +320,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F933D8AF2AB73983006EDA07 /* Build configuration list for PBXNativeTarget "meommu-iOS" */;
 			buildPhases = (
-				69DE5745AC8056638B415B35 /* [CP] Check Pods Manifest.lock */,
 				F933D8972AB73982006EDA07 /* Sources */,
 				F933D8982AB73982006EDA07 /* Frameworks */,
 				F933D8992AB73982006EDA07 /* Resources */,
-				9100406E49C21F52CE20893D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "meommu-iOS";
-			packageProductDependencies = (
-			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -385,8 +357,6 @@
 				Base,
 			);
 			mainGroup = F933D8922AB73982006EDA07;
-			packageReferences = (
-			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -427,48 +397,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		69DE5745AC8056638B415B35 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-meommu-iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9100406E49C21F52CE20893D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meommu-iOS/Pods-meommu-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F933D8972AB73982006EDA07 /* Sources */ = {
@@ -642,7 +570,6 @@
 		};
 		F933D8B02AB73983006EDA07 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64FB55F7D4664777B6499B34 /* Pods-meommu-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -673,7 +600,6 @@
 		};
 		F933D8B12AB73983006EDA07 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E532A93DB70E9F801754787C /* Pods-meommu-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -22,7 +22,6 @@ class DiaryDetailViewController: UIViewController {
     @IBAction func OnClick_diaryRiviseButton(_ sender: Any) {
         let vc = UIStoryboard(name: "DiaryRevise", bundle: nil).instantiateViewController(identifier: "DiaryReviseViewController") as! DiaryReviseViewController
         
-        presentPanModal(vc)
     }
     
     
@@ -38,12 +37,14 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet var diaryDate: UILabel!
     @IBOutlet var diaryDetail: UILabel!
     @IBOutlet var diaryTitle: UILabel!
+    @IBOutlet var diaryName: UILabel!
     @IBOutlet var diaryImageView: UIImageView!
     
     var Image: String?
     var Title: String?
     var Detail: String?
     var Date: String?
+    var Name: String?
     
     func updateUI(){
         if let Image = self.Image, let Title = self.Title, let Detail = self.Detail, let Date = self.Date {
@@ -52,7 +53,7 @@ class DiaryDetailViewController: UIViewController {
             diaryTitle.text = Title
             diaryDetail.text = Detail
             diaryDate.text = Date
-            
+            diaryName.text = Name
         }
     }
     

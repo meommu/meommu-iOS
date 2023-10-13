@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FittedSheets
+import FloatingPanel
 
 class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,6 +17,23 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         steptwoTableVlew.delegate = self
         steptwoTableVlew.dataSource = self
+        
+        // 바텀시트
+        fpc = FloatingPanelController()
+        
+        let storyboard = UIStoryboard(name: "StepThree", bundle: nil)
+        let stepThreeVC = storyboard.instantiateViewController(withIdentifier: "StepThreeViewController") as! StepThreeViewController
+
+        fpc.set(contentViewController: stepThreeVC)
+    }
+    
+    // 3단계 바텀시트 생성하기
+    var fpc: FloatingPanelController!
+    
+    @IBOutlet var nextButton: UIButton!
+    
+    @IBAction func OnClick_nextButton(_ sender: Any) {
+        present(fpc, animated: true, completion: nil)
     }
 
     

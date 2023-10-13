@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FittedSheets
+import FloatingPanel
 
 class DiaryWriteViewController: UIViewController {
     
@@ -17,11 +17,25 @@ class DiaryWriteViewController: UIViewController {
         createPickerView()
         
         todayDateSet()
+        
+        // 바텀시트
+        fpc = FloatingPanelController()
+        
+        let storyboard = UIStoryboard(name: "StepOne", bundle: nil)
+        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
+
+        fpc.set(contentViewController: stepOneVC)
     }
 
     // -----------------------------------------
-    // 바텀 시트 설정하기
+    // 1단계 바텀 시트 생성하기
+    var fpc: FloatingPanelController!
     
+    @IBOutlet var guideButton: UIButton!
+    
+    @IBAction func OnClick_guideButton(_ sender: Any) {
+        present(fpc, animated: true, completion: nil)
+    }
     
     
     // -----------------------------------------

@@ -27,7 +27,7 @@ class DiaryViewController: UIViewController {
     }
     
     // -----------------------------------------
-    // 일기 수정 및 삭제 바텀시트 생성하기
+   
     
     
     

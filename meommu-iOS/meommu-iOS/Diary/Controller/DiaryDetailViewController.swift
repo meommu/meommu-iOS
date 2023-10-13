@@ -22,7 +22,6 @@ class DiaryDetailViewController: UIViewController {
     @IBAction func OnClick_diaryRiviseButton(_ sender: Any) {
         let vc = UIStoryboard(name: "DiaryRevise", bundle: nil).instantiateViewController(identifier: "DiaryReviseViewController") as! DiaryReviseViewController
         
-        presentPanModal(vc)
     }
     
     

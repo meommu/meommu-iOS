@@ -73,9 +73,7 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func OnClick_nextButton(_ sender: Any) {
         let vc = UIStoryboard(name: "StepTwo", bundle: nil).instantiateViewController(identifier: "StepTwoViewController") as! StepTwoViewController
-        
-        presentPanModal(vc)
-        
+                
     }
     
     

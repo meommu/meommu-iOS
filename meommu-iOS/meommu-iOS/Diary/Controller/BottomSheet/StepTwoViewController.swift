@@ -23,7 +23,6 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func OnClick_nextButton(_ sender: Any) {
         let vc = UIStoryboard(name: "StepThree", bundle: nil).instantiateViewController(identifier: "StepThreeViewController") as! StepThreeViewController
         
-        presentPanModal(vc)
     }
     
     // TableView 설정

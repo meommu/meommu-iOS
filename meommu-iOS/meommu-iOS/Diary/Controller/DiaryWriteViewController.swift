@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PanModal
 
 class DiaryWriteViewController: UIViewController {
     
@@ -120,7 +119,7 @@ class DiaryWriteViewController: UIViewController {
         let formatterMonth = DateFormatter()
         formatterMonth.dateFormat = "MM"
         todayMonth = formatterMonth.string(from: Date())
-            
+
         // 선택 가능한 일 설정
         let formatterDate = DateFormatter()
         formatterDate.dateFormat = "dd"

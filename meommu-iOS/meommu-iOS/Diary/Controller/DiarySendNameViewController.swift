@@ -40,8 +40,5 @@ class DiarySendNameViewController: UIViewController {
         profileImageView.layer.cornerRadius = 50
         // Do any additional setup after loading the view.
     }
-    
-
-    
 
 }

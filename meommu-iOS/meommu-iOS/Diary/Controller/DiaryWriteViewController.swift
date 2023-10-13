@@ -17,6 +17,8 @@ class DiaryWriteViewController: UIViewController {
         
         todayDateSet()
     }
+
+    
     
     // -----------------------------------------
     // 오늘 날짜 출력하기

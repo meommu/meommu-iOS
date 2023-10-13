@@ -20,6 +20,7 @@
 		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
 		F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */; };
 		F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E463C2AB9E0E800E8C0BD /* DiarySendNameViewController.swift */; };
+		F9115BDF2AD97FB300617DD3 /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = F9115BDE2AD97FB300617DD3 /* FittedSheets */; };
 		F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D89E2AB73982006EDA07 /* AppDelegate.swift */; };
 		F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A02AB73982006EDA07 /* SceneDelegate.swift */; };
 		F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933D8A22AB73982006EDA07 /* LoginViewController.swift */; };
@@ -115,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9115BDF2AD97FB300617DD3 /* FittedSheets in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +331,9 @@
 			dependencies = (
 			);
 			name = "meommu-iOS";
+			packageProductDependencies = (
+				F9115BDE2AD97FB300617DD3 /* FittedSheets */,
+			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +362,9 @@
 				Base,
 			);
 			mainGroup = F933D8922AB73982006EDA07;
+			packageReferences = (
+				F9115BDD2AD97FB300617DD3 /* XCRemoteSwiftPackageReference "FittedSheets" */,
+			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -650,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9115BDD2AD97FB300617DD3 /* XCRemoteSwiftPackageReference "FittedSheets" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gordontucker/FittedSheets";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9115BDE2AD97FB300617DD3 /* FittedSheets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9115BDD2AD97FB300617DD3 /* XCRemoteSwiftPackageReference "FittedSheets" */;
+			productName = FittedSheets;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F933D8932AB73982006EDA07 /* Project object */;
 }

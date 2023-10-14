@@ -37,7 +37,7 @@
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-VM-49Z">
-                                <rect key="frame" x="193" y="483" width="163" height="48"/>
+                                <rect key="frame" x="193" y="458" width="163" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="9a7-bV-wg9"/>
                                     <constraint firstAttribute="height" constant="48" id="dP5-TQ-gam"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-ay-oLa">
-                                <rect key="frame" x="19" y="483" width="163" height="48"/>
+                                <rect key="frame" x="19" y="458" width="163" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Kgp-0J-c4L"/>
                                     <constraint firstAttribute="width" constant="163" id="QOv-U2-6RV"/>
@@ -64,7 +64,7 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImJ-C2-1wm">
-                                <rect key="frame" x="158.66666666666666" y="446" width="58" height="17"/>
+                                <rect key="frame" x="158.66666666666666" y="421" width="58" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="TTK-Q8-vle"/>
                                     <constraint firstAttribute="height" constant="17" id="VzU-3K-FQ0"/>
@@ -79,9 +79,9 @@
                         <constraints>
                             <constraint firstItem="JOd-VM-49Z" firstAttribute="top" secondItem="ImJ-C2-1wm" secondAttribute="bottom" constant="20" id="0ez-Kn-AWu"/>
                             <constraint firstItem="JOd-VM-49Z" firstAttribute="leading" secondItem="4ME-ay-oLa" secondAttribute="trailing" constant="11" id="2Nt-d5-Hzb"/>
+                            <constraint firstItem="ImJ-C2-1wm" firstAttribute="top" secondItem="uuM-qL-NA2" secondAttribute="bottom" id="6Pp-7f-roV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ImJ-C2-1wm" secondAttribute="trailing" constant="158.5" id="6SV-g3-zaU"/>
                             <constraint firstItem="OTN-FZ-dRb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="79.5" id="8qz-0e-cvd"/>
-                            <constraint firstItem="ImJ-C2-1wm" firstAttribute="top" secondItem="uuM-qL-NA2" secondAttribute="bottom" constant="25" id="9Rz-eB-EoY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iTU-Qn-oOb" secondAttribute="trailing" constant="124.5" id="9hw-Ym-6pJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OTN-FZ-dRb" secondAttribute="trailing" constant="79.5" id="ADz-yv-oMi"/>
                             <constraint firstItem="iTU-Qn-oOb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="124.5" id="KEN-jd-OkY"/>

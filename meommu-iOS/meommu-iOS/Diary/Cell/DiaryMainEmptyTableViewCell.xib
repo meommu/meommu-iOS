@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiaryEmptyCell" id="KGk-i7-Jjw" userLabel="DiaryEmptyCell" customClass="DiaryMainEmptyTableViewCell" customModule="meommu_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="585"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="585"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-lL-a5W">
+                        <rect key="frame" x="107.66666666666669" y="346" width="160" height="51"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="51" id="epC-NH-m9v"/>
+                            <constraint firstAttribute="width" constant="160" id="tXO-5n-0Wx"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="안녕하세요! 멈무에요 일기를 등록해주세요">
+                                <attributes>
+                                    <color key="NSColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60784316059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="20" name="HUScribble150"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcG-wI-DMY">
+                        <rect key="frame" x="107.66666666666669" y="161" width="160" height="160"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diaryEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-JU-Eo0">
+                                <rect key="frame" x="5" y="5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="61N-3J-Nvv"/>
+                                    <constraint firstAttribute="height" constant="150" id="YS9-84-Nlw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="IX5-JU-Eo0" secondAttribute="bottom" constant="5" id="8uk-PH-zYg"/>
+                            <constraint firstItem="IX5-JU-Eo0" firstAttribute="top" secondItem="fcG-wI-DMY" secondAttribute="top" constant="5" id="Sk8-gf-ehh"/>
+                            <constraint firstAttribute="width" constant="160" id="Sut-Fh-bLs"/>
+                            <constraint firstAttribute="height" constant="160" id="WMb-q3-bhh"/>
+                            <constraint firstAttribute="trailing" secondItem="IX5-JU-Eo0" secondAttribute="trailing" constant="5" id="YyZ-gt-J45"/>
+                            <constraint firstItem="IX5-JU-Eo0" firstAttribute="leading" secondItem="fcG-wI-DMY" secondAttribute="leading" constant="5" id="aac-d8-HAd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="fcG-wI-DMY" secondAttribute="trailing" constant="87.5" id="1pQ-jW-JCO"/>
+                    <constraint firstItem="fcG-wI-DMY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="87.5" id="WeZ-Ac-MCo"/>
+                    <constraint firstItem="jEU-lL-a5W" firstAttribute="top" secondItem="fcG-wI-DMY" secondAttribute="bottom" constant="25" id="guZ-UP-ing"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jEU-lL-a5W" secondAttribute="trailing" constant="87.5" id="l7I-P1-hNi"/>
+                    <constraint firstItem="fcG-wI-DMY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="150" id="nfi-ze-C5f"/>
+                    <constraint firstItem="jEU-lL-a5W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="87.5" id="pPk-5H-4J6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="View" destination="fcG-wI-DMY" id="I07-wJ-ZUI"/>
+                <outlet property="meommuImage" destination="IX5-JU-Eo0" id="Rxg-tI-GHd"/>
+            </connections>
+            <point key="canvasLocation" x="136.80000000000001" y="18.842364532019705"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="diaryEmpty" width="213.33332824707031" height="213.33332824707031"/>
+    </resources>
+</document>

@@ -8,7 +8,7 @@
 import UIKit
 import FloatingPanel
 
-class DiaryWriteViewController: UIViewController {
+class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +18,30 @@ class DiaryWriteViewController: UIViewController {
         
         todayDateSet()
         
-        // 바텀시트
+        // -----------------------------------------
+        // 1단계 바텀시트
+        // 바텀시트 컨트롤러 생성하기
         fpc = FloatingPanelController()
         
+        
+        // 테두리 둥글게 설정하기
+        let appearance = SurfaceAppearance()
+        appearance.cornerRadius = 20.0
+        
+        fpc.surfaceView.appearance = appearance
+        
+        // 바텀시트 높이 고정 설정하기
+        
+        
+        // delegate 설정
+        fpc.delegate = self
+        
+        // 바텀시트에 표시할 컨텐츠 뷰 생성 및 설정
         let storyboard = UIStoryboard(name: "StepOne", bundle: nil)
         let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
 
         fpc.set(contentViewController: stepOneVC)
+        
     }
 
     // -----------------------------------------
@@ -150,6 +167,8 @@ class DiaryWriteViewController: UIViewController {
         selectedDate = Int(todayDate)!
     }
 }
+
+
 
 // -----------------------------------------
 // Date Picker 설정

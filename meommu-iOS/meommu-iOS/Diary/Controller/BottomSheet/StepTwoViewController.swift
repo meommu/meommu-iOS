@@ -21,6 +21,12 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         // 바텀시트
         fpc = FloatingPanelController()
         
+        // 테두리 둥글게 설정하기
+        let appearance = SurfaceAppearance()
+        appearance.cornerRadius = 20.0
+        
+        fpc.surfaceView.appearance = appearance
+        
         let storyboard = UIStoryboard(name: "StepThree", bundle: nil)
         let stepThreeVC = storyboard.instantiateViewController(withIdentifier: "StepThreeViewController") as! StepThreeViewController
 

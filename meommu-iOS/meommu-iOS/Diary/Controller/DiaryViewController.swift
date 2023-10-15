@@ -248,7 +248,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: maincellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
             let target = diaryList[indexPath.section]
             
-            diaryCell.diaryImageView?.image = UIImage(named: target.diaryImage)
+            diaryCell.diaryImageView?.image = UIImage(named: target.diaryImage[0])
             diaryCell.diaryDateLabel?.text = target.diaryDate
             diaryCell.diaryDetailLabel?.text = target.diaryDetail
             diaryCell.diaryNameLabel?.text = target.diaryName
@@ -261,19 +261,16 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     // 정보전달
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.section)
+        let selectedDiary = diaryList[indexPath.row]
+        
+        performSegue(withIdentifier: "showDetail", sender: selectedDiary)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            let vc = segue.destination as? DiaryDetailViewController
-            
-            if let index = sender as? Int{
-                vc?.Image = diaryList[index].diaryImage
-                vc?.Title = diaryList[index].diaryTitle
-                vc?.Detail = diaryList[index].diaryDetail
-                vc?.Date = diaryList[index].diaryDate
-                vc?.Name = diaryList[index].diaryName
+            if let vc = segue.destination as? DiaryDetailViewController,
+               let selectedDiary = sender as? Diary {
+                vc.diary = selectedDiary
             }
         }
     }

@@ -365,6 +365,12 @@
                                                     <constraint firstAttribute="trailing" secondItem="8s8-lS-wwI" secondAttribute="trailing" constant="16.5" id="l1a-vO-ghq"/>
                                                 </constraints>
                                             </view>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-m3-JFL">
+                                                <rect key="frame" x="129" y="461.33333333333337" width="116" height="25.666666666666686"/>
+                                                <connections>
+                                                    <action selector="diaryimagePageChange:" destination="0qe-i2-VpE" eventType="valueChanged" id="mS9-4U-hhn"/>
+                                                </connections>
+                                            </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -372,9 +378,12 @@
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eC2-Od-geH"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eFC-jR-VBU"/>
                                             <constraint firstAttribute="trailing" secondItem="pEp-PW-Pqk" secondAttribute="trailing" id="fz7-Wk-7rj"/>
+                                            <constraint firstAttribute="trailing" secondItem="d5q-m3-JFL" secondAttribute="trailing" constant="130" id="hQf-49-crh"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="pEp-PW-Pqk" secondAttribute="bottom" id="npz-kt-5r2"/>
+                                            <constraint firstItem="d5q-m3-JFL" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" constant="129" id="pbJ-w5-Qla"/>
                                             <constraint firstAttribute="trailing" secondItem="haz-ce-LvD" secondAttribute="trailing" id="sKG-uv-if9"/>
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="top" secondItem="WL1-Tb-8ie" secondAttribute="top" id="x8I-PH-ffJ"/>
+                                            <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="d5q-m3-JFL" secondAttribute="bottom" constant="8" symbolic="YES" id="yMO-Le-XTn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -436,6 +445,7 @@
                         <outlet property="diaryName" destination="aol-tu-ULz" id="tu3-pf-bia"/>
                         <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="ndg-7n-e1W"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
+                        <outlet property="diaryimagepageControl" destination="d5q-m3-JFL" id="0Tf-vh-Mbm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rr2-Vr-9vd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

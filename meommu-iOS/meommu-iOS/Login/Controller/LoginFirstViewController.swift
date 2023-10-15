@@ -17,12 +17,16 @@ class LoginFirstViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
+    @IBOutlet weak var loginImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupLebel()
         setupButton()
         setupCornerRadius()
+        setupImageView()
     }
     
 
@@ -45,6 +49,10 @@ class LoginFirstViewController: UIViewController {
         
         firstSubTitleLabel.textColor = Color.black.textColor
         secondSubTitleLabel.textColor = Color.black.textColor
+    }
+    
+    func setupImageView() {
+        loginImageView.image = UIImage(named: "로그인")
     }
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수

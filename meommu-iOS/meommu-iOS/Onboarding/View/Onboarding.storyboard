@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩 1" translatesAutoresizingMaskIntoConstraints="NO" id="1jL-t5-38u">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1jL-t5-38u">
                                 <rect key="frame" x="20" y="253" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1jL-t5-38u" secondAttribute="height" multiplier="1:1" id="Kbk-kK-Ou5"/>
@@ -84,9 +84,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstMainLabel" destination="85b-Ba-PZ5" id="acB-gZ-QDA"/>
+                        <outlet property="firstImageView" destination="1jL-t5-38u" id="Hmy-Ng-FIk"/>
+                        <outlet property="firstMainLabel" destination="85b-Ba-PZ5" id="NR8-Ap-0Sx"/>
                         <outlet property="nextButton" destination="wLS-y9-J40" id="Qrh-91-zDb"/>
-                        <outlet property="secondMainLabel" destination="H0x-Nq-tHe" id="MmJ-hK-ReZ"/>
+                        <outlet property="secondMainLabel" destination="H0x-Nq-tHe" id="wEl-07-hCo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩2" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-u3-tiP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-u3-tiP">
                                 <rect key="frame" x="20" y="203" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hPv-u3-tiP" secondAttribute="height" id="AbM-jv-tou"/>
@@ -173,6 +174,7 @@
                     <connections>
                         <outlet property="firstMainLabel" destination="Pus-Ni-sF5" id="XUO-Eo-IFs"/>
                         <outlet property="nextButton" destination="VKX-dH-zZE" id="9Bz-1d-nyu"/>
+                        <outlet property="secondImageView" destination="hPv-u3-tiP" id="aWP-Kl-qOp"/>
                         <outlet property="secondMainLabel" destination="FxK-DQ-Ydn" id="GnL-I8-dJM"/>
                     </connections>
                 </viewController>
@@ -188,7 +190,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="온보딩3" translatesAutoresizingMaskIntoConstraints="NO" id="PUD-Oh-bfr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PUD-Oh-bfr">
                                 <rect key="frame" x="20" y="203" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PUD-Oh-bfr" secondAttribute="height" id="Pce-Sn-I5R"/>
@@ -260,6 +262,7 @@
                         <outlet property="firstMainLabel" destination="x5l-B6-RSy" id="EY5-jX-sig"/>
                         <outlet property="nextButton" destination="QcA-2h-OLW" id="XrV-d7-WQ4"/>
                         <outlet property="secondMainLabel" destination="Hd7-4R-Vdf" id="8LL-nu-c5n"/>
+                        <outlet property="thirdImageVIew" destination="PUD-Oh-bfr" id="jcU-Nx-Z3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKi-Bz-gJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -279,8 +282,5 @@
         <image name="firstImage" width="33" height="6"/>
         <image name="secondImage" width="33" height="6"/>
         <image name="thirdImage" width="33" height="6"/>
-        <image name="온보딩 1" width="350" height="350"/>
-        <image name="온보딩2" width="349" height="350"/>
-        <image name="온보딩3" width="350" height="350"/>
     </resources>
 </document>

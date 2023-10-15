@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xRi-mR-j2l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xRi-mR-j2l">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -527,7 +527,7 @@
                                     <constraint firstAttribute="height" constant="91" id="NPi-cL-JOP"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="로그인2" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-ql-PDT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-ql-PDT">
                                 <rect key="frame" x="20" y="205" width="335" height="350"/>
                             </imageView>
                         </subviews>
@@ -550,6 +550,7 @@
                     <connections>
                         <outlet property="backButton" destination="tbc-Ac-Y39" id="kDI-rO-RFf"/>
                         <outlet property="firstMainLabel" destination="m6h-6q-YeM" id="RAQ-vF-OT6"/>
+                        <outlet property="loginImageView" destination="9aH-ql-PDT" id="BBn-CE-o8N"/>
                         <outlet property="nextButton" destination="ec3-tN-seU" id="JrK-FD-MbW"/>
                         <outlet property="secondMainLabel" destination="NZh-Oi-uhf" id="ZbM-tV-W27"/>
                         <outlet property="subLabel" destination="NTz-HZ-eGA" id="ren-GG-7dj"/>
@@ -622,7 +623,7 @@
                                     <constraint firstAttribute="height" constant="116" id="Niw-03-o2W"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="로그인" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
                                 <rect key="frame" x="20" y="256" width="335" height="367"/>
                             </imageView>
                         </subviews>
@@ -642,6 +643,7 @@
                     </view>
                     <connections>
                         <outlet property="firstSubTitleLabel" destination="BDR-do-UZW" id="x1P-ju-RCf"/>
+                        <outlet property="loginImageView" destination="6uK-ut-Tbw" id="9hk-Qx-Pcb"/>
                         <outlet property="mainTitleLabel" destination="IJx-Gz-OID" id="zA9-7g-ueS"/>
                         <outlet property="secondSubTitleLabel" destination="vfD-b6-15z" id="6a9-tb-Shd"/>
                         <outlet property="signupButton" destination="NZE-1e-FRA" id="d1g-nS-oI4"/>
@@ -657,8 +659,6 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="로그인" width="350" height="350"/>
-        <image name="로그인2" width="350" height="350"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

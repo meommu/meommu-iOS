@@ -16,12 +16,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var secondMainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
+    @IBOutlet weak var loginImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLebel()
         setupButton()
         setupCornerRadius()
+        setupImageView()
     }
 
     //MARK: - 코너 레디어스 값 설정 메서드
@@ -41,6 +44,10 @@ class LoginViewController: UIViewController {
         firstMainLabel.textColor = Color.black.textColor
         secondMainLabel.textColor = Color.black.textColor
         subLabel.textColor = Color.darkGray.textColor
+    }
+    
+    func setupImageView() {
+        loginImageView.image = UIImage(named: "온보딩3")
     }
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수

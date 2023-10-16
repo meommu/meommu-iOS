@@ -52,6 +52,7 @@
 		F9947A212AC26B1C000F11BD /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1D2AC26B1C000F11BD /* image4.png */; };
 		F9947A222AC26B1C000F11BD /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1E2AC26B1C000F11BD /* image3.png */; };
 		F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */; };
+		F9AC5C3D2ADD62660044B22B /* c5637b392e4f496b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
 		F9BC8E7A2ABC0EB5000D90D1 /* StepOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */; };
 		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
@@ -105,6 +106,7 @@
 		F9947A1D2AC26B1C000F11BD /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
 		F9947A1E2AC26B1C000F11BD /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeViewController.swift; sourceTree = "<group>"; };
+		F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = c5637b392e4f496b.ttf; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		F9BC8E792ABC0EB5000D90D1 /* StepOne.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepOne.storyboard; sourceTree = "<group>"; };
 		F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryRevise.storyboard; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				F933D89E2AB73982006EDA07 /* AppDelegate.swift */,
 				F933D8A02AB73982006EDA07 /* SceneDelegate.swift */,
 				F933D8A92AB73983006EDA07 /* LaunchScreen.storyboard */,
+				F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */,
 				F93D6FA62AB964FD00591C21 /* HUScribble150.otf */,
 				F948D8502AC171AB00F965E6 /* Assets.xcassets */,
 				F933D8AC2AB73983006EDA07 /* Info.plist */,
@@ -379,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AC5C3D2ADD62660044B22B /* c5637b392e4f496b.ttf in Resources */,
 				F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */,
 				F9947A212AC26B1C000F11BD /* image4.png in Resources */,
 				F9947A222AC26B1C000F11BD /* image3.png in Resources */,

@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HUScribble150.otf">
-            <string>HUScribble150</string>
+        <array key="c5637b392e4f496b.ttf">
+            <string>Ownglyph_Yeon_The_Land-Rg</string>
         </array>
     </customFonts>
     <scenes>
@@ -38,19 +38,19 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoC-az-mNw">
                                         <rect key="frame" x="21.999999999999996" y="11" width="50.666666666666657" height="22"/>
-                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3L-xe-weQ">
-                                        <rect key="frame" x="80.666666666666671" y="11" width="23.666666666666671" height="22"/>
-                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
+                                        <rect key="frame" x="80.666666666666671" y="11" width="22.666666666666671" height="22"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-rC-yMC">
-                                        <rect key="frame" x="112.33333333333333" y="11" width="29.666666666666671" height="22"/>
-                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
+                                        <rect key="frame" x="111.33333333333333" y="11" width="26.999999999999986" height="22"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -79,10 +79,10 @@
                                     <constraint firstItem="v3L-xe-weQ" firstAttribute="leading" secondItem="CoC-az-mNw" secondAttribute="trailing" constant="8" symbolic="YES" id="Ltb-zV-vc5"/>
                                     <constraint firstItem="OFF-dO-fSL" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="13" id="Mo0-iW-4ri"/>
                                     <constraint firstAttribute="height" constant="44" id="aty-Ta-syb"/>
+                                    <constraint firstItem="veU-rC-yMC" firstAttribute="leading" secondItem="v3L-xe-weQ" secondAttribute="trailing" constant="8" id="cW3-fQ-fVq"/>
                                     <constraint firstItem="veU-rC-yMC" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="11" id="hoy-FP-VI5"/>
                                     <constraint firstItem="v3L-xe-weQ" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="11" id="jCf-JJ-8A9"/>
                                     <constraint firstItem="AdS-fq-82y" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="12" id="reG-3v-2C1"/>
-                                    <constraint firstItem="veU-rC-yMC" firstAttribute="leading" secondItem="v3L-xe-weQ" secondAttribute="trailing" constant="8" id="wC7-45-52d"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-er-gxl">
@@ -189,13 +189,13 @@
                                     <constraint firstItem="QNt-ET-3Jn" firstAttribute="leading" secondItem="5tT-D3-t6k" secondAttribute="trailing" constant="7" id="oAI-Tz-laA"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/10)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ux-sH-DIZ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ux-sH-DIZ">
                                 <rect key="frame" x="25" y="236" width="325" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="pUz-4d-FEj"/>
                                     <constraint firstAttribute="height" constant="42" id="sY7-RQ-yMg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czk-cs-GIG">
@@ -212,7 +212,7 @@
                                     <constraint firstAttribute="height" constant="400" id="h8V-Go-g7J"/>
                                     <constraint firstAttribute="width" constant="325" id="iKR-hJ-ha6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
@@ -299,7 +299,7 @@
     <resources>
         <image name="Camera" width="44" height="44"/>
         <image name="arrow_drop_down" width="32" height="32"/>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="chevron.backward" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

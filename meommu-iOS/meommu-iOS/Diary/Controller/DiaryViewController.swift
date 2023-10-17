@@ -230,7 +230,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         if diaryList.count == 0 {
             return 585
         } else {
-            return 483
+            return 526
         }
     }
     

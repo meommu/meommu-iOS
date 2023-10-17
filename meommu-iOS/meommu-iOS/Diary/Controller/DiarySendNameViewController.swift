@@ -18,7 +18,7 @@ class DiarySendNameViewController: UIViewController {
     @IBOutlet var backButton: UIBarButtonItem!
     
     @IBAction func OnClick_BackButton(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // 작성하기 버튼

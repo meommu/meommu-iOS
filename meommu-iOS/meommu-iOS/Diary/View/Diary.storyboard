@@ -11,9 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HUScribble150.otf">
-            <string>HUScribble150</string>
-        </array>
         <array key="c5637b392e4f496b.ttf">
             <string>Ownglyph_Yeon_The_Land-Rg</string>
         </array>
@@ -170,19 +167,19 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
-                                        <rect key="frame" x="22" y="11" width="48" height="22"/>
+                                        <rect key="frame" x="22" y="11" width="47" height="22"/>
                                         <attributedString key="attributedText">
                                             <fragment content="2023">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HUScribble150"/>
+                                                    <font key="NSFont" size="17" name="Ownglyph_Yeon_The_Land-Rg"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="년">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HUScribble150"/>
+                                                    <font key="NSFont" size="17" name="Ownglyph_Yeon_The_Land-Rg"/>
                                                     <font key="NSOriginalFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -191,17 +188,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
-                                        <rect key="frame" x="78" y="11" width="36" height="22"/>
+                                        <rect key="frame" x="77" y="11" width="36" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="g3I-4y-NIg"/>
                                             <constraint firstAttribute="width" constant="36" id="rKc-dA-HDJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                        <rect key="frame" x="112" y="13" width="18" height="18"/>
+                                        <rect key="frame" x="111" y="13" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
                                             <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>

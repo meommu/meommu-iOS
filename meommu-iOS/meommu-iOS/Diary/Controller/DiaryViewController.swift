@@ -52,7 +52,7 @@ class DiaryViewController: UIViewController {
     // 작성하기 버튼 클릭 시 화면 전환
     @IBAction func OnClick_DiaryWriteButton(_ sender: Any) {
         let diarysendStoryboard = UIStoryboard(name: "DiarySend", bundle: nil)
-        let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendViewController")
+        let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendNameViewController")
         diarysendVC.modalPresentationStyle = .fullScreen
         self.present(diarysendVC, animated: true, completion: nil)
         

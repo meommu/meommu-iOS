@@ -14,6 +14,9 @@
         <array key="HUScribble150.otf">
             <string>HUScribble150</string>
         </array>
+        <array key="c5637b392e4f496b.ttf">
+            <string>Ownglyph_Yeon_The_Land-Rg</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Diary View Controller-->
@@ -207,7 +210,6 @@
                                         <state key="normal" image="arrow_drop_down"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
@@ -301,7 +303,7 @@
                                                                     <constraint firstAttribute="height" constant="25" id="9Fd-wd-klP"/>
                                                                     <constraint firstAttribute="width" constant="300" id="niZ-WB-nQI"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="26"/>
+                                                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="26"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -321,29 +323,27 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s8-lS-wwI">
-                                                        <rect key="frame" x="16.666666666666657" y="78" width="340" height="19.333333333333329"/>
+                                                        <rect key="frame" x="16.666666666666657" y="78" width="340" height="18.666666666666671"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="340" id="6vY-b5-xyy"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="16"/>
                                                         <color key="textColor" red="0.38431376220000002" green="0.3803921938" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-xP-O2E">
-                                                        <rect key="frame" x="16.666666666666671" y="117.33333333333337" width="80" height="17"/>
+                                                        <rect key="frame" x="16.666666666666671" y="116.66666666666663" width="30.333333333333329" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="FWX-r3-1oa"/>
-                                                            <constraint firstAttribute="width" constant="80" id="zXx-dL-4pS"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aol-tu-ULz">
-                                                        <rect key="frame" x="106.66666666666669" y="117.33333333333337" width="250" height="17"/>
+                                                        <rect key="frame" x="57" y="116.66666666666663" width="38" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="BSV-vY-uL8"/>
-                                                            <constraint firstAttribute="width" constant="250" id="sQZ-u0-grY"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -478,7 +478,7 @@
         <image name="UserCircle" width="24" height="24"/>
         <image name="Vector" width="30.5" height="30.5"/>
         <image name="arrow_drop_down" width="32" height="32"/>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="chevron.backward" catalog="system" width="32" height="32"/>
         <namedColor name="DiaryTextColor">
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

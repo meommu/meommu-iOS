@@ -123,8 +123,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="77" translatesAutoresizingMaskIntoConstraints="NO" id="Lt2-jR-7vQ">
-                                <rect key="frame" x="68" y="791" width="257" height="17"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="77" translatesAutoresizingMaskIntoConstraints="NO" id="Lt2-jR-7vQ">
+                                <rect key="frame" x="63" y="791" width="267" height="17"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCk-BF-kDy">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="17"/>
@@ -133,14 +133,14 @@
                                         <state key="normal" title="로그아웃"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eaj-D0-rc7">
-                                        <rect key="frame" x="126" y="0.0" width="1" height="17"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <rect key="frame" x="131" y="0.0" width="1" height="17"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1.2" id="Qpi-lX-bI1"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB4-kf-etc">
-                                        <rect key="frame" x="204" y="0.0" width="53" height="17"/>
+                                        <rect key="frame" x="214" y="0.0" width="53" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="회원 탈퇴"/>
@@ -148,6 +148,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="coE-1G-nK9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eaj-D0-rc7" secondAttribute="bottom" id="kSv-CA-sYS"/>
+                                    <constraint firstItem="Eaj-D0-rc7" firstAttribute="top" secondItem="Lt2-jR-7vQ" secondAttribute="top" id="nKr-s7-9Pv"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -158,11 +160,12 @@
                             <constraint firstItem="1b7-ME-fMw" firstAttribute="top" secondItem="Tpf-hQ-ONj" secondAttribute="bottom" constant="15" id="DQm-oH-zAE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tpf-hQ-ONj" secondAttribute="trailing" constant="20" id="GpV-yF-vCn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1b7-ME-fMw" secondAttribute="trailing" constant="20" id="S0D-ah-apQ"/>
+                            <constraint firstItem="Lt2-jR-7vQ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="63" id="ceQ-60-Ktl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1b7-ME-fMw" secondAttribute="bottom" constant="200" id="dDW-zE-2FO"/>
                             <constraint firstAttribute="bottom" secondItem="Lt2-jR-7vQ" secondAttribute="bottom" constant="44" id="emW-Cj-oEy"/>
+                            <constraint firstAttribute="trailing" secondItem="Lt2-jR-7vQ" secondAttribute="trailing" constant="63" id="gsw-gV-30m"/>
                             <constraint firstItem="Tpf-hQ-ONj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ksQ-ev-4qk"/>
                             <constraint firstItem="1b7-ME-fMw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="skb-j8-vdb"/>
-                            <constraint firstItem="Lt2-jR-7vQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wxf-63-JWm"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -174,8 +177,11 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lineView" destination="Eaj-D0-rc7" id="KhN-Fk-vbh"/>
+                        <outlet property="logoutButton" destination="FCk-BF-kDy" id="Nyx-rH-Hsp"/>
                         <outlet property="mainImageView" destination="sHg-Aa-aki" id="38n-9E-YeC"/>
                         <outlet property="pageTableView" destination="1b7-ME-fMw" id="He0-Cd-Dsd"/>
+                        <outlet property="withdrawalButton" destination="FB4-kf-etc" id="qrB-bX-wUM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,8 +194,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

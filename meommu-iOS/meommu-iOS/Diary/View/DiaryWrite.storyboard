@@ -126,12 +126,10 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXM-Se-EbH">
                                         <rect key="frame" x="158" y="16" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up4-7P-Ljf">
                                         <rect key="frame" x="91" y="16" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27l-0V-CyB">
                                         <rect key="frame" x="24" y="16" width="60" height="60"/>
@@ -159,12 +157,10 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64J-sN-Cec">
                                         <rect key="frame" x="225" y="16" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hm6-xQ-QjT">
                                         <rect key="frame" x="292" y="16" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96470588450000005" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -266,6 +262,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
+                        <outlet property="borderView1" destination="hm6-xQ-QjT" id="vuG-ev-STf"/>
+                        <outlet property="borderView2" destination="64J-sN-Cec" id="nAb-f2-5PM"/>
+                        <outlet property="borderView3" destination="LXM-Se-EbH" id="dk7-bi-gYE"/>
+                        <outlet property="borderView4" destination="up4-7P-Ljf" id="C2b-Gw-oVF"/>
+                        <outlet property="borderView5" destination="27l-0V-CyB" id="ggz-Sh-CeN"/>
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
                         <outlet property="guideButton" destination="SYv-T2-0TZ" id="k8s-lx-dQZ"/>

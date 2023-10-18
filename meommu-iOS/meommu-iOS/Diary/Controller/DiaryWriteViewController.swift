@@ -18,6 +18,8 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         
         todayDateSet()
         
+        makeImageViewBorder()
+        
         // -----------------------------------------
         // 1단계 바텀시트
         // 바텀시트 컨트롤러 생성하기
@@ -56,7 +58,43 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
     
     // -----------------------------------------
     // 이미지뷰 테두리 만들기
+    @IBOutlet var borderView5: UIView!
+    @IBOutlet var borderView4: UIView!
+    @IBOutlet var borderView3: UIView!
+    @IBOutlet var borderView2: UIView!
+    @IBOutlet var borderView1: UIView!
     
+    func makeImageViewBorder(){
+        // 테두리 둥글게
+        borderView1?.layer.cornerRadius = 4
+        borderView2?.layer.cornerRadius = 4
+        borderView3?.layer.cornerRadius = 4
+        borderView4?.layer.cornerRadius = 4
+        borderView5?.layer.cornerRadius = 4
+        // 테두리 두께
+        borderView1?.layer.borderWidth = 2
+        borderView2?.layer.borderWidth = 2
+        borderView3?.layer.borderWidth = 2
+        borderView4?.layer.borderWidth = 2
+        borderView5?.layer.borderWidth = 2
+        // 테두리 컬러
+        borderView1?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        borderView2?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        borderView3?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        borderView4?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        borderView5?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        // 배경색 투명하게
+        borderView1.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
+        borderView2.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
+        borderView3.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
+        borderView4.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
+        borderView5.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
+        borderView1?.isOpaque = false
+        borderView2?.isOpaque = false
+        borderView3?.isOpaque = false
+        borderView4?.isOpaque = false
+        borderView5?.isOpaque = false
+    }
     
     // -----------------------------------------
     // 오늘 날짜 출력하기

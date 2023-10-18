@@ -268,10 +268,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
-                                <rect key="frame" x="13.666666666666657" y="730" width="348" height="48"/>
+                                <rect key="frame" x="20" y="730" width="335" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="348" id="ScH-WA-qAa"/>
                                     <constraint firstAttribute="height" constant="48" id="W0E-0Z-kni"/>
+                                    <constraint firstAttribute="width" constant="335" id="hDU-Yn-RRe"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,6 +16,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--MyPageViewController-->
+        <scene sceneID="uLC-Dz-cpa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="MyPageViewController" id="ydY-gc-AGe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhi-3L-nD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="-517"/>
+        </scene>
         <!--Diary View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -52,7 +60,7 @@
                                                         <fragment content="Title">
                                                             <attributes>
                                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <font key="NSFont" size="26" name="HUScribble150"/>
+                                                                <font key="NSFont" metaFont="system" size="26"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -167,19 +175,19 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
-                                        <rect key="frame" x="22" y="11" width="48" height="22"/>
+                                        <rect key="frame" x="22" y="11" width="55" height="22"/>
                                         <attributedString key="attributedText">
                                             <fragment content="2023">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HUScribble150"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="년">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HUScribble150"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
                                                     <font key="NSOriginalFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -188,7 +196,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
-                                        <rect key="frame" x="78" y="11" width="36" height="22"/>
+                                        <rect key="frame" x="85" y="11" width="36" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="g3I-4y-NIg"/>
                                             <constraint firstAttribute="width" constant="36" id="rKc-dA-HDJ"/>
@@ -198,7 +206,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                        <rect key="frame" x="112" y="13" width="18" height="18"/>
+                                        <rect key="frame" x="119" y="13" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
                                             <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
@@ -252,6 +260,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="UserCircle" id="f0L-c0-MhX">
                                 <color key="tintColor" red="0.59215688710000003" green="0.59215688710000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="ydY-gc-AGe" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CGS-I0-NjN"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -476,7 +487,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -57,12 +57,6 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
     // -----------------------------------------
     // 이미지뷰 테두리 만들기
     
-    @IBOutlet var borderView5: UIView!
-    @IBOutlet var borderView4: UIView!
-    @IBOutlet var borderView3: UIView!
-    @IBOutlet var borderView2: UIView!
-    @IBOutlet var borderView1: UIView!
-    
     
     // -----------------------------------------
     // 오늘 날짜 출력하기

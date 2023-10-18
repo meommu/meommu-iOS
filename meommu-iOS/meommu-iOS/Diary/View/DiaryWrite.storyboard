@@ -289,19 +289,15 @@
                             <constraint firstItem="ERx-jz-qxc" firstAttribute="top" secondItem="czk-cs-GIG" secondAttribute="bottom" constant="15" id="0kU-ht-zkZ"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="2h1-pS-TZP"/>
                             <constraint firstItem="czk-cs-GIG" firstAttribute="top" secondItem="8ux-sH-DIZ" secondAttribute="bottom" constant="5" id="4Fs-lW-v9Y"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SYv-T2-0TZ" secondAttribute="trailing" constant="13.5" id="I3M-zA-2r1"/>
+                            <constraint firstItem="8ux-sH-DIZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="NYQ-eI-z1N"/>
                             <constraint firstItem="8ux-sH-DIZ" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yr8-YO-VIw"/>
-                            <constraint firstItem="ERx-jz-qxc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="ZQp-Wh-xtc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="czk-cs-GIG" secondAttribute="trailing" constant="11.5" id="aqB-W3-nle"/>
-                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="13.5" id="eiI-wb-MpY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8ux-sH-DIZ" secondAttribute="trailing" constant="25" id="gMK-gh-Pme"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="g8o-B6-vGj"/>
+                            <constraint firstItem="ERx-jz-qxc" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="h3Y-57-PqF"/>
+                            <constraint firstItem="czk-cs-GIG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="i4V-8Q-ges"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
-                            <constraint firstItem="czk-cs-GIG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="11.5" id="m2W-hD-UaQ"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOo-iK-t9e"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ERx-jz-qxc" secondAttribute="trailing" constant="25" id="nl2-Uq-GVG"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oWe-i1-C1Z"/>
                             <constraint firstItem="SYv-T2-0TZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rEb-SY-PNb"/>
-                            <constraint firstItem="8ux-sH-DIZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="x6z-po-5IX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="일기쓰기" id="y5s-cd-1iW">

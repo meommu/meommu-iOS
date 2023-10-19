@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import PhotosUI
+import MobileCoreServices
+import UniformTypeIdentifiers
 import FloatingPanel
 
-class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegate {
+class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegate, PHPickerViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,84 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
     }
     
     // -----------------------------------------
+    // 앨범에서 사진 추가하기
+    
+    @IBOutlet var imagePickerButton: UIButton!
+    
+    @IBOutlet var imageView5: UIImageView!
+    @IBOutlet var imageView4: UIImageView!
+    @IBOutlet var imageView3: UIImageView!
+    @IBOutlet var imageView2: UIImageView!
+    @IBOutlet var imageView1: UIImageView!
+    
+    @IBAction func OnClick_imagePickerButton(_ sender: UIButton) {
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 5 // 최대 선택 가능한 사진 개수
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            dismiss(animated: true, completion: nil)
+
+            for (index, result) in results.enumerated() {
+                if index == 0 {
+                    loadImage(forImageView:imageView1 , with: result.itemProvider)
+                } else if index == 1 {
+                    loadImage(forImageView:imageView2 , with: result.itemProvider)
+                } else if index == 2 {
+                    loadImage(forImageView:imageView3 , with: result.itemProvider)
+                } else if index == 3 {
+                    loadImage(forImageView:imageView4 , with: result.itemProvider)
+                } else if index == 4 {
+                    loadImage(forImageView:imageView5 , with: result.itemProvider)
+                }
+                
+                // 필요한 경우 더 많은 이미지뷰에 대한 처리 추가 가능
+            }
+            
+           // 선택된 사진 수가 imageViews 배열의 크기보다 작을 경우 나머지 이미지뷰 초기화
+           for i in results.count..<5 {
+               switch i{
+               case 0:
+                   self.imageView1.image = nil
+               case 1:
+                   self.imageView2.image = nil
+               case 2:
+                   self.imageView3.image = nil
+               case 3:
+                   self.imageView4.image = nil
+               case 4:
+                   self.imageView5.image = nil
+               default:
+                   break;
+              }
+           }
+       }
+
+    private func loadImage(forImageView imageView:UIImageView?,with itemprovider:AnyObject?){
+        let typeIdentifier:String?=(itemprovider as? NSExtensionItem)?.attachments?.first?.registeredTypeIdentifiers.first ?? itemprovider as? String
+        let itemProvider = NSItemProvider()
+          
+        if typeIdentifier == UTType.image.identifier {
+            itemProvider.loadObject(ofClass: UIImage.self) { image, _ in
+                DispatchQueue.main.async {
+                    guard let image = image as? UIImage, let imageView = imageView else { return }
+                    
+                    UIView.transition(with: imageView, duration: .zero, options: .transitionCrossDissolve) {
+                        imageView.image = image
+                    }
+                }
+            }
+          } else {
+              print("Could not load image from item provider")
+          }
+    }
+    
+    // -----------------------------------------
     // 이미지뷰 테두리 만들기
     @IBOutlet var borderView5: UIView!
     @IBOutlet var borderView4: UIView!
@@ -78,11 +159,11 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         borderView4?.layer.borderWidth = 2
         borderView5?.layer.borderWidth = 2
         // 테두리 컬러
-        borderView1?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView2?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView3?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView4?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView5?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        borderView1?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView2?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView3?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView4?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView5?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
         // 배경색 투명하게
         borderView1.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
         borderView2.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)

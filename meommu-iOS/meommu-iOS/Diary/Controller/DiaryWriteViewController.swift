@@ -47,6 +47,10 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
 
         fpc.set(contentViewController: stepOneVC)
         
+        // 앨범에서 이미지 추가하기
+        // UIImageView 배열 초기화
+        imageViews = [imageView1, imageView2, imageView3, imageView4, imageView5]
+
     }
 
     // -----------------------------------------
@@ -70,10 +74,15 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView1: UIImageView!
     
+    var imageViews: [UIImageView] = []
+    var selectedImages: [UIImage] = []
+    
     @IBAction func OnClick_imagePickerButton(_ sender: UIButton) {
         var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 5 // 최대 선택 가능한 사진 개수
-        
+                
+        // 사진 선택 개수 제한 (여기서는 최대 5장)
+        configuration.selectionLimit = 5 - selectedImages.count
+            
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         
@@ -81,62 +90,34 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            dismiss(animated: true, completion: nil)
-
-            for (index, result) in results.enumerated() {
-                if index == 0 {
-                    loadImage(forImageView:imageView1 , with: result.itemProvider)
-                } else if index == 1 {
-                    loadImage(forImageView:imageView2 , with: result.itemProvider)
-                } else if index == 2 {
-                    loadImage(forImageView:imageView3 , with: result.itemProvider)
-                } else if index == 3 {
-                    loadImage(forImageView:imageView4 , with: result.itemProvider)
-                } else if index == 4 {
-                    loadImage(forImageView:imageView5 , with: result.itemProvider)
-                }
-                
-                // 필요한 경우 더 많은 이미지뷰에 대한 처리 추가 가능
-            }
-            
-           // 선택된 사진 수가 imageViews 배열의 크기보다 작을 경우 나머지 이미지뷰 초기화
-           for i in results.count..<5 {
-               switch i{
-               case 0:
-                   self.imageView1.image = nil
-               case 1:
-                   self.imageView2.image = nil
-               case 2:
-                   self.imageView3.image = nil
-               case 3:
-                   self.imageView4.image = nil
-               case 4:
-                   self.imageView5.image = nil
-               default:
-                   break;
-              }
-           }
-       }
-
-    private func loadImage(forImageView imageView:UIImageView?,with itemprovider:AnyObject?){
-        let typeIdentifier:String?=(itemprovider as? NSExtensionItem)?.attachments?.first?.registeredTypeIdentifiers.first ?? itemprovider as? String
-        let itemProvider = NSItemProvider()
-          
-        if typeIdentifier == UTType.image.identifier {
-            itemProvider.loadObject(ofClass: UIImage.self) { image, _ in
-                DispatchQueue.main.async {
-                    guard let image = image as? UIImage, let imageView = imageView else { return }
-                    
-                    UIView.transition(with: imageView, duration: .zero, options: .transitionCrossDissolve) {
-                        imageView.image = image
+        dismiss(animated: true, completion: nil)
+        
+        for result in results {
+            if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] imageOrNil, error in
+                    if let image = imageOrNil as? UIImage {
+                        DispatchQueue.main.async { [weak self] in
+                            guard let self = self else { return }
+                            
+                            // 선택한 이미지를 배열에 추가하고 이미지 뷰에 표시
+                            self.selectedImages.append(image)
+                            
+                            if let emptyImageViewIndex = self.imageViews.firstIndex(where: { $0.image == nil }) {
+                                self.imageViews[emptyImageViewIndex].image = image
+                            }
+                        }
                     }
                 }
+            } else {
+                print("이미지 로드 실패")
             }
-          } else {
-              print("Could not load image from item provider")
-          }
+            
+            if selectedImages.count >= 5 {
+                break  // 이미지를 모두 선택했으면 반복문 종료
+            }
+        }
     }
-    
+
     // -----------------------------------------
     // 이미지뷰 테두리 만들기
     @IBOutlet var borderView5: UIView!

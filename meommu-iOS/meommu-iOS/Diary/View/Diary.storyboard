@@ -19,7 +19,9 @@
         <!--MyPageViewController-->
         <scene sceneID="uLC-Dz-cpa">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="MyPageViewController" id="ydY-gc-AGe" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="MyPageViewController" id="ydY-gc-AGe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="581-At-XQv"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhi-3L-nD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1726" y="-517"/>

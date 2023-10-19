@@ -9,7 +9,7 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     
-    var pageArray: [Page] = [Page(pageName: "계정 관리"), Page(pageName: "공지")]
+    var pageArray: [Page] = Page.page
     
     @IBOutlet weak var pageTableView: UITableView!
     @IBOutlet weak var mainImageView: UIImageView!
@@ -51,6 +51,8 @@ extension MyPageViewController: UITableViewDataSource {
         
         cell.pageNameLabel.text = pageArray[indexPath.row].pageName
         cell.pageImageView.image = pageArray[indexPath.row].pageImage
+        cell.pageImageView.tintColor = .lightGray
+        
         cell.selectionStyle = .none
         
         return cell

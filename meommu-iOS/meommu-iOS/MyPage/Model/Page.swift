@@ -22,7 +22,7 @@ extension Page {
     // 페이지를 나타내는 셀의 이미지가 고정이기 때문에 생성자에 미리 구현
     init(pageName: String) {
         self.pageName = pageName
-        self.pageImage = UIImage(systemName: "chevron.right")?.withTintColor(.lightGray)
+        self.pageImage = UIImage(systemName: "chevron.right")
     }
 }
 

@@ -51,6 +51,8 @@ extension MyPageViewController: UITableViewDataSource {
         
         cell.pageNameLabel.text = pageArray[indexPath.row].pageName
         cell.pageImageView.image = pageArray[indexPath.row].pageImage
+        
+        // 셀 이미지 틴트 컬러 설정
         cell.pageImageView.tintColor = .lightGray
         
         cell.selectionStyle = .none

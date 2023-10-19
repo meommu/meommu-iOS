@@ -103,7 +103,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-eX-PHp">
-                                                        <rect key="frame" x="17" y="33" width="24.333333333333329" height="14"/>
+                                                        <rect key="frame" x="17" y="35" width="24.333333333333314" height="14"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="0 / 5">
                                                                 <attributes>
@@ -115,7 +115,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmJ-wo-bT9">
-                                                        <rect key="frame" x="19" y="8" width="22" height="22"/>
+                                                        <rect key="frame" x="19" y="10" width="22" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="k5q-nD-uc9"/>
                                                             <constraint firstAttribute="width" constant="22" id="wQF-E2-nwH"/>
@@ -125,16 +125,19 @@
                                                         <state key="normal" image="Camera">
                                                             <color key="titleColor" name="borderColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="OnClick_imagePickerButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wvf-fK-4qu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="5fk-6t-ZXl"/>
-                                                    <constraint firstItem="QmJ-wo-bT9" firstAttribute="top" secondItem="h7Y-su-c0F" secondAttribute="top" constant="8" id="6LS-az-5Yg"/>
                                                     <constraint firstItem="Zcf-eX-PHp" firstAttribute="leading" secondItem="h7Y-su-c0F" secondAttribute="leading" constant="17" id="7i2-rx-bp5"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ev9-NG-3LW" secondAttribute="trailing" id="Oud-mU-JJo"/>
                                                     <constraint firstAttribute="height" constant="60" id="Po2-AQ-6vI"/>
                                                     <constraint firstItem="QmJ-wo-bT9" firstAttribute="leading" secondItem="h7Y-su-c0F" secondAttribute="leading" constant="19" id="V0J-Kg-mDd"/>
+                                                    <constraint firstItem="QmJ-wo-bT9" firstAttribute="top" secondItem="h7Y-su-c0F" secondAttribute="top" constant="10" id="eXA-5w-8Bh"/>
                                                     <constraint firstAttribute="bottom" secondItem="Ev9-NG-3LW" secondAttribute="bottom" id="gFW-r1-5mA"/>
                                                     <constraint firstItem="Ev9-NG-3LW" firstAttribute="top" secondItem="h7Y-su-c0F" secondAttribute="top" id="hXH-qz-sjD"/>
                                                     <constraint firstItem="Zcf-eX-PHp" firstAttribute="top" secondItem="QmJ-wo-bT9" secondAttribute="bottom" constant="3" id="qkh-KZ-112"/>
@@ -322,6 +325,12 @@
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
                         <outlet property="guideButton" destination="SYv-T2-0TZ" id="k8s-lx-dQZ"/>
+                        <outlet property="imagePickerButton" destination="QmJ-wo-bT9" id="7zs-jP-DKd"/>
+                        <outlet property="imageView1" destination="COD-GK-Npr" id="Sbh-Hb-bSR"/>
+                        <outlet property="imageView2" destination="XR0-YO-vU5" id="6ci-2g-cad"/>
+                        <outlet property="imageView3" destination="SnG-PU-xRn" id="se8-mJ-Nzr"/>
+                        <outlet property="imageView4" destination="WMC-tr-tru" id="XGi-OB-mES"/>
+                        <outlet property="imageView5" destination="Ev9-NG-3LW" id="Lth-hF-uoD"/>
                         <outlet property="monthLabel" destination="v3L-xe-weQ" id="ztH-Zn-GTW"/>
                         <outlet property="yearLabel" destination="CoC-az-mNw" id="3Bf-0a-sDV"/>
                     </connections>
@@ -352,7 +361,7 @@
     <resources>
         <image name="Camera" width="44" height="44"/>
         <image name="arrow_drop_down" width="32" height="32"/>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="chevron.backward" catalog="system" width="32" height="32"/>
         <namedColor name="borderColor">
             <color red="0.75300002098083496" green="0.76899999380111694" blue="0.80400002002716064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

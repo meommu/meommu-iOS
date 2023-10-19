@@ -30,12 +30,12 @@ class MyPageViewController: UIViewController {
     func setupTableView() {
         // 델리게이트 패턴의 대리자 설정
         pageTableView.dataSource = self
+        pageTableView.delegate = self
         // 셀의 높이 설정
         pageTableView.rowHeight = 54
-        
         // 셀 라인 없애기
         pageTableView.separatorStyle = .none
-        }
+    }
     
 }
 
@@ -59,6 +59,18 @@ extension MyPageViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
+
+
+//MARK: - UITableDelegate 확장
+extension MyPageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            // 세그웨이를 실행
+            performSegue(withIdentifier: "toProfileEditVC", sender: indexPath)
+            
+        }
+    }
+}
+

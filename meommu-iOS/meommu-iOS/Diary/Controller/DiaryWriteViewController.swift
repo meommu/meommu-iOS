@@ -50,6 +50,9 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         // 앨범에서 이미지 추가하기
         // UIImageView 배열 초기화
         imageViews = [imageView1, imageView2, imageView3, imageView4, imageView5]
+        
+        // 이미지 피커 버튼에 액션 추가
+        imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
     }
 
@@ -77,16 +80,29 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
     var imageViews: [UIImageView] = []
     var selectedImages: [UIImage] = []
     
-    @IBAction func OnClick_imagePickerButton(_ sender: UIButton) {
-        var configuration = PHPickerConfiguration()
-                
-        // 사진 선택 개수 제한 (여기서는 최대 5장)
-        configuration.selectionLimit = 5 - selectedImages.count
+    @objc func OnClick_imagePickerButton(_ sender: UIButton) {
+        let status = PHPhotoLibrary.authorizationStatus()
             
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = self
-        
-        present(picker, animated: true, completion: nil)
+            switch status {
+            case .authorized:
+                presentPicker()
+                
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization { [weak self] status in
+                    if status == .authorized {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.presentPicker()
+                        }
+                    } else {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.showPermissionAlert()
+                        }
+                    }
+                }
+                
+            default:
+                showPermissionAlert()
+            }
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
@@ -117,6 +133,33 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
             }
         }
     }
+    
+    private func presentPicker(){
+        var configuration = PHPickerConfiguration()
+                
+        // 사진 선택 개수 제한 (여기서는 최대 5장)
+        configuration.selectionLimit = 5 - selectedImages.count
+            
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    // 권한 설정
+    private func showPermissionAlert() {
+          let alert = UIAlertController(title:"앨범 접근 권한 필요", message:"사진을 선택하기 위해 앨범 접근 권한이 필요합니다. 설정에서 앨범 접근 권한을 허용해주세요.", preferredStyle:.alert)
+
+          alert.addAction(UIAlertAction(title:"설정으로 이동", style:.default) { _ in
+              guard let settingsURL = URL(string:UIApplication.openSettingsURLString) else { return }
+
+              UIApplication.shared.open(settingsURL)
+          })
+
+          alert.addAction(UIAlertAction(title:"취소", style:.cancel))
+
+          present(alert, animated:true)
+      }
 
     // -----------------------------------------
     // 이미지뷰 테두리 만들기

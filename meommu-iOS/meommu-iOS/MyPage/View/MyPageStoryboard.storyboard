@@ -254,14 +254,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYQ-Px-d4F">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPn-vm-9cf">
                                         <rect key="frame" x="0.0" y="27" width="353" height="38"/>
                                         <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="8EA-FJ-oe2"/>
+                                            <constraint firstAttribute="height" constant="38" id="iPn-sb-Hsj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -285,14 +285,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uts-4w-TRF">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-w9-dYJ">
                                         <rect key="frame" x="0.0" y="27" width="353" height="38"/>
                                         <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="aCx-4c-VW0"/>
+                                            <constraint firstAttribute="height" constant="38" id="khk-Hg-Zt2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -305,14 +305,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKz-aa-XZA">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-Ma-vJ6">
                                         <rect key="frame" x="0.0" y="27" width="353" height="38"/>
                                         <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="8GK-dk-EKm"/>
+                                            <constraint firstAttribute="height" constant="38" id="N0F-x3-jbP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -349,6 +349,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="프로필 수정" id="1k7-kz-78C"/>
+                    <connections>
+                        <outlet property="kindergartenNameLabel" destination="Tno-bV-NXb" id="3QV-jz-ftw"/>
+                        <outlet property="kindergartenNameStatusLabel" destination="A5h-RY-Gkp" id="mxa-nx-ssJ"/>
+                        <outlet property="kindergartenNameTextField" destination="TPn-vm-9cf" id="irw-BB-yL8"/>
+                        <outlet property="phoneNumberLabel" destination="kMm-0V-aAD" id="xyE-wX-lCT"/>
+                        <outlet property="phoneNumberTextField" destination="qVD-Ma-vJ6" id="ZGa-Lt-jvs"/>
+                        <outlet property="profileView" destination="Nih-5j-m5R" id="oHK-5k-AYR"/>
+                        <outlet property="representativeNameLabel" destination="tib-v0-WfK" id="ehv-TX-eJe"/>
+                        <outlet property="representativeNameStatusLabel" destination="zF8-Jh-mIt" id="0et-Jp-yZg"/>
+                        <outlet property="representativeNameTextField" destination="g5k-w9-dYJ" id="sDy-9J-am6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt4-gD-lNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,10 +9,14 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     
-    var pageArray: [Page] = [Page(pageName: "계정 관리"), Page(pageName: "공지")]
+    var pageArray: [Page] = Page.page
+    
+    @IBOutlet weak var profileView: UIView!
+    
+    @IBOutlet weak var kindergartenNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var pageTableView: UITableView!
-    @IBOutlet weak var mainImageView: UIImageView!
     
     
     
@@ -23,19 +27,59 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupProfile()
         setupTableView()
     }
     
-    // 테이블 뷰 셋업 메서드
+    //MARK: - 프로필 셋업 메서드
+    func setupProfile() {
+        profileView.setCornerRadius(30)
+    }
+    
+    //MARK: - 테이블 뷰 셋업 메서드
     func setupTableView() {
         // 델리게이트 패턴의 대리자 설정
         pageTableView.dataSource = self
+        pageTableView.delegate = self
         // 셀의 높이 설정
         pageTableView.rowHeight = 54
-        
         // 셀 라인 없애기
         pageTableView.separatorStyle = .none
-        }
+    }
+    
+    //MARK: - 로그아웃 버튼 메서드
+    @IBAction func logoutButtonTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: "로그아웃", message: "로그아웃 후 알림을 받을 수 없습니다.", preferredStyle: .alert)
+                let success = UIAlertAction(title: "로그아웃", style: .default) { action in
+                    print("로그아웃버튼이 눌렸습니다.")
+                }
+                let cancel = UIAlertAction(title: "이전", style: .cancel) { action in
+                    print("이전버튼이 눌렸습니다.")
+                }
+                
+                alert.addAction(cancel)
+                alert.addAction(success)
+                
+                // 실제 띄우기
+                self.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: - 회원탈퇴 버튼 메서드
+    @IBAction func withdrawalButtonTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: "회원탈퇴", message: "그 동안 작성했던 모든 일기와 입력했던 정보들이 삭제됩니다.", preferredStyle: .alert)
+                let success = UIAlertAction(title: "회원탈퇴", style: .default) { action in
+                    print("회원탈퇴버튼이 눌렸습니다.")
+                }
+                let cancel = UIAlertAction(title: "이전", style: .cancel) { action in
+                    print("이전버튼이 눌렸습니다.")
+                }
+                
+                alert.addAction(cancel)
+                alert.addAction(success)
+                
+                // 실제 띄우기
+                self.present(alert, animated: true, completion: nil)
+    }
     
 }
 
@@ -51,10 +95,23 @@ extension MyPageViewController: UITableViewDataSource {
         
         cell.pageNameLabel.text = pageArray[indexPath.row].pageName
         cell.pageImageView.image = pageArray[indexPath.row].pageImage
+        
+        cell.setupUI()
         cell.selectionStyle = .none
         
         return cell
     }
-    
-    
 }
+
+
+//MARK: - UITableDelegate 확장
+extension MyPageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            // 세그웨이를 실행
+            performSegue(withIdentifier: "toProfileEditVC", sender: indexPath)
+        }
+    }
+}
+

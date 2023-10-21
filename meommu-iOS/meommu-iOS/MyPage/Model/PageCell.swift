@@ -12,15 +12,10 @@ class PageCell: UITableViewCell {
     @IBOutlet weak var pageNameLabel: UILabel!
     @IBOutlet weak var pageImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    //MARK: - UI 셋업 메서드
+    func setupUI() {
+        pageImageView.tintColor = .lightGray
+        pageNameLabel.textColor = .lightGray
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }

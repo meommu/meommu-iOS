@@ -32,6 +32,7 @@ class ProfileEditViewController: UIViewController {
         super.viewDidLoad()
         
         setupProfile()
+        setupLabel()
         setupTextField()
     }
     
@@ -45,6 +46,15 @@ class ProfileEditViewController: UIViewController {
         kindergartenNameTextField.text = userProfile?.kindergartenName
         representativeNameTextField.text = userProfile?.representativeName
         phoneNumberTextField.text = userProfile?.phoneNumber
+    }
+
+    //MARK: - 상태 레이블 셋업 메서드
+    func setupLabel() {
+        kindergartenNameStatusLabel.text = ""
+        representativeNameStatusLabel.text = ""
+        
+        kindergartenNameStatusLabel.textColor = .red
+        representativeNameStatusLabel.textColor = .red
     }
 
 }

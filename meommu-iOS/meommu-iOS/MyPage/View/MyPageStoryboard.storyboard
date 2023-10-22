@@ -353,6 +353,7 @@
                         <outlet property="kindergartenNameLabel" destination="Tno-bV-NXb" id="3QV-jz-ftw"/>
                         <outlet property="kindergartenNameStatusLabel" destination="A5h-RY-Gkp" id="mxa-nx-ssJ"/>
                         <outlet property="kindergartenNameTextField" destination="TPn-vm-9cf" id="irw-BB-yL8"/>
+                        <outlet property="nextButton" destination="0uN-Vp-X8k" id="D8C-pg-sER"/>
                         <outlet property="phoneNumberLabel" destination="kMm-0V-aAD" id="xyE-wX-lCT"/>
                         <outlet property="phoneNumberTextField" destination="qVD-Ma-vJ6" id="ZGa-Lt-jvs"/>
                         <outlet property="profileView" destination="Nih-5j-m5R" id="oHK-5k-AYR"/>

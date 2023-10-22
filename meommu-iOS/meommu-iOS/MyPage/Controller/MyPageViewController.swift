@@ -21,8 +21,6 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var pageTableView: UITableView!
     
-    
-    
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var withdrawalButton: UIButton!
     @IBOutlet weak var lineView: UIView!

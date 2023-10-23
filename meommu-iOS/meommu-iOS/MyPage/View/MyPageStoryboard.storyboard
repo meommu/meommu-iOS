@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-1308" y="-19"/>
         </scene>
-        <!--meom-mu-->
+        <!--마이 프로필-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="MyPageViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,14 +186,18 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="meom-mu" id="LTH-g1-w58">
+                    <navigationItem key="navigationItem" title="마이 프로필" id="LTH-g1-w58">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="vUE-Z4-56F">
                             <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
                             <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="Y6W-OH-hqX" id="mbE-Mz-vfY"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="vUE-Z4-56F" id="rxw-o2-eS7"/>
                         <outlet property="emailLabel" destination="CXP-iZ-kXV" id="zsv-h1-o0Q"/>
                         <outlet property="kindergartenNameLabel" destination="2hF-kR-4HQ" id="MeP-Ub-wyU"/>
                         <outlet property="lineView" destination="Eaj-D0-rc7" id="KhN-Fk-vbh"/>
@@ -351,8 +355,17 @@
                             <constraint firstItem="81k-93-jt0" firstAttribute="trailing" secondItem="OCD-69-8PQ" secondAttribute="trailing" constant="20" id="sgi-Vc-B5j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="프로필 수정" id="1k7-kz-78C"/>
+                    <navigationItem key="navigationItem" title="프로필 수정" id="1k7-kz-78C">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="LUs-wP-YHA">
+                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="ikU-57-mYM" id="mhR-2l-p03"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="LUs-wP-YHA" id="Q01-bG-JuZ"/>
                         <outlet property="kindergartenNameLabel" destination="Tno-bV-NXb" id="3QV-jz-ftw"/>
                         <outlet property="kindergartenNameStatusLabel" destination="A5h-RY-Gkp" id="mxa-nx-ssJ"/>
                         <outlet property="kindergartenNameTextField" destination="TPn-vm-9cf" id="irw-BB-yL8"/>

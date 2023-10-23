@@ -25,6 +25,9 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var withdrawalButton: UIButton!
     @IBOutlet weak var lineView: UIView!
     
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,6 +93,10 @@ class MyPageViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    //MARK: - 백 버튼 탭 메서드
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
 }
 
 //MARK: - UITableViewDataSource 확장
@@ -110,6 +117,9 @@ extension MyPageViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    
+    
 }
 
 

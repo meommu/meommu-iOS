@@ -29,6 +29,7 @@ class ProfileEditViewController: UIViewController {
     @IBOutlet weak var representativeNameStatusLabel: UILabel!
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -153,6 +154,13 @@ class ProfileEditViewController: UIViewController {
         }
         print("문제 발생!")
     }
+    
+    //MARK: - 백 버튼 탭 메서드
+    
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 //MARK: - UITextViewDelegate 확장

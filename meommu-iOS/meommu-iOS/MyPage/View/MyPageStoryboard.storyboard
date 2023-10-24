@@ -363,13 +363,20 @@
                                 <action selector="backButtonTapped:" destination="ikU-57-mYM" id="mhR-2l-p03"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="수정하기" id="QLn-ui-P7H">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="editModeButtonTapped:" destination="ikU-57-mYM" id="Ekz-6g-r31"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="LUs-wP-YHA" id="Q01-bG-JuZ"/>
+                        <outlet property="editButton" destination="0uN-Vp-X8k" id="Vor-wU-igv"/>
+                        <outlet property="editModeButton" destination="QLn-ui-P7H" id="wKz-Wu-G1S"/>
                         <outlet property="kindergartenNameLabel" destination="Tno-bV-NXb" id="3QV-jz-ftw"/>
                         <outlet property="kindergartenNameStatusLabel" destination="A5h-RY-Gkp" id="mxa-nx-ssJ"/>
                         <outlet property="kindergartenNameTextField" destination="TPn-vm-9cf" id="irw-BB-yL8"/>
-                        <outlet property="nextButton" destination="0uN-Vp-X8k" id="D8C-pg-sER"/>
                         <outlet property="phoneNumberLabel" destination="kMm-0V-aAD" id="xyE-wX-lCT"/>
                         <outlet property="phoneNumberTextField" destination="qVD-Ma-vJ6" id="ZGa-Lt-jvs"/>
                         <outlet property="profileView" destination="Nih-5j-m5R" id="oHK-5k-AYR"/>

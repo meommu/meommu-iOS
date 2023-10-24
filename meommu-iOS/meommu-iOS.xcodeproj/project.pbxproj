@@ -23,6 +23,7 @@
 		269AED4B2AE3BA00009EADA2 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4A2AE3BA00009EADA2 /* SignUp.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
+		269AED832AE7B8FA009EADA2 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
@@ -82,6 +83,7 @@
 		269AED4A2AE3BA00009EADA2 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		269AED4C2AE3BAF3009EADA2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				2603C7ED2ADC4E7500090A9D /* MyPageViewController.swift */,
 				269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */,
+				269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */,
 				269AED422ADDA715009EADA2 /* Page.swift in Sources */,
+				269AED832AE7B8FA009EADA2 /* AnnouncementViewController.swift in Sources */,
 				269AED442ADDA805009EADA2 /* PageCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,

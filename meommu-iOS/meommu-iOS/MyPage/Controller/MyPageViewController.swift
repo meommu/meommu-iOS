@@ -131,6 +131,8 @@ extension MyPageViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             // 세그웨이를 실행
             performSegue(withIdentifier: "toProfileEditVC", sender: indexPath)
+        } else if indexPath.row == 1 {
+            performSegue(withIdentifier: "toAnnouncementVC", sender: indexPath)
         }
     }
     

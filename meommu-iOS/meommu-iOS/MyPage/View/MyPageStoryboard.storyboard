@@ -206,11 +206,36 @@
                         <outlet property="profileView" destination="K2U-VO-AJv" id="yMI-BK-Ud9"/>
                         <outlet property="withdrawalButton" destination="FB4-kf-etc" id="qrB-bX-wUM"/>
                         <segue destination="ikU-57-mYM" kind="show" identifier="toProfileEditVC" id="c7x-7P-oTA"/>
+                        <segue destination="Lo4-dR-col" kind="show" identifier="toAnnouncementVC" id="cLn-QE-Uvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-28.169014084507044"/>
+        </scene>
+        <!--공지-->
+        <scene sceneID="KEd-6e-2nx">
+            <objects>
+                <viewController id="Lo4-dR-col" customClass="AnnouncementViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0HG-LM-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1KX-z2-a5t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="공지" id="LWr-01-QwU">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="S1T-E5-y8h">
+                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="Lo4-dR-col" id="5VU-Bc-r3X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ky-xt-zBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="479"/>
         </scene>
         <!--프로필 수정-->
         <scene sceneID="6QW-1r-E18">

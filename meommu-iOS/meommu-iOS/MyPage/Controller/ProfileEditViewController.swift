@@ -12,6 +12,9 @@ class ProfileEditViewController: UIViewController {
     // 유저 정보 모델
     var userProfile: UserProfileModel?
     
+    // 수정하기 상태 확인을 위한 프로퍼티
+    private var editingMode = false
+
     @IBOutlet weak var profileView: UIView!
     
     // 질문 레이블 프로터피
@@ -28,9 +31,9 @@ class ProfileEditViewController: UIViewController {
     @IBOutlet weak var kindergartenNameStatusLabel: UILabel!
     @IBOutlet weak var representativeNameStatusLabel: UILabel!
     
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var backButton: UIBarButtonItem!
-    
+    @IBOutlet weak var editModeButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,27 @@ class ProfileEditViewController: UIViewController {
         setupLabel()
         setupTextField()
         setupButtons()
+        configureUIForDefaultState()
     }
+    
+    //MARK: - 기본 상태 UI 설정
+    func configureUIForDefaultState() {
+        editModeButton.isEnabled = true
+        // ❗️이후에 컬러 수정
+        editModeButton.tintColor = .black
+        // 수정하기 버튼 숨기기
+        editButton.layer.isHidden = true
+        }
+
+    //MARK: - 수정 모드 UI 설정
+        func configureUIForEditMode() {
+            // 수정 모드 버튼 숨기기
+            editModeButton.isEnabled = false
+            editModeButton.tintColor = .clear
+            
+            // 수정하기 버튼 보이기
+            editButton.layer.isHidden = false
+        }
     
     //MARK: - 프로필 셋업 메서드
     func setupProfile() {
@@ -71,11 +94,11 @@ class ProfileEditViewController: UIViewController {
     //MARK: - 버튼 셋업 메서드
     func setupButtons(){
         // 다음 버튼 색상
-        nextButton.backgroundColor = Color.darkGray.buttonColor
-        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        editButton.backgroundColor = Color.darkGray.buttonColor
+        editButton.setTitleColor(Color.white.textColor, for: .normal)
         
         // 다음 버튼 초기 비활성화
-        nextButton.isEnabled = false
+        editButton.isEnabled = false
     }
     
     //MARK: - 전화번호 형식 확인 메서드
@@ -122,34 +145,43 @@ class ProfileEditViewController: UIViewController {
         }
     }
     
+    //MARK: - 수정하기 모드 버튼 탭 메서드
+    @IBAction func editModeButtonTapped(_ sender: UIBarButtonItem) {
+        configureUIForEditMode()
+        editingMode = true
+    }
+    
+    
+    
     //MARK: - 수정하기 버튼 탭 메서드
     @IBAction func editButtonTapped(_ sender: UIButton) {
         
         if isValidkindergartenName(kindergartenNameTextField.text) && isValidrepresentativeName(representativeNameTextField.text) {
-            // 서버와 통신하여 바뀐 데이터 값으로 수정해주기
-            print(#function)
+            
+            // ❗️서버와 통신하여 바뀐 데이터 값으로 수정하는 로직 추가
+            
             self.navigationController?.popViewController(animated: true)
         } else if !isValidkindergartenName(kindergartenNameTextField.text) && !isValidrepresentativeName(representativeNameTextField.text){
             
             kindergartenNameStatusLabel.text = "사용하실 수 없는 닉네임입니다."
             representativeNameStatusLabel.text = "사용하실 수 없는 대표자 이름입니다."
             
-            nextButton.backgroundColor = Color.darkGray.buttonColor
-            nextButton.isEnabled = false
+            editButton.backgroundColor = Color.darkGray.buttonColor
+            editButton.isEnabled = false
             
         } else if isValidkindergartenName(kindergartenNameTextField.text) {
             
             representativeNameStatusLabel.text = "사용하실 수 없는 대표자 이름입니다."
             
-            nextButton.backgroundColor = Color.darkGray.buttonColor
-            nextButton.isEnabled = false
+            editButton.backgroundColor = Color.darkGray.buttonColor
+            editButton.isEnabled = false
             
         } else if isValidrepresentativeName(representativeNameTextField.text) {
             
             kindergartenNameStatusLabel.text = "사용하실 수 없는 닉네임입니다."
             
-            nextButton.backgroundColor = Color.darkGray.buttonColor
-            nextButton.isEnabled = false
+            editButton.backgroundColor = Color.darkGray.buttonColor
+            editButton.isEnabled = false
             
         }
         print("문제 발생!")
@@ -158,13 +190,32 @@ class ProfileEditViewController: UIViewController {
     //MARK: - 백 버튼 탭 메서드
     
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+        
+        if editingMode {
+            // 수정 모드에서 백버튼 상황
+            configureUIForDefaultState()
+            editingMode = false
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }
 
 //MARK: - UITextViewDelegate 확장
 extension ProfileEditViewController: UITextFieldDelegate {
+    //MARK: - 델리게이트 메서드 - 텍스트 필드 입력을 시작할 지 결정 메서드
+    //키보드 올라오면 함수 호출
+        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+            if editingMode {
+                // 수정 모드에서 텍스트 필드 수정 가능
+                return true
+            } else {
+                // 일반 모드에서 텍스트 필드 수정 불가능
+                return false
+            }
+        }
+    
     //MARK: - 델리게이트 메서드 - 텍스트 필드 입력 시작 시 실행되는 메서드
     // 텍스트 필드 클릭 시 상태 메시지를 지워주기 위함
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -177,20 +228,20 @@ extension ProfileEditViewController: UITextFieldDelegate {
     // 키보드 해제되면 텍스트 값이 바꼈는지 확인 후 버튼 활성화
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == kindergartenNameTextField && kindergartenNameTextField.text != userProfile?.kindergartenName {
-            nextButton.backgroundColor = Color.purple.buttonColor
-            nextButton.isEnabled = true
+            editButton.backgroundColor = Color.purple.buttonColor
+            editButton.isEnabled = true
             return
         } else if textField == representativeNameTextField && representativeNameTextField.text != userProfile?.representativeName {
-            nextButton.backgroundColor = Color.purple.buttonColor
-            nextButton.isEnabled = true
+            editButton.backgroundColor = Color.purple.buttonColor
+            editButton.isEnabled = true
             return
         } else if textField == phoneNumberTextField && phoneNumberTextField.text != userProfile?.phoneNumber && isValidPhoneNumber(phoneNumberTextField.text){
-            nextButton.backgroundColor = Color.purple.buttonColor
-            nextButton.isEnabled = true
+            editButton.backgroundColor = Color.purple.buttonColor
+            editButton.isEnabled = true
             return
         }
-        nextButton.backgroundColor = Color.darkGray.buttonColor
-        nextButton.isEnabled = false
+        editButton.backgroundColor = Color.darkGray.buttonColor
+        editButton.isEnabled = false
     }
     
     //MARK: - 델리게이트 메서드 - 텍스트 필드 리턴 시 실행되는 메서드

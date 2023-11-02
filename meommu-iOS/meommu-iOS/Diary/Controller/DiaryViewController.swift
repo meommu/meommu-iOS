@@ -251,7 +251,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             diaryCell.diaryImageView?.image = UIImage(named: target.diaryImage[0])
             diaryCell.diaryDateLabel?.text = target.diaryDate
             diaryCell.diaryDetailLabel?.text = target.diaryDetail
-            diaryCell.diaryNameLabel?.text = target.diaryName
+            diaryCell.diaryNameLabel?.text = target.diaryName + " 일기"
             diaryCell.diaryTitleLabel?.text = target.diaryTitle
             
             return diaryCell

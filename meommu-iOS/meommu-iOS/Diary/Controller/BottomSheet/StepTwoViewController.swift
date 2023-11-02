@@ -27,7 +27,7 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         fpc.surfaceView.appearance = appearance
         
-        let storyboard = UIStoryboard(name: "StepThree", bundle: nil)
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
         let stepThreeVC = storyboard.instantiateViewController(withIdentifier: "StepThreeViewController") as! StepThreeViewController
 
         fpc.set(contentViewController: stepThreeVC)

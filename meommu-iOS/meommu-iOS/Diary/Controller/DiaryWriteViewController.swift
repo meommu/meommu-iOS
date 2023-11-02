@@ -42,7 +42,7 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         fpc.delegate = self
         
         // 바텀시트에 표시할 컨텐츠 뷰 생성 및 설정
-        let storyboard = UIStoryboard(name: "StepOne", bundle: nil)
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
         let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
 
         fpc.set(contentViewController: stepOneVC)

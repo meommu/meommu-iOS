@@ -66,7 +66,7 @@ class DiaryDetailViewController: UIViewController {
         diaryDate.text = selectedDiary.diaryDate
         diaryDetail.text = selectedDiary.diaryDetail
         diaryTitle.text = selectedDiary.diaryTitle
-        diaryName.text = selectedDiary.diaryName
+        diaryName.text = selectedDiary.diaryName + " 일기"
         
         if let imageName = selectedDiary.diaryImage.first,
            let image = UIImage(named: imageName) {

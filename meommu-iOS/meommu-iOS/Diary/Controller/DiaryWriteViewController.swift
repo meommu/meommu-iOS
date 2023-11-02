@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import PhotosUI
+import MobileCoreServices
+import UniformTypeIdentifiers
 import FloatingPanel
 
-class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegate {
+class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegate, PHPickerViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +42,18 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         fpc.delegate = self
         
         // 바텀시트에 표시할 컨텐츠 뷰 생성 및 설정
-        let storyboard = UIStoryboard(name: "StepOne", bundle: nil)
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
         let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
 
         fpc.set(contentViewController: stepOneVC)
         
+        // 앨범에서 이미지 추가하기
+        // UIImageView 배열 초기화
+        imageViews = [imageView1, imageView2, imageView3, imageView4, imageView5]
+        
+        // 이미지 피커 버튼에 액션 추가
+        imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
+
     }
 
     // -----------------------------------------
@@ -56,6 +66,101 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         present(fpc, animated: true, completion: nil)
     }
     
+    // -----------------------------------------
+    // 앨범에서 사진 추가하기
+    
+    @IBOutlet var imagePickerButton: UIButton!
+    
+    @IBOutlet var imageView5: UIImageView!
+    @IBOutlet var imageView4: UIImageView!
+    @IBOutlet var imageView3: UIImageView!
+    @IBOutlet var imageView2: UIImageView!
+    @IBOutlet var imageView1: UIImageView!
+    
+    var imageViews: [UIImageView] = []
+    var selectedImages: [UIImage] = []
+    
+    @objc func OnClick_imagePickerButton(_ sender: UIButton) {
+        let status = PHPhotoLibrary.authorizationStatus()
+            
+            switch status {
+            case .authorized:
+                presentPicker()
+                
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization { [weak self] status in
+                    if status == .authorized {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.presentPicker()
+                        }
+                    } else {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.showPermissionAlert()
+                        }
+                    }
+                }
+                
+            default:
+                showPermissionAlert()
+            }
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true, completion: nil)
+        
+        for result in results {
+            if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] imageOrNil, error in
+                    if let image = imageOrNil as? UIImage {
+                        DispatchQueue.main.async { [weak self] in
+                            guard let self = self else { return }
+                            
+                            // 선택한 이미지를 배열에 추가하고 이미지 뷰에 표시
+                            self.selectedImages.append(image)
+                            
+                            if let emptyImageViewIndex = self.imageViews.firstIndex(where: { $0.image == nil }) {
+                                self.imageViews[emptyImageViewIndex].image = image
+                            }
+                        }
+                    }
+                }
+            } else {
+                print("이미지 로드 실패")
+            }
+            
+            if selectedImages.count >= 5 {
+                break  // 이미지를 모두 선택했으면 반복문 종료
+            }
+        }
+    }
+    
+    private func presentPicker(){
+        var configuration = PHPickerConfiguration()
+                
+        // 사진 선택 개수 제한 (여기서는 최대 5장)
+        configuration.selectionLimit = 5 - selectedImages.count
+            
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    // 권한 설정
+    private func showPermissionAlert() {
+          let alert = UIAlertController(title:"앨범 접근 권한 필요", message:"사진을 선택하기 위해 앨범 접근 권한이 필요합니다. 설정에서 앨범 접근 권한을 허용해주세요.", preferredStyle:.alert)
+
+          alert.addAction(UIAlertAction(title:"설정으로 이동", style:.default) { _ in
+              guard let settingsURL = URL(string:UIApplication.openSettingsURLString) else { return }
+
+              UIApplication.shared.open(settingsURL)
+          })
+
+          alert.addAction(UIAlertAction(title:"취소", style:.cancel))
+
+          present(alert, animated:true)
+      }
+
     // -----------------------------------------
     // 이미지뷰 테두리 만들기
     @IBOutlet var borderView5: UIView!
@@ -78,11 +183,11 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         borderView4?.layer.borderWidth = 2
         borderView5?.layer.borderWidth = 2
         // 테두리 컬러
-        borderView1?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView2?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView3?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView4?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        borderView5?.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        borderView1?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView2?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView3?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView4?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView5?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
         // 배경색 투명하게
         borderView1.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
         borderView2.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)

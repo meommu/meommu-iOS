@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FloatingPanel
+
 
 class DiaryDetailViewController: UIViewController {
 
@@ -16,12 +16,7 @@ class DiaryDetailViewController: UIViewController {
         updateUI()
         
         // 바텀시트
-        fpc = FloatingPanelController()
         
-        let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
-        let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
-        
-        fpc.set(contentViewController: diaryReviseVC)
         
         // 페이지 컨트롤 설정
         if let selectedDiary = diary {
@@ -34,13 +29,7 @@ class DiaryDetailViewController: UIViewController {
     
     // -----------------------------------------
     // 일기 수정 및 삭제 바텀시트 생성하기
-    var fpc: FloatingPanelController!
     
-    @IBOutlet var diaryReviseButton: UIBarButtonItem!
-    
-    @IBAction func OnClick_diaryRiviseButton(_ sender: Any) {
-        present(fpc, animated: true, completion: nil)
-    }
     
     // -----------------------------------------
     // 뒤로 가기 버튼

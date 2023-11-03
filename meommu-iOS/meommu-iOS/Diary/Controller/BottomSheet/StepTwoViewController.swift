@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FloatingPanel
+
 
 class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,28 +19,11 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         steptwoTableVlew.dataSource = self
         
         // 바텀시트
-        fpc = FloatingPanelController()
         
-        // 테두리 둥글게 설정하기
-        let appearance = SurfaceAppearance()
-        appearance.cornerRadius = 20.0
-        
-        fpc.surfaceView.appearance = appearance
-        
-        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        let stepThreeVC = storyboard.instantiateViewController(withIdentifier: "StepThreeViewController") as! StepThreeViewController
-
-        fpc.set(contentViewController: stepThreeVC)
     }
     
     // 3단계 바텀시트 생성하기
-    var fpc: FloatingPanelController!
     
-    @IBOutlet var nextButton: UIButton!
-    
-    @IBAction func OnClick_nextButton(_ sender: Any) {
-        present(fpc, animated: true, completion: nil)
-    }
 
     
     // TableView 설정

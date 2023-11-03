@@ -47,6 +47,7 @@
 		F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */; };
 		F9AC5C3D2ADD62660044B22B /* c5637b392e4f496b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */; };
 		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
+		F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */; };
 		F9D1BAD42AF31E9C004A7289 /* DiaryGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */; };
 		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
 		F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */; };
@@ -95,6 +96,7 @@
 		F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeViewController.swift; sourceTree = "<group>"; };
 		F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = c5637b392e4f496b.ttf; sourceTree = "<group>"; };
 		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryDatePicker.storyboard; sourceTree = "<group>"; };
 		F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryGuide.storyboard; sourceTree = "<group>"; };
 		F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryRevise.storyboard; sourceTree = "<group>"; };
 		F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReviseViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 				F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */,
+				F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				F9947A202AC26B1C000F11BD /* image2.png in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
+				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

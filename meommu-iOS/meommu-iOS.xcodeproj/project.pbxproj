@@ -284,8 +284,8 @@
 		F9BC8E782ABC0EA6000D90D1 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 				F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */,
+				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 				F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */,
 			);
 			path = BottomSheet;

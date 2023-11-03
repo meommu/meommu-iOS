@@ -309,30 +309,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVG-CD-E3C">
-                                <rect key="frame" x="193" y="443" width="163" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="K1O-qc-TwI"/>
-                                    <constraint firstAttribute="width" constant="163" id="uKW-Sg-UBW"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="다음">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3D-Jg-7zB">
-                                <rect key="frame" x="19" y="443" width="163" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="4YB-Jh-DDE"/>
-                                    <constraint firstAttribute="width" constant="163" id="X7y-KN-Yun"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="이전">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.21568629149999999" green="0.21960783" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이외의 다른 일상이 있다면 얘기해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBH-na-nvb">
                                 <rect key="frame" x="77" y="109" width="221" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -364,8 +340,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVG-CD-E3C">
+                                <rect key="frame" x="193" y="457" width="163" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="K1O-qc-TwI"/>
+                                    <constraint firstAttribute="width" constant="163" id="uKW-Sg-UBW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="다음">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3D-Jg-7zB">
+                                <rect key="frame" x="19" y="457" width="163" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4YB-Jh-DDE"/>
+                                    <constraint firstAttribute="width" constant="163" id="X7y-KN-Yun"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="이전">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseBackgroundColor" red="0.21568629149999999" green="0.21960783" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tut-uK-q8N">
-                                <rect key="frame" x="158.66666666666666" y="406" width="58" height="17"/>
+                                <rect key="frame" x="158.66666666666666" y="420" width="58" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="WwH-DK-oWk"/>
                                     <constraint firstAttribute="height" constant="17" id="dXR-mF-T1n"/>
@@ -381,8 +381,8 @@
                             <constraint firstItem="HVG-CD-E3C" firstAttribute="top" secondItem="tut-uK-q8N" secondAttribute="bottom" constant="20" id="4t9-br-PbM"/>
                             <constraint firstItem="dCC-5J-bGH" firstAttribute="top" secondItem="cBH-na-nvb" secondAttribute="bottom" constant="15" id="5iD-m6-6oo"/>
                             <constraint firstItem="cBH-na-nvb" firstAttribute="top" secondItem="EW6-ae-6B0" secondAttribute="bottom" constant="5" id="8Cl-MV-vvI"/>
+                            <constraint firstItem="tut-uK-q8N" firstAttribute="top" secondItem="dCC-5J-bGH" secondAttribute="bottom" constant="116" id="BeY-Zz-0TX"/>
                             <constraint firstItem="cBH-na-nvb" firstAttribute="centerX" secondItem="QmN-DB-WVZ" secondAttribute="centerX" id="I1M-hw-bsS"/>
-                            <constraint firstItem="tut-uK-q8N" firstAttribute="top" secondItem="dCC-5J-bGH" secondAttribute="bottom" constant="102" id="Jqa-os-fHr"/>
                             <constraint firstItem="p3D-Jg-7zB" firstAttribute="top" secondItem="tut-uK-q8N" secondAttribute="bottom" constant="20" id="X0h-GG-JWs"/>
                             <constraint firstItem="p3D-Jg-7zB" firstAttribute="leading" secondItem="QmN-DB-WVZ" secondAttribute="leading" constant="19" id="c0W-g7-wt2"/>
                             <constraint firstItem="EW6-ae-6B0" firstAttribute="centerX" secondItem="QmN-DB-WVZ" secondAttribute="centerX" id="gTF-Mo-lGw"/>
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQf-Nf-uhZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1601" y="4"/>
+            <point key="canvasLocation" x="1660" y="4"/>
         </scene>
     </scenes>
 </document>

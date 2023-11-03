@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FloatingPanel
+
 
 class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,29 +18,12 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         steponeTableVlew.delegate = self
         steponeTableVlew.dataSource = self
         
-        // 바텀시트
-        fpc = FloatingPanelController()
         
-        // 테두리 둥글게 설정하기
-        let appearance = SurfaceAppearance()
-        appearance.cornerRadius = 20.0
-        
-        fpc.surfaceView.appearance = appearance
-        
-        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        let stepTwoVC = storyboard.instantiateViewController(withIdentifier: "StepTwoViewController") as! StepTwoViewController
-
-        fpc.set(contentViewController: stepTwoVC)
     }
     
-    // 2단계 바텀시트 생성하기
-    var fpc: FloatingPanelController!
+    // -----------------------------------------
+    // 2단계 바텀 시트 생성하기
     
-    @IBOutlet var nextButton: UIButton!
-    
-    @IBAction func OnClick_nextButton(_ sender: Any) {
-        present(fpc, animated: true, completion: nil)
-    }
     
     // TableView 생성하기
     

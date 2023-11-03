@@ -25,27 +25,9 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         
         // -----------------------------------------
         // 1단계 바텀시트
-        // 바텀시트 컨트롤러 생성하기
-        fpc = FloatingPanelController()
         
         
-        // 테두리 둥글게 설정하기
-        let appearance = SurfaceAppearance()
-        appearance.cornerRadius = 20.0
         
-        fpc.surfaceView.appearance = appearance
-        
-        // 바텀시트 높이 고정 설정하기
-        
-        
-        // delegate 설정
-        fpc.delegate = self
-        
-        // 바텀시트에 표시할 컨텐츠 뷰 생성 및 설정
-        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
-
-        fpc.set(contentViewController: stepOneVC)
         
         // 앨범에서 이미지 추가하기
         // UIImageView 배열 초기화
@@ -58,13 +40,7 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
 
     // -----------------------------------------
     // 1단계 바텀 시트 생성하기
-    var fpc: FloatingPanelController!
     
-    @IBOutlet var guideButton: UIButton!
-    
-    @IBAction func OnClick_guideButton(_ sender: Any) {
-        present(fpc, animated: true, completion: nil)
-    }
     
     // -----------------------------------------
     // 앨범에서 사진 추가하기

@@ -6,13 +6,49 @@
 //
 
 import UIKit
+import PanModal
 
-class StepThreeViewController: UIViewController {
+class StepThreeViewController: UIViewController, PanModalPresentable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DiaryTextFieldSetting()
+    }
+    
+    
+    // -----------------------------------------
+    // 3단계 바텀 시트 설정하기
+
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    // 접혔을 때
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(522)
+    }
+
+    // 펼쳤을 때
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(290)
+    }
+
+    var cornerRadius: CGFloat {
+        return 20
+    }
+
+    var allowsTapToDismiss: Bool {
+        return true
+    }
+
+    var allowsDragToDismiss: Bool {
+        return true
+    }
+
+    // 최상단 스크롤 불가
+    var anchorModalToLongForm: Bool {
+        return true
     }
     
     // 텍스트필드 설정

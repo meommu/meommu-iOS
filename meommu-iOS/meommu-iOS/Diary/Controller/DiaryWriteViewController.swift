@@ -9,9 +9,10 @@ import UIKit
 import PhotosUI
 import MobileCoreServices
 import UniformTypeIdentifiers
-import FloatingPanel
+import PanModal
 
-class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegate, PHPickerViewControllerDelegate {
+
+class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,6 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         
         makeImageViewBorder()
         
-        // -----------------------------------------
-        // 1단계 바텀시트
-        
-        
-        
-        
         // 앨범에서 이미지 추가하기
         // UIImageView 배열 초기화
         imageViews = [imageView1, imageView2, imageView3, imageView4, imageView5]
@@ -37,10 +32,17 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
     }
-
-    // -----------------------------------------
-    // 1단계 바텀 시트 생성하기
     
+    // -----------------------------------------
+    // 1단계 바텀시트
+    @IBOutlet var diaryGuideButton: UIButton!
+    
+    @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
+        let StepOne = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(identifier: "StepOneViewController") as! StepOneViewController
+        
+        presentPanModal(StepOne)
+    }
+
     
     // -----------------------------------------
     // 앨범에서 사진 추가하기
@@ -289,7 +291,6 @@ class DiaryWriteViewController: UIViewController, FloatingPanelControllerDelegat
         selectedDate = Int(todayDate)!
     }
 }
-
 
 
 // -----------------------------------------

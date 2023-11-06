@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +42,7 @@
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="OnClick_nextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wYc-FU-XZf"/>
+                                    <action selector="OnClick_steponeNextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tSq-IZ-l0k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-nB-ENw">
@@ -92,7 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="x3A-gs-Y3i" id="44j-Jk-ZSq"/>
+                        <outlet property="steponeNextButton" destination="x3A-gs-Y3i" id="toz-mU-LRo"/>
                         <outlet property="steponeTableVlew" destination="0pB-tW-YDP" id="e2S-vl-xjY"/>
                     </connections>
                 </viewController>
@@ -136,7 +136,7 @@
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="OnClick_nextButton:" destination="ip9-EK-bKp" eventType="touchUpInside" id="gMd-pm-ajq"/>
+                                    <action selector="OnClick_steptwoNextButton:" destination="ip9-EK-bKp" eventType="touchUpInside" id="8ob-A4-KQh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGn-hk-WXR">
@@ -189,7 +189,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="4oy-nU-Ii8" id="uO6-hJ-04P"/>
+                        <outlet property="steptwoNextButton" destination="4oy-nU-Ii8" id="1Z8-8s-MrA"/>
                         <outlet property="steptwoTableVlew" destination="rfI-cf-zl8" id="Fi4-VC-67B"/>
                     </connections>
                 </viewController>
@@ -322,17 +322,7 @@
                                     <constraint firstAttribute="width" constant="350" id="7Sk-9B-HAq"/>
                                     <constraint firstAttribute="height" constant="163" id="Rq6-6K-eIe"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기ㅍ글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.53333336109999996" green="0.55686277149999996" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="16" name="PretendardVariable-Bold"/>
-                                            <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="yes"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">

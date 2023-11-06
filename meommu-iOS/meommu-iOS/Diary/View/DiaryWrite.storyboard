@@ -125,9 +125,6 @@
                                                         <state key="normal" image="Camera">
                                                             <color key="titleColor" name="borderColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="OnClick_imagePickerButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wvf-fK-4qu"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

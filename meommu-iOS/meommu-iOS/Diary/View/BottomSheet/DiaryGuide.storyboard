@@ -41,6 +41,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnClick_steponeNextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tSq-IZ-l0k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-nB-ENw">
                                 <rect key="frame" x="19" y="458" width="163" height="48"/>
@@ -89,6 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="steponeNextButton" destination="x3A-gs-Y3i" id="toz-mU-LRo"/>
                         <outlet property="steponeTableVlew" destination="0pB-tW-YDP" id="e2S-vl-xjY"/>
                     </connections>
                 </viewController>
@@ -131,9 +135,6 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="OnClick_nextButton:" destination="ip9-EK-bKp" eventType="touchUpInside" id="gMd-pm-ajq"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGn-hk-WXR">
                                 <rect key="frame" x="19" y="458" width="163" height="48"/>
@@ -185,7 +186,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="4oy-nU-Ii8" id="uO6-hJ-04P"/>
                         <outlet property="steptwoTableVlew" destination="rfI-cf-zl8" id="Fi4-VC-67B"/>
                     </connections>
                 </viewController>

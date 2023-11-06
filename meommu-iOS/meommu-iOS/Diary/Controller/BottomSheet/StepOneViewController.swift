@@ -23,8 +23,19 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    // -----------------------------------------
     // 2단계 바텀 시트 생성하기
+    @IBOutlet var steponeNextButton: UIButton!
+    
+    @IBAction func OnClick_steponeNextButton(_ sender: Any) {
+        
+        let StepTwo = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(identifier: "StepTwoViewController") as! StepTwoViewController
+        
+        presentPanModal(StepTwo)
+    }
+    
+    
+    // -----------------------------------------
+    // 1단계 바텀 시트 설정하기
 
     var panScrollable: UIScrollView? {
         return nil

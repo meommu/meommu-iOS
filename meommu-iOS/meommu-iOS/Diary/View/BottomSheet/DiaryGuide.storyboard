@@ -135,6 +135,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnClick_steptwoNextButton:" destination="ip9-EK-bKp" eventType="touchUpInside" id="8ob-A4-KQh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGn-hk-WXR">
                                 <rect key="frame" x="19" y="458" width="163" height="48"/>
@@ -186,6 +189,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="steptwoNextButton" destination="4oy-nU-Ii8" id="1Z8-8s-MrA"/>
                         <outlet property="steptwoTableVlew" destination="rfI-cf-zl8" id="Fi4-VC-67B"/>
                     </connections>
                 </viewController>
@@ -318,17 +322,7 @@
                                     <constraint firstAttribute="width" constant="350" id="7Sk-9B-HAq"/>
                                     <constraint firstAttribute="height" constant="163" id="Rq6-6K-eIe"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기ㅍ글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세기글자수세</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.53333336109999996" green="0.55686277149999996" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="16" name="PretendardVariable-Bold"/>
-                                            <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="yes"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">

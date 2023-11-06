@@ -23,8 +23,14 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // 3단계 바텀시트 생성하기
+    @IBOutlet var steptwoNextButton: UIButton!
     
-
+    @IBAction func OnClick_steptwoNextButton(_ sender: Any) {
+        let StepThree = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(identifier: "StepThreeViewController") as! StepThreeViewController
+        
+        presentPanModal(StepThree)
+    }
+    
     // -----------------------------------------
     // 2단계 바텀 시트 설정하기
 

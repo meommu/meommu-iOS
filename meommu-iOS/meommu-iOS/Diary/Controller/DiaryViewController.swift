@@ -51,8 +51,31 @@ class DiaryViewController: UIViewController {
         
         //navigationController?.show(diarysendVC, sender: nil)
     }
-
     
+    // -----------------------------------------
+    // TableView 기능
+        
+    @IBOutlet var DiaryMainTableView: UITableView!
+        
+    // data 불러오기
+    let diaryList = Diary.data
+        
+    // TableViewCell Xib 파일 등록
+    let emptycellName = "DiaryMainEmptyTableViewCell"
+    let emptycellReuseIdentifire = "DiaryEmptyCell"
+        
+    let maincellName = "DiaryMainTableViewCell"
+    let maincellReuseIdentifire = "DiaryMainCell"
+        
+    private func registerXibMain() {
+        let nibName = UINib(nibName: maincellName, bundle: nil)
+        DiaryMainTableView.register(nibName, forCellReuseIdentifier: maincellReuseIdentifire)
+    }
+       
+    private func registerXibEmpty() {
+        let nibName = UINib(nibName: emptycellName, bundle: nil)
+        DiaryMainTableView.register(nibName, forCellReuseIdentifier: emptycellReuseIdentifire)
+    }
 }
 
 // -----------------------------------------

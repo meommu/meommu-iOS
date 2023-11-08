@@ -24,6 +24,8 @@
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
 		269AED832AE7B8FA009EADA2 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */; };
+		26A06DE22AFA27610039813F /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A06DE02AFA27610039813F /* AlertViewController.swift */; };
+		26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A06DE12AFA27610039813F /* AlertViewController.xib */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
@@ -84,6 +86,8 @@
 		269AED4C2AE3BAF3009EADA2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		26A06DE02AFA27610039813F /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		26A06DE12AFA27610039813F /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		F90743812AB73CBF00F7C503 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				269AED432ADDA805009EADA2 /* PageCell.swift */,
+				26A06DE02AFA27610039813F /* AlertViewController.swift */,
+				26A06DE12AFA27610039813F /* AlertViewController.xib */,
 				2603C7EF2ADC4E8A00090A9D /* MyPageStoryboard.storyboard */,
 			);
 			path = View;
@@ -461,6 +467,7 @@
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
 				F948D8512AC171AB00F965E6 /* Assets.xcassets in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
+				26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +486,7 @@
 				269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */,
 				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
+				26A06DE22AFA27610039813F /* AlertViewController.swift in Sources */,
 				F953DD632AB82B58009F3B52 /* DiarySendViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				269AED4B2AE3BA00009EADA2 /* SignUp.swift in Sources */,

@@ -61,36 +61,19 @@ class MyPageViewController: UIViewController {
     
     //MARK: - 로그아웃 버튼 메서드
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "로그아웃", message: "로그아웃 후 알림을 받을 수 없습니다.", preferredStyle: .alert)
-        let success = UIAlertAction(title: "로그아웃", style: .default) { action in
-            print("로그아웃버튼이 눌렸습니다.")
-        }
-        let cancel = UIAlertAction(title: "이전", style: .cancel) { action in
-            print("이전버튼이 눌렸습니다.")
-        }
         
-        alert.addAction(cancel)
-        alert.addAction(success)
+        // 해당 얼럿 뷰 생성
+        let logoutAlert = AlertViewController(alertName: "로그아웃", alertMessage: "로그아웃 후 알림을 받을 수 없습니다.", alertMainButtonName: "로그아웃", alertBackButtonName: "이전", mainAction: { print("로그아웃 버튼 눌림")})
         
-        // 실제 띄우기
-        self.present(alert, animated: true, completion: nil)
+        self.present(logoutAlert, animated: true)
     }
     
     //MARK: - 회원탈퇴 버튼 메서드
     @IBAction func withdrawalButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "회원탈퇴", message: "그 동안 작성했던 모든 일기와 입력했던 정보들이 삭제됩니다.", preferredStyle: .alert)
-        let success = UIAlertAction(title: "회원탈퇴", style: .default) { action in
-            print("회원탈퇴버튼이 눌렸습니다.")
-        }
-        let cancel = UIAlertAction(title: "이전", style: .cancel) { action in
-            print("이전버튼이 눌렸습니다.")
-        }
+        // 해당 얼럿 뷰 생성
+        let withdrawalAlert = AlertViewController(alertName: "회원탈퇴", alertMessage: "그 동안 작성했던 모든 일기와\n입력했던 정보들이 삭제됩니다.", alertMainButtonName: "회원탈퇴", alertBackButtonName: "이전", mainAction: { print("회원탈퇴 버튼 눌림")})
         
-        alert.addAction(cancel)
-        alert.addAction(success)
-        
-        // 실제 띄우기
-        self.present(alert, animated: true, completion: nil)
+        self.present(withdrawalAlert, animated: true)
     }
     
     //MARK: - 백 버튼 탭 메서드
@@ -146,4 +129,5 @@ extension MyPageViewController: UITableViewDelegate {
         }
     }
 }
+
 

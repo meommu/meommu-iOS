@@ -36,6 +36,8 @@
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
 		F9866C3F2ADE12AE00744164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9866C3E2ADE12AE00744164 /* Assets.xcassets */; };
+		F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99368432AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift */; };
+		F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99368442AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib */; };
 		F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A152AC265D7000F11BD /* StepTwoViewController.swift */; };
 		F9947A192AC2678E000F11BD /* StepTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */; };
 		F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */; };
@@ -86,6 +88,8 @@
 		F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableViewCell.swift; sourceTree = "<group>"; };
 		F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableViewCell.xib; sourceTree = "<group>"; };
 		F9866C3E2ADE12AE00744164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F99368432AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDatePickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		F99368442AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryDatePickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9947A152AC265D7000F11BD /* StepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoViewController.swift; sourceTree = "<group>"; };
 		F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoTableViewCell.swift; sourceTree = "<group>"; };
 		F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepTwoTableViewCell.xib; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				F90CDEAA2ABFF947008ED1A2 /* StepOneTableViewCell.xib */,
 				F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */,
 				F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */,
+				F99368432AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift */,
+				F99368442AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				F9947A202AC26B1C000F11BD /* image2.png in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
+				F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */,
 				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 			);
@@ -410,6 +417,7 @@
 				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */,
+				F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,

@@ -438,7 +438,6 @@
                         <outlet property="diaryDetail" destination="8s8-lS-wwI" id="EVw-Yw-hLG"/>
                         <outlet property="diaryImageView" destination="pEp-PW-Pqk" id="v02-Iu-emT"/>
                         <outlet property="diaryName" destination="aol-tu-ULz" id="tu3-pf-bia"/>
-                        <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="ndg-7n-e1W"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
                         <outlet property="diaryimagepageControl" destination="d5q-m3-JFL" id="0Tf-vh-Mbm"/>
                     </connections>

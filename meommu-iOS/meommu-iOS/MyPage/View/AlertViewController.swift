@@ -26,7 +26,30 @@ class AlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupText()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // curveEaseOut: 시작은 천천히, 끝날 땐 빠르게
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut) { [weak self] in
+            print(1)
+            
+            self?.alertView.transform = .identity
+            self?.alertView.isHidden = false
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // curveEaseIn: 시작은 빠르게, 끝날 땐 천천히
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn) { [weak self] in
+            self?.alertView.transform = .identity
+            self?.alertView.isHidden = true
+        }
     }
     
     init() {
@@ -55,12 +78,17 @@ class AlertViewController: UIViewController {
         
     }
     
-    private func setupView() {
+    private func setupText() {
         titleLabel.text = alertName
         messageLabel.text = alertMessage
         
         mainButton.setTitle(alertMainButtonName, for: .normal)
         backButton.setTitle(alertBackButtonName, for: .normal)
+    }
+    
+    private func setupView() {
+        // 팝업이 등장할 때(viewWillAppear)에서 containerView.transform = .identity로 하여 애니메이션 효과 주는 용도
+        self.alertView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
     }
     
     
@@ -76,3 +104,5 @@ class AlertViewController: UIViewController {
     
     
 }
+
+

@@ -89,6 +89,23 @@ class AlertViewController: UIViewController {
     private func setupView() {
         // 팝업이 등장할 때(viewWillAppear)에서 containerView.transform = .identity로 하여 애니메이션 효과 주는 용도
         self.alertView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        
+        alertView.backgroundColor = .black
+        alertView.layer.masksToBounds = true
+        alertView.layer.cornerRadius = 20
+        
+        titleLabel.textColor = UIColor(hexCode: "FFFFFF")
+        messageLabel.textColor = UIColor(hexCode: "ABABAB")
+        
+        mainButton.layer.masksToBounds = true
+        mainButton.layer.cornerRadius = 6
+        mainButton.backgroundColor = UIColor(hexCode: "CCCCD9")
+        mainButton.setTitleColor(UIColor(hexCode: "565667"), for: .normal)
+        
+        backButton.layer.masksToBounds = true
+        backButton.layer.cornerRadius = 6
+        backButton.backgroundColor = UIColor(hexCode: "8579F1")
+        backButton.setTitleColor(UIColor(hexCode: "FFFFFF"), for: .normal)
     }
     
     

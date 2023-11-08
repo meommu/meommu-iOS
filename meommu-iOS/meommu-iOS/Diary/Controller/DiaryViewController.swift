@@ -14,6 +14,12 @@ class DiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        registerXibMain()
+        registerXibEmpty()
+        
+        DiaryMainTableView.delegate = self
+        DiaryMainTableView.dataSource = self
+        
         todayMonthSet()
     }
 

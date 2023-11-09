@@ -36,6 +36,7 @@
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
 		F9866C3F2ADE12AE00744164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9866C3E2ADE12AE00744164 /* Assets.xcassets */; };
+		F98888612AFD2219006AB274 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F98888602AFD2219006AB274 /* Alamofire */; };
 		F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99368432AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift */; };
 		F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99368442AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib */; };
 		F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A152AC265D7000F11BD /* StepTwoViewController.swift */; };
@@ -112,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F9979B2AF675FC004806D5 /* PanModal in Frameworks */,
+				F98888612AFD2219006AB274 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +328,7 @@
 			name = "meommu-iOS";
 			packageProductDependencies = (
 				F9F9979A2AF675FC004806D5 /* PanModal */,
+				F98888602AFD2219006AB274 /* Alamofire */,
 			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
@@ -357,6 +360,7 @@
 			mainGroup = F933D8922AB73982006EDA07;
 			packageReferences = (
 				F9F997992AF675FC004806D5 /* XCRemoteSwiftPackageReference "PanModal" */,
+				F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
@@ -650,6 +654,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		F9F997992AF675FC004806D5 /* XCRemoteSwiftPackageReference "PanModal" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/slackhq/PanModal.git";
@@ -661,6 +673,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F98888602AFD2219006AB274 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		F9F9979A2AF675FC004806D5 /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F9F997992AF675FC004806D5 /* XCRemoteSwiftPackageReference "PanModal" */;

@@ -19,11 +19,12 @@ class DiaryDetailViewController: UIViewController {
         
         
         // 페이지 컨트롤 설정
-        if let selectedDiary = diary {
-                    imageArray = Array(selectedDiary.diaryImage) // 이미지 배열 초기화
-                    diaryimagepageControl.numberOfPages = imageArray.count // 페이지 컨트롤 설정
-                    diaryimagepageControl.currentPage = 0
-                }
+        /*if let selectedDiary = diary as? Diary {
+         imageArray = Array(selectedDiary.diaryImage) // 이미지 배열 초기화
+         diaryimagepageControl.numberOfPages = imageArray.count // 페이지 컨트롤 설정
+         diaryimagepageControl.currentPage = 0
+     }
+         */
         
     }
     
@@ -39,7 +40,7 @@ class DiaryDetailViewController: UIViewController {
     }
     
     // -----------------------------------------
-    // 전달 받은 데이터
+    // 전달 받은 데이터 조회하기
     @IBOutlet var diaryDate: UILabel!
     @IBOutlet var diaryDetail: UILabel!
     @IBOutlet var diaryTitle: UILabel!
@@ -48,20 +49,31 @@ class DiaryDetailViewController: UIViewController {
     
     var diary : Diary?
     
+    func convertDate(_ dateStr: String) -> String {
+            let inputFormatter = DateFormatter()
+            inputFormatter.dateFormat = "yyyy-MM-dd"
+            
+            if let date = inputFormatter.date(from: dateStr) {
+                let outputFormatter = DateFormatter()
+                outputFormatter.locale = Locale(identifier: "ko_KR") // 한국어로 출력
+                outputFormatter.dateFormat = "yyyy년 MM월 dd일"
+                
+                return outputFormatter.string(from: date)
+            } else {
+                return dateStr
+            }
+        }
     
     func updateUI(){
-        guard let selectedDiary = diary else { return }
-        
-        diaryDate.text = selectedDiary.diaryDate
-        diaryDetail.text = selectedDiary.diaryDetail
-        diaryTitle.text = selectedDiary.diaryTitle
-        diaryName.text = selectedDiary.diaryName + " 일기"
-        
-        if let imageName = selectedDiary.diaryImage.first,
-           let image = UIImage(named: imageName) {
-            diaryImageView.image = image
+            guard let selectedDiary = diary else { return }
+            
+            diaryDate.text = convertDate(selectedDiary.date)
+            diaryDetail.text = selectedDiary.content
+            diaryTitle.text = selectedDiary.title
+            diaryName.text = selectedDiary.dogName + " 일기"
+            
+            // 이미지는 일단 생략하고, 다른 데이터를 채워봅니다.
         }
-    }
     
     // -----------------------------------------
     // 이미지 페이지 컨트롤

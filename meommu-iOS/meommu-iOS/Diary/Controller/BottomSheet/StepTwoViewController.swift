@@ -6,10 +6,8 @@
 //
 
 import UIKit
-import PanModal
 
-
-class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PanModalPresentable {
+class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,44 +24,12 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var steptwoNextButton: UIButton!
     
     @IBAction func OnClick_steptwoNextButton(_ sender: Any) {
-        let StepThree = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(identifier: "StepThreeViewController") as! StepThreeViewController
         
-        presentPanModal(StepThree)
     }
     
     // -----------------------------------------
     // 2단계 바텀 시트 설정하기
 
-    var panScrollable: UIScrollView? {
-        return nil
-    }
-    
-    // 접혔을 때
-    var shortFormHeight: PanModalHeight {
-        return .contentHeight(522)
-    }
-
-    // 펼쳤을 때
-    var longFormHeight: PanModalHeight {
-        return .maxHeightWithTopInset(290)
-    }
-
-    var cornerRadius: CGFloat {
-        return 20
-    }
-
-    var allowsTapToDismiss: Bool {
-        return true
-    }
-
-    var allowsDragToDismiss: Bool {
-        return true
-    }
-
-    // 최상단 스크롤 불가
-    var anchorModalToLongForm: Bool {
-        return true
-    }
     
     // TableView 설정
     @IBOutlet var steptwoTableVlew: UITableView!

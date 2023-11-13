@@ -38,9 +38,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     @IBOutlet var diaryGuideButton: UIButton!
     
     @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
-        let StepOne = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(identifier: "StepOneViewController") as! StepOneViewController
         
-        presentPanModal(StepOne)
     }
 
     

@@ -53,7 +53,6 @@
 		F9D1BAD42AF31E9C004A7289 /* DiaryGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */; };
 		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
 		F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */; };
-		F9F9979B2AF675FC004806D5 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = F9F9979A2AF675FC004806D5 /* PanModal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F9979B2AF675FC004806D5 /* PanModal in Frameworks */,
 				F98888612AFD2219006AB274 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +325,6 @@
 			);
 			name = "meommu-iOS";
 			packageProductDependencies = (
-				F9F9979A2AF675FC004806D5 /* PanModal */,
 				F98888602AFD2219006AB274 /* Alamofire */,
 			);
 			productName = "meommu-iOS";
@@ -359,7 +356,6 @@
 			);
 			mainGroup = F933D8922AB73982006EDA07;
 			packageReferences = (
-				F9F997992AF675FC004806D5 /* XCRemoteSwiftPackageReference "PanModal" */,
 				F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
@@ -662,14 +658,6 @@
 				minimumVersion = 5.8.1;
 			};
 		};
-		F9F997992AF675FC004806D5 /* XCRemoteSwiftPackageReference "PanModal" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/slackhq/PanModal.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.7;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -677,11 +665,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		F9F9979A2AF675FC004806D5 /* PanModal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F9F997992AF675FC004806D5 /* XCRemoteSwiftPackageReference "PanModal" */;
-			productName = PanModal;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,10 +9,9 @@ import UIKit
 import PhotosUI
 import MobileCoreServices
 import UniformTypeIdentifiers
-import PanModal
 
 
-class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate {
+class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate, PulleyDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +37,10 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     @IBOutlet var diaryGuideButton: UIButton!
     
     @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
-        
+
     }
+
+    
 
     
     // -----------------------------------------

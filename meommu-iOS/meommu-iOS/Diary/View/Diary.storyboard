@@ -427,9 +427,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="OnClick_diaryRiviseButton:" destination="0qe-i2-VpE" id="uWQ-mC-77B"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

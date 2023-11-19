@@ -8,11 +8,21 @@
 import UIKit
 
 class AnnouncementViewController: UIViewController {
-
+    
+    var announcementDataArray: [Announcment] = [Announcment(title: "23년 09월 27일 일요일 답장 관련 공지", content: "23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구"), Announcment(title: "23년 09월 27일 일요일 답장 관련 공지", content: "23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구\n23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구"), Announcment(title: "23년 09월 27일 일요일 답장 관련 공지", content: "23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구")]
+    
+    @IBOutlet weak var announcementTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupDelegate()
+        
+    }
+    
+    func setupDelegate() {
+        announcementTableView.dataSource = self
+        announcementTableView.delegate = self
     }
     
     //MARK: - 백 버튼 탭 메서드
@@ -21,5 +31,39 @@ class AnnouncementViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
     }
     
-
+    
 }
+
+extension AnnouncementViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        announcementDataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
+        let announcement = announcementDataArray[indexPath.row]
+        cell.prepare(announcment: announcement)
+        
+        return cell
+    }
+    
+}
+
+extension AnnouncementViewController: UITableViewDelegate {
+        func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+            return UITableView.automaticDimension
+        }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        announcementDataArray[indexPath.row].isContentHidden.toggle()
+        tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: UITableView.RowAnimation.automatic)
+        }
+    
+   
+}
+
+

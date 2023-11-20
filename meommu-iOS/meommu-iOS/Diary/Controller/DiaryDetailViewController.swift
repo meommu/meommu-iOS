@@ -7,22 +7,29 @@
 
 import UIKit
 
+
 class DiaryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateUI()
+        
+        // 바텀시트
+        
+        
+        // 페이지 컨트롤 설정
+        /*if let selectedDiary = diary as? Diary {
+         imageArray = Array(selectedDiary.diaryImage) // 이미지 배열 초기화
+         diaryimagepageControl.numberOfPages = imageArray.count // 페이지 컨트롤 설정
+         diaryimagepageControl.currentPage = 0
+     }
+         */
+        
     }
     
     // -----------------------------------------
     // 일기 수정 및 삭제 바텀시트 생성하기
-    @IBOutlet var diaryReviseButton: UIBarButtonItem!
-    
-    @IBAction func OnClick_diaryRiviseButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "DiaryRevise", bundle: nil).instantiateViewController(identifier: "DiaryReviseViewController") as! DiaryReviseViewController
-        
-    }
     
     
     // -----------------------------------------
@@ -33,27 +40,55 @@ class DiaryDetailViewController: UIViewController {
     }
     
     // -----------------------------------------
-    // 전달 받은 데이터
+    // 전달 받은 데이터 조회하기
     @IBOutlet var diaryDate: UILabel!
     @IBOutlet var diaryDetail: UILabel!
     @IBOutlet var diaryTitle: UILabel!
     @IBOutlet var diaryName: UILabel!
     @IBOutlet var diaryImageView: UIImageView!
     
-    var Image: String?
-    var Title: String?
-    var Detail: String?
-    var Date: String?
-    var Name: String?
+    var diary : Diary?
+    
+    func convertDate(_ dateStr: String) -> String {
+            let inputFormatter = DateFormatter()
+            inputFormatter.dateFormat = "yyyy-MM-dd"
+            
+            if let date = inputFormatter.date(from: dateStr) {
+                let outputFormatter = DateFormatter()
+                outputFormatter.locale = Locale(identifier: "ko_KR") // 한국어로 출력
+                outputFormatter.dateFormat = "yyyy년 MM월 dd일"
+                
+                return outputFormatter.string(from: date)
+            } else {
+                return dateStr
+            }
+        }
     
     func updateUI(){
-        if let Image = self.Image, let Title = self.Title, let Detail = self.Detail, let Date = self.Date {
+            guard let selectedDiary = diary else { return }
             
-            diaryImageView.image = UIImage(named: Image)
-            diaryTitle.text = Title
-            diaryDetail.text = Detail
-            diaryDate.text = Date
-            diaryName.text = Name
+            diaryDate.text = convertDate(selectedDiary.date)
+            diaryDetail.text = selectedDiary.content
+            diaryTitle.text = selectedDiary.title
+            diaryName.text = selectedDiary.dogName + " 일기"
+            
+            // 이미지는 일단 생략하고, 다른 데이터를 채워봅니다.
+        }
+    
+    // -----------------------------------------
+    // 이미지 페이지 컨트롤
+    
+    var imageArray: [String] = [] // 이미지 저장 배열
+    
+    @IBOutlet var diaryimagepageControl: UIPageControl!
+    
+    @IBAction func diaryimagePageChange(_ sender: UIPageControl) {
+        
+        let currentPageIndex = sender.currentPage < imageArray.count ? sender.currentPage : 0
+        
+        let imageName = imageArray[currentPageIndex]
+        if let image = UIImage(named:imageName) {
+            diaryImageView.image = image
         }
     }
     

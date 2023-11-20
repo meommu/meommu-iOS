@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
@@ -16,14 +17,20 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         steptwoTableVlew.delegate = self
         steptwoTableVlew.dataSource = self
-    }
-    
-    @IBOutlet var nextButton: UIButton!
-    
-    @IBAction func OnClick_nextButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "StepThree", bundle: nil).instantiateViewController(identifier: "StepThreeViewController") as! StepThreeViewController
+
         
     }
+    
+    // 3단계 바텀시트 생성하기
+    @IBOutlet var steptwoNextButton: UIButton!
+    
+    @IBAction func OnClick_steptwoNextButton(_ sender: Any) {
+        
+    }
+    
+    // -----------------------------------------
+    // 2단계 바텀 시트 설정하기
+
     
     // TableView 설정
     @IBOutlet var steptwoTableVlew: UITableView!
@@ -63,7 +70,7 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BottomSheetSelectedTableView")
+        cell.contentView.backgroundColor = UIColor(named: "SelectedButton")
         cell.detailLabel.textColor = .white
     }
     

@@ -11,7 +11,7 @@ import MobileCoreServices
 import UniformTypeIdentifiers
 
 
-class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate, PulleyDelegate {
+class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

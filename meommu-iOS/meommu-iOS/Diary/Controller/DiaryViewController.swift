@@ -68,9 +68,11 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet var DiaryMainTableView: UITableView!
         
+    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MjcsImlhdCI6MTcwMDYxMzk1OSwiZXhwIjoxNzAxMjE4NzU5fQ.AlQlq-YsMavw3QXJGUEx1FdV-CYdw2YUvhKqohb8JBFztmpl2gjtLPTujXPXEIRMC4MZV901xwVZNT6BbTuNcQ"
+    
     private func fetchData() {
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer <ACCESS_TOKEN>",
+            "Authorization": "Bearer \(AccessToken)",
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         
@@ -147,9 +149,13 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if diaries.count == 0 {
+            
             let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: emptycellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
+            
             return diaryCell
+            
         } else {
+            
             let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: maincellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
             let diary = diaries[indexPath.section]
 
@@ -157,8 +163,9 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             diaryCell.diaryDetailLabel?.text = diary.content
             diaryCell.diaryNameLabel?.text = diary.dogName + " 일기"
             diaryCell.diaryTitleLabel?.text = diary.title
-
+            
             return diaryCell
+            
         }
     }
 

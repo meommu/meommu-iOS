@@ -9,16 +9,17 @@ import UIKit
 import PhotosUI
 import MobileCoreServices
 import UniformTypeIdentifiers
+import FittedSheets
+import Alamofire
 
 
 class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate {
     
+    var dogName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setAvailableDate()
-        createPickerView()
-        
         todayDateSet()
         
         makeImageViewBorder()
@@ -30,6 +31,9 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         // 이미지 피커 버튼에 액션 추가
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
+        if let name = dogName {
+            diaryContentTextField.placeholder = name + "의 일기를 작성해주세요."
+        }
     }
     
     // -----------------------------------------
@@ -37,10 +41,16 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     @IBOutlet var diaryGuideButton: UIButton!
     
     @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
-
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
+        
+        guard let stepOneViewController = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as? StepOneViewController else {return}
+        
+        let sheetController = SheetViewController(controller: stepOneViewController, sizes: [.fixed(562)])
+        sheetController.dismissOnPull = false
+        sheetController.dismissOnOverlayTap = true
+        self.present(sheetController, animated: true, completion: nil)
+        
     }
-
-    
 
     
     // -----------------------------------------
@@ -180,6 +190,12 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     // -----------------------------------------
     // 오늘 날짜 출력하기
+    
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var monthLabel: UILabel!
+    @IBOutlet var yearLabel: UILabel!
+    @IBOutlet var dateTextField: UITextField!
+    
     func todayDateSet(){
         // 년
         let formatter_year = DateFormatter()
@@ -201,145 +217,54 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         dateLabel.text = "\(current_date)일"
     }
     
+    
+    // -----------------------------------------
+    // 일기 내용 작성
+    @IBOutlet var diaryTitleTextField: UITextField!
+    
+    @IBOutlet var diaryContentTextField: UITextField!
+
+    
+    // -----------------------------------------
+    // 일기 내용 작성 완료
+    
+    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MjcsImlhdCI6MTcwMDYxMzk1OSwiZXhwIjoxNzAxMjE4NzU5fQ.AlQlq-YsMavw3QXJGUEx1FdV-CYdw2YUvhKqohb8JBFztmpl2gjtLPTujXPXEIRMC4MZV901xwVZNT6BbTuNcQ"
+    
+    @IBOutlet var diaryWriteButton: UIBarButtonItem!
+    
+    @IBAction func OnClick_diaryWriteButton(_ sender: Any) {
+        
+        guard let title = diaryTitleTextField.text, let content = diaryContentTextField.text, let dogName = dogName else { return }
+        
+        let headers: HTTPHeaders = [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(AccessToken)"
+            ]
+
+            let parameters: [String: Any] = [
+                "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
+                "dogName": dogName,
+                "title": title,
+                "content": content,
+                "imageIds": selectedImages.map { _ in Int.random(in: 1...5) } // 이미지에 대한 id를 설정해주세요.
+            ]
+
+            AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
+                       method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default,
+                       headers: headers)
+                .response { response in
+                    debugPrint(response)
+            }
+    }
+    
     // -----------------------------------------
     // 뒤로가기 버튼
     @IBOutlet var backButton: UIBarButtonItem!
     
     @IBAction func OnClick_backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    // -----------------------------------------
-    // DatePicker 기능
-    
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var monthLabel: UILabel!
-    @IBOutlet var yearLabel: UILabel!
-    @IBOutlet var dateTextField: UITextField!
-    
-    // DatePicker에 필요한 변수 생성
-    var availableYear: [Int] = []
-    var allMonth: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    var allDate: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
-    var selectedYear = 0
-    var selectedMonth = 0
-    var selectedDate = 0
-    var todayYear = "0"
-    var todayMonth = "0"
-    var todayDate = "0"
-    
-    // PickerView 생성
-    func createPickerView() {
-        
-        // 피커 세팅
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        dateTextField.tintColor = .clear
-        
-        // 툴바 세팅
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(onPickDone))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let cancelButton = UIBarButtonItem(title: "취소", style: .done, target: self, action: #selector(onPickCancel))
-        toolBar.setItems([cancelButton, space, doneButton], animated: true)
-        toolBar.isUserInteractionEnabled = true
-        
-        // 텍스트필드 입력 수단 연결
-        dateTextField.inputView = pickerView
-        dateTextField.inputAccessoryView = toolBar
-    }
-    // 확인 버튼 클릭
-    @objc func onPickDone() {
-        yearLabel.text = "\(selectedYear)년"
-        monthLabel.text = "\(selectedMonth)월"
-        dateLabel.text = "\(selectedDate)일"
-        
-        dateTextField.resignFirstResponder()
-    }
-                
-    // 취소 버튼 클릭
-    @objc func onPickCancel() {
-        dateTextField.resignFirstResponder()
-    }
-        
-    func setAvailableDate() {
-        // 선택 가능한 연도 설정
-        let formatterYear = DateFormatter()
-        formatterYear.dateFormat = "yyyy"
-        todayYear = formatterYear.string(from: Date())
-                
-        for i in 2023...Int(todayYear)! {
-            availableYear.append(i)
-        }
-                    
-        // 선택 가능한 달 설정
-        let formatterMonth = DateFormatter()
-        formatterMonth.dateFormat = "MM"
-        todayMonth = formatterMonth.string(from: Date())
-
-        // 선택 가능한 일 설정
-        let formatterDate = DateFormatter()
-        formatterDate.dateFormat = "dd"
-        todayDate = formatterDate.string(from: Date())
-                    
-        selectedYear = Int(todayYear)!
-        selectedMonth = Int(todayMonth)!
-        selectedDate = Int(todayDate)!
-    }
-}
-
-
-// -----------------------------------------
-// Date Picker 설정
-extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
-        // 년, 월, 일 선택
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch component {
-            case 0:
-                return availableYear.count
-            case 1:
-                return allMonth.count
-            case 2:
-                return allDate.count
-            default:
-                return 0
-        }
-    }
-    
-    // 표출할 텍스트
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch component {
-            case 0:
-                return "\(availableYear[row])년"
-            case 1:
-                return "\(allMonth[row])월"
-            case 2:
-                return ("\(allDate[row])일")
-            default:
-                return ""
-        }
-    }
-    
-    // 파커뷰에서 선택된 행을 처리할 수 있는 메서드
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch component {
-            case 0:
-                selectedYear = availableYear[row]
-            case 1:
-                selectedMonth = allMonth[row]
-            case 2:
-                selectedDate = allDate[row]
-            default:
-                break
-        }
     }
     
 }

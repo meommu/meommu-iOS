@@ -568,6 +568,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ApU-uJ-Jz8">
                                 <rect key="frame" x="20" y="668" width="335" height="105"/>
                                 <subviews>
@@ -623,22 +626,19 @@
                                     <constraint firstAttribute="height" constant="116" id="Niw-03-o2W"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-ut-Tbw">
-                                <rect key="frame" x="20" y="256" width="335" height="367"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bYo-wA-Lbj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ApU-uJ-Jz8" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="39c-8V-xCY"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="ApU-uJ-Jz8" secondAttribute="trailing" constant="20" id="3E8-P5-JxQ"/>
-                            <constraint firstItem="ApU-uJ-Jz8" firstAttribute="top" secondItem="6uK-ut-Tbw" secondAttribute="bottom" constant="45" id="6hX-c6-axZ"/>
+                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="bottom" secondItem="dos-mm-Nxi" secondAttribute="bottom" id="Jpt-TD-Ren"/>
+                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="top" secondItem="dos-mm-Nxi" secondAttribute="top" id="NYK-qh-VRU"/>
+                            <constraint firstAttribute="trailing" secondItem="6uK-ut-Tbw" secondAttribute="trailing" id="Px9-TO-xnk"/>
+                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="leading" secondItem="dos-mm-Nxi" secondAttribute="leading" id="VAo-EX-dj4"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="centerX" secondItem="dos-mm-Nxi" secondAttribute="centerX" id="aeG-dk-YFQ"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="top" secondItem="bYo-wA-Lbj" secondAttribute="top" constant="45" id="j9J-37-kra"/>
-                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="top" secondItem="aHt-g8-puf" secondAttribute="bottom" constant="45" id="jDM-Hu-xgY"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="bottom" secondItem="ApU-uJ-Jz8" secondAttribute="bottom" constant="5" id="lQw-O8-pJL"/>
-                            <constraint firstItem="6uK-ut-Tbw" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="mRN-vm-p1f"/>
-                            <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="6uK-ut-Tbw" secondAttribute="trailing" constant="20" id="yfl-5V-yTe"/>
                         </constraints>
                     </view>
                     <connections>
@@ -656,6 +656,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Login" width="390" height="844"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>

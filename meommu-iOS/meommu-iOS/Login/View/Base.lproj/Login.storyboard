@@ -470,6 +470,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-ql-PDT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec3-tN-seU">
                                 <rect key="frame" x="20" y="759" width="335" height="48"/>
                                 <color key="backgroundColor" red="0.71764707569999997" green="0.71764707569999997" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -527,23 +530,21 @@
                                     <constraint firstAttribute="height" constant="91" id="NPi-cL-JOP"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-ql-PDT">
-                                <rect key="frame" x="20" y="205" width="335" height="350"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tbc-Ac-Y39" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="0MG-co-OMc"/>
+                            <constraint firstItem="9aH-ql-PDT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1DI-mA-AtW"/>
                             <constraint firstItem="tbc-Ac-Y39" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="8ud-DL-ixm"/>
                             <constraint firstItem="ec3-tN-seU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="91S-Ub-Vbx"/>
+                            <constraint firstItem="9aH-ql-PDT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DPS-O5-wdX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ec3-tN-seU" secondAttribute="bottom" constant="5" id="HqD-1d-3nG"/>
                             <constraint firstItem="OTa-ai-IW5" firstAttribute="top" secondItem="tbc-Ac-Y39" secondAttribute="bottom" constant="30" id="OiC-12-qmp"/>
                             <constraint firstItem="OTa-ai-IW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tne-0B-ojo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9aH-ql-PDT" secondAttribute="trailing" constant="20" id="VOj-o4-JTg"/>
+                            <constraint firstAttribute="trailing" secondItem="9aH-ql-PDT" secondAttribute="trailing" id="UiK-3S-qL1"/>
+                            <constraint firstAttribute="bottom" secondItem="9aH-ql-PDT" secondAttribute="bottom" id="X9A-1i-7hr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ec3-tN-seU" secondAttribute="trailing" constant="20" id="bXi-CA-eGg"/>
-                            <constraint firstItem="9aH-ql-PDT" firstAttribute="top" secondItem="OTa-ai-IW5" secondAttribute="bottom" constant="50" id="hs0-bD-ffI"/>
-                            <constraint firstItem="9aH-ql-PDT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oRC-GU-qJM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OTa-ai-IW5" secondAttribute="trailing" constant="20" id="q1W-gv-yVB"/>
                         </constraints>
                     </view>
@@ -558,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3924" y="23"/>
+            <point key="canvasLocation" x="3924" y="22.906403940886701"/>
         </scene>
         <!--Login First View Controller-->
         <scene sceneID="zXA-6C-uaC">
@@ -657,6 +658,7 @@
     </scenes>
     <resources>
         <image name="Login" width="390" height="844"/>
+        <image name="Onboarding3" width="390" height="844"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>

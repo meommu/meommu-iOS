@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupImageView() {
-        loginImageView.image = UIImage(named: "온보딩3")
+        loginImageView.image = UIImage(named: "Onboarding3")
     }
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수

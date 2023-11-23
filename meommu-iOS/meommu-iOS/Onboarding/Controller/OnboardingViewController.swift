@@ -45,15 +45,15 @@ class OnboardingViewController: UIViewController {
     func setupImageView() {
         
         if let firstImageView {
-            firstImageView.image = UIImage(named: "온보딩1")
+            firstImageView.image = UIImage(named: "Onboarding1")
         }
         
         if let secondImageView {
-            secondImageView.image = UIImage(named: "온보딩2")
+            secondImageView.image = UIImage(named: "Onboarding2")
         }
         
         if let thirdImageVIew {
-            thirdImageVIew.image = UIImage(named: "온보딩3")
+            thirdImageVIew.image = UIImage(named: "Onboarding3")
         }
     }
     

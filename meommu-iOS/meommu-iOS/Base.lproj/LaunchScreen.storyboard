@@ -17,21 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-vc-nQV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-vc-nQV">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meom-mu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-gJ-t3Q">
-                                <rect key="frame" x="127" y="756" width="139" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PyI-vc-nQV" firstAttribute="bottom" secondItem="4t0-gJ-t3Q" secondAttribute="bottom" constant="60" id="7nQ-Rd-Fgl"/>
-                            <constraint firstItem="4t0-gJ-t3Q" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SzT-U5-w7N"/>
                             <constraint firstItem="PyI-vc-nQV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Wwx-aF-vNY"/>
                             <constraint firstItem="PyI-vc-nQV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hAk-oF-Beb"/>
                             <constraint firstAttribute="bottom" secondItem="PyI-vc-nQV" secondAttribute="bottom" id="l13-PN-inh"/>
@@ -45,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreen" width="390" height="844"/>
+        <image name="Splash" width="390" height="844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

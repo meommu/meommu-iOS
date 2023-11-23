@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,11 +11,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HUScribble150.otf">
-            <string>HUScribble150</string>
+        <array key="c5637b392e4f496b.ttf">
+            <string>Ownglyph_Yeon_The_Land-Rg</string>
         </array>
     </customFonts>
     <scenes>
+        <!--MyPageViewController-->
+        <scene sceneID="uLC-Dz-cpa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="MyPageViewController" id="ydY-gc-AGe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="581-At-XQv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhi-3L-nD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="-517"/>
+        </scene>
         <!--Diary View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -52,7 +62,7 @@
                                                         <fragment content="Title">
                                                             <attributes>
                                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <font key="NSFont" size="26" name="HUScribble150"/>
+                                                                <font key="NSFont" metaFont="system" size="26"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -167,19 +177,19 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
-                                        <rect key="frame" x="22" y="11" width="48" height="22"/>
+                                        <rect key="frame" x="22" y="11" width="47" height="22"/>
                                         <attributedString key="attributedText">
                                             <fragment content="2023">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HUScribble150"/>
+                                                    <font key="NSFont" size="17" name="Ownglyph_Yeon_The_Land-Rg"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="년">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HUScribble150"/>
+                                                    <font key="NSFont" size="17" name="Ownglyph_Yeon_The_Land-Rg"/>
                                                     <font key="NSOriginalFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -188,17 +198,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
-                                        <rect key="frame" x="78" y="11" width="36" height="22"/>
+                                        <rect key="frame" x="77" y="11" width="36" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="g3I-4y-NIg"/>
                                             <constraint firstAttribute="width" constant="36" id="rKc-dA-HDJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
                                         <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                        <rect key="frame" x="112" y="13" width="18" height="18"/>
+                                        <rect key="frame" x="111" y="13" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
                                             <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
@@ -207,7 +217,6 @@
                                         <state key="normal" image="arrow_drop_down"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
@@ -252,14 +261,15 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="UserCircle" id="f0L-c0-MhX">
                                 <color key="tintColor" red="0.59215688710000003" green="0.59215688710000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="ydY-gc-AGe" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CGS-I0-NjN"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="gPB-5J-nRW"/>
                         <outlet property="DiaryWriteButton" destination="63J-kF-Ica" id="ihY-49-KcY"/>
-                        <outlet property="diaryDatePickerButton" destination="PNC-wB-wNv" id="M7J-wI-zQK"/>
-                        <outlet property="diaryDateTextField" destination="S6T-Gg-Neg" id="d4M-6I-dYu"/>
                         <outlet property="monthLabel" destination="wzA-5h-5jg" id="XiO-Nf-vQ1"/>
                         <outlet property="yearLabel" destination="y9z-8z-5jf" id="bfB-gq-Tzx"/>
                     </connections>
@@ -301,7 +311,7 @@
                                                                     <constraint firstAttribute="height" constant="25" id="9Fd-wd-klP"/>
                                                                     <constraint firstAttribute="width" constant="300" id="niZ-WB-nQI"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HUScribble150" family="HUScribble150" pointSize="26"/>
+                                                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="26"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -321,29 +331,27 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s8-lS-wwI">
-                                                        <rect key="frame" x="16.666666666666657" y="78" width="340" height="19.333333333333329"/>
+                                                        <rect key="frame" x="16.666666666666657" y="78" width="340" height="18.666666666666671"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="340" id="6vY-b5-xyy"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="16"/>
                                                         <color key="textColor" red="0.38431376220000002" green="0.3803921938" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-xP-O2E">
-                                                        <rect key="frame" x="16.666666666666671" y="117.33333333333337" width="80" height="17"/>
+                                                        <rect key="frame" x="16.666666666666671" y="116.66666666666663" width="30.333333333333329" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="FWX-r3-1oa"/>
-                                                            <constraint firstAttribute="width" constant="80" id="zXx-dL-4pS"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aol-tu-ULz">
-                                                        <rect key="frame" x="106.66666666666669" y="117.33333333333337" width="250" height="17"/>
+                                                        <rect key="frame" x="57" y="116.66666666666663" width="38" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="BSV-vY-uL8"/>
-                                                            <constraint firstAttribute="width" constant="250" id="sQZ-u0-grY"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -365,6 +373,12 @@
                                                     <constraint firstAttribute="trailing" secondItem="8s8-lS-wwI" secondAttribute="trailing" constant="16.5" id="l1a-vO-ghq"/>
                                                 </constraints>
                                             </view>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-m3-JFL">
+                                                <rect key="frame" x="129" y="461.33333333333337" width="116" height="25.666666666666686"/>
+                                                <connections>
+                                                    <action selector="diaryimagePageChange:" destination="0qe-i2-VpE" eventType="valueChanged" id="mS9-4U-hhn"/>
+                                                </connections>
+                                            </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -372,9 +386,12 @@
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eC2-Od-geH"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eFC-jR-VBU"/>
                                             <constraint firstAttribute="trailing" secondItem="pEp-PW-Pqk" secondAttribute="trailing" id="fz7-Wk-7rj"/>
+                                            <constraint firstAttribute="trailing" secondItem="d5q-m3-JFL" secondAttribute="trailing" constant="130" id="hQf-49-crh"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="pEp-PW-Pqk" secondAttribute="bottom" id="npz-kt-5r2"/>
+                                            <constraint firstItem="d5q-m3-JFL" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" constant="129" id="pbJ-w5-Qla"/>
                                             <constraint firstAttribute="trailing" secondItem="haz-ce-LvD" secondAttribute="trailing" id="sKG-uv-if9"/>
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="top" secondItem="WL1-Tb-8ie" secondAttribute="top" id="x8I-PH-ffJ"/>
+                                            <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="d5q-m3-JFL" secondAttribute="bottom" constant="8" symbolic="YES" id="yMO-Le-XTn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -423,9 +440,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="OnClick_diaryRiviseButton:" destination="0qe-i2-VpE" id="uWQ-mC-77B"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -434,8 +448,8 @@
                         <outlet property="diaryDetail" destination="8s8-lS-wwI" id="EVw-Yw-hLG"/>
                         <outlet property="diaryImageView" destination="pEp-PW-Pqk" id="v02-Iu-emT"/>
                         <outlet property="diaryName" destination="aol-tu-ULz" id="tu3-pf-bia"/>
-                        <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="ndg-7n-e1W"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
+                        <outlet property="diaryimagepageControl" destination="d5q-m3-JFL" id="0Tf-vh-Mbm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rr2-Vr-9vd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -476,7 +490,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

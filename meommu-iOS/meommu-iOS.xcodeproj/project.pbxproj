@@ -36,6 +36,11 @@
 		F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */; };
 		F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */; };
 		F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F953DD602AB82B22009F3B52 /* DiarySend.storyboard */; };
+		F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2603C7ED2ADC4E7500090A9D /* MyPageViewController.swift */; };
+		F959853C2B0F5C11001F28F1 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED412ADDA715009EADA2 /* Page.swift */; };
+		F959853D2B0F5C1B001F28F1 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */; };
+		F959853E2B0F5C2F001F28F1 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED432ADDA805009EADA2 /* PageCell.swift */; };
+		F959853F2B0F5C31001F28F1 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A06DE02AFA27610039813F /* AlertViewController.swift */; };
 		F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */; };
 		F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */; };
 		F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A1522AB8157E009D90A8 /* DiaryModel.swift */; };
@@ -488,12 +493,14 @@
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
+				F959853D2B0F5C1B001F28F1 /* AnnouncementViewController.swift in Sources */,
 				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,
 				F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */,
 				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
 				269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */,
 				26A06DE52AFC01580039813F /* AnnouncementTableViewCell.swift in Sources */,
 				F9AE34362B0E2FA500B445A1 /* Announcement.swift in Sources */,
+				F959853E2B0F5C2F001F28F1 /* PageCell.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */,
 				F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */,
@@ -501,11 +508,14 @@
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 				26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */,
+				F959853F2B0F5C31001F28F1 /* AlertViewController.swift in Sources */,
 				26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */,
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
+				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,
 				261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
 				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,
+				F959853C2B0F5C11001F28F1 /* Page.swift in Sources */,
 				269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

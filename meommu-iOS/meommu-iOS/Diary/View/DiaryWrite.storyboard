@@ -310,6 +310,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="완료" id="QCi-Pm-iAW">
                             <color key="tintColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="OnClick_diaryWriteButton:" destination="Y6W-OH-hqX" id="7Fo-UV-t5n"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -321,7 +324,10 @@
                         <outlet property="borderView5" destination="h7Y-su-c0F" id="mey-Jc-a5p"/>
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
+                        <outlet property="diaryContentTextField" destination="ERx-jz-qxc" id="u2a-1m-Nrn"/>
                         <outlet property="diaryGuideButton" destination="SYv-T2-0TZ" id="zev-wg-ZVc"/>
+                        <outlet property="diaryTitleTextField" destination="8ux-sH-DIZ" id="X12-3u-zLr"/>
+                        <outlet property="diaryWriteButton" destination="QCi-Pm-iAW" id="QVe-Tb-1QQ"/>
                         <outlet property="imagePickerButton" destination="QmJ-wo-bT9" id="7zs-jP-DKd"/>
                         <outlet property="imageView1" destination="COD-GK-Npr" id="Sbh-Hb-bSR"/>
                         <outlet property="imageView2" destination="XR0-YO-vU5" id="6ci-2g-cad"/>

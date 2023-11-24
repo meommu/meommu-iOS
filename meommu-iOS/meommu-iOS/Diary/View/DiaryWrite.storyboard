@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="frR-3q-xzu">
-                                <rect key="frame" x="0.0" y="94" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="405" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFF-dO-fSL">
@@ -68,10 +68,8 @@
                                 <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="veU-rC-yMC" secondAttribute="bottom" constant="11" id="19i-HN-BrI"/>
-                                    <constraint firstAttribute="trailing" secondItem="OFF-dO-fSL" secondAttribute="trailing" constant="209" id="1jL-YZ-uYW"/>
                                     <constraint firstAttribute="bottom" secondItem="AdS-fq-82y" secondAttribute="bottom" constant="11" id="3TB-RL-YPH"/>
                                     <constraint firstItem="CoC-az-mNw" firstAttribute="leading" secondItem="frR-3q-xzu" secondAttribute="leading" constant="22" id="7JS-Oa-D3f"/>
-                                    <constraint firstAttribute="width" constant="375" id="8FU-N4-HmU"/>
                                     <constraint firstItem="CoC-az-mNw" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="11" id="BAL-fp-ezm"/>
                                     <constraint firstAttribute="bottom" secondItem="v3L-xe-weQ" secondAttribute="bottom" constant="11" id="E2d-1E-NeY"/>
                                     <constraint firstAttribute="bottom" secondItem="CoC-az-mNw" secondAttribute="bottom" constant="11" id="FdV-h0-Occ"/>
@@ -79,6 +77,7 @@
                                     <constraint firstAttribute="bottom" secondItem="OFF-dO-fSL" secondAttribute="bottom" constant="13" id="JwR-QG-vR1"/>
                                     <constraint firstItem="v3L-xe-weQ" firstAttribute="leading" secondItem="CoC-az-mNw" secondAttribute="trailing" constant="8" symbolic="YES" id="Ltb-zV-vc5"/>
                                     <constraint firstItem="OFF-dO-fSL" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="13" id="Mo0-iW-4ri"/>
+                                    <constraint firstItem="OFF-dO-fSL" firstAttribute="leading" secondItem="veU-rC-yMC" secondAttribute="trailing" constant="10.67" id="ZDH-Xv-On6"/>
                                     <constraint firstAttribute="height" constant="44" id="aty-Ta-syb"/>
                                     <constraint firstItem="veU-rC-yMC" firstAttribute="leading" secondItem="v3L-xe-weQ" secondAttribute="trailing" constant="8" id="cW3-fQ-fVq"/>
                                     <constraint firstItem="veU-rC-yMC" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="11" id="hoy-FP-VI5"/>
@@ -241,63 +240,63 @@
                                     <constraint firstItem="R7M-Vq-ePP" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="top" constant="15" id="yVy-UX-Jum"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ux-sH-DIZ">
-                                <rect key="frame" x="25" y="236" width="325" height="42"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0w-X0-WOk">
+                                <rect key="frame" x="0.0" y="227" width="385" height="585"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czk-cs-GIG">
+                                        <rect key="frame" x="32" y="50" width="320" height="1"/>
+                                        <color key="backgroundColor" red="0.54901963470000004" green="0.5647059083" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="U8t-HU-TcL"/>
+                                            <constraint firstAttribute="height" constant="1" id="w1z-sQ-4rX"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ux-sH-DIZ">
+                                        <rect key="frame" x="30" y="20" width="325" height="25"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
+                                        <rect key="frame" x="20" y="505" width="335" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="OnClick_diaryGuideButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F2D-o7-ApI"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="@@의 일기를 작성해주세요." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERx-jz-qxc">
+                                        <rect key="frame" x="30" y="71" width="325" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="h8V-Go-g7J"/>
+                                            <constraint firstAttribute="width" constant="325" id="iKR-hJ-ha6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431610000004" green="0.96470588450000005" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="325" id="pUz-4d-FEj"/>
-                                    <constraint firstAttribute="height" constant="42" id="sY7-RQ-yMg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czk-cs-GIG">
-                                <rect key="frame" x="27.666666666666657" y="283" width="320" height="1"/>
-                                <color key="backgroundColor" red="0.54901963470000004" green="0.5647059083" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="U8t-HU-TcL"/>
-                                    <constraint firstAttribute="height" constant="1" id="w1z-sQ-4rX"/>
+                                    <constraint firstItem="czk-cs-GIG" firstAttribute="top" secondItem="8ux-sH-DIZ" secondAttribute="bottom" constant="5" id="Ks0-d3-Cm1"/>
+                                    <constraint firstItem="ERx-jz-qxc" firstAttribute="top" secondItem="czk-cs-GIG" secondAttribute="bottom" constant="20" id="YKr-mQ-IcQ"/>
+                                    <constraint firstItem="ERx-jz-qxc" firstAttribute="centerX" secondItem="R0w-X0-WOk" secondAttribute="centerX" id="d7O-Bw-NZZ"/>
+                                    <constraint firstItem="8ux-sH-DIZ" firstAttribute="top" secondItem="R0w-X0-WOk" secondAttribute="top" constant="20" id="tyZ-uE-A23"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="@@의 일기를 작성해주세요." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERx-jz-qxc">
-                                <rect key="frame" x="25" y="299" width="325" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="h8V-Go-g7J"/>
-                                    <constraint firstAttribute="width" constant="325" id="iKR-hJ-ha6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
-                                <rect key="frame" x="20" y="730" width="335" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="W0E-0Z-kni"/>
-                                    <constraint firstAttribute="width" constant="335" id="hDU-Yn-RRe"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="OnClick_diaryGuideButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F2D-o7-ApI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ERx-jz-qxc" firstAttribute="top" secondItem="czk-cs-GIG" secondAttribute="bottom" constant="15" id="0kU-ht-zkZ"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="2h1-pS-TZP"/>
-                            <constraint firstItem="czk-cs-GIG" firstAttribute="top" secondItem="8ux-sH-DIZ" secondAttribute="bottom" constant="5" id="4Fs-lW-v9Y"/>
-                            <constraint firstItem="8ux-sH-DIZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="NYQ-eI-z1N"/>
-                            <constraint firstItem="8ux-sH-DIZ" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yr8-YO-VIw"/>
-                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="g8o-B6-vGj"/>
-                            <constraint firstItem="ERx-jz-qxc" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="h3Y-57-PqF"/>
-                            <constraint firstItem="czk-cs-GIG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="i4V-8Q-ges"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Nx8-74-bMz"/>
+                            <constraint firstItem="R0w-X0-WOk" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="UoC-aO-izA"/>
+                            <constraint firstItem="R0w-X0-WOk" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Wxu-7R-E6t"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="2" id="hix-N5-ABX"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOo-iK-t9e"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oWe-i1-C1Z"/>
-                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rEb-SY-PNb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="일기쓰기" id="y5s-cd-1iW">

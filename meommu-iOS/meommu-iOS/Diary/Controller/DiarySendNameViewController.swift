@@ -53,7 +53,7 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            
+        
         // 변경 후의 텍스트의 길이가 10 이하인지 확인
         return updatedText.count <= 10
     }
@@ -64,12 +64,20 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func OnClick_WriteButton(_ sender: Any) {
         
-        let diarywriteStoryboard = UIStoryboard(name: "DiaryWrite", bundle: nil)
-        let diarywriteVC = diarywriteStoryboard.instantiateViewController(identifier: "DiaryWriteViewController")
+        // nameTextField의 값 가져오기
+        guard let dogName = nameTextField.text else { return }
         
-        // segue show로 구현 필요
-        diarywriteVC.modalPresentationStyle = .overFullScreen
-        present(diarywriteVC, animated: true, completion: nil)
+        // DiaryWriteViewController에 데이터 전달
+        let diarywriteStoryboard = UIStoryboard(name: "DiaryWrite", bundle: nil)
+        
+        if let navController = diarywriteStoryboard.instantiateViewController(withIdentifier: "DiaryWriteViewController") as? UINavigationController,
+           let diarywriteVC = navController.viewControllers.first as? DiaryWriteViewController {
+            diarywriteVC.dogName = dogName
+            
+            navController.modalPresentationStyle = .overFullScreen
+            navController.modalTransitionStyle = .crossDissolve
+            present(navController, animated: true, completion: nil)
+            
+        }
     }
-    
 }

@@ -85,21 +85,6 @@
                                     <constraint firstItem="AdS-fq-82y" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="12" id="reG-3v-2C1"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
-                                <rect key="frame" x="20" y="730" width="335" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="JOW-Qj-r3D"/>
-                                    <constraint firstAttribute="height" constant="48" id="rPU-yU-3am"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="OnClick_diaryGuideButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F2D-o7-ApI"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-er-gxl">
                                 <rect key="frame" x="0.0" y="138" width="375" height="674"/>
                                 <subviews>
@@ -283,6 +268,21 @@
                                     <constraint firstItem="R7M-Vq-ePP" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="top" constant="15" id="yVy-UX-Jum"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
+                                <rect key="frame" x="20" y="730" width="335" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="JOW-Qj-r3D"/>
+                                    <constraint firstAttribute="height" constant="48" id="rPU-yU-3am"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnClick_diaryGuideButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F2D-o7-ApI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

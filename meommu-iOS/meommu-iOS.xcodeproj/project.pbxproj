@@ -45,6 +45,7 @@
 		F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */; };
 		F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A1522AB8157E009D90A8 /* DiaryModel.swift */; };
 		F96F32582B101FAD00EA4F67 /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = F96F32572B101FAD00EA4F67 /* FittedSheets */; };
+		F96F325A2B1022AD00EA4F67 /* DiaryMonthPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */; };
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
 		F9866C3F2ADE12AE00744164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9866C3E2ADE12AE00744164 /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainEmptyTableViewCell.xib; sourceTree = "<group>"; };
 		F959A1522AB8157E009D90A8 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryMonthPicker.storyboard; sourceTree = "<group>"; };
 		F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableViewCell.swift; sourceTree = "<group>"; };
 		F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableViewCell.xib; sourceTree = "<group>"; };
 		F9866C3E2ADE12AE00744164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */,
 				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 				F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */,
+				F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 				26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */,
+				F96F325A2B1022AD00EA4F67 /* DiaryMonthPicker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

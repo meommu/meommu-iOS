@@ -34,6 +34,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         if let name = dogName {
             diaryContentTextField.placeholder = name + "의 일기를 작성해주세요."
         }
+        
     }
     
     // -----------------------------------------

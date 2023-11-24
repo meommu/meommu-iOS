@@ -164,7 +164,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="dq1-UA-5ew">
-                                <rect key="frame" x="0.0" y="94" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="389" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-Gg-Neg">
@@ -217,6 +217,7 @@
                                         <state key="normal" image="arrow_drop_down"/>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
@@ -233,7 +234,6 @@
                                     <constraint firstAttribute="bottom" secondItem="PNC-wB-wNv" secondAttribute="bottom" constant="13" id="sE6-ma-itz"/>
                                     <constraint firstAttribute="height" constant="44" id="tMs-zi-mSc"/>
                                     <constraint firstAttribute="bottom" secondItem="y9z-8z-5jf" secondAttribute="bottom" constant="11" id="ydL-UH-ux4"/>
-                                    <constraint firstAttribute="width" constant="375" id="z7E-jG-C8U"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -276,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="-2"/>
+            <point key="canvasLocation" x="1005.6" y="-2.2167487684729066"/>
         </scene>
         <!--Diary Detail View Controller-->
         <scene sceneID="hWy-MW-Apb">

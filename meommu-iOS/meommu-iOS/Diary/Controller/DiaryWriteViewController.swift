@@ -31,6 +31,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         // 이미지 피커 버튼에 액션 추가
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
+        diaryContextTextView.delegate = self
+        
         if let name = dogName {
             diaryContextTextView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
             diaryContextTextView.textColor = .lightGray
@@ -274,15 +276,15 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
 
 extension DiaryWriteViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .lightGray {
+        if textView.text == "\(dogName!)의 일기를 작성해 주세요.(0/1000)" {
             textView.text = ""
             textView.textColor = .black
         }
     }
-       
+            
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
+            textView.text = "\(dogName!)의 일기를 작성해 주세요.(0/1000)"
             textView.textColor = .lightGray
         }
     }

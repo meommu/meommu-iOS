@@ -32,10 +32,13 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
         if let name = dogName {
-            diaryContentTextField.placeholder = name + "의 일기를 작성해주세요."
+            diaryContextTextView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
+            diaryContextTextView.textColor = .lightGray
         }
         
     }
+    
+    
     
     // -----------------------------------------
     // 1단계 바텀시트
@@ -222,9 +225,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // -----------------------------------------
     // 일기 내용 작성
     @IBOutlet var diaryTitleTextField: UITextField!
+    @IBOutlet var diaryContextTextView: UITextView!
     
-    @IBOutlet var diaryContentTextField: UITextField!
-
     
     // -----------------------------------------
     // 일기 내용 작성 완료
@@ -235,7 +237,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     @IBAction func OnClick_diaryWriteButton(_ sender: Any) {
         
-        guard let title = diaryTitleTextField.text, let content = diaryContentTextField.text, let dogName = dogName else { return }
+        guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
         let headers: HTTPHeaders = [
                 "Content-Type": "application/json",
@@ -268,4 +270,20 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension DiaryWriteViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+       
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
+            textView.textColor = .lightGray
+        }
+    }
 }

@@ -231,20 +231,6 @@
                                             <constraint firstItem="SIQ-92-UQa" firstAttribute="leading" secondItem="rXg-r3-PiT" secondAttribute="trailing" constant="12" id="oxo-cr-oRX"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xle-eJ-eBe">
-                                        <rect key="frame" x="133" y="101" width="109.33333333333331" height="25"/>
-                                        <color key="textColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="@@의 일기를 작성해주세요" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VKZ-KY-3T1">
-                                        <rect key="frame" x="20" y="155" width="335" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="335" id="9Ig-4n-3Eu"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-qU-9sP">
                                         <rect key="frame" x="20" y="134" width="335" height="1"/>
                                         <color key="backgroundColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -253,6 +239,19 @@
                                             <constraint firstAttribute="width" constant="335" id="hfh-hT-LIp"/>
                                         </constraints>
                                     </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xle-eJ-eBe">
+                                        <rect key="frame" x="133" y="101" width="109.33333333333331" height="25"/>
+                                        <color key="textColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-fY-B3r">
+                                        <rect key="frame" x="20" y="150" width="335" height="420"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96470588450000005" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -261,9 +260,7 @@
                                     <constraint firstAttribute="height" constant="674" id="bmT-97-m3e"/>
                                     <constraint firstAttribute="width" constant="375" id="kMd-XZ-Ox3"/>
                                     <constraint firstItem="xle-eJ-eBe" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="m0t-Qt-z6Z"/>
-                                    <constraint firstItem="VKZ-KY-3T1" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="sKF-x0-gzZ"/>
                                     <constraint firstItem="R7M-Vq-ePP" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="sx0-Fl-EdK"/>
-                                    <constraint firstItem="VKZ-KY-3T1" firstAttribute="top" secondItem="K1V-qU-9sP" secondAttribute="bottom" constant="20" id="uTT-qU-0Lq"/>
                                     <constraint firstItem="xle-eJ-eBe" firstAttribute="top" secondItem="R7M-Vq-ePP" secondAttribute="bottom" constant="26" id="v0h-t7-h33"/>
                                     <constraint firstItem="R7M-Vq-ePP" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="top" constant="15" id="yVy-UX-Jum"/>
                                 </constraints>
@@ -319,7 +316,7 @@
                         <outlet property="borderView5" destination="h7Y-su-c0F" id="mey-Jc-a5p"/>
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
-                        <outlet property="diaryContentTextField" destination="VKZ-KY-3T1" id="yhL-ZZ-GjM"/>
+                        <outlet property="diaryContextTextView" destination="rbB-fY-B3r" id="Hvx-tj-4Fe"/>
                         <outlet property="diaryGuideButton" destination="SYv-T2-0TZ" id="zev-wg-ZVc"/>
                         <outlet property="diaryTitleTextField" destination="xle-eJ-eBe" id="EwA-Oa-oFs"/>
                         <outlet property="diaryWriteButton" destination="QCi-Pm-iAW" id="QVe-Tb-1QQ"/>

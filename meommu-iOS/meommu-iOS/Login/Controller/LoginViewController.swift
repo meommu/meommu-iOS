@@ -10,13 +10,14 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var firstMainLabel: UILabel!
     @IBOutlet weak var secondMainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
     @IBOutlet weak var loginImageView: UIImageView!
+    
+    var kindergartenName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,24 +27,26 @@ class LoginViewController: UIViewController {
         setupCornerRadius()
         setupImageView()
     }
-
+    
     //MARK: - 코너 레디어스 값 설정 메서드
     func setupCornerRadius() {
         nextButton.setCornerRadius(6.0)
     }
     
     func setupButton() {
-        nextButton.backgroundColor = Color.purple.buttonColor
-        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        nextButton.backgroundColor = .prilmaryA
+        nextButton.setTitleColor(.white, for: .normal)
         
-        // 백 버튼 색상 설정
-        backButton.tintColor = Color.darkGray.buttonColor
     }
-
+    
     func setupLebel() {
-        firstMainLabel.textColor = Color.black.textColor
-        secondMainLabel.textColor = Color.black.textColor
-        subLabel.textColor = Color.darkGray.textColor
+        firstMainLabel.textColor = .gray900
+        secondMainLabel.textColor = .gray900
+        subLabel.textColor = .gray400
+        
+        if let kindergartenName {
+            firstMainLabel.text = "\(kindergartenName)님,"
+        }
     }
     
     func setupImageView() {
@@ -67,13 +70,6 @@ class LoginViewController: UIViewController {
         let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
         self.changeRootViewController(newViewController)
     }
-    
-    
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
-    
-    
     
     
 }

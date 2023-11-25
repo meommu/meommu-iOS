@@ -33,13 +33,13 @@ class OnboardingViewController: UIViewController {
     }
     
     func setupButton() {
-        nextButton.backgroundColor = Color.purple.buttonColor
-        nextButton.setTitleColor(Color.white.textColor, for: .normal)
+        nextButton.backgroundColor = .prilmaryA
+        nextButton.setTitleColor(.white, for: .normal)
     }
     
     func setupLebel() {
-        firstMainLabel.textColor = Color.black.textColor
-        secondMainLabel.textColor = Color.black.textColor
+        firstMainLabel.textColor = .gray900
+        secondMainLabel.textColor = .gray900
     }
     
     func setupImageView() {

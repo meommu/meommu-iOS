@@ -233,7 +233,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // -----------------------------------------
     // 일기 내용 작성 완료
     
-    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MjcsImlhdCI6MTcwMDYxMzk1OSwiZXhwIjoxNzAxMjE4NzU5fQ.AlQlq-YsMavw3QXJGUEx1FdV-CYdw2YUvhKqohb8JBFztmpl2gjtLPTujXPXEIRMC4MZV901xwVZNT6BbTuNcQ"
+    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
     
     @IBOutlet var diaryWriteButton: UIBarButtonItem!
     
@@ -246,22 +246,38 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
                 "Authorization": "Bearer \(AccessToken)"
             ]
 
-            let parameters: [String: Any] = [
+        let parameters: [String: Any] = [
                 "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
                 "dogName": dogName,
                 "title": title,
                 "content": content,
                 "imageIds": selectedImages.map { _ in Int.random(in: 1...5) } // 이미지에 대한 id를 설정해주세요.
-            ]
+        ]
 
-            AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
-                       method: .post,
-                       parameters: parameters,
-                       encoding: JSONEncoding.default,
-                       headers: headers)
-                .response { response in
-                    debugPrint(response)
-            }
+        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
+                    method: .post,
+                    parameters: parameters,
+                    encoding: JSONEncoding.default,
+                    headers: headers)
+        .response { response in
+            debugPrint(response)
+        }
+        
+        // 작성 완료 후 메인 화면으로 이동
+        let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+        self.changeRootViewController(newViewController)
+    }
+    
+    // UIWindow의 rootViewController를 변경하여 화면전환 함수
+    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = viewControllerToPresent
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+        } else {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
+        }
     }
     
     // -----------------------------------------

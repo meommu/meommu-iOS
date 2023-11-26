@@ -47,7 +47,7 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet var diaryName: UILabel!
     @IBOutlet var diaryImageView: UIImageView!
     
-    var diary : Diary?
+    var diary : DiaryResponse.Data.Diary?
     
     func convertDate(_ dateStr: String) -> String {
             let inputFormatter = DateFormatter()

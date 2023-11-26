@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DiaryMainTableViewCell: UITableViewCell {
 
@@ -32,6 +33,12 @@ class DiaryMainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setImageUrls(_ urls: [String]) {
+        if let firstUrl = urls.first, let url = URL(string: firstUrl) {
+            diaryImageView.af.setImage(withURL: url)
+        }
     }
     
 }

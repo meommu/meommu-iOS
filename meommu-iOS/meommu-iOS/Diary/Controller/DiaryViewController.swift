@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 
+
 class DiaryViewController: UIViewController {
     
     
@@ -64,11 +65,12 @@ class DiaryViewController: UIViewController {
     // -----------------------------------------
     // TableView를 통해 전체 일기 조회하기
     
-    var diaries: [Diary] = []
+    var diaries: [DiaryResponse.Data.Diary] = []
+    var imageResponses: [ImageResponse.Data.Image] = []
     
     @IBOutlet var DiaryMainTableView: UITableView!
         
-    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MjcsImlhdCI6MTcwMDYxMzk1OSwiZXhwIjoxNzAxMjE4NzU5fQ.AlQlq-YsMavw3QXJGUEx1FdV-CYdw2YUvhKqohb8JBFztmpl2gjtLPTujXPXEIRMC4MZV901xwVZNT6BbTuNcQ"
+    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
     
     private func fetchData() {
         let headers: HTTPHeaders = [
@@ -81,23 +83,34 @@ class DiaryViewController: UIViewController {
             "month": "11"
         ]
         
-        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",method: .get, parameters: parameters, headers: headers).responseData { response in
+        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries", method: .get, parameters: parameters, headers: headers).responseDecodable(of: DiaryResponse.self) { response in
             switch response.result {
-                        case .success(let data):
-                            do {
-                                let decoder = JSONDecoder()
-                                let responseModel = try decoder.decode(Response.self, from: data)
-                                self.diaries = responseModel.data.diaries
-                                self.DiaryMainTableView.reloadData()
-                            } catch {
-                                print("Decoding Error: \(error)")
-                            }
-                        case .failure(let error):
-                            print("Request Error: \(error)")
+            case .success(let diaryResponse):
+                self.diaries = diaryResponse.data.diaries
+                
+                // 이미지 데이터도 가져옵니다.
+                let imageIds = self.diaries.flatMap { $0.imageIds }
+                let urlString = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
+                
+                AF.request(urlString).responseDecodable(of: ImageResponse.self) { response in
+                    switch response.result {
+                    case .success(let imageResponse):
+                        self.imageResponses = imageResponse.data.images
+                        
+                        // 메인 스레드에서 UI를 업데이트합니다.
+                        DispatchQueue.main.async {
+                            self.DiaryMainTableView.reloadData()
                         }
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
-    
+
     func convertDate(_ dateStr: String) -> String {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
@@ -164,6 +177,11 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             diaryCell.diaryNameLabel?.text = diary.dogName + " 일기"
             diaryCell.diaryTitleLabel?.text = diary.title
             
+            let imageUrls = diary.imageIds.compactMap { imageId in
+                imageResponses.first(where: { $0.id == imageId })?.url
+            }
+            diaryCell.setImageUrls(imageUrls)
+            
             return diaryCell
             
         }
@@ -182,10 +200,20 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let vc = segue.destination as? DiaryDetailViewController,
-               let selectedDiary = sender as? Diary {
+               let selectedDiary = sender as? DiaryResponse.Data.Diary {
                 vc.diary = selectedDiary
+                
+                // 이미지 응답을 딕셔너리로 변환합니다.
+                let imageResponseDict = Dictionary(uniqueKeysWithValues: imageResponses.map { ($0.id, $0.url) })
+
+                // 이미지 URL을 찾아서 DiaryDetailViewController에 넘겨줍니다.
+                let imageUrls = selectedDiary.imageIds.compactMap { imageId in
+                    imageResponseDict[imageId]
+                }
+                vc.imageUrls = imageUrls
             }
         }
     }
     
 }
+

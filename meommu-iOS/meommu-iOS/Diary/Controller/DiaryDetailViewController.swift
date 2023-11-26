@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 
 class DiaryDetailViewController: UIViewController {
@@ -14,18 +15,8 @@ class DiaryDetailViewController: UIViewController {
         super.viewDidLoad()
 
         updateUI()
-        
-        // 바텀시트
-        
-        
-        // 페이지 컨트롤 설정
-        /*if let selectedDiary = diary as? Diary {
-         imageArray = Array(selectedDiary.diaryImage) // 이미지 배열 초기화
-         diaryimagepageControl.numberOfPages = imageArray.count // 페이지 컨트롤 설정
-         diaryimagepageControl.currentPage = 0
-     }
-         */
-        
+        setupPageControl()
+        updateImage()
     }
     
     // -----------------------------------------
@@ -47,7 +38,7 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet var diaryName: UILabel!
     @IBOutlet var diaryImageView: UIImageView!
     
-    var diary : Diary?
+    var diary : DiaryResponse.Data.Diary?
     
     func convertDate(_ dateStr: String) -> String {
             let inputFormatter = DateFormatter()
@@ -65,31 +56,41 @@ class DiaryDetailViewController: UIViewController {
         }
     
     func updateUI(){
-            guard let selectedDiary = diary else { return }
-            
-            diaryDate.text = convertDate(selectedDiary.date)
-            diaryDetail.text = selectedDiary.content
-            diaryTitle.text = selectedDiary.title
-            diaryName.text = selectedDiary.dogName + " 일기"
-            
-            // 이미지는 일단 생략하고, 다른 데이터를 채워봅니다.
-        }
+        guard let selectedDiary = diary else { return }
+        
+        diaryDate.text = convertDate(selectedDiary.date)
+        diaryDetail.text = selectedDiary.content
+        diaryTitle.text = selectedDiary.title
+        diaryName.text = selectedDiary.dogName + " 일기"
+    }
     
     // -----------------------------------------
-    // 이미지 페이지 컨트롤
+    // 이미지 가져오기 및 컨트롤
     
-    var imageArray: [String] = [] // 이미지 저장 배열
+    var imageUrls: [String] = []
+    
+    func updateImage() {
+        let currentPageIndex = diaryimagepageControl.currentPage < imageUrls.count ? diaryimagepageControl.currentPage : 0
+        
+        let imageUrl = imageUrls[currentPageIndex]
+        loadAndDisplayImage(from: imageUrl)
+    }
+    
+    func loadAndDisplayImage(from url: String) {
+        if let imageUrl = URL(string: url) {
+            diaryImageView.af.setImage(withURL: imageUrl)
+        }
+    }
+    
+    func setupPageControl() {
+        diaryimagepageControl.numberOfPages = imageUrls.count
+        diaryimagepageControl.currentPage = 0
+    }
     
     @IBOutlet var diaryimagepageControl: UIPageControl!
     
     @IBAction func diaryimagePageChange(_ sender: UIPageControl) {
-        
-        let currentPageIndex = sender.currentPage < imageArray.count ? sender.currentPage : 0
-        
-        let imageName = imageArray[currentPageIndex]
-        if let image = UIImage(named:imageName) {
-            diaryImageView.image = image
-        }
+        updateImage()
     }
     
 

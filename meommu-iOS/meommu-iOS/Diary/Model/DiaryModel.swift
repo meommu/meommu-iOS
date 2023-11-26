@@ -8,22 +8,22 @@
 import UIKit
 
 
-struct Response: Codable {
+struct DiaryResponse: Codable {
+    struct Data: Codable {
+        struct Diary: Codable {
+            let id: Int
+            let date: String
+            let dogName: String
+            let createdAt: String
+            let imageIds: [Int]
+            let title: String
+            let content: String
+        }
+        
+        let diaries: [Diary]
+    }
+    
     let code: String
     let message: String
-    let data: DataClass
-}
-
-struct DataClass: Codable {
-    let diaries: [Diary]
-}
-
-struct Diary: Codable {
-    let id: Int
-    let date: String
-    let dogName: String
-    let createdAt: String
-    let imageIds: [Int]
-    let title: String
-    let content: String
+    let data: Data
 }

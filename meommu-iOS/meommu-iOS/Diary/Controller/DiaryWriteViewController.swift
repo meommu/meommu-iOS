@@ -31,11 +31,16 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         // 이미지 피커 버튼에 액션 추가
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
+        diaryContextTextView.delegate = self
+        
         if let name = dogName {
-            diaryContentTextField.placeholder = name + "의 일기를 작성해주세요."
+            diaryContextTextView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
+            diaryContextTextView.textColor = .lightGray
         }
         
     }
+    
+    
     
     // -----------------------------------------
     // 1단계 바텀시트
@@ -222,42 +227,57 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // -----------------------------------------
     // 일기 내용 작성
     @IBOutlet var diaryTitleTextField: UITextField!
+    @IBOutlet var diaryContextTextView: UITextView!
     
-    @IBOutlet var diaryContentTextField: UITextField!
-
     
     // -----------------------------------------
     // 일기 내용 작성 완료
     
-    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MjcsImlhdCI6MTcwMDYxMzk1OSwiZXhwIjoxNzAxMjE4NzU5fQ.AlQlq-YsMavw3QXJGUEx1FdV-CYdw2YUvhKqohb8JBFztmpl2gjtLPTujXPXEIRMC4MZV901xwVZNT6BbTuNcQ"
+    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
     
     @IBOutlet var diaryWriteButton: UIBarButtonItem!
     
     @IBAction func OnClick_diaryWriteButton(_ sender: Any) {
         
-        guard let title = diaryTitleTextField.text, let content = diaryContentTextField.text, let dogName = dogName else { return }
+        guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
         let headers: HTTPHeaders = [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(AccessToken)"
             ]
 
-            let parameters: [String: Any] = [
+        let parameters: [String: Any] = [
                 "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
                 "dogName": dogName,
                 "title": title,
                 "content": content,
                 "imageIds": selectedImages.map { _ in Int.random(in: 1...5) } // 이미지에 대한 id를 설정해주세요.
-            ]
+        ]
 
-            AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
-                       method: .post,
-                       parameters: parameters,
-                       encoding: JSONEncoding.default,
-                       headers: headers)
-                .response { response in
-                    debugPrint(response)
-            }
+        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
+                    method: .post,
+                    parameters: parameters,
+                    encoding: JSONEncoding.default,
+                    headers: headers)
+        .response { response in
+            debugPrint(response)
+        }
+        
+        // 작성 완료 후 메인 화면으로 이동
+        let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+        self.changeRootViewController(newViewController)
+    }
+    
+    // UIWindow의 rootViewController를 변경하여 화면전환 함수
+    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = viewControllerToPresent
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+        } else {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
+        }
     }
     
     // -----------------------------------------
@@ -268,4 +288,20 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension DiaryWriteViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "\(dogName!)의 일기를 작성해 주세요.(0/1000)" {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+            
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "\(dogName!)의 일기를 작성해 주세요.(0/1000)"
+            textView.textColor = .lightGray
+        }
+    }
 }

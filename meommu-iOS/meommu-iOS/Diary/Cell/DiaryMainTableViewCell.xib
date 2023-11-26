@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -57,10 +57,9 @@
                         <state key="normal" image="DotsThreeVertical"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-Mh-Yw0">
-                        <rect key="frame" x="20" y="402" width="335" height="69"/>
+                        <rect key="frame" x="20" y="406" width="335" height="18.666666666666686"/>
                         <color key="tintColor" name="DiaryTextColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="69" id="xJb-vL-agR"/>
                             <constraint firstAttribute="width" constant="335" id="z4m-dB-SJv"/>
                         </constraints>
                         <attributedString key="attributedText">
@@ -75,7 +74,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df4-DB-Up7">
-                        <rect key="frame" x="20" y="477" width="25" height="18"/>
+                        <rect key="frame" x="20" y="434.66666666666669" width="25" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="EmJ-zr-peZ"/>
                         </constraints>
@@ -84,7 +83,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-UI-5UM">
-                        <rect key="frame" x="51.000000000000007" y="477" width="28.333333333333336" height="18"/>
+                        <rect key="frame" x="51.000000000000007" y="434.66666666666669" width="28.333333333333336" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="EkP-RE-ElC"/>
                         </constraints>
@@ -95,21 +94,21 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="uVu-UI-5UM" firstAttribute="top" secondItem="Xgt-Mh-Yw0" secondAttribute="bottom" constant="6" id="8ZL-Pa-Von"/>
                     <constraint firstItem="NnC-4J-6MV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DgL-hI-7hu"/>
                     <constraint firstItem="dg6-d1-uxW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="DtC-lI-3dJ"/>
+                    <constraint firstItem="uVu-UI-5UM" firstAttribute="top" secondItem="Xgt-Mh-Yw0" secondAttribute="bottom" constant="10" id="NRc-jU-KIl"/>
                     <constraint firstItem="NnC-4J-6MV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="NXx-Cf-x9A"/>
+                    <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="top" secondItem="NnC-4J-6MV" secondAttribute="bottom" constant="10" id="OyC-xR-6UB"/>
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="P3s-2D-SxL"/>
                     <constraint firstItem="NnC-4J-6MV" firstAttribute="top" secondItem="dg6-d1-uxW" secondAttribute="bottom" constant="16" id="Qy1-LR-iXy"/>
-                    <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="top" secondItem="NnC-4J-6MV" secondAttribute="bottom" constant="6" id="Sp1-Rm-nFh"/>
                     <constraint firstItem="uVu-UI-5UM" firstAttribute="leading" secondItem="Df4-DB-Up7" secondAttribute="trailing" constant="6" id="V07-Rd-rau"/>
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="V1E-sM-qXB"/>
-                    <constraint firstItem="Df4-DB-Up7" firstAttribute="top" secondItem="Xgt-Mh-Yw0" secondAttribute="bottom" constant="6" id="VPa-5e-OeC"/>
                     <constraint firstItem="Etf-Z4-10B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="cVB-D6-axN"/>
                     <constraint firstAttribute="trailing" secondItem="dg6-d1-uxW" secondAttribute="trailing" constant="20" id="eQI-b9-90f"/>
                     <constraint firstAttribute="trailing" secondItem="Etf-Z4-10B" secondAttribute="trailing" constant="40" id="g6Q-Ix-JOG"/>
                     <constraint firstItem="dg6-d1-uxW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hXR-pH-NbK"/>
                     <constraint firstItem="Df4-DB-Up7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="qQo-cx-Vxa"/>
+                    <constraint firstItem="Df4-DB-Up7" firstAttribute="top" secondItem="Xgt-Mh-Yw0" secondAttribute="bottom" constant="10" id="r7o-5A-ILj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -130,7 +129,7 @@
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -202,6 +202,15 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             if let vc = segue.destination as? DiaryDetailViewController,
                let selectedDiary = sender as? DiaryResponse.Data.Diary {
                 vc.diary = selectedDiary
+                
+                // 이미지 응답을 딕셔너리로 변환합니다.
+                let imageResponseDict = Dictionary(uniqueKeysWithValues: imageResponses.map { ($0.id, $0.url) })
+
+                // 이미지 URL을 찾아서 DiaryDetailViewController에 넘겨줍니다.
+                let imageUrls = selectedDiary.imageIds.compactMap { imageId in
+                    imageResponseDict[imageId]
+                }
+                vc.imageUrls = imageUrls
             }
         }
     }

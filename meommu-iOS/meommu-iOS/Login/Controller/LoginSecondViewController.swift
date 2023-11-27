@@ -187,11 +187,8 @@ final class LoginSecondViewController: UIViewController {
     
     //MARK: - 이메일 중복 확인 메서드
     @IBAction func checkEmailDuplication(_ sender: UIButton) {
-        guard let email = emailTextField.text else { return }
         
-        // ❗️서버 통신 관련 코드는 나중에 작성(이메일 중복 메서드 실행)
-        // 이메일 사용이 가능하면 isEmailDuplicate에 true 리턴
-        isEmailDuplicate = true
+        guard let email = emailTextField.text else { return }
         
         if !isEmailFormatValid(email) {
             emailStatusLabel.text = "이메일을 알맞게 입력해주세요."
@@ -201,14 +198,31 @@ final class LoginSecondViewController: UIViewController {
             emailDuplicateCheckButton.layer.borderColor = UIColor.red.cgColor
             emailDuplicateCheckButton.layer.borderWidth = 2
             
-        } else if isEmailDuplicate {
-            // 이메일 사용 가능
-            emailStatusLabel.text = "사용 가능한 이메일입니다."
-            emailStatusLabel.textColor = .success
+        } else if isEmailFormatValid(email) {
             
-            emailDuplicateCheckButton.setTitleColor(.success, for: .normal)
-            emailDuplicateCheckButton.layer.borderColor = UIColor.success.cgColor
-            emailDuplicateCheckButton.layer.borderWidth = 2
+            let request = CheckEmailDuplicationRequest(email: email)
+            
+            SignUpAPI.shared.checkEmailDuplication(with: request) { result in
+                switch result {
+                case .success(let response):
+                    guard let data = response.data else {
+                        print(#function)
+                        return
+                    }
+                    self.isEmailDuplicate = data
+                    
+                    self.emailStatusLabel.text = "사용 가능한 이메일입니다."
+                    self.emailStatusLabel.textColor = .success
+                    self.emailDuplicateCheckButton.setTitleColor(.success, for: .normal)
+                    self.emailDuplicateCheckButton.layer.borderColor = UIColor.success.cgColor
+                    self.emailDuplicateCheckButton.layer.borderWidth = 2
+                    
+                case .failure(let error):
+                    // 이메일 중복 확인 실패
+                    print("Error: \(error.message)")
+                }
+            }
+            
         } else {
             // 이메일 사용 불가능
             emailStatusLabel.text = "사용 불가능한 이메일입니다."
@@ -250,9 +264,18 @@ final class LoginSecondViewController: UIViewController {
         // 비밀번호, 이메일, 약관 동의 확인 후 다음 페이지 보여주기
         if isPasswordConfirm && isEmailDuplicate && isTermsAndPrivacyButtonAgreed {
             performSegue(withIdentifier: "toLoginThirdVC", sender: self)
-            
-            // ❗️데이터 전달을 위한 prepare 메서드 작성
         }
+    }
+    
+    // 데이터 전달을 위해 prepare 메서드 재정의
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toLoginThirdVC" {
+            let loginThirdVC = segue.destination as! LoginThirdViewController
+            loginThirdVC.signUpRequest?.email = emailTextField.text
+            loginThirdVC.signUpRequest?.password = passwordTextField.text
+            loginThirdVC.signUpRequest?.passwordConfirmation = confirmPasswordTextField.text
+        }
+        
     }
 }
 

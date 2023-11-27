@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - 로그인 모델
-struct LoginModel {
+struct LoginRequest: Codable {
     var email, password: String?
 }
 
@@ -33,6 +33,9 @@ struct TokenData: Codable {
 
 
 // MARK: - 로그인 정보 조회 응답 -> 토큰으로 로그인
+
+
+
 struct TokenVerificationResponse: Codable {
     let code, message: String?
     let loginData: LoginData?

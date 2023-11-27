@@ -112,9 +112,28 @@ class LoginFirstViewController: UIViewController {
     }
     
     @IBAction func changeWindowButtonToDiary(_ sender: Any) {
-        let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
-        self.changeRootViewController(newViewController)
+        
+        let request = LoginRequest(email: emailTextField.text, password: passwordTextField.text)
+        
+        LoginAPI.shared.login(with: request) { result in
+            switch result {
+            case .success(let response):
+                print("로그인 성공")
+                guard let accessToken = response.tokenData?.accessToken else {
+                    return
+                }
+                print(accessToken)
+                
+                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+                self.changeRootViewController(newViewController)
+                
+            case .failure(let error):
+                // 이메일 중복 확인 실패
+                print("Error: \(error.message)")
+            }
+        }
+        
     }
     
 }
@@ -171,7 +190,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 다음 텍스트 필드 활성화 기능
         if textField == emailTextField {
-//            emailTextField.resignFirstResponder()
+            //            emailTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
             
         } else if textField == passwordTextField {

@@ -21,6 +21,10 @@
 		264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */; };
 		264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */; };
 		264BF3B72B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B62B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift */; };
+		264BF3BB2B14C9F700FCFBEC /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */; };
+		264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4A2AE3BA00009EADA2 /* SignUp.swift */; };
+		264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */; };
+		264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -88,6 +92,9 @@
 		264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySecondViewController.swift; sourceTree = "<group>"; };
 		264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryThirdViewController.swift; sourceTree = "<group>"; };
 		264BF3B62B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryFourthViewController.swift; sourceTree = "<group>"; };
+		264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
+		264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +224,7 @@
 				261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */,
 				261003B32AD3AF07001F5E28 /* Color.swift */,
 				264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */,
+				264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -246,6 +254,8 @@
 				269AED472AE3AE33009EADA2 /* Model */,
 				F907437A2AB73C0900F7C503 /* View */,
 				F907437B2AB73C4C00F7C503 /* Controller */,
+				264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */,
+				264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -507,9 +517,12 @@
 				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,
 				269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */,
 				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
+				264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */,
 				264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */,
+				264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */,
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
+				264BF3BB2B14C9F700FCFBEC /* LoginAPI.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				F959853D2B0F5C1B001F28F1 /* AnnouncementViewController.swift in Sources */,
 				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,
@@ -534,6 +547,7 @@
 				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,
 				261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
+				264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */,
 				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,
 				F959853C2B0F5C11001F28F1 /* Page.swift in Sources */,
 				269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */,

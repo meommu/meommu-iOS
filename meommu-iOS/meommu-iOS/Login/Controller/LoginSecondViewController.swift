@@ -303,13 +303,13 @@ extension LoginSecondViewController: UITextFieldDelegate {
     
     //MARK: - 이메일 형식 확인 메서드
     private func isEmailFormatValid(_ email: String) -> Bool {
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        let emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
     
     //MARK: - 비밀번호 형식 확인 메서드
     private func isPasswordFormatValid(_ password: String) -> Bool {
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9!@#$%^~*+=-])[A-Za-z0-9!@#$%^~*+=-]{8,20}$"
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
     }
     

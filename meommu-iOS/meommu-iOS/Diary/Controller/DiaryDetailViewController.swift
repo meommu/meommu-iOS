@@ -41,19 +41,19 @@ class DiaryDetailViewController: UIViewController {
     var diary : DiaryResponse.Data.Diary?
     
     func convertDate(_ dateStr: String) -> String {
-            let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "yyyy-MM-dd"
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let date = inputFormatter.date(from: dateStr) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.locale = Locale(identifier: "ko_KR") // 한국어로 출력
+            outputFormatter.dateFormat = "yyyy년 MM월 dd일"
             
-            if let date = inputFormatter.date(from: dateStr) {
-                let outputFormatter = DateFormatter()
-                outputFormatter.locale = Locale(identifier: "ko_KR") // 한국어로 출력
-                outputFormatter.dateFormat = "yyyy년 MM월 dd일"
-                
-                return outputFormatter.string(from: date)
-            } else {
-                return dateStr
-            }
+            return outputFormatter.string(from: date)
+        } else {
+            return dateStr
         }
+    }
     
     func updateUI(){
         guard let selectedDiary = diary else { return }
@@ -70,10 +70,13 @@ class DiaryDetailViewController: UIViewController {
     var imageUrls: [String] = []
     
     func updateImage() {
-        let currentPageIndex = diaryimagepageControl.currentPage < imageUrls.count ? diaryimagepageControl.currentPage : 0
-        
-        let imageUrl = imageUrls[currentPageIndex]
-        loadAndDisplayImage(from: imageUrl)
+        if !imageUrls.isEmpty && diaryimagepageControl.currentPage < imageUrls.count {
+                let imageUrl = imageUrls[diaryimagepageControl.currentPage]
+                loadAndDisplayImage(from: imageUrl)
+        } else {
+            // 이미지가 없는 경우를 처리합니다. 예를 들어, 기본 이미지를 표시하도록 설정할 수 있습니다.
+            diaryImageView.image = UIImage(named: "defaultImage")
+        }
     }
     
     func loadAndDisplayImage(from url: String) {

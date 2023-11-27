@@ -251,6 +251,9 @@
                     <navigationItem key="navigationItem" id="a8X-05-jCe">
                         <barButtonItem key="leftBarButtonItem" title="meom-mu" id="rQY-Nj-9MF">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="OnClick_MeommuButton:" destination="Y6W-OH-hqX" id="PLA-iR-G8c"/>
+                            </connections>
                         </barButtonItem>
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="4Bb-ck-HBu"/>
@@ -270,6 +273,7 @@
                     <connections>
                         <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="gPB-5J-nRW"/>
                         <outlet property="DiaryWriteButton" destination="63J-kF-Ica" id="ihY-49-KcY"/>
+                        <outlet property="MeommuButton" destination="rQY-Nj-9MF" id="5Uq-tY-ihr"/>
                         <outlet property="monthLabel" destination="wzA-5h-5jg" id="XiO-Nf-vQ1"/>
                         <outlet property="yearLabel" destination="y9z-8z-5jf" id="bfB-gq-Tzx"/>
                     </connections>

@@ -163,6 +163,14 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     @IBOutlet var borderView1: UIView!
     
     func makeImageViewBorder(){
+        
+        // 이미지뷰 테두리 둥글게
+        imageView1?.layer.cornerRadius = 4
+        imageView2?.layer.cornerRadius = 4
+        imageView3?.layer.cornerRadius = 4
+        imageView4?.layer.cornerRadius = 4
+        imageView5?.layer.cornerRadius = 4
+        
         // 테두리 둥글게
         borderView1?.layer.cornerRadius = 4
         borderView2?.layer.cornerRadius = 4
@@ -241,32 +249,87 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         
         guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
+        var uploadedImageIds: [Int] = []
+        let imageUploadGroup = DispatchGroup()
+        
+        if selectedImages.isEmpty {
+            // 이미지가 없는 경우, 바로 일기 생성 API 호출
+            createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+        } else {
+            // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
+            selectedImages.forEach { image in
+                imageUploadGroup.enter()
+                
+                AF.upload(multipartFormData: { multipartFormData in
+                    let imageData: Data
+                    let mimeType: String
+                    
+                    if let jpegData = image.jpegData(compressionQuality: 0.5) {
+                        // JPEG으로 변환 가능하면서 30MB 이하인 경우
+                        guard jpegData.count <= 30 * 1024 * 1024 else { return }
+                        imageData = jpegData
+                        mimeType = "image/jpeg"
+                    } else if let pngData = image.pngData() {
+                        // PNG로 변환 가능하면서 30MB 이하인 경우
+                        guard pngData.count <= 30 * 1024 * 1024 else { return }
+                        imageData = pngData
+                        mimeType = "image/png"
+                    } else {
+                        // 변환 불가능한 경우, 기본적으로 JPEG로 설정
+                        imageData = image.jpegData(compressionQuality: 0.5) ?? Data()
+                        mimeType = "image/jpeg"
+                    }
+                    
+                    multipartFormData.append(imageData, withName: "images", fileName: "image.\(mimeType)", mimeType: mimeType)
+                    multipartFormData.append("DIARY_IMAGE".data(using: .utf8)!, withName: "category")
+                }, to: "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images")
+                .responseDecodable(of: ImageUploadResponse.self) { response in
+                    switch response.result {
+                    case .success(let imageUploadResponse):
+                        uploadedImageIds.append(contentsOf: imageUploadResponse.data.images.map { $0.id })
+                    case .failure(let error):
+                        print("Image Upload Error: \(error)")
+                    }
+                    imageUploadGroup.leave()
+                }
+            }
+            
+            imageUploadGroup.notify(queue: .main) {
+                self.createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+            }
+            
+        }
+    }
+    
+    private func createDiary(title: String, content: String, dogName: String, imageIds: [Int]) {
         let headers: HTTPHeaders = [
-                "Content-Type": "application/json",
-                "Authorization": "Bearer \(AccessToken)"
-            ]
-
-        let parameters: [String: Any] = [
-                "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
-                "dogName": dogName,
-                "title": title,
-                "content": content,
-                "imageIds": selectedImages.map { _ in Int.random(in: 1...5) } // 이미지에 대한 id를 설정해주세요.
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(AccessToken)"
         ]
-
+        
+        let parameters: [String: Any] = [
+            "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
+            "dogName": dogName,
+            "title": title,
+            "content": content,
+            "imageIds": imageIds
+        ]
+        
         AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
-                    method: .post,
-                    parameters: parameters,
-                    encoding: JSONEncoding.default,
-                    headers: headers)
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
         .response { response in
             debugPrint(response)
+            
+            // API 호출이 완료되면 메인 화면으로 이동
+            DispatchQueue.main.async { [weak self] in
+                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+                self?.changeRootViewController(newViewController)
+            }
         }
-        
-        // 작성 완료 후 메인 화면으로 이동
-        let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
-        self.changeRootViewController(newViewController)
     }
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수

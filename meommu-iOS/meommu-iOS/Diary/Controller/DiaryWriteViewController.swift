@@ -9,7 +9,6 @@ import UIKit
 import PhotosUI
 import MobileCoreServices
 import UniformTypeIdentifiers
-import FittedSheets
 import Alamofire
 
 
@@ -47,14 +46,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     @IBOutlet var diaryGuideButton: UIButton!
     
     @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
         
-        guard let stepOneViewController = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as? StepOneViewController else {return}
-        
-        let sheetController = SheetViewController(controller: stepOneViewController, sizes: [.fixed(562)])
-        sheetController.dismissOnPull = false
-        sheetController.dismissOnOverlayTap = true
-        self.present(sheetController, animated: true, completion: nil)
         
     }
 

@@ -47,7 +47,6 @@
 		F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */; };
 		F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */; };
 		F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A1522AB8157E009D90A8 /* DiaryModel.swift */; };
-		F96F32582B101FAD00EA4F67 /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = F96F32572B101FAD00EA4F67 /* FittedSheets */; };
 		F96F325A2B1022AD00EA4F67 /* DiaryMonthPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */; };
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
@@ -134,7 +133,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96F32582B101FAD00EA4F67 /* FittedSheets in Frameworks */,
 				F98888612AFD2219006AB274 /* Alamofire in Frameworks */,
 				F94A09432B13755900786C12 /* AlamofireImage in Frameworks */,
 			);
@@ -402,7 +400,6 @@
 			name = "meommu-iOS";
 			packageProductDependencies = (
 				F98888602AFD2219006AB274 /* Alamofire */,
-				F96F32572B101FAD00EA4F67 /* FittedSheets */,
 				F94A09422B13755900786C12 /* AlamofireImage */,
 			);
 			productName = "meommu-iOS";
@@ -435,7 +432,6 @@
 			mainGroup = F933D8922AB73982006EDA07;
 			packageReferences = (
 				F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				F96F32562B101FAD00EA4F67 /* XCRemoteSwiftPackageReference "FittedSheets" */,
 				F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
@@ -748,14 +744,6 @@
 				minimumVersion = 4.3.0;
 			};
 		};
-		F96F32562B101FAD00EA4F67 /* XCRemoteSwiftPackageReference "FittedSheets" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gordontucker/FittedSheets";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.6.1;
-			};
-		};
 		F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -771,11 +759,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
-		};
-		F96F32572B101FAD00EA4F67 /* FittedSheets */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F96F32562B101FAD00EA4F67 /* XCRemoteSwiftPackageReference "FittedSheets" */;
-			productName = FittedSheets;
 		};
 		F98888602AFD2219006AB274 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

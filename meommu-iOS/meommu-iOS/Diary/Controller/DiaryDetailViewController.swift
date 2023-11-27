@@ -7,21 +7,39 @@
 
 import UIKit
 import AlamofireImage
+import PanModal
 
 
 class DiaryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateUI()
         setupPageControl()
         updateImage()
+        // NotificationCenter를 통해 알림 받기
+        NotificationCenter.default.addObserver(self, selector: #selector(self.diaryDeleted), name: NSNotification.Name("diaryDeleted"), object: nil)
+        
     }
     
     // -----------------------------------------
     // 일기 수정 및 삭제 바텀시트 생성하기
     
+    @IBOutlet var diaryReviseButton: UIBarButtonItem!
+    
+    @IBAction func OnClick_diaryReviseButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
+        let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
+
+        diaryReviseVC.diaryId = diary?.id
+        
+        presentPanModal(diaryReviseVC)
+    }
+
+    @objc func diaryDeleted() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     // -----------------------------------------
     // 뒤로 가기 버튼

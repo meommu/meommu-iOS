@@ -6,13 +6,70 @@
 //
 
 import UIKit
+import Alamofire
+import PanModal
+
 
 class DiaryReviseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
+    
+    
+    // 일기 삭제하기
+    var diaryId: Int?
 
+    
+    @IBOutlet var diaryDeleteButton: UIButton!
+    
+    @IBAction func OnClick_diaryDeleteButton(_ sender: Any) {
+        deleteDiary()
+    }
+    
+    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
+    
+    func deleteDiary() {
+        guard let diaryId = diaryId else { return }
+
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(AccessToken)",
+            "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+        ]
+        
+        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)", method: .delete, headers: headers).responseDecodable(of: DeleteDiaryResponse.self) { response in
+            switch response.result {
+            case .success(let deleteDiaryResponse):
+                if deleteDiaryResponse.code == "0000" {
+                    print("Diary delete success")
+                    // 성공 시, DiaryReviseViewController 닫기
+                    self.dismiss(animated: true) {
+                        // 성공 시, NotificationCenter를 통해 알림 보내기
+                        NotificationCenter.default.post(name: NSNotification.Name("diaryDeleted"), object: nil)
+                    }
+                } else {
+                    print("Diary delete failed: \(deleteDiaryResponse.message)")
+                    // 실패 시
+                }
+            case .failure(let error):
+                print("Diary delete error: \(error)")
+            }
+        }
+    }
+    
+}
+
+extension DiaryReviseViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(161)  // 바텀 시트의 높이 설정
+    }
+    
+    var cornerRadius: CGFloat {
+        return 20.0  // 둥근 모서리 설정
+    }
 }

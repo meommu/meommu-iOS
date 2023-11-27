@@ -27,3 +27,9 @@ struct DiaryResponse: Codable {
     let message: String
     let data: Data
 }
+
+struct DeleteDiaryResponse: Decodable {
+    let code: String
+    let message: String
+    let data: String?
+}

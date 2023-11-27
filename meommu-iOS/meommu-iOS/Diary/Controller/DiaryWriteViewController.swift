@@ -12,7 +12,7 @@ import UniformTypeIdentifiers
 import Alamofire
 
 
-class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate {
+class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate, UITextFieldDelegate {
     
     var dogName: String?
     
@@ -30,6 +30,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         // 이미지 피커 버튼에 액션 추가
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
 
+        diaryTitleTextField.delegate = self
         diaryContextTextView.delegate = self
         
         if let name = dogName {
@@ -228,6 +229,20 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // 일기 내용 작성
     @IBOutlet var diaryTitleTextField: UITextField!
     @IBOutlet var diaryContextTextView: UITextView!
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        return updatedText.count <= 20
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+        return updatedText.count <= 1000
+    }
     
     
     // -----------------------------------------

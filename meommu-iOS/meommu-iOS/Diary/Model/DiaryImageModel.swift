@@ -21,3 +21,18 @@ struct ImageResponse: Codable {
     let message: String
     let data: Data
 }
+
+struct ImageUploadResponse: Codable {
+    let code: String
+    let message: String
+    let data: ImageData
+
+    struct ImageData: Codable {
+        let images: [Image]
+
+        struct Image: Codable {
+            let id: Int
+            let url: String
+        }
+    }
+}

@@ -228,7 +228,6 @@
                                         <constraints>
                                             <constraint firstItem="SIQ-92-UQa" firstAttribute="top" secondItem="R7M-Vq-ePP" secondAttribute="top" id="PD9-UO-lQV"/>
                                             <constraint firstAttribute="height" constant="60" id="npY-Bg-2ur"/>
-                                            <constraint firstItem="SIQ-92-UQa" firstAttribute="leading" secondItem="rXg-r3-PiT" secondAttribute="trailing" constant="12" id="oxo-cr-oRX"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-qU-9sP">

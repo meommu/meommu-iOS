@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FittedSheets
 
 
 class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -28,21 +27,6 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func OnClick_steponeNextButton(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        
-        guard let stepTwoViewController = storyboard.instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController else {return}
-
-        
-        let sheetController = SheetViewController(controller: stepTwoViewController, sizes: [.fixed(562)])
-        sheetController.dismissOnPull = false
-        sheetController.dismissOnOverlayTap = true
-
-        
-        if let parentSheetController = self.parent as? SheetViewController {
-            parentSheetController.dismiss(animated: true){ [weak self] in
-                self?.present(sheetController, animated: true, completion: nil)
-            }
-        }
         
     }
 

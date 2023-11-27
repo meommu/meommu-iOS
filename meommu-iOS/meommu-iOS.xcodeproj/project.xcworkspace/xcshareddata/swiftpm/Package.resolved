@@ -19,12 +19,12 @@
       }
     },
     {
-      "identity" : "fittedsheets",
+      "identity" : "floatingpanel#swift-package-manager",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gordontucker/FittedSheets",
+      "location" : "https://github.com/scenee/FloatingPanel#swift-package-manager",
       "state" : {
-        "revision" : "5d7f5a6307ad510aa05de5a4a16ac40846d3b2d3",
-        "version" : "2.6.1"
+        "revision" : "5b33d3d5ff1f50f4a2d64158ccfe8c07b5a3e649",
+        "version" : "2.8.1"
       }
     }
   ],

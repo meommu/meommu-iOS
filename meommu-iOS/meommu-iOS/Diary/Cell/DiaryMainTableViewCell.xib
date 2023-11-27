@@ -48,13 +48,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etf-Z4-10B">
-                        <rect key="frame" x="315" y="40" width="20" height="20"/>
+                        <rect key="frame" x="325" y="40" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="Tsd-4e-Svh"/>
                             <constraint firstAttribute="height" constant="20" id="hhV-2x-MNZ"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="DotsThreeVertical"/>
+                        <state key="normal" image="three-dots-vertical"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-Mh-Yw0">
                         <rect key="frame" x="20" y="406" width="335" height="18.666666666666686"/>
@@ -101,11 +101,11 @@
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="top" secondItem="NnC-4J-6MV" secondAttribute="bottom" constant="10" id="OyC-xR-6UB"/>
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="P3s-2D-SxL"/>
                     <constraint firstItem="NnC-4J-6MV" firstAttribute="top" secondItem="dg6-d1-uxW" secondAttribute="bottom" constant="16" id="Qy1-LR-iXy"/>
+                    <constraint firstAttribute="trailing" secondItem="Etf-Z4-10B" secondAttribute="trailing" constant="30" id="U5t-VA-YZ1"/>
                     <constraint firstItem="uVu-UI-5UM" firstAttribute="leading" secondItem="Df4-DB-Up7" secondAttribute="trailing" constant="6" id="V07-Rd-rau"/>
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="V1E-sM-qXB"/>
                     <constraint firstItem="Etf-Z4-10B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="cVB-D6-axN"/>
                     <constraint firstAttribute="trailing" secondItem="dg6-d1-uxW" secondAttribute="trailing" constant="20" id="eQI-b9-90f"/>
-                    <constraint firstAttribute="trailing" secondItem="Etf-Z4-10B" secondAttribute="trailing" constant="40" id="g6Q-Ix-JOG"/>
                     <constraint firstItem="dg6-d1-uxW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hXR-pH-NbK"/>
                     <constraint firstItem="Df4-DB-Up7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="qQo-cx-Vxa"/>
                     <constraint firstItem="Df4-DB-Up7" firstAttribute="top" secondItem="Xgt-Mh-Yw0" secondAttribute="bottom" constant="10" id="r7o-5A-ILj"/>
@@ -124,7 +124,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="DotsThreeVertical" width="40" height="40"/>
+        <image name="three-dots-vertical" width="80" height="80"/>
         <namedColor name="DiaryTextColor">
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

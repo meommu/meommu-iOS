@@ -24,8 +24,16 @@ class DiaryViewController: UIViewController {
         
         todayMonthSet()
         fetchData()
+        
     }
-
+    
+    // -----------------------------------------
+    // 데이터 갱신하기
+    @IBOutlet var MeommuButton: UIBarButtonItem!
+    
+    @IBAction func OnClick_MeommuButton(_ sender: Any) {
+        fetchData()
+    }
     
     // -----------------------------------------
     // 오늘 날짜 출력하기

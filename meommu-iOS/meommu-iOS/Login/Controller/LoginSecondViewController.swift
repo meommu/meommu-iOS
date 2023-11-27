@@ -180,7 +180,7 @@ final class LoginSecondViewController: UIViewController {
     
     //MARK: - 약관 관련 모든 내용이 담긴 페이지 보여주기 메서드
     @IBAction func presentTermsAndPrivacyPage(_ sender: UIButton) {
-        guard let url = URL(string: "https://www.naver.com")   else { return }
+        guard let url = URL(string: "https://glittery-indigo-2e2.notion.site/8628c2aec700417299577d4ab1547f3d")   else { return }
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true, completion: nil)
     }
@@ -268,12 +268,13 @@ extension LoginSecondViewController: UITextViewDelegate {
         let privacyPolicyKeywordRange = NSString(string: text).range(of: "개인정보 수집약관")
         
         // 하이퍼 링크 추가
+        // 이용약관
         attributedString.addAttribute(.link,
-                                      value: "https://www.google.com/",
+                                      value: "https://glittery-indigo-2e2.notion.site/8628c2aec700417299577d4ab1547f3d#9ff248ea306a4a6da8de2c3214ebb255",
                                       range: termsOfServiceKeywordRange)
-        
+        // 개인정보 처리방침
         attributedString.addAttribute(.link,
-                                      value: "https://www.apple.com/",
+                                      value: "https://glittery-indigo-2e2.notion.site/8628c2aec700417299577d4ab1547f3d#d117b28858274d6aacc87700d0fc77f9",
                                       range: privacyPolicyKeywordRange)
         
         // 밑줄 추가

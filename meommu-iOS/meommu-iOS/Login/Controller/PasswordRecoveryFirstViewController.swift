@@ -13,12 +13,20 @@ class PasswordRecoveryFirstViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupCornerRadius()
     }
     
+    
+    //MARK: - 코너 레디어스 값 설정 메서드
+    private func setupCornerRadius() {
+        nextButton.setCornerRadius(6.0)
+        emailTextField.setCornerRadius(4.0)
+    }
 
     //MARK: - 이전 화면 버튼
     @IBAction func backButtonTapped(_ sender: UIButton) {

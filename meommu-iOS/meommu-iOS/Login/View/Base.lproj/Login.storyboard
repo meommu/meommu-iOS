@@ -782,6 +782,7 @@
                     <navigationItem key="navigationItem" id="LLg-J0-8Qh"/>
                     <connections>
                         <outlet property="backButton" destination="rKm-02-XS2" id="oJd-GF-eK9"/>
+                        <outlet property="checkEmailCodeTextField" destination="xGy-zi-DRn" id="hxZ-er-JKs"/>
                         <outlet property="nextButton" destination="3cE-EX-vRx" id="R9K-LK-O0R"/>
                     </connections>
                 </viewController>
@@ -880,6 +881,7 @@
                     <connections>
                         <outlet property="backButton" destination="zAk-3m-Lur" id="X7q-As-PvC"/>
                         <outlet property="nextButton" destination="37H-yl-eKz" id="dfS-xh-ikj"/>
+                        <outlet property="passwordTextField" destination="13A-3R-1m7" id="x2H-Tx-CYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usL-ZW-hJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -976,6 +978,7 @@
                     <navigationItem key="navigationItem" id="7Y5-fV-i1z"/>
                     <connections>
                         <outlet property="backButton" destination="iIF-rj-lZJ" id="28i-xX-utb"/>
+                        <outlet property="emailTextField" destination="IX4-YG-vzn" id="14O-xL-T29"/>
                         <outlet property="nextButton" destination="dv7-ZA-eeK" id="886-IX-bwa"/>
                     </connections>
                 </viewController>
@@ -1070,6 +1073,7 @@
                     <navigationItem key="navigationItem" id="b9u-ia-bG6"/>
                     <connections>
                         <outlet property="backButton" destination="CIe-Ka-jbH" id="GxC-5v-unj"/>
+                        <outlet property="confirmPasswordTextField" destination="Wih-Bq-Uhi" id="RtA-vk-0lu"/>
                         <outlet property="nextButton" destination="icY-cC-w3p" id="gkU-id-GCj"/>
                     </connections>
                 </viewController>

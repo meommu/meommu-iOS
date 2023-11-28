@@ -271,9 +271,9 @@ final class LoginSecondViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toLoginThirdVC" {
             let loginThirdVC = segue.destination as! LoginThirdViewController
-            loginThirdVC.signUpRequest?.email = emailTextField.text
-            loginThirdVC.signUpRequest?.password = passwordTextField.text
-            loginThirdVC.signUpRequest?.passwordConfirmation = confirmPasswordTextField.text
+            loginThirdVC.signUpRequest.email = emailTextField.text
+            loginThirdVC.signUpRequest.password = passwordTextField.text
+            loginThirdVC.signUpRequest.passwordConfirmation = confirmPasswordTextField.text
         }
         
     }

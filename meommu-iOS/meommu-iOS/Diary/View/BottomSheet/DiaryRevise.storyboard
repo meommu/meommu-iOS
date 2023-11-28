@@ -41,6 +41,9 @@
                                             <color key="baseForegroundColor" red="0.43921568989999998" green="0.46274507050000002" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="OnClick_diaryDeleteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MnZ-pv-8W3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,6 +65,9 @@
                             <constraint firstItem="RzD-od-cbw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vhw-NJ-sZR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="diaryDeleteButton" destination="7fm-25-xxj" id="nH9-Vy-t7V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -25,15 +25,21 @@ class DiaryViewController: UIViewController {
         todayMonthSet()
         fetchData()
         
+        // NotificationCenter를 통해 알림 받기
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshData), name: NSNotification.Name("diaryDeleted"), object: nil)
     }
     
     // -----------------------------------------
-    // 데이터 갱신하기
+    // 데이터 새로고침하기
     @IBOutlet var MeommuButton: UIBarButtonItem!
     
     @IBAction func OnClick_MeommuButton(_ sender: Any) {
         fetchData()
     }
+    
+    @objc func refreshData() {
+            fetchData()
+        }
     
     // -----------------------------------------
     // 오늘 날짜 출력하기

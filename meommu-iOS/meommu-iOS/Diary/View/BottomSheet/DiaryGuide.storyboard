@@ -205,8 +205,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="나만의 문장 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkv-Tr-OhV">
-                                <rect key="frame" x="118" y="80" width="138" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 문장 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkv-Tr-OhV">
+                                <rect key="frame" x="122.66666666666669" y="80" width="130" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -235,14 +235,14 @@
                                     <color key="baseBackgroundColor" red="0.21568629149999999" green="0.21960783" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="어떤 산책이었는지 간단히 적어주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uf-8N-mSy">
-                                <rect key="frame" x="82" y="109" width="210" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 산책이었는지 간단히 적어주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uf-8N-mSy">
+                                <rect key="frame" x="82.666666666666686" y="109" width="210" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.43921568989999998" green="0.4588235021" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" usesAttributedText="YES" placeholder="GPT가 자동으로 만들어 드릴게요! (0/150)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VT5-FS-TW7">
-                                <rect key="frame" x="12" y="141" width="350" height="163"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="top" usesAttributedText="YES" placeholder="GPT가 자동으로 만들어 드릴게요! (0/150)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VT5-FS-TW7">
+                                <rect key="frame" x="12.666666666666657" y="141" width="350" height="163"/>
                                 <color key="backgroundColor" red="0.21568629149999999" green="0.2352941036" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="163" id="KyM-d3-JSG"/>
@@ -266,8 +266,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlV-3n-BkI">
-                                <rect key="frame" x="158" y="406" width="58" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlV-3n-BkI">
+                                <rect key="frame" x="158.66666666666666" y="406" width="58" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="AE2-5w-joJ"/>
                                     <constraint firstAttribute="width" constant="58" id="anu-mj-0S8"/>
@@ -280,12 +280,16 @@
                         <viewLayoutGuide key="safeArea" id="oqV-lG-9C5"/>
                         <color key="backgroundColor" red="0.109803915" green="0.1176470518" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="TlV-3n-BkI" firstAttribute="centerX" secondItem="0DS-yE-srn" secondAttribute="centerX" id="0kW-nG-ktR"/>
                             <constraint firstItem="sI3-qn-kny" firstAttribute="leading" secondItem="qIr-9M-bJU" secondAttribute="trailing" constant="11" id="5Bm-Rx-iwQ"/>
                             <constraint firstItem="VT5-FS-TW7" firstAttribute="top" secondItem="2uf-8N-mSy" secondAttribute="bottom" constant="15" id="7i2-87-ly7"/>
                             <constraint firstItem="sI3-qn-kny" firstAttribute="top" secondItem="TlV-3n-BkI" secondAttribute="bottom" constant="20" id="BSr-cL-ZOG"/>
                             <constraint firstItem="2uf-8N-mSy" firstAttribute="top" secondItem="jkv-Tr-OhV" secondAttribute="bottom" constant="5" id="DUa-dN-4Cz"/>
+                            <constraint firstItem="TlV-3n-BkI" firstAttribute="centerX" secondItem="VT5-FS-TW7" secondAttribute="centerX" id="Eg4-Gf-riY"/>
                             <constraint firstItem="jkv-Tr-OhV" firstAttribute="top" secondItem="oqV-lG-9C5" secondAttribute="top" constant="30" id="IrT-LN-xYE"/>
+                            <constraint firstItem="TlV-3n-BkI" firstAttribute="centerX" secondItem="jkv-Tr-OhV" secondAttribute="centerX" id="Rop-PJ-JrT"/>
                             <constraint firstItem="TlV-3n-BkI" firstAttribute="top" secondItem="VT5-FS-TW7" secondAttribute="bottom" constant="102" id="YTO-f9-add"/>
+                            <constraint firstItem="TlV-3n-BkI" firstAttribute="centerX" secondItem="2uf-8N-mSy" secondAttribute="centerX" id="eEy-0w-dPK"/>
                             <constraint firstItem="qIr-9M-bJU" firstAttribute="leading" secondItem="oqV-lG-9C5" secondAttribute="leading" constant="19" id="vem-BN-td2"/>
                             <constraint firstItem="qIr-9M-bJU" firstAttribute="top" secondItem="TlV-3n-BkI" secondAttribute="bottom" constant="20" id="yJc-oS-wdF"/>
                         </constraints>

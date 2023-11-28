@@ -444,6 +444,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="OnClick_diaryReviseButton:" destination="0qe-i2-VpE" id="7kL-kA-ZVg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -452,6 +455,7 @@
                         <outlet property="diaryDetail" destination="8s8-lS-wwI" id="EVw-Yw-hLG"/>
                         <outlet property="diaryImageView" destination="pEp-PW-Pqk" id="v02-Iu-emT"/>
                         <outlet property="diaryName" destination="aol-tu-ULz" id="tu3-pf-bia"/>
+                        <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="1gH-0B-KiV"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
                         <outlet property="diaryimagepageControl" destination="d5q-m3-JFL" id="0Tf-vh-Mbm"/>
                     </connections>

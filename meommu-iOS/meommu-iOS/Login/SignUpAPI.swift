@@ -53,6 +53,8 @@ class SignUpAPI {
         
         let url = "\(baseURL)/api/v1/kindergartens/signup"
         
+        
+        
         AF.request(url, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: ["Content-Type": "application/json;charset=UTF-8"])
             .validate(statusCode: 200..<500)
             .responseDecodable(of: SignUpResponse.self) { response in

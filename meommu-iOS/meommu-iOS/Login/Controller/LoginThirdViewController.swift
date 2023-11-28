@@ -9,7 +9,7 @@ import UIKit
 
 class LoginThirdViewController: UIViewController {
     
-    var signUpRequest: SignUpRequest?
+    var signUpRequest = SignUpRequest()
     
     // 버튼 프로퍼티
     @IBOutlet weak var nextButton: UIButton!
@@ -100,29 +100,25 @@ class LoginThirdViewController: UIViewController {
     //MARK: - 다음 버튼 탭 메서드
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
-        signUpRequest?.name = kindergartenNameTextField.text
-        signUpRequest?.ownerName = representativeNameTextField.text
-        signUpRequest?.phone = phoneNumberTextField.text
+        signUpRequest.name = kindergartenNameTextField.text
+        signUpRequest.ownerName = representativeNameTextField.text
+        signUpRequest.phone = phoneNumberTextField.text
         
-        guard let request = signUpRequest else {
-            print(#function)
-            return
-        }
+        print(signUpRequest)
         
-        SignUpAPI.shared.registerUser(with: request) { result in
+        SignUpAPI.shared.registerUser(with: signUpRequest) { result in
             switch result {
             case .success(let response):
-                guard let data = response.data else {
-                    print("회원가입 성공")
-                    return
-                }
+                print(response.message)
+                
             case .failure(let error):
                 // 이메일 중복 확인 실패
                 print("Error: \(error.message)")
+                return
             }
         }
-        
         performSegue(withIdentifier: "toLoginFourthVC", sender: self)
+        
     }
     
     // 데이터 전달을 위해 prepare 메서드 재정의

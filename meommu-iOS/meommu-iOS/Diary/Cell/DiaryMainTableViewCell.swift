@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import PanModal
 
 class DiaryMainTableViewCell: UITableViewCell {
 
@@ -26,7 +27,8 @@ class DiaryMainTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // 버튼에 액션 추가
+        diaryReviseButton.addTarget(self, action: #selector(diaryReviseButtonTapped), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,4 +43,13 @@ class DiaryMainTableViewCell: UITableViewCell {
         }
     }
     
+    // 일기 수정 및 삭제 버튼 활성화
+    
+    var diaryReviseAction : (() -> ()) = {}
+    
+    @IBOutlet var diaryReviseButton: UIButton!
+
+    @objc func diaryReviseButtonTapped() {
+        diaryReviseAction()
+    }
 }

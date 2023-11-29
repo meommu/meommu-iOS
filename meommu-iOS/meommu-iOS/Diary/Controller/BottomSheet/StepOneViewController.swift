@@ -76,14 +76,14 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "SelectedButton")
+        cell.contentView.backgroundColor = UIColor(named: "primaryA")
         cell.detailLabel.textColor = .white
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BottomSheetTableView")
-        cell.detailLabel.textColor = UIColor(named: "BottomSheetFont")
+        cell.contentView.backgroundColor = UIColor(named: "BlueGray400")
+        cell.detailLabel.textColor = UIColor(named: "BlueGray200")
     }
     
     

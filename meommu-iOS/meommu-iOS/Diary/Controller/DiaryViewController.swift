@@ -196,6 +196,15 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             }
             diaryCell.setImageUrls(imageUrls)
             
+            diaryCell.diaryReviseAction = {
+                let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
+                let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
+                
+                diaryReviseVC.diaryId = diary.id
+                
+                self.presentPanModal(diaryReviseVC)
+            }
+            
             return diaryCell
             
         }

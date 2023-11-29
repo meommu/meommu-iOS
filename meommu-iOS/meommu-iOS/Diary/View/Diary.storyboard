@@ -157,7 +157,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="작성하기">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" name="primaryA"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="OnClick_DiaryWriteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wjd-cw-dHI"/>
@@ -217,7 +217,7 @@
                                         <state key="normal" image="arrow_drop_down"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="Gray200"/>
                                 <constraints>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
                                     <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
@@ -262,7 +262,7 @@
                             <barButtonItem title="Item" image="Plus" id="hoF-uc-poh">
                                 <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="UserCircle" id="f0L-c0-MhX">
+                            <barButtonItem title="Item" image="GearSix" id="f0L-c0-MhX">
                                 <color key="tintColor" red="0.59215688710000003" green="0.59215688710000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="ydY-gc-AGe" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CGS-I0-NjN"/>
@@ -316,7 +316,7 @@
                                                                     <constraint firstAttribute="width" constant="300" id="niZ-WB-nQI"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="26"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="Gray900"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXj-Ej-Cye">
@@ -340,7 +340,7 @@
                                                             <constraint firstAttribute="width" constant="340" id="6vY-b5-xyy"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="16"/>
-                                                        <color key="textColor" red="0.38431376220000002" green="0.3803921938" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" name="Gray500"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-xP-O2E">
@@ -349,7 +349,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="FWX-r3-1oa"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aol-tu-ULz">
@@ -358,7 +358,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="BSV-vY-uL8"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -416,7 +416,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="보내기">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" name="primaryA"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
@@ -486,19 +486,34 @@
     <resources>
         <image name="DotsThreeVertical" width="40" height="40"/>
         <image name="DotsThreeVertical 1" width="20" height="20"/>
+        <image name="GearSix" width="24" height="24"/>
         <image name="Plus" width="24" height="24"/>
-        <image name="UserCircle" width="24" height="24"/>
         <image name="Vector" width="30.5" height="30.5"/>
         <image name="arrow_drop_down" width="32" height="32"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <namedColor name="DiaryTextColor">
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="Gray200">
+            <color red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray300">
+            <color red="0.73333334920000004" green="0.73333334920000004" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray500">
+            <color red="0.40000003579999999" green="0.40000003579999999" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray900">
+            <color red="0.109803915" green="0.11372549830000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primaryA">
+            <color red="0.51372551919999998" green="0.47450977560000002" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

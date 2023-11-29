@@ -91,9 +91,30 @@
                         <color key="textColor" red="0.56078433989999998" green="0.56078433989999998" blue="0.56078433989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-E9-G3A">
+                        <rect key="frame" x="288" y="307" width="47" height="22"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0s-dI-tB4">
+                                <rect key="frame" x="10" y="2.6666666666666856" width="27" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Gray800"/>
+                        <constraints>
+                            <constraint firstItem="U0s-dI-tB4" firstAttribute="top" secondItem="Fet-E9-G3A" secondAttribute="top" constant="2.5" id="32O-4W-hzQ"/>
+                            <constraint firstAttribute="width" constant="47" id="5fw-PR-BO1"/>
+                            <constraint firstAttribute="height" constant="22" id="AoV-w7-KCK"/>
+                            <constraint firstItem="U0s-dI-tB4" firstAttribute="centerY" secondItem="Fet-E9-G3A" secondAttribute="centerY" id="cLy-Qk-d9D"/>
+                            <constraint firstItem="U0s-dI-tB4" firstAttribute="centerX" secondItem="Fet-E9-G3A" secondAttribute="centerX" id="eTe-iC-BuI"/>
+                            <constraint firstItem="U0s-dI-tB4" firstAttribute="leading" secondItem="Fet-E9-G3A" secondAttribute="leading" constant="10" id="h5w-oh-ROT"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Fet-E9-G3A" secondAttribute="trailing" constant="20" id="Df4-Yi-cpY"/>
                     <constraint firstItem="NnC-4J-6MV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DgL-hI-7hu"/>
                     <constraint firstItem="dg6-d1-uxW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="DtC-lI-3dJ"/>
                     <constraint firstItem="uVu-UI-5UM" firstAttribute="top" secondItem="Xgt-Mh-Yw0" secondAttribute="bottom" constant="10" id="NRc-jU-KIl"/>
@@ -101,6 +122,7 @@
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="top" secondItem="NnC-4J-6MV" secondAttribute="bottom" constant="10" id="OyC-xR-6UB"/>
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="P3s-2D-SxL"/>
                     <constraint firstItem="NnC-4J-6MV" firstAttribute="top" secondItem="dg6-d1-uxW" secondAttribute="bottom" constant="16" id="Qy1-LR-iXy"/>
+                    <constraint firstItem="Fet-E9-G3A" firstAttribute="top" secondItem="Etf-Z4-10B" secondAttribute="bottom" constant="247" id="Sq8-0G-Rba"/>
                     <constraint firstAttribute="trailing" secondItem="Etf-Z4-10B" secondAttribute="trailing" constant="30" id="U5t-VA-YZ1"/>
                     <constraint firstItem="uVu-UI-5UM" firstAttribute="leading" secondItem="Df4-DB-Up7" secondAttribute="trailing" constant="6" id="V07-Rd-rau"/>
                     <constraint firstItem="Xgt-Mh-Yw0" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="V1E-sM-qXB"/>
@@ -118,6 +140,7 @@
                 <outlet property="diaryDetailLabel" destination="Xgt-Mh-Yw0" id="OpH-u7-GHl"/>
                 <outlet property="diaryImageView" destination="dg6-d1-uxW" id="TwA-Nd-uSL"/>
                 <outlet property="diaryNameLabel" destination="uVu-UI-5UM" id="TqW-2k-8M8"/>
+                <outlet property="diaryReviseButton" destination="Etf-Z4-10B" id="gpx-Zb-Xnb"/>
                 <outlet property="diaryTitleLabel" destination="NnC-4J-6MV" id="aQp-zy-mq3"/>
             </connections>
             <point key="canvasLocation" x="79.200000000000003" y="18.472906403940886"/>
@@ -128,8 +151,11 @@
         <namedColor name="DiaryTextColor">
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="Gray800">
+            <color red="0.21568629149999999" green="0.21960783" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

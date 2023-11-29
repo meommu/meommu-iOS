@@ -118,6 +118,7 @@
                 <outlet property="diaryDetailLabel" destination="Xgt-Mh-Yw0" id="OpH-u7-GHl"/>
                 <outlet property="diaryImageView" destination="dg6-d1-uxW" id="TwA-Nd-uSL"/>
                 <outlet property="diaryNameLabel" destination="uVu-UI-5UM" id="TqW-2k-8M8"/>
+                <outlet property="diaryReviseButton" destination="Etf-Z4-10B" id="gpx-Zb-Xnb"/>
                 <outlet property="diaryTitleLabel" destination="NnC-4J-6MV" id="aQp-zy-mq3"/>
             </connections>
             <point key="canvasLocation" x="79.200000000000003" y="18.472906403940886"/>
@@ -129,7 +130,7 @@
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

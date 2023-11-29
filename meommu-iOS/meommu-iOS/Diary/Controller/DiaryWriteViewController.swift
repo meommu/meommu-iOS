@@ -180,11 +180,11 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         borderView4?.layer.borderWidth = 2
         borderView5?.layer.borderWidth = 2
         // 테두리 컬러
-        borderView1?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
-        borderView2?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
-        borderView3?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
-        borderView4?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
-        borderView5?.layer.borderColor = UIColor(named: "BorderColor")?.cgColor
+        borderView1?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
+        borderView2?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
+        borderView3?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
+        borderView4?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
+        borderView5?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
         // 배경색 투명하게
         borderView1.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
         borderView2.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
@@ -277,7 +277,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         dateTextField.resignFirstResponder()
     }
     
-    // 가능한 날짜 설정
+    // -- 가능한 날짜 설정
     func setAvailableDate() {
         // 선택 가능한 연도 설정
         let formatterYear = DateFormatter()
@@ -443,14 +443,14 @@ extension DiaryWriteViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "\(dogName!)의 일기를 작성해 주세요.(0/1000)" {
             textView.text = ""
-            textView.textColor = .black
+            textView.textColor = UIColor(named: "Gray500")
         }
     }
             
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "\(dogName!)의 일기를 작성해 주세요.(0/1000)"
-            textView.textColor = .lightGray
+            textView.textColor = UIColor(named: "Gray300")
         }
     }
 }

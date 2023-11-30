@@ -43,7 +43,8 @@ class LoginFirstViewController: UIViewController {
     //MARK: - setupCornerRadius 메서드
     func setupCornerRadius() {
         loginButton.setCornerRadius(6.0)
-        
+        emailTextField.setCornerRadius(4.0)
+        passwordTextField.setCornerRadius(4.0)
     }
     
     //MARK: - setupTextField 메서드

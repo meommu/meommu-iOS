@@ -106,8 +106,6 @@ class LoginFirstViewController: UIViewController {
         
         let request = LoginRequest(email: emailTextField.text, password: passwordTextField.text)
         
-        print(request)
-        
         LoginAPI.shared.login(with: request) { result in
             switch result {
             case .success(let response):
@@ -117,10 +115,6 @@ class LoginFirstViewController: UIViewController {
                 print("Error: \(error.message)")
             }
         }
-        // 키보드 내리기.
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-
     }
     
     // 로그인 상태 코드에 따른 분기처리를 위한 메서드
@@ -135,6 +129,19 @@ class LoginFirstViewController: UIViewController {
             sceneDelegate.changeRootViewController(newViewController, animated: true)
         } else {
             // 이후 토스트로 상태 보여주기 (아이디, 비번 틀림)
+            
+            // 텍스트 필드 비우기
+            emailTextField.text = ""
+            passwordTextField.text = ""
+            
+            // 버튼 초기화
+            loginButton.backgroundColor = .gray300
+            loginButton.isEnabled = false
+            
+            // 키보드 내리기.
+            emailTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            
             print("아디, 비번 틀림")
         }
     }
@@ -146,7 +153,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
     //MARK: - 다음 버튼 활성화 메서드
     private func updateLoginButtonState() {
         // 다음 버튼 활성화 조건 확인
-        guard let email = emailTextField.text, !email.isEmpty,
+        guard let email = emailTextField.text, !email.isEmpty, email.isEmailFormatValid(),
               let password = passwordTextField.text, !password.isEmpty
         else {
             loginButton.backgroundColor = .gray300

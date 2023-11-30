@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,51 +18,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wes-Md-yZe">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-as-57J">
-                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="jtM-IO-Qw8"/>
-                                    <constraint firstAttribute="width" constant="70" id="lqe-jk-LV2"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaO-dm-x8i">
-                                <rect key="frame" x="0.0" y="20" width="70" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="s5a-zd-m4B"/>
-                                    <constraint firstAttribute="height" constant="29" id="u6s-WP-6H1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" red="0.3058823645" green="0.3058823645" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaO-dm-x8i">
+                        <rect key="frame" x="0.0" y="20" width="70" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rlr-as-57J" secondAttribute="bottom" id="84D-Mj-G1u"/>
-                            <constraint firstItem="oaO-dm-x8i" firstAttribute="top" secondItem="Wes-Md-yZe" secondAttribute="top" constant="20" symbolic="YES" id="AIr-cE-hTC"/>
-                            <constraint firstAttribute="trailing" secondItem="rlr-as-57J" secondAttribute="trailing" id="EDX-qU-4pi"/>
-                            <constraint firstItem="oaO-dm-x8i" firstAttribute="leading" secondItem="Wes-Md-yZe" secondAttribute="leading" id="RvT-md-sUG"/>
-                            <constraint firstAttribute="trailing" secondItem="oaO-dm-x8i" secondAttribute="trailing" id="Y6S-jQ-3Gq"/>
-                            <constraint firstItem="rlr-as-57J" firstAttribute="leading" secondItem="Wes-Md-yZe" secondAttribute="leading" id="oB8-7S-5Nn"/>
-                            <constraint firstItem="rlr-as-57J" firstAttribute="top" secondItem="Wes-Md-yZe" secondAttribute="top" id="qRy-dB-lbC"/>
+                            <constraint firstAttribute="width" constant="70" id="s5a-zd-m4B"/>
+                            <constraint firstAttribute="height" constant="29" id="u6s-WP-6H1"/>
                         </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                        <color key="textColor" name="Gray500"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oaO-dm-x8i" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="c27-G5-Wam"/>
+                <constraint firstAttribute="bottom" secondItem="oaO-dm-x8i" secondAttribute="bottom" constant="21" id="wMg-Ul-Feq"/>
+            </constraints>
             <connections>
                 <outlet property="MonthLabel" destination="oaO-dm-x8i" id="nWk-VT-MWh"/>
-                <outlet property="diaryImageView" destination="rlr-as-57J" id="CZm-zz-Tuy"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Gray500">
+            <color red="0.40000000596046448" green="0.40000000596046448" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

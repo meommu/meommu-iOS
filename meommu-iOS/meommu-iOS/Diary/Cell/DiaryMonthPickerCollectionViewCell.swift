@@ -11,9 +11,8 @@ class DiaryMonthPickerCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    @IBOutlet var diaryImageView: UIImageView!
+        
     
     @IBOutlet var MonthLabel: UILabel!
 }

@@ -383,9 +383,31 @@
                                                     <action selector="diaryimagePageChange:" destination="0qe-i2-VpE" eventType="valueChanged" id="mS9-4U-hhn"/>
                                                 </connections>
                                             </pageControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-Fo-3wf">
+                                                <rect key="frame" x="308" y="453" width="47" height="22"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GD3-2A-f22">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666288" width="47" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Gray800"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="Aev-xj-6ao"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="leading" secondItem="Ghh-Fo-3wf" secondAttribute="leading" id="C2g-ON-RLV"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="centerY" secondItem="Ghh-Fo-3wf" secondAttribute="centerY" id="JMD-S7-YsK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GD3-2A-f22" secondAttribute="trailing" id="ghK-1C-cFg"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="top" secondItem="Ghh-Fo-3wf" secondAttribute="top" constant="2.5" id="hre-4C-V70"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="centerX" secondItem="Ghh-Fo-3wf" secondAttribute="centerX" id="qc3-wp-FEJ"/>
+                                                    <constraint firstAttribute="width" constant="47" id="qnz-Df-jRL"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="Ghh-Fo-3wf" secondAttribute="bottom" constant="20" id="E50-Ne-1a7"/>
                                             <constraint firstAttribute="bottom" secondItem="haz-ce-LvD" secondAttribute="bottom" id="Fpj-Y5-OR4"/>
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eC2-Od-geH"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eFC-jR-VBU"/>
@@ -396,6 +418,7 @@
                                             <constraint firstAttribute="trailing" secondItem="haz-ce-LvD" secondAttribute="trailing" id="sKG-uv-if9"/>
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="top" secondItem="WL1-Tb-8ie" secondAttribute="top" id="x8I-PH-ffJ"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="d5q-m3-JFL" secondAttribute="bottom" constant="8" symbolic="YES" id="yMO-Le-XTn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ghh-Fo-3wf" secondAttribute="trailing" constant="20" id="ybr-0N-10F"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -458,6 +481,8 @@
                         <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="1gH-0B-KiV"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
                         <outlet property="diaryimagepageControl" destination="d5q-m3-JFL" id="0Tf-vh-Mbm"/>
+                        <outlet property="imagePageLabel" destination="GD3-2A-f22" id="oYG-OW-wEu"/>
+                        <outlet property="imagePageView" destination="Ghh-Fo-3wf" id="jdh-OK-n4T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rr2-Vr-9vd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -495,16 +520,19 @@
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray200">
-            <color red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.92199999094009399" green="0.92199999094009399" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray300">
-            <color red="0.73333334920000004" green="0.73333334920000004" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.73299998044967651" green="0.73299998044967651" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray500">
-            <color red="0.40000003579999999" green="0.40000003579999999" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.40000000596046448" green="0.40000000596046448" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray800">
+            <color red="0.21600000560283661" green="0.2199999988079071" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray900">
-            <color red="0.109803915" green="0.11372549830000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.10999999940395355" green="0.11400000005960464" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryA">
             <color red="0.51372551919999998" green="0.47450977560000002" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -513,7 +541,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

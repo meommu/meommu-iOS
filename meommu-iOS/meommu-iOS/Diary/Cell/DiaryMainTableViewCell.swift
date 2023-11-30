@@ -17,12 +17,18 @@ class DiaryMainTableViewCell: UITableViewCell {
     @IBOutlet var diaryImageView: UIImageView!
     @IBOutlet var diaryTitleLabel: UILabel!
     
+    
+    @IBOutlet var imagePageView: UIView!
+    @IBOutlet var imagePageLabel: UILabel!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0))
         
         diaryImageView.layer.cornerRadius = 6
+        
+        imagePageView.layer.cornerRadius = 10
     }
     
     override func awakeFromNib() {
@@ -40,6 +46,13 @@ class DiaryMainTableViewCell: UITableViewCell {
     func setImageUrls(_ urls: [String]) {
         if let firstUrl = urls.first, let url = URL(string: firstUrl) {
             diaryImageView.af.setImage(withURL: url)
+        }
+        
+        // 이미지 개수 표시
+        if(urls.count > 0){
+            imagePageLabel.text = "1 / \(urls.count)"
+        } else {
+            imagePageLabel.text = "0 / \(urls.count)"
         }
     }
     

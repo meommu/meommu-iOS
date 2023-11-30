@@ -100,19 +100,9 @@ class LoginFirstViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    // UIWindow의 rootViewController를 변경하여 화면전환 함수
-    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = viewControllerToPresent
-            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
-        } else {
-            viewControllerToPresent.modalPresentationStyle = .overFullScreen
-            self.present(viewControllerToPresent, animated: true, completion: nil)
-        }
-    }
     
-    // 로그인 버튼 메서드
-    @IBAction func changeWindowButtonToDiary(_ sender: Any) {
+    //MARK: - loginButtonTapped 메서드
+    @IBAction func loginButtonTapped(_ sender: Any) {
         
         let request = LoginRequest(email: emailTextField.text, password: passwordTextField.text)
         
@@ -121,20 +111,32 @@ class LoginFirstViewController: UIViewController {
         LoginAPI.shared.login(with: request) { result in
             switch result {
             case .success(let response):
-                print("로그인 성공")
-                print(response)
-
-                // 로그인하고 일기 화면으로 rootView 변경
-                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
-                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
-                self.changeRootViewController(newViewController)
-                
+                self.handleLoginStatusCode(response.code)
             case .failure(let error):
-                // 이메일 중복 확인 실패
+                // 400~500 에러
                 print("Error: \(error.message)")
             }
         }
-        
+        // 키보드 내리기.
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+
+    }
+    
+    // 로그인 상태 코드에 따른 분기처리를 위한 메서드
+    func handleLoginStatusCode(_ code: String) {
+        if code == "0000" {
+            // 로그인하고 일기 화면으로 rootView 변경
+            let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+            
+            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+            
+            sceneDelegate.changeRootViewController(newViewController, animated: true)
+        } else {
+            // 이후 토스트로 상태 보여주기 (아이디, 비번 틀림)
+            print("아디, 비번 틀림")
+        }
     }
     
 }
@@ -207,7 +209,6 @@ extension LoginFirstViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
-        
         
         // 로그인 버튼 활성화 확인 메서드
         updateLoginButtonState()

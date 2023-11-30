@@ -26,6 +26,7 @@
 		264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */; };
 		264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */; };
 		264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C12B187CB500FCFBEC /* String+Validation.swift */; };
+		264BF3C42B18E80700FCFBEC /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C32B18E80700FCFBEC /* ToastManager.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -97,6 +98,7 @@
 		264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		264BF3C12B187CB500FCFBEC /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		264BF3C32B18E80700FCFBEC /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */,
 				264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */,
 				264BF3C12B187CB500FCFBEC /* String+Validation.swift */,
+				264BF3C32B18E80700FCFBEC /* ToastManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */,
 				F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
+				264BF3C42B18E80700FCFBEC /* ToastManager.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 				26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */,

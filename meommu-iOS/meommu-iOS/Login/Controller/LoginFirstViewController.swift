@@ -43,7 +43,8 @@ class LoginFirstViewController: UIViewController {
     //MARK: - setupCornerRadius 메서드
     func setupCornerRadius() {
         loginButton.setCornerRadius(6.0)
-        
+        emailTextField.setCornerRadius(4.0)
+        passwordTextField.setCornerRadius(4.0)
     }
     
     //MARK: - setupTextField 메서드
@@ -141,6 +142,8 @@ class LoginFirstViewController: UIViewController {
             // 키보드 내리기.
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
+            
+            ToastManager.showToastBelowTextField(message: "비밀번호를 다시 입력해주세요.", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: passwordTextField, in: self)
             
             print("아디, 비번 틀림")
         }

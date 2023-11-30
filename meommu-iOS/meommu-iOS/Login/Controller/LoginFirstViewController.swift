@@ -111,19 +111,20 @@ class LoginFirstViewController: UIViewController {
         }
     }
     
+    // 로그인 버튼 메서드
     @IBAction func changeWindowButtonToDiary(_ sender: Any) {
         
         let request = LoginRequest(email: emailTextField.text, password: passwordTextField.text)
+        
+        print(request)
         
         LoginAPI.shared.login(with: request) { result in
             switch result {
             case .success(let response):
                 print("로그인 성공")
-                guard let accessToken = response.tokenData?.accessToken else {
-                    return
-                }
-                print(accessToken)
-                
+                print(response)
+
+                // 로그인하고 일기 화면으로 rootView 변경
                 let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
                 let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
                 self.changeRootViewController(newViewController)

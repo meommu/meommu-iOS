@@ -15,20 +15,13 @@ struct LoginRequest: Codable {
 
 // MARK: - 로그인 응답
 struct LoginResponse: Codable {
-    let code, message: String?
-    let tokenData: TokenData?
-    
-    // 네트워크에서 주는 이름을 변환하는 방법 (원시값)
-    enum CodingKeys: String, CodingKey {
-        case code
-        case message
-        case tokenData = "Data"
-    }
+    let code, message: String
+    let data: TokenData?
 }
 
 // 로그인 응답 데이터
 struct TokenData: Codable {
-    let accessToken: String?
+    let accessToken: String
 }
 
 
@@ -37,7 +30,7 @@ struct TokenData: Codable {
 
 
 struct TokenVerificationResponse: Codable {
-    let code, message: String?
+    let code, message: String
     let loginData: LoginData?
     
     // 네트워크에서 주는 이름을 변환하는 방법 (원시값)

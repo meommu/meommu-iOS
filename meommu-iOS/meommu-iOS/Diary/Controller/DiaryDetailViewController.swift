@@ -18,6 +18,10 @@ class DiaryDetailViewController: UIViewController {
         updateUI()
         setupPageControl()
         updateImage()
+        
+        // imagePageView 테두리 둥글게
+        imagePageView.layer.cornerRadius = 10
+        
         // NotificationCenter를 통해 알림 받기
         NotificationCenter.default.addObserver(self, selector: #selector(self.diaryDeleted), name: NSNotification.Name("diaryDeleted"), object: nil)
         
@@ -85,15 +89,25 @@ class DiaryDetailViewController: UIViewController {
     // -----------------------------------------
     // 이미지 가져오기 및 컨트롤
     
+    @IBOutlet var imagePageView: UIView!
+    @IBOutlet var imagePageLabel: UILabel!
+    
     var imageUrls: [String] = []
     
     func updateImage() {
         if !imageUrls.isEmpty && diaryimagepageControl.currentPage < imageUrls.count {
-                let imageUrl = imageUrls[diaryimagepageControl.currentPage]
-                loadAndDisplayImage(from: imageUrl)
+            let imageUrl = imageUrls[diaryimagepageControl.currentPage]
+            loadAndDisplayImage(from: imageUrl)
+            
+            // 이미지 페이지 업데이트
+            imagePageLabel.text = "\(diaryimagepageControl.currentPage + 1) / \(imageUrls.count)"
+            
         } else {
             // 이미지가 없는 경우를 처리합니다. 예를 들어, 기본 이미지를 표시하도록 설정할 수 있습니다.
             diaryImageView.image = UIImage(named: "defaultImage")
+            
+            // 이미지 페이지 업데이트
+            imagePageLabel.text = "0 / \(imageUrls.count)"
         }
     }
     

@@ -177,7 +177,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
         UIView.animate(withDuration: 0.3) {
             let transform = CGAffineTransform(translationX: 0, y: -300)
             self.view.transform = transform
-        }
+        }        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -193,12 +193,10 @@ extension LoginFirstViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 다음 텍스트 필드 활성화 기능
         if textField == emailTextField {
-            //            emailTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
-            
+            updateLoginButtonState()
         } else if textField == passwordTextField {
             passwordTextField.resignFirstResponder()
-            
             updateLoginButtonState()
         }
         return true

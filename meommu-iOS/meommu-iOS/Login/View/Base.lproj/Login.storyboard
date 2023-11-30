@@ -638,13 +638,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-pT-RTc">
                                 <rect key="frame" x="20" y="571" width="335" height="106"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  아이디 (이메일)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gU3-Vd-YuV">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디 (이메일)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gU3-Vd-YuV">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5w-Kh-fkE">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5w-Kh-fkE">
                                         <rect key="frame" x="0.0" y="58" width="335" height="48"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>

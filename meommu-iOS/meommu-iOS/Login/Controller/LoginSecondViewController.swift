@@ -190,7 +190,7 @@ final class LoginSecondViewController: UIViewController {
         
         guard let email = emailTextField.text else { return }
         
-        if !isEmailFormatValid(email) {
+        if !email.isEmailFormatValid() {
             emailStatusLabel.text = "이메일을 알맞게 입력해주세요."
             emailStatusLabel.textColor = .red
             
@@ -198,7 +198,7 @@ final class LoginSecondViewController: UIViewController {
             emailDuplicateCheckButton.layer.borderColor = UIColor.red.cgColor
             emailDuplicateCheckButton.layer.borderWidth = 2
             
-        } else if isEmailFormatValid(email) {
+        } else if email.isEmailFormatValid() {
             
             let request = CheckEmailDuplicationRequest(email: email)
             
@@ -324,17 +324,17 @@ extension LoginSecondViewController: UITextViewDelegate {
 //MARK: - UITextFieldDelegate 확장
 extension LoginSecondViewController: UITextFieldDelegate {
     
-    //MARK: - 이메일 형식 확인 메서드
-    private func isEmailFormatValid(_ email: String) -> Bool {
-        let emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
-        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
-    }
-    
-    //MARK: - 비밀번호 형식 확인 메서드
-    private func isPasswordFormatValid(_ password: String) -> Bool {
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$"
-        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
-    }
+//    //MARK: - 이메일 형식 확인 메서드
+//    private func isEmailFormatValid(_ email: String) -> Bool {
+//        let emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+//        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+//    }
+//
+//    //MARK: - 비밀번호 형식 확인 메서드
+//    private func isPasswordFormatValid(_ password: String) -> Bool {
+//        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$"
+//        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+//    }
     
     //MARK: - 비밀번호 확인 후 레이블 설정 메서드
     // 사용가능한 비밀번호면 true 리턴
@@ -342,7 +342,7 @@ extension LoginSecondViewController: UITextFieldDelegate {
         guard let password = passwordTextField.text,
               let confirmPassword = confirmPasswordTextField.text else { return false }
         
-        if !isPasswordFormatValid(password){
+        if !password.isPasswordFormatValid(){
             passwordStatusLabel.text = "비밀번호를 다시 입력해주세요."
             passwordStatusLabel.textColor = .error
             return false

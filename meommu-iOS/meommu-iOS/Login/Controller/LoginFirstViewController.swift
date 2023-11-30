@@ -142,6 +142,8 @@ class LoginFirstViewController: UIViewController {
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
             
+            ToastManager.showToastBelowTextField(message: "비밀번호를 다시 입력해주세요.", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: passwordTextField, in: self)
+            
             print("아디, 비번 틀림")
         }
     }

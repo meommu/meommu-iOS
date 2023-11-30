@@ -589,7 +589,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeM-bm-vBe">
-                                <rect key="frame" x="20" y="723" width="335" height="48"/>
+                                <rect key="frame" x="20" y="730" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="2ER-4k-BGc"/>
                                 </constraints>
@@ -601,10 +601,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-ad-YIX">
-                                <rect key="frame" x="105.33333333333333" y="689" width="164.33333333333337" height="17"/>
+                                <rect key="frame" x="105.33333333333333" y="693.66666666666663" width="164.33333333333337" height="19"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zve-A9-43g">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="19"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="비밀번호 찾기"/>
@@ -613,14 +613,14 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbj-Y9-yWg">
-                                        <rect key="frame" x="97.000000000000014" y="0.0" width="1.3333333333333286" height="17"/>
+                                        <rect key="frame" x="97.000000000000014" y="0.0" width="1.3333333333333286" height="19"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1.2" id="sT9-Ya-pLU"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-1e-FRA">
-                                        <rect key="frame" x="108.33333333333331" y="0.0" width="56" height="17"/>
+                                        <rect key="frame" x="108.33333333333331" y="0.0" width="56" height="19"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="회원가입"/>
@@ -632,11 +632,11 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Cbj-Y9-yWg" secondAttribute="bottom" id="7gw-pi-zKB"/>
                                     <constraint firstItem="Cbj-Y9-yWg" firstAttribute="top" secondItem="dkc-ad-YIX" secondAttribute="top" id="HDc-eF-ut7"/>
-                                    <constraint firstAttribute="height" constant="17" id="pc2-Rk-wLU"/>
+                                    <constraint firstAttribute="height" constant="19" id="pc2-Rk-wLU"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-pT-RTc">
-                                <rect key="frame" x="20" y="571" width="335" height="106"/>
+                                <rect key="frame" x="20" y="570" width="335" height="106"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디 (이메일)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gU3-Vd-YuV">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
@@ -659,16 +659,16 @@
                         <viewLayoutGuide key="safeArea" id="bYo-wA-Lbj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UeM-bm-vBe" firstAttribute="top" secondItem="dkc-ad-YIX" secondAttribute="bottom" constant="17" id="42A-rf-LlY"/>
+                            <constraint firstItem="UeM-bm-vBe" firstAttribute="top" secondItem="dkc-ad-YIX" secondAttribute="bottom" constant="17.5" id="42A-rf-LlY"/>
                             <constraint firstItem="rFM-pT-RTc" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="APh-ml-M6S"/>
                             <constraint firstItem="6uK-ut-Tbw" firstAttribute="bottom" secondItem="dos-mm-Nxi" secondAttribute="bottom" id="Jpt-TD-Ren"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="UeM-bm-vBe" secondAttribute="trailing" constant="20" id="L5j-41-nBP"/>
                             <constraint firstItem="6uK-ut-Tbw" firstAttribute="top" secondItem="dos-mm-Nxi" secondAttribute="top" id="NYK-qh-VRU"/>
                             <constraint firstAttribute="trailing" secondItem="6uK-ut-Tbw" secondAttribute="trailing" id="Px9-TO-xnk"/>
-                            <constraint firstItem="dkc-ad-YIX" firstAttribute="top" secondItem="rFM-pT-RTc" secondAttribute="bottom" constant="12" id="QGg-rX-Qvz"/>
+                            <constraint firstItem="dkc-ad-YIX" firstAttribute="top" secondItem="rFM-pT-RTc" secondAttribute="bottom" constant="17.5" id="QGg-rX-Qvz"/>
                             <constraint firstItem="6uK-ut-Tbw" firstAttribute="leading" secondItem="dos-mm-Nxi" secondAttribute="leading" id="VAo-EX-dj4"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="centerX" secondItem="dos-mm-Nxi" secondAttribute="centerX" id="aeG-dk-YFQ"/>
-                            <constraint firstAttribute="bottom" secondItem="UeM-bm-vBe" secondAttribute="bottom" constant="41" id="ef6-fe-by9"/>
+                            <constraint firstAttribute="bottom" secondItem="UeM-bm-vBe" secondAttribute="bottom" constant="34" id="ef6-fe-by9"/>
                             <constraint firstItem="UeM-bm-vBe" firstAttribute="leading" secondItem="bYo-wA-Lbj" secondAttribute="leading" constant="20" id="h0F-S1-yqM"/>
                             <constraint firstItem="bYo-wA-Lbj" firstAttribute="trailing" secondItem="rFM-pT-RTc" secondAttribute="trailing" constant="20" id="iAr-5S-zyt"/>
                             <constraint firstItem="aHt-g8-puf" firstAttribute="top" secondItem="bYo-wA-Lbj" secondAttribute="top" constant="45" id="j9J-37-kra"/>

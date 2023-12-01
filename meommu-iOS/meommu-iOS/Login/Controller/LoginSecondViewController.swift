@@ -232,11 +232,16 @@ final class LoginSecondViewController: UIViewController {
                         
                         let statusMessage = "사용 가능한 이메일입니다."
                         self.emailCheckSuccessUIUpdate(label: self.emailStatusLabel, button: self.emailDuplicateCheckButton, message: statusMessage)
-                
+                        // 다음 버튼 활성화 메서드
+                        self.updateNextButtonState()
+                        
                     } else {
                         // 이메일 중복으로 사용 불가능
                         let statusMessage = "사용 불가능한 이메일입니다."
                         self.emailCheckFailureUIUpdate(label: self.emailStatusLabel, button: self.emailDuplicateCheckButton, message: statusMessage)
+                        
+                        // 다음 버튼 활성화 메서드
+                        self.updateNextButtonState()
                     }
                     
                 case .failure(let error):

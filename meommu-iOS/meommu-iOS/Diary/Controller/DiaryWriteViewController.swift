@@ -10,6 +10,7 @@ import PhotosUI
 import MobileCoreServices
 import UniformTypeIdentifiers
 import Alamofire
+import PanModal
 
 
 class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate, UITextFieldDelegate {
@@ -51,7 +52,10 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
         
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
+        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
         
+        presentPanModal(stepOneVC)
     }
 
     

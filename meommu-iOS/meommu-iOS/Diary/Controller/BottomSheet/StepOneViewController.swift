@@ -9,7 +9,7 @@ import UIKit
 import PanModal
 
 
-class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
     
     
     override func viewDidLoad() {
@@ -28,7 +28,14 @@ class StepOneViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func OnClick_steponeNextButton(_ sender: Any) {
         
-        
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
+            if let stepTwoVC = storyboard.instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
+                self.dismiss(animated: false) {
+                    stepTwoVC.modalPresentationStyle = .custom
+                    stepTwoVC.modalPresentationCapturesStatusBarAppearance = true
+                    self.presentPanModal(stepTwoVC)
+                }
+            }
     }
 
     // -----------------------------------------

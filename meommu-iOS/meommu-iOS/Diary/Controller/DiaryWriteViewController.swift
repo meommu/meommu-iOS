@@ -270,8 +270,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // -- 확인 버튼 클릭
     @objc func onPickDone() {
         yearLabel.text = "\(selectedYear)년"
-        monthLabel.text = "\(selectedMonth)월"
-        dateLabel.text = "\(selectedDate)일"
+        monthLabel.text = String(format: "%02d", selectedMonth) + "월"
+        dateLabel.text = String(format: "%02d", selectedDate) + "일"
         
         dateTextField.resignFirstResponder()
     }

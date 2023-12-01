@@ -167,15 +167,6 @@
                                 <rect key="frame" x="0.0" y="94" width="389" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-Gg-Neg">
-                                        <rect key="frame" x="16" y="12" width="114" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="07U-6G-2LE"/>
-                                            <constraint firstAttribute="width" constant="114" id="WPz-S7-YcJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
                                         <rect key="frame" x="22" y="11" width="47" height="22"/>
                                         <attributedString key="attributedText">
@@ -215,20 +206,20 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow_drop_down"/>
+                                        <connections>
+                                            <action selector="OnClick_diaryMonthPickerButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="p6Z-s8-Wu9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Gray200"/>
                                 <constraints>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
-                                    <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
                                     <constraint firstItem="PNC-wB-wNv" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="42" id="BFZ-qN-7UL"/>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="22" id="F2z-AW-yNI"/>
                                     <constraint firstItem="PNC-wB-wNv" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="13" id="KzM-qG-OjY"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="8" symbolic="YES" id="NDo-xY-N3w"/>
                                     <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="RWk-RT-SNU"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="W6S-4O-vET"/>
-                                    <constraint firstItem="S6T-Gg-Neg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="12" id="Wwq-xB-iTU"/>
-                                    <constraint firstAttribute="bottom" secondItem="S6T-Gg-Neg" secondAttribute="bottom" constant="11" id="cBE-mJ-jVy"/>
                                     <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="pP4-yD-hL9"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="rkt-SS-v4Z"/>
                                     <constraint firstAttribute="bottom" secondItem="PNC-wB-wNv" secondAttribute="bottom" constant="13" id="sE6-ma-itz"/>
@@ -274,6 +265,7 @@
                         <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="gPB-5J-nRW"/>
                         <outlet property="DiaryWriteButton" destination="63J-kF-Ica" id="ihY-49-KcY"/>
                         <outlet property="MeommuButton" destination="rQY-Nj-9MF" id="5Uq-tY-ihr"/>
+                        <outlet property="diaryMonthPickerButton" destination="PNC-wB-wNv" id="BxJ-2R-qPL"/>
                         <outlet property="monthLabel" destination="wzA-5h-5jg" id="XiO-Nf-vQ1"/>
                         <outlet property="yearLabel" destination="y9z-8z-5jf" id="bfB-gq-Tzx"/>
                     </connections>

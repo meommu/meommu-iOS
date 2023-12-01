@@ -8,18 +8,19 @@
 import UIKit
 
 struct ImageResponse: Codable {
+    
     struct Data: Codable {
         struct Image: Codable {
             let id: Int
             let url: String
         }
-        
+
         let images: [Image]
     }
-    
+
     let code: String
     let message: String
-    let data: Data
+    let data: Data?
 }
 
 struct ImageUploadResponse: Codable {

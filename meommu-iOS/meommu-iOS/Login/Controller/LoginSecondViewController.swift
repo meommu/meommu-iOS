@@ -185,18 +185,36 @@ final class LoginSecondViewController: UIViewController {
         present(safariViewController, animated: true, completion: nil)
     }
     
+    //MARK: - 이메일 중복 확인 상태 업테이트 메서드
+    func emailCheckSuccessUIUpdate(label: UILabel, button: UIButton , message: String) {
+        label.text = message
+        label.textColor = .success
+        
+        button.setTitleColor(.success, for: .normal)
+        button.layer.borderColor = UIColor.success.cgColor
+        button.layer.borderWidth = 2
+        
+    }
+    
+    func emailCheckFailureUIUpdate(label: UILabel, button: UIButton , message: String) {
+        label.text = message
+        label.textColor = .red
+        
+        button.setTitleColor(.red, for: .normal)
+        button.layer.borderColor = UIColor.red.cgColor
+        button.layer.borderWidth = 2
+
+    }
+
     //MARK: - 이메일 중복 확인 메서드
     @IBAction func checkEmailDuplication(_ sender: UIButton) {
         
         guard let email = emailTextField.text else { return }
         
         if !email.isEmailFormatValid() {
-            emailStatusLabel.text = "이메일을 알맞게 입력해주세요."
-            emailStatusLabel.textColor = .red
             
-            emailDuplicateCheckButton.setTitleColor(.red, for: .normal)
-            emailDuplicateCheckButton.layer.borderColor = UIColor.red.cgColor
-            emailDuplicateCheckButton.layer.borderWidth = 2
+            let statusMessage = "이메일을 알맞게 입력해주세요."
+            emailCheckFailureUIUpdate(label: emailStatusLabel, button: emailDuplicateCheckButton, message: statusMessage)
             
         } else if email.isEmailFormatValid() {
             
@@ -205,32 +223,28 @@ final class LoginSecondViewController: UIViewController {
             SignUpAPI.shared.checkEmailDuplication(with: request) { result in
                 switch result {
                 case .success(let response):
-                    guard let data = response.data else {
-                        print(#function)
-                        return
-                    }
+                    guard let data = response.data else { return }
+                    
                     self.isEmailDuplicate = data
                     
-                    self.emailStatusLabel.text = "사용 가능한 이메일입니다."
-                    self.emailStatusLabel.textColor = .success
-                    self.emailDuplicateCheckButton.setTitleColor(.success, for: .normal)
-                    self.emailDuplicateCheckButton.layer.borderColor = UIColor.success.cgColor
-                    self.emailDuplicateCheckButton.layer.borderWidth = 2
+                    // 이메일 사용 가능
+                    if self.isEmailDuplicate {
+                        
+                        let statusMessage = "사용 가능한 이메일입니다."
+                        self.emailCheckSuccessUIUpdate(label: self.emailStatusLabel, button: self.emailDuplicateCheckButton, message: statusMessage)
+                
+                    } else {
+                        // 이메일 중복으로 사용 불가능
+                        let statusMessage = "사용 불가능한 이메일입니다."
+                        self.emailCheckFailureUIUpdate(label: self.emailStatusLabel, button: self.emailDuplicateCheckButton, message: statusMessage)
+                    }
                     
                 case .failure(let error):
-                    // 이메일 중복 확인 실패
+                    // 통신 오류
                     print("Error: \(error.message)")
                 }
             }
             
-        } else {
-            // 이메일 사용 불가능
-            emailStatusLabel.text = "사용 불가능한 이메일입니다."
-            emailStatusLabel.textColor = .error
-            
-            emailDuplicateCheckButton.setTitleColor(.error, for: .normal)
-            emailDuplicateCheckButton.layer.borderColor = UIColor.error.cgColor
-            emailDuplicateCheckButton.layer.borderWidth = 2
         }
         
         emailTextField.resignFirstResponder()
@@ -323,19 +337,6 @@ extension LoginSecondViewController: UITextViewDelegate {
 
 //MARK: - UITextFieldDelegate 확장
 extension LoginSecondViewController: UITextFieldDelegate {
-    
-//    //MARK: - 이메일 형식 확인 메서드
-//    private func isEmailFormatValid(_ email: String) -> Bool {
-//        let emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
-//        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
-//    }
-//
-//    //MARK: - 비밀번호 형식 확인 메서드
-//    private func isPasswordFormatValid(_ password: String) -> Bool {
-//        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$"
-//        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
-//    }
-    
     //MARK: - 비밀번호 확인 후 레이블 설정 메서드
     // 사용가능한 비밀번호면 true 리턴
     private func arePasswordEqual() -> Bool {

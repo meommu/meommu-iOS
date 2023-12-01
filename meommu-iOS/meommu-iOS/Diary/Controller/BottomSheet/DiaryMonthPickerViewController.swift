@@ -83,11 +83,17 @@ class DiaryMonthPickerViewController: UIViewController, UICollectionViewDelegate
     }
     
     // 확인 버튼
+    
     @IBOutlet var checkButton: UIButton!
     
     @IBAction func OnClick_checkButton(_ sender: Any) {
         guard let month = selectedMonth else { return }
         print("\(selectedYear)년 \(month)월")
+
+        let userInfo = ["year": selectedYear, "month": month]
+        NotificationCenter.default.post(name: Notification.Name("DidPickMonth"), object: nil, userInfo: userInfo)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 

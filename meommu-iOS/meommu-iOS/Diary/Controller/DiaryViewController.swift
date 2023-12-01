@@ -23,23 +23,29 @@ class DiaryViewController: UIViewController {
         DiaryMainTableView.delegate = self
         DiaryMainTableView.dataSource = self
         
-        todayMonthSet()
-        fetchData()
+        yearLabel.text = "\(current_year)년"
+        monthLabel.text = "\(current_month)월"
         
-        // NotificationCenter를 통해 알림 받기
+        fetchData(year: current_year, month: current_month)
+        
+        // NotificationCenter를 통해 일기 삭제 알림 받기
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshData), name: NSNotification.Name("diaryDeleted"), object: nil)
+        
+        // NotificationCenter를 통해 일기 월별 필터링 알림 받기
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDidPickMonth(_:)), name: Notification.Name("DidPickMonth"), object: nil)
     }
     
     // -----------------------------------------
     // 데이터 새로고침하기
+    
     @IBOutlet var MeommuButton: UIBarButtonItem!
     
     @IBAction func OnClick_MeommuButton(_ sender: Any) {
-        fetchData()
+        fetchData(year: current_year, month: current_month)
     }
     
     @objc func refreshData() {
-        fetchData()
+        fetchData(year: current_year, month: current_month)
     }
     
     // -----------------------------------------
@@ -54,7 +60,19 @@ class DiaryViewController: UIViewController {
         presentPanModal(diaryMonthPickerVC)
     }
     
-        
+    @objc func handleDidPickMonth(_ notification: Notification) {
+        if let userInfo = notification.userInfo,
+           let year = userInfo["year"] as? Int,
+           let month = userInfo["month"] as? Int {
+            
+            // 라벨 업데이트
+            yearLabel.text = "\(year)년"
+            monthLabel.text = "\(month)월"
+            
+            // API 호출
+            fetchData(year: "\(year)", month: "\(month)")
+        }
+    }
 
 
     
@@ -64,20 +82,17 @@ class DiaryViewController: UIViewController {
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
     
-    func todayMonthSet(){
-        //년
-        let formatter_year = DateFormatter()
-        formatter_year.dateFormat = "yyyy"
-        let current_year = formatter_year.string(from: Date())
-        
-        //월
-        let formatter_month = DateFormatter()
-        formatter_month.dateFormat = "MM"
-        let current_month = formatter_month.string(from: Date())
-        
-        yearLabel.text = "\(current_year)년"
-        monthLabel.text = "\(current_month)월"
-    }
+    lazy var current_year: String = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter.string(from: Date())
+    }()
+
+    lazy var current_month: String = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        return formatter.string(from: Date())
+    }()
     
     // -----------------------------------------
     // 작성하기 버튼 클릭 시 화면 전환
@@ -103,37 +118,50 @@ class DiaryViewController: UIViewController {
         
     let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
     
-    private func fetchData() {
+    private func fetchData(year: String, month: String) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AccessToken)",
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         
         let parameters: Parameters = [
-            "year": "2023",
-            "month": "11"
+            "year": "\(year)",
+            "month": "\(month)"
         ]
         
         AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries", method: .get, parameters: parameters, headers: headers).responseDecodable(of: DiaryResponse.self) { response in
             switch response.result {
             case .success(let diaryResponse):
+                self.diaries = []
+                
                 self.diaries = diaryResponse.data.diaries
                 
-                // 이미지 데이터도 가져옵니다.
+                // 이미지 데이터를 가져옵니다.
                 let imageIds = self.diaries.flatMap { $0.imageIds }
-                let urlString = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
                 
-                AF.request(urlString).responseDecodable(of: ImageResponse.self) { response in
-                    switch response.result {
-                    case .success(let imageResponse):
-                        self.imageResponses = imageResponse.data.images
+                // 이미지 ID가 없는 일기에 대해서는 요청을 보내지 않습니다.
+                if !imageIds.isEmpty {
+                    let urlString = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
+                    
+                    AF.request(urlString).responseDecodable(of: ImageResponse.self) { response in
+                        switch response.result {
+                        case .success(let imageResponse):
+                            if let data = imageResponse.data {
+                                self.imageResponses = data.images
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
                         
-                        // 메인 스레드에서 UI를 업데이트합니다.
+                        // 이미지 데이터를 가져온 후에도 UI를 업데이트합니다.
                         DispatchQueue.main.async {
                             self.DiaryMainTableView.reloadData()
                         }
-                    case .failure(let error):
-                        print(error)
+                    }
+                } else {
+                    // 이미지 데이터가 없을 경우에도 UI를 업데이트합니다.
+                    DispatchQueue.main.async {
+                        self.DiaryMainTableView.reloadData()
                     }
                 }
             case .failure(let error):
@@ -184,15 +212,17 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return diaries.count > 0 ? diaries.count : 1
+        
+        return diaries.isEmpty ? 1 : diaries.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return diaries.count > 0 ? 526 : 585
+        
+        return diaries.isEmpty ? 585 : 526
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if diaries.count == 0 {
+        if diaries.isEmpty {
             
             let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: emptycellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
             
@@ -209,7 +239,12 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             diaryCell.diaryTitleLabel?.text = diary.title
             
             let imageUrls = diary.imageIds.compactMap { imageId in
-                imageResponses.first(where: { $0.id == imageId })?.url
+                // imageResponses 배열에 안전하게 접근합니다.
+                if let index = imageResponses.firstIndex(where: { $0.id == imageId }) {
+                    return imageResponses[index].url
+                } else {
+                    return nil
+                }
             }
             diaryCell.setImageUrls(imageUrls)
             
@@ -226,14 +261,13 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return diaries.isEmpty ? nil : indexPath
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedDiary = diaries[indexPath.section]
-        
-        if diaries.count == 0 {
-            return
-        }
-        
         performSegue(withIdentifier: "showDetail", sender: selectedDiary)
     }
     

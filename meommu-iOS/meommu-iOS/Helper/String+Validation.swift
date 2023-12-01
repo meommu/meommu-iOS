@@ -28,4 +28,16 @@ extension String {
            return NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex).evaluate(with: self)
        }
     
+    //MARK: - 유치원 이름 형식 확인 메서드
+    func iskindergartenNameFormatValid() -> Bool {
+        let length = self.count
+            return (2...13).contains(length)
+    }
+
+    //MARK: - 대표자 이름 형식 확인 메서드
+    func isrepresentativeNameFormatValid() -> Bool {
+        let length = self.count
+            return (2...8).contains(length)
+    }
+    
 }

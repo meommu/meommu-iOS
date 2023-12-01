@@ -30,6 +30,11 @@ class LoginThirdViewController: UIViewController {
     @IBOutlet weak var representativeNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
+    // 상태 확인을 위한 레이블
+    @IBOutlet weak var kindergartenNameStatusLabel: UILabel!
+    @IBOutlet weak var representativeNameStatusLabel: UILabel!
+    @IBOutlet weak var phoneNumberStatusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +67,14 @@ class LoginThirdViewController: UIViewController {
         kindergartenNameLabel.textColor = .gray800
         representativeNameLabel.textColor = .gray800
         phoneNumberLabel.textColor = .gray800
+        
+        kindergartenNameStatusLabel.text = ""
+        representativeNameStatusLabel.text = ""
+        phoneNumberStatusLabel.text = ""
+        
+        kindergartenNameStatusLabel.textColor = .error
+        representativeNameStatusLabel.textColor = .error
+        phoneNumberStatusLabel.textColor = .error
     }
     
     //MARK: - 텍스트 필드 셋업 메서드
@@ -97,9 +110,19 @@ class LoginThirdViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    //MARK: - 다음 버튼 탭 메서드
-    @IBAction func nextButtonTapped(_ sender: UIButton) {
+    //MARK: - adjustUIForTextFields()
+    // 유효성 검사 및 UI 상태 조정 로직 구현
+    private func adjustUIForTextFields(kindergartenName: String, representativeName: String, phoneNumber: String) {
         
+        kindergartenNameStatusLabel.text = kindergartenName.iskindergartenNameFormatValid() ? nil : "사용하실 수 없는 닉네임입니다."
+        representativeNameStatusLabel.text = representativeName.isrepresentativeNameFormatValid() ? nil : "사용하실 수 없는 이름입니다."
+        phoneNumberStatusLabel.text = phoneNumber.isPhoneNumberFormatValid() ? nil : "사용하실 수 없는 전화번호입니다."
+        
+    }
+    
+    //MARK: - requestSignUP()
+    // 회원가입 요청 메서드
+    private func requestSignUP() {
         signUpRequest.name = kindergartenNameTextField.text
         signUpRequest.ownerName = representativeNameTextField.text
         signUpRequest.phone = phoneNumberTextField.text
@@ -118,16 +141,37 @@ class LoginThirdViewController: UIViewController {
             }
         }
         performSegue(withIdentifier: "toLoginFourthVC", sender: self)
+    }
+    
+    //MARK: - 다음 버튼 탭 메서드
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        
+        guard let kindergartenName = kindergartenNameTextField.text, let representativeName = representativeNameTextField.text, let phoneNumber = phoneNumberTextField.text else { return }
+        
+        // 유효성 검사 후 문제가 생기면 상태 레이블 보이기
+        if !kindergartenName.iskindergartenNameFormatValid() || !representativeName.isrepresentativeNameFormatValid() || !phoneNumber.isPhoneNumberFormatValid() {
+            
+            adjustUIForTextFields(kindergartenName: kindergartenName, representativeName: representativeName, phoneNumber: phoneNumber)
+            
+            return
+        }
+        
+        representativeNameStatusLabel.text = ""
+        kindergartenNameStatusLabel.text = ""
+        phoneNumberStatusLabel.text = ""
+        
+        //회원가입 서버 통신 메서드
+        requestSignUP()
         
     }
     
     // 데이터 전달을 위해 prepare 메서드 재정의
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "toLoginFourthVC" {
-                let loginFourthVC = segue.destination as! LoginViewController
-                loginFourthVC.kindergartenName = kindergartenNameTextField.text
-            }
+        if segue.identifier == "toLoginFourthVC" {
+            let loginFourthVC = segue.destination as! LoginViewController
+            loginFourthVC.kindergartenName = kindergartenNameTextField.text
         }
+    }
     
 }
 

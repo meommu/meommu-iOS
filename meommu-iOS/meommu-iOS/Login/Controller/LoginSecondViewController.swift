@@ -348,8 +348,7 @@ extension LoginSecondViewController: UITextFieldDelegate {
             passwordStatusLabel.textColor = .error
             return false
         } else if password == confirmPassword {
-            passwordStatusLabel.text = "사용가능한 비밀번호입니다."
-            passwordStatusLabel.textColor = .success
+            passwordStatusLabel.text = ""
             return true
         } else {
             confirmPasswordStatusLabel.text = "비밀번호를 다시 입력해주세요."

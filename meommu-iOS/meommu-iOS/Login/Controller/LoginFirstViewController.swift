@@ -155,17 +155,11 @@ class LoginFirstViewController: UIViewController {
         }
     }
     
+    //MARK: - 액세스 토큰 저장 메서드
     func storeAccessToken(_ acessToken: String) {
-        let keyChain = KeyChain()
-        keyChain.create(key: keyChain.accessToken, token: acessToken)
         
-        // 잘 저장되는지 확인 (read, delete)
-        guard let token = keyChain.read(key: keyChain.accessToken) else { return }
-        print("______________")
-        print(token)
-        
-        keyChain.delete(key: keyChain.accessToken)
-        print("______________")
+        let key = KeyChain.shared.accessTokenKey
+        KeyChain.shared.create(key: key, token: acessToken)
         
     }
     

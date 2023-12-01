@@ -10,7 +10,9 @@ import Security
 
 class KeyChain {
     
-    let accessToken = "accessToken"
+    static let shared = KeyChain()
+    
+    let accessTokenKey = "accessToken"
     
     // Create
     func create(key: String, token: String) {

@@ -110,7 +110,7 @@ class LoginFirstViewController: UIViewController {
         LoginAPI.shared.login(with: request) { result in
             switch result {
             case .success(let response):
-                self.handleLoginStatusCode(response.code)
+                self.handleLoginStatusCode(response)
             case .failure(let error):
                 // 400~500 에러
                 print("Error: \(error.message)")
@@ -119,14 +119,20 @@ class LoginFirstViewController: UIViewController {
     }
     
     // 로그인 상태 코드에 따른 분기처리를 위한 메서드
-    func handleLoginStatusCode(_ code: String) {
-        if code == "0000" {
+    func handleLoginStatusCode(_ response: LoginResponse) {
+        
+        guard let data = response.data else { return }
+        
+        if response.code == "0000" {
+            
+            // 엑세스 토큰 키체인 저장
+            storeAccessToken(data.accessToken)
+            
             // 로그인하고 일기 화면으로 rootView 변경
             let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
             let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
             
             let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-            
             sceneDelegate.changeRootViewController(newViewController, animated: true)
         } else {
             // 이후 토스트로 상태 보여주기 (아이디, 비번 틀림)
@@ -147,6 +153,20 @@ class LoginFirstViewController: UIViewController {
             
             print("아디, 비번 틀림")
         }
+    }
+    
+    func storeAccessToken(_ acessToken: String) {
+        let keyChain = KeyChain()
+        keyChain.create(key: keyChain.accessToken, token: acessToken)
+        
+        // 잘 저장되는지 확인 (read, delete)
+        guard let token = keyChain.read(key: keyChain.accessToken) else { return }
+        print("______________")
+        print(token)
+        
+        keyChain.delete(key: keyChain.accessToken)
+        print("______________")
+        
     }
     
 }

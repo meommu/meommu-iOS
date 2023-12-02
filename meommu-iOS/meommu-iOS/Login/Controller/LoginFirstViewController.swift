@@ -111,6 +111,7 @@ class LoginFirstViewController: UIViewController {
             switch result {
             case .success(let response):
                 self.handleLoginStatusCode(response)
+                print(#function)
             case .failure(let error):
                 // 400~500 에러
                 print("Error: \(error.message)")
@@ -120,10 +121,10 @@ class LoginFirstViewController: UIViewController {
     
     // 로그인 상태 코드에 따른 분기처리를 위한 메서드
     func handleLoginStatusCode(_ response: LoginResponse) {
-        
-        guard let data = response.data else { return }
-        
+ 
         if response.code == "0000" {
+            
+            guard let data = response.data else { return }
             
             // 엑세스 토큰 키체인 저장
             storeAccessToken(data.accessToken)

@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="frR-3q-xzu">
-                                <rect key="frame" x="0.0" y="94" width="405" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFF-dO-fSL">
@@ -40,19 +40,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoC-az-mNw">
                                         <rect key="frame" x="21.999999999999996" y="11" width="49.666666666666657" height="22"/>
                                         <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
-                                        <color key="textColor" name="Gray500"/>
+                                        <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3L-xe-weQ">
                                         <rect key="frame" x="79.666666666666671" y="11" width="22.666666666666671" height="22"/>
                                         <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
-                                        <color key="textColor" name="Gray500"/>
+                                        <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-rC-yMC">
                                         <rect key="frame" x="110.33333333333333" y="11" width="26.999999999999986" height="22"/>
                                         <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="18"/>
-                                        <color key="textColor" name="Gray500"/>
+                                        <color key="textColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AdS-fq-82y">
@@ -65,11 +65,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" name="Gray200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="veU-rC-yMC" secondAttribute="bottom" constant="11" id="19i-HN-BrI"/>
+                                    <constraint firstAttribute="trailing" secondItem="OFF-dO-fSL" secondAttribute="trailing" constant="209" id="1jL-YZ-uYW"/>
                                     <constraint firstAttribute="bottom" secondItem="AdS-fq-82y" secondAttribute="bottom" constant="11" id="3TB-RL-YPH"/>
                                     <constraint firstItem="CoC-az-mNw" firstAttribute="leading" secondItem="frR-3q-xzu" secondAttribute="leading" constant="22" id="7JS-Oa-D3f"/>
+                                    <constraint firstAttribute="width" constant="375" id="8FU-N4-HmU"/>
                                     <constraint firstItem="CoC-az-mNw" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="11" id="BAL-fp-ezm"/>
                                     <constraint firstAttribute="bottom" secondItem="v3L-xe-weQ" secondAttribute="bottom" constant="11" id="E2d-1E-NeY"/>
                                     <constraint firstAttribute="bottom" secondItem="CoC-az-mNw" secondAttribute="bottom" constant="11" id="FdV-h0-Occ"/>
@@ -77,7 +79,6 @@
                                     <constraint firstAttribute="bottom" secondItem="OFF-dO-fSL" secondAttribute="bottom" constant="13" id="JwR-QG-vR1"/>
                                     <constraint firstItem="v3L-xe-weQ" firstAttribute="leading" secondItem="CoC-az-mNw" secondAttribute="trailing" constant="8" symbolic="YES" id="Ltb-zV-vc5"/>
                                     <constraint firstItem="OFF-dO-fSL" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="13" id="Mo0-iW-4ri"/>
-                                    <constraint firstItem="OFF-dO-fSL" firstAttribute="leading" secondItem="veU-rC-yMC" secondAttribute="trailing" constant="10.67" id="ZDH-Xv-On6"/>
                                     <constraint firstAttribute="height" constant="44" id="aty-Ta-syb"/>
                                     <constraint firstItem="veU-rC-yMC" firstAttribute="leading" secondItem="v3L-xe-weQ" secondAttribute="trailing" constant="8" id="cW3-fQ-fVq"/>
                                     <constraint firstItem="veU-rC-yMC" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="top" constant="11" id="hoy-FP-VI5"/>
@@ -86,7 +87,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-er-gxl">
-                                <rect key="frame" x="0.0" y="138" width="375" height="674"/>
+                                <rect key="frame" x="0.0" y="138" width="375" height="90"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="R7M-Vq-ePP">
                                         <rect key="frame" x="9.6666666666666572" y="15" width="356" height="60"/>
@@ -101,10 +102,16 @@
                                                             <constraint firstAttribute="height" constant="60" id="sBX-65-jP1"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-eX-PHp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-eX-PHp">
                                                         <rect key="frame" x="17" y="35" width="24.333333333333329" height="14"/>
-                                                        <fontDescription key="fontDescription" name="PretendardVariable-Light" family="Pretendard Variable" pointSize="12"/>
-                                                        <color key="textColor" name="Gray200"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="0 / 5">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="borderColor"/>
+                                                                    <font key="NSFont" size="12" name="PretendardVariable-Light"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmJ-wo-bT9">
@@ -116,7 +123,7 @@
                                                         <color key="tintColor" red="0.71764707569999997" green="0.71764707569999997" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="Camera">
-                                                            <color key="titleColor" name="Gray200"/>
+                                                            <color key="titleColor" name="borderColor"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
@@ -222,51 +229,53 @@
                                         <constraints>
                                             <constraint firstItem="SIQ-92-UQa" firstAttribute="top" secondItem="R7M-Vq-ePP" secondAttribute="top" id="PD9-UO-lQV"/>
                                             <constraint firstAttribute="height" constant="60" id="npY-Bg-2ur"/>
+                                            <constraint firstItem="SIQ-92-UQa" firstAttribute="leading" secondItem="rXg-r3-PiT" secondAttribute="trailing" constant="12" id="oxo-cr-oRX"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-qU-9sP">
-                                        <rect key="frame" x="20" y="134" width="335" height="1"/>
-                                        <color key="backgroundColor" red="0.53725492949999998" green="0.53725492949999998" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Ohi-ah-eio"/>
-                                            <constraint firstAttribute="width" constant="335" id="hfh-hT-LIp"/>
-                                        </constraints>
-                                    </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xle-eJ-eBe">
-                                        <rect key="frame" x="133" y="101" width="109.33333333333331" height="25"/>
-                                        <color key="textColor" name="Gray500"/>
-                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-fY-B3r">
-                                        <rect key="frame" x="20" y="150" width="335" height="420"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" name="Gray500"/>
-                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.96078431610000004" green="0.96470588450000005" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="K1V-qU-9sP" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="1yI-Qg-wK8"/>
-                                    <constraint firstItem="K1V-qU-9sP" firstAttribute="top" secondItem="xle-eJ-eBe" secondAttribute="bottom" constant="8" id="P23-Yp-r5I"/>
-                                    <constraint firstAttribute="height" constant="674" id="bmT-97-m3e"/>
                                     <constraint firstAttribute="width" constant="375" id="kMd-XZ-Ox3"/>
-                                    <constraint firstItem="xle-eJ-eBe" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="m0t-Qt-z6Z"/>
+                                    <constraint firstAttribute="height" constant="90" id="mZi-L8-pF8"/>
                                     <constraint firstItem="R7M-Vq-ePP" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="sx0-Fl-EdK"/>
-                                    <constraint firstItem="xle-eJ-eBe" firstAttribute="top" secondItem="R7M-Vq-ePP" secondAttribute="bottom" constant="26" id="v0h-t7-h33"/>
                                     <constraint firstItem="R7M-Vq-ePP" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="top" constant="15" id="yVy-UX-Jum"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목 (0/20)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ux-sH-DIZ">
+                                <rect key="frame" x="25" y="236" width="325" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="pUz-4d-FEj"/>
+                                    <constraint firstAttribute="height" constant="42" id="sY7-RQ-yMg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czk-cs-GIG">
+                                <rect key="frame" x="27.666666666666657" y="283" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.54901963470000004" green="0.5647059083" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="U8t-HU-TcL"/>
+                                    <constraint firstAttribute="height" constant="1" id="w1z-sQ-4rX"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="@@의 일기를 작성해주세요." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERx-jz-qxc">
+                                <rect key="frame" x="25" y="299" width="325" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="h8V-Go-g7J"/>
+                                    <constraint firstAttribute="width" constant="325" id="iKR-hJ-ha6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-T2-0TZ">
                                 <rect key="frame" x="20" y="730" width="335" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="JOW-Qj-r3D"/>
-                                    <constraint firstAttribute="height" constant="48" id="rPU-yU-3am"/>
+                                    <constraint firstAttribute="height" constant="48" id="W0E-0Z-kni"/>
+                                    <constraint firstAttribute="width" constant="335" id="hDU-Yn-RRe"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="멈무일기 가이드">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -277,12 +286,18 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ERx-jz-qxc" firstAttribute="top" secondItem="czk-cs-GIG" secondAttribute="bottom" constant="15" id="0kU-ht-zkZ"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="2h1-pS-TZP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SYv-T2-0TZ" secondAttribute="bottom" id="5pC-0o-Akb"/>
+                            <constraint firstItem="czk-cs-GIG" firstAttribute="top" secondItem="8ux-sH-DIZ" secondAttribute="bottom" constant="5" id="4Fs-lW-v9Y"/>
+                            <constraint firstItem="8ux-sH-DIZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="NYQ-eI-z1N"/>
+                            <constraint firstItem="8ux-sH-DIZ" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yr8-YO-VIw"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="g8o-B6-vGj"/>
+                            <constraint firstItem="ERx-jz-qxc" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="h3Y-57-PqF"/>
+                            <constraint firstItem="czk-cs-GIG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="i4V-8Q-ges"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
-                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="j8t-hA-jFg"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOo-iK-t9e"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oWe-i1-C1Z"/>
+                            <constraint firstItem="SYv-T2-0TZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rEb-SY-PNb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="일기쓰기" id="y5s-cd-1iW">
@@ -295,9 +310,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="완료" id="QCi-Pm-iAW">
                             <color key="tintColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="OnClick_diaryWriteButton:" destination="Y6W-OH-hqX" id="7Fo-UV-t5n"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -309,10 +321,7 @@
                         <outlet property="borderView5" destination="h7Y-su-c0F" id="mey-Jc-a5p"/>
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
-                        <outlet property="diaryContextTextView" destination="rbB-fY-B3r" id="Hvx-tj-4Fe"/>
                         <outlet property="diaryGuideButton" destination="SYv-T2-0TZ" id="zev-wg-ZVc"/>
-                        <outlet property="diaryTitleTextField" destination="xle-eJ-eBe" id="EwA-Oa-oFs"/>
-                        <outlet property="diaryWriteButton" destination="QCi-Pm-iAW" id="QVe-Tb-1QQ"/>
                         <outlet property="imagePickerButton" destination="QmJ-wo-bT9" id="7zs-jP-DKd"/>
                         <outlet property="imageView1" destination="COD-GK-Npr" id="Sbh-Hb-bSR"/>
                         <outlet property="imageView2" destination="XR0-YO-vU5" id="6ci-2g-cad"/>
@@ -347,14 +356,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera" width="22" height="22"/>
+        <image name="Camera" width="44" height="44"/>
         <image name="arrow_drop_down" width="32" height="32"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
-        <namedColor name="Gray200">
-            <color red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Gray500">
-            <color red="0.40000003579999999" green="0.40000003579999999" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="borderColor">
+            <color red="0.75300002098083496" green="0.76899999380111694" blue="0.80400002002716064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

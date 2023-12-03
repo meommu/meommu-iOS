@@ -8,58 +8,22 @@
 import UIKit
 
 
-struct DiaryResponse: Codable {
-    struct Data: Codable {
-        struct Diary: Codable {
-            let id: Int
-            let date: String
-            let dogName: String
-            let createdAt: String
-            let imageIds: [Int]
-            let title: String
-            let content: String
-        }
-        
-        let diaries: [Diary]
-    }
-    
+struct Response: Codable {
     let code: String
     let message: String
-    let data: Data
+    let data: DataClass
 }
 
-struct DiaryIdResponse: Codable {
-    struct Data: Codable {
-        let id: Int
-        let date: String
-        let dogName: String
-        let createdAt: String
-        let imageIds: [Int]
-        let title: String
-        let content: String
-    }
-    
-    let code: String
-    let message: String
-    let data: Data
+struct DataClass: Codable {
+    let diaries: [Diary]
 }
 
-struct DeleteDiaryResponse: Decodable {
-    let code: String
-    let message: String
-    let data: String?
-}
-
-struct DiaryEditRequest: Encodable {
+struct Diary: Codable {
+    let id: Int
     let date: String
     let dogName: String
+    let createdAt: String
+    let imageIds: [Int]
     let title: String
     let content: String
-    let imageIds: [Int]
-}
-
-struct DiaryEditResponse: Decodable {
-    let code: String
-    let message: String
-    let data: String?
 }

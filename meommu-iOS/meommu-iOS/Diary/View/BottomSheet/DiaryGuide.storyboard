@@ -93,6 +93,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="aoS-ZT-Hgu"/>
                     <connections>
+                        <outlet property="stepLabel" destination="eSW-Bi-lWL" id="Ovl-Ec-VkZ"/>
+                        <outlet property="stepTitleLabel" destination="YMN-rL-Lvx" id="MKt-kE-nDo"/>
                         <outlet property="steponeNextButton" destination="x3A-gs-Y3i" id="toz-mU-LRo"/>
                         <outlet property="steponeTableVlew" destination="0pB-tW-YDP" id="e2S-vl-xjY"/>
                     </connections>

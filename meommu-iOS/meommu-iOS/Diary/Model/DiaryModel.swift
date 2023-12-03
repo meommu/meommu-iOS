@@ -28,7 +28,37 @@ struct DiaryResponse: Codable {
     let data: Data
 }
 
+struct DiaryIdResponse: Codable {
+    struct Data: Codable {
+        let id: Int
+        let date: String
+        let dogName: String
+        let createdAt: String
+        let imageIds: [Int]
+        let title: String
+        let content: String
+    }
+    
+    let code: String
+    let message: String
+    let data: Data
+}
+
 struct DeleteDiaryResponse: Decodable {
+    let code: String
+    let message: String
+    let data: String?
+}
+
+struct DiaryEditRequest: Encodable {
+    let date: String
+    let dogName: String
+    let title: String
+    let content: String
+    let imageIds: [Int]
+}
+
+struct DiaryEditResponse: Decodable {
     let code: String
     let message: String
     let data: String?

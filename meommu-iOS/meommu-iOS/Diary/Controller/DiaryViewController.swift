@@ -116,11 +116,21 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet var DiaryMainTableView: UITableView!
         
-    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
+    // 키체인에서 엑세스 토큰 가져오기
+    func getAccessTokenFromKeychain() -> String? {
+        let key = KeyChain.shared.accessTokenKey
+        let accessToken = KeyChain.shared.read(key: key)
+        return accessToken
+    }
     
     private func fetchData(year: String, month: String) {
+        guard let accessToken = getAccessTokenFromKeychain() else {
+            print("Access Token not found.")
+            return
+        }
+        
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(AccessToken)",
+            "Authorization": "Bearer \(accessToken)",
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         

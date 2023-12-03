@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,7 +69,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="다음">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="baseBackgroundColor" name="primaryA"/>
+                                    <color key="baseBackgroundColor" name="SelectedButton"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="OnClick_WriteButton:" destination="wD9-MX-iAF" eventType="touchUpInside" id="LEI-ia-HBQ"/>
@@ -129,8 +128,8 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="diarysendimage" width="676" height="676"/>
-        <namedColor name="primaryA">
-            <color red="0.51372551919999998" green="0.47450977560000002" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="SelectedButton">
+            <color red="0.51399999856948853" green="0.4779999852180481" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

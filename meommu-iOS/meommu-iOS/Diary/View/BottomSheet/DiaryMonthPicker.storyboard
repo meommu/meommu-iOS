@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary Month Picker View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DiaryMonthPickerViewController" id="Y6W-OH-hqX" customClass="DiaryMonthPickerViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIX-ZZ-UVF">
+                                <rect key="frame" x="14" y="404" width="347" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LyZ-cw-Ikp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="347" id="ogw-JK-bRn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="확인">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnClick_checkButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iTF-F5-SqG"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDr-pS-6Ir">
+                                <rect key="frame" x="20" y="80" width="335" height="294"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="105" translatesAutoresizingMaskIntoConstraints="NO" id="zNk-I5-M5c">
+                                        <rect key="frame" x="16.333333333333343" y="0.0" width="302.33333333333326" height="16"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-hu-FK3">
+                                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="3AS-aR-A4p"/>
+                                                    <constraint firstAttribute="width" constant="16" id="Df9-FE-bLK"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="month_arrow_left"/>
+                                                <connections>
+                                                    <action selector="OnClick_beforeMonthButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mXj-4k-MXI"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-Lw-zkP">
+                                                <rect key="frame" x="120.99999999999999" y="0.0" width="60.333333333333329" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="textColor" name="Gray500"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cie-8i-6MX">
+                                                <rect key="frame" x="286.33333333333337" y="0.0" width="16" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="16" id="Fwf-EP-ybu"/>
+                                                    <constraint firstAttribute="height" constant="16" id="Xk3-dY-PS3"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="month_arrow_right"/>
+                                                <connections>
+                                                    <action selector="OnClick_nextMonthButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n3I-fz-DtU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cie-8i-6MX" secondAttribute="bottom" id="0mG-jx-VUM"/>
+                                            <constraint firstItem="cie-8i-6MX" firstAttribute="top" secondItem="zNk-I5-M5c" secondAttribute="top" id="5rg-Po-c6j"/>
+                                            <constraint firstItem="oYr-Lw-zkP" firstAttribute="top" secondItem="zNk-I5-M5c" secondAttribute="top" id="BmG-YQ-PH0"/>
+                                            <constraint firstAttribute="bottom" secondItem="ndi-hu-FK3" secondAttribute="bottom" id="CAN-bw-b40"/>
+                                            <constraint firstAttribute="trailing" secondItem="cie-8i-6MX" secondAttribute="trailing" id="DUm-2r-90h"/>
+                                            <constraint firstItem="ndi-hu-FK3" firstAttribute="top" secondItem="zNk-I5-M5c" secondAttribute="top" id="UeK-e9-ymH"/>
+                                            <constraint firstItem="ndi-hu-FK3" firstAttribute="leading" secondItem="zNk-I5-M5c" secondAttribute="leading" id="tu6-Pj-cVt"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이동하고 싶은 월을 선택하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s13-Rc-aFh">
+                                        <rect key="frame" x="69" y="26" width="197" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" name="Gray300"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-hN-BHF">
+                                        <rect key="frame" x="10" y="55.333333333333343" width="315" height="238.00000000000003"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="315" id="Yng-G1-xRg"/>
+                                            <constraint firstAttribute="height" constant="238" id="stN-jL-VVg"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bbm-7p-gLj">
+                                            <size key="itemSize" width="70" height="70"/>
+                                            <size key="estimatedItemSize" width="70" height="70"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="294" id="0Qb-7y-nco"/>
+                                    <constraint firstItem="zNk-I5-M5c" firstAttribute="top" secondItem="bDr-pS-6Ir" secondAttribute="top" id="1hi-Gg-JFl"/>
+                                    <constraint firstItem="zNk-I5-M5c" firstAttribute="centerX" secondItem="s13-Rc-aFh" secondAttribute="centerX" id="Afx-Xu-EzY"/>
+                                    <constraint firstItem="e1a-hN-BHF" firstAttribute="top" secondItem="s13-Rc-aFh" secondAttribute="bottom" constant="10" id="Lge-0n-jeh"/>
+                                    <constraint firstAttribute="trailing" secondItem="e1a-hN-BHF" secondAttribute="trailing" constant="10" id="M48-xU-P8d"/>
+                                    <constraint firstAttribute="width" constant="335" id="NK6-jS-9W9"/>
+                                    <constraint firstItem="s13-Rc-aFh" firstAttribute="top" secondItem="zNk-I5-M5c" secondAttribute="bottom" constant="10" id="NWQ-t0-Sv2"/>
+                                    <constraint firstItem="e1a-hN-BHF" firstAttribute="leading" secondItem="bDr-pS-6Ir" secondAttribute="leading" constant="10" id="SsA-Zt-bWD"/>
+                                    <constraint firstItem="s13-Rc-aFh" firstAttribute="centerX" secondItem="bDr-pS-6Ir" secondAttribute="centerX" id="rAN-td-3Ub"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bDr-pS-6Ir" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="f60-o4-A8y"/>
+                            <constraint firstItem="RIX-ZZ-UVF" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="mW2-U2-2F1"/>
+                            <constraint firstItem="RIX-ZZ-UVF" firstAttribute="top" secondItem="bDr-pS-6Ir" secondAttribute="bottom" constant="30" id="rQQ-oJ-0mA"/>
+                            <constraint firstItem="bDr-pS-6Ir" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="sgW-uT-c8W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MonthPickerCollectionView" destination="e1a-hN-BHF" id="ico-Jt-Vky"/>
+                        <outlet property="beforeMonthButton" destination="ndi-hu-FK3" id="R7h-nE-Bac"/>
+                        <outlet property="checkButton" destination="RIX-ZZ-UVF" id="0Uy-BR-tBQ"/>
+                        <outlet property="nextMonthButton" destination="cie-8i-6MX" id="uG8-fu-F8N"/>
+                        <outlet property="yearLabel" destination="oYr-Lw-zkP" id="FY6-v1-NUB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80.799999999999997" y="-2.2167487684729066"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="month_arrow_left" width="65" height="64"/>
+        <image name="month_arrow_right" width="65" height="64"/>
+        <namedColor name="Gray300">
+            <color red="0.73299998044967651" green="0.73299998044967651" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray500">
+            <color red="0.40000000596046448" green="0.40000000596046448" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

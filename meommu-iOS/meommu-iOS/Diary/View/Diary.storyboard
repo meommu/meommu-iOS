@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -157,39 +157,30 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="작성하기">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" name="primaryA"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="OnClick_DiaryWriteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wjd-cw-dHI"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="dq1-UA-5ew">
-                                <rect key="frame" x="0.0" y="94" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="389" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-Gg-Neg">
-                                        <rect key="frame" x="16" y="12" width="114" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="07U-6G-2LE"/>
-                                            <constraint firstAttribute="width" constant="114" id="WPz-S7-YcJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-8z-5jf">
-                                        <rect key="frame" x="22" y="11" width="55" height="22"/>
+                                        <rect key="frame" x="22" y="11" width="47" height="22"/>
                                         <attributedString key="attributedText">
                                             <fragment content="2023">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <font key="NSFont" size="17" name="Ownglyph_Yeon_The_Land-Rg"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="년">
                                                 <attributes>
                                                     <color key="NSColor" red="0.39215683940000001" green="0.39215683940000001" blue="0.45490193369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <font key="NSFont" size="17" name="Ownglyph_Yeon_The_Land-Rg"/>
                                                     <font key="NSOriginalFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -198,7 +189,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-5h-5jg">
-                                        <rect key="frame" x="85" y="11" width="36" height="22"/>
+                                        <rect key="frame" x="77" y="11" width="36" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="g3I-4y-NIg"/>
                                             <constraint firstAttribute="width" constant="36" id="rKc-dA-HDJ"/>
@@ -208,32 +199,32 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNC-wB-wNv">
-                                        <rect key="frame" x="119" y="13" width="18" height="18"/>
+                                        <rect key="frame" x="111" y="13" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="7EZ-Hf-fUN"/>
                                             <constraint firstAttribute="height" constant="18" id="uDe-sW-bXM"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow_drop_down"/>
+                                        <connections>
+                                            <action selector="OnClick_diaryMonthPickerButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="p6Z-s8-Wu9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" name="Gray200"/>
                                 <constraints>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="5D4-zq-iHI"/>
-                                    <constraint firstItem="S6T-Gg-Neg" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="16" id="5Kq-My-Ztv"/>
                                     <constraint firstItem="PNC-wB-wNv" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="42" id="BFZ-qN-7UL"/>
                                     <constraint firstItem="y9z-8z-5jf" firstAttribute="leading" secondItem="dq1-UA-5ew" secondAttribute="leading" constant="22" id="F2z-AW-yNI"/>
                                     <constraint firstItem="PNC-wB-wNv" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="13" id="KzM-qG-OjY"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="leading" secondItem="y9z-8z-5jf" secondAttribute="trailing" constant="8" symbolic="YES" id="NDo-xY-N3w"/>
                                     <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="RWk-RT-SNU"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="W6S-4O-vET"/>
-                                    <constraint firstItem="S6T-Gg-Neg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="12" id="Wwq-xB-iTU"/>
-                                    <constraint firstAttribute="bottom" secondItem="S6T-Gg-Neg" secondAttribute="bottom" constant="11" id="cBE-mJ-jVy"/>
                                     <constraint firstAttribute="bottom" secondItem="wzA-5h-5jg" secondAttribute="bottom" constant="11" id="pP4-yD-hL9"/>
                                     <constraint firstItem="wzA-5h-5jg" firstAttribute="top" secondItem="dq1-UA-5ew" secondAttribute="top" constant="11" id="rkt-SS-v4Z"/>
                                     <constraint firstAttribute="bottom" secondItem="PNC-wB-wNv" secondAttribute="bottom" constant="13" id="sE6-ma-itz"/>
                                     <constraint firstAttribute="height" constant="44" id="tMs-zi-mSc"/>
                                     <constraint firstAttribute="bottom" secondItem="y9z-8z-5jf" secondAttribute="bottom" constant="11" id="ydL-UH-ux4"/>
-                                    <constraint firstAttribute="width" constant="375" id="z7E-jG-C8U"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -251,6 +242,9 @@
                     <navigationItem key="navigationItem" id="a8X-05-jCe">
                         <barButtonItem key="leftBarButtonItem" title="meom-mu" id="rQY-Nj-9MF">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="OnClick_MeommuButton:" destination="Y6W-OH-hqX" id="PLA-iR-G8c"/>
+                            </connections>
                         </barButtonItem>
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="4Bb-ck-HBu"/>
@@ -259,7 +253,7 @@
                             <barButtonItem title="Item" image="Plus" id="hoF-uc-poh">
                                 <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="UserCircle" id="f0L-c0-MhX">
+                            <barButtonItem title="Item" image="GearSix" id="f0L-c0-MhX">
                                 <color key="tintColor" red="0.59215688710000003" green="0.59215688710000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="ydY-gc-AGe" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CGS-I0-NjN"/>
@@ -270,13 +264,15 @@
                     <connections>
                         <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="gPB-5J-nRW"/>
                         <outlet property="DiaryWriteButton" destination="63J-kF-Ica" id="ihY-49-KcY"/>
+                        <outlet property="MeommuButton" destination="rQY-Nj-9MF" id="5Uq-tY-ihr"/>
+                        <outlet property="diaryMonthPickerButton" destination="PNC-wB-wNv" id="BxJ-2R-qPL"/>
                         <outlet property="monthLabel" destination="wzA-5h-5jg" id="XiO-Nf-vQ1"/>
                         <outlet property="yearLabel" destination="y9z-8z-5jf" id="bfB-gq-Tzx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="-2"/>
+            <point key="canvasLocation" x="1005.6" y="-2.2167487684729066"/>
         </scene>
         <!--Diary Detail View Controller-->
         <scene sceneID="hWy-MW-Apb">
@@ -292,7 +288,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-Tb-8ie">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-PW-Pqk">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-PW-Pqk">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="495"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="495" id="0cv-pt-7I3"/>
@@ -312,7 +308,7 @@
                                                                     <constraint firstAttribute="width" constant="300" id="niZ-WB-nQI"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="26"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="Gray900"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXj-Ej-Cye">
@@ -336,7 +332,7 @@
                                                             <constraint firstAttribute="width" constant="340" id="6vY-b5-xyy"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="16"/>
-                                                        <color key="textColor" red="0.38431376220000002" green="0.3803921938" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" name="Gray500"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-xP-O2E">
@@ -345,7 +341,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="FWX-r3-1oa"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aol-tu-ULz">
@@ -354,7 +350,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="BSV-vY-uL8"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.61568629740000003" green="0.61568629740000003" blue="0.61568629740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -374,14 +370,36 @@
                                                 </constraints>
                                             </view>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-m3-JFL">
-                                                <rect key="frame" x="129" y="461" width="116" height="26"/>
+                                                <rect key="frame" x="129" y="461.33333333333337" width="116" height="25.666666666666686"/>
                                                 <connections>
                                                     <action selector="diaryimagePageChange:" destination="0qe-i2-VpE" eventType="valueChanged" id="mS9-4U-hhn"/>
                                                 </connections>
                                             </pageControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-Fo-3wf">
+                                                <rect key="frame" x="308" y="453" width="47" height="22"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GD3-2A-f22">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666288" width="47" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Gray800"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="Aev-xj-6ao"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="leading" secondItem="Ghh-Fo-3wf" secondAttribute="leading" id="C2g-ON-RLV"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="centerY" secondItem="Ghh-Fo-3wf" secondAttribute="centerY" id="JMD-S7-YsK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GD3-2A-f22" secondAttribute="trailing" id="ghK-1C-cFg"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="top" secondItem="Ghh-Fo-3wf" secondAttribute="top" constant="2.5" id="hre-4C-V70"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="centerX" secondItem="Ghh-Fo-3wf" secondAttribute="centerX" id="qc3-wp-FEJ"/>
+                                                    <constraint firstAttribute="width" constant="47" id="qnz-Df-jRL"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="Ghh-Fo-3wf" secondAttribute="bottom" constant="20" id="E50-Ne-1a7"/>
                                             <constraint firstAttribute="bottom" secondItem="haz-ce-LvD" secondAttribute="bottom" id="Fpj-Y5-OR4"/>
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eC2-Od-geH"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="leading" secondItem="WL1-Tb-8ie" secondAttribute="leading" id="eFC-jR-VBU"/>
@@ -392,6 +410,7 @@
                                             <constraint firstAttribute="trailing" secondItem="haz-ce-LvD" secondAttribute="trailing" id="sKG-uv-if9"/>
                                             <constraint firstItem="pEp-PW-Pqk" firstAttribute="top" secondItem="WL1-Tb-8ie" secondAttribute="top" id="x8I-PH-ffJ"/>
                                             <constraint firstItem="haz-ce-LvD" firstAttribute="top" secondItem="d5q-m3-JFL" secondAttribute="bottom" constant="8" symbolic="YES" id="yMO-Le-XTn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ghh-Fo-3wf" secondAttribute="trailing" constant="20" id="ybr-0N-10F"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -412,7 +431,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="보내기">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" name="primaryA"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
@@ -440,6 +459,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="DotsThreeVertical 1" id="LPs-C5-lIa">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="OnClick_diaryReviseButton:" destination="0qe-i2-VpE" id="7kL-kA-ZVg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -448,8 +470,11 @@
                         <outlet property="diaryDetail" destination="8s8-lS-wwI" id="EVw-Yw-hLG"/>
                         <outlet property="diaryImageView" destination="pEp-PW-Pqk" id="v02-Iu-emT"/>
                         <outlet property="diaryName" destination="aol-tu-ULz" id="tu3-pf-bia"/>
+                        <outlet property="diaryReviseButton" destination="LPs-C5-lIa" id="1gH-0B-KiV"/>
                         <outlet property="diaryTitle" destination="d5B-Kg-DAM" id="0ei-oR-yUA"/>
                         <outlet property="diaryimagepageControl" destination="d5q-m3-JFL" id="0Tf-vh-Mbm"/>
+                        <outlet property="imagePageLabel" destination="GD3-2A-f22" id="oYG-OW-wEu"/>
+                        <outlet property="imagePageView" destination="Ghh-Fo-3wf" id="jdh-OK-n4T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rr2-Vr-9vd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -478,13 +503,31 @@
     <resources>
         <image name="DotsThreeVertical" width="40" height="40"/>
         <image name="DotsThreeVertical 1" width="20" height="20"/>
+        <image name="GearSix" width="24" height="24"/>
         <image name="Plus" width="24" height="24"/>
-        <image name="UserCircle" width="24" height="24"/>
         <image name="Vector" width="30.5" height="30.5"/>
         <image name="arrow_drop_down" width="32" height="32"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <namedColor name="DiaryTextColor">
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray200">
+            <color red="0.92199999094009399" green="0.92199999094009399" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray300">
+            <color red="0.73299998044967651" green="0.73299998044967651" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray500">
+            <color red="0.40000000596046448" green="0.40000000596046448" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray800">
+            <color red="0.21600000560283661" green="0.2199999988079071" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray900">
+            <color red="0.10999999940395355" green="0.11400000005960464" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primaryA">
+            <color red="0.51372551919999998" green="0.47450977560000002" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

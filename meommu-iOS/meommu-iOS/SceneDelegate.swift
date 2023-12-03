@@ -63,7 +63,6 @@ extension SceneDelegate {
         }
     }
     
-    // 초기 루트 뷰 설정을 위한 메서드
     private func setRootViewController(_ scene: UIScene, name: String, identifier: String) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -74,14 +73,4 @@ extension SceneDelegate {
             window.makeKeyAndVisible()
         }
     }
-    
-    
-    // 뷰컨을 직접 받아서 루트 뷰를 교체하는 메서드
-    func changeRootViewController(_ vc:UIViewController, animated: Bool) {
-        guard let window = self.window else { return }
-        window.rootViewController = vc // 전환
-        
-        UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: nil, completion: nil)
-      }
-    
 }

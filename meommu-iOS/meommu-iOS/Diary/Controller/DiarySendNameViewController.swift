@@ -20,6 +20,29 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
         
         // nameTextField의 delegate 설정
         nameTextField.delegate = self
+        
+        // 일기 수정하기
+        NotificationCenter.default.addObserver(self, selector: #selector(diaryEdit(_:)), name: NSNotification.Name("diaryEdit"), object: nil)
+    }
+    
+    // -----------------------------------------
+    // 일기 수정하기
+    
+    var diaryData: DiaryIdResponse.Data?
+    
+    var isEdited: Bool = false
+    
+    @objc func diaryEdit(_ notification: Notification) {
+        guard let diary = notification.userInfo?["diary"] as? DiaryIdResponse.Data else { return }
+
+        // 일기 데이터 프로터피에 저장
+        self.diaryData = diary
+        
+        // 일기 데이터를 화면에 표시
+        self.nameTextField.text = diary.dogName
+        
+        // 일기 수정하기 버튼 클릭
+        self.isEdited = true
     }
     
     
@@ -53,7 +76,7 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            
+        
         // 변경 후의 텍스트의 길이가 10 이하인지 확인
         return updatedText.count <= 10
     }
@@ -64,12 +87,27 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func OnClick_WriteButton(_ sender: Any) {
         
-        let diarywriteStoryboard = UIStoryboard(name: "DiaryWrite", bundle: nil)
-        let diarywriteVC = diarywriteStoryboard.instantiateViewController(identifier: "DiaryWriteViewController")
+        // nameTextField의 값 가져오기
+        guard let dogName = nameTextField.text else { return }
         
-        // segue show로 구현 필요
-        diarywriteVC.modalPresentationStyle = .overFullScreen
-        present(diarywriteVC, animated: true, completion: nil)
+        // DiaryWriteViewController에 데이터 전달
+        let diarywriteStoryboard = UIStoryboard(name: "DiaryWrite", bundle: nil)
+        
+        if let navController = diarywriteStoryboard.instantiateViewController(withIdentifier: "DiaryWriteViewController") as? UINavigationController,
+           let diarywriteVC = navController.viewControllers.first as? DiaryWriteViewController {
+            
+            // 일기 수정하기 기능 여부
+            if self.isEdited {
+                diarywriteVC.diaryData = self.diaryData
+            }
+            
+            diarywriteVC.dogName = dogName
+            diarywriteVC.isEdited = self.isEdited
+            
+            navController.modalPresentationStyle = .overFullScreen
+            navController.modalTransitionStyle = .crossDissolve
+            present(navController, animated: true, completion: nil)
+            
+        }
     }
-    
 }

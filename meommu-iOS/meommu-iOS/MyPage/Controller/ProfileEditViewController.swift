@@ -49,7 +49,7 @@ class ProfileEditViewController: UIViewController {
     func configureUIForDefaultState() {
         editModeButton.isEnabled = true
         // ❗️이후에 컬러 수정
-        editModeButton.tintColor = UIColor(hexCode: "#606077")
+        editModeButton.tintColor = .black
         // 수정하기 버튼 숨기기
         editButton.layer.isHidden = true
         }
@@ -87,15 +87,15 @@ class ProfileEditViewController: UIViewController {
         kindergartenNameStatusLabel.text = ""
         representativeNameStatusLabel.text = ""
         
-        kindergartenNameStatusLabel.textColor = .error
-        representativeNameStatusLabel.textColor = .error
+        kindergartenNameStatusLabel.textColor = .red
+        representativeNameStatusLabel.textColor = .red
     }
     
     //MARK: - 버튼 셋업 메서드
     func setupButtons(){
         // 다음 버튼 색상
-        editButton.backgroundColor = UIColor(hexCode: "#ABB0BA")
-        editButton.setTitleColor(.white, for: .normal)
+        editButton.backgroundColor = Color.darkGray.buttonColor
+        editButton.setTitleColor(Color.white.textColor, for: .normal)
         
         // 다음 버튼 초기 비활성화
         editButton.isEnabled = false
@@ -166,21 +166,21 @@ class ProfileEditViewController: UIViewController {
             kindergartenNameStatusLabel.text = "사용하실 수 없는 닉네임입니다."
             representativeNameStatusLabel.text = "사용하실 수 없는 대표자 이름입니다."
             
-            editButton.backgroundColor = UIColor(hexCode: "#ABB0BA")
+            editButton.backgroundColor = Color.darkGray.buttonColor
             editButton.isEnabled = false
             
         } else if isValidkindergartenName(kindergartenNameTextField.text) {
             
             representativeNameStatusLabel.text = "사용하실 수 없는 대표자 이름입니다."
             
-            editButton.backgroundColor = UIColor(hexCode: "#ABB0BA")
+            editButton.backgroundColor = Color.darkGray.buttonColor
             editButton.isEnabled = false
             
         } else if isValidrepresentativeName(representativeNameTextField.text) {
             
             kindergartenNameStatusLabel.text = "사용하실 수 없는 닉네임입니다."
             
-            editButton.backgroundColor = UIColor(hexCode: "#ABB0BA")
+            editButton.backgroundColor = Color.darkGray.buttonColor
             editButton.isEnabled = false
             
         }
@@ -228,19 +228,19 @@ extension ProfileEditViewController: UITextFieldDelegate {
     // 키보드 해제되면 텍스트 값이 바꼈는지 확인 후 버튼 활성화
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == kindergartenNameTextField && kindergartenNameTextField.text != userProfile?.kindergartenName {
-            editButton.backgroundColor = .prilmaryA
+            editButton.backgroundColor = Color.purple.buttonColor
             editButton.isEnabled = true
             return
         } else if textField == representativeNameTextField && representativeNameTextField.text != userProfile?.representativeName {
-            editButton.backgroundColor = .prilmaryA
+            editButton.backgroundColor = Color.purple.buttonColor
             editButton.isEnabled = true
             return
         } else if textField == phoneNumberTextField && phoneNumberTextField.text != userProfile?.phoneNumber && isValidPhoneNumber(phoneNumberTextField.text){
-            editButton.backgroundColor = .prilmaryA
+            editButton.backgroundColor = Color.purple.buttonColor
             editButton.isEnabled = true
             return
         }
-        editButton.backgroundColor = UIColor(hexCode: "#ABB0BA")
+        editButton.backgroundColor = Color.darkGray.buttonColor
         editButton.isEnabled = false
     }
     

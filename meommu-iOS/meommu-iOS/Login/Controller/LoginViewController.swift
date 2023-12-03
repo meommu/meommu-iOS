@@ -10,14 +10,11 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var firstMainLabel: UILabel!
     @IBOutlet weak var secondMainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
-    
-    @IBOutlet weak var loginImageView: UIImageView!
-    
-    var kindergartenName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,47 +22,51 @@ class LoginViewController: UIViewController {
         setupLebel()
         setupButton()
         setupCornerRadius()
-        setupImageView()
     }
-    
+
     //MARK: - 코너 레디어스 값 설정 메서드
     func setupCornerRadius() {
         nextButton.setCornerRadius(6.0)
     }
     
     func setupButton() {
-        nextButton.backgroundColor = .prilmaryA
-        nextButton.setTitleColor(.white, for: .normal)
+        nextButton.backgroundColor = Color.purple.buttonColor
+        nextButton.setTitleColor(Color.white.textColor, for: .normal)
         
+        // 백 버튼 색상 설정
+        backButton.tintColor = Color.darkGray.buttonColor
+    }
+
+    func setupLebel() {
+        firstMainLabel.textColor = Color.black.textColor
+        secondMainLabel.textColor = Color.black.textColor
+        subLabel.textColor = Color.darkGray.textColor
     }
     
-    func setupLebel() {
-        firstMainLabel.textColor = .gray900
-        secondMainLabel.textColor = .gray900
-        subLabel.textColor = .gray400
-        
-        if let kindergartenName {
-            firstMainLabel.text = "\(kindergartenName)님,"
+    // UIWindow의 rootViewController를 변경하여 화면전환 함수
+    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = viewControllerToPresent
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+        } else {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
         }
     }
     
-    func setupImageView() {
-        loginImageView.image = UIImage(named: "Onboarding3")
-    }
-    
-    
-    // 회원가입 완료 후 로그인 화면으로 돌아가기
-    // ❗️추후 스토리보드에 navigation Controller 추가 후, navigationController?.popToRootViewController(animated:)로 수정하기
+    // Diary 화면으로 전환
     @IBAction func changeWindowButtonToDiary(_ sender: Any) {
-        // 로그인하고 일기 화면으로 rootView 변경
-        let newStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "LoginFirstViewController")
-        
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        
-        sceneDelegate.changeRootViewController(newViewController, animated: true)
-        
+        let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+        self.changeRootViewController(newViewController)
     }
+    
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
+    
     
     
 }

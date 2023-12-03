@@ -65,11 +65,17 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // 일기 수정하기
     var diaryData: DiaryIdResponse.Data?
     var isEdited: Bool?
-
+    
     private func editDiary(diaryId: Int, title: String, content: String, dogName: String, imageIds: [Int]) {
+        
+        guard let accessToken = getAccessTokenFromKeychain() else {
+            print("Access Token not found.")
+            return
+        }
+        
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "Authorization": "Bearer \(AccessToken)"
+            "Authorization": "Bearer \(accessToken)"
         ]
         
         let parameters: [String: Any] = [
@@ -110,7 +116,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         
         presentPanModal(stepOneVC)
     }
-
+    
     
     // -----------------------------------------
     // 앨범에서 사진 추가하기
@@ -128,27 +134,27 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     @objc func OnClick_imagePickerButton(_ sender: UIButton) {
         let status = PHPhotoLibrary.authorizationStatus()
+        
+        switch status {
+        case .authorized:
+            presentPicker()
             
-            switch status {
-            case .authorized:
-                presentPicker()
-                
-            case .notDetermined:
-                PHPhotoLibrary.requestAuthorization { [weak self] status in
-                    if status == .authorized {
-                        DispatchQueue.main.async { [weak self] in
-                            self?.presentPicker()
-                        }
-                    } else {
-                        DispatchQueue.main.async { [weak self] in
-                            self?.showPermissionAlert()
-                        }
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { [weak self] status in
+                if status == .authorized {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.presentPicker()
+                    }
+                } else {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.showPermissionAlert()
                     }
                 }
-                
-            default:
-                showPermissionAlert()
             }
+            
+        default:
+            showPermissionAlert()
+        }
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
@@ -182,10 +188,10 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     private func presentPicker(){
         var configuration = PHPickerConfiguration()
-                
+        
         // 사진 선택 개수 제한 (여기서는 최대 5장)
         configuration.selectionLimit = 5 - selectedImages.count
-            
+        
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         
@@ -194,19 +200,19 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     // 권한 설정
     private func showPermissionAlert() {
-          let alert = UIAlertController(title:"앨범 접근 권한 필요", message:"사진을 선택하기 위해 앨범 접근 권한이 필요합니다. 설정에서 앨범 접근 권한을 허용해주세요.", preferredStyle:.alert)
-
-          alert.addAction(UIAlertAction(title:"설정으로 이동", style:.default) { _ in
-              guard let settingsURL = URL(string:UIApplication.openSettingsURLString) else { return }
-
-              UIApplication.shared.open(settingsURL)
-          })
-
-          alert.addAction(UIAlertAction(title:"취소", style:.cancel))
-
-          present(alert, animated:true)
-      }
-
+        let alert = UIAlertController(title:"앨범 접근 권한 필요", message:"사진을 선택하기 위해 앨범 접근 권한이 필요합니다. 설정에서 앨범 접근 권한을 허용해주세요.", preferredStyle:.alert)
+        
+        alert.addAction(UIAlertAction(title:"설정으로 이동", style:.default) { _ in
+            guard let settingsURL = URL(string:UIApplication.openSettingsURLString) else { return }
+            
+            UIApplication.shared.open(settingsURL)
+        })
+        
+        alert.addAction(UIAlertAction(title:"취소", style:.cancel))
+        
+        present(alert, animated:true)
+    }
+    
     // -----------------------------------------
     // 이미지뷰 테두리 만들기
     @IBOutlet var borderView5: UIView!
@@ -328,7 +334,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         
         dateTextField.resignFirstResponder()
     }
-
+    
     // -- 취소 버튼 클릭
     @objc func onPickCancel() {
         dateTextField.resignFirstResponder()
@@ -383,8 +389,6 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     // -----------------------------------------
     // 일기 내용 작성 완료
-    
-    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
     
     @IBOutlet var diaryWriteButton: UIBarButtonItem!
     
@@ -452,10 +456,23 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         }
     }
     
+    // 키체인에서 엑세스 토큰 가져오기
+    func getAccessTokenFromKeychain() -> String? {
+        let key = KeyChain.shared.accessTokenKey
+        let accessToken = KeyChain.shared.read(key: key)
+        return accessToken
+    }
+    
     private func createDiary(title: String, content: String, dogName: String, imageIds: [Int]) {
+        
+        guard let accessToken = getAccessTokenFromKeychain() else {
+            print("Access Token not found.")
+            return
+        }
+        
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "Authorization": "Bearer \(AccessToken)"
+            "Authorization": "Bearer \(accessToken)"
         ]
         
         let parameters: [String: Any] = [

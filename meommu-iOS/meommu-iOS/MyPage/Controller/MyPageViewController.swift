@@ -30,20 +30,15 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButton()
         setupView()
         setupProfile()
         setupTableView()
     }
     
-    func setupButton() {
-        logoutButton.setTitleColor(.gray300, for: .normal)
-        withdrawalButton.setTitleColor(.gray300, for: .normal)
-       
-    }
-    
     func setupView() {
-        lineView.backgroundColor = .gray300
+        logoutButton.setTitleColor(UIColor(hexCode: "ABB0BA"), for: .normal)
+        withdrawalButton.setTitleColor(UIColor(hexCode: "ABB0BA"), for: .normal)
+        lineView.backgroundColor = UIColor(hexCode: "ABB0BA")
     }
     
     //MARK: - 프로필 셋업 메서드

@@ -16,18 +16,6 @@
 		26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */; };
 		26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */; };
 		26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */; };
-		264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */; };
-		264BF3B12B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */; };
-		264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */; };
-		264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */; };
-		264BF3B72B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B62B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift */; };
-		264BF3BB2B14C9F700FCFBEC /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */; };
-		264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4A2AE3BA00009EADA2 /* SignUp.swift */; };
-		264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */; };
-		264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */; };
-		264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C12B187CB500FCFBEC /* String+Validation.swift */; };
-		264BF3C42B18E80700FCFBEC /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C32B18E80700FCFBEC /* ToastManager.swift */; };
-		264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C52B19B8B500FCFBEC /* KeyChain.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -47,6 +35,9 @@
 		F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */; };
 		F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */; };
 		F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */; };
+		F94A093C2B13698F00786C12 /* DiarySendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A093B2B13698F00786C12 /* DiarySendModel.swift */; };
+		F94A09402B136D5C00786C12 /* DiaryImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */; };
+		F94A09432B13755900786C12 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = F94A09422B13755900786C12 /* AlamofireImage */; };
 		F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F953DD602AB82B22009F3B52 /* DiarySend.storyboard */; };
 		F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2603C7ED2ADC4E7500090A9D /* MyPageViewController.swift */; };
 		F959853C2B0F5C11001F28F1 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED412ADDA715009EADA2 /* Page.swift */; };
@@ -56,24 +47,24 @@
 		F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */; };
 		F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */; };
 		F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959A1522AB8157E009D90A8 /* DiaryModel.swift */; };
+		F96F325A2B1022AD00EA4F67 /* DiaryMonthPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */; };
 		F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */; };
 		F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */; };
 		F9866C3F2ADE12AE00744164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9866C3E2ADE12AE00744164 /* Assets.xcassets */; };
 		F98888612AFD2219006AB274 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F98888602AFD2219006AB274 /* Alamofire */; };
+		F991C3D02B18BD6A00A4847B /* DiaryMonthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F991C3CF2B18BD6A00A4847B /* DiaryMonthPickerViewController.swift */; };
+		F991C3D52B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F991C3D32B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift */; };
+		F991C3D62B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F991C3D42B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib */; };
 		F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99368432AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift */; };
 		F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99368442AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib */; };
 		F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A152AC265D7000F11BD /* StepTwoViewController.swift */; };
 		F9947A192AC2678E000F11BD /* StepTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */; };
 		F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */; };
-		F9947A1F2AC26B1C000F11BD /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1B2AC26B1B000F11BD /* image5.png */; };
-		F9947A202AC26B1C000F11BD /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1C2AC26B1B000F11BD /* image2.png */; };
-		F9947A212AC26B1C000F11BD /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1D2AC26B1C000F11BD /* image4.png */; };
-		F9947A222AC26B1C000F11BD /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9947A1E2AC26B1C000F11BD /* image3.png */; };
 		F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */; };
 		F9AC5C3D2ADD62660044B22B /* c5637b392e4f496b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */; };
 		F9AE34362B0E2FA500B445A1 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A06DE62AFC01C30039813F /* Announcement.swift */; };
-		F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B1E1E72AB824AB00ABA4D6 /* image.png */; };
 		F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */; };
+		F9CB59252B14BCC100EDFDFD /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = F9CB59242B14BCC100EDFDFD /* PanModal */; };
 		F9D1BAD42AF31E9C004A7289 /* DiaryGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */; };
 		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
 		F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */; };
@@ -90,17 +81,6 @@
 		26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstViewController.swift; sourceTree = "<group>"; };
 		26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecondViewController.swift; sourceTree = "<group>"; };
 		26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdViewController.swift; sourceTree = "<group>"; };
-		264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addLeftPadding.swift"; sourceTree = "<group>"; };
-		264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryFirstViewController.swift; sourceTree = "<group>"; };
-		264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySecondViewController.swift; sourceTree = "<group>"; };
-		264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryThirdViewController.swift; sourceTree = "<group>"; };
-		264BF3B62B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryFourthViewController.swift; sourceTree = "<group>"; };
-		264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
-		264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
-		264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
-		264BF3C12B187CB500FCFBEC /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
-		264BF3C32B18E80700FCFBEC /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
-		264BF3C52B19B8B500FCFBEC /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -129,25 +109,26 @@
 		F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryWrite.storyboard; sourceTree = "<group>"; };
 		F93D6FA92AB9750400591C21 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
 		F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		F94A093B2B13698F00786C12 /* DiarySendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendModel.swift; sourceTree = "<group>"; };
+		F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryImageModel.swift; sourceTree = "<group>"; };
 		F953DD602AB82B22009F3B52 /* DiarySend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiarySend.storyboard; sourceTree = "<group>"; };
 		F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainEmptyTableViewCell.xib; sourceTree = "<group>"; };
 		F959A1522AB8157E009D90A8 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryMonthPicker.storyboard; sourceTree = "<group>"; };
 		F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableViewCell.swift; sourceTree = "<group>"; };
 		F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableViewCell.xib; sourceTree = "<group>"; };
 		F9866C3E2ADE12AE00744164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F991C3CF2B18BD6A00A4847B /* DiaryMonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMonthPickerViewController.swift; sourceTree = "<group>"; };
+		F991C3D32B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMonthPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		F991C3D42B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMonthPickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		F99368432AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDatePickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		F99368442AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryDatePickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9947A152AC265D7000F11BD /* StepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoViewController.swift; sourceTree = "<group>"; };
 		F9947A172AC2678E000F11BD /* StepTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoTableViewCell.swift; sourceTree = "<group>"; };
 		F9947A182AC2678E000F11BD /* StepTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepTwoTableViewCell.xib; sourceTree = "<group>"; };
-		F9947A1B2AC26B1B000F11BD /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image5.png; sourceTree = "<group>"; };
-		F9947A1C2AC26B1B000F11BD /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
-		F9947A1D2AC26B1C000F11BD /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
-		F9947A1E2AC26B1C000F11BD /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeViewController.swift; sourceTree = "<group>"; };
 		F9AC5C3C2ADD616F0044B22B /* c5637b392e4f496b.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = c5637b392e4f496b.ttf; sourceTree = "<group>"; };
-		F9B1E1E72AB824AB00ABA4D6 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryDatePicker.storyboard; sourceTree = "<group>"; };
 		F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryGuide.storyboard; sourceTree = "<group>"; };
 		F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryRevise.storyboard; sourceTree = "<group>"; };
@@ -160,6 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98888612AFD2219006AB274 /* Alamofire in Frameworks */,
+				F94A09432B13755900786C12 /* AlamofireImage in Frameworks */,
+				F9CB59252B14BCC100EDFDFD /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,11 +212,6 @@
 				26215E3D2AB895C500F28FBF /* Helper.swift */,
 				261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */,
 				261003B32AD3AF07001F5E28 /* Color.swift */,
-				264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */,
-				264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */,
-				264BF3C12B187CB500FCFBEC /* String+Validation.swift */,
-				264BF3C32B18E80700FCFBEC /* ToastManager.swift */,
-				264BF3C52B19B8B500FCFBEC /* KeyChain.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -263,8 +241,6 @@
 				269AED472AE3AE33009EADA2 /* Model */,
 				F907437A2AB73C0900F7C503 /* View */,
 				F907437B2AB73C4C00F7C503 /* Controller */,
-				264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */,
-				264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -284,10 +260,6 @@
 				26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */,
 				26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */,
 				F933D8A22AB73982006EDA07 /* LoginViewController.swift */,
-				264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */,
-				264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */,
-				264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */,
-				264BF3B62B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -377,12 +349,9 @@
 		F959A1512AB81561009D90A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */,
 				F959A1522AB8157E009D90A8 /* DiaryModel.swift */,
-				F9B1E1E72AB824AB00ABA4D6 /* image.png */,
-				F9947A1C2AC26B1B000F11BD /* image2.png */,
-				F9947A1E2AC26B1C000F11BD /* image3.png */,
-				F9947A1D2AC26B1C000F11BD /* image4.png */,
-				F9947A1B2AC26B1B000F11BD /* image5.png */,
+				F94A093B2B13698F00786C12 /* DiarySendModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,6 +364,8 @@
 				F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */,
 				F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */,
 				F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */,
+				F991C3D32B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift */,
+				F991C3D42B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -405,6 +376,7 @@
 				F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */,
 				F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */,
 				F9B9CF832AF5007A009FCA26 /* DiaryDatePicker.storyboard */,
+				F96F32592B1022AD00EA4F67 /* DiaryMonthPicker.storyboard */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -416,6 +388,7 @@
 				F9947A152AC265D7000F11BD /* StepTwoViewController.swift */,
 				F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */,
 				F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */,
+				F991C3CF2B18BD6A00A4847B /* DiaryMonthPickerViewController.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -438,6 +411,8 @@
 			name = "meommu-iOS";
 			packageProductDependencies = (
 				F98888602AFD2219006AB274 /* Alamofire */,
+				F94A09422B13755900786C12 /* AlamofireImage */,
+				F9CB59242B14BCC100EDFDFD /* PanModal */,
 			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
@@ -469,6 +444,8 @@
 			mainGroup = F933D8922AB73982006EDA07;
 			packageReferences = (
 				F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				F9CB59232B14BCC100EDFDFD /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
@@ -488,25 +465,22 @@
 				F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */,
 				F9866C3F2ADE12AE00744164 /* Assets.xcassets in Resources */,
 				F9D1BAD42AF31E9C004A7289 /* DiaryGuide.storyboard in Resources */,
-				F9947A212AC26B1C000F11BD /* image4.png in Resources */,
-				F9947A222AC26B1C000F11BD /* image3.png in Resources */,
 				F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */,
 				F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */,
 				2603C7F02ADC4E8A00090A9D /* MyPageStoryboard.storyboard in Resources */,
+				F991C3D62B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib in Resources */,
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,
 				26215E372AB87FD300F28FBF /* Onboarding.storyboard in Resources */,
-				F9947A1F2AC26B1C000F11BD /* image5.png in Resources */,
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
 				F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */,
-				F9B1E1E82AB824AB00ABA4D6 /* image.png in Resources */,
-				F9947A202AC26B1C000F11BD /* image2.png in Resources */,
 				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
 				F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */,
 				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
 				26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */,
+				F96F325A2B1022AD00EA4F67 /* DiaryMonthPicker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,48 +492,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9947A192AC2678E000F11BD /* StepTwoTableViewCell.swift in Sources */,
-				264BF3B12B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift in Sources */,
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
-				264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */,
-				264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
 				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,
 				269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */,
 				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
-				264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */,
-				264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */,
-				264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */,
+				F94A093C2B13698F00786C12 /* DiarySendModel.swift in Sources */,
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
+				F991C3D52B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
-				264BF3BB2B14C9F700FCFBEC /* LoginAPI.swift in Sources */,
 				F933D89F2AB73982006EDA07 /* AppDelegate.swift in Sources */,
 				F959853D2B0F5C1B001F28F1 /* AnnouncementViewController.swift in Sources */,
 				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,
 				F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */,
-				264BF3B72B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift in Sources */,
 				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
 				269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */,
 				26A06DE52AFC01580039813F /* AnnouncementTableViewCell.swift in Sources */,
 				F9AE34362B0E2FA500B445A1 /* Announcement.swift in Sources */,
+				F991C3D02B18BD6A00A4847B /* DiaryMonthPickerViewController.swift in Sources */,
 				F959853E2B0F5C2F001F28F1 /* PageCell.swift in Sources */,
 				F979D7A72AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift in Sources */,
 				F9947A162AC265D7000F11BD /* StepTwoViewController.swift in Sources */,
+				F94A09402B136D5C00786C12 /* DiaryImageModel.swift in Sources */,
 				F99368452AF9C79800999521 /* DiaryDatePickerCollectionViewCell.swift in Sources */,
 				F93D6FAA2AB9750400591C21 /* DiaryWriteViewController.swift in Sources */,
-				264BF3C42B18E80700FCFBEC /* ToastManager.swift in Sources */,
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 				26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */,
 				F959853F2B0F5C31001F28F1 /* AlertViewController.swift in Sources */,
 				26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */,
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
-				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,
 				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,
-				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,
 				261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
-				264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */,
 				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,
 				F959853C2B0F5C11001F28F1 /* Page.swift in Sources */,
 				269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */,
@@ -786,6 +752,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.0;
+			};
+		};
 		F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -794,13 +768,31 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		F9CB59232B14BCC100EDFDFD /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F94A09422B13755900786C12 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		F98888602AFD2219006AB274 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F9CB59242B14BCC100EDFDFD /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9CB59232B14BCC100EDFDFD /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,47 +7,64 @@
 
 import UIKit
 
-extension UIColor {
-    /// #F5F6F8
-    static let gray100: UIColor = UIColor(hexCode: "#F5F6F8")
-    /// #EBEBF0
-    static let gray200: UIColor = UIColor(hexCode: "#EBEBF0")
-    /// #BBBBC9
-    static let gray300: UIColor = UIColor(hexCode: "#BBBBC9")
-    /// #89899C
-    static let gray400: UIColor = UIColor(hexCode: "#89899C")
-    /// #666675
-    static let gray500: UIColor = UIColor(hexCode: "#666675")
-    /// #555563
-    static let gray600: UIColor = UIColor(hexCode: "#555563")
-    /// #4E4E5B
-    static let gray700: UIColor = UIColor(hexCode: "#4E4E5B")
-    /// #373840
-    static let gray800: UIColor = UIColor(hexCode: "#373840")
-    /// #1C1D22
-    static let gray900: UIColor = UIColor(hexCode: "#1C1D22")
+enum Color: Int64 {
+    case purple    = 1  // 8579F1
+    case darkGray  = 2  // B7B7CB
+    case lightGray = 3  // EBEBF0
+    case green   = 4  // 63BCA9
+    case black = 5
+    case white = 6
     
-    /// #B7B8BA
-    static let blueGray900: UIColor = UIColor(hexCode: "#B7B8BA")
-    /// #6F7682
-    static let blueGray200: UIColor = UIColor(hexCode: "#6F7682")
-    /// #444A56
-    static let blueGray300: UIColor = UIColor(hexCode: "#444A56")
-    /// #363C48
-    static let blueGray400: UIColor = UIColor(hexCode: "#363C48")
-    /// #1B1E26
-    static let blueGray500: UIColor = UIColor(hexCode: "#1B1E26")
+    var textColor: UIColor {
+        switch self {
+        case .purple:
+            return UIColor(hexCode: "#8579F1")
+        case .darkGray:
+            return UIColor(hexCode: "#B7B7CB")
+        case .lightGray:
+            return UIColor(hexCode: "#EBEBF0")
+        case .green:
+            return UIColor(hexCode: "#63BCA9")
+        case .black:
+            return UIColor(hexCode: "#1C1D22")
+        case .white:
+            return UIColor(hexCode: "#FFFFFF")
+        }
+    }
     
-    /// #8579F1
-    static let prilmaryA: UIColor = UIColor(hexCode: "#8579F1")
-    /// #604FF4
-    static let prilmaryB: UIColor = UIColor(hexCode: "#604FF4")
+    var backgroundColor: UIColor {
+        switch self {
+        case .purple:
+            return UIColor(hexCode: "#8579F1")
+        case .darkGray:
+            return UIColor(hexCode: "#B7B7CB")
+        case .lightGray:
+            return UIColor(hexCode: "#EBEBF0")
+        case .green:
+            return UIColor(hexCode: "#63BCA9")
+        case .black:
+            return UIColor(hexCode: "#1C1D22")
+        case .white:
+            return UIColor(hexCode: "#FFFFFF")
+        }
+    }
     
-    /// #FF8585
-    static let error: UIColor = UIColor(hexCode: "#FF8585")
-    /// #63BCA9
-    static let success: UIColor = UIColor(hexCode: "#63BCA9")
-    
+    var buttonColor: UIColor {
+        switch self {
+        case .purple:
+            return UIColor(hexCode: "#8579F1")
+        case .darkGray:
+            return UIColor(hexCode: "#B7B7CB")
+        case .lightGray:
+            return UIColor(hexCode: "#EBEBF0")
+        case .green:
+            return UIColor(hexCode: "#63BCA9")
+        case .black:
+            return UIColor(hexCode: "#1C1D22")
+        case .white:
+            return UIColor(hexCode: "#FFFFFF")
+        }
+    }
 }
 
 //MARK: - UIColor 확장 - Hex Color 사용

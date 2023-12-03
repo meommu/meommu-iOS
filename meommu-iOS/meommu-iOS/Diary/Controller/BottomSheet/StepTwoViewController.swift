@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PanModal
 
 
 class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -70,14 +71,47 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "SelectedButton")
+        cell.contentView.backgroundColor = UIColor(named: "primaryA")
         cell.detailLabel.textColor = .white
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BottomSheetTableView")
-        cell.detailLabel.textColor = UIColor(named: "BottomSheetFont")
+        cell.contentView.backgroundColor = UIColor(named: "BlueGray400")
+        cell.detailLabel.textColor = UIColor(named: "BlueGray200")
     }
     
+}
+
+extension StepTwoViewController: PanModalPresentable {
+    
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    // 짧은 형태의 높이 설정
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(519)  // 바텀 시트의 높이 설정
+    }
+    
+    // 긴 형태의 높이 설정
+    var longFormHeight: PanModalHeight {
+        //위에서부터 떨어지게 설정
+        return .maxHeightWithTopInset(293)
+    }
+    
+    // 상단 코너를 둥글게 설정
+    var shouldRoundTopCorners: Bool {
+        return true
+    }
+    
+    // 상단 코너의 반경을 설정
+    var cornerRadius: CGFloat {
+        return 20.0  // 둥근 모서리 설정
+    }
+    
+    // 최상단 스크롤 불가
+    var anchorModalToLongForm: Bool {
+        return false
+    }
 }

@@ -11,16 +11,55 @@ import PanModal
 
 
 class DiaryReviseViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
+    // 일기 수정하기
+    
+    @IBOutlet var diaryEditButton: UIButton!
+    
+    @IBAction func OnClick_diaryEditButton(_ sender: Any) {
+        guard let diaryId = diaryId else { return }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(AccessToken)",
+            "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+        ]
+        
+        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)", method: .get, headers: headers).responseDecodable(of: DiaryIdResponse.self) { response in
+            switch response.result {
+            case .success(let diaryIdResponse):
+                if diaryIdResponse.code == "0000" {
+                    print("Diary load success")
+                    self.sendDiaryDataToViewController(diary: diaryIdResponse.data)
+                } else {
+                    print("Diary load failed: \(diaryIdResponse.message)")
+                }
+            case .failure(let error):
+                print("Diary load error: \(error)")
+            }
+        }
+        
+        let diarysendStoryboard = UIStoryboard(name: "DiarySend", bundle: nil)
+        let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendNameViewController")
+        diarysendVC.modalPresentationStyle = .fullScreen
+        self.present(diarysendVC, animated: true, completion: nil)
+    }
+    
+    func sendDiaryDataToViewController(diary: DiaryIdResponse.Data) {
+        // 이름 수정
+        NotificationCenter.default.post(name: NSNotification.Name("diaryEdit"), object: nil, userInfo: ["diary": diary])
+        
+        // 제목, 날짜, 내용 수정
+        NotificationCenter.default.post(name: NSNotification.Name("diaryEditClicked"), object: nil)
+    }
     
     // 일기 삭제하기
     var diaryId: Int?
-
+    
     
     @IBOutlet var diaryDeleteButton: UIButton!
     
@@ -32,7 +71,7 @@ class DiaryReviseViewController: UIViewController {
     
     func deleteDiary() {
         guard let diaryId = diaryId else { return }
-
+        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AccessToken)",
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"

@@ -20,6 +20,29 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
         
         // nameTextField의 delegate 설정
         nameTextField.delegate = self
+        
+        // 일기 수정하기
+        NotificationCenter.default.addObserver(self, selector: #selector(diaryEdit(_:)), name: NSNotification.Name("diaryEdit"), object: nil)
+    }
+    
+    // -----------------------------------------
+    // 일기 수정하기
+    
+    var diaryData: DiaryIdResponse.Data?
+    
+    var isEdited: Bool = false
+    
+    @objc func diaryEdit(_ notification: Notification) {
+        guard let diary = notification.userInfo?["diary"] as? DiaryIdResponse.Data else { return }
+
+        // 일기 데이터 프로터피에 저장
+        self.diaryData = diary
+        
+        // 일기 데이터를 화면에 표시
+        self.nameTextField.text = diary.dogName
+        
+        // 일기 수정하기 버튼 클릭
+        self.isEdited = true
     }
     
     
@@ -72,7 +95,14 @@ class DiarySendNameViewController: UIViewController, UITextFieldDelegate {
         
         if let navController = diarywriteStoryboard.instantiateViewController(withIdentifier: "DiaryWriteViewController") as? UINavigationController,
            let diarywriteVC = navController.viewControllers.first as? DiaryWriteViewController {
+            
+            // 일기 수정하기 기능 여부
+            if self.isEdited {
+                diarywriteVC.diaryData = self.diaryData
+            }
+            
             diarywriteVC.dogName = dogName
+            diarywriteVC.isEdited = self.isEdited
             
             navController.modalPresentationStyle = .overFullScreen
             navController.modalTransitionStyle = .crossDissolve

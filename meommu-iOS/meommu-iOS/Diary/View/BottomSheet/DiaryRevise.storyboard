@@ -32,6 +32,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="OnClick_diaryEditButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oUI-Vt-GQF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-25-xxj">
                                         <rect key="frame" x="151.33333333333334" y="88" width="72.666666666666657" height="31"/>
@@ -67,6 +70,7 @@
                     </view>
                     <connections>
                         <outlet property="diaryDeleteButton" destination="7fm-25-xxj" id="nH9-Vy-t7V"/>
+                        <outlet property="diaryEditButton" destination="TOY-Vx-oWV" id="X9d-XA-jLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

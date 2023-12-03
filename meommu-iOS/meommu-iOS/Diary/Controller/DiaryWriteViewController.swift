@@ -10,6 +10,7 @@ import PhotosUI
 import MobileCoreServices
 import UniformTypeIdentifiers
 import Alamofire
+import PanModal
 
 
 class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate, UITextFieldDelegate {
@@ -18,7 +19,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         makeImageViewBorder()
         
         // 앨범에서 이미지 추가하기
@@ -27,7 +28,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         
         // 이미지 피커 버튼에 액션 추가
         imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
-
+        
         diaryTitleTextField.delegate = self
         diaryContextTextView.delegate = self
         
@@ -37,13 +38,66 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         }
         
         // 데이트 피커
-        todayDateSet()
         setAvailableDate()
         createPickerView()
         
+        // isEdited가 true인 경우 데이터 설정
+        if let isEdited = isEdited, isEdited {
+            if let date = diaryData?.date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                if let actualDate = formatter.date(from: date) {
+                    let calendar = Calendar.current
+                    let components = calendar.dateComponents([.year, .month, .day], from: actualDate)
+                    yearLabel.text = "\(components.year ?? 0)년"
+                    monthLabel.text = "\(components.month ?? 0)월"
+                    dateLabel.text = "\(components.day ?? 0)일"
+                }
+            }
+            diaryTitleTextField.text = diaryData?.title
+            diaryContextTextView.text = diaryData?.content
+        } else {
+            todayDateSet()
+        }
     }
     
-    
+    // -----------------------------------------
+    // 일기 수정하기
+    var diaryData: DiaryIdResponse.Data?
+    var isEdited: Bool?
+
+    private func editDiary(diaryId: Int, title: String, content: String, dogName: String, imageIds: [Int]) {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(AccessToken)"
+        ]
+        
+        let parameters: [String: Any] = [
+            "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
+            "dogName": dogName,
+            "title": title,
+            "content": content,
+            "imageIds": imageIds
+        ]
+        
+        let url = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)"
+        
+        AF.request(url,
+                   method: .put,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+        .response { response in
+            debugPrint(response)
+            
+            // API 호출이 완료되면 메인 화면으로 이동
+            DispatchQueue.main.async { [weak self] in
+                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+                self?.changeRootViewController(newViewController)
+            }
+        }
+    }
     
     // -----------------------------------------
     // 1단계 바텀시트
@@ -51,7 +105,10 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
         
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
+        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
         
+        presentPanModal(stepOneVC)
     }
 
     
@@ -266,8 +323,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     // -- 확인 버튼 클릭
     @objc func onPickDone() {
         yearLabel.text = "\(selectedYear)년"
-        monthLabel.text = "\(selectedMonth)월"
-        dateLabel.text = "\(selectedDate)일"
+        monthLabel.text = String(format: "%02d", selectedMonth) + "월"
+        dateLabel.text = String(format: "%02d", selectedDate) + "일"
         
         dateTextField.resignFirstResponder()
     }
@@ -339,8 +396,12 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         let imageUploadGroup = DispatchGroup()
         
         if selectedImages.isEmpty {
-            // 이미지가 없는 경우, 바로 일기 생성 API 호출
-            createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+            // 이미지가 없는 경우, 바로 api 호출
+            if let isEdited = isEdited, isEdited {
+                editDiary(diaryId: diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+            } else {
+                createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+            }
         } else {
             // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
             selectedImages.forEach { image in
@@ -381,7 +442,11 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
             }
             
             imageUploadGroup.notify(queue: .main) {
-                self.createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                if let isEdited = self.isEdited, isEdited {
+                    self.editDiary(diaryId: self.diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                } else {
+                    self.createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                }
             }
             
         }

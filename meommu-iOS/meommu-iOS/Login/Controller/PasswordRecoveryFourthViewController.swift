@@ -40,6 +40,13 @@ class PasswordRecoveryFourthViewController: UIViewController {
     func setupTextField() {
         confirmPasswordTextField.backgroundColor = .gray100
         confirmPasswordTextField.addLeftPadding()
+        
+        // border 설정
+        confirmPasswordTextField.layer.borderColor = UIColor.gray300.cgColor
+        confirmPasswordTextField.layer.borderWidth = 2.0
+        
+        // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
+        confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
     }
     
     //MARK: - 코너 레디어스 값 설정 메서드
@@ -87,7 +94,7 @@ class PasswordRecoveryFourthViewController: UIViewController {
 //MARK: - UITextFieldDelegate 확장
 extension PasswordRecoveryFourthViewController: UITextFieldDelegate {
     //MARK: - 다음 버튼 활성화 메서드
-    private func updateLoginButtonState() {
+    private func updateNextButtonState() {
         // 다음 버튼 활성화 조건 확인
         guard let password = confirmPasswordTextField.text, !password.isEmpty, password.isPasswordFormatValid()
         else {
@@ -97,5 +104,34 @@ extension PasswordRecoveryFourthViewController: UITextFieldDelegate {
         }
         nextButton.backgroundColor = .prilmaryA
         nextButton.isEnabled = true
+    }
+    
+    //MARK: - 델리게이트 메서드 - 텍스트 필드 리턴 시 실행되는 메서드
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 키보드 내리기
+        textField.resignFirstResponder()
+        
+        // 다음 버튼 활성화 확인 메서드
+        updateNextButtonState()
+        return true
+    }
+    
+    //MARK: - 모든 텍스트 피드 입력 동작 시 실행되는 메서드
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        updateNextButtonState()
+    }
+    
+    //MARK: - 화면에 탭을 감지(UIResponder)하는 메서드 - 빈 화면 터치 시 키보드 해지
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        confirmPasswordTextField.resignFirstResponder()
+        
+        // 다음 버튼 활성화 확인 메서드
+        updateNextButtonState()
     }
 }

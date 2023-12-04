@@ -775,7 +775,7 @@
                                     <constraint firstAttribute="height" constant="64" id="Zet-JW-AhX"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  코드" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGy-zi-DRn">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="코드" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGy-zi-DRn">
                                 <rect key="frame" x="20" y="665" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="JyS-He-NJP"/>
@@ -873,7 +873,7 @@
                                     <constraint firstAttribute="height" constant="64" id="sSU-6s-hjV"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13A-3R-1m7">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13A-3R-1m7">
                                 <rect key="frame" x="20" y="665" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="2cV-KF-cOg"/>
@@ -948,7 +948,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nmG-Rc-3gh" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="y3i-rI-jB0"/>
+                                    <action selector="nextButtonTapped:" destination="gv4-Yc-69T" eventType="touchUpInside" id="tA6-DY-fAc"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-XT-YMr">
@@ -971,7 +971,7 @@
                                     <constraint firstAttribute="height" constant="64" id="slo-Jl-oUC"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  이메일" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX4-YG-vzn">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이메일" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX4-YG-vzn">
                                 <rect key="frame" x="20" y="665" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="0SU-DU-RJi"/>
@@ -1017,6 +1017,7 @@
                         <outlet property="backButton" destination="iIF-rj-lZJ" id="28i-xX-utb"/>
                         <outlet property="emailTextField" destination="IX4-YG-vzn" id="14O-xL-T29"/>
                         <outlet property="nextButton" destination="dv7-ZA-eeK" id="886-IX-bwa"/>
+                        <segue destination="nmG-Rc-3gh" kind="presentation" identifier="toSecondPasswordRecoveryVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RzP-W3-4yR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQv-Py-v3I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1069,7 +1070,7 @@
                                     <constraint firstAttribute="height" constant="64" id="dPF-eo-pcj"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-Bq-Uhi">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-Bq-Uhi">
                                 <rect key="frame" x="20" y="665" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="UCm-oZ-ZZi"/>

@@ -752,7 +752,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yQ5-i4-JaQ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="UiW-y5-5dq"/>
+                                    <action selector="nextButtonTapped:" destination="nmG-Rc-3gh" eventType="touchUpInside" id="Z2s-zK-Laf"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RKg-NA-UvI">
@@ -821,6 +821,7 @@
                         <outlet property="backButton" destination="rKm-02-XS2" id="oJd-GF-eK9"/>
                         <outlet property="checkEmailCodeTextField" destination="xGy-zi-DRn" id="hxZ-er-JKs"/>
                         <outlet property="nextButton" destination="3cE-EX-vRx" id="R9K-LK-O0R"/>
+                        <segue destination="yQ5-i4-JaQ" kind="presentation" identifier="toPasswordRecoveryThirdVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Rbg-Uu-bX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9E-0b-3SU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1017,7 +1018,7 @@
                         <outlet property="backButton" destination="iIF-rj-lZJ" id="28i-xX-utb"/>
                         <outlet property="emailTextField" destination="IX4-YG-vzn" id="14O-xL-T29"/>
                         <outlet property="nextButton" destination="dv7-ZA-eeK" id="886-IX-bwa"/>
-                        <segue destination="nmG-Rc-3gh" kind="presentation" identifier="toSecondPasswordRecoveryVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RzP-W3-4yR"/>
+                        <segue destination="nmG-Rc-3gh" kind="presentation" identifier="toPasswordRecoverySecondVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RzP-W3-4yR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQv-Py-v3I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

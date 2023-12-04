@@ -9,7 +9,7 @@ import UIKit
 
 class ToastManager {
     static func showToastBelowTextField(message: String, font: UIFont, belowTextField textField: UITextField, in viewController: UIViewController) {
-        let toastLabel = UILabel()
+        let toastLabel = PaddingToastLabel()
         toastLabel.translatesAutoresizingMaskIntoConstraints = false
         toastLabel.backgroundColor = UIColor.gray400
         toastLabel.textColor = UIColor.gray200
@@ -25,7 +25,6 @@ class ToastManager {
         NSLayoutConstraint.activate([
             toastLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 7),
             toastLabel.centerXAnchor.constraint(equalTo: textField.centerXAnchor),
-            toastLabel.widthAnchor.constraint(equalToConstant: 208),
             toastLabel.heightAnchor.constraint(equalToConstant: 45)
         ])
 
@@ -37,7 +36,7 @@ class ToastManager {
     }
     
     static func showToastAboveTextField(message: String, font: UIFont, aboveTextField textField: UITextField, in viewController: UIViewController) {
-            let toastLabel = UILabel()
+            let toastLabel = PaddingToastLabel()
             toastLabel.translatesAutoresizingMaskIntoConstraints = false
         toastLabel.backgroundColor = UIColor.gray400
         toastLabel.textColor = UIColor.gray200
@@ -53,7 +52,6 @@ class ToastManager {
             NSLayoutConstraint.activate([
                 toastLabel.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -13),
                 toastLabel.centerXAnchor.constraint(equalTo: textField.centerXAnchor),
-//                toastLabel.widthAnchor.constraint(equalToConstant: 177),
                 toastLabel.heightAnchor.constraint(equalToConstant: 45)
             ])
 
@@ -63,4 +61,26 @@ class ToastManager {
                 toastLabel.removeFromSuperview()
             })
         }
+}
+
+// 토스트 레이블에 패딩 값을 넣어주기 위함.
+class PaddingToastLabel: UILabel {
+    private var padding = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+
+    convenience init(padding: UIEdgeInsets) {
+        self.init()
+        self.padding = padding
+    }
+
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: padding))
+    }
+
+    override var intrinsicContentSize: CGSize {
+        var contentSize = super.intrinsicContentSize
+        contentSize.height += padding.top + padding.bottom
+        contentSize.width += padding.left + padding.right
+
+        return contentSize
+    }
 }

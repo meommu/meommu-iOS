@@ -28,6 +28,8 @@
 		264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C12B187CB500FCFBEC /* String+Validation.swift */; };
 		264BF3C42B18E80700FCFBEC /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C32B18E80700FCFBEC /* ToastManager.swift */; };
 		264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C52B19B8B500FCFBEC /* KeyChain.swift */; };
+		2686083D2B1DDA9E00FA823E /* PasswordRecoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686083C2B1DDA9E00FA823E /* PasswordRecoveryService.swift */; };
+		2686083F2B1DDE8A00FA823E /* PasswordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -104,6 +106,8 @@
 		264BF3C12B187CB500FCFBEC /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		264BF3C32B18E80700FCFBEC /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		264BF3C52B19B8B500FCFBEC /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		2686083C2B1DDA9E00FA823E /* PasswordRecoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryService.swift; sourceTree = "<group>"; };
+		2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecovery.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +263,10 @@
 			children = (
 				269AED4A2AE3BA00009EADA2 /* SignUp.swift */,
 				269AED4C2AE3BAF3009EADA2 /* Login.swift */,
+				2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */,
+				264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */,
+				264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */,
+				2686083C2B1DDA9E00FA823E /* PasswordRecoveryService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,8 +277,6 @@
 				269AED472AE3AE33009EADA2 /* Model */,
 				F907437A2AB73C0900F7C503 /* View */,
 				F907437B2AB73C4C00F7C503 /* Controller */,
-				264BF3BA2B14C9F700FCFBEC /* LoginAPI.swift */,
-				264BF3BD2B14CD0400FCFBEC /* SignUpAPI.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -528,10 +534,12 @@
 				F9947A192AC2678E000F11BD /* StepTwoTableViewCell.swift in Sources */,
 				264BF3B12B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift in Sources */,
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
+				2686083F2B1DDE8A00FA823E /* PasswordRecovery.swift in Sources */,
 				264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */,
 				264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
+				2686083D2B1DDA9E00FA823E /* PasswordRecoveryService.swift in Sources */,
 				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,
 				269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */,
 				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,

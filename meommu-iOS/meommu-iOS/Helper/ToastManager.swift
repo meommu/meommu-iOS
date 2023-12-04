@@ -48,12 +48,12 @@ class ToastManager {
             toastLabel.layer.cornerRadius = 10
             toastLabel.clipsToBounds = true
             viewController.view.addSubview(toastLabel)
-
+        
             // 오토레이아웃 설정
             NSLayoutConstraint.activate([
                 toastLabel.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -13),
                 toastLabel.centerXAnchor.constraint(equalTo: textField.centerXAnchor),
-                toastLabel.widthAnchor.constraint(equalToConstant: 177),
+//                toastLabel.widthAnchor.constraint(equalToConstant: 177),
                 toastLabel.heightAnchor.constraint(equalToConstant: 45)
             ])
 
@@ -63,6 +63,4 @@ class ToastManager {
                 toastLabel.removeFromSuperview()
             })
         }
-    
-    
 }

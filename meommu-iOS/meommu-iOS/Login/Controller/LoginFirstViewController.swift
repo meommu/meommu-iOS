@@ -196,6 +196,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
         
     }
     
+    //MARK: - 키보드 활성화 시 화면 올리는 메서드
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         // 부드러운 효과를 위해 애니메이션 처리
@@ -205,8 +206,8 @@ extension LoginFirstViewController: UITextFieldDelegate {
         }        
     }
     
+    //MARK: - 키보드 비활성화 시 화면 내리는 메서드
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         
         UIView.animate(withDuration: 0.3) {
             let transform = CGAffineTransform(translationX: 0, y: 0)

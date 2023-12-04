@@ -1045,6 +1045,9 @@
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="Zs5-Xq-sT9" eventType="touchUpInside" id="0z9-i7-JgC"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kxt-JH-1fe">
                                 <rect key="frame" x="20" y="64" width="335" height="64"/>

@@ -178,7 +178,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
             loginButton.isEnabled = false
             return
         }
-        loginButton.backgroundColor = .prilmaryA
+        loginButton.backgroundColor = .primaryA
         loginButton.isEnabled = true
     }
     

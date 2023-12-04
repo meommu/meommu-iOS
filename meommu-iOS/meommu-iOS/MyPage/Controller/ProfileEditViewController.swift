@@ -228,15 +228,15 @@ extension ProfileEditViewController: UITextFieldDelegate {
     // 키보드 해제되면 텍스트 값이 바꼈는지 확인 후 버튼 활성화
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == kindergartenNameTextField && kindergartenNameTextField.text != userProfile?.kindergartenName {
-            editButton.backgroundColor = .prilmaryA
+            editButton.backgroundColor = .primaryA
             editButton.isEnabled = true
             return
         } else if textField == representativeNameTextField && representativeNameTextField.text != userProfile?.representativeName {
-            editButton.backgroundColor = .prilmaryA
+            editButton.backgroundColor = .primaryA
             editButton.isEnabled = true
             return
         } else if textField == phoneNumberTextField && phoneNumberTextField.text != userProfile?.phoneNumber && isValidPhoneNumber(phoneNumberTextField.text){
-            editButton.backgroundColor = .prilmaryA
+            editButton.backgroundColor = .primaryA
             editButton.isEnabled = true
             return
         }

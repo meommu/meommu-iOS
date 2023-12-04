@@ -189,7 +189,7 @@ extension LoginThirdViewController: UITextFieldDelegate {
             nextButton.isEnabled = false
             return
         }
-        nextButton.backgroundColor = .prilmaryA
+        nextButton.backgroundColor = .primaryA
         nextButton.isEnabled = true
     }
     

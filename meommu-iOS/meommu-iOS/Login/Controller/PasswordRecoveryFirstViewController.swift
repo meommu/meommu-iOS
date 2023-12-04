@@ -67,6 +67,9 @@ class PasswordRecoveryFirstViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        // 비동기 처리 중을 나타냄.
+        nextButton.makeLoadingButton()
+        
         let passwordRecoveryService = PasswordRecoveryService()
         
         guard let email = emailTextField.text else { return }
@@ -81,7 +84,8 @@ class PasswordRecoveryFirstViewController: UIViewController {
                 // 400~500 에러
                 print("Error: \(error.message)")
             }
-
+            
+            self.nextButton.makeEnabledButton()
         }
         
     }
@@ -115,7 +119,7 @@ extension PasswordRecoveryFirstViewController: UITextFieldDelegate {
             return
         }
         // 다음 버튼 활성화
-        nextButton.backgroundColor = .prilmaryA
+        nextButton.backgroundColor = .primaryA
         nextButton.isEnabled = true
     }
     

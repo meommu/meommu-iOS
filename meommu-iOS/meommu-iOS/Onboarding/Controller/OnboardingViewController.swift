@@ -33,7 +33,7 @@ class OnboardingViewController: UIViewController {
     }
     
     func setupButton() {
-        nextButton.backgroundColor = .prilmaryA
+        nextButton.backgroundColor = .primaryA
         nextButton.setTitleColor(.white, for: .normal)
     }
     

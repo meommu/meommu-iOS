@@ -30,6 +30,7 @@
 		264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3C52B19B8B500FCFBEC /* KeyChain.swift */; };
 		2686083D2B1DDA9E00FA823E /* PasswordRecoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686083C2B1DDA9E00FA823E /* PasswordRecoveryService.swift */; };
 		2686083F2B1DDE8A00FA823E /* PasswordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */; };
+		268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608402B1E2B7100FA823E /* UIButton+Customization.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -108,6 +109,7 @@
 		264BF3C52B19B8B500FCFBEC /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		2686083C2B1DDA9E00FA823E /* PasswordRecoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryService.swift; sourceTree = "<group>"; };
 		2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecovery.swift; sourceTree = "<group>"; };
+		268608402B1E2B7100FA823E /* UIButton+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Customization.swift"; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */,
 				264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */,
 				264BF3C12B187CB500FCFBEC /* String+Validation.swift */,
+				268608402B1E2B7100FA823E /* UIButton+Customization.swift */,
 				264BF3C32B18E80700FCFBEC /* ToastManager.swift */,
 				264BF3C52B19B8B500FCFBEC /* KeyChain.swift */,
 			);
@@ -576,6 +579,7 @@
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
 				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,
 				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,
+				268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */,
 				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,
 				261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,

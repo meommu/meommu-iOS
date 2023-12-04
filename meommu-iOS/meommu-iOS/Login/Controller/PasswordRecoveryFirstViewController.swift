@@ -92,11 +92,19 @@ class PasswordRecoveryFirstViewController: UIViewController {
     
     private func checkEmailResponse(_ response: PasswordRecoveryResponse) {
         if response.code == "0000" {
-            self.performSegue(withIdentifier: "toSecondPasswordRecoveryVC", sender: self)
+            self.performSegue(withIdentifier: "toPasswordRecoverySecondVC", sender: self)
         } else {
             // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
             ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: emailTextField, in: self)
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPasswordRecoverySecondVC" {
+            let passwordRecoverySecondVC = segue.destination as! PasswordRecoverySecondViewController
+            
+            passwordRecoverySecondVC.email = emailTextField.text
         }
     }
     

@@ -9,6 +9,9 @@ import UIKit
 
 class PasswordRecoveryThirdViewController: UIViewController {
     
+    // 이전 화면에서 받아올 이메일
+    var email: String?
+    
     // 버튼 프로퍼티
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!

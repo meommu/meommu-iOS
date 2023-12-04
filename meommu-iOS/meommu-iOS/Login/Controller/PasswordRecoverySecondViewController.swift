@@ -8,7 +8,9 @@
 import UIKit
 
 class PasswordRecoverySecondViewController: UIViewController {
-
+    // 이전 화면에서 받아올 이메일
+    var email: String?
+    
     // 버튼 프로퍼티
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -61,9 +63,52 @@ class PasswordRecoverySecondViewController: UIViewController {
         checkEmailCodeTextField.delegate = self
     }
 
-    //MARK: - 이전 화면 버튼
+    //MARK: - 이전 버튼 탭 메서드
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
+    }
+    
+    //MARK: - 다음 버튼 탭 메서드
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        // 비동기 처리 중을 나타냄.
+        nextButton.makeLoadingButton()
+        
+        let passwordRecoveryService = PasswordRecoveryService()
+        
+        guard let code = checkEmailCodeTextField.text, let email = email else { return }
+        
+        // 코드를 서버로 전송
+        passwordRecoveryService.checkEmailCode(email: email, code: code) { result in
+            switch result {
+            case .success(let response):
+                self.checkEmailCodeResponse(response)
+                print(#function)
+            case .failure(let error):
+                print("Error: \(error.message)")
+            }
+            self.nextButton.makeEnabledButton()
+        }
+        
+    }
+    
+    //MARK: - 이메일 코드 확인 메서드
+    private func checkEmailCodeResponse(_ response: EmailCodeResponse) {
+        if response.data == true {
+            self.performSegue(withIdentifier: "toPasswordRecoveryThirdVC", sender: self)
+        } else if response.data == false {
+            ToastManager.showToastAboveTextField(message: "코드를 다시 입력해주세요", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: checkEmailCodeTextField, in: self)
+        } else {
+            // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
+            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: checkEmailCodeTextField, in: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPasswordRecoveryThirdVC" {
+            let passwordRecoveryThirdVC = segue.destination as! PasswordRecoveryThirdViewController
+            
+            passwordRecoveryThirdVC.email = self.email
+        }
     }
 
 }

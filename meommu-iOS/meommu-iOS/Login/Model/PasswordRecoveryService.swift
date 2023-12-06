@@ -64,6 +64,28 @@ class PasswordRecoveryService {
                     }
                 }
             }
+    }
+    
+    func changePassword(email: String, request: PasswordRecoveryRequest, completion: @escaping (Result<EmailCodeResponse, ErrorResponse>) -> Void) {
         
+        let url = "\(baseURL)/api/v1/kindergartens/password?email=\(email)"
+        
+        AF.request(url, method: .patch, parameters: request, encoder: JSONParameterEncoder.default, headers: ["Content-Type": "application/json;charset=UTF-8"])
+            .validate(statusCode: 200..<500)
+            .responseDecodable(of: EmailCodeResponse.self) { response in
+                switch response.result {
+                case .success(let responseData):
+                    completion(.success(responseData))
+                case .failure(_):
+                    if let data = response.data, let apiError = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+                        // 서버에서 에러 응답이 왔을 경우
+                        completion(.failure(apiError))
+                    } else {
+                        // 서버에서 에러 응답이 아닌 다른 오류가 발생한 경우
+                        completion(.failure(ErrorResponse(code: "UNKNOWN_ERROR", message: "알 수 없는 오류가 발생했습니다.", data: nil)))
+                    }
+                }
+            }
+
     }
 }

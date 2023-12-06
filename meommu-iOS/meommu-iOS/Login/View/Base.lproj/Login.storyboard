@@ -839,21 +839,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding2" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-5e-a8u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37H-yl-eKz">
-                                <rect key="frame" x="20" y="730" width="335" height="48"/>
-                                <color key="backgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Omr-oI-ScM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Zs5-Xq-sT9" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Qfk-bF-aci"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VS1-mY-uwL">
                                 <rect key="frame" x="20" y="64" width="335" height="64"/>
                                 <subviews>
@@ -894,6 +879,21 @@
                                     <action selector="backButtonTapped:" destination="yQ5-i4-JaQ" eventType="touchUpInside" id="8Jz-xf-RYO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37H-yl-eKz">
+                                <rect key="frame" x="20" y="730" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Omr-oI-ScM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="yQ5-i4-JaQ" eventType="touchUpInside" id="4bt-2S-gMn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SYj-T7-4Km"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -903,7 +903,7 @@
                             <constraint firstAttribute="bottom" secondItem="RiG-5e-a8u" secondAttribute="bottom" id="F8U-qJ-b4v"/>
                             <constraint firstItem="13A-3R-1m7" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="20" id="Hxh-nE-6eC"/>
                             <constraint firstItem="VS1-mY-uwL" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="20" id="Ign-BD-BUz"/>
-                            <constraint firstItem="SYj-T7-4Km" firstAttribute="bottom" secondItem="37H-yl-eKz" secondAttribute="bottom" constant="34" id="MJr-8W-FQI"/>
+                            <constraint firstAttribute="bottom" secondItem="37H-yl-eKz" secondAttribute="bottom" constant="34" id="MJr-8W-FQI"/>
                             <constraint firstItem="zAk-3m-Lur" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="21" id="UvM-4I-jy3"/>
                             <constraint firstItem="37H-yl-eKz" firstAttribute="top" secondItem="13A-3R-1m7" secondAttribute="bottom" constant="17" id="WTW-tD-8V2"/>
                             <constraint firstItem="RiG-5e-a8u" firstAttribute="top" secondItem="f6i-Wd-vo8" secondAttribute="top" id="YTA-In-OUu"/>
@@ -920,6 +920,7 @@
                         <outlet property="backButton" destination="zAk-3m-Lur" id="X7q-As-PvC"/>
                         <outlet property="nextButton" destination="37H-yl-eKz" id="dfS-xh-ikj"/>
                         <outlet property="passwordTextField" destination="13A-3R-1m7" id="x2H-Tx-CYu"/>
+                        <segue destination="Zs5-Xq-sT9" kind="presentation" identifier="toPasswordRecoveryFourthVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="e2A-yF-bQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usL-ZW-hJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

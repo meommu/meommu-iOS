@@ -17,15 +17,26 @@ class DiaryReviseViewController: UIViewController {
         
     }
     
-    // 일기 수정하기
+    // 키체인에서 엑세스 토큰 가져오기
+    func getAccessTokenFromKeychain() -> String? {
+        let key = KeyChain.shared.accessTokenKey
+        let accessToken = KeyChain.shared.read(key: key)
+        return accessToken
+    }
     
+    // 일기 수정하기
     @IBOutlet var diaryEditButton: UIButton!
     
     @IBAction func OnClick_diaryEditButton(_ sender: Any) {
         guard let diaryId = diaryId else { return }
         
+        guard let accessToken = getAccessTokenFromKeychain() else {
+            print("Access Token not found.")
+            return
+        }
+        
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(AccessToken)",
+            "Authorization": "Bearer \(accessToken)",
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         
@@ -66,14 +77,18 @@ class DiaryReviseViewController: UIViewController {
     @IBAction func OnClick_diaryDeleteButton(_ sender: Any) {
         deleteDiary()
     }
-    
-    let AccessToken = "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6NiwiaWF0IjoxNzAxMDAxMjUwLCJleHAiOjE3MDE2MDYwNTB9.d8HZ_LrgFNxBNPmdXBBxw3c7OvoEdukOYxP-Kqepkz6IFn8jiNvrGjEjFhm37UWtX6a3Qeb2YYVFMIdBsHC9FA"
+
     
     func deleteDiary() {
         guard let diaryId = diaryId else { return }
         
+        guard let accessToken = getAccessTokenFromKeychain() else {
+            print("Access Token not found.")
+            return
+        }
+        
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(AccessToken)",
+            "Authorization": "Bearer \(accessToken)",
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         

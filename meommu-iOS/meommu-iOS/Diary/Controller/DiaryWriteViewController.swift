@@ -50,8 +50,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
                     let calendar = Calendar.current
                     let components = calendar.dateComponents([.year, .month, .day], from: actualDate)
                     yearLabel.text = "\(components.year ?? 0)년"
-                    monthLabel.text = "\(components.month ?? 0)월"
-                    dateLabel.text = "\(components.day ?? 0)일"
+                    monthLabel.text = String(format: "%02d", components.month ?? 0) + "월"
+                    dateLabel.text = String(format: "%02d", components.day ?? 0) + "일"
                 }
             }
             diaryTitleTextField.text = diaryData?.title
@@ -93,8 +93,9 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-        .response { response in
+        .response { [self] response in
             debugPrint(response)
+            
             
             // API 호출이 완료되면 메인 화면으로 이동
             DispatchQueue.main.async { [weak self] in
@@ -398,6 +399,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         
         var uploadedImageIds: [Int] = []
         let imageUploadGroup = DispatchGroup()
+        
         
         if selectedImages.isEmpty {
             // 이미지가 없는 경우, 바로 api 호출

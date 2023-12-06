@@ -13,21 +13,16 @@ import Alamofire
 import PanModal
 
 
-class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate, UITextFieldDelegate {
+class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
+    
     
     var dogName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        makeImageViewBorder()
-        
-        // 앨범에서 이미지 추가하기
-        // UIImageView 배열 초기화
-        imageViews = [imageView1, imageView2, imageView3, imageView4, imageView5]
-        
-        // 이미지 피커 버튼에 액션 추가
-        imagePickerButton.addTarget(self, action: #selector(OnClick_imagePickerButton(_:)), for: .touchUpInside)
+            
+        diaryImageCollectionView.delegate = self
+        diaryImageCollectionView.dataSource = self
         
         diaryTitleTextField.delegate = self
         diaryContextTextView.delegate = self
@@ -50,8 +45,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
                     let calendar = Calendar.current
                     let components = calendar.dateComponents([.year, .month, .day], from: actualDate)
                     yearLabel.text = "\(components.year ?? 0)년"
-                    monthLabel.text = "\(components.month ?? 0)월"
-                    dateLabel.text = "\(components.day ?? 0)일"
+                    monthLabel.text = String(format: "%02d", components.month ?? 0) + "월"
+                    dateLabel.text = String(format: "%02d", components.day ?? 0) + "일"
                 }
             }
             diaryTitleTextField.text = diaryData?.title
@@ -93,8 +88,9 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-        .response { response in
+        .response { [self] response in
             debugPrint(response)
+            
             
             // API 호출이 완료되면 메인 화면으로 이동
             DispatchQueue.main.async { [weak self] in
@@ -120,82 +116,67 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
     
     // -----------------------------------------
     // 앨범에서 사진 추가하기
+    @IBOutlet var diaryImageCollectionView: UICollectionView!
     
-    @IBOutlet var imagePickerButton: UIButton!
+    var imageArray = [UIImage]()
     
-    @IBOutlet var imageView5: UIImageView!
-    @IBOutlet var imageView4: UIImageView!
-    @IBOutlet var imageView3: UIImageView!
-    @IBOutlet var imageView2: UIImageView!
-    @IBOutlet var imageView1: UIImageView!
-    
-    var imageViews: [UIImageView] = []
-    var selectedImages: [UIImage] = []
-    
-    @objc func OnClick_imagePickerButton(_ sender: UIButton) {
-        let status = PHPhotoLibrary.authorizationStatus()
-        
-        switch status {
-        case .authorized:
-            presentPicker()
-            
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization { [weak self] status in
-                if status == .authorized {
-                    DispatchQueue.main.async { [weak self] in
-                        self?.presentPicker()
-                    }
-                } else {
-                    DispatchQueue.main.async { [weak self] in
-                        self?.showPermissionAlert()
-                    }
-                }
-            }
-            
-        default:
-            showPermissionAlert()
-        }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
     }
     
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        dismiss(animated: true, completion: nil)
-        
-        for result in results {
-            if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
-                result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] imageOrNil, error in
-                    if let image = imageOrNil as? UIImage {
-                        DispatchQueue.main.async { [weak self] in
-                            guard let self = self else { return }
-                            
-                            // 선택한 이미지를 배열에 추가하고 이미지 뷰에 표시
-                            self.selectedImages.append(image)
-                            
-                            if let emptyImageViewIndex = self.imageViews.firstIndex(where: { $0.image == nil }) {
-                                self.imageViews[emptyImageViewIndex].image = image
-                            }
-                        }
-                    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageButtonCell", for: indexPath) as! DiaryImageButtonCollectionViewCell
+            cell.diaryImagePickerButton.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addImage))
+            cell.diaryImagePickerButton.addGestureRecognizer(tapGesture)
+            
+            cell.diaryImageCountLabel.text = "\(imageArray.count) / 5"
+            
+            return cell
+        } else {
+            if indexPath.row <= imageArray.count {
+                let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageCell", for: indexPath) as! DiaryImageCollectionViewCell
+                cell.diaryImageView.image = imageArray[indexPath.row - 1]
+                
+                // 삭제 버튼 클릭 시 실행될 클로저 설정
+                cell.onDelete = { [weak self] in
+                    self?.imageArray.remove(at: indexPath.row - 1)
+                    self?.diaryImageCollectionView.reloadData()
                 }
+                
+                return cell
             } else {
-                print("이미지 로드 실패")
-            }
-            
-            if selectedImages.count >= 5 {
-                break  // 이미지를 모두 선택했으면 반복문 종료
+                let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageEmptyCell", for: indexPath) as! DiaryImageEmptyCollectionViewCell
+                return cell
             }
         }
     }
     
-    private func presentPicker(){
+    @objc func addImage() {
         var configuration = PHPickerConfiguration()
-        
-        // 사진 선택 개수 제한 (여기서는 최대 5장)
-        configuration.selectionLimit = 5 - selectedImages.count
+        configuration.selectionLimit = 5 - imageArray.count
+        configuration.filter = .images
         
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
-        
         present(picker, animated: true, completion: nil)
+    }
+   
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        for result in results {
+            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (object, error) in
+                if let image = object as? UIImage {
+                    DispatchQueue.main.async {
+                        self?.imageArray.append(image)
+                        self?.diaryImageCollectionView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     // 권한 설정
@@ -213,53 +194,6 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         present(alert, animated:true)
     }
     
-    // -----------------------------------------
-    // 이미지뷰 테두리 만들기
-    @IBOutlet var borderView5: UIView!
-    @IBOutlet var borderView4: UIView!
-    @IBOutlet var borderView3: UIView!
-    @IBOutlet var borderView2: UIView!
-    @IBOutlet var borderView1: UIView!
-    
-    func makeImageViewBorder(){
-        
-        // 이미지뷰 테두리 둥글게
-        imageView1?.layer.cornerRadius = 4
-        imageView2?.layer.cornerRadius = 4
-        imageView3?.layer.cornerRadius = 4
-        imageView4?.layer.cornerRadius = 4
-        imageView5?.layer.cornerRadius = 4
-        
-        // 테두리 둥글게
-        borderView1?.layer.cornerRadius = 4
-        borderView2?.layer.cornerRadius = 4
-        borderView3?.layer.cornerRadius = 4
-        borderView4?.layer.cornerRadius = 4
-        borderView5?.layer.cornerRadius = 4
-        // 테두리 두께
-        borderView1?.layer.borderWidth = 2
-        borderView2?.layer.borderWidth = 2
-        borderView3?.layer.borderWidth = 2
-        borderView4?.layer.borderWidth = 2
-        borderView5?.layer.borderWidth = 2
-        // 테두리 컬러
-        borderView1?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
-        borderView2?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
-        borderView3?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
-        borderView4?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
-        borderView5?.layer.borderColor = UIColor(named: "Gray200")?.cgColor
-        // 배경색 투명하게
-        borderView1.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
-        borderView2.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
-        borderView3.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
-        borderView4.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
-        borderView5.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.0)
-        borderView1?.isOpaque = false
-        borderView2?.isOpaque = false
-        borderView3?.isOpaque = false
-        borderView4?.isOpaque = false
-        borderView5?.isOpaque = false
-    }
     
     // -----------------------------------------
     // 오늘 날짜 출력하기
@@ -399,7 +333,8 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
         var uploadedImageIds: [Int] = []
         let imageUploadGroup = DispatchGroup()
         
-        if selectedImages.isEmpty {
+        
+        if imageArray.isEmpty {
             // 이미지가 없는 경우, 바로 api 호출
             if let isEdited = isEdited, isEdited {
                 editDiary(diaryId: diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
@@ -408,7 +343,7 @@ class DiaryWriteViewController: UIViewController, PHPickerViewControllerDelegate
             }
         } else {
             // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
-            selectedImages.forEach { image in
+            imageArray.forEach { image in
                 imageUploadGroup.enter()
                 
                 AF.upload(multipartFormData: { multipartFormData in

@@ -175,8 +175,34 @@
                                                     <outlet property="diaryImagePickerButton" destination="wAu-Gg-6ff" id="een-yp-C0Y"/>
                                                 </connections>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryImageCell" id="eee-Zk-UVI" customClass="DiaryImageCollectionViewCell" customModule="meommu_iOS" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryImageEmptyCell" id="Y3S-yc-6Dr" customClass="DiaryImageEmptyCollectionViewCell" customModule="meommu_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="90" y="1" width="70" height="70"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpj-ew-Wwv">
+                                                            <rect key="frame" x="0.0" y="10" width="60" height="60"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="7w2-Tq-hMS"/>
+                                                                <constraint firstAttribute="width" constant="60" id="hO7-JQ-sM3"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </view>
+                                                <viewLayoutGuide key="safeArea" id="cvo-R4-AR7"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="jpj-ew-Wwv" secondAttribute="bottom" id="25u-38-7ps"/>
+                                                    <constraint firstItem="jpj-ew-Wwv" firstAttribute="leading" secondItem="Y3S-yc-6Dr" secondAttribute="leading" id="EQN-n8-DDF"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="emptyView" destination="jpj-ew-Wwv" id="Xiz-t8-XdU"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryImageCell" id="eee-Zk-UVI" customClass="DiaryImageCollectionViewCell" customModule="meommu_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="160" y="1" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>

@@ -51,6 +51,8 @@
 		F94A09402B136D5C00786C12 /* DiaryImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */; };
 		F94A09432B13755900786C12 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = F94A09422B13755900786C12 /* AlamofireImage */; };
 		F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F953DD602AB82B22009F3B52 /* DiarySend.storyboard */; };
+		F9592C382B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9592C362B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift */; };
+		F9592C392B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9592C372B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib */; };
 		F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2603C7ED2ADC4E7500090A9D /* MyPageViewController.swift */; };
 		F959853C2B0F5C11001F28F1 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED412ADDA715009EADA2 /* Page.swift */; };
 		F959853D2B0F5C1B001F28F1 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED822AE7B8FA009EADA2 /* AnnouncementViewController.swift */; };
@@ -139,6 +141,8 @@
 		F94A093B2B13698F00786C12 /* DiarySendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendModel.swift; sourceTree = "<group>"; };
 		F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryImageModel.swift; sourceTree = "<group>"; };
 		F953DD602AB82B22009F3B52 /* DiarySend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiarySend.storyboard; sourceTree = "<group>"; };
+		F9592C362B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9592C372B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryImageEmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainEmptyTableViewCell.xib; sourceTree = "<group>"; };
 		F959A1522AB8157E009D90A8 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -412,6 +416,8 @@
 				F9E615ED2B200723006F9A33 /* DiaryImageCollectionViewCell.xib */,
 				F9E615F02B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift */,
 				F9E615F12B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib */,
+				F9592C362B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift */,
+				F9592C372B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */,
 				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
+				F9592C392B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib in Resources */,
 				26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */,
 				F96F325A2B1022AD00EA4F67 /* DiaryMonthPicker.storyboard in Resources */,
 			);
@@ -545,6 +552,7 @@
 				264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */,
 				264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */,
 				F9E615EE2B200723006F9A33 /* DiaryImageCollectionViewCell.swift in Sources */,
+				F9592C382B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
 				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,

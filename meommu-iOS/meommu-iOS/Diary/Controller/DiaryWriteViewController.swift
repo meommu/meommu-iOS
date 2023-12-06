@@ -121,7 +121,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     var imageArray = [UIImage]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count + 1
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -135,16 +135,21 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             
             return cell
         } else {
-            let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageCell", for: indexPath) as! DiaryImageCollectionViewCell
-            cell.diaryImageView.image = imageArray[indexPath.row - 1]
-            
-            // 삭제 버튼 클릭 시 실행될 클로저 설정
-            cell.onDelete = { [weak self] in
-                self?.imageArray.remove(at: indexPath.row - 1)
-                self?.diaryImageCollectionView.reloadData()
+            if indexPath.row <= imageArray.count {
+                let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageCell", for: indexPath) as! DiaryImageCollectionViewCell
+                cell.diaryImageView.image = imageArray[indexPath.row - 1]
+                
+                // 삭제 버튼 클릭 시 실행될 클로저 설정
+                cell.onDelete = { [weak self] in
+                    self?.imageArray.remove(at: indexPath.row - 1)
+                    self?.diaryImageCollectionView.reloadData()
+                }
+                
+                return cell
+            } else {
+                let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageEmptyCell", for: indexPath) as! DiaryImageEmptyCollectionViewCell
+                return cell
             }
-            
-            return cell
         }
     }
     

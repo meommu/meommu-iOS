@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct PasswordRecoveryRequest {
-    let email, password, passwordConfirmation: String?
+struct PasswordRecoveryRequest: Codable {
+    let password, passwordConfirmation: String
 }
 
 struct PasswordRecoveryResponse: Codable {

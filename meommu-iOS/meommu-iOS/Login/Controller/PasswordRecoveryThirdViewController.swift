@@ -64,11 +64,44 @@ class PasswordRecoveryThirdViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    //MARK: - 이전 화면 버튼
+    //MARK: - 이전 버튼 탭 메서드
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
     
+    //MARK: - 다음 버튼 탭 메서드
+
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        
+        nextButton.makeLoadingButton()
+        
+        guard let password = passwordTextField.text, password.isPasswordFormatValid() else {
+            nextButton.makeEnabledButton()
+            
+            // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
+            ToastManager.showToastAboveTextField(message: "비밀번호 형식이 올바르지 않습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: passwordTextField, in: self)
+            
+            return
+        }
+        
+        
+        
+        self.performSegue(withIdentifier: "toPasswordRecoveryFourthVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPasswordRecoveryFourthVC" {
+            let passwordRecoveryFourthVC = segue.destination as! PasswordRecoveryFourthViewController
+            
+            passwordRecoveryFourthVC.email = self.email
+            passwordRecoveryFourthVC.password = passwordTextField.text
+        }
+    }
+    
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        nextButton.makeEnabledButton()
+    }
 }
 
 //MARK: - UITextFieldDelegate 확장
@@ -76,7 +109,7 @@ extension PasswordRecoveryThirdViewController: UITextFieldDelegate {
     //MARK: - 다음 버튼 활성화 메서드
     private func updateNextButtonState() {
         // 다음 버튼 활성화 조건 확인
-        guard let password = passwordTextField.text, !password.isEmpty, password.isPasswordFormatValid()
+        guard let password = passwordTextField.text, !password.isEmpty
         else {
             nextButton.backgroundColor = .gray300
             nextButton.isEnabled = false

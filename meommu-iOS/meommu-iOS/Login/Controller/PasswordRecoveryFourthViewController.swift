@@ -8,7 +8,13 @@
 import UIKit
 
 class PasswordRecoveryFourthViewController: UIViewController {
-
+    
+    // 이전 화면 이메일 데이터 저장 프로퍼티
+    var email: String?
+    
+    // 이전 화면 비밀번호 데이터 저장 프로퍼티
+    var password: String?
+    
     // 버튼 프로퍼티
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -17,7 +23,7 @@ class PasswordRecoveryFourthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupButton()
         setupTextField()
         setupCornerRadius()
@@ -52,7 +58,7 @@ class PasswordRecoveryFourthViewController: UIViewController {
     //MARK: - 코너 레디어스 값 설정 메서드
     private func setupCornerRadius() {
         nextButton.setCornerRadius(6.0)
-    
+        
         confirmPasswordTextField.setCornerRadius(4.0)
     }
     
@@ -66,16 +72,40 @@ class PasswordRecoveryFourthViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-
+    
     //MARK: - 다음 버튼 탭 메서드
     @IBAction func nextButtonTapped(_ sender: Any) {
         
-        // 1. 이전 화면에서 입력한 비밀번호와 같은 것이 입렫되었는지 확인
-        // 2. 비밀번호를 바꾸는 api 메서드 작성
-        // 3. 로그인 화면으로 이동
-        changeRootViewToLogin()
         
-        // 4. 토스트 얼럿 띄우기
+        guard let email = self.email, let password = self.password, let confirmPassword = confirmPasswordTextField.text else { return }
+        
+        let passwordRecoveryService = PasswordRecoveryService()
+        let request = PasswordRecoveryRequest(password: password, passwordConfirmation: confirmPassword)
+        
+        // 버튼 로딩 색상
+        nextButton.makeLoadingButton()
+        
+        // 이전 화면에서 입력한 비밀번호와 같은 것이 입력되었는지 확인
+        if password != confirmPasswordTextField.text {
+            // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
+            ToastManager.showToastAboveTextField(message: "비밀번호가 일치하지 않습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: confirmPasswordTextField, in: self)
+        } else {
+            // 비밀번호 변경 REQ 메서드
+            passwordRecoveryService.changePassword(email: email, request: request) { result in
+                switch result {
+                case .success(let response):
+                    if response.code == "0000" {
+                        self.changeRootViewToLogin()
+                    } else {
+                        ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: self.confirmPasswordTextField, in: self)
+                    }
+                case .failure(let error):
+                    // 400~500 에러
+                    print("Error: \(error.message)")
+                }
+            }
+        }
+        
     }
     
     // 루트 뷰를 로그인 화면으로 변경하는 메서드
@@ -83,13 +113,21 @@ class PasswordRecoveryFourthViewController: UIViewController {
         // 로그인하고 일기 화면으로 rootView 변경
         let newStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let newViewController = newStoryboard.instantiateViewController(identifier: "LoginFirstViewController")
+//        as! LoginFirstViewController
         
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
         
         sceneDelegate.changeRootViewController(newViewController, animated: true)
+        
+//        ToastManager.showToastAboveTextField(message: "비밀번호가 변경 되었습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: newViewController.passwordTextField, in: newViewController)
     }
-    
 }
+
+
+
+
+
+
 
 //MARK: - UITextFieldDelegate 확장
 extension PasswordRecoveryFourthViewController: UITextFieldDelegate {

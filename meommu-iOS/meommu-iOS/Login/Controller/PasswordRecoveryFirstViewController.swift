@@ -106,7 +106,7 @@ class PasswordRecoveryFirstViewController: UIViewController {
             self.performSegue(withIdentifier: "toPasswordRecoverySecondVC", sender: self)
         } else {
             // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
-            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: emailTextField, in: self)
+            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: emailTextField, textFieldTopMargin: 13, in: self)
             
         }
     }

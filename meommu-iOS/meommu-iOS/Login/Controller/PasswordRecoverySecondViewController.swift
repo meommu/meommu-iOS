@@ -108,10 +108,10 @@ class PasswordRecoverySecondViewController: UIViewController {
         if response.data == true {
             self.performSegue(withIdentifier: "toPasswordRecoveryThirdVC", sender: self)
         } else if response.data == false {
-            ToastManager.showToastAboveTextField(message: "코드를 다시 입력해주세요", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: checkEmailCodeTextField, in: self)
+            ToastManager.showToastAboveTextField(message: "코드를 다시 입력해주세요", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: checkEmailCodeTextField, textFieldTopMargin: 13, in: self)
         } else {
             // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
-            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: checkEmailCodeTextField, in: self)
+            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: checkEmailCodeTextField, textFieldTopMargin: 13, in: self)
         }
     }
     

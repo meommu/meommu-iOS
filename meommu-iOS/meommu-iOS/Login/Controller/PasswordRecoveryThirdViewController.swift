@@ -92,7 +92,7 @@ class PasswordRecoveryThirdViewController: UIViewController {
             nextButton.makeEnabledButton()
             
             // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
-            ToastManager.showToastAboveTextField(message: "비밀번호 형식이 올바르지 않습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: passwordTextField, in: self)
+            ToastManager.showToastAboveTextField(message: "비밀번호 형식이 올바르지 않습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: passwordTextField, textFieldTopMargin: 13, in: self)
             
             return
         }

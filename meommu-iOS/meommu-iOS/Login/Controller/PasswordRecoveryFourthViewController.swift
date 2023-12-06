@@ -103,7 +103,8 @@ class PasswordRecoveryFourthViewController: UIViewController {
         // 이전 화면에서 입력한 비밀번호와 같은 것이 입력되었는지 확인
         if password != confirmPasswordTextField.text {
             // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
-            ToastManager.showToastAboveTextField(message: "비밀번호가 일치하지 않습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: confirmPasswordTextField, in: self)
+            ToastManager.showToastAboveTextField(message: "비밀번호가 일치하지 않습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: confirmPasswordTextField, textFieldTopMargin: 13, in: self)
+
         } else {
             // 비밀번호 변경 REQ 메서드
             passwordRecoveryService.changePassword(email: email, request: request) { result in
@@ -112,7 +113,8 @@ class PasswordRecoveryFourthViewController: UIViewController {
                     if response.code == "0000" {
                         self.changeRootViewToLogin()
                     } else {
-                        ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: self.confirmPasswordTextField, in: self)
+                        // 오류 발생 시 메시지를 토스트로 보여줌.
+                        ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: self.confirmPasswordTextField, textFieldTopMargin: 13, in: self)
                     }
                 case .failure(let error):
                     // 400~500 에러
@@ -133,9 +135,8 @@ class PasswordRecoveryFourthViewController: UIViewController {
         
         sceneDelegate.changeRootViewController(newViewController, animated: true)
         
-//        ToastManager.showToastAboveTextField(message: "비밀번호가 변경 되었습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: newViewController.passwordTextField, in: newViewController)
-        
-        ToastManager.showToastAtTextField(message: "비밀번호가 변경 되었습니다", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: newViewController.passwordTextField, textFieldTopMargin: 25, in: newViewController)
+        // 로그인 화면에서 비밀번호 변견 완료를 알리는 토스트 얼럿
+        ToastManager.showToastBelowTextField(message: "비밀번호가 변경 되었습니다", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: newViewController.emailTextField, textFieldBottomMargin: 35, in: newViewController)
     }
 }
 

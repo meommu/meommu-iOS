@@ -9,6 +9,9 @@ import UIKit
 
 class PasswordRecoveryThirdViewController: UIViewController {
     
+    // 레이블 프로퍼티
+    @IBOutlet weak var firstMainLabel: UILabel!
+    
     // 이전 화면에서 받아올 이메일
     var email: String?
     
@@ -16,12 +19,16 @@ class PasswordRecoveryThirdViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
+    // 비밀번호 조건 레이블 프로퍼티
+    @IBOutlet weak var passwordRequirementsLabel: UILabel!
+    
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupButton()
+        setupLabel()
         setupTextField()
         setupCornerRadius()
         setupDelegate()
@@ -37,6 +44,12 @@ class PasswordRecoveryThirdViewController: UIViewController {
         backButton.tintColor = .gray400
         
         nextButton.isEnabled = false
+    }
+    
+    //MARK: - 레이블 셋업 메서드
+    private func setupLabel() {
+        firstMainLabel.textColor = .gray900
+        passwordRequirementsLabel.textColor = .gray400
     }
     
     //MARK: - 텍스트 필드 셋업 메서드

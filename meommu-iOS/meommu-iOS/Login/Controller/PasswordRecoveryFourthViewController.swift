@@ -9,6 +9,10 @@ import UIKit
 
 class PasswordRecoveryFourthViewController: UIViewController {
     
+    // 레이블 프로퍼티
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
+    
     // 이전 화면 이메일 데이터 저장 프로퍼티
     var email: String?
     
@@ -19,18 +23,22 @@ class PasswordRecoveryFourthViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
+    // 비밀번호 조건 레이블
+    @IBOutlet weak var passwordRequirementsLabel: UILabel!
+    
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupButton()
+        setupLabel()
         setupTextField()
         setupCornerRadius()
         setupDelegate()
     }
     
-    //MARK: - 버턴 셋업 메서드
+    //MARK: - 버튼 셋업 메서드
     private func setupButton() {
         // 다음 버튼 색상
         nextButton.backgroundColor = .gray300
@@ -40,6 +48,13 @@ class PasswordRecoveryFourthViewController: UIViewController {
         backButton.tintColor = .gray400
         
         nextButton.isEnabled = false
+    }
+    
+    //MARK: - 레이블 셋업 메서드
+    private func setupLabel() {
+        firstMainLabel.textColor = .gray900
+        secondMainLabel.textColor = .gray900
+        passwordRequirementsLabel.textColor = .gray400
     }
     
     //MARK: - 텍스트 필드 셋업 메서드

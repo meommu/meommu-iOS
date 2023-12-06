@@ -8,6 +8,11 @@
 import UIKit
 
 class PasswordRecoverySecondViewController: UIViewController {
+    
+    // 레이블 프로퍼티
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
+    
     // 이전 화면에서 받아올 이메일
     var email: String?
     
@@ -21,6 +26,7 @@ class PasswordRecoverySecondViewController: UIViewController {
         super.viewDidLoad()
 
         setupButton()
+        setupLabel()
         setupTextField()
         setupCornerRadius()
         setupDelegate()
@@ -36,6 +42,12 @@ class PasswordRecoverySecondViewController: UIViewController {
         backButton.tintColor = .gray400
         
         nextButton.isEnabled = false
+    }
+    
+    //MARK: - 레이블 셋업 메서드
+    private func setupLabel() {
+        firstMainLabel.textColor = .gray900
+        secondMainLabel.textColor = .gray900
     }
     
     //MARK: - 텍스트 필드 셋업 메서드

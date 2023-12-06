@@ -80,6 +80,10 @@
 		F9D1BAD42AF31E9C004A7289 /* DiaryGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */; };
 		F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */; };
 		F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */; };
+		F9E615EE2B200723006F9A33 /* DiaryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E615EC2B200723006F9A33 /* DiaryImageCollectionViewCell.swift */; };
+		F9E615EF2B200723006F9A33 /* DiaryImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E615ED2B200723006F9A33 /* DiaryImageCollectionViewCell.xib */; };
+		F9E615F22B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E615F02B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift */; };
+		F9E615F32B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E615F12B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +160,10 @@
 		F9D1BAD32AF31E9C004A7289 /* DiaryGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryGuide.storyboard; sourceTree = "<group>"; };
 		F9DCFF872AC7ED5300AF3417 /* DiaryRevise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryRevise.storyboard; sourceTree = "<group>"; };
 		F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReviseViewController.swift; sourceTree = "<group>"; };
+		F9E615EC2B200723006F9A33 /* DiaryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9E615ED2B200723006F9A33 /* DiaryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		F9E615F02B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9E615F12B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryImageButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +408,10 @@
 				F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */,
 				F991C3D32B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift */,
 				F991C3D42B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib */,
+				F9E615EC2B200723006F9A33 /* DiaryImageCollectionViewCell.swift */,
+				F9E615ED2B200723006F9A33 /* DiaryImageCollectionViewCell.xib */,
+				F9E615F02B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift */,
+				F9E615F12B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -497,9 +509,11 @@
 			files = (
 				F9AC5C3D2ADD62660044B22B /* c5637b392e4f496b.ttf in Resources */,
 				F9DCFF882AC7ED5300AF3417 /* DiaryRevise.storyboard in Resources */,
+				F9E615EF2B200723006F9A33 /* DiaryImageCollectionViewCell.xib in Resources */,
 				F9866C3F2ADE12AE00744164 /* Assets.xcassets in Resources */,
 				F9D1BAD42AF31E9C004A7289 /* DiaryGuide.storyboard in Resources */,
 				F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */,
+				F9E615F32B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib in Resources */,
 				F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */,
 				2603C7F02ADC4E8A00090A9D /* MyPageStoryboard.storyboard in Resources */,
 				F991C3D62B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib in Resources */,
@@ -530,6 +544,7 @@
 				F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */,
 				264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */,
 				264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */,
+				F9E615EE2B200723006F9A33 /* DiaryImageCollectionViewCell.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
 				F933D8A32AB73982006EDA07 /* LoginViewController.swift in Sources */,
 				261003B42AD3AF07001F5E28 /* Color.swift in Sources */,
@@ -566,6 +581,7 @@
 				F959853F2B0F5C31001F28F1 /* AlertViewController.swift in Sources */,
 				26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */,
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
+				F9E615F22B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift in Sources */,
 				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,
 				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,
 				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,

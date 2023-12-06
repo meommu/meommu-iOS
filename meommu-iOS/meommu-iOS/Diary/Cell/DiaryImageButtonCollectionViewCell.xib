@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryImageButtonCell" id="gTV-IL-0wX" customClass="DiaryImageButtonCollectionViewCell" customModule="meommu_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMl-rR-f8H">
+                        <rect key="frame" x="0.0" y="10" width="60" height="60"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDF-Ut-2YW">
+                                <rect key="frame" x="19" y="10" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="D0K-CB-T4f"/>
+                                    <constraint firstAttribute="width" constant="22" id="MNN-nj-btw"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Camera"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y87-su-8yp">
+                                <rect key="frame" x="8" y="35" width="44" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="Gray300"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xDF-Ut-2YW" firstAttribute="top" secondItem="wMl-rR-f8H" secondAttribute="top" constant="10" id="1Q5-C5-iqv"/>
+                            <constraint firstAttribute="bottom" secondItem="y87-su-8yp" secondAttribute="bottom" constant="10" id="68D-F3-bG8"/>
+                            <constraint firstItem="y87-su-8yp" firstAttribute="centerX" secondItem="wMl-rR-f8H" secondAttribute="centerX" id="Eqk-BE-bTo"/>
+                            <constraint firstAttribute="trailing" secondItem="xDF-Ut-2YW" secondAttribute="trailing" constant="19" id="FNH-FZ-Umc"/>
+                            <constraint firstAttribute="height" constant="60" id="Jf7-5D-Tor"/>
+                            <constraint firstItem="y87-su-8yp" firstAttribute="leading" secondItem="wMl-rR-f8H" secondAttribute="leading" constant="8" id="XYQ-Pk-ArF"/>
+                            <constraint firstAttribute="width" constant="60" id="bP4-Hm-wHq"/>
+                            <constraint firstAttribute="trailing" secondItem="y87-su-8yp" secondAttribute="trailing" constant="8" id="eZz-9e-aOb"/>
+                            <constraint firstItem="xDF-Ut-2YW" firstAttribute="centerX" secondItem="wMl-rR-f8H" secondAttribute="centerX" id="fbj-Qz-KWC"/>
+                            <constraint firstItem="xDF-Ut-2YW" firstAttribute="leading" secondItem="wMl-rR-f8H" secondAttribute="leading" constant="19" id="njx-lg-Gol"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wMl-rR-f8H" secondAttribute="bottom" id="OrV-lk-T3S"/>
+                <constraint firstItem="wMl-rR-f8H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qfu-XE-D1T"/>
+            </constraints>
+            <connections>
+                <outlet property="diaryImageButtonView" destination="wMl-rR-f8H" id="N2F-y6-1ZY"/>
+                <outlet property="diaryImageCountLabel" destination="y87-su-8yp" id="5sX-b8-Bf9"/>
+                <outlet property="diaryImagePickerButton" destination="xDF-Ut-2YW" id="UBj-5d-hb5"/>
+            </connections>
+            <point key="canvasLocation" x="10.687022900763358" y="10.563380281690142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Camera" width="22" height="22"/>
+        <namedColor name="Gray300">
+            <color red="0.73299998044967651" green="0.73299998044967651" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -270,7 +270,7 @@ final class LoginSecondViewController: UIViewController {
             nextButton.isEnabled = false
             return
         }
-        nextButton.backgroundColor = .prilmaryA
+        nextButton.backgroundColor = .primaryA
         nextButton.isEnabled = true
     }
     

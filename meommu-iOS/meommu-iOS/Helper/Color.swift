@@ -39,9 +39,9 @@ extension UIColor {
     static let blueGray500: UIColor = UIColor(hexCode: "#1B1E26")
     
     /// #8579F1
-    static let prilmaryA: UIColor = UIColor(hexCode: "#8579F1")
+    static let primaryA: UIColor = UIColor(hexCode: "#8579F1")
     /// #604FF4
-    static let prilmaryB: UIColor = UIColor(hexCode: "#604FF4")
+    static let primaryB: UIColor = UIColor(hexCode: "#604FF4")
     
     /// #FF8585
     static let error: UIColor = UIColor(hexCode: "#FF8585")

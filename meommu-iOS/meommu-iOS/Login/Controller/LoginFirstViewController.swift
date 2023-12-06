@@ -150,9 +150,8 @@ class LoginFirstViewController: UIViewController {
             emailTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
             
-            ToastManager.showToastBelowTextField(message: "비밀번호를 다시 입력해주세요.", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: passwordTextField, in: self)
+            ToastManager.showToastBelowTextField(message: "아이디 혹은 비밀번호가 올바르지 않습니다.", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: emailTextField, textFieldBottomMargin: 35, in: self)
             
-            print("아디, 비번 틀림")
         }
     }
     
@@ -178,7 +177,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
             loginButton.isEnabled = false
             return
         }
-        loginButton.backgroundColor = .prilmaryA
+        loginButton.backgroundColor = .primaryA
         loginButton.isEnabled = true
     }
     
@@ -196,6 +195,7 @@ extension LoginFirstViewController: UITextFieldDelegate {
         
     }
     
+    //MARK: - 키보드 활성화 시 화면 올리는 메서드
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         // 부드러운 효과를 위해 애니메이션 처리
@@ -205,8 +205,8 @@ extension LoginFirstViewController: UITextFieldDelegate {
         }        
     }
     
+    //MARK: - 키보드 비활성화 시 화면 내리는 메서드
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         
         UIView.animate(withDuration: 0.3) {
             let transform = CGAffineTransform(translationX: 0, y: 0)

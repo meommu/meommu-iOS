@@ -112,14 +112,15 @@ class PasswordRecoveryFourthViewController: UIViewController {
     private func changeRootViewToLogin() {
         // 로그인하고 일기 화면으로 rootView 변경
         let newStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "LoginFirstViewController")
-//        as! LoginFirstViewController
+        let newViewController = newStoryboard.instantiateViewController(identifier: "LoginFirstViewController") as! LoginFirstViewController
         
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
         
         sceneDelegate.changeRootViewController(newViewController, animated: true)
         
 //        ToastManager.showToastAboveTextField(message: "비밀번호가 변경 되었습니다", font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: newViewController.passwordTextField, in: newViewController)
+        
+        ToastManager.showToastAtTextField(message: "비밀번호가 변경 되었습니다", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: newViewController.passwordTextField, textFieldTopMargin: 25, in: newViewController)
     }
 }
 

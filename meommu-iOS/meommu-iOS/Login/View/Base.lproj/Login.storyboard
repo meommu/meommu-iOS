@@ -820,7 +820,9 @@
                     <connections>
                         <outlet property="backButton" destination="rKm-02-XS2" id="oJd-GF-eK9"/>
                         <outlet property="checkEmailCodeTextField" destination="xGy-zi-DRn" id="hxZ-er-JKs"/>
+                        <outlet property="firstMainLabel" destination="lcy-Eb-G63" id="07l-7K-ciL"/>
                         <outlet property="nextButton" destination="3cE-EX-vRx" id="R9K-LK-O0R"/>
+                        <outlet property="secondMainLabel" destination="HAa-BR-7N2" id="y6y-0P-ziD"/>
                         <segue destination="yQ5-i4-JaQ" kind="presentation" identifier="toPasswordRecoveryThirdVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Rbg-Uu-bX1"/>
                     </connections>
                 </viewController>
@@ -839,6 +841,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding2" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-5e-a8u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37H-yl-eKz">
+                                <rect key="frame" x="20" y="730" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Omr-oI-ScM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="yQ5-i4-JaQ" eventType="touchUpInside" id="4bt-2S-gMn"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VS1-mY-uwL">
                                 <rect key="frame" x="20" y="64" width="335" height="64"/>
                                 <subviews>
@@ -879,30 +896,25 @@
                                     <action selector="backButtonTapped:" destination="yQ5-i4-JaQ" eventType="touchUpInside" id="8Jz-xf-RYO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37H-yl-eKz">
-                                <rect key="frame" x="20" y="730" width="335" height="48"/>
-                                <color key="backgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Omr-oI-ScM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonTapped:" destination="yQ5-i4-JaQ" eventType="touchUpInside" id="4bt-2S-gMn"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4c-BG-HsP">
+                                <rect key="frame" x="20" y="630" width="335" height="24"/>
+                                <string key="text">*영문 대/소문자, 숫자, 기호(!@#$%^~*+=-) 사용하여 8~20 글자 사이의 
+비밀번호를 사용하세요. 숫자와 특수기호가 한 글자 이상 포함되어야합니다.</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SYj-T7-4Km"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VS1-mY-uwL" firstAttribute="top" secondItem="zAk-3m-Lur" secondAttribute="bottom" constant="30" id="0pE-KE-YTB"/>
                             <constraint firstItem="RiG-5e-a8u" firstAttribute="leading" secondItem="f6i-Wd-vo8" secondAttribute="leading" id="Cxi-Et-F0z"/>
+                            <constraint firstItem="SYj-T7-4Km" firstAttribute="trailing" secondItem="B4c-BG-HsP" secondAttribute="trailing" constant="20" id="DO5-eL-qsf"/>
                             <constraint firstAttribute="bottom" secondItem="RiG-5e-a8u" secondAttribute="bottom" id="F8U-qJ-b4v"/>
                             <constraint firstItem="13A-3R-1m7" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="20" id="Hxh-nE-6eC"/>
                             <constraint firstItem="VS1-mY-uwL" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="20" id="Ign-BD-BUz"/>
+                            <constraint firstItem="13A-3R-1m7" firstAttribute="top" secondItem="B4c-BG-HsP" secondAttribute="bottom" constant="11" id="KnH-Uf-VGP"/>
                             <constraint firstAttribute="bottom" secondItem="37H-yl-eKz" secondAttribute="bottom" constant="34" id="MJr-8W-FQI"/>
                             <constraint firstItem="zAk-3m-Lur" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="21" id="UvM-4I-jy3"/>
                             <constraint firstItem="37H-yl-eKz" firstAttribute="top" secondItem="13A-3R-1m7" secondAttribute="bottom" constant="17" id="WTW-tD-8V2"/>
@@ -910,6 +922,7 @@
                             <constraint firstAttribute="trailing" secondItem="RiG-5e-a8u" secondAttribute="trailing" id="brc-uv-ZpQ"/>
                             <constraint firstItem="zAk-3m-Lur" firstAttribute="top" secondItem="SYj-T7-4Km" secondAttribute="top" constant="14" id="iY9-WD-aqV"/>
                             <constraint firstItem="SYj-T7-4Km" firstAttribute="trailing" secondItem="VS1-mY-uwL" secondAttribute="trailing" constant="20" id="inU-z4-RXh"/>
+                            <constraint firstItem="B4c-BG-HsP" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="20" id="oyP-Lg-vBd"/>
                             <constraint firstItem="SYj-T7-4Km" firstAttribute="trailing" secondItem="37H-yl-eKz" secondAttribute="trailing" constant="20" id="qmf-Z4-RUR"/>
                             <constraint firstItem="SYj-T7-4Km" firstAttribute="trailing" secondItem="13A-3R-1m7" secondAttribute="trailing" constant="20" id="vTD-bo-Tuj"/>
                             <constraint firstItem="37H-yl-eKz" firstAttribute="leading" secondItem="SYj-T7-4Km" secondAttribute="leading" constant="20" id="zqs-fp-At9"/>
@@ -918,7 +931,9 @@
                     <navigationItem key="navigationItem" id="scX-NQ-Bow"/>
                     <connections>
                         <outlet property="backButton" destination="zAk-3m-Lur" id="X7q-As-PvC"/>
+                        <outlet property="firstMainLabel" destination="eLA-Uy-ec0" id="6Ls-xp-NlV"/>
                         <outlet property="nextButton" destination="37H-yl-eKz" id="dfS-xh-ikj"/>
+                        <outlet property="passwordRequirementsLabel" destination="B4c-BG-HsP" id="fOw-Wh-FPc"/>
                         <outlet property="passwordTextField" destination="13A-3R-1m7" id="x2H-Tx-CYu"/>
                         <segue destination="Zs5-Xq-sT9" kind="presentation" identifier="toPasswordRecoveryFourthVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="e2A-yF-bQ7"/>
                     </connections>
@@ -1018,7 +1033,9 @@
                     <connections>
                         <outlet property="backButton" destination="iIF-rj-lZJ" id="28i-xX-utb"/>
                         <outlet property="emailTextField" destination="IX4-YG-vzn" id="14O-xL-T29"/>
+                        <outlet property="firstMainLabel" destination="uuQ-Z8-OAC" id="In0-s9-dXv"/>
                         <outlet property="nextButton" destination="dv7-ZA-eeK" id="886-IX-bwa"/>
+                        <outlet property="secondMainLabel" destination="Wl8-HC-bcY" id="YWt-oi-sYJ"/>
                         <segue destination="nmG-Rc-3gh" kind="presentation" identifier="toPasswordRecoverySecondVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RzP-W3-4yR"/>
                     </connections>
                 </viewController>
@@ -1092,6 +1109,14 @@
                                     <action selector="backButtonTapped:" destination="Zs5-Xq-sT9" eventType="touchUpInside" id="IIq-n5-tup"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S05-Of-V8B">
+                                <rect key="frame" x="20" y="630" width="375" height="24"/>
+                                <string key="text">*영문 대/소문자, 숫자, 기호(!@#$%^~*+=-) 사용하여 8~20 글자 사이의 
+비밀번호를 사용하세요. 숫자와 특수기호가 한 글자 이상 포함되어야합니다.</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PT9-ek-KBS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1106,18 +1131,24 @@
                             <constraint firstItem="PT9-ek-KBS" firstAttribute="trailing" secondItem="Kxt-JH-1fe" secondAttribute="trailing" constant="20" id="QOL-Eg-F7U"/>
                             <constraint firstItem="icY-cC-w3p" firstAttribute="leading" secondItem="PT9-ek-KBS" secondAttribute="leading" constant="20" id="cYD-sd-Fb9"/>
                             <constraint firstItem="PT9-ek-KBS" firstAttribute="trailing" secondItem="icY-cC-w3p" secondAttribute="trailing" constant="20" id="dxe-5c-Foo"/>
+                            <constraint firstItem="S05-Of-V8B" firstAttribute="leading" secondItem="PT9-ek-KBS" secondAttribute="leading" constant="20" id="eqc-Ke-dmZ"/>
                             <constraint firstItem="icY-cC-w3p" firstAttribute="top" secondItem="Wih-Bq-Uhi" secondAttribute="bottom" constant="17" id="jZ1-H2-0nB"/>
                             <constraint firstItem="Ryx-xr-XjF" firstAttribute="leading" secondItem="OB1-c0-clk" secondAttribute="leading" id="lKz-gT-Zvd"/>
                             <constraint firstAttribute="bottom" secondItem="Ryx-xr-XjF" secondAttribute="bottom" id="qMR-71-QJr"/>
+                            <constraint firstItem="S05-Of-V8B" firstAttribute="trailing" secondItem="PT9-ek-KBS" secondAttribute="trailing" constant="20" id="qtn-Ad-Zf6"/>
                             <constraint firstAttribute="bottom" secondItem="icY-cC-w3p" secondAttribute="bottom" constant="34" id="tu6-qU-u8k"/>
                             <constraint firstItem="Ryx-xr-XjF" firstAttribute="top" secondItem="OB1-c0-clk" secondAttribute="top" id="uq3-2J-mYz"/>
+                            <constraint firstItem="Wih-Bq-Uhi" firstAttribute="top" secondItem="S05-Of-V8B" secondAttribute="bottom" constant="11" id="uuD-23-gov"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b9u-ia-bG6"/>
                     <connections>
                         <outlet property="backButton" destination="CIe-Ka-jbH" id="GxC-5v-unj"/>
                         <outlet property="confirmPasswordTextField" destination="Wih-Bq-Uhi" id="RtA-vk-0lu"/>
+                        <outlet property="firstMainLabel" destination="uVf-Gb-Qdg" id="GUy-PA-Fwn"/>
                         <outlet property="nextButton" destination="icY-cC-w3p" id="gkU-id-GCj"/>
+                        <outlet property="passwordRequirementsLabel" destination="S05-Of-V8B" id="DDW-Uc-LQH"/>
+                        <outlet property="secondMainLabel" destination="ZKq-md-zwN" id="bsd-Cf-SzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZM-kg-f2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,10 @@ import UIKit
 
 class PasswordRecoveryFirstViewController: UIViewController {
     
+    // 레이블 프로퍼티
+    @IBOutlet weak var firstMainLabel: UILabel!
+    @IBOutlet weak var secondMainLabel: UILabel!
+    
     // 버튼 프로퍼티
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -19,6 +23,7 @@ class PasswordRecoveryFirstViewController: UIViewController {
         super.viewDidLoad()
         
         setupButton()
+        setupLabel()
         setupTextField()
         setupCornerRadius()
         setupDelegate()
@@ -34,6 +39,12 @@ class PasswordRecoveryFirstViewController: UIViewController {
         backButton.tintColor = .gray400
         
         nextButton.isEnabled = false
+    }
+    
+    //MARK: - 레이블 셋업 메서드
+    private func setupLabel() {
+        firstMainLabel.textColor = .gray900
+        secondMainLabel.textColor = .gray900
     }
     
     //MARK: - 텍스트 필드 셋업 메서드
@@ -95,7 +106,7 @@ class PasswordRecoveryFirstViewController: UIViewController {
             self.performSegue(withIdentifier: "toPasswordRecoverySecondVC", sender: self)
         } else {
             // 오류 발생 시 토스트 얼럿으로 메시지를 보여줌.
-            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: emailTextField, in: self)
+            ToastManager.showToastAboveTextField(message: response.message, font: .systemFont(ofSize: 16, weight: .medium), aboveTextField: emailTextField, textFieldTopMargin: 13, in: self)
             
         }
     }

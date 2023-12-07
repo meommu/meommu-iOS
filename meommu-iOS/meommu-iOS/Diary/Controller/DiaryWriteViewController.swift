@@ -20,7 +20,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         diaryImageCollectionView.delegate = self
         diaryImageCollectionView.dataSource = self
         
@@ -51,6 +51,34 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             }
             diaryTitleTextField.text = diaryData?.title
             diaryContextTextView.text = diaryData?.content
+            
+            // 이미지 ID를 사용하여 이미지 정보 가져오기
+            if let imageIds = diaryData?.imageIds {
+                var params: Parameters = [:]
+                for id in imageIds {
+                    params["id"] = id
+                    AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images", parameters: params).responseDecodable(of: ImageUploadResponse.self) { response in
+                        switch response.result {
+                        case .success(let data):
+                            let url = data.data.images.first?.url
+                            DispatchQueue.global().async {
+                                self.downloadImage(from: url) {
+                                    DispatchQueue.main.async {
+                                        
+                                        self.imageArray.reverse()
+                                        
+                                        // 이미지 다운로드 완료, UI 업데이트
+                                        self.diaryImageCollectionView.reloadData()
+                                    }
+                                }
+                            }
+                        case .failure(let error):
+                            print("Image Info Error: \(error)")
+                        }
+                    }
+                }
+            }
+            
         } else {
             todayDateSet()
         }
@@ -100,6 +128,37 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             }
         }
     }
+    
+    // 이미지 캐시 생성
+    let imageCache = NSCache<NSString, UIImage>()
+
+    
+    // 이미지 URL을 받아서 이미지를 다운로드하고, 다운로드한 이미지로 imageArray의 해당 위치의 nil 값을 교체하는 함수
+    func downloadImage(from url: String?, completion: @escaping () -> Void) {
+        guard let urlString = url else {
+            print("Invalid URL")
+            return
+        }
+        
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
+            self.imageArray.append(cachedImage)
+            completion()
+        } else {
+            AF.download(urlString).responseData { response in
+                switch response.result {
+                case .success(let data):
+                    if let image = UIImage(data: data) {
+                        self.imageArray.append(image)
+                        self.imageCache.setObject(image, forKey: urlString as NSString)
+                    }
+                case .failure(let error):
+                    print("Image Download Error: \(error)")
+                }
+                completion()
+            }
+        }
+    }
+    
     
     // -----------------------------------------
     // 1단계 바텀시트
@@ -337,7 +396,9 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         
         
         // 이미지 순서 반전
-        let orderedImageArray = imageArray.reversed()
+        let orderedImageArray = isEdited == true ? imageArray : imageArray.reversed()
+        
+        
         
         if orderedImageArray.isEmpty {
             // 이미지가 없는 경우, 바로 api 호출

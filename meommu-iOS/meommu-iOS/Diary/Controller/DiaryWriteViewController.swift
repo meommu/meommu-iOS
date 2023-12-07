@@ -130,19 +130,20 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             cell.diaryImagePickerButton.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addImage))
             cell.diaryImagePickerButton.addGestureRecognizer(tapGesture)
-            
             cell.diaryImageCountLabel.text = "\(imageArray.count) / 5"
-            
             return cell
         } else {
             if indexPath.row <= imageArray.count {
                 let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageCell", for: indexPath) as! DiaryImageCollectionViewCell
-                cell.diaryImageView.image = imageArray[indexPath.row - 1]
+                // 이미지를 배열의 맨 뒤부터 표시
+                cell.diaryImageView.image = imageArray[imageArray.count - indexPath.row]
                 
-                // 삭제 버튼 클릭 시 실행될 클로저 설정
                 cell.onDelete = { [weak self] in
-                    self?.imageArray.remove(at: indexPath.row - 1)
-                    self?.diaryImageCollectionView.reloadData()
+                    if let index = self?.imageArray.count {
+                        // 이미지를 배열의 맨 뒤부터 삭제
+                        self?.imageArray.remove(at: index - indexPath.row)
+                        self?.diaryImageCollectionView.reloadData()
+                    }
                 }
                 
                 return cell
@@ -171,6 +172,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (object, error) in
                 if let image = object as? UIImage {
                     DispatchQueue.main.async {
+                        // 이미지를 배열의 맨 뒤에 추가
                         self?.imageArray.append(image)
                         self?.diaryImageCollectionView.reloadData()
                     }
@@ -334,7 +336,10 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         let imageUploadGroup = DispatchGroup()
         
         
-        if imageArray.isEmpty {
+        // 이미지 순서 반전
+        let orderedImageArray = imageArray.reversed()
+        
+        if orderedImageArray.isEmpty {
             // 이미지가 없는 경우, 바로 api 호출
             if let isEdited = isEdited, isEdited {
                 editDiary(diaryId: diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
@@ -343,7 +348,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             }
         } else {
             // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
-            imageArray.forEach { image in
+            orderedImageArray.forEach { image in
                 imageUploadGroup.enter()
                 
                 AF.upload(multipartFormData: { multipartFormData in

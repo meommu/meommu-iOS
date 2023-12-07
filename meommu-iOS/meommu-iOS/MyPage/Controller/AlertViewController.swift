@@ -109,11 +109,13 @@ class AlertViewController: UIViewController {
     }
     
     
+    // 메인 버튼 탭 액션
     @IBAction func mainButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: false)
         mainAction?()
     }
     
-    
+    // 얼럿 창 없애기
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         

@@ -68,23 +68,90 @@ class MyPageViewController: UIViewController {
         pageTableView.separatorStyle = .none
     }
     
-    //MARK: - 로그아웃 버튼 메서드
+    //MARK: - 로그아웃 버튼 탭 메서드
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
-        
+        presetLogoutAlert()
+    }
+    
+    //MARK: - 로그아웃 얼럿 띄우기 메서드
+    private func presetLogoutAlert() {
         // 해당 얼럿 뷰 생성
-        let logoutAlert = AlertViewController(alertName: "로그아웃", alertMessage: "로그아웃 후 알림을 받을 수 없습니다.", alertMainButtonName: "로그아웃", alertBackButtonName: "이전", mainAction: { print("로그아웃 버튼 눌림")})
+        let logoutAlert = AlertViewController(alertName: "로그아웃", alertMessage: "로그아웃 후 알림을 받을 수 없습니다.", alertMainButtonName: "로그아웃", alertBackButtonName: "이전", mainAction: logoutAlertButtonTapped)
         
+        // 얼럿 띄우기
         self.present(logoutAlert, animated: true)
     }
     
-    //MARK: - 회원탈퇴 버튼 메서드
-    @IBAction func withdrawalButtonTapped(_ sender: UIButton) {
-        // 해당 얼럿 뷰 생성
-        let withdrawalAlert = AlertViewController(alertName: "회원탈퇴", alertMessage: "그 동안 작성했던 모든 일기와\n입력했던 정보들이 삭제됩니다.", alertMainButtonName: "회원탈퇴", alertBackButtonName: "이전", mainAction: { print("회원탈퇴 버튼 눌림")})
-        
-        self.present(withdrawalAlert, animated: true)
+    //MARK: - 로그아웃 얼럿 버튼 탭 메서드
+    private func logoutAlertButtonTapped() {
+        // 로그인 화면으로 이동
+        self.changeRootViewToLogin()
+        // 저장된 액세스 토큰 삭제
+        KeyChain.shared.delete(key: KeyChain.shared.accessTokenKey)
     }
     
+    //MARK: - 로그인 화면으로 루트 뷰 변경 메서드
+    private func changeRootViewToLogin() {
+        let newStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "LoginFirstViewController")
+        
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        
+        sceneDelegate.changeRootViewController(newViewController, animated: true)
+    }
+    
+    
+    
+    //MARK: - 회원탈퇴 버튼 탭 메서드
+    @IBAction func withdrawalButtonTapped(_ sender: UIButton) {
+        presentWithdrawalFirstAlert()
+    }
+    
+    //MARK: - 회원탈퇴 첫 번째 얼럿 띄우기 메서드
+    private func presentWithdrawalFirstAlert() {
+        // 해당 얼럿 뷰 생성
+        let withdrawalFirstAlert = AlertViewController(alertName: "회원탈퇴", alertMessage: "그 동안 작성했던 모든 일기와\n입력했던 정보들이 삭제됩니다.", alertMainButtonName: "회원탈퇴", alertBackButtonName: "이전", mainAction: withdrawalFirstAlertButtonTapped)
+        
+        self.present(withdrawalFirstAlert, animated: true)
+    }
+    
+    private func withdrawalFirstAlertButtonTapped() {
+        
+        presentWithdrawalSecondAlert()
+    }
+    
+    //MARK: - 회원탈퇴 첫 번째 얼럿 띄우기 메서드
+    private func presentWithdrawalSecondAlert() {
+        // 해당 얼럿 뷰 생성
+        let withdrawalSecondAlert = AlertViewController(alertName: "정말 탈퇴할까요?", alertMessage: "이 작업은 돌이킬 수 없습니다.", alertMainButtonName: "회원탈퇴", alertBackButtonName: "이전", mainAction: withdrawalSecondAlertButtonTapped)
+        
+        self.present(withdrawalSecondAlert, animated: true)
+    }
+    
+    private func withdrawalSecondAlertButtonTapped() {
+        let userProfileService = UserProfileService()
+        
+        userProfileService.withdrawalUserProfile { response in
+            switch response {
+            case .success(let response):
+                if response.code == "0000" {
+                    // 로그인 화면으로 이동
+                    self.changeRootViewToLogin()
+                    // 저장된 액세스 토큰 삭제
+                    KeyChain.shared.delete(key: KeyChain.shared.accessTokenKey)
+                } else {
+                    print(response.message)
+                }
+            case .failure(_):
+                print("회원탈퇴 에러 발생2")
+            }
+        }
+        
+        
+        
+    }
+    
+
     //MARK: - 백 버튼 탭 메서드
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)

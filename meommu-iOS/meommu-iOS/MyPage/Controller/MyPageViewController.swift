@@ -9,6 +9,9 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     
+    // 공지사항으르 저장한 프로퍼티
+    var announcementDataArray: [Announcment] = []
+    
     // 유저 정보 모델 - 서버 통신을 통해 데이터 전달 받아야 함
     var userProfile: UserProfileModel?
     
@@ -39,7 +42,7 @@ class MyPageViewController: UIViewController {
     func setupButton() {
         logoutButton.setTitleColor(.gray300, for: .normal)
         withdrawalButton.setTitleColor(.gray300, for: .normal)
-       
+        
     }
     
     func setupView() {
@@ -140,22 +143,39 @@ class MyPageViewController: UIViewController {
                     // 저장된 액세스 토큰 삭제
                     KeyChain.shared.delete(key: KeyChain.shared.accessTokenKey)
                 } else {
-                    print(response.message)
+                    print(response.message!)
                 }
             case .failure(_):
                 print("회원탈퇴 에러 발생2")
             }
         }
-        
-        
-        
     }
     
-
     //MARK: - 백 버튼 탭 메서드
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)
     }
+    
+    // 서버에서 공지 받아와서 현재 뷰컨에 있는 배열에 데이터 저장
+    func getAnnouncement(completion: @escaping () -> Void) {
+        
+        let announcementService = AnnouncementService()
+        
+        announcementService.requestAnnouncment { response in
+            switch response {
+            case .success(let response):
+                for data in response.data.notices {
+                    let notice = Announcment(title: data.title, content: data.content)
+                    self.announcementDataArray.append(notice)
+                }
+            case .failure(_):
+                print("공지사항 오류")
+            }
+            completion()
+        }
+        
+    }
+    
 }
 
 //MARK: - UITableViewDataSource 확장
@@ -184,6 +204,7 @@ extension MyPageViewController: UITableViewDataSource {
 
 //MARK: - UITableDelegate 확장
 extension MyPageViewController: UITableViewDelegate {
+    
     // 셀 설택 시 다음 동작 실행
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -191,7 +212,10 @@ extension MyPageViewController: UITableViewDelegate {
             // 세그웨이를 실행
             performSegue(withIdentifier: "toProfileEditVC", sender: indexPath)
         } else if indexPath.row == 1 {
-            performSegue(withIdentifier: "toAnnouncementVC", sender: indexPath)
+            
+            getAnnouncement {
+                self.performSegue(withIdentifier: "toAnnouncementVC", sender: indexPath)
+            }
         }
     }
     
@@ -199,11 +223,14 @@ extension MyPageViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toProfileEditVC" {
             let profileEditVC = segue.destination as! ProfileEditViewController
-//            let index = sender as! IndexPath
             
             profileEditVC.userProfile = self.userProfile
+        } else if segue.identifier == "toAnnouncementVC" {
+            let announcementVC = segue.destination as! AnnouncementViewController
+            announcementVC.announcementDataArray = self.announcementDataArray
         }
     }
+    
 }
 
 

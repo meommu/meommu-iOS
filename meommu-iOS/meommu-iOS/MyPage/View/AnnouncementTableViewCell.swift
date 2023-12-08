@@ -19,15 +19,24 @@ class AnnouncementTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.prepare(announcment: nil)
+        self.prepareCellData(announcment: nil)
     }
     
-    func prepare(announcment: Announcment?) {
+    func prepareCellData(announcment: Announcment?) {
         titleLabel.text = announcment?.title
         contentLabel.text = announcment?.content
         contentLabelView.isHidden = announcment?.isContentHidden ?? true
         buttonImage.image = contentLabelView.isHidden ? UIImage(systemName: "chevron.down") : UIImage(systemName: "chevron.up")
     }
+    
+    func setupCell() {
+        titleLabelView.backgroundColor = .gray200
+        contentLabelView.backgroundColor = .white
+        
+        titleLabel.textColor = .gray500
+        contentLabel.textColor = .gray500
+    }
+    
     
 }
 

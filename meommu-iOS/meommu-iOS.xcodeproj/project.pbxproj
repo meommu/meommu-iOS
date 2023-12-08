@@ -32,6 +32,7 @@
 		2686083F2B1DDE8A00FA823E /* PasswordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */; };
 		268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608402B1E2B7100FA823E /* UIButton+Customization.swift */; };
 		268608432B222C5900FA823E /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608422B222C5900FA823E /* UserProfileService.swift */; };
+		268608452B22A44C00FA823E /* AnnouncementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608442B22A44B00FA823E /* AnnouncementService.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -118,6 +119,7 @@
 		2686083E2B1DDE8A00FA823E /* PasswordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecovery.swift; sourceTree = "<group>"; };
 		268608402B1E2B7100FA823E /* UIButton+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Customization.swift"; sourceTree = "<group>"; };
 		268608422B222C5900FA823E /* UserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
+		268608442B22A44B00FA823E /* AnnouncementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementService.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */,
 				268608422B222C5900FA823E /* UserProfileService.swift */,
 				26A06DE62AFC01C30039813F /* Announcement.swift */,
+				268608442B22A44B00FA823E /* AnnouncementService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */,
 				264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */,
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
+				268608452B22A44C00FA823E /* AnnouncementService.swift in Sources */,
 				F991C3D52B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift in Sources */,
 				F959A14F2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift in Sources */,
 				264BF3BB2B14C9F700FCFBEC /* LoginAPI.swift in Sources */,

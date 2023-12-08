@@ -115,7 +115,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="yN7-gZ-bP8"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="4" id="Qba-Go-g1V">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="9" id="Qba-Go-g1V">
                                             <size key="itemSize" width="70" height="70"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -269,16 +269,21 @@
                                     <action selector="OnClick_diaryGuideButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F2D-o7-ApI"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MtV-Hy-0oH">
+                                <rect key="frame" x="335" y="62" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MtV-Hy-0oH" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="62" id="2Tr-o6-eIR"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="2h1-pS-TZP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SYv-T2-0TZ" secondAttribute="bottom" id="5pC-0o-Akb"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
                             <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="j8t-hA-jFg"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOo-iK-t9e"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oWe-i1-C1Z"/>
+                            <constraint firstAttribute="trailing" secondItem="MtV-Hy-0oH" secondAttribute="trailing" constant="20" id="ry0-Uc-8G7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="일기쓰기" id="y5s-cd-1iW">
@@ -290,7 +295,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="완료" id="QCi-Pm-iAW">
-                            <color key="tintColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" name="Gray400"/>
                             <connections>
                                 <action selector="OnClick_diaryWriteButton:" destination="Y6W-OH-hqX" id="7Fo-UV-t5n"/>
                             </connections>
@@ -305,6 +310,7 @@
                         <outlet property="diaryImageCollectionView" destination="1sB-Av-SdL" id="OyF-Lx-LHs"/>
                         <outlet property="diaryTitleTextField" destination="xle-eJ-eBe" id="EwA-Oa-oFs"/>
                         <outlet property="diaryWriteButton" destination="QCi-Pm-iAW" id="QVe-Tb-1QQ"/>
+                        <outlet property="loadingIndicator" destination="MtV-Hy-0oH" id="bsP-ab-xcz"/>
                         <outlet property="monthLabel" destination="v3L-xe-weQ" id="ztH-Zn-GTW"/>
                         <outlet property="yearLabel" destination="CoC-az-mNw" id="3Bf-0a-sDV"/>
                     </connections>
@@ -342,6 +348,9 @@
         </namedColor>
         <namedColor name="Gray300">
             <color red="0.73299998044967651" green="0.73299998044967651" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray400">
+            <color red="0.53700000047683716" green="0.53700000047683716" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray500">
             <color red="0.40000000596046448" green="0.40000000596046448" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

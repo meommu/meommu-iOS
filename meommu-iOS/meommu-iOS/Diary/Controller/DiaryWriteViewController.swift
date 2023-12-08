@@ -31,10 +31,13 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             diaryContextTextView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
             diaryContextTextView.textColor = .lightGray
         }
-        
+                
         // 데이트 피커
         setAvailableDate()
         createPickerView()
+        
+        // 인디케이터뷰 안 보이게 하기
+        loadingIndicator.isHidden = true
         
         // isEdited가 true인 경우 데이터 설정
         if let isEdited = isEdited, isEdited {
@@ -384,16 +387,21 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     
     // -----------------------------------------
     // 일기 내용 작성 완료
-    
+
     @IBOutlet var diaryWriteButton: UIBarButtonItem!
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     
     @IBAction func OnClick_diaryWriteButton(_ sender: Any) {
+        
+        // 로딩 인디케이터를 시작하고, 버튼을 비활성화합니다.
+        loadingIndicator.isHidden = false
+        self.loadingIndicator.startAnimating()
+        self.navigationItem.rightBarButtonItem = nil
         
         guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
         var uploadedImageIds: [Int] = []
         let imageUploadGroup = DispatchGroup()
-        
         
         // 이미지 순서 반전
         let orderedImageArray = isEdited == true ? imageArray : imageArray.reversed()
@@ -407,6 +415,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             } else {
                 createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
             }
+            
         } else {
             // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
             orderedImageArray.forEach { image in
@@ -447,6 +456,11 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             }
             
             imageUploadGroup.notify(queue: .main) {
+                // 업로드 작업이 완료된 후, 로딩 인디케이터를 멈추고 버튼을 다시 활성화합니다.
+                self.loadingIndicator.isHidden = true
+                self.loadingIndicator.stopAnimating()
+                self.navigationItem.rightBarButtonItem = self.diaryWriteButton
+                
                 if let isEdited = self.isEdited, isEdited {
                     self.editDiary(diaryId: self.diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
                 } else {

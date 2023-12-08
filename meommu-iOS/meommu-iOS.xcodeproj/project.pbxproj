@@ -314,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				F959A1512AB81561009D90A8 /* Model */,
-				F979D7A42AB7DFC300C52C47 /* Cell */,
 				F907437D2AB73C7400F7C503 /* View */,
 				F907437E2AB73C7F00F7C503 /* Controller */,
 			);
@@ -324,6 +323,7 @@
 		F907437D2AB73C7400F7C503 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F979D7A42AB7DFC300C52C47 /* Cell */,
 				F9BC8E782ABC0EA6000D90D1 /* BottomSheet */,
 				F907437F2AB73CAD00F7C503 /* Diary.storyboard */,
 				F953DD602AB82B22009F3B52 /* DiarySend.storyboard */,

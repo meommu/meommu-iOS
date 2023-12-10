@@ -9,24 +9,28 @@ import Foundation
 
 //MARK: -  유저 정보 모델
 struct UserProfileModel {
-    var kindergartenName, representativeName, phoneNumber, email, password: String?
+    var kindergartenName, representativeName, phoneNumber, email: String?
 }
 
 // MARK: - 유저 정보 조회 응답
 struct UserProfileResponse: Codable {
-    let code, message: String?
+    let code, message: String
     let userProfileData: UserProfileData?
     
     // 네트워크에서 주는 이름을 변환하는 방법 (원시값)
     enum CodingKeys: String, CodingKey {
         case code
         case message
-        case userProfileData = "Data"
+        case userProfileData = "data"
     }
 }
 // 유저 정보 조회 응답 데이터
 struct UserProfileData: Codable {
-    let name, ownerName, phone, email: String?
+    let id, name, ownerName, phone, email: String?
+}
+
+struct UserProfileUpdateRequest: Codable {
+    let name, ownerName, phone: String?
 }
 
 //MARK: - 회원 정보 수정 응답

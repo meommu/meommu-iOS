@@ -9,7 +9,7 @@ import UIKit
 
 class AnnouncementViewController: UIViewController {
     
-    var announcementDataArray: [Announcment] = [Announcment(title: "23년 09월 27일 일요일 답장 관련 공지", content: "23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구"), Announcment(title: "23년 09월 27일 일요일 답장 관련 공지", content: "23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구\n23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구"), Announcment(title: "23년 09월 27일 일요일 답장 관련 공지", content: "23년 09월 27일 일요일 답장 관련 공지입니다.\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구 어쩌구\n어쩌구 어쩌구 어쩌구")]
+    var announcementDataArray: [Announcment] = []
     
     @IBOutlet weak var announcementTableView: UITableView!
     
@@ -17,7 +17,14 @@ class AnnouncementViewController: UIViewController {
         super.viewDidLoad()
 
         setupDelegate()
+        setupTableView()
         
+
+    }
+    
+    private func setupTableView() {
+        // 테이블뷰 라인 없애기
+        announcementTableView.separatorStyle = .none
     }
     
     func setupDelegate() {
@@ -31,7 +38,6 @@ class AnnouncementViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
     }
     
-    
 }
 
 extension AnnouncementViewController: UITableViewDataSource {
@@ -42,7 +48,10 @@ extension AnnouncementViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
         let announcement = announcementDataArray[indexPath.row]
-        cell.prepare(announcment: announcement)
+        cell.prepareCellData(announcment: announcement)
+        cell.setupCell()
+        
+        cell.selectionStyle = .none
         
         return cell
     }

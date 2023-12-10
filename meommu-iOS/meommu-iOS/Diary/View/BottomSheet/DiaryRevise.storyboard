@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,7 @@
                                             <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="OnClick_diaryEditButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oUI-Vt-GQF"/>
+                                            <action selector="diaryEditButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eKS-xl-wvh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-25-xxj">
@@ -45,7 +45,7 @@
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="OnClick_diaryDeleteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MnZ-pv-8W3"/>
+                                            <action selector="diaryDeleteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jTP-1K-ESy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -69,8 +69,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="diaryDeleteButton" destination="7fm-25-xxj" id="nH9-Vy-t7V"/>
-                        <outlet property="diaryEditButton" destination="TOY-Vx-oWV" id="X9d-XA-jLi"/>
+                        <outlet property="diaryDeleteButton" destination="7fm-25-xxj" id="fdc-cr-bJ0"/>
+                        <outlet property="diaryEditButton" destination="TOY-Vx-oWV" id="xIq-Zu-CS2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

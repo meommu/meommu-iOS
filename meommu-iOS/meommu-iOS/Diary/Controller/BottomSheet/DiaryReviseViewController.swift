@@ -12,6 +12,14 @@ import PanModal
 
 class DiaryReviseViewController: UIViewController {
     
+    // 일기 수정하기 버튼 프로퍼티
+    @IBOutlet var diaryEditButton: UIButton!
+    // 일기 삭제 버튼 프로퍼티
+    @IBOutlet var diaryDeleteButton: UIButton!
+    
+    // 해당 다이어리 id를 받기 위한 프로퍼티
+    var diaryId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +32,12 @@ class DiaryReviseViewController: UIViewController {
         return accessToken
     }
     
-    // 일기 수정하기
-    @IBOutlet var diaryEditButton: UIButton!
-    
-    @IBAction func OnClick_diaryEditButton(_ sender: Any) {
+
+    //MARK: - 다이어리 수정 버튼 탭 메서드
+    @IBAction func diaryEditButtonTapped(_ sender: Any) {
         guard let diaryId = diaryId else { return }
+        
+        print("다이어라 id: \(diaryId)")
         
         guard let accessToken = getAccessTokenFromKeychain() else {
             print("Access Token not found.")
@@ -40,6 +49,7 @@ class DiaryReviseViewController: UIViewController {
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         
+        // 해당 일기의 id 값으로 세부 정보 받기 위한 메서드
         AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)", method: .get, headers: headers).responseDecodable(of: DiaryIdResponse.self) { response in
             switch response.result {
             case .success(let diaryIdResponse):
@@ -54,12 +64,14 @@ class DiaryReviseViewController: UIViewController {
             }
         }
         
+        // 수정을 위한 일기 작성 화면 띄우기
         let diarysendStoryboard = UIStoryboard(name: "DiarySend", bundle: nil)
         let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendNameViewController")
         diarysendVC.modalPresentationStyle = .fullScreen
         self.present(diarysendVC, animated: true, completion: nil)
     }
     
+    // ❓
     func sendDiaryDataToViewController(diary: DiaryIdResponse.Data) {
         // 이름 수정
         NotificationCenter.default.post(name: NSNotification.Name("diaryEdit"), object: nil, userInfo: ["diary": diary])
@@ -68,17 +80,16 @@ class DiaryReviseViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name("diaryEditClicked"), object: nil)
     }
     
-    // 일기 삭제하기
-    var diaryId: Int?
     
     
-    @IBOutlet var diaryDeleteButton: UIButton!
     
-    @IBAction func OnClick_diaryDeleteButton(_ sender: Any) {
+    
+    //MARK: - 다이어리 삭제 버튼 탭 메서드
+    @IBAction func diaryDeleteButtonTapped(_ sender: Any) {
         deleteDiary()
     }
 
-    
+    // 다이어리 삭제 요첨 메서드
     func deleteDiary() {
         guard let diaryId = diaryId else { return }
         
@@ -114,6 +125,7 @@ class DiaryReviseViewController: UIViewController {
     
 }
 
+//MARK: - panModalPresentable 확장
 extension DiaryReviseViewController: PanModalPresentable {
     var panScrollable: UIScrollView? {
         return nil

@@ -21,10 +21,10 @@ class DiaryMainTableViewCell: UITableViewCell {
     @IBOutlet var imagePageView: UIView!
     @IBOutlet var imagePageLabel: UILabel!
     
+    @IBOutlet var diaryReviseButton: UIButton!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0))
         
         diaryImageView.layer.cornerRadius = 6
         
@@ -43,12 +43,14 @@ class DiaryMainTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //MARK: - 이미지 설정 메서드 + 이미지 개수 표
+
     func setImageUrls(_ urls: [String]) {
         if let firstUrl = urls.first, let url = URL(string: firstUrl) {
             diaryImageView.af.setImage(withURL: url)
         }
         
-        // 이미지 개수 표시
+        // 이미지 카운트 ❓
         if(urls.count > 0){
             imagePageLabel.text = "1 / \(urls.count)"
         } else {
@@ -60,8 +62,8 @@ class DiaryMainTableViewCell: UITableViewCell {
     
     var diaryReviseAction : (() -> ()) = {}
     
-    @IBOutlet var diaryReviseButton: UIButton!
 
+    //MARK: - 다이어리 수정 버튼 탭 메서드
     @objc func diaryReviseButtonTapped() {
         diaryReviseAction()
     }

@@ -9,60 +9,107 @@ import UIKit
 import AlamofireImage
 import PanModal
 
+// 아직 안된 기능: 공유하기 버튼, 이미지 스와이프(현재는 페이지 컨트롤 터치 시에만 이미지 넘김)
 
 class DiaryDetailViewController: UIViewController {
 
+    @IBOutlet var backButton: UIBarButtonItem!
+    @IBOutlet var diaryReviseButton: UIBarButtonItem!
+    
+    @IBOutlet var diaryDateLabel: UILabel!
+    @IBOutlet var diaryDetailLabel: UILabel!
+    @IBOutlet var diaryTitleLabel: UILabel!
+    @IBOutlet var diaryNameLabel: UILabel!
+    @IBOutlet var diaryImageView: UIImageView!
+    
+    @IBOutlet var imagePageView: UIView!
+    @IBOutlet var imagePageLabel: UILabel!
+    
+    @IBOutlet var diaryImagePageControl: UIPageControl!
+    
+    // 특정 일기 데이터 저장 프로퍼티
+    var diary : DiaryResponse.Data.Diary?
+    
+    // 이미지 url 저장 프로포티
+    var imageUrls: [String] = []
+    
+    //MARK: - viewDidLoad 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateUI()
+        setupLabel()
         setupPageControl()
-        updateImage()
+        setupImage()
+        setupView()
         
-        // imagePageView 테두리 둥글게
-        imagePageView.layer.cornerRadius = 10
         
         // NotificationCenter를 통해 알림 받기
         NotificationCenter.default.addObserver(self, selector: #selector(self.diaryDeleted), name: NSNotification.Name("diaryDeleted"), object: nil)
         
     }
     
-    // -----------------------------------------
-    // 일기 수정 및 삭제 바텀시트 생성하기
     
-    @IBOutlet var diaryReviseButton: UIBarButtonItem!
     
-    @IBAction func OnClick_diaryReviseButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
-        let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
-
-        diaryReviseVC.diaryId = diary?.id
+    //MARK: - 레이블 셋업 메서드
+   private func setupLabel(){
+        guard let selectedDiary = diary else { return }
         
-        presentPanModal(diaryReviseVC)
+        diaryDateLabel.text = convertDate(selectedDiary.date)
+        diaryDetailLabel.text = selectedDiary.content
+        diaryTitleLabel.text = selectedDiary.title
+        diaryNameLabel.text = selectedDiary.dogName + " 일기"
     }
-
+    
+    //MARK: - 뷰 셋업 메서드
+    private func setupView() {
+        // imagePageView 테두리 둥글게
+        imagePageView.layer.cornerRadius = 10
+    }
+    
+    //MARK: - 이미지 셋업 메서드
+    // 1. 이미지 보이기
+    // 2. 이미지 페이지 레이블 수정
+    private func setupImage() {
+        if !imageUrls.isEmpty && diaryImagePageControl.currentPage < imageUrls.count {
+            
+            let imageUrl = imageUrls[diaryImagePageControl.currentPage]
+            
+            loadAndDisplayImage(from: imageUrl)
+            
+            // 이미지 페이지 업데이트
+            imagePageLabel.text = "\(diaryImagePageControl.currentPage + 1) / \(imageUrls.count)"
+            
+        } else {
+            // ❓ 일기를 생성할 때 이미지 1장은 필수이기 때문에 필요 없을 듯?
+            
+            // 이미지가 없는 경우를 처리합니다. 예를 들어, 기본 이미지를 표시하도록 설정할 수 있습니다.
+            diaryImageView.image = UIImage(named: "defaultImage")
+            
+            // 이미지 페이지 업데이트
+            imagePageLabel.text = "0 / \(imageUrls.count)"
+        }
+    }
+    
+    //MARK: - 이미지 url을 받으면 이미지 뷰를 변경시키는 메서드
+    private func loadAndDisplayImage(from url: String) {
+        if let imageUrl = URL(string: url) {
+            diaryImageView.af.setImage(withURL: imageUrl)
+        }
+    }
+    
+    //MARK: - 페이지 컨트롤러 초기 셋업 메서드
+    private func setupPageControl() {
+        diaryImagePageControl.numberOfPages = imageUrls.count
+        diaryImagePageControl.currentPage = 0
+    }
+    
+    //MARK: - 일기 삭제 시 화면 전환 메서드
     @objc func diaryDeleted() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    // -----------------------------------------
-    // 뒤로 가기 버튼
-    @IBOutlet var backButton: UIBarButtonItem!
-    @IBAction func OnClick_BackButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    // -----------------------------------------
-    // 전달 받은 데이터 조회하기
-    @IBOutlet var diaryDate: UILabel!
-    @IBOutlet var diaryDetail: UILabel!
-    @IBOutlet var diaryTitle: UILabel!
-    @IBOutlet var diaryName: UILabel!
-    @IBOutlet var diaryImageView: UIImageView!
-    
-    var diary : DiaryResponse.Data.Diary?
-    
-    func convertDate(_ dateStr: String) -> String {
+    //MARK: - 날짜 변환 메서드
+    private func convertDate(_ dateStr: String) -> String {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
         
@@ -77,56 +124,26 @@ class DiaryDetailViewController: UIViewController {
         }
     }
     
-    func updateUI(){
-        guard let selectedDiary = diary else { return }
+    //MARK: - 일기 수정 버튼 탭 메서드
+    @IBAction func diaryReviseButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
+        let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
+
+        // 해당 일기의 id 값 전달
+        diaryReviseVC.diaryId = diary?.id
         
-        diaryDate.text = convertDate(selectedDiary.date)
-        diaryDetail.text = selectedDiary.content
-        diaryTitle.text = selectedDiary.title
-        diaryName.text = selectedDiary.dogName + " 일기"
+        presentPanModal(diaryReviseVC)
     }
+
     
-    // -----------------------------------------
-    // 이미지 가져오기 및 컨트롤
     
-    @IBOutlet var imagePageView: UIView!
-    @IBOutlet var imagePageLabel: UILabel!
-    
-    var imageUrls: [String] = []
-    
-    func updateImage() {
-        if !imageUrls.isEmpty && diaryimagepageControl.currentPage < imageUrls.count {
-            let imageUrl = imageUrls[diaryimagepageControl.currentPage]
-            loadAndDisplayImage(from: imageUrl)
-            
-            // 이미지 페이지 업데이트
-            imagePageLabel.text = "\(diaryimagepageControl.currentPage + 1) / \(imageUrls.count)"
-            
-        } else {
-            // 이미지가 없는 경우를 처리합니다. 예를 들어, 기본 이미지를 표시하도록 설정할 수 있습니다.
-            diaryImageView.image = UIImage(named: "defaultImage")
-            
-            // 이미지 페이지 업데이트
-            imagePageLabel.text = "0 / \(imageUrls.count)"
-        }
+    //MARK: - 이전 버튼 탭 메서드
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    
-    func loadAndDisplayImage(from url: String) {
-        if let imageUrl = URL(string: url) {
-            diaryImageView.af.setImage(withURL: imageUrl)
-        }
-    }
-    
-    func setupPageControl() {
-        diaryimagepageControl.numberOfPages = imageUrls.count
-        diaryimagepageControl.currentPage = 0
-    }
-    
-    @IBOutlet var diaryimagepageControl: UIPageControl!
     
     @IBAction func diaryimagePageChange(_ sender: UIPageControl) {
-        updateImage()
+        setupImage()
     }
     
-
 }

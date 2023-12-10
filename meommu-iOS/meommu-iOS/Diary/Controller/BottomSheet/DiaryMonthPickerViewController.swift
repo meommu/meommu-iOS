@@ -91,6 +91,7 @@ class DiaryMonthPickerViewController: UIViewController, UICollectionViewDelegate
         print("\(selectedYear)년 \(month)월")
 
         let userInfo = ["year": selectedYear, "month": month]
+        
         NotificationCenter.default.post(name: Notification.Name("DidPickMonth"), object: nil, userInfo: userInfo)
         
         dismiss(animated: true, completion: nil)

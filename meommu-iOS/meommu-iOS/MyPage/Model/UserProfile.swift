@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: -  유저 정보 모델
 struct UserProfileModel {
-    var kindergartenName, representativeName, phoneNumber, email, password: String?
+    var kindergartenName, representativeName, phoneNumber, email: String?
 }
 
 // MARK: - 유저 정보 조회 응답

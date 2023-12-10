@@ -51,8 +51,19 @@ class MyPageViewController: UIViewController {
     
     //MARK: - 프로필 셋업 메서드
     func setupProfile() {
+        
+        let userProfileService = UserProfileService()
+        
+//        userProfileService.getUserProfile { result in
+//            switch result {
+//            case .success(let result):
+//
+//            }
+//        }
+        
+        
         // 유저 정보 더미 데이터 생성 ❌
-        userProfile = UserProfileModel(kindergartenName: "멈무유치원", representativeName: "홍길동", phoneNumber: "010-3036-1045", email: "abcd@naver.com", password: "abc123@@")
+        userProfile = UserProfileModel(kindergartenName: "멈무유치원", representativeName: "홍길동", phoneNumber: "010-3036-1045", email: "abcd@naver.com")
         
         kindergartenNameLabel.text = userProfile?.kindergartenName
         emailLabel.text = userProfile?.email

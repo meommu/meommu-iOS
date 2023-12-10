@@ -12,21 +12,58 @@ import PanModal
 
 class DiaryViewController: UIViewController {
     
+    // 메인 로고 버튼
+    @IBOutlet var MeommuMainButton: UIBarButtonItem!
     
+    // year, month 레이블 프로퍼티
+    @IBOutlet var yearLabel: UILabel!
+    @IBOutlet var monthLabel: UILabel!
     
+    // month 선택 피커 버튼
+    @IBOutlet var diaryMonthPickerButton: UIButton!
+    
+    @IBOutlet var DiaryMainTableView: UITableView!
+    
+    // 현재 year 저장 프로퍼티
+    lazy var currentYear: String = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter.string(from: Date())
+    }()
+    
+    // 일기 작성 버튼 프로퍼티
+    @IBOutlet var diaryWriteButton: UIButton!
+    
+    // 현재 month 저장 프로퍼티
+    lazy var currentMonth: String = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        return formatter.string(from: Date())
+    }()
+    
+    // 일기 데이터를 받을 프로퍼티 선언
+    var diaries: [DiaryResponse.Data.Diary] = []
+    var imageResponses: [ImageResponse.Data.Image] = []
+    
+    // TableViewCell Xib 파일 이름 저장 프로퍼티
+    let emptyCellName = "DiaryMainEmptyTableViewCell"
+    let emptyCellReuseIdentifire = "DiaryEmptyCell"
+    
+    let maincellName = "DiaryMainTableViewCell"
+    let maincellReuseIdentifire = "DiaryMainCell"
+    
+    //MARK: - viewDidLoad 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupDelegate()
+        setupLabel()
         
         registerXibMain()
         registerXibEmpty()
         
-        DiaryMainTableView.delegate = self
-        DiaryMainTableView.dataSource = self
-        
-        yearLabel.text = "\(current_year)년"
-        monthLabel.text = "\(current_month)월"
-        
-        fetchData(year: current_year, month: current_month)
+        // 해당 year, month의 일기 불러오기
+        fetchData(year: currentYear, month: currentMonth)
         
         // NotificationCenter를 통해 일기 삭제 알림 받기
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshData), name: NSNotification.Name("diaryDeleted"), object: nil)
@@ -35,25 +72,32 @@ class DiaryViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleDidPickMonth(_:)), name: Notification.Name("DidPickMonth"), object: nil)
     }
     
-    // -----------------------------------------
-    // 데이터 새로고침하기
+    //MARK: - 레이블 셋업 메서드
+    private func setupLabel() {
+        yearLabel.text = "\(currentYear)년"
+        monthLabel.text = "\(currentMonth)월"
+    }
     
-    @IBOutlet var MeommuButton: UIBarButtonItem!
+    //MARK: - 델리게이트 셋업 메서드
+    private func setupDelegate() {
+        DiaryMainTableView.delegate = self
+        DiaryMainTableView.dataSource = self
+    }
     
-    @IBAction func OnClick_MeommuButton(_ sender: Any) {
-        fetchData(year: current_year, month: current_month)
+    
+    //MARK: - 메인 버튼 탭 메서드
+    @IBAction func meommuMainButtonTapped(_ sender: Any) {
+        fetchData(year: currentYear, month: currentMonth)
     }
     
     @objc func refreshData() {
-        fetchData(year: current_year, month: current_month)
+        fetchData(year: currentYear, month: currentMonth)
     }
     
-    // -----------------------------------------
-    // 월별 필터링하기 바텀시트
-
-    @IBOutlet var diaryMonthPickerButton: UIButton!
     
-    @IBAction func OnClick_diaryMonthPickerButton(_ sender: Any) {
+    //MARK: - month 선택 피커 탭 메서드
+    // 바텀 시트 올리기
+    @IBAction func diaryMonthPickerButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "DiaryMonthPicker", bundle: nil)
         let diaryMonthPickerVC = storyboard.instantiateViewController(withIdentifier: "DiaryMonthPickerViewController") as! DiaryMonthPickerViewController
         
@@ -73,33 +117,9 @@ class DiaryViewController: UIViewController {
             fetchData(year: "\(year)", month: "\(month)")
         }
     }
-
-
     
-    // -----------------------------------------
-    // 오늘 날짜 출력하기
-    
-    @IBOutlet var yearLabel: UILabel!
-    @IBOutlet var monthLabel: UILabel!
-    
-    lazy var current_year: String = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        return formatter.string(from: Date())
-    }()
-
-    lazy var current_month: String = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM"
-        return formatter.string(from: Date())
-    }()
-    
-    // -----------------------------------------
-    // 작성하기 버튼 클릭 시 화면 전환
-
-    @IBOutlet var DiaryWriteButton: UIButton!
-    
-    @IBAction func OnClick_DiaryWriteButton(_ sender: Any) {
+    //MARK: - 다이어리 작성 버튼 탭 메서드
+    @IBAction func diaryWriteButtonTapped(_ sender: Any) {
         let diarysendStoryboard = UIStoryboard(name: "DiarySend", bundle: nil)
         let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendNameViewController")
         diarysendVC.modalPresentationStyle = .fullScreen
@@ -108,14 +128,7 @@ class DiaryViewController: UIViewController {
         //navigationController?.show(diarysendVC, sender: nil)
     }
     
-    // -----------------------------------------
-    // TableView를 통해 전체 일기 조회하기
     
-    var diaries: [DiaryResponse.Data.Diary] = []
-    var imageResponses: [ImageResponse.Data.Image] = []
-    
-    @IBOutlet var DiaryMainTableView: UITableView!
-        
     // 키체인에서 엑세스 토큰 가져오기
     func getAccessTokenFromKeychain() -> String? {
         let key = KeyChain.shared.accessTokenKey
@@ -146,13 +159,16 @@ class DiaryViewController: UIViewController {
                 
                 self.diaries = diaryResponse.data.diaries
                 
-                // 이미지 데이터를 가져옵니다.
+                // 이미지 ID 값만 배열에 저장
                 let imageIds = self.diaries.flatMap { $0.imageIds }
+                
+                print("이미지 배열:\(imageIds)")
                 
                 // 이미지 ID가 없는 일기에 대해서는 요청을 보내지 않습니다.
                 if !imageIds.isEmpty {
                     let urlString = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
                     
+                    // 이미지 id를 통해 이미지 불러오는 메서드
                     AF.request(urlString).responseDecodable(of: ImageResponse.self) { response in
                         switch response.result {
                         case .success(let imageResponse):
@@ -179,75 +195,67 @@ class DiaryViewController: UIViewController {
             }
         }
     }
-
-    func convertDate(_ dateStr: String) -> String {
+    
+    //MARK: - 전달 받은 날짜 데이터를 형식에 맞게 전환하는 메서드
+    private func convertDate(_ dateStr: String) -> String {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
-            
+        
         if let date = inputFormatter.date(from: dateStr) {
             let outputFormatter = DateFormatter()
             outputFormatter.locale = Locale(identifier: "ko_KR")
             outputFormatter.dateFormat = "yyyy년 MM월 dd일"
-                
+            
             return outputFormatter.string(from: date)
         } else {
             return dateStr
         }
     }
-        
-    // TableViewCell Xib 파일 등록
-    let emptycellName = "DiaryMainEmptyTableViewCell"
-    let emptycellReuseIdentifire = "DiaryEmptyCell"
-        
-    let maincellName = "DiaryMainTableViewCell"
-    let maincellReuseIdentifire = "DiaryMainCell"
-        
+    
+    //MARK: - 일기 화면 셀 xib 등록 메서드
     private func registerXibMain() {
         let nibName = UINib(nibName: maincellName, bundle: nil)
         DiaryMainTableView.register(nibName, forCellReuseIdentifier: maincellReuseIdentifire)
     }
-       
+    //MARK: - 빈 일기 화면 셀 xib 등록 메서드
     private func registerXibEmpty() {
-        let nibName = UINib(nibName: emptycellName, bundle: nil)
-        DiaryMainTableView.register(nibName, forCellReuseIdentifier: emptycellReuseIdentifire)
+        let nibName = UINib(nibName: emptyCellName, bundle: nil)
+        DiaryMainTableView.register(nibName, forCellReuseIdentifier: emptyCellReuseIdentifire)
     }
 }
 
-// -----------------------------------------
-// TableView 설정
-extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
+//MARK: - UITableViewDataSource 확장
+extension DiaryViewController: UITableViewDataSource {
     
+    // ❗️
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return diaries.isEmpty ? 1 : diaries.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return diaries.isEmpty ? 585 : 526
-    }
     
+    // ❗️
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if diaries.isEmpty {
-            
-            let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: emptycellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
+            // 다이어리가 비어 있을 경우 빈 화면 셀 보여주기
+            let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: emptyCellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
             
             return diaryCell
             
         } else {
-            
+            // 다이어리 데이터가 비어있지 않다면 일기 보여주기
             let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: maincellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
             let diary = diaries[indexPath.section]
-
+            
             diaryCell.diaryDateLabel?.text = convertDate(diary.date)
             diaryCell.diaryDetailLabel?.text = diary.content
             diaryCell.diaryNameLabel?.text = diary.dogName + " 일기"
             diaryCell.diaryTitleLabel?.text = diary.title
             
+            // 굳이 한 번더 확인..❓
             let imageUrls = diary.imageIds.compactMap { imageId in
                 // imageResponses 배열에 안전하게 접근합니다.
                 if let index = imageResponses.firstIndex(where: { $0.id == imageId }) {
@@ -256,12 +264,16 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
                     return nil
                 }
             }
+            
+            // 일기 셀에 이미지 설정 메서드
             diaryCell.setImageUrls(imageUrls)
             
+            // 일기 셀의 수벙 버튼에 액션 추가해주기 -> 수정 바텀 시트 띄우기
             diaryCell.diaryReviseAction = {
                 let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
                 let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
                 
+                // 일기 수정 뷰컨에게 다이어리 id 전달
                 diaryReviseVC.diaryId = diary.id
                 
                 self.presentPanModal(diaryReviseVC)
@@ -271,33 +283,54 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
+}
+
+//MARK: - UITableViewDelegate 확장
+
+extension DiaryViewController: UITableViewDelegate {
+    // 셀의 높이 설정
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
+    // 테이블 뷰 셀이 선택될 때 indexPath 전달
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return diaries.isEmpty ? nil : indexPath
     }
-
+    
+    
+    // 셀이 선택될 때 전달 받은 인덱스를 통해 특정 일기 데이터를 세그웨이에 전달?
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 선택된 셀의 인덱스를 통해 다이어리 배열에서 특정 일기 데이터를 넘겨준다.
         let selectedDiary = diaries[indexPath.section]
         performSegue(withIdentifier: "showDetail", sender: selectedDiary)
     }
     
+    // 셀이 선택되고 디테일 뷰가 열리기 전 특정 일기의 다이어리 데이터와 이미지 데이터를 디테일 뷰에 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            if let vc = segue.destination as? DiaryDetailViewController,
+            if let diaryDetailVC = segue.destination as? DiaryDetailViewController,
                let selectedDiary = sender as? DiaryResponse.Data.Diary {
-                vc.diary = selectedDiary
                 
-                // 이미지 응답을 딕셔너리로 변환합니다.
+                // 선택된 다이어리의 데이터를 디테일 뷰컨에 전달
+                diaryDetailVC.diary = selectedDiary
+                
+                // 전체 일기의 이미지 배열에서 id와 url 데이터를 딕셔너리로 변경
                 let imageResponseDict = Dictionary(uniqueKeysWithValues: imageResponses.map { ($0.id, $0.url) })
-
-                // 이미지 URL을 찾아서 DiaryDetailViewController에 넘겨줍니다.
+                
+                print("이미지 딕셔너리: \(imageResponseDict)")
+                
+                // 선택되니 일기의 이미지 URL을 찾아서 디테일VC에 넘겨줍니다.
                 let imageUrls = selectedDiary.imageIds.compactMap { imageId in
                     imageResponseDict[imageId]
                 }
-                vc.imageUrls = imageUrls
+                
+                print("이미지 URLs: \(imageUrls)")
+                diaryDetailVC.imageUrls = imageUrls
             }
         }
     }
     
 }
+
 

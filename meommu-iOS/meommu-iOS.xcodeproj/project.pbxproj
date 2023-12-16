@@ -33,6 +33,8 @@
 		268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608402B1E2B7100FA823E /* UIButton+Customization.swift */; };
 		268608432B222C5900FA823E /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608422B222C5900FA823E /* UserProfileService.swift */; };
 		268608452B22A44C00FA823E /* AnnouncementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608442B22A44B00FA823E /* AnnouncementService.swift */; };
+		268608472B2DB04300FA823E /* DiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608462B2DB04300FA823E /* DiaryAPI.swift */; };
+		268608492B2DB06B00FA823E /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608482B2DB06B00FA823E /* ImageAPI.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -55,7 +57,6 @@
 		F94A093C2B13698F00786C12 /* DiarySendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A093B2B13698F00786C12 /* DiarySendModel.swift */; };
 		F94A09402B136D5C00786C12 /* DiaryImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */; };
 		F94A09432B13755900786C12 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = F94A09422B13755900786C12 /* AlamofireImage */; };
-		F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F953DD602AB82B22009F3B52 /* DiarySend.storyboard */; };
 		F9592C382B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9592C362B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift */; };
 		F9592C392B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9592C372B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib */; };
 		F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2603C7ED2ADC4E7500090A9D /* MyPageViewController.swift */; };
@@ -120,6 +121,8 @@
 		268608402B1E2B7100FA823E /* UIButton+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Customization.swift"; sourceTree = "<group>"; };
 		268608422B222C5900FA823E /* UserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
 		268608442B22A44B00FA823E /* AnnouncementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementService.swift; sourceTree = "<group>"; };
+		268608462B2DB04300FA823E /* DiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAPI.swift; sourceTree = "<group>"; };
+		268608482B2DB06B00FA823E /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +153,6 @@
 		F948D84E2AC15A8D00F965E6 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 		F94A093B2B13698F00786C12 /* DiarySendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySendModel.swift; sourceTree = "<group>"; };
 		F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryImageModel.swift; sourceTree = "<group>"; };
-		F953DD602AB82B22009F3B52 /* DiarySend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiarySend.storyboard; sourceTree = "<group>"; };
 		F9592C362B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9592C372B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryImageEmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainEmptyTableViewCell.swift; sourceTree = "<group>"; };
@@ -341,7 +343,6 @@
 			children = (
 				F9BC8E782ABC0EA6000D90D1 /* BottomSheet */,
 				F907437F2AB73CAD00F7C503 /* Diary.storyboard */,
-				F953DD602AB82B22009F3B52 /* DiarySend.storyboard */,
 				F93D6FA72AB974EF00591C21 /* DiaryWrite.storyboard */,
 			);
 			path = View;
@@ -413,6 +414,8 @@
 				F94A093F2B136D5C00786C12 /* DiaryImageModel.swift */,
 				F959A1522AB8157E009D90A8 /* DiaryModel.swift */,
 				F94A093B2B13698F00786C12 /* DiarySendModel.swift */,
+				268608462B2DB04300FA823E /* DiaryAPI.swift */,
+				268608482B2DB06B00FA823E /* ImageAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,7 +546,6 @@
 				F933D8AB2AB73983006EDA07 /* LaunchScreen.storyboard in Resources */,
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
 				F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */,
-				F953DD612AB82B22009F3B52 /* DiarySend.storyboard in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
 				F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */,
 				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
@@ -610,6 +612,7 @@
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
 				F9E615F22B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift in Sources */,
 				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,
+				268608472B2DB04300FA823E /* DiaryAPI.swift in Sources */,
 				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,
 				268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */,
 				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,
@@ -618,6 +621,7 @@
 				264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */,
 				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,
 				F959853C2B0F5C11001F28F1 /* Page.swift in Sources */,
+				268608492B2DB06B00FA823E /* ImageAPI.swift in Sources */,
 				269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Cu-yU-YOq">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +18,7 @@
         <!--일기쓰기-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="DiaryWriteViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="Y6W-OH-hqX" customClass="DiaryWriteViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +85,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-er-gxl">
-                                <rect key="frame" x="0.0" y="138" width="375" height="674"/>
+                                <rect key="frame" x="0.0" y="138" width="375" height="640"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-qU-9sP">
                                         <rect key="frame" x="20" y="130" width="335" height="1"/>
@@ -248,7 +247,6 @@
                                     <constraint firstItem="1sB-Av-SdL" firstAttribute="leading" secondItem="8fZ-er-gxl" secondAttribute="leading" id="Iy4-xL-LjN"/>
                                     <constraint firstItem="K1V-qU-9sP" firstAttribute="top" secondItem="xle-eJ-eBe" secondAttribute="bottom" constant="8" id="P23-Yp-r5I"/>
                                     <constraint firstItem="1sB-Av-SdL" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="ZEO-sd-hAA"/>
-                                    <constraint firstAttribute="height" constant="674" id="bmT-97-m3e"/>
                                     <constraint firstAttribute="width" constant="375" id="kMd-XZ-Ox3"/>
                                     <constraint firstItem="1sB-Av-SdL" firstAttribute="top" secondItem="8fZ-er-gxl" secondAttribute="top" constant="15" id="kSU-ig-l1C"/>
                                     <constraint firstItem="xle-eJ-eBe" firstAttribute="centerX" secondItem="8fZ-er-gxl" secondAttribute="centerX" id="m0t-Qt-z6Z"/>
@@ -266,76 +264,170 @@
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="OnClick_diaryGuideButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F2D-o7-ApI"/>
+                                    <action selector="diaryGuideButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rIa-N1-V65"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="2h1-pS-TZP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SYv-T2-0TZ" secondAttribute="bottom" id="5pC-0o-Akb"/>
+                            <constraint firstItem="8fZ-er-gxl" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="YsW-cM-kJD"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="top" secondItem="frR-3q-xzu" secondAttribute="bottom" id="ieG-Cd-ndj"/>
                             <constraint firstItem="SYv-T2-0TZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="j8t-hA-jFg"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOo-iK-t9e"/>
                             <constraint firstItem="8fZ-er-gxl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oWe-i1-C1Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="일기쓰기" id="y5s-cd-1iW">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="pyF-fs-WAh">
-                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
-                            <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <navigationItem key="navigationItem" title="일기쓰기" id="BFh-ug-UbM">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="IDx-GQ-2OV">
+                            <color key="tintColor" red="0.61960786580000005" green="0.61960786580000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="OnClick_backButton:" destination="Y6W-OH-hqX" id="s2v-mT-R6e"/>
+                                <action selector="backButtonTapped:" destination="Y6W-OH-hqX" id="ebG-bj-Q4T"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="완료" id="QCi-Pm-iAW">
-                            <color key="tintColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="WlM-kb-iPz">
+                            <color key="tintColor" red="0.61960786580000005" green="0.61960786580000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="OnClick_diaryWriteButton:" destination="Y6W-OH-hqX" id="7Fo-UV-t5n"/>
+                                <action selector="diaryWriteButtonTapped:" destination="Y6W-OH-hqX" id="BWu-ry-lZz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backButton" destination="pyF-fs-WAh" id="8cC-Ye-7bb"/>
+                        <outlet property="backButton" destination="IDx-GQ-2OV" id="b5g-bn-Xko"/>
                         <outlet property="dateLabel" destination="veU-rC-yMC" id="96F-Pt-YM8"/>
                         <outlet property="dateTextField" destination="AdS-fq-82y" id="mUf-gH-tCc"/>
                         <outlet property="diaryContextTextView" destination="rbB-fY-B3r" id="Hvx-tj-4Fe"/>
-                        <outlet property="diaryGuideButton" destination="SYv-T2-0TZ" id="zev-wg-ZVc"/>
+                        <outlet property="diaryGuideButton" destination="SYv-T2-0TZ" id="D5E-8F-2Se"/>
                         <outlet property="diaryImageCollectionView" destination="1sB-Av-SdL" id="OyF-Lx-LHs"/>
                         <outlet property="diaryTitleTextField" destination="xle-eJ-eBe" id="EwA-Oa-oFs"/>
-                        <outlet property="diaryWriteButton" destination="QCi-Pm-iAW" id="QVe-Tb-1QQ"/>
+                        <outlet property="diaryWriteButton" destination="WlM-kb-iPz" id="TXN-qf-gqj"/>
                         <outlet property="monthLabel" destination="v3L-xe-weQ" id="ztH-Zn-GTW"/>
                         <outlet property="yearLabel" destination="CoC-az-mNw" id="3Bf-0a-sDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978.39999999999998" y="-2.2167487684729066"/>
+            <point key="canvasLocation" x="3426" y="25"/>
+        </scene>
+        <!--누구에게 보낼 건가요?-->
+        <scene sceneID="pjf-aH-EcH">
+            <objects>
+                <viewController id="j5M-hJ-78s" customClass="DiarySendNameViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HsV-lL-9ay">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uM-PH-nUt">
+                                <rect key="frame" x="20" y="114" width="335" height="597"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="강아지 이름 (0/10)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQ0-cr-i3A">
+                                        <rect key="frame" x="100.00000000000001" y="269" width="135.33333333333337" height="25"/>
+                                        <fontDescription key="fontDescription" name="Ownglyph_Yeon_The_Land-Rg" family="Ownglyph Yeon The Land" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-pU-8Za">
+                                        <rect key="frame" x="67.666666666666686" y="296" width="200" height="1"/>
+                                        <color key="backgroundColor" red="0.41176474089999998" green="0.41176474089999998" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="pNa-GB-Tom"/>
+                                            <constraint firstAttribute="width" constant="200" id="wYC-iV-yxb"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diarysendimage" translatesAutoresizingMaskIntoConstraints="NO" id="aCa-Zj-d0M">
+                                        <rect key="frame" x="83" y="60" width="169" height="169"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="169" id="aWH-cw-hv3"/>
+                                            <constraint firstAttribute="width" constant="169" id="h01-1Q-awf"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="aQ0-cr-i3A" firstAttribute="top" secondItem="aCa-Zj-d0M" secondAttribute="bottom" constant="40" id="Dgt-Qx-And"/>
+                                    <constraint firstItem="aCa-Zj-d0M" firstAttribute="top" secondItem="1uM-PH-nUt" secondAttribute="top" constant="60" id="Law-XH-2gH"/>
+                                    <constraint firstAttribute="height" constant="597" id="blX-97-OYs"/>
+                                    <constraint firstItem="aQ0-cr-i3A" firstAttribute="centerX" secondItem="1uM-PH-nUt" secondAttribute="centerX" id="cPo-UO-f7b"/>
+                                    <constraint firstItem="TxA-pU-8Za" firstAttribute="top" secondItem="aQ0-cr-i3A" secondAttribute="bottom" constant="2" id="gIm-Um-DV5"/>
+                                    <constraint firstItem="aCa-Zj-d0M" firstAttribute="centerX" secondItem="1uM-PH-nUt" secondAttribute="centerX" id="pZL-9R-913"/>
+                                    <constraint firstItem="TxA-pU-8Za" firstAttribute="centerX" secondItem="1uM-PH-nUt" secondAttribute="centerX" id="rWl-0k-gyy"/>
+                                    <constraint firstAttribute="width" constant="335" id="w1r-Z7-YG4"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gT0-vF-8Vo">
+                                <rect key="frame" x="20" y="730" width="335" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="HVs-3n-nuk"/>
+                                    <constraint firstAttribute="width" constant="335" id="VHW-x3-7Rv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="다음">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" name="primaryA"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="j5M-hJ-78s" eventType="touchUpInside" id="8Xs-Ng-tgf"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="DiaryWriteViewController" id="6c4-hB-Q00"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GRI-bk-l71"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gT0-vF-8Vo" firstAttribute="bottom" secondItem="GRI-bk-l71" secondAttribute="bottom" id="8Ri-LH-sqb"/>
+                            <constraint firstItem="GRI-bk-l71" firstAttribute="trailing" secondItem="1uM-PH-nUt" secondAttribute="trailing" constant="20" id="JJc-sq-imZ"/>
+                            <constraint firstItem="1uM-PH-nUt" firstAttribute="centerX" secondItem="GRI-bk-l71" secondAttribute="centerX" id="c41-HQ-cek"/>
+                            <constraint firstItem="1uM-PH-nUt" firstAttribute="top" secondItem="GRI-bk-l71" secondAttribute="top" constant="20" id="cw9-gL-8gd"/>
+                            <constraint firstItem="gT0-vF-8Vo" firstAttribute="centerX" secondItem="GRI-bk-l71" secondAttribute="centerX" id="ded-EM-JNQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="누구에게 보낼 건가요?" id="uuR-EF-PQW">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="bjP-A6-Xt1">
+                            <color key="tintColor" red="0.61960786580000005" green="0.61960786580000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="j5M-hJ-78s" id="pwm-zQ-Tsy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="bjP-A6-Xt1" id="awR-WA-VAt"/>
+                        <outlet property="nameTextField" destination="aQ0-cr-i3A" id="ywk-i9-Bmb"/>
+                        <outlet property="nextButton" destination="gT0-vF-8Vo" id="Eqx-Ty-40R"/>
+                        <outlet property="profileImageView" destination="aCa-Zj-d0M" id="boh-Ea-81h"/>
+                        <outlet property="profileView" destination="1uM-PH-nUt" id="KsQ-fJ-08l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAs-4E-Abc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436" y="6.6502463054187197"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="UdB-QF-syy">
+        <scene sceneID="qpw-Tx-nyc">
             <objects>
-                <navigationController storyboardIdentifier="DiaryWriteViewController" automaticallyAdjustsScrollViewInsets="NO" id="DnQ-rg-hco" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DiaryWriteViewController" automaticallyAdjustsScrollViewInsets="NO" id="3Cu-yU-YOq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wVh-Lb-mMi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgc-gX-XU0">
                         <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="OV7-BA-UxR"/>
+                        <segue destination="j5M-hJ-78s" kind="relationship" relationship="rootViewController" id="mzD-BD-LXR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M1p-UM-7yu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2s-oz-6mE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="1493.5999999999999" y="6.6502463054187197"/>
         </scene>
     </scenes>
     <resources>
         <image name="Camera" width="22" height="22"/>
         <image name="arrow_drop_down" width="32" height="32"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="diarysendimage" width="676" height="676"/>
         <image name="imagedeleteicon" width="40.5" height="40"/>
         <namedColor name="Gray200">
             <color red="0.92199999094009399" green="0.92199999094009399" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -345,6 +437,9 @@
         </namedColor>
         <namedColor name="Gray500">
             <color red="0.40000000596046448" green="0.40000000596046448" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primaryA">
+            <color red="0.51399999856948853" green="0.47499999403953552" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -65,10 +65,10 @@ class DiaryReviseViewController: UIViewController {
         }
         
         // 수정을 위한 일기 작성 화면 띄우기
-        let diarysendStoryboard = UIStoryboard(name: "DiarySend", bundle: nil)
-        let diarysendVC = diarysendStoryboard.instantiateViewController(identifier: "DiarySendNameViewController")
-        diarysendVC.modalPresentationStyle = .fullScreen
-        self.present(diarysendVC, animated: true, completion: nil)
+        let diarysendStoryboard = UIStoryboard(name: "DiaryWrite", bundle: nil)
+        let diaryWriteVC = diarysendStoryboard.instantiateViewController(identifier: "DiaryWriteViewController")
+        diaryWriteVC.modalPresentationStyle = .fullScreen
+        self.present(diaryWriteVC, animated: true, completion: nil)
     }
     
     // ❓

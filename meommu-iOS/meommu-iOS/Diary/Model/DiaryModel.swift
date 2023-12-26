@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 struct DiaryResponse: Codable {
     struct Data: Codable {
         struct Diary: Codable {

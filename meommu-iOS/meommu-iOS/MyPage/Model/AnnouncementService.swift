@@ -10,7 +10,7 @@ import Alamofire
 
 struct AnnouncementService {
     
-    private let baseURL = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+    private let baseURL = "https://comibird.site"
     
     func requestAnnouncment(completion: @escaping (Result<AnnouncmentResponse, ErrorResponse>) -> Void) {
         

@@ -14,12 +14,9 @@ class StepTwoTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.layer.masksToBounds = true
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
-        contentView.layer.cornerRadius = 5
-        
-        layer.masksToBounds = false
-        layer.cornerRadius = 5
+  
+        contentView.setCornerRadius(6)
     }
     
     

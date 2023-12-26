@@ -15,7 +15,6 @@ import PanModal
 
 class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
     
-    
     var dogName: String?
     
     // 일기 수정하기
@@ -66,7 +65,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                 var params: Parameters = [:]
                 for id in imageIds {
                     params["id"] = id
-                    AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images", parameters: params).responseDecodable(of: ImageUploadResponse.self) { response in
+                    AF.request("https://comibird.site/api/v1/images", parameters: params).responseDecodable(of: ImageUploadResponse.self) { response in
                         switch response.result {
                         case .success(let data):
                             let url = data.data.images.first?.url
@@ -162,7 +161,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             "imageIds": imageIds
         ]
         
-        let url = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)"
+        let url = "https://comibird.site/api/v1/diaries/\(diaryId)"
         
         AF.request(url,
                    method: .put,
@@ -190,11 +189,11 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     
   
     
-    
+    //MARK: - 멈무일기 가이드 버튼 탭 메서드
     @IBAction func diaryGuideButtonTapped(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
+        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "DiaryGuideWirtePageViewController") as! DiaryGuideWirtePageViewController
         
         presentPanModal(stepOneVC)
     }
@@ -461,7 +460,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                     
                     multipartFormData.append(imageData, withName: "images", fileName: "image.\(mimeType)", mimeType: mimeType)
                     multipartFormData.append("DIARY_IMAGE".data(using: .utf8)!, withName: "category")
-                }, to: "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images")
+                }, to: "https://comibird.site/api/v1/images")
                 .responseDecodable(of: ImageUploadResponse.self) { response in
                     switch response.result {
                     case .success(let imageUploadResponse):
@@ -511,7 +510,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             "imageIds": imageIds
         ]
         
-        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
+        AF.request("https://comibird.site/api/v1/diaries",
                    method: .post,
                    parameters: parameters,
                    encoding: JSONEncoding.default,

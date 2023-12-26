@@ -143,7 +143,7 @@ class DiaryViewController: UIViewController {
             "month": "\(month)"
         ]
         
-        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries", method: .get, parameters: parameters, headers: headers).responseDecodable(of: DiaryResponse.self) { response in
+        AF.request("https://comibird.site/api/v1/diaries", method: .get, parameters: parameters, headers: headers).responseDecodable(of: DiaryResponse.self) { response in
             switch response.result {
             case .success(let diaryResponse):
                 self.diaries = []
@@ -157,7 +157,7 @@ class DiaryViewController: UIViewController {
                 
                 // 이미지 ID가 없는 일기에 대해서는 요청을 보내지 않습니다.
                 if !imageIds.isEmpty {
-                    let urlString = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
+                    let urlString = "https://comibird.site/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
                     
                     // 이미지 id를 통해 이미지 불러오는 메서드
                     AF.request(urlString).responseDecodable(of: ImageResponse.self) { response in

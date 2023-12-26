@@ -11,7 +11,7 @@ import Foundation
 class SignUpAPI {
     static let shared = SignUpAPI()
     
-    private let baseURL = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+    private let baseURL = "https://comibird.site"
     
     // 이메일 중복 확인 메서드
     func checkEmailDuplication(with request: CheckEmailDuplicationRequest, completion: @escaping (Result<CheckEmailDuplicationResponse, ErrorResponse>) -> Void) {

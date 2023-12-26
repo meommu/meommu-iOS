@@ -83,35 +83,3 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 }
 
-extension StepTwoViewController: PanModalPresentable {
-    
-    var panScrollable: UIScrollView? {
-        return nil
-    }
-    
-    // 짧은 형태의 높이 설정
-    var shortFormHeight: PanModalHeight {
-        return .contentHeight(519)  // 바텀 시트의 높이 설정
-    }
-    
-    // 긴 형태의 높이 설정
-    var longFormHeight: PanModalHeight {
-        //위에서부터 떨어지게 설정
-        return .maxHeightWithTopInset(293)
-    }
-    
-    // 상단 코너를 둥글게 설정
-    var shouldRoundTopCorners: Bool {
-        return true
-    }
-    
-    // 상단 코너의 반경을 설정
-    var cornerRadius: CGFloat {
-        return 20.0  // 둥근 모서리 설정
-    }
-    
-    // 최상단 스크롤 불가
-    var anchorModalToLongForm: Bool {
-        return false
-    }
-}

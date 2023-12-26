@@ -269,7 +269,7 @@
                                     <constraint firstAttribute="height" constant="436" id="caF-d7-vLQ"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="3x2-mT-Qn4" kind="embed" id="EF2-k4-jq9"/>
+                                    <segue destination="3x2-mT-Qn4" kind="embed" identifier="PageViewController" id="EF2-k4-jq9"/>
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zVh-4Z-o2Z">
@@ -282,6 +282,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                             <color key="baseBackgroundColor" red="0.21568629149999999" green="0.21960783" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="beforeButtonTapped:" destination="4nh-P3-IOg" eventType="touchUpInside" id="z7A-Zt-hP7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJJ-Fd-rha">
                                         <rect key="frame" x="164.66666666666663" y="0.0" width="154.33333333333337" height="48"/>
@@ -290,6 +293,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                             <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="4nh-P3-IOg" eventType="touchUpInside" id="TVW-Jy-m6x"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -334,8 +340,8 @@
                                         <color key="textColor" red="0.43921568989999998" green="0.4588235021" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIR-Tb-MSS">
-                                        <rect key="frame" x="171" y="407" width="33" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3단계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIR-Tb-MSS">
+                                        <rect key="frame" x="170.66666666666666" y="407" width="34" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <color key="textColor" red="0.43921568989999998" green="0.4588235021" blue="0.50588238240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>

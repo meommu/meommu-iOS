@@ -10,6 +10,9 @@ import PanModal
 
 class DiaryGuideWirtePageViewController: UIViewController {
     
+    var currentIndex = 0
+    
+    var pageViewController : PageViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +20,32 @@ class DiaryGuideWirtePageViewController: UIViewController {
         
     }
     
-    // 1. 초기
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        // 다음 페이지로 이동
+        pageViewController.setNextViewControllersFromIndex(index: currentIndex + 1)
+    }
     
     
+    @IBAction func beforeButtonTapped(_ sender: Any) {
+        // 이전 페이지로 이동
+        pageViewController.setBeforeViewControllersFromIndex(index: currentIndex - 1)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(currentIndex)
+            if segue.identifier == "PageViewController" {
+                print("Connected")
+                guard let vc = segue.destination as? PageViewController else { return }
+                pageViewController = vc
+                
+                // 페이지 뷰컨의 뷰 인덱스를 해당 뷰컨에 할당한다.
+                pageViewController.completeHandler = { (result) in
+                    self.currentIndex = result
+                }
+                
+            }
+            
+        }
     
     
 }

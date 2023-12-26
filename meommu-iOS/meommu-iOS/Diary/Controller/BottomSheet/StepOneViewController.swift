@@ -79,23 +79,18 @@ class StepOneViewController: UIViewController, UIViewControllerTransitioningDele
 extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
         return guideData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 48
+        return 58
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = stepOneTableVlew.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepOneTableViewCell
-        print("만들어질 떼 \(guideData)")
         
-        cell.detailLabel.text = guideData[indexPath.section].guide
+        cell.detailLabel.text = guideData[indexPath.row].guide
         
         // cell 선택 시 배경 컬러 없애기
         cell.selectionStyle = .none
@@ -105,27 +100,23 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     
     // cell 선택 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "primaryA")
-        cell.detailLabel.textColor = .white
         
         // 선택된 셀의 데이터를 selectedData 배열에 추가
-        let selectedText = guideData[indexPath.section].guide
+        let selectedText = guideData[indexPath.row].guide
         if !selectedData.contains(selectedText) {
             selectedData.append(selectedText)
         }
+        print(selectedData)
     }
     
     // cell 선택 취소 시
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! StepOneTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BlueGray400")
-        cell.detailLabel.textColor = UIColor(named: "BlueGray200")
         
         // 선택 취소된 셀의 데이터를 selectedData 배열에서 제거
-        let deselectedText = guideData[indexPath.section].guide
+        let deselectedText = guideData[indexPath.row].guide
         if let index = selectedData.firstIndex(of: deselectedText) {
             selectedData.remove(at: index)
         }
+        print(selectedData)
     }
 }

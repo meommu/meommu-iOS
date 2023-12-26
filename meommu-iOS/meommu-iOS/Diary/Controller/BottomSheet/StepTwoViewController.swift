@@ -47,20 +47,16 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
         return detailData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 48
+        return 58
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = steptwoTableVlew.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
-        cell.detailLabel.text = detailData[indexPath.section]
+        cell.detailLabel.text = detailData[indexPath.row]
         
         // cell 선택 시 배경 컬러 없애기
         cell.selectionStyle = .none
@@ -68,17 +64,12 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    // cell 선택 시 배경색 변경
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "primaryA")
-        cell.detailLabel.textColor = .white
+
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! StepTwoTableViewCell
-        cell.contentView.backgroundColor = UIColor(named: "BlueGray400")
-        cell.detailLabel.textColor = UIColor(named: "BlueGray200")
+ 
     }
     
 }

@@ -50,7 +50,7 @@ class DiaryReviseViewController: UIViewController {
         ]
         
         // 해당 일기의 id 값으로 세부 정보 받기 위한 메서드
-        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)", method: .get, headers: headers).responseDecodable(of: DiaryIdResponse.self) { response in
+        AF.request("https://comibird.site/api/v1/diaries/\(diaryId)", method: .get, headers: headers).responseDecodable(of: DiaryIdResponse.self) { response in
             switch response.result {
             case .success(let diaryIdResponse):
                 if diaryIdResponse.code == "0000" {
@@ -103,7 +103,7 @@ class DiaryReviseViewController: UIViewController {
             "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
         ]
         
-        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)", method: .delete, headers: headers).responseDecodable(of: DeleteDiaryResponse.self) { response in
+        AF.request("https://comibird.site/api/v1/diaries/\(diaryId)", method: .delete, headers: headers).responseDecodable(of: DeleteDiaryResponse.self) { response in
             switch response.result {
             case .success(let deleteDiaryResponse):
                 if deleteDiaryResponse.code == "0000" {

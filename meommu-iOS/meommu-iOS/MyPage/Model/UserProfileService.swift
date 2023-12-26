@@ -10,7 +10,7 @@ import Alamofire
 
 class UserProfileService {
     
-    private let baseURL = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+    private let baseURL = "https://comibird.site"
     
     let accessToken = KeyChain.shared.read(key: KeyChain.shared.accessTokenKey)
     

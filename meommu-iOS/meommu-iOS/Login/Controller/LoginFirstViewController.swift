@@ -152,6 +152,8 @@ class LoginFirstViewController: UIViewController {
             
             ToastManager.showToastBelowTextField(message: "아이디 혹은 비밀번호가 올바르지 않습니다.", font: .systemFont(ofSize: 16, weight: .medium), belowTextField: emailTextField, textFieldBottomMargin: 35, in: self)
             
+            print(response)
+            
         }
     }
     

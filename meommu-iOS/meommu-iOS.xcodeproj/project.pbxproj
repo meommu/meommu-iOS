@@ -35,6 +35,9 @@
 		268608452B22A44C00FA823E /* AnnouncementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608442B22A44B00FA823E /* AnnouncementService.swift */; };
 		268608472B2DB04300FA823E /* DiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608462B2DB04300FA823E /* DiaryAPI.swift */; };
 		268608492B2DB06B00FA823E /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608482B2DB06B00FA823E /* ImageAPI.swift */; };
+		2686084D2B2DC59700FA823E /* DiaryGuideWirtePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686084C2B2DC59700FA823E /* DiaryGuideWirtePageViewController.swift */; };
+		2686084F2B36A0D700FA823E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686084E2B36A0D700FA823E /* PageViewController.swift */; };
+		268608512B3AD41600FA823E /* StepTwoCustomTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608502B3AD41600FA823E /* StepTwoCustomTextViewController.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -123,6 +126,9 @@
 		268608442B22A44B00FA823E /* AnnouncementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementService.swift; sourceTree = "<group>"; };
 		268608462B2DB04300FA823E /* DiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAPI.swift; sourceTree = "<group>"; };
 		268608482B2DB06B00FA823E /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
+		2686084C2B2DC59700FA823E /* DiaryGuideWirtePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryGuideWirtePageViewController.swift; sourceTree = "<group>"; };
+		2686084E2B36A0D700FA823E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		268608502B3AD41600FA823E /* StepTwoCustomTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoCustomTextViewController.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -454,11 +460,14 @@
 		F9BC8E7B2ABC0EBC000D90D1 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				2686084E2B36A0D700FA823E /* PageViewController.swift */,
 				F937BCF82ABC655300D60041 /* StepOneViewController.swift */,
 				F9947A152AC265D7000F11BD /* StepTwoViewController.swift */,
+				268608502B3AD41600FA823E /* StepTwoCustomTextViewController.swift */,
 				F9A69E2C2ACCEDA70048FC04 /* StepThreeViewController.swift */,
 				F9DCFF892AC7ED9F00AF3417 /* DiaryReviseViewController.swift */,
 				F991C3CF2B18BD6A00A4847B /* DiaryMonthPickerViewController.swift */,
+				2686084C2B2DC59700FA823E /* DiaryGuideWirtePageViewController.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -579,6 +588,7 @@
 				269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */,
 				26215E3B2AB8843300F28FBF /* OnboardingViewController.swift in Sources */,
 				F94A093C2B13698F00786C12 /* DiarySendModel.swift in Sources */,
+				2686084D2B2DC59700FA823E /* DiaryGuideWirtePageViewController.swift in Sources */,
 				264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */,
 				264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */,
 				264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */,
@@ -607,8 +617,10 @@
 				F90E463D2AB9E0E800E8C0BD /* DiarySendNameViewController.swift in Sources */,
 				F933D8A12AB73982006EDA07 /* SceneDelegate.swift in Sources */,
 				26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */,
+				2686084F2B36A0D700FA823E /* PageViewController.swift in Sources */,
 				F959853F2B0F5C31001F28F1 /* AlertViewController.swift in Sources */,
 				26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */,
+				268608512B3AD41600FA823E /* StepTwoCustomTextViewController.swift in Sources */,
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
 				F9E615F22B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift in Sources */,
 				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,

@@ -10,7 +10,7 @@ import Alamofire
 
 class PasswordRecoveryService {
     
-    private let baseURL = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+    private let baseURL = "https://comibird.site"
     
     // 이메일로 코드 요청 메서드
     func sendEmail(with email: String, completion: @escaping (Result<PasswordRecoveryResponse, ErrorResponse>) -> Void) {

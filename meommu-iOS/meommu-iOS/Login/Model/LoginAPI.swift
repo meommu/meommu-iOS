@@ -12,14 +12,14 @@ class LoginAPI {
     
     static let shared = LoginAPI()
     
-    private let baseURL = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+    private let baseURL = "https://comibird.site"
     
     // 로그인 요청 메서드
     func login(with request: LoginRequest, completion: @escaping (Result<LoginResponse, ErrorResponse>) -> Void) {
         
         let url = "\(baseURL)/api/v1/kindergartens/signin"
         
-        AF.request(url, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: ["Content-Type": "application/json;charset=UTF-8"])
+        AF.request(url, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: ["Content-Type": "application/json;charset=UTF-8", "Content-Length": "62", "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"])
             .validate(statusCode: 200..<500)
             .responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {

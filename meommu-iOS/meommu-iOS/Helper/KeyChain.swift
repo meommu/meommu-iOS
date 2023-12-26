@@ -5,8 +5,9 @@
 //  Created by zaehorang on 2023/12/01.
 //
 
-import Foundation
 import Security
+import Alamofire
+import Foundation
 
 class KeyChain {
     
@@ -22,7 +23,7 @@ class KeyChain {
             kSecValueData: token.data(using: .utf8, allowLossyConversion: false) as Any   // 저장할 Token
         ]
         SecItemDelete(query)    // Keychain은 Key값에 중복이 생기면, 저장할 수 없기 때문에 먼저 Delete해줌
-
+        
         let status = SecItemAdd(query, nil)
         assert(status == noErr, "failed to save Token")
     }
@@ -59,4 +60,14 @@ class KeyChain {
         let status = SecItemDelete(query)
         assert(status == noErr, "failed to delete the value, status code = \(status)")
     }
+    
+    // HTTPHeaders 구성
+    func getAuthorizationHeader() -> HTTPHeaders? {
+        if let accessToken = self.read(key: self.accessTokenKey) {
+            return ["Authorization" : "Bearer \(accessToken)"] as HTTPHeaders
+        } else {
+            return nil
+        }
+    }
+    
 }

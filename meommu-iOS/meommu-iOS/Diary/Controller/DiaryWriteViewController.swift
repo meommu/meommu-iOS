@@ -15,17 +15,25 @@ import PanModal
 
 class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
     
-    
     var dogName: String?
     
+    // 일기 수정하기
+    var diaryData: DiaryIdResponse.Data?
+    var isEdited: Bool?
+    
+    // 이미지 캐시 생성
+    let imageCache = NSCache<NSString, UIImage>()
+    
+    @IBOutlet var diaryGuideButton: UIButton!
+    
+    @IBOutlet var backButton: UIBarButtonItem!
+    @IBOutlet var diaryWriteButton: UIBarButtonItem!
+    
+    //MARK: - viewDidLoad 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        diaryImageCollectionView.delegate = self
-        diaryImageCollectionView.dataSource = self
-        
-        diaryTitleTextField.delegate = self
-        diaryContextTextView.delegate = self
+        setupDelegate()
         
         if let name = dogName {
             diaryContextTextView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
@@ -57,7 +65,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                 var params: Parameters = [:]
                 for id in imageIds {
                     params["id"] = id
-                    AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images", parameters: params).responseDecodable(of: ImageUploadResponse.self) { response in
+                    AF.request("https://comibird.site/api/v1/images", parameters: params).responseDecodable(of: ImageUploadResponse.self) { response in
                         switch response.result {
                         case .success(let data):
                             let url = data.data.images.first?.url
@@ -84,55 +92,22 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         }
     }
     
-    // -----------------------------------------
-    // 일기 수정하기
-    var diaryData: DiaryIdResponse.Data?
-    var isEdited: Bool?
-    
-    private func editDiary(diaryId: Int, title: String, content: String, dogName: String, imageIds: [Int]) {
+    //MARK: - 델리게이트 셋업 메서드
+    private func setupDelegate() {
+        diaryImageCollectionView.delegate = self
+        diaryImageCollectionView.dataSource = self
         
-        guard let accessToken = getAccessTokenFromKeychain() else {
-            print("Access Token not found.")
-            return
-        }
-        
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "Authorization": "Bearer \(accessToken)"
-        ]
-        
-        let parameters: [String: Any] = [
-            "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
-            "dogName": dogName,
-            "title": title,
-            "content": content,
-            "imageIds": imageIds
-        ]
-        
-        let url = "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries/\(diaryId)"
-        
-        AF.request(url,
-                   method: .put,
-                   parameters: parameters,
-                   encoding: JSONEncoding.default,
-                   headers: headers)
-        .response { [self] response in
-            debugPrint(response)
-            
-            
-            // API 호출이 완료되면 메인 화면으로 이동
-            DispatchQueue.main.async { [weak self] in
-                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
-                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
-                self?.changeRootViewController(newViewController)
-            }
-        }
+        diaryTitleTextField.delegate = self
+        diaryContextTextView.delegate = self
     }
     
-    // 이미지 캐시 생성
-    let imageCache = NSCache<NSString, UIImage>()
-
     
+    //MARK: - 이전 버튼 탭 메서드
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: - 이미지 배열에 전달해주는 메서드
     // 이미지 URL을 받아서 이미지를 다운로드하고, 다운로드한 이미지로 imageArray의 해당 위치의 nil 값을 교체하는 함수
     func downloadImage(from url: String?, completion: @escaping () -> Void) {
         guard let urlString = url else {
@@ -140,6 +115,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             return
         }
         
+        // 캐시된 이미지가 있는지 판단
         if let cachedImage = imageCache.object(forKey: urlString as NSString) {
             self.imageArray.append(cachedImage)
             completion()
@@ -160,14 +136,64 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     }
     
     
-    // -----------------------------------------
-    // 1단계 바텀시트
-    @IBOutlet var diaryGuideButton: UIButton!
     
-    @IBAction func OnClick_diaryGuideButton(_ sender: Any) {
+    
+    
+    
+    //MARK: - 일기 수정 요청 메서드
+    private func editDiary(diaryId: Int, title: String, content: String, dogName: String, imageIds: [Int]) {
+        
+        guard let accessToken = getAccessTokenFromKeychain() else {
+            print("Access Token not found.")
+            return
+        }
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        let parameters: [String: Any] = [
+            "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
+            "dogName": dogName,
+            "title": title,
+            "content": content,
+            "imageIds": imageIds
+        ]
+        
+        let url = "https://comibird.site/api/v1/diaries/\(diaryId)"
+        
+        AF.request(url,
+                   method: .put,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+        .response { [self] response in
+            debugPrint(response)
+            
+            
+            // API 호출이 완료되면 메인 화면으로 이동
+            DispatchQueue.main.async { [weak self] in
+                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+                self?.changeRootViewController(newViewController)
+            }
+        }
+    }
+    
+    
+
+
+    
+    
+    
+  
+    
+    //MARK: - 멈무일기 가이드 버튼 탭 메서드
+    @IBAction func diaryGuideButtonTapped(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "StepOneViewController") as! StepOneViewController
+        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "DiaryGuideWirtePageViewController") as! DiaryGuideWirtePageViewController
         
         presentPanModal(stepOneVC)
     }
@@ -385,9 +411,9 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     // -----------------------------------------
     // 일기 내용 작성 완료
     
-    @IBOutlet var diaryWriteButton: UIBarButtonItem!
     
-    @IBAction func OnClick_diaryWriteButton(_ sender: Any) {
+    //❗️사진, 제목, 글이 비어있을 때 얼럿 띄우기 기능 추가하기
+    @IBAction func diaryWriteButtonTapped(_ sender: Any) {
         
         guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
@@ -434,7 +460,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                     
                     multipartFormData.append(imageData, withName: "images", fileName: "image.\(mimeType)", mimeType: mimeType)
                     multipartFormData.append("DIARY_IMAGE".data(using: .utf8)!, withName: "category")
-                }, to: "https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/images")
+                }, to: "https://comibird.site/api/v1/images")
                 .responseDecodable(of: ImageUploadResponse.self) { response in
                     switch response.result {
                     case .success(let imageUploadResponse):
@@ -484,7 +510,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             "imageIds": imageIds
         ]
         
-        AF.request("https://port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app/api/v1/diaries",
+        AF.request("https://comibird.site/api/v1/diaries",
                    method: .post,
                    parameters: parameters,
                    encoding: JSONEncoding.default,
@@ -514,11 +540,9 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     
     // -----------------------------------------
     // 뒤로가기 버튼
-    @IBOutlet var backButton: UIBarButtonItem!
     
-    @IBAction func OnClick_backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    
+   
     
 }
 

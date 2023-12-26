@@ -17,6 +17,7 @@ class DiaryGuideWirtePageViewController: UIViewController {
         
     }
     
+    // 1. 초기
     
     
     

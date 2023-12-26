@@ -70,9 +70,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stepLabel" destination="eSW-Bi-lWL" id="Ovl-Ec-VkZ"/>
-                        <outlet property="stepTitleLabel" destination="YMN-rL-Lvx" id="MKt-kE-nDo"/>
-                        <outlet property="steponeTableVlew" destination="0pB-tW-YDP" id="e2S-vl-xjY"/>
+                        <outlet property="stepOneMainTitleLabel" destination="YMN-rL-Lvx" id="xIO-eu-65T"/>
+                        <outlet property="stepOnePageLabel" destination="eSW-Bi-lWL" id="O53-e8-61p"/>
+                        <outlet property="stepOneSubTitleLabel" destination="cPO-h6-vM3" id="bWg-8X-QpV"/>
+                        <outlet property="stepOneTableVlew" destination="0pB-tW-YDP" id="Ki6-Lm-CX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

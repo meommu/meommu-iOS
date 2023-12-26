@@ -14,8 +14,10 @@ class StepTwoTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
-  
+        // 셀 사이의 간격을 추기 위해 설정
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
+        
+        // 코너 레디어스 설정
         contentView.setCornerRadius(6)
     }
     
@@ -25,10 +27,18 @@ class StepTwoTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    //MARK: - setSelected 메서드
+    // 셀 선택 UI 설정
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        if selected {
+            contentView.backgroundColor = UIColor(named: "primaryA")
+            detailLabel.textColor = .white
+        } else {
+            contentView.backgroundColor = UIColor(named: "BlueGray400")
+            detailLabel.textColor = UIColor(named: "BlueGray200")
+        }
     }
     
 }

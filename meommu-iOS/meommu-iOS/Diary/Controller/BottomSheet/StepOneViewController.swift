@@ -25,7 +25,7 @@ class StepOneViewController: UIViewController {
         }
     }
     
-    var guideData: [GPTGuide] = []
+    var guideDataArray: [GPTGuide] = []
     
     // TableView 프로퍼티
     @IBOutlet var stepOneTableVlew: UITableView!
@@ -40,8 +40,7 @@ class StepOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchGPTDiaryGudie()
+
         setupTableView()
         
     }
@@ -58,33 +57,13 @@ class StepOneViewController: UIViewController {
         
     }
     
-    private func fetchGPTDiaryGudie() {
-        GPTDiaryAPI.shared.getGPTDiaryGuide { result in
-            switch result {
-            case .success(let response):
-                
-                // 받아온 데이터에서 guide를 배열에 할당 후 테이블 리로드한다.
-                for data in response.data.guides {
-                    self.guideData.append(data)
-                }
-                DispatchQueue.main.async {
-                    self.stepOneTableVlew.reloadData()
-                }
-                
-            case .failure(let error):
-                // 400~500 에러
-                print("Error: \(error.message)")
-            }
-        }
-    }
-    
 }
 
 //MARK: - TableView 관련 프로토콜 확장
 extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return guideData.count
+        return guideDataArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,7 +74,7 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = stepOneTableVlew.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepOneTableViewCell
         
-        cell.detailLabel.text = guideData[indexPath.row].guide
+        cell.detailLabel.text = guideDataArray[indexPath.row].guide
         
         return cell
     }
@@ -104,7 +83,7 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // 선택된 셀의 데이터를 selectedData 배열에 추가
-        let selectedCellId = guideData[indexPath.row].id
+        let selectedCellId = guideDataArray[indexPath.row].id
         if !selectedData.contains(selectedCellId) {
             selectedData.append(selectedCellId)
         }
@@ -119,7 +98,7 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         // 선택 취소된 셀의 데이터를 selectedData 배열에서 제거
-        let deselectedCellId = guideData[indexPath.row].id
+        let deselectedCellId = guideDataArray[indexPath.row].id
         if let index = selectedData.firstIndex(of: deselectedCellId) {
             selectedData.remove(at: index)
         }

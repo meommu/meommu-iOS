@@ -7,19 +7,37 @@
 
 import Foundation
 
-// MARK: - GPTDiaryModel
+// MARK: - GPTDiaryGuide Model
 struct GPTDiaryGuideResponse: Codable {
     let code, message: String
     let data: GPTDataClass
 }
 
-// MARK: - GPTDataClass
 struct GPTDataClass: Codable {
     let guides: [GPTGuide]
 }
 
-// MARK: - GPTGuide
 struct GPTGuide: Codable {
     let id: Int
     let guide, description: String
 }
+
+
+//MARK: - GPTDiaryDetailGuide Model
+struct GPTDiaryDetailGuideResponse: Codable {
+    let code, message: String
+    let data: GPTDetailDataClass
+}
+
+// MARK: - DataClass
+struct GPTDetailDataClass: Codable {
+    let details: [GPTDetailGuide]
+}
+
+// MARK: - Detail
+struct GPTDetailGuide: Codable {
+    let id: Int
+    let detail: String
+}
+
+

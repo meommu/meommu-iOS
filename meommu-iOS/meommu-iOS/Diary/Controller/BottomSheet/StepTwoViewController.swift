@@ -15,24 +15,53 @@ class StepTwoViewController: UIViewController {
     let cellName = "StepTwoTableViewCell"
     let cellReuseIdentifire = "StepTwoCell"
     
-    var detailData: [String] = ["산책을 오래 했어요", "산책 중 맛있는 간식을 많이 먹었어요", "산책 중 친한 강아지를 만나 대화 했어요", "걸음을 아주 천천히 걸었어요", "나만의 문장 추가하기"]
+    // gpt 일기 가이드 정보 저장 프로퍼티 (label 관련)
+    var guideData: GPTGuide?
     
-    @IBOutlet var steptwoTableVlew: UITableView!
+    // gpt 일기 디테일 데이터 저장 배열 프로퍼티 (cell 관련)
+    var guideDetailData: [GPTDetailGuide] = [GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요")] {
+        didSet {
+            guard self.steptwoTableView != nil else { return }
+            DispatchQueue.main.async {
+                self.steptwoTableView.reloadData()
+                print("스텝 투우우우우")
+            }
+            
+        }
+    }
+    
+    @IBOutlet weak var mainTitleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet var steptwoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerXib()
-        
-        steptwoTableVlew.delegate = self
-        steptwoTableVlew.dataSource = self
+        setupTableView()
+        setupLabel()
         
     }
     
-    //MARK: - xib셀 등록 메서드
-    private func registerXib() {
+    //MARK: - setupTableView 메서드
+    private func setupTableView() {
+        // 델리게이트, 데이터소스 설정
+        steptwoTableView.delegate = self
+        steptwoTableView.dataSource = self
+        
+        // TabelView에 xib 등록하기.
         let nibName = UINib(nibName: cellName, bundle: nil)
-        steptwoTableVlew.register(nibName, forCellReuseIdentifier: cellReuseIdentifire)
+        steptwoTableView.register(nibName, forCellReuseIdentifier: cellReuseIdentifire)
+        
+    }
+    
+    //MARK: - Label 셋업 메서드
+    private func setupLabel() {
+        guard let guideData = self.guideData else { return }
+        
+        self.mainTitleLabel.text = guideData.guide
+        self.subTitleLabel.text = guideData.description
+        
     }
     
 }
@@ -40,7 +69,7 @@ class StepTwoViewController: UIViewController {
 //MARK: - TableView 확장
 extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return detailData.count
+        return guideDetailData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,13 +77,15 @@ extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = steptwoTableVlew.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
-        cell.detailLabel.text = detailData[indexPath.row]
+        
+        let cell = steptwoTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
+        
+        cell.detailLabel.text = guideDetailData[indexPath.row].detail
         
         return cell
     }
     
-
+    
     
 }
 

@@ -10,6 +10,7 @@ import PanModal
 
 class DiaryGuideWirtePageViewController: UIViewController {
     
+    // 컨테이너 뷰에서 보이는 화면의 인덱스 값을 저장하기 위한 프로퍼티
     var currentIndex = 0
     
     var pageViewController : PageViewController!
@@ -31,10 +32,14 @@ class DiaryGuideWirtePageViewController: UIViewController {
         pageViewController.setBeforeViewControllersFromIndex(index: currentIndex - 1)
     }
     
+    
+    //MARK: - 세그웨이의 prepare 메서드를 통해 데이터 교환
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(currentIndex)
             if segue.identifier == "PageViewController" {
                 print("Connected")
+                
+                // 세그웨이의 도착지인 pageVC를 현재 부모 뷰컨에 저장
                 guard let vc = segue.destination as? PageViewController else { return }
                 pageViewController = vc
                 

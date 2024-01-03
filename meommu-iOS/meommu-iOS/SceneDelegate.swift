@@ -59,7 +59,7 @@ extension SceneDelegate {
                                   identifier: "OnboardingViewController")
         } else {
             
-            // 액세스 토큰으로 로그인 가능한지 확인
+            //액세스 토큰으로 로그인 가능한지 확인
             checkAccessTokenLogin { result in
                 if result {
                     self.setRootViewController(scene, name: "Diary",
@@ -119,3 +119,4 @@ extension SceneDelegate {
     
     
 }
+

@@ -39,6 +39,7 @@
 		2686084F2B36A0D700FA823E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686084E2B36A0D700FA823E /* PageViewController.swift */; };
 		268608512B3AD41600FA823E /* StepTwoCustomTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608502B3AD41600FA823E /* StepTwoCustomTextViewController.swift */; };
 		268608532B3B0B2A00FA823E /* GPTDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608522B3B0B2A00FA823E /* GPTDiaryModel.swift */; };
+		268608552B4561AC00FA823E /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608542B4561AC00FA823E /* Delegate.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -131,6 +132,7 @@
 		2686084E2B36A0D700FA823E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		268608502B3AD41600FA823E /* StepTwoCustomTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoCustomTextViewController.swift; sourceTree = "<group>"; };
 		268608522B3B0B2A00FA823E /* GPTDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTDiaryModel.swift; sourceTree = "<group>"; };
+		268608542B4561AC00FA823E /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				268608402B1E2B7100FA823E /* UIButton+Customization.swift */,
 				264BF3C32B18E80700FCFBEC /* ToastManager.swift */,
 				264BF3C52B19B8B500FCFBEC /* KeyChain.swift */,
+				268608542B4561AC00FA823E /* Delegate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				264BF3C02B15008B00FCFBEC /* ErrorResponse.swift in Sources */,
 				264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */,
 				264BF3BC2B14CCDC00FCFBEC /* SignUp.swift in Sources */,
+				268608552B4561AC00FA823E /* Delegate.swift in Sources */,
 				F9DCFF8A2AC7ED9F00AF3417 /* DiaryReviseViewController.swift in Sources */,
 				268608452B22A44C00FA823E /* AnnouncementService.swift in Sources */,
 				F991C3D52B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift in Sources */,

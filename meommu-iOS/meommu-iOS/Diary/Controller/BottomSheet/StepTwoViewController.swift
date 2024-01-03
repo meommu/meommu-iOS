@@ -9,45 +9,67 @@ import UIKit
 import PanModal
 
 
-class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        registerXib()
-        
-        steptwoTableVlew.delegate = self
-        steptwoTableVlew.dataSource = self
-
-        
-    }
+class StepTwoViewController: UIViewController {
     
-    // 3단계 바텀시트 생성하기
-    @IBOutlet var steptwoNextButton: UIButton!
-    
-    @IBAction func OnClick_steptwoNextButton(_ sender: Any) {
-        
-    }
-    
-    // -----------------------------------------
-    // 2단계 바텀 시트 설정하기
-
-    
-    // TableView 설정
-    @IBOutlet var steptwoTableVlew: UITableView!
-    
-    var detailData: [String] = ["산책을 오래 했어요", "산책 중 맛있는 간식을 많이 먹었어요", "산책 중 친한 강아지를 만나 대화 했어요", "걸음을 아주 천천히 걸었어요", "나만의 문장 추가하기"]
-    
+    // 해당 뷰컨의 관련된 셀 데이터
     let cellName = "StepTwoTableViewCell"
     let cellReuseIdentifire = "StepTwoCell"
     
-    private func registerXib() {
-        let nibName = UINib(nibName: cellName, bundle: nil)
-        steptwoTableVlew.register(nibName, forCellReuseIdentifier: cellReuseIdentifire)
+    // gpt 일기 가이드 정보 저장 프로퍼티 (label 관련)
+    var guideData: GPTGuide?
+    
+    // gpt 일기 디테일 데이터 저장 배열 프로퍼티 (cell 관련)
+    var guideDetailData: [GPTDetailGuide] = [GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요")] {
+        didSet {
+            guard self.steptwoTableView != nil else { return }
+            DispatchQueue.main.async {
+                self.steptwoTableView.reloadData()
+                print("스텝 투우우우우")
+            }
+            
+        }
     }
     
+    @IBOutlet weak var mainTitleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet var steptwoTableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTableView()
+        setupLabel()
+        
+    }
+    
+    //MARK: - setupTableView 메서드
+    private func setupTableView() {
+        // 델리게이트, 데이터소스 설정
+        steptwoTableView.delegate = self
+        steptwoTableView.dataSource = self
+        
+        // TabelView에 xib 등록하기.
+        let nibName = UINib(nibName: cellName, bundle: nil)
+        steptwoTableView.register(nibName, forCellReuseIdentifier: cellReuseIdentifire)
+        
+    }
+    
+    //MARK: - Label 셋업 메서드
+    private func setupLabel() {
+        guard let guideData = self.guideData else { return }
+        
+        self.mainTitleLabel.text = guideData.guide
+        self.subTitleLabel.text = guideData.description
+        
+    }
+    
+}
+
+//MARK: - TableView 확장
+extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return detailData.count
+        return guideDetailData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,22 +77,15 @@ class StepTwoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = steptwoTableVlew.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
-        cell.detailLabel.text = detailData[indexPath.row]
         
-        // cell 선택 시 배경 컬러 없애기
-        cell.selectionStyle = .none
+        let cell = steptwoTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
+        
+        cell.detailLabel.text = guideDetailData[indexPath.row].detail
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
- 
-    }
     
 }
 

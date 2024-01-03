@@ -145,7 +145,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="YHu-4V-HB5"/>
                     <connections>
-                        <outlet property="steptwoTableVlew" destination="rfI-cf-zl8" id="Fi4-VC-67B"/>
+                        <outlet property="mainTitleLabel" destination="LDp-er-keW" id="Qly-SZ-9Vn"/>
+                        <outlet property="steptwoTableView" destination="rfI-cf-zl8" id="5KC-4o-O76"/>
+                        <outlet property="subTitleLabel" destination="hgT-GS-rSY" id="Qg6-Fp-IRk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbT-Oc-j8Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -360,7 +362,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <attributes>
                                                             <color key="NSColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" size="16" name="PretendardVariable-Bold"/>

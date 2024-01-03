@@ -9,17 +9,23 @@ import UIKit
 import PanModal
 
 
-class StepOneViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class StepOneViewController: UIViewController {
     
     // cell 관련 프로퍼티
     private let cellName = "StepOneTableViewCell"
     private let cellReuseIdentifire = "StepOneCell"
     
+    weak var delegate: BottomSheetControllerDelegate?
+    
     // 선택된 데이터를 저장할 배열
-    var selectedData: [String] = []
+    var selectedData: [Int] = [] {
+        // didSet을 이용하여 배열이 변경될 때마다 오름차순 정렬
+        didSet {
+            selectedData.sort()
+        }
+    }
     
     var guideData: [GPTGuide] = []
-    
     
     // TableView 프로퍼티
     @IBOutlet var stepOneTableVlew: UITableView!
@@ -32,11 +38,10 @@ class StepOneViewController: UIViewController, UIViewControllerTransitioningDele
     @IBOutlet var stepOnePageLabel: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchDiaryGPTDiaryGudie()
+        fetchGPTDiaryGudie()
         setupTableView()
         
     }
@@ -53,7 +58,7 @@ class StepOneViewController: UIViewController, UIViewControllerTransitioningDele
         
     }
     
-    private func fetchDiaryGPTDiaryGudie() {
+    private func fetchGPTDiaryGudie() {
         GPTDiaryAPI.shared.getGPTDiaryGuide { result in
             switch result {
             case .success(let response):
@@ -65,7 +70,7 @@ class StepOneViewController: UIViewController, UIViewControllerTransitioningDele
                 DispatchQueue.main.async {
                     self.stepOneTableVlew.reloadData()
                 }
-
+                
             case .failure(let error):
                 // 400~500 에러
                 print("Error: \(error.message)")
@@ -92,9 +97,6 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.detailLabel.text = guideData[indexPath.row].guide
         
-        // cell 선택 시 배경 컬러 없애기
-        cell.selectionStyle = .none
-        
         return cell
     }
     
@@ -102,10 +104,14 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // 선택된 셀의 데이터를 selectedData 배열에 추가
-        let selectedText = guideData[indexPath.row].guide
-        if !selectedData.contains(selectedText) {
-            selectedData.append(selectedText)
+        let selectedCellId = guideData[indexPath.row].id
+        if !selectedData.contains(selectedCellId) {
+            selectedData.append(selectedCellId)
         }
+        
+        // 페이지 뷰컨에 인덱스 배열 전달
+        delegate?.pageArrayDidChange(data: selectedData)
+        
         print(selectedData)
     }
     
@@ -113,10 +119,14 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         // 선택 취소된 셀의 데이터를 selectedData 배열에서 제거
-        let deselectedText = guideData[indexPath.row].guide
-        if let index = selectedData.firstIndex(of: deselectedText) {
+        let deselectedCellId = guideData[indexPath.row].id
+        if let index = selectedData.firstIndex(of: deselectedCellId) {
             selectedData.remove(at: index)
         }
+        
+        // 페이지 뷰컨에 인덱스 배열 전달
+        delegate?.pageArrayDidChange(data: selectedData)
+        
         print(selectedData)
     }
 }

@@ -24,7 +24,9 @@ class StepOneTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // 셀 선택 시 배경색 변경 없애기
+        self.selectionStyle = .none
     }
     
     //MARK: - setSelected 메서드

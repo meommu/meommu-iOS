@@ -24,9 +24,11 @@ class StepTwoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // 셀 선택 시 배경색 변경 없애기
+        self.selectionStyle = .none
     }
-
+    
     //MARK: - setSelected 메서드
     // 셀 선택 UI 설정
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,5 +42,4 @@ class StepTwoTableViewCell: UITableViewCell {
             detailLabel.textColor = UIColor(named: "BlueGray200")
         }
     }
-    
 }

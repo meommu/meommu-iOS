@@ -8,7 +8,6 @@
 import UIKit
 
 class StepThreeViewController: UIViewController {
-
     
     @IBOutlet weak var diaryTextView: UITextView!
     
@@ -16,6 +15,7 @@ class StepThreeViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     
     
     

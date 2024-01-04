@@ -30,8 +30,7 @@ class PageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageVC()
-        
-        
+
     }
     
     //MARK: - pageViewController 셋업 메서드
@@ -44,13 +43,16 @@ class PageViewController: UIPageViewController {
         // step1 vc 생성
         makeStepOneVC()
         
-        // step2 vc 생성
-        makeStepTwoVC()
         
         // 첫 번째 페이지를 기본 페이지로 설정
         if let firstVC = pageVCArray.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
+        
+        // step2 vc 생성
+        makeStepTwoVC()
+        
+        
     }
     
     
@@ -98,27 +100,22 @@ class PageViewController: UIPageViewController {
     }
     
     //MARK: - 스텝 2 VC 만들기 메서드
-    private func makeStepTwoVC() {
-        
+    private func makeStepTwoVC(index: Int = 1)  {
         // ❓일단은 하드코딩으로 인덱스가 설정하고, 뷰컨 추가
-        for n in 1...5 {
-            
-            if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
-                
-                fetchGPTDiaryDetailGuide(index: n, stepTwoVC: stepTwoVC)
-                
+        guard index <= 5 else { return }
+        
+        if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
+                fetchGPTDiaryDetailGuide(index: index, stepTwoVC: stepTwoVC) {
+                    // 현재 작업이 완료된 후 다음 작업 시작
+                    self.makeStepTwoVC(index: index + 1)
+                }
             }
-            
-        }
         
     }
     
     //MARK: - step2 뷰컨 gpt 다이어리 디테일 가이드 fetch 메서드
-    private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController) {
+    private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController, completion: @escaping () -> ()) {
         
-        // 1. 뷰컨 생성
-        // 2. 생성한 뷰컨에 다이어리 데이터 전달 (레이블 관련 데이터)
-        // 3. 스텝 2 커스텀 뷰컨도 중가중간 생성
         // 4. 스텝 2 뷰컨의 마지막 버튼 선택에 따라 커스텀 뷰컨 삭제 or 추가
         // 4-1. 위의 방식이 별로면 미리 커스텀 뷰컨을 배열에 다 추가한 뒤 버튼에 따라 다음 페이지의 인덱스에 +1
         // but 이 방식은 이전으로 돌아갈 때도 고려해야 함. (사실 모든 상황에서 다 이걸 고려하긴 해야 된다.)
@@ -151,6 +148,7 @@ class PageViewController: UIPageViewController {
                 // 400~500 에러
                 print("Error: \(error.message)")
             }
+            completion()
         }
         
         
@@ -168,7 +166,6 @@ class PageViewController: UIPageViewController {
     
     //MARK: - 스텝 3 뷰컨 생성 메서드
     private func makeStepThreeVC() {
-        print("--------------------")
         if let stepThreeVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepThreeViewController") as? StepThreeViewController {
             
             // step3 vc를 페이지 배열에 추가

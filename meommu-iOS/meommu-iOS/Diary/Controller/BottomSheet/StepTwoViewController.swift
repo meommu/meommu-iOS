@@ -19,13 +19,9 @@ class StepTwoViewController: UIViewController {
     var guideData: GPTGuide?
     
     // gpt 일기 디테일 데이터 저장 배열 프로퍼티 (cell 관련)
-    var guideDetailData: [GPTDetailGuide] = [GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요"),GPTDetailGuide(id: 2, detail: "산책 중에 새로운 친구를 만났어요")] {
+    var guideDetailData: [GPTDetailGuide] = [] {
         didSet {
-            guard self.steptwoTableView != nil else { return }
-            DispatchQueue.main.async {
-                self.steptwoTableView.reloadData()
-                print("스텝 투우우우우")
-            }
+            guideDetailData.append(GPTDetailGuide(id: 0, detail: "나만의 문장 추가하기"))
             
         }
     }
@@ -40,6 +36,11 @@ class StepTwoViewController: UIViewController {
         
         setupTableView()
         setupLabel()
+        
+        // 바뀐 데이터를 적용하기 위해 tableView reload
+        DispatchQueue.main.async {
+            self.steptwoTableView.reloadData()
+        }
         
     }
     

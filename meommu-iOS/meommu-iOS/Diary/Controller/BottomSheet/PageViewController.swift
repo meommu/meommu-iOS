@@ -21,6 +21,9 @@ class PageViewController: UIPageViewController {
     // 부모 뷰에 삽입할 pageViewController 리스트
     var pageVCArray: [UIViewController] = []
     
+    // 초기에 모든 뷰 컨트롤러들을 저장할 배열
+    var allPageVCArray: [UIViewController] = []
+    
     // 자식 뷰컨의 로직에 따라 바뀌는 페이지 인덱스를 저장할 프로퍼티
     var vcIndexArray: [Int] = []
     
@@ -30,7 +33,47 @@ class PageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageVC()
+
+    }
+    
+    func updatePageVCArray() {
+        // 초기에 모든 뷰 컨트롤러들을 포함하는 배열을 준비합니다.
+        let allPageVCArray: [UIViewController] = self.allPageVCArray
         
+        // 업데이트된 페이지 배열을 저장할 빈 배열을 생성합니다.
+        var updatedPageVCArray: [UIViewController] = []
+        
+        // 첫 번째 페이지 추가
+        updatedPageVCArray.append(allPageVCArray[0])
+        
+        for index in vcIndexArray {
+            
+            switch index {
+            case 1:
+                updatedPageVCArray.append(allPageVCArray[1])
+                updatedPageVCArray.append(allPageVCArray[2])
+            case 2:
+                updatedPageVCArray.append(allPageVCArray[3])
+                updatedPageVCArray.append(allPageVCArray[4])
+            case 3:
+                updatedPageVCArray.append(allPageVCArray[5])
+                updatedPageVCArray.append(allPageVCArray[6])
+            case 4:
+                updatedPageVCArray.append(allPageVCArray[7])
+                updatedPageVCArray.append(allPageVCArray[8])
+            case 5:
+                updatedPageVCArray.append(allPageVCArray[9])
+                updatedPageVCArray.append(allPageVCArray[10])
+            default:
+                break
+            }
+        }
+        
+        // 마지막 페이지 추가
+        updatedPageVCArray.append(allPageVCArray[allPageVCArray.count - 1])
+        print("위에 왜 안돼?")
+        // 완성된 업데이트된 페이지 배열을 기존 pageVCArray에 할당합니다.
+        self.pageVCArray = updatedPageVCArray
         
     }
     
@@ -44,13 +87,16 @@ class PageViewController: UIPageViewController {
         // step1 vc 생성
         makeStepOneVC()
         
-        // step2 vc 생성
-        makeStepTwoVC()
         
         // 첫 번째 페이지를 기본 페이지로 설정
         if let firstVC = pageVCArray.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
+        
+        // step2 vc 생성
+        makeStepTwoVC()
+        
+        
     }
     
     
@@ -68,6 +114,7 @@ class PageViewController: UIPageViewController {
             
             // 스텝 1 VC를 페이지 배열에 추가
             pageVCArray.append(stepOneVC)
+            allPageVCArray.append(stepOneVC)
         }
         
     }
@@ -98,27 +145,28 @@ class PageViewController: UIPageViewController {
     }
     
     //MARK: - 스텝 2 VC 만들기 메서드
-    private func makeStepTwoVC() {
+    private func makeStepTwoVC(index: Int = 1)  {
         
-        // ❓일단은 하드코딩으로 인덱스가 설정하고, 뷰컨 추가
-        for n in 1...5 {
-            
-            if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
-                
-                fetchGPTDiaryDetailGuide(index: n, stepTwoVC: stepTwoVC)
-                
-            }
-            
+        // ❗️모든 vc가 만들어 진 뒤에 vc array 교체
+        // 처음 화면에서 버튼이 눌리지 않고 넘어갔을 때 step 3만 보이게 하기 위함.
+        if index == 6 {
+            updatePageVCArray()
         }
         
+        // ❓일단은 하드코딩으로 인덱스가 설정하고, 뷰컨 추가
+        guard index <= 5 else { return }
+        
+        if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
+                fetchGPTDiaryDetailGuide(index: index, stepTwoVC: stepTwoVC) {
+                    // 현재 작업이 완료된 후 다음 작업 시작
+                    self.makeStepTwoVC(index: index + 1)
+                }
+            }
     }
     
     //MARK: - step2 뷰컨 gpt 다이어리 디테일 가이드 fetch 메서드
-    private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController) {
+    private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController, completion: @escaping () -> ()) {
         
-        // 1. 뷰컨 생성
-        // 2. 생성한 뷰컨에 다이어리 데이터 전달 (레이블 관련 데이터)
-        // 3. 스텝 2 커스텀 뷰컨도 중가중간 생성
         // 4. 스텝 2 뷰컨의 마지막 버튼 선택에 따라 커스텀 뷰컨 삭제 or 추가
         // 4-1. 위의 방식이 별로면 미리 커스텀 뷰컨을 배열에 다 추가한 뒤 버튼에 따라 다음 페이지의 인덱스에 +1
         // but 이 방식은 이전으로 돌아갈 때도 고려해야 함. (사실 모든 상황에서 다 이걸 고려하긴 해야 된다.)
@@ -136,10 +184,12 @@ class PageViewController: UIPageViewController {
                 
                 // 해당 뷰컨을 페이지 뷰컨 배열에 추가
                 self.pageVCArray.append(stepTwoVC)
+                self.allPageVCArray.append(stepTwoVC)
                 
                 // 스텝 2 커스텀 뷰컨 배열에 추가
                 if let vc = self.makeStepTwoCustomVC() {
                     self.pageVCArray.append(vc)
+                    self.allPageVCArray.append(vc)
                 }
                 
                 // 마지막 페이지에서 step 3 vc 추가
@@ -151,6 +201,7 @@ class PageViewController: UIPageViewController {
                 // 400~500 에러
                 print("Error: \(error.message)")
             }
+            completion()
         }
         
         
@@ -168,11 +219,11 @@ class PageViewController: UIPageViewController {
     
     //MARK: - 스텝 3 뷰컨 생성 메서드
     private func makeStepThreeVC() {
-        print("--------------------")
         if let stepThreeVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepThreeViewController") as? StepThreeViewController {
             
             // step3 vc를 페이지 배열에 추가
             self.pageVCArray.append(stepThreeVC)
+            self.allPageVCArray.append(stepThreeVC)
             
         }
         
@@ -252,8 +303,11 @@ extension PageViewController: BottomSheetControllerDelegate {
     func pageArrayDidChange(data: [Int]) {
         self.vcIndexArray = data
         print("페이지 뷰컨: \(self.vcIndexArray)")
+        
+        updatePageVCArray()
     }
     
 }
+
 
 

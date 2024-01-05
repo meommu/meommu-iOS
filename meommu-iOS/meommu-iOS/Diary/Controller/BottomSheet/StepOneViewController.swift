@@ -15,7 +15,7 @@ class StepOneViewController: UIViewController {
     private let cellName = "StepOneTableViewCell"
     private let cellReuseIdentifire = "StepOneCell"
     
-    weak var delegate: BottomSheetControllerDelegate?
+    weak var pageVCDelegate: BottomSheetControllerDelegate?
     
     // 선택된 데이터를 저장할 배열
     var selectedData: [Int] = [] {
@@ -89,9 +89,10 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         // 페이지 뷰컨에 인덱스 배열 전달
-        delegate?.pageArrayDidChange(data: selectedData)
+        pageVCDelegate?.pageIndexArrayDidChange(data: selectedData)
         
-        print(selectedData)
+        // 전달한 인덱스 배열에 따라 페이지 변경
+        pageVCDelegate?.pageArrayDidChange()
     }
     
     // cell 선택 취소 시
@@ -104,8 +105,10 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         // 페이지 뷰컨에 인덱스 배열 전달
-        delegate?.pageArrayDidChange(data: selectedData)
+        pageVCDelegate?.pageIndexArrayDidChange(data: selectedData)
         
-        print(selectedData)
+        // 전달한 인덱스 배열에 따라 페이지 변경
+        pageVCDelegate?.pageArrayDidChange()
+
     }
 }

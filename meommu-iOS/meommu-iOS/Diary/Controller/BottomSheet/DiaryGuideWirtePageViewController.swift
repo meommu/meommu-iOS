@@ -23,13 +23,13 @@ class DiaryGuideWirtePageViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         // 다음 페이지로 이동
-        pageViewController.setNextViewControllersFromIndex(index: currentIndex + 1)
+        pageViewController.setNextViewControllersFromIndex(index: currentIndex)
     }
     
     
     @IBAction func beforeButtonTapped(_ sender: Any) {
         // 이전 페이지로 이동
-        pageViewController.setBeforeViewControllersFromIndex(index: currentIndex - 1)
+        pageViewController.setBeforeViewControllersFromIndex(index: currentIndex)
     }
     
     

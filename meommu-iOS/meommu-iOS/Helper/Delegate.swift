@@ -7,5 +7,10 @@
 
 
 protocol BottomSheetControllerDelegate: AnyObject {
-    func pageArrayDidChange(data: [Int])
+    func pageArrayDidChange()
+    func pageIndexArrayDidChange(data: [Int])
+}
+
+protocol BottomSheetStepTwoCustomDelegate: AnyObject {
+    func showStepTwoCustomVC(bool: Bool)
 }

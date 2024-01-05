@@ -36,6 +36,7 @@ class PageViewController: UIPageViewController {
 
     }
     
+    //MARK: - 페이지 인덱스 배열에 따라 페이지를 조정하는 메서드
     func updatePageVCArray() {
         // 초기에 모든 뷰 컨트롤러들을 포함하는 배열을 준비합니다.
         let allPageVCArray: [UIViewController] = self.allPageVCArray
@@ -71,7 +72,7 @@ class PageViewController: UIPageViewController {
         
         // 마지막 페이지 추가
         updatedPageVCArray.append(allPageVCArray[allPageVCArray.count - 1])
-        print("위에 왜 안돼?")
+
         // 완성된 업데이트된 페이지 배열을 기존 pageVCArray에 할당합니다.
         self.pageVCArray = updatedPageVCArray
         
@@ -107,7 +108,7 @@ class PageViewController: UIPageViewController {
     private func makeStepOneVC() {
         // 스텝 1 페이지 배열에 추가
         if let stepOneVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepOneViewController") as? StepOneViewController {
-            stepOneVC.delegate = self
+            stepOneVC.pageVCDelegate = self
             
             // 스텝 1 페이지 관련 데이터 fetch
             fetchGPTDiaryGudie(stepOneVC: stepOneVC)
@@ -228,33 +229,31 @@ class PageViewController: UIPageViewController {
         }
         
     }
-    //MARK: - 다음 페이지의 인덱스를 받아 페이지 이동 메서드
+    //MARK: - 현재 페이지의 인덱스를 받아 페이지 이동 메서드
+    // index 파라미터: 현재 페이지
     func setNextViewControllersFromIndex(index : Int){
-        // 첫번째 뷰컨일 때 선택된 버튼에 따라 뷰컨 배열을 수정하는 로직 여기다가 추가.❓
         
-        if index < 0 || index >= pageVCArray.count { return }
+        // 가능한 인덱스 범위 설정
+        guard index >= 0 && index < pageVCArray.count - 1 else { return }
+
+        // 다음 인덱스 번호를 보여줘야 하기 때문에 + 1
+        self.setViewControllers([pageVCArray[index + 1]], direction: .forward, animated: true, completion: nil)
         
-        self.setViewControllers([pageVCArray[index]], direction: .forward, animated: true, completion: nil)
-        
-        // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
-        completeHandler?(currentIndex)
-    }
-    
-    func setNextViewControllerFormIndex(index: Int, vcIndexArray: [Int]) {
-        // ❓vcIndexArray에 따라 vcArray도 바뀌는 로직을 추가해야 한다.
-        self.vcIndexArray = vcIndexArray
-        
-        if index < 0 || index >= pageVCArray.count { return }
-        self.setViewControllers([pageVCArray[index]], direction: .forward, animated: true, completion: nil)
+        print("npresnt: \(currentIndex)")
         
         // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
         completeHandler?(currentIndex)
     }
     
-    // 이전 페이지의 인덱스를 받아 페이지 이동 메서드
     func setBeforeViewControllersFromIndex(index : Int){
-        if index < 0 || index >= pageVCArray.count { return }
-        self.setViewControllers([pageVCArray[index]], direction: .reverse, animated: true, completion: nil)
+        
+        // 가능한 인덱스 범위 설정
+        guard index > 0 && index < pageVCArray.count  else { return }
+        
+        // 이전 인덱스 번호를 보여줘야 하기 때문에 - 1
+        self.setViewControllers([pageVCArray[index - 1]], direction: .reverse, animated: true, completion: nil)
+
+        // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
         completeHandler?(currentIndex)
     }
     
@@ -300,14 +299,27 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
 // 가이트 시트에서 선택된 버튼의 인덱스 배열을 저장하기 위해 델리게이트 패턴 채택
 extension PageViewController: BottomSheetControllerDelegate {
     
-    func pageArrayDidChange(data: [Int]) {
+    func pageArrayDidChange() {
+        // 저장된 인덱스 배열에 따라 step2 페이지 갱신
+        updatePageVCArray()
+    }
+    
+    // 선택된 셀의 인덱스 배열을 해당 뷰컨에 저장
+    func pageIndexArrayDidChange(data: [Int]) {
         self.vcIndexArray = data
         print("페이지 뷰컨: \(self.vcIndexArray)")
-        
-        updatePageVCArray()
     }
     
 }
 
+extension PageViewController: BottomSheetStepTwoCustomDelegate {
+    func showStepTwoCustomVC(bool: Bool) {
+        if bool {
+            return
+        } else {
+            self
+        }
+    }
+}
 
 

@@ -15,6 +15,8 @@ class StepTwoViewController: UIViewController {
     let cellName = "StepTwoTableViewCell"
     let cellReuseIdentifire = "StepTwoCell"
     
+    var customVCDeldgate: BottomSheetStepTwoCustomDelegate?
+    
     // gpt 일기 가이드 정보 저장 프로퍼티 (label 관련)
     var guideData: GPTGuide?
     

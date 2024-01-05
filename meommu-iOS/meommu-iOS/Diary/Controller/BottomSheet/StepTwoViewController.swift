@@ -17,6 +17,12 @@ class StepTwoViewController: UIViewController {
     
     var customVCDeldgate: BottomSheetStepTwoCustomDelegate?
     
+    // step2 커스텀 뷰컨을 보여줄지 판단을 위한 프로퍼티
+    // 초기에 '나만의 문장 추가'버튼이 눌려있지 않기 때문에 false로 초기 값 세팅
+    var isNextCustomVCAvailable = false
+    
+    var isBeforeCustomVCAvailable = true
+    
     // gpt 일기 가이드 정보 저장 프로퍼티 (label 관련)
     var guideData: GPTGuide?
     
@@ -44,6 +50,12 @@ class StepTwoViewController: UIViewController {
             self.steptwoTableView.reloadData()
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("화면 등장!!!!!!!")
+        // 초기 화면에서는 문장 추가 화면을 보지 않는 상태
+        customVCDeldgate?.showStepTwoCustomVC(bool: isNextCustomVCAvailable)
     }
     
     //MARK: - setupTableView 메서드
@@ -88,7 +100,23 @@ extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // cell 선택 시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if guideDetailData.count - 1 == indexPath.row {
+            isNextCustomVCAvailable = true
+            customVCDeldgate?.showStepTwoCustomVC(bool: isNextCustomVCAvailable)
+        }
+        
+    }
     
-    
+    // cell 선택 취소 시
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+      
+        if guideDetailData.count - 1 == indexPath.row {
+            isNextCustomVCAvailable = false
+            customVCDeldgate?.showStepTwoCustomVC(bool: isNextCustomVCAvailable)
+        }
+    }
 }
 

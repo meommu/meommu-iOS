@@ -168,10 +168,6 @@ class PageViewController: UIPageViewController {
     //MARK: - step2 뷰컨 gpt 다이어리 디테일 가이드 fetch 메서드
     private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController, completion: @escaping () -> ()) {
         
-        // 4. 스텝 2 뷰컨의 마지막 버튼 선택에 따라 커스텀 뷰컨 삭제 or 추가
-        // 4-1. 위의 방식이 별로면 미리 커스텀 뷰컨을 배열에 다 추가한 뒤 버튼에 따라 다음 페이지의 인덱스에 +1
-        // but 이 방식은 이전으로 돌아갈 때도 고려해야 함. (사실 모든 상황에서 다 이걸 고려하긴 해야 된다.)
-        
         GPTDiaryAPI.shared.getGPTDiaryDetailGuide(guideId: index) { result in
             switch result {
             case .success(let response):
@@ -179,9 +175,10 @@ class PageViewController: UIPageViewController {
                 stepTwoVC.guideDetailData = response.data.details
                 
                 // step1에서 비동기적으로 받은 데이터를 pageVC에 저장하고 할당하는 코드
-                // but, 순서를 보장하지는 못함...❓❓❓❓
                 stepTwoVC.guideData = self.guideDataArray[index - 1]
                 
+                // step2 델리게이트 설정
+                stepTwoVC.customVCDeldgate = self
                 
                 // 해당 뷰컨을 페이지 뷰컨 배열에 추가
                 self.pageVCArray.append(stepTwoVC)
@@ -299,8 +296,8 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
 // 가이트 시트에서 선택된 버튼의 인덱스 배열을 저장하기 위해 델리게이트 패턴 채택
 extension PageViewController: BottomSheetControllerDelegate {
     
+    // 저장된 인덱스 배열에 따라 step2 페이지 갱신
     func pageArrayDidChange() {
-        // 저장된 인덱스 배열에 따라 step2 페이지 갱신
         updatePageVCArray()
     }
     
@@ -315,9 +312,11 @@ extension PageViewController: BottomSheetControllerDelegate {
 extension PageViewController: BottomSheetStepTwoCustomDelegate {
     func showStepTwoCustomVC(bool: Bool) {
         if bool {
-            return
+            // true면 현재 보이고 있는 vc의 index 그대로 전달
+            completeHandler?(currentIndex)
         } else {
-            self
+            // false면 index + 1
+             completeHandler?(currentIndex + 1)
         }
     }
 }

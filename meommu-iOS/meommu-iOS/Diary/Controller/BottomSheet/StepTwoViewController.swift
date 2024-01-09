@@ -29,6 +29,7 @@ class StepTwoViewController: UIViewController {
     // gpt 일기 디테일 데이터 저장 배열 프로퍼티 (cell 관련)
     var guideDetailData: [GPTDetailGuide] = [] {
         didSet {
+            // 서버에서 받지 않는 데이터 따로 추가
             guideDetailData.append(GPTDetailGuide(id: 0, detail: "나만의 문장 추가하기"))
             
         }
@@ -50,12 +51,6 @@ class StepTwoViewController: UIViewController {
             self.steptwoTableView.reloadData()
         }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("화면 등장!!!!!!!")
-        // 초기 화면에서는 문장 추가 화면을 보지 않는 상태
-        customVCDeldgate?.showStepTwoCustomVC(bool: isNextCustomVCAvailable)
     }
     
     //MARK: - setupTableView 메서드
@@ -99,24 +94,6 @@ extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    // cell 선택 시
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if guideDetailData.count - 1 == indexPath.row {
-            isNextCustomVCAvailable = true
-            customVCDeldgate?.showStepTwoCustomVC(bool: isNextCustomVCAvailable)
-        }
-        
-    }
-    
-    // cell 선택 취소 시
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-      
-        if guideDetailData.count - 1 == indexPath.row {
-            isNextCustomVCAvailable = false
-            customVCDeldgate?.showStepTwoCustomVC(bool: isNextCustomVCAvailable)
-        }
-    }
 }
+    
 

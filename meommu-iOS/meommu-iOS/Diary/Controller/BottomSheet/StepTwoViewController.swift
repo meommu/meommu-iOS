@@ -18,10 +18,8 @@ class StepTwoViewController: UIViewController {
     var customVCDeldgate: BottomSheetStepTwoCustomDelegate?
     
     // step2 커스텀 뷰컨을 보여줄지 판단을 위한 프로퍼티
-    // 초기에 '나만의 문장 추가'버튼이 눌려있지 않기 때문에 false로 초기 값 세팅
-    var isNextCustomVCAvailable = false
-    
-    var isBeforeCustomVCAvailable = true
+    // 초기에 '나만의 문장 추가'버튼이 눌려있지 않기 때문에 false로 초기화
+    var showStepTwoCustomVC = false
     
     // gpt 일기 가이드 정보 저장 프로퍼티 (label 관련)
     var guideData: GPTGuide?
@@ -93,6 +91,24 @@ extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailLabel.text = guideDetailData[indexPath.row].detail
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == guideDetailData.count - 1 {
+            showStepTwoCustomVC = true
+            customVCDeldgate?.showStepTwoCustomVC(bool: showStepTwoCustomVC)
+        } else {
+            return
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if indexPath.row == guideDetailData.count - 1 {
+            showStepTwoCustomVC = false
+            customVCDeldgate?.showStepTwoCustomVC(bool: showStepTwoCustomVC)
+        } else {
+            return
+        }
     }
 }
     

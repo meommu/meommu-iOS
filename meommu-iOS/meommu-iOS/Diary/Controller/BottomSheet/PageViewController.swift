@@ -184,13 +184,11 @@ class PageViewController: UIPageViewController {
     }
     
     //MARK: - 스텝 2 커스텀 뷰컨 생성 메서드
-    private func makeStepTwoCustomVC() -> StepTwoCustomTextViewController? {
+    private func makeStepTwoCustomVC() -> UIViewController? {
         
-        if let stepTwoCustomVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoCustomTextViewController") as? StepTwoCustomTextViewController {
-            return stepTwoCustomVC
-        }
+        let stepTwoCustomVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoCustomTextViewController")
         
-        return nil
+        return stepTwoCustomVC
     }
     
     //MARK: - 스텝 3 뷰컨 생성 메서드
@@ -292,7 +290,15 @@ extension PageViewController: BottomSheetControllerDelegate {
 
 extension PageViewController: BottomSheetStepTwoCustomDelegate {
     func showStepTwoCustomVC(bool: Bool) {
-        
+        if bool {
+            if let stepTwoCustomVC = makeStepTwoCustomVC() {
+                self.pageVCArray.insert(stepTwoCustomVC, at: currentIndex + 1)
+            }
+        } else {
+            self.pageVCArray.remove(at: currentIndex + 1)
+        }
+        // 커스텀 셀이 선택되면 현재 인덱스 다음 순번에 뷰컨 추가
+        // 선택 취소되면 현재 인덱스 다음 순번 뷰컨 삭제
+        // 뷰컨이 추가된 뒤에만 삭제 로직이 진행되어야 한다.
     }
 }
-

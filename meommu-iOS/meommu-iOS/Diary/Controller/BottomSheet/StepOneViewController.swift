@@ -44,6 +44,7 @@ class StepOneViewController: UIViewController {
         setupTableView()
         
     }
+
     
     //MARK: - setupTableView 메서드
     private func setupTableView() {

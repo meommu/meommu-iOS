@@ -25,7 +25,7 @@ class PageViewController: UIPageViewController {
     var allPageVCArray: [UIViewController] = []
     
     // 자식 뷰컨의 로직에 따라 바뀌는 페이지 인덱스를 저장할 프로퍼티
-    var vcIndexArray: [Int] = []
+    var stepTwoVCIndexArray: [Int] = []
     
     var guideDataArray: [GPTGuide] = []
     
@@ -33,48 +33,38 @@ class PageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageVC()
-
+        updatePageVCArray()
     }
     
     //MARK: - 페이지 인덱스 배열에 따라 페이지를 조정하는 메서드
     func updatePageVCArray() {
-        // 초기에 모든 뷰 컨트롤러들을 포함하는 배열을 준비합니다.
-        let allPageVCArray: [UIViewController] = self.allPageVCArray
         
-        // 업데이트된 페이지 배열을 저장할 빈 배열을 생성합니다.
-        var updatedPageVCArray: [UIViewController] = []
+        // 페이지 배열 전체 삭제
+        self.pageVCArray.removeAll()
         
         // 첫 번째 페이지 추가
-        updatedPageVCArray.append(allPageVCArray[0])
+        self.pageVCArray.append(allPageVCArray[0])
         
-        for index in vcIndexArray {
+        for index in stepTwoVCIndexArray {
             
             switch index {
             case 1:
-                updatedPageVCArray.append(allPageVCArray[1])
-                updatedPageVCArray.append(allPageVCArray[2])
+                self.pageVCArray.append(allPageVCArray[1])
             case 2:
-                updatedPageVCArray.append(allPageVCArray[3])
-                updatedPageVCArray.append(allPageVCArray[4])
+                self.pageVCArray.append(allPageVCArray[2])
             case 3:
-                updatedPageVCArray.append(allPageVCArray[5])
-                updatedPageVCArray.append(allPageVCArray[6])
+                self.pageVCArray.append(allPageVCArray[3])
             case 4:
-                updatedPageVCArray.append(allPageVCArray[7])
-                updatedPageVCArray.append(allPageVCArray[8])
+                self.pageVCArray.append(allPageVCArray[4])
             case 5:
-                updatedPageVCArray.append(allPageVCArray[9])
-                updatedPageVCArray.append(allPageVCArray[10])
+                self.pageVCArray.append(allPageVCArray[5])
             default:
                 break
             }
         }
         
         // 마지막 페이지 추가
-        updatedPageVCArray.append(allPageVCArray[allPageVCArray.count - 1])
-
-        // 완성된 업데이트된 페이지 배열을 기존 pageVCArray에 할당합니다.
-        self.pageVCArray = updatedPageVCArray
+        self.pageVCArray.append(allPageVCArray[allPageVCArray.count - 1])
         
     }
     
@@ -85,18 +75,21 @@ class PageViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         
-        // step1 vc 생성
-        makeStepOneVC()
+        // step1, 2 vc 생성
+        makeStepOneVC {
+            makeStepTwoVC()
+        }
         
+        // step2 vc 생성
+//        makeStepTwoVC()
+        
+        // step3 vc 생성
+        makeStepThreeVC()
         
         // 첫 번째 페이지를 기본 페이지로 설정
         if let firstVC = pageVCArray.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
-        
-        // step2 vc 생성
-        makeStepTwoVC()
-        
         
     }
     
@@ -105,18 +98,24 @@ class PageViewController: UIPageViewController {
     
     
     //MARK: - 스텝 1 VC 만들기 메서드
-    private func makeStepOneVC() {
+    private func makeStepOneVC(completion: () -> ()) {
         // 스텝 1 페이지 배열에 추가
         if let stepOneVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepOneViewController") as? StepOneViewController {
+            
+            // 스텝 1 VC를 페이지 배열에 추가
+            allPageVCArray.append(stepOneVC)
+            pageVCArray.append(stepOneVC)
+            
+            // 스텝 1 vc 델리게이트 설정
             stepOneVC.pageVCDelegate = self
             
             // 스텝 1 페이지 관련 데이터 fetch
             fetchGPTDiaryGudie(stepOneVC: stepOneVC)
             
-            // 스텝 1 VC를 페이지 배열에 추가
-            pageVCArray.append(stepOneVC)
-            allPageVCArray.append(stepOneVC)
+            
         }
+        // 스텝 1이 만들어진 뒤 스텝 2 만들기 진행
+        completion()
         
     }
     
@@ -132,11 +131,10 @@ class PageViewController: UIPageViewController {
                 // 받아온 데이터에서 guide를 배열에 할당 후 테이블 리로드한다.
                 stepOneVC.guideDataArray = response.data.guides
                 
-                
                 DispatchQueue.main.async {
-                    // ❓데이터가 올라가고 뷰가 그려지는 순서 공부..!
                     stepOneVC.stepOneTableVlew.reloadData()
                 }
+                
                 
             case .failure(let error):
                 // 400~500 에러
@@ -146,27 +144,23 @@ class PageViewController: UIPageViewController {
     }
     
     //MARK: - 스텝 2 VC 만들기 메서드
-    private func makeStepTwoVC(index: Int = 1)  {
-        
-        // ❗️모든 vc가 만들어 진 뒤에 vc array 교체
-        // 처음 화면에서 버튼이 눌리지 않고 넘어갔을 때 step 3만 보이게 하기 위함.
-        if index == 6 {
-            updatePageVCArray()
+    private func makeStepTwoVC()  {
+
+        for index in 1...5 {
+            if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
+                
+                // 비동기 함수 처리 전 순서 보장을 위해 배열에 스텝2 VC 미리 저장
+                self.allPageVCArray.append(stepTwoVC)
+                
+                fetchGPTDiaryDetailGuide(index: index, stepTwoVC: stepTwoVC)
+            }
         }
         
-        // ❓일단은 하드코딩으로 인덱스가 설정하고, 뷰컨 추가
-        guard index <= 5 else { return }
         
-        if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
-                fetchGPTDiaryDetailGuide(index: index, stepTwoVC: stepTwoVC) {
-                    // 현재 작업이 완료된 후 다음 작업 시작
-                    self.makeStepTwoVC(index: index + 1)
-                }
-            }
     }
     
     //MARK: - step2 뷰컨 gpt 다이어리 디테일 가이드 fetch 메서드
-    private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController, completion: @escaping () -> ()) {
+    private func fetchGPTDiaryDetailGuide(index: Int, stepTwoVC: StepTwoViewController) {
         
         GPTDiaryAPI.shared.getGPTDiaryDetailGuide(guideId: index) { result in
             switch result {
@@ -174,32 +168,16 @@ class PageViewController: UIPageViewController {
                 // step2 뷰컨에 디테일 데이터 전달
                 stepTwoVC.guideDetailData = response.data.details
                 
-                // step1에서 비동기적으로 받은 데이터를 pageVC에 저장하고 할당하는 코드
+                // step1에서 비동기적으로 받은 데이터를 pageVC에 저장하고 step2에 전달하는 코드
                 stepTwoVC.guideData = self.guideDataArray[index - 1]
                 
                 // step2 델리게이트 설정
                 stepTwoVC.customVCDeldgate = self
                 
-                // 해당 뷰컨을 페이지 뷰컨 배열에 추가
-                self.pageVCArray.append(stepTwoVC)
-                self.allPageVCArray.append(stepTwoVC)
-                
-                // 스텝 2 커스텀 뷰컨 배열에 추가
-                if let vc = self.makeStepTwoCustomVC() {
-                    self.pageVCArray.append(vc)
-                    self.allPageVCArray.append(vc)
-                }
-                
-                // 마지막 페이지에서 step 3 vc 추가
-                if index == 5 {
-                    self.makeStepThreeVC()
-                }
-                
             case .failure(let error):
                 // 400~500 에러
                 print("Error: \(error.message)")
             }
-            completion()
         }
         
         
@@ -220,7 +198,6 @@ class PageViewController: UIPageViewController {
         if let stepThreeVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepThreeViewController") as? StepThreeViewController {
             
             // step3 vc를 페이지 배열에 추가
-            self.pageVCArray.append(stepThreeVC)
             self.allPageVCArray.append(stepThreeVC)
             
         }
@@ -229,27 +206,31 @@ class PageViewController: UIPageViewController {
     //MARK: - 현재 페이지의 인덱스를 받아 페이지 이동 메서드
     // index 파라미터: 현재 페이지
     func setNextViewControllersFromIndex(index : Int){
-        
+        print("넥 페이지 배열: \(pageVCArray)")
+        print("넥 전체페이지 배열: \(allPageVCArray)")
         // 가능한 인덱스 범위 설정
         guard index >= 0 && index < pageVCArray.count - 1 else { return }
-
+        
         // 다음 인덱스 번호를 보여줘야 하기 때문에 + 1
         self.setViewControllers([pageVCArray[index + 1]], direction: .forward, animated: true, completion: nil)
         
-        print("npresnt: \(currentIndex)")
+        print("넥 presnt: \(currentIndex)")
         
         // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
         completeHandler?(currentIndex)
     }
     
     func setBeforeViewControllersFromIndex(index : Int){
-        
+        print("비 페이지 배열: \(pageVCArray)")
+        print("비 전체페이지 배열: \(allPageVCArray)")
         // 가능한 인덱스 범위 설정
         guard index > 0 && index < pageVCArray.count  else { return }
         
         // 이전 인덱스 번호를 보여줘야 하기 때문에 - 1
         self.setViewControllers([pageVCArray[index - 1]], direction: .reverse, animated: true, completion: nil)
-
+        
+        print("비 presnt: \(currentIndex)")
+        
         // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
         completeHandler?(currentIndex)
     }
@@ -298,27 +279,20 @@ extension PageViewController: BottomSheetControllerDelegate {
     
     // 저장된 인덱스 배열에 따라 step2 페이지 갱신
     func pageArrayDidChange() {
-        updatePageVCArray()
+        self.updatePageVCArray()
     }
     
     // 선택된 셀의 인덱스 배열을 해당 뷰컨에 저장
     func pageIndexArrayDidChange(data: [Int]) {
-        self.vcIndexArray = data
-        print("페이지 뷰컨: \(self.vcIndexArray)")
+        self.stepTwoVCIndexArray = data
+        print("페이지 뷰컨: \(self.stepTwoVCIndexArray)")
     }
     
 }
 
 extension PageViewController: BottomSheetStepTwoCustomDelegate {
     func showStepTwoCustomVC(bool: Bool) {
-        if bool {
-            // true면 현재 보이고 있는 vc의 index 그대로 전달
-            completeHandler?(currentIndex)
-        } else {
-            // false면 index + 1
-             completeHandler?(currentIndex + 1)
-        }
+        
     }
 }
-
 

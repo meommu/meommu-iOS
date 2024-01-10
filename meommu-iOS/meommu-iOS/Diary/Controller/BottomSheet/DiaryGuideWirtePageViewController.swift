@@ -48,6 +48,12 @@ class DiaryGuideWirtePageViewController: UIViewController {
                     self.currentIndex = result
                 }
                 
+                // 부모 뷰컨을 해제시키는 기능 할당
+                pageViewController.dismissBottomSheet = {
+                    print("dismisss")
+                    self.dismiss(animated: true)
+                }
+                
             }
             
         }

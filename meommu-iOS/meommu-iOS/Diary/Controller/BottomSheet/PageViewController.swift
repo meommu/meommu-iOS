@@ -9,6 +9,8 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
+    var dismissBottomSheet : (() -> ())?
+    
     // 해당 페이지의 인덱스를 전달하기 위함
     var completeHandler : ((Int)->())?
     
@@ -202,10 +204,18 @@ class PageViewController: UIPageViewController {
         
     }
     //MARK: - 현재 페이지의 인덱스를 받아 페이지 이동 메서드
-    // index 파라미터: 현재 페이지
+    // index 파라미터: 이전 페이지 인덱스
     func setNextViewControllersFromIndex(index : Int){
         print("넥 페이지 배열: \(pageVCArray)")
         print("넥 전체페이지 배열: \(allPageVCArray)")
+        print(index)
+        
+        if index == pageVCArray.count - 1 {
+            // 마지막 페이지일 때 바텀 시트 내리기
+            self.dismissBottomSheet?()
+            return
+        }
+        
         // 가능한 인덱스 범위 설정
         guard index >= 0 && index < pageVCArray.count - 1 else { return }
         
@@ -249,7 +259,7 @@ extension PageViewController:  UIPageViewControllerDelegate {
 }
 
 //MARK: - BottomSheetControllerDelegate
-// 가이트 시트에서 선택된 버튼의 인덱스 배열을 저장하기 위해 델리게이트 패턴 채택
+// 가이드 시트에서 선택된 버튼의 인덱스 배열을 저장하기 위해 델리게이트 패턴 채택
 extension PageViewController: BottomSheetControllerDelegate {
     
     // 저장된 인덱스 배열에 따라 step2 페이지 갱신

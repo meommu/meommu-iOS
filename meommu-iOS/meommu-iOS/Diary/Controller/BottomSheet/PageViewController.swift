@@ -38,7 +38,7 @@ class PageViewController: UIPageViewController {
     
     //MARK: - 페이지 인덱스 배열에 따라 페이지를 조정하는 메서드
     func updatePageVCArray() {
-        
+        print("스텝 2 인덱스 배열:\(stepTwoVCIndexArray)")
         // 페이지 배열 전체 삭제
         self.pageVCArray.removeAll()
         
@@ -70,21 +70,12 @@ class PageViewController: UIPageViewController {
     
     //MARK: - pageViewController 셋업 메서드
     private func setupPageVC() {
-        
+        print(#function)
         // pageViewController 관련 델리게이트 선언
-        self.dataSource = self
         self.delegate = self
         
-        // step1, 2 vc 생성
-        makeStepOneVC {
-            makeStepTwoVC()
-        }
-        
-        // step2 vc 생성
-//        makeStepTwoVC()
-        
-        // step3 vc 생성
-        makeStepThreeVC()
+        // step1, 2, 3 vc 생성
+        makeStepOneVC(completion: makeStepTwoAndThreeVC)
         
         // 첫 번째 페이지를 기본 페이지로 설정
         if let firstVC = pageVCArray.first {
@@ -98,7 +89,8 @@ class PageViewController: UIPageViewController {
     
     
     //MARK: - 스텝 1 VC 만들기 메서드
-    private func makeStepOneVC(completion: () -> ()) {
+    private func makeStepOneVC(completion: @escaping () -> ()) {
+        print(#function)
         // 스텝 1 페이지 배열에 추가
         if let stepOneVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepOneViewController") as? StepOneViewController {
             
@@ -110,17 +102,16 @@ class PageViewController: UIPageViewController {
             stepOneVC.pageVCDelegate = self
             
             // 스텝 1 페이지 관련 데이터 fetch
-            fetchGPTDiaryGudie(stepOneVC: stepOneVC)
+            fetchGPTDiaryGudie(stepOneVC: stepOneVC, completion: completion)
             
             
         }
-        // 스텝 1이 만들어진 뒤 스텝 2 만들기 진행
-        completion()
         
     }
     
     //MARK: - step1 뷰컨 gpt 다이어리 가이드 fetch 메서드
-    private func fetchGPTDiaryGudie(stepOneVC: StepOneViewController) {
+    private func fetchGPTDiaryGudie(stepOneVC: StepOneViewController, completion:  @escaping () -> ()) {
+        print(#function)
         GPTDiaryAPI.shared.getGPTDiaryGuide { result in
             switch result {
             case .success(let response):
@@ -135,6 +126,9 @@ class PageViewController: UIPageViewController {
                     stepOneVC.stepOneTableVlew.reloadData()
                 }
                 
+                // 데이터가 다 만들어 진 뒤 스텝 2 만들기 시작
+                print("스텝 1 만들고 2 만들기 시작")
+                completion()
                 
             case .failure(let error):
                 // 400~500 에러
@@ -144,11 +138,11 @@ class PageViewController: UIPageViewController {
     }
     
     //MARK: - 스텝 2 VC 만들기 메서드
-    private func makeStepTwoVC()  {
-
+    private func makeStepTwoAndThreeVC()  {
+        print(#function)
         for index in 1...5 {
             if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
-                
+                print("\(index)번째 스텝 2 만들기")
                 // 비동기 함수 처리 전 순서 보장을 위해 배열에 스텝2 VC 미리 저장
                 self.allPageVCArray.append(stepTwoVC)
                 
@@ -156,6 +150,11 @@ class PageViewController: UIPageViewController {
             }
         }
         
+        // step3 vc 생성
+        makeStepThreeVC()
+        
+        // 모든 페이지 vc 생성 후 업데이트
+        updatePageVCArray()
         
     }
     
@@ -193,6 +192,7 @@ class PageViewController: UIPageViewController {
     
     //MARK: - 스텝 3 뷰컨 생성 메서드
     private func makeStepThreeVC() {
+        print(#function)
         if let stepThreeVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepThreeViewController") as? StepThreeViewController {
             
             // step3 vc를 페이지 배열에 추가
@@ -236,7 +236,7 @@ class PageViewController: UIPageViewController {
 }
 
 //MARK: - PageViewController 확장
-extension PageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension PageViewController:  UIPageViewControllerDelegate {
     
     //페이지 이동이 끝나면 호출되는 함수
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -245,29 +245,6 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
             // pageVC에서 현재 보이는 뷰의 인덱스를 부모 뷰컨에 전달
             completeHandler?(currentIndex)
         }
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        // 배열에서 현재 페이지의 컨트롤러를 찾아서 해당 인덱스를 현재 인덱스로 기록
-        guard let vcIndex = pageVCArray.firstIndex(of: viewController) else { return nil }
-        
-        // 이전 페이지 인덱스
-        let prevIndex = vcIndex - 1
-        
-        if prevIndex < 0 { return nil }
-        
-        return pageVCArray[prevIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let vcIndex = pageVCArray.firstIndex(of: viewController) else { return nil }
-        
-        // 다음 페이지 인덱스
-        let nextIndex = vcIndex + 1
-        
-        if nextIndex == pageVCArray.count { return nil }
-        
-        return pageVCArray[nextIndex]
     }
 }
 
@@ -297,8 +274,5 @@ extension PageViewController: BottomSheetStepTwoCustomDelegate {
         } else {
             self.pageVCArray.remove(at: currentIndex + 1)
         }
-        // 커스텀 셀이 선택되면 현재 인덱스 다음 순번에 뷰컨 추가
-        // 선택 취소되면 현재 인덱스 다음 순번 뷰컨 삭제
-        // 뷰컨이 추가된 뒤에만 삭제 로직이 진행되어야 한다.
     }
 }

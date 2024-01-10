@@ -72,7 +72,6 @@ class PageViewController: UIPageViewController {
     private func setupPageVC() {
         print(#function)
         // pageViewController 관련 델리게이트 선언
-        self.dataSource = self
         self.delegate = self
         
         // step1, 2, 3 vc 생성
@@ -154,6 +153,9 @@ class PageViewController: UIPageViewController {
         // step3 vc 생성
         makeStepThreeVC()
         
+        // 모든 페이지 vc 생성 후 업데이트
+        updatePageVCArray()
+        
     }
     
     //MARK: - step2 뷰컨 gpt 다이어리 디테일 가이드 fetch 메서드
@@ -234,7 +236,7 @@ class PageViewController: UIPageViewController {
 }
 
 //MARK: - PageViewController 확장
-extension PageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension PageViewController:  UIPageViewControllerDelegate {
     
     //페이지 이동이 끝나면 호출되는 함수
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -243,29 +245,6 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
             // pageVC에서 현재 보이는 뷰의 인덱스를 부모 뷰컨에 전달
             completeHandler?(currentIndex)
         }
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        // 배열에서 현재 페이지의 컨트롤러를 찾아서 해당 인덱스를 현재 인덱스로 기록
-        guard let vcIndex = pageVCArray.firstIndex(of: viewController) else { return nil }
-        
-        // 이전 페이지 인덱스
-        let prevIndex = vcIndex - 1
-        
-        if prevIndex < 0 { return nil }
-        
-        return pageVCArray[prevIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let vcIndex = pageVCArray.firstIndex(of: viewController) else { return nil }
-        
-        // 다음 페이지 인덱스
-        let nextIndex = vcIndex + 1
-        
-        if nextIndex == pageVCArray.count { return nil }
-        
-        return pageVCArray[nextIndex]
     }
 }
 
@@ -295,8 +274,5 @@ extension PageViewController: BottomSheetStepTwoCustomDelegate {
         } else {
             self.pageVCArray.remove(at: currentIndex + 1)
         }
-        // 커스텀 셀이 선택되면 현재 인덱스 다음 순번에 뷰컨 추가
-        // 선택 취소되면 현재 인덱스 다음 순번 뷰컨 삭제
-        // 뷰컨이 추가된 뒤에만 삭제 로직이 진행되어야 한다.
     }
 }

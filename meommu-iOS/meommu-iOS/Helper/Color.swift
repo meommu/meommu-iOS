@@ -28,7 +28,7 @@ extension UIColor {
     static let gray900: UIColor = UIColor(hexCode: "#1C1D22")
     
     /// #B7B8BA
-    static let blueGray900: UIColor = UIColor(hexCode: "#B7B8BA")
+    static let blueGray100: UIColor = UIColor(hexCode: "#B7B8BA")
     /// #6F7682
     static let blueGray200: UIColor = UIColor(hexCode: "#6F7682")
     /// #444A56

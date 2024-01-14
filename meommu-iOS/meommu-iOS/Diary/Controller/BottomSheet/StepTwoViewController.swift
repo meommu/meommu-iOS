@@ -11,11 +11,18 @@ import PanModal
 
 class StepTwoViewController: UIViewController {
     
+    // 선택된 셀의 데이터를 저장하기 위한 배열
+    var stepTwoGuideDatas: [String] = []
+    
     // 해당 뷰컨의 관련된 셀 데이터
     let cellName = "StepTwoTableViewCell"
     let cellReuseIdentifire = "StepTwoCell"
     
-    var customVCDeldgate: BottomSheetStepTwoCustomDelegate?
+    // BottomSheetStepTwoCustomDelegate 프로퍼티
+    weak var customVCDeldgate: BottomSheetStepTwoCustomDelegate?
+    
+    // BottomSheetDataDelegate 프로퍼티
+    weak var dataDelegate: BottomSheetDataDelegate?
     
     // step2 커스텀 뷰컨을 보여줄지 판단을 위한 프로퍼티
     // 초기에 '나만의 문장 추가'버튼이 눌려있지 않기 때문에 false로 초기화
@@ -88,28 +95,40 @@ extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = steptwoTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifire, for: indexPath) as! StepTwoTableViewCell
         
+        // guideDetailDatas의 detail 데이터를 셀의 레이블에 저장한다.
         cell.detailLabel.text = guideDetailData[indexPath.row].detail
         
         return cell
     }
     
+    // 셀이 선택될 때 실행되는 메서드
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 마지막 셀이 선택될 때
         if indexPath.row == guideDetailData.count - 1 {
+            // step2-1 vc를 배열에 추가한다.
             showStepTwoCustomVC = true
             customVCDeldgate?.showStepTwoCustomVC(bool: showStepTwoCustomVC)
+            
+            // 마지막 셀이 아닌 셀이 선택될 떄
         } else {
-            return
+            dataDelegate?.saveData(guideDetailData[indexPath.row].detail)
         }
     }
     
+    // 셀이 선택 해제될 때 실행되는 메서드
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        // 마지막 셀이 선택 해제될 때 step2-1 vc를 배열에서 삭제한다.
         if indexPath.row == guideDetailData.count - 1 {
             showStepTwoCustomVC = false
             customVCDeldgate?.showStepTwoCustomVC(bool: showStepTwoCustomVC)
+            
+            // 마지막 셀이 아닌 셀이 선택될 떄
         } else {
-            return
+            dataDelegate?.removeData(guideDetailData[indexPath.row].detail)
         }
     }
 }
     
+
 

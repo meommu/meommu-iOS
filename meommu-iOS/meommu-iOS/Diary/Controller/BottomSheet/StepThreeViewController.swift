@@ -9,18 +9,49 @@ import UIKit
 
 class StepThreeViewController: UIViewController {
     
-    @IBOutlet weak var countTextLabel: UILabel!
-    
-    @IBOutlet weak var diaryTextView: UITextView!
+    // BottomSheetDataDelegate 프로퍼티
+    weak var dataDelegate: BottomSheetDataDelegate?
     
     let textViewPlaceHolder = "GPT가 자동으로 만들어 드릴게요"
     let tableViewMaxCount = 150
     
+    // 텍스트 뷰의 텍스트 여부를 확인하는 프로퍼티
+    // 초기에는 placeholer만 있어 false로 초기화한다.
+    var hasText = false
+    
+    @IBOutlet weak var countTextLabel: UILabel!
+    @IBOutlet weak var diaryTextView: UITextView!
+    
+    //MARK: - View Lifecycle
+    // 뷰가 로드된 후 호출되는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabel()
         setupTextView()
     }
+
+      // 뷰가 나타날 때 호출되는 메서드
+      override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          
+          // 사용자가 입력한 텍스트가 저장되어 있다면
+          if let text = diaryTextView.text, hasText {
+              // 뷰가 재등장 할 때 데이터가 중복해서 저장되는 것을 막기 위해 기존 데이터를 배열에서 먼저 삭제한다.
+              dataDelegate?.removeData(text)
+          }
+      }
+    
+    // 뷰가 사라질 때 호출되는 메서드
+      override func viewDidDisappear(_ animated: Bool) {
+          super.viewDidDisappear(animated)
+
+          // 사용자가 입력한 텍스트가 저장되어 있다면
+          if let text = diaryTextView.text, hasText {
+              // 데이터 중복을 막기 위해 뷰가 사라질 때, 데이터를 저장한다.
+              dataDelegate?.saveData(text)
+          }
+          
+      }
     
     // 화면에 탭을 감지(UIResponder)하는 메서드
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -51,26 +82,40 @@ class StepThreeViewController: UIViewController {
 
 //MARK: - UITextViewDelegate 확장
 extension StepThreeViewController: UITextViewDelegate {
+    
+    // 텍스트 뷰가 활성화되면 실행되는 메서드
     func textViewDidBeginEditing(_ textView: UITextView) {
-        // 텍스트 뷰가 focus를 얻으면 placeholer, label  지우기
+        // placehoder가 보이는 텍스트 뷰가 focus를 얻으면 placeholer, label  지우기
         if textView.text == textViewPlaceHolder {
+            // placeholer를 지운다.
             textView.text = nil
             
+            // 글자 수 제한을 알려주는 레이블을 숨긴다.
             self.countTextLabel.isHidden = true
+            
+            // 사용자가 글을 입력을 시작해 true를 저장한다.
+            self.hasText = true
         }
     }
     
-    
+    // 텍스트 뷰가 비활성화되면 실행되는 메서드
     func textViewDidEndEditing(_ textView: UITextView) {
+        // 텍스트 뷰가 텍스트 없이 focus를 잃으면
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            // 텍스트 뷰가 텍스트 없이 focus를 잃으면 placeholer, label 다시 생성
+            
+            // placeholer, label 다시 생성한다.
             textView.text = textViewPlaceHolder
             
+            // 글자 수 제한을 알려주는 레이블을 보여준다.
             self.countTextLabel.isHidden = false
+            
+            // 사용자가 글을 입력하지 않아 false를 저장한다.
+            self.hasText = false
         }
         
+        //글자수 제한에 걸리면
         if textView.text.count > tableViewMaxCount {
-            //글자수 제한에 걸리면 마지막 글자를 삭제함.
+            // 마지막 글자를 삭제한다.
             textView.text.removeLast()
         }
     }

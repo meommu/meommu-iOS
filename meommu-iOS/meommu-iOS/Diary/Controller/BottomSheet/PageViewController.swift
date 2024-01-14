@@ -8,7 +8,10 @@
 import UIKit
 
 class PageViewController: UIPageViewController {
+    // 가이드 페이지에서 추가된 데이터들을 저장할 배열
+    var guideDatas: [String] = [] 
     
+    // 바텀 시트 VC dismiss 클로저 정의
     var dismissBottomSheet : (() -> ())?
     
     // 해당 페이지의 인덱스를 전달하기 위함
@@ -144,7 +147,11 @@ class PageViewController: UIPageViewController {
         print(#function)
         for index in 1...5 {
             if let stepTwoVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoViewController") as? StepTwoViewController {
-                print("\(index)번째 스텝 2 만들기")
+                
+                // step2 vc 델리게이트 설정
+                stepTwoVC.customVCDeldgate = self
+                stepTwoVC.dataDelegate = self
+                
                 // 비동기 함수 처리 전 순서 보장을 위해 배열에 스텝2 VC 미리 저장
                 self.allPageVCArray.append(stepTwoVC)
                 
@@ -172,9 +179,6 @@ class PageViewController: UIPageViewController {
                 // step1에서 비동기적으로 받은 데이터를 pageVC에 저장하고 step2에 전달하는 코드
                 stepTwoVC.guideData = self.guideDataArray[index - 1]
                 
-                // step2 델리게이트 설정
-                stepTwoVC.customVCDeldgate = self
-                
             case .failure(let error):
                 // 400~500 에러
                 print("Error: \(error.message)")
@@ -187,15 +191,24 @@ class PageViewController: UIPageViewController {
     //MARK: - 스텝 2 커스텀 뷰컨 생성 메서드
     private func makeStepTwoCustomVC() -> UIViewController? {
         
-        let stepTwoCustomVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoCustomTextViewController")
+       if let stepTwoCustomVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepTwoCustomTextViewController") as? StepTwoCustomTextViewController {
+            
+           // step 2-1 vc 델리게이트 설정
+            stepTwoCustomVC.dataDelegate = self
+           
+           return stepTwoCustomVC
+        }
         
-        return stepTwoCustomVC
+        return nil
     }
     
     //MARK: - 스텝 3 뷰컨 생성 메서드
     private func makeStepThreeVC() {
         print(#function)
         if let stepThreeVC = UIStoryboard(name: "DiaryGuide", bundle: nil).instantiateViewController(withIdentifier: "StepThreeViewController") as? StepThreeViewController {
+            
+            // step3 vc 델리게이트 설정
+            stepThreeVC.dataDelegate = self
             
             // step3 vc를 페이지 배열에 추가
             self.allPageVCArray.append(stepThreeVC)
@@ -206,12 +219,9 @@ class PageViewController: UIPageViewController {
     //MARK: - 현재 페이지의 인덱스를 받아 페이지 이동 메서드
     // index 파라미터: 이전 페이지 인덱스
     func setNextViewControllersFromIndex(index : Int){
-        print("넥 페이지 배열: \(pageVCArray)")
-        print("넥 전체페이지 배열: \(allPageVCArray)")
-        print(index)
-        
+
         if index == pageVCArray.count - 1 {
-            // 마지막 페이지일 때 바텀 시트 내리기
+            // 마지막 페이지일 때 바텀 시트 VC를 내린다.
             self.dismissBottomSheet?()
             return
         }
@@ -219,33 +229,28 @@ class PageViewController: UIPageViewController {
         // 가능한 인덱스 범위 설정
         guard index >= 0 && index < pageVCArray.count - 1 else { return }
         
-        // 다음 인덱스 번호를 보여줘야 하기 때문에 + 1
+        // 다음 인덱스 번호를 보여줘야 하기 때문에 + 1을 한다.
         self.setViewControllers([pageVCArray[index + 1]], direction: .forward, animated: true, completion: nil)
         
-        print("넥 presnt: \(currentIndex)")
-        
-        // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
+        // pageVC에 저장되어 있는 currentIdex를 containerVC에 전달
         completeHandler?(currentIndex)
     }
     
     func setBeforeViewControllersFromIndex(index : Int){
-        print("비 페이지 배열: \(pageVCArray)")
-        print("비 전체페이지 배열: \(allPageVCArray)")
+
         // 가능한 인덱스 범위 설정
         guard index > 0 && index < pageVCArray.count  else { return }
         
-        // 이전 인덱스 번호를 보여줘야 하기 때문에 - 1
+        // 이전 인덱스 번호를 보여줘야 하기 때문에 - 1을 한다.
         self.setViewControllers([pageVCArray[index - 1]], direction: .reverse, animated: true, completion: nil)
         
-        print("비 presnt: \(currentIndex)")
-        
-        // 페이지 뷰컨에 저장되어 있는 currentIdex를 전달
+        // pageVC에 저장되어 있는 currentIdex를 containerVC에 전달한다.
         completeHandler?(currentIndex)
     }
     
 }
 
-//MARK: - PageViewController 확장
+//MARK: - UIPageViewControllerDelegate 확장 구현
 extension PageViewController:  UIPageViewControllerDelegate {
     
     //페이지 이동이 끝나면 호출되는 함수
@@ -258,7 +263,7 @@ extension PageViewController:  UIPageViewControllerDelegate {
     }
 }
 
-//MARK: - BottomSheetControllerDelegate
+//MARK: - BottomSheetControllerDelegate 확장 구현
 // 가이드 시트에서 선택된 버튼의 인덱스 배열을 저장하기 위해 델리게이트 패턴 채택
 extension PageViewController: BottomSheetControllerDelegate {
     
@@ -275,6 +280,7 @@ extension PageViewController: BottomSheetControllerDelegate {
     
 }
 
+//MARK: - BottomSheetStepTwoCustomDelegate 확장 구현
 extension PageViewController: BottomSheetStepTwoCustomDelegate {
     func showStepTwoCustomVC(bool: Bool) {
         if bool {
@@ -286,3 +292,37 @@ extension PageViewController: BottomSheetStepTwoCustomDelegate {
         }
     }
 }
+
+//MARK: - BottomSheetDataDelegate 확장 구현
+// 데이터를 전달 받기 위해 델리게이트 구현
+extension PageViewController: BottomSheetDataDelegate {
+
+    // 데이터 저장 메서드 구현
+    func saveData(_ data: String) {
+        // 전달받은 데이터가 비어 있지 않으면 배열에 저장
+            if !guideDatas.contains(data) {
+                guideDatas.append(data)
+                print("Added data to guideDatas: \(data)")
+            } else {
+                // 이미 배열에 저장되어 있다면 그냥 넘기기
+                print("Data already exists in guideDatas: \(data)")
+            }
+            print("Updated datas: \(guideDatas)")
+    }
+    
+    // 데이터 삭제 메서드 구현
+    func removeData(_ data: String) {
+        // 해당 데이터가 배열에 있으면 삭제
+        if let index = guideDatas.firstIndex(of: data) {
+            guideDatas.remove(at: index)
+            print("Removed data from guideDatas: \(data)")
+        } else {
+            // 해당 데이터가 배열에 없으면 메시지 출력
+            print("Data not found in guideDatas: \(data)")
+        }
+        print("Updated datas: \(guideDatas)")
+    }
+    
+}
+
+

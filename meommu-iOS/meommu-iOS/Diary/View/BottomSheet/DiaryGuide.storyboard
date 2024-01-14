@@ -241,7 +241,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3x2-mT-Qn4" customClass="PageViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RS9-dP-RSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="689"/>
+            <point key="canvasLocation" x="666" y="743"/>
         </scene>
         <!--Diary Guide Wirte Page View Controller-->
         <scene sceneID="Fwd-nB-lSQ">

@@ -15,6 +15,7 @@ class StepOneViewController: UIViewController {
     private let cellName = "StepOneTableViewCell"
     private let cellReuseIdentifire = "StepOneCell"
     
+    // BottomSheetControllerDelegate 프로퍼티
     weak var pageVCDelegate: BottomSheetControllerDelegate?
     
     // 선택된 데이터를 저장할 배열

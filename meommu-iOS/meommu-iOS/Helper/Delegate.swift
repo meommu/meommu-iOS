@@ -21,4 +21,6 @@ protocol BottomSheetStepTwoCustomDelegate: AnyObject {
 protocol BottomSheetDataDelegate: AnyObject {
     func saveData(_ data: String)
     func removeData(_ data: String)
+    func removeAllData()
+    func resetStepTwoTableView()
 }

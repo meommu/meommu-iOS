@@ -105,6 +105,7 @@ class PageViewController: UIPageViewController {
             
             // 스텝 1 vc 델리게이트 설정
             stepOneVC.pageVCDelegate = self
+            stepOneVC.dataDelegate = self
             
             // 스텝 1 페이지 관련 데이터 fetch
             fetchGPTDiaryGudie(stepOneVC: stepOneVC, completion: completion)
@@ -323,6 +324,31 @@ extension PageViewController: BottomSheetDataDelegate {
         print("Updated datas: \(guideDatas)")
     }
     
+    // 모든 데이터 삭제 메서드
+    func removeAllData() {
+        // 데이터 배열에 모든 데이터를 삭제한다.
+        guideDatas.removeAll()
+        print("removed all data in guideDataes")
+    }
+    
+    // step2 테이블 뷰 리셋 메서드
+    func resetStepTwoTableView() {
+        for vc in pageVCArray {
+            // step 2 VC를 확인 후 캐스팅
+            if let stepTwoVC = vc as? StepTwoViewController {
+                // step 2 테이블 뷰의 선택되어 있던 모든 셀들을 deselect 한다.
+                if let index = stepTwoVC.steptwoTableView?.indexPathsForSelectedRows {
+                    for at in index {
+                        stepTwoVC.steptwoTableView.deselectRow(at: at, animated: true)
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
 }
+
 
 

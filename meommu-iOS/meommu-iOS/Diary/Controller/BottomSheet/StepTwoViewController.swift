@@ -11,7 +11,7 @@ import PanModal
 
 class StepTwoViewController: UIViewController {
     
-    // 선택된 셀의 데이터를 저장하기 위한 배열
+    // step2에서 선택된 데이터를 저장하기 위한 배열
     var stepTwoGuideDatas: [String] = []
     
     // 해당 뷰컨의 관련된 셀 데이터
@@ -45,6 +45,8 @@ class StepTwoViewController: UIViewController {
     
     @IBOutlet var steptwoTableView: UITableView!
     
+    //MARK: - View Lifecycle
+    // 뷰가 로드된 후 호출되는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +79,11 @@ class StepTwoViewController: UIViewController {
         self.mainTitleLabel.text = guideData.guide
         self.subTitleLabel.text = guideData.description
         
+    }
+    
+    //MARK: - Data 저장 메서드
+    private func saveSelectedData(_ data: String) {
+        stepTwoGuideDatas.append(data)
     }
     
 }
@@ -129,6 +136,6 @@ extension StepTwoViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-    
+
 
 

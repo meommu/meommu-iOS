@@ -38,6 +38,16 @@ class StepThreeViewController: UIViewController {
           if let text = diaryTextView.text, hasText {
               // 뷰가 재등장 할 때 데이터가 중복해서 저장되는 것을 막기 위해 기존 데이터를 배열에서 먼저 삭제한다.
               dataDelegate?.removeData(text)
+              
+              // placeholer, label 다시 생성한다.
+              diaryTextView.text = textViewPlaceHolder
+              
+              // 글자 수 제한을 알려주는 레이블을 보여준다.
+              countTextLabel.isHidden = false
+              
+              // 사용자가 글을 입력하지 않아 false를 저장한다.
+              hasText = false
+              
           }
       }
     

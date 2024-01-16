@@ -18,6 +18,9 @@ class StepOneViewController: UIViewController {
     // BottomSheetControllerDelegate 프로퍼티
     weak var pageVCDelegate: BottomSheetControllerDelegate?
     
+    // BottomSheetDataDelegate 프로퍼티
+    weak var dataDelegate: BottomSheetDataDelegate?
+    
     // 선택된 데이터를 저장할 배열
     var selectedData: [Int] = [] {
         // didSet을 이용하여 배열이 변경될 때마다 오름차순 정렬
@@ -38,13 +41,26 @@ class StepOneViewController: UIViewController {
     // Page Label 프로퍼티
     @IBOutlet var stepOnePageLabel: UILabel!
     
-    
+    //MARK: - View Lifecycle
+    // viewDidload 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
         
     }
+    
+    // viewDidAppear 메서드
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // 전체 데이터 삭제를 삭제하면서 step 1을 시작한다.
+        dataDelegate?.removeAllData()
+        
+        // 스텝 2 tableView를 리셋한다.
+        dataDelegate?.resetStepTwoTableView()
+        
+    }
+
 
     
     //MARK: - setupTableView 메서드
@@ -114,3 +130,4 @@ extension StepOneViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 }
+

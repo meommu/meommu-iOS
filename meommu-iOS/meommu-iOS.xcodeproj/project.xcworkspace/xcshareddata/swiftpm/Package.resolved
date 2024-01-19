@@ -26,6 +26,15 @@
         "revision" : "b012aecb6b67a8e46369227f893c12544846613f",
         "version" : "1.2.7"
       }
+    },
+    {
+      "identity" : "swift-eventsource",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LaunchDarkly/swift-eventsource.git",
+      "state" : {
+        "revision" : "3d45eacab476f9bb2c58662cfb2d35088140b25b",
+        "version" : "3.1.1"
+      }
     }
   ],
   "version" : 2

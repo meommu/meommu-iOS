@@ -45,6 +45,7 @@
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
 		26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A06DE12AFA27610039813F /* AlertViewController.xib */; };
 		26A06DE52AFC01580039813F /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A06DE42AFC01580039813F /* AnnouncementTableViewCell.swift */; };
+		26F2D8D92B5AA71200EAD813 /* LDSwiftEventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 26F2D8D82B5AA71200EAD813 /* LDSwiftEventSource */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
 		F90743822AB73CBF00F7C503 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90743812AB73CBF00F7C503 /* DiaryViewController.swift */; };
 		F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CDEA92ABFF947008ED1A2 /* StepOneTableViewCell.swift */; };
@@ -199,6 +200,7 @@
 			files = (
 				F98888612AFD2219006AB274 /* Alamofire in Frameworks */,
 				F94A09432B13755900786C12 /* AlamofireImage in Frameworks */,
+				26F2D8D92B5AA71200EAD813 /* LDSwiftEventSource in Frameworks */,
 				F9CB59252B14BCC100EDFDFD /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +500,7 @@
 				F98888602AFD2219006AB274 /* Alamofire */,
 				F94A09422B13755900786C12 /* AlamofireImage */,
 				F9CB59242B14BCC100EDFDFD /* PanModal */,
+				26F2D8D82B5AA71200EAD813 /* LDSwiftEventSource */,
 			);
 			productName = "meommu-iOS";
 			productReference = F933D89B2AB73982006EDA07 /* meommu-iOS.app */;
@@ -531,6 +534,7 @@
 				F988885F2AFD2219006AB274 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				F9CB59232B14BCC100EDFDFD /* XCRemoteSwiftPackageReference "PanModal" */,
+				26F2D8D72B5AA71200EAD813 /* XCRemoteSwiftPackageReference "swift-eventsource" */,
 			);
 			productRefGroup = F933D89C2AB73982006EDA07 /* Products */;
 			projectDirPath = "";
@@ -866,6 +870,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		26F2D8D72B5AA71200EAD813 /* XCRemoteSwiftPackageReference "swift-eventsource" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LaunchDarkly/swift-eventsource.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 		F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
@@ -893,6 +905,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		26F2D8D82B5AA71200EAD813 /* LDSwiftEventSource */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26F2D8D72B5AA71200EAD813 /* XCRemoteSwiftPackageReference "swift-eventsource" */;
+			productName = LDSwiftEventSource;
+		};
 		F94A09422B13755900786C12 /* AlamofireImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F94A09412B13755900786C12 /* XCRemoteSwiftPackageReference "AlamofireImage" */;

@@ -42,6 +42,7 @@ class GPTDiaryAPI {
         
     }
     
+    //MARK: - GPT 일기 가이드 디테일 조회 메서드
     func getGPTDiaryDetailGuide(guideId: Int, completion: @escaping (Result<GPTDiaryDetailGuideResponse, ErrorResponse>) -> Void) {
         
         let url = "\(baseURL)/api/v1/guides/\(guideId)/details"
@@ -66,6 +67,35 @@ class GPTDiaryAPI {
             }
         }
         
+    }
+    
+    //MARK: - 일기 가이드 결과 조회 메서드
+    func getGPTDiary(with request: GuideDataRequest, completion: @escaping (Result<GPTDiaryResponse, ErrorResponse>) -> Void) {
+        let url = "\(baseURL)/api/v1/gpt"
+        
+        guard var authorizationHeader = KeyChain.shared.getAuthorizationHeader() else {
+            return print("토큰 오류")
+        }
+        
+        authorizationHeader["Content-Type"] = "application/json;charset=UTF-8"
+        authorizationHeader["Host"] = "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
+        
+        AF.request(url, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: authorizationHeader)
+            .validate(statusCode: 200..<500)
+            .responseDecodable(of: GPTDiaryResponse.self) { response in
+                switch response.result {
+                case .success(let responseData):
+                    completion(.success(responseData))
+                case .failure(_):
+                    if let data = response.data, let apiError = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+                        // 서버에서 에러 응답이 왔을 경우
+                        completion(.failure(apiError))
+                    } else {
+                        // 서버에서 에러 응답이 아닌 다른 오류가 발생한 경우
+                        completion(.failure(ErrorResponse(code: "UNKNOWN_ERROR", message: "알 수 없는 오류가 발생했습니다.", data: nil)))
+                    }
+                }
+            }
     }
     
 }

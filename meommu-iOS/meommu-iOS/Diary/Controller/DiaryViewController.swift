@@ -13,7 +13,7 @@ import PanModal
 class DiaryViewController: UIViewController {
     
     // 메인 로고 버튼
-    @IBOutlet var MeommuMainButton: UIBarButtonItem!
+    @IBOutlet var meommuMainButton: UIBarButtonItem!
     
     // year, month 레이블 프로퍼티
     @IBOutlet var yearLabel: UILabel!
@@ -23,7 +23,7 @@ class DiaryViewController: UIViewController {
     @IBOutlet var diaryMonthPickerButton: UIButton!
     
     // 테이블 뷰 프로퍼티
-    @IBOutlet var DiaryMainTableView: UITableView!
+    @IBOutlet var diaryMainTableView: UITableView!
     
     // 일기 작성 버튼 프로퍼티
     @IBOutlet var diaryWriteButton: UIButton!
@@ -81,8 +81,8 @@ class DiaryViewController: UIViewController {
     
     //MARK: - 델리게이트 셋업 메서드
     private func setupDelegate() {
-        DiaryMainTableView.delegate = self
-        DiaryMainTableView.dataSource = self
+        diaryMainTableView.delegate = self
+        diaryMainTableView.dataSource = self
     }
     
     
@@ -127,64 +127,64 @@ class DiaryViewController: UIViewController {
         return accessToken
     }
     
+    //MARK: - 전체 일기 조회 메서드 fetchData()
     private func fetchData(year: String, month: String) {
-        guard let accessToken = getAccessTokenFromKeychain() else {
-            print("Access Token not found.")
-            return
-        }
+        // 일기 조회 REQ 생성
+        let allDiaryREQ = AllDiaryRequest(year: year, month: month)
         
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(accessToken)",
-            "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"
-        ]
-        
-        let parameters: Parameters = [
-            "year": "\(year)",
-            "month": "\(month)"
-        ]
-        
-        AF.request("https://comibird.site/api/v1/diaries", method: .get, parameters: parameters, headers: headers).responseDecodable(of: DiaryResponse.self) { response in
-            switch response.result {
-            case .success(let diaryResponse):
+        // 일기 전체 조회
+        DiaryAPI.shared.getAllDiary(with: allDiaryREQ) { result in
+            switch result {
+            case .success(let response):
                 self.diaries = []
                 
-                self.diaries = diaryResponse.data.diaries
+                self.diaries = response.data.diaries
                 
-                // 이미지 ID 값만 배열에 저장
-                let imageIds = self.diaries.flatMap { $0.imageIds }
-                
-                print("이미지 배열:\(imageIds)")
-                
-                // 이미지 ID가 없는 일기에 대해서는 요청을 보내지 않습니다.
-                if !imageIds.isEmpty {
-                    let urlString = "https://comibird.site/api/v1/images?" + imageIds.map { "id=\($0)" }.joined(separator: "&")
-                    
-                    // 이미지 id를 통해 이미지 불러오는 메서드
-                    AF.request(urlString).responseDecodable(of: ImageResponse.self) { response in
-                        switch response.result {
-                        case .success(let imageResponse):
-                            if let data = imageResponse.data {
-                                self.imageResponses = data.images
-                            }
-                        case .failure(let error):
-                            print(error)
-                        }
-                        
-                        // 이미지 데이터를 가져온 후에도 UI를 업데이트합니다.
-                        DispatchQueue.main.async {
-                            self.DiaryMainTableView.reloadData()
-                        }
-                    }
-                } else {
+                // 다이어리가 비어있을 경우 메서드를 종료한다.
+                if self.diaries.isEmpty {
                     // 이미지 데이터가 없을 경우에도 UI를 업데이트합니다.
                     DispatchQueue.main.async {
-                        self.DiaryMainTableView.reloadData()
+                        self.diaryMainTableView.reloadData()
+                    }
+                    print("일기 없음")
+                    return
+                }
+                
+                print("이미지 조회 시작")
+                
+                // 이미지 요청 REQ 생성
+                let getAllDiaryImageREQ = {
+                    let imageIds = self.diaries.flatMap { $0.imageIds }
+                    return ImageRequest(imageIds: imageIds)
+                }()
+                
+                
+                // 일기가 조회된 후 이미지도 조회한다.
+                DiaryImageAPI.shared.getAllDiaryImage(with: getAllDiaryImageREQ) { result in
+                    switch result {
+                    case .success(let response):
+                        // 이미지 URL을 저장한다.
+                        if let data = response.data {
+                            self.imageResponses = data.images
+                        }
+                        
+                        // 이미지 데이터를 가져온 후에 UI를 업데이트합니다.
+                        DispatchQueue.main.async {
+                            self.diaryMainTableView.reloadData()
+                        }
+                        
+                    case .failure(let error):
+                        // 400~500 에러
+                        print("Error: \(error.message)")
                     }
                 }
+                
             case .failure(let error):
-                print(error)
+                // 400~500 에러
+                print("Error: \(error.message)")
             }
         }
+        
     }
     
     //MARK: - 전달 받은 날짜 데이터를 형식에 맞게 전환하는 메서드
@@ -206,12 +206,12 @@ class DiaryViewController: UIViewController {
     //MARK: - 일기 화면 셀 xib 등록 메서드
     private func registerXibMain() {
         let nibName = UINib(nibName: mainCellName, bundle: nil)
-        DiaryMainTableView.register(nibName, forCellReuseIdentifier: mainCellReuseIdentifire)
+        diaryMainTableView.register(nibName, forCellReuseIdentifier: mainCellReuseIdentifire)
     }
     //MARK: - 빈 일기 화면 셀 xib 등록 메서드
     private func registerXibEmpty() {
         let nibName = UINib(nibName: emptyCellName, bundle: nil)
-        DiaryMainTableView.register(nibName, forCellReuseIdentifier: emptyCellReuseIdentifire)
+        diaryMainTableView.register(nibName, forCellReuseIdentifier: emptyCellReuseIdentifire)
     }
 }
 
@@ -232,13 +232,14 @@ extension DiaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if diaries.isEmpty {
             // 다이어리가 비어 있을 경우 빈 화면 셀 보여주기
-            let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: emptyCellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
+            let diaryCell = diaryMainTableView.dequeueReusableCell(withIdentifier: emptyCellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
             
             return diaryCell
             
         } else {
             // 다이어리 데이터가 비어있지 않다면 일기 보여주기
-            let diaryCell = DiaryMainTableView.dequeueReusableCell(withIdentifier: mainCellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
+            let diaryCell = diaryMainTableView.dequeueReusableCell(withIdentifier: mainCellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
+            
             let diary = diaries[indexPath.section]
             
             diaryCell.diaryDateLabel?.text = convertDate(diary.date)

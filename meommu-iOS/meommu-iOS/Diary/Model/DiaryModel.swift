@@ -7,6 +7,12 @@
 
 import UIKit
 
+// 일기 전체 조회 REQ 모델
+struct AllDiaryRequest: Codable {
+    let year: String
+    let month: String
+}
+
 struct DiaryResponse: Codable {
     struct Data: Codable {
         struct Diary: Codable {

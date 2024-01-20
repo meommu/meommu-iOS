@@ -169,10 +169,10 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="DiaryMainTableView" destination="rTJ-n5-XJh" id="hMT-cO-AnF"/>
-                        <outlet property="MeommuMainButton" destination="rQY-Nj-9MF" id="ng4-aM-UD3"/>
+                        <outlet property="diaryMainTableView" destination="rTJ-n5-XJh" id="Th3-nE-A9d"/>
                         <outlet property="diaryMonthPickerButton" destination="PNC-wB-wNv" id="evU-Aj-DoB"/>
                         <outlet property="diaryWriteButton" destination="63J-kF-Ica" id="cBK-59-QTj"/>
+                        <outlet property="meommuMainButton" destination="rQY-Nj-9MF" id="yfL-Pl-qoe"/>
                         <outlet property="monthLabel" destination="wzA-5h-5jg" id="lBL-xz-I4V"/>
                         <outlet property="yearLabel" destination="y9z-8z-5jf" id="KlT-ct-iaY"/>
                     </connections>

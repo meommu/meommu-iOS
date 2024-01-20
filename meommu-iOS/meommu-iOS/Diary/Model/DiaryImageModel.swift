@@ -5,8 +5,15 @@
 //  Created by 이예빈 on 11/26/23.
 //
 
-import UIKit
+import Foundation
 
+struct ImageRequest: Codable {
+    var imageIds: [Int]
+}
+
+
+
+//MARK: - 이미지 조회 RES 모델
 struct ImageResponse: Codable {
     
     struct Data: Codable {

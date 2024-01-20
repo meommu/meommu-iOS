@@ -12,22 +12,6 @@ import PanModal
 
 class DiaryViewController: UIViewController {
     
-    // 메인 로고 버튼
-    @IBOutlet var meommuMainButton: UIBarButtonItem!
-    
-    // year, month 레이블 프로퍼티
-    @IBOutlet var yearLabel: UILabel!
-    @IBOutlet var monthLabel: UILabel!
-    
-    // month 선택 피커 버튼
-    @IBOutlet var diaryMonthPickerButton: UIButton!
-    
-    // 테이블 뷰 프로퍼티
-    @IBOutlet var diaryMainTableView: UITableView!
-    
-    // 일기 작성 버튼 프로퍼티
-    @IBOutlet var diaryWriteButton: UIButton!
-    
     // 현재 year 저장 프로퍼티
     lazy var currentYear: String = {
         let formatter = DateFormatter()
@@ -52,6 +36,24 @@ class DiaryViewController: UIViewController {
     
     let mainCellName = "DiaryMainTableViewCell"
     let mainCellReuseIdentifire = "DiaryMainCell"
+    
+    // 메인 로고 버튼
+    @IBOutlet var meommuMainButton: UIBarButtonItem!
+    
+    // year, month 레이블 프로퍼티
+    @IBOutlet var yearLabel: UILabel!
+    @IBOutlet var monthLabel: UILabel!
+    
+    // month 선택 피커 버튼
+    @IBOutlet var diaryMonthPickerButton: UIButton!
+    
+    // 테이블 뷰 프로퍼티
+    @IBOutlet var diaryMainTableView: UITableView!
+    
+    // 일기 작성 버튼 프로퍼티
+    @IBOutlet var diaryWriteButton: UIButton!
+    
+    
     
     //MARK: - viewDidLoad 메서드
     override func viewDidLoad() {
@@ -120,12 +122,6 @@ class DiaryViewController: UIViewController {
         }
     }
     
-    // 키체인에서 엑세스 토큰 가져오기
-    func getAccessTokenFromKeychain() -> String? {
-        let key = KeyChain.shared.accessTokenKey
-        let accessToken = KeyChain.shared.read(key: key)
-        return accessToken
-    }
     
     //MARK: - 전체 일기 조회 메서드 fetchData()
     private func fetchData(year: String, month: String) {
@@ -213,93 +209,10 @@ class DiaryViewController: UIViewController {
         let nibName = UINib(nibName: emptyCellName, bundle: nil)
         diaryMainTableView.register(nibName, forCellReuseIdentifier: emptyCellReuseIdentifire)
     }
-}
-
-//MARK: - UITableViewDataSource 확장
-extension DiaryViewController: UITableViewDataSource {
     
-    // ❗️
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return diaries.isEmpty ? 1 : diaries.count
-    }
-    
-    
-    // ❗️
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if diaries.isEmpty {
-            // 다이어리가 비어 있을 경우 빈 화면 셀 보여주기
-            let diaryCell = diaryMainTableView.dequeueReusableCell(withIdentifier: emptyCellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
-            
-            return diaryCell
-            
-        } else {
-            // 다이어리 데이터가 비어있지 않다면 일기 보여주기
-            let diaryCell = diaryMainTableView.dequeueReusableCell(withIdentifier: mainCellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
-            
-            let diary = diaries[indexPath.section]
-            
-            diaryCell.diaryDateLabel?.text = convertDate(diary.date)
-            diaryCell.diaryDetailLabel?.text = diary.content
-            diaryCell.diaryNameLabel?.text = diary.dogName + " 일기"
-            diaryCell.diaryTitleLabel?.text = diary.title
-            
-            // 굳이 한 번더 확인..❓
-            let imageUrls = diary.imageIds.compactMap { imageId in
-                // imageResponses 배열에 안전하게 접근합니다.
-                if let index = imageResponses.firstIndex(where: { $0.id == imageId }) {
-                    return imageResponses[index].url
-                } else {
-                    return nil
-                }
-            }
-            
-            // 일기 셀에 이미지 설정 메서드
-            diaryCell.setImageUrls(imageUrls)
-            
-            // 일기 셀의 수벙 버튼에 액션 추가해주기 -> 수정 바텀 시트 띄우기
-            diaryCell.diaryReviseAction = {
-                let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
-                let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
-                
-                // 일기 수정 뷰컨에게 다이어리 id 전달
-                diaryReviseVC.diaryId = diary.id
-                
-                self.presentPanModal(diaryReviseVC)
-            }
-            
-            return diaryCell
-            
-        }
-    }
-}
-
-//MARK: - UITableViewDelegate 확장
-
-extension DiaryViewController: UITableViewDelegate {
-    // 셀의 높이 설정
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    // 테이블 뷰 셀이 선택될 때 indexPath 전달
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return diaries.isEmpty ? nil : indexPath
-    }
-    
-    
-    // 셀이 선택될 때 전달 받은 인덱스를 통해 특정 일기 데이터를 세그웨이에 전달?
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 선택된 셀의 인덱스를 통해 다이어리 배열에서 특정 일기 데이터를 넘겨준다.
-        let selectedDiary = diaries[indexPath.section]
-        performSegue(withIdentifier: "showDetail", sender: selectedDiary)
-    }
-    
-    // 셀이 선택되고 디테일 뷰가 열리기 전 특정 일기의 다이어리 데이터와 이미지 데이터를 디테일 뷰에 전달
+    //MARK: - prepare 메서드
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 셀이 선택되고 디테일 뷰가 열리기 전 특정 일기의 다이어리 데이터와 이미지 데이터를 디테일 뷰에 전달
         if segue.identifier == "showDetail" {
             if let diaryDetailVC = segue.destination as? DiaryDetailViewController,
                let selectedDiary = sender as? DiaryResponse.Data.Diary {
@@ -322,6 +235,93 @@ extension DiaryViewController: UITableViewDelegate {
             }
         }
     }
+
+    
+    
+}
+
+//MARK: - UITableViewDataSource 확장
+extension DiaryViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return diaries.isEmpty ? 1 : diaries.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if diaries.isEmpty {
+            // 다이어리가 비어 있을 경우 빈 화면 셀 보여주기
+            let diaryCell = diaryMainTableView.dequeueReusableCell(withIdentifier: emptyCellReuseIdentifire, for: indexPath) as! DiaryMainEmptyTableViewCell
+            
+            return diaryCell
+            
+        } else {
+            
+            // 다이어리 데이터가 비어있지 않다면 일기 보여주기
+            let diaryCell = diaryMainTableView.dequeueReusableCell(withIdentifier: mainCellReuseIdentifire, for: indexPath) as! DiaryMainTableViewCell
+            
+            let diary = diaries[indexPath.row]
+            
+            diaryCell.diaryDateLabel?.text = convertDate(diary.date)
+            diaryCell.diaryDetailLabel?.text = diary.content
+            diaryCell.diaryNameLabel?.text = diary.dogName + " 일기"
+            diaryCell.diaryTitleLabel?.text = diary.title
+            
+            // 해당 셀의 이미지 id값으로 전체 이미지 URL 배열에서 해당 URL 받아오기.
+            let imageUrls = diary.imageIds.compactMap { imageId in
+                // imageResponses 배열에 안전하게 접근합니다.
+                if let index = imageResponses.firstIndex(where: { $0.id == imageId }) {
+                    return imageResponses[index].url
+                } else {
+                    return nil
+                }
+            }
+            
+            // 일기 셀에 이미지 설정 메서드
+            // ❗️ 현재 해당 기능 메서드가 cell 클래스에서 구현되는 중
+            diaryCell.setImageUrls(imageUrls)
+            
+            // 일기 셀의 수벙 버튼에 액션 추가해주기 -> 수정 바텀 시트 띄우기
+            diaryCell.diaryReviseAction = {
+                
+                let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
+                let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
+                
+                // 일기 수정 뷰컨에게 다이어리 id 전달
+                diaryReviseVC.diaryId = diary.id
+                
+                self.presentPanModal(diaryReviseVC)
+            }
+            
+            return diaryCell
+            
+        }
+    }
+}
+
+//MARK: - UITableViewDelegate 확장
+
+extension DiaryViewController: UITableViewDelegate {
+    
+    // 셀의 높이 설정
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    // 테이블 뷰 셀이 선택될 때 indexPath 전달
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return diaries.isEmpty ? nil : indexPath
+    }
+    
+    
+    // 셀이 선택될 때 전달 받은 인덱스를 통해 특정 일기 데이터를 세그웨이에 전달?
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 선택된 셀의 인덱스를 통해 다이어리 배열에서 특정 일기 데이터를 넘겨준다.
+        let selectedDiary = diaries[indexPath.row]
+        performSegue(withIdentifier: "showDetail", sender: selectedDiary)
+    }
+    
     
 }
 

@@ -10,7 +10,10 @@ import AlamofireImage
 import PanModal
 
 class DiaryMainTableViewCell: UITableViewCell {
-
+    
+    // 일기 수정 및 삭제 버튼 클로저
+    var diaryReviseAction : (() -> ()) = {}
+    
     @IBOutlet var diaryNameLabel: UILabel!
     @IBOutlet var diaryDateLabel: UILabel!
     @IBOutlet var diaryDetailLabel: UILabel!
@@ -31,20 +34,14 @@ class DiaryMainTableViewCell: UITableViewCell {
         imagePageView.layer.cornerRadius = 10
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // 버튼에 액션 추가
-        diaryReviseButton.addTarget(self, action: #selector(diaryReviseButtonTapped), for: .touchUpInside)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // 셀이 재사용되기 전에 호출되는 메서드
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // 일반적으로 이미지가 바뀌는 것처럼 보이는 현상을 없애기 위해서 실행
+        self.diaryImageView.image = nil
     }
     
     //MARK: - 이미지 설정 메서드 + 이미지 개수 표
-
     func setImageUrls(_ urls: [String]) {
         if let firstUrl = urls.first, let url = URL(string: firstUrl) {
             diaryImageView.af.setImage(withURL: url)
@@ -58,13 +55,9 @@ class DiaryMainTableViewCell: UITableViewCell {
         }
     }
     
-    // 일기 수정 및 삭제 버튼 활성화
-    
-    var diaryReviseAction : (() -> ()) = {}
-    
-
     //MARK: - 다이어리 수정 버튼 탭 메서드
-    @objc func diaryReviseButtonTapped() {
+    @IBAction func diaryReviseButtonTapped(_ sender: Any) {
         diaryReviseAction()
     }
+
 }

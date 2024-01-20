@@ -21,27 +21,31 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         willSet(newVal) {
             newVal.forEach { val in
                 guideDataString.append(val)
+                // 가이드 구분을 위해 | 추가
                 guideDataString.append("|")
                 print(self.guideDataString)
             }
         }
     }
     
-    // 서버에 보낼 형태로 바꿔서 저장
+    // 서버 통신을 위해 유저의 가이드를 String으로 저장
     var guideDataString = ""
     
+    // 강아지 이름
     var dogName: String?
     
-    // 일기 수정하기
+    // 일기 수정 상황을 판단하는 프로퍼티 & 수정 시 바뀌는 일기 데이터
     var diaryData: DiaryIdResponse.Data?
     var isEdited: Bool?
     
     // 이미지 캐시 생성
     let imageCache = NSCache<NSString, UIImage>()
     
+    // 일기 가이드 버튼
     @IBOutlet var diaryGuideButton: UIButton!
-    
+    // 백 버튼
     @IBOutlet var backButton: UIBarButtonItem!
+    // 완료 버튼
     @IBOutlet var diaryWriteButton: UIBarButtonItem!
     
     //MARK: - viewDidLoad 메서드
@@ -149,7 +153,6 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             }
         }
     }
-    
     
     
     
@@ -634,9 +637,9 @@ extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
 }
 
-//MARK: -
+//MARK: - WirteVCDelegate 확장
 extension DiaryWriteViewController: WirteVCDelegate {
-    // 유저가 선택한 데이터 배열을 받는다.
+    // 유저가 선택한 데이터 배열을 현재 VC에 저장한다.
     func getGuideData(_ data: [String]) {
         self.guideData = data
     }

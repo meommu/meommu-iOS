@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -31,7 +31,7 @@
                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.47450977560000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="OnClick_checkButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iTF-F5-SqG"/>
+                                    <action selector="checkButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aeh-r4-z1M"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDr-pS-6Ir">
@@ -49,7 +49,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="month_arrow_left"/>
                                                 <connections>
-                                                    <action selector="OnClick_beforeMonthButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mXj-4k-MXI"/>
+                                                    <action selector="beforeYearButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B4g-MU-gul"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-Lw-zkP">
@@ -67,7 +67,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="month_arrow_right"/>
                                                 <connections>
-                                                    <action selector="OnClick_nextMonthButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n3I-fz-DtU"/>
+                                                    <action selector="nextYearButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iyH-m0-Sgf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -127,9 +127,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="MonthPickerCollectionView" destination="e1a-hN-BHF" id="ico-Jt-Vky"/>
                         <outlet property="beforeMonthButton" destination="ndi-hu-FK3" id="R7h-nE-Bac"/>
-                        <outlet property="checkButton" destination="RIX-ZZ-UVF" id="0Uy-BR-tBQ"/>
+                        <outlet property="checkButton" destination="RIX-ZZ-UVF" id="Gyr-Uf-HfN"/>
+                        <outlet property="monthPickerCollectionView" destination="e1a-hN-BHF" id="ACf-yB-hiF"/>
                         <outlet property="nextMonthButton" destination="cie-8i-6MX" id="uG8-fu-F8N"/>
                         <outlet property="yearLabel" destination="oYr-Lw-zkP" id="FY6-v1-NUB"/>
                     </connections>

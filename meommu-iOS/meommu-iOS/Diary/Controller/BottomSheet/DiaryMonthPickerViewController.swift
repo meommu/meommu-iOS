@@ -8,44 +8,68 @@
 import UIKit
 import PanModal
 
-class DiaryMonthPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        MonthPickerCollectionView.delegate = self
-        MonthPickerCollectionView.dataSource = self
-        MonthPickerCollectionView.register(UINib(nibName: "DiaryMonthPickerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "diaryMonthCell")
-    }
-    
+class DiaryMonthPickerViewController: UIViewController {
     
     
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var beforeMonthButton: UIButton!
     @IBOutlet var nextMonthButton: UIButton!
     
+    @IBOutlet var monthPickerCollectionView: UICollectionView!
+    
+    // 확인 버튼
+    @IBOutlet var checkButton: UIButton!
+    
+    var selectedIndexPath: IndexPath?
+    
+    // CollectionView 설정
+    var selectedYear = 2023
+    var selectedMonth: Int?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupDelegate()
+        
+        monthPickerCollectionView.register(UINib(nibName: "DiaryMonthPickerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "diaryMonthCell")
+    }
+    
+    //MARK: - 델리게이트 셋업 메서드
+    func setupDelegate() {
+        monthPickerCollectionView.delegate = self
+        monthPickerCollectionView.dataSource = self
+    }
+    
     // 이전 버튼을 눌렀을 때
-    @IBAction func OnClick_beforeMonthButton(_ sender: Any) {
+    @IBAction func beforeYearButtonTapped(_ sender: Any) {
         selectedYear -= 1
         yearLabel.text = "\(selectedYear)년"
     }
     
     // 다음 버튼을 눌렀을 때
-    @IBAction func OnClick_nextMonthButton(_ sender: Any) {
+    @IBAction func nextYearButtonTapped(_ sender: Any) {
         selectedYear += 1
         yearLabel.text = "\(selectedYear)년"
     }
     
-    // CollectionView 설정
+    @IBAction func checkButtonTapped(_ sender: Any) {
+        guard let month = selectedMonth else { return }
+        print("\(selectedYear)년 \(month)월")
+
+        let userInfo = ["year": selectedYear, "month": month]
+        
+        NotificationCenter.default.post(name: Notification.Name("DidPickMonth"), object: nil, userInfo: userInfo)
+        
+        dismiss(animated: true, completion: nil)
+    }
     
-    var selectedYear = 2023
-    var selectedMonth: Int?
-    
-    @IBOutlet var MonthPickerCollectionView: UICollectionView!
-    
+
+}
+
+//MARK: - UICollectionView 관련 확장
+extension DiaryMonthPickerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 1년은 12개월
         return 12
     }
     
@@ -59,8 +83,8 @@ class DiaryMonthPickerViewController: UIViewController, UICollectionViewDelegate
         return cell
     }
     
-    var selectedIndexPath: IndexPath?
     
+    // 셀이 선택되었을 때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // 이전에 선택된 셀의 배경색을 원래대로 돌림
@@ -81,25 +105,10 @@ class DiaryMonthPickerViewController: UIViewController, UICollectionViewDelegate
         //선택된 월 저장
         selectedMonth = indexPath.row + 1
     }
-    
-    // 확인 버튼
-    
-    @IBOutlet var checkButton: UIButton!
-    
-    @IBAction func OnClick_checkButton(_ sender: Any) {
-        guard let month = selectedMonth else { return }
-        print("\(selectedYear)년 \(month)월")
-
-        let userInfo = ["year": selectedYear, "month": month]
-        
-        NotificationCenter.default.post(name: Notification.Name("DidPickMonth"), object: nil, userInfo: userInfo)
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-
 }
 
+
+//MARK: - PanModalPresentable 확장
 extension DiaryMonthPickerViewController: PanModalPresentable {
     var panScrollable: UIScrollView? {
         return nil

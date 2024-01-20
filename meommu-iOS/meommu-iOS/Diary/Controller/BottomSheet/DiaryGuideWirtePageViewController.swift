@@ -15,12 +15,17 @@ class DiaryGuideWirtePageViewController: UIViewController {
     
     var pageViewController : PageViewController!
     
+    // 유저가 선택한 가이드 데이터
+    var guideDatas: [String] = []
+    
+    // 유저의 가이드 데이터 대리자
+    var writeVCDelegate: WirteVCDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
-    
+    //MARK: - 버튼 선택 메서드
     @IBAction func nextButtonTapped(_ sender: Any) {
         // 다음 페이지로 이동
         pageViewController.setNextViewControllersFromIndex(index: currentIndex)
@@ -48,10 +53,24 @@ class DiaryGuideWirtePageViewController: UIViewController {
                     self.currentIndex = result
                 }
                 
-                // 부모 뷰컨을 해제시키는 기능 할당
+                // step3에서 다음을 누르면 자신을 해제시키는 기능 할당
                 pageViewController.dismissBottomSheet = {
-                    print("dismisss")
+                    
+                    // 가이드 데이터 전달
+                    self.writeVCDelegate?.getGuideData(self.guideDatas)
+  
+                    self.writeVCDelegate?.eventStart()
+                    
+                    // VC 해제한다.
                     self.dismiss(animated: true)
+                    print("dismisss완료")
+                }
+                
+                
+                pageViewController.guideDatasCompletHanelder = { (result) in
+                    // 컨테이너 VC에게 데이터를 받는다.
+                    self.guideDatas = result
+                    print("데이터 전달 완료")
                 }
                 
             }

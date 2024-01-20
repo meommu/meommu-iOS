@@ -24,3 +24,8 @@ protocol BottomSheetDataDelegate: AnyObject {
     func removeAllData()
     func resetStepTwoTableView()
 }
+
+protocol WirteVCDelegate: AnyObject {
+    func getGuideData(_ data: [String])
+    func eventStart()
+}

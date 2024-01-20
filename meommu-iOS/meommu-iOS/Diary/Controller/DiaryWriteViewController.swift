@@ -11,9 +11,24 @@ import MobileCoreServices
 import UniformTypeIdentifiers
 import Alamofire
 import PanModal
+import LDSwiftEventSource
 
 
 class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
+    
+    // 유저가 선택한 가이드 데이터
+    var guideData: [String] = [] {
+        willSet(newVal) {
+            newVal.forEach { val in
+                guideDataString.append(val)
+                guideDataString.append("|")
+                print(self.guideDataString)
+            }
+        }
+    }
+    
+    // 서버에 보낼 형태로 바꿔서 저장
+    var guideDataString = ""
     
     var dogName: String?
     
@@ -194,6 +209,9 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         
         let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
         let stepOneVC = storyboard.instantiateViewController(withIdentifier: "DiaryGuideWirtePageViewController") as! DiaryGuideWirtePageViewController
+        
+        // userGuide 대리자 선정
+        stepOneVC.writeVCDelegate = self
         
         presentPanModal(stepOneVC)
     }
@@ -614,4 +632,68 @@ extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource
             selectedMonth = Int(todayMonth)!
         }
     }
+}
+
+//MARK: -
+extension DiaryWriteViewController: WirteVCDelegate {
+    // 유저가 선택한 데이터 배열을 받는다.
+    func getGuideData(_ data: [String]) {
+        self.guideData = data
+    }
+    
+    // SSE 방식으로 데이터를 수신하고 싶지만, 일단은 전체 데이터를 한 번에 받아서 보여주기. ❓
+    func eventStart() {
+        
+        let request = GuideDataRequest(details: self.guideDataString)
+        
+        GPTDiaryAPI.shared.getGPTDiary(with: request) { result in
+            switch result {
+            case .success(let response):
+                
+                print(response)
+                
+                DispatchQueue.main.async {
+                    // 일기 텍스트 뷰에 추가
+                    self.diaryContextTextView.text = response.data.content
+                }
+                
+            case .failure(let error):
+                // 400~500 에러
+                print("Error: \(error.message)")
+            }
+        }
+        
+        
+        
+//        guard let token = KeyChain.shared.read(key: KeyChain.shared.accessTokenKey) else {
+//            return
+//        }
+//
+//        // EventSource 오브젝트 생성
+//        var config = EventSource.Config(handler: SseEventHandler(), url: URL(string: "https://comibird.site/api/v1/gpt/stream")!)
+//
+//        // 커스텀 요청 헤더를 명시
+//        config.headers = ["Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer \(token)", "Content-Length": "76", "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"]
+//
+//
+//        let body = GuideDataRequest(details: self.guideDataString)
+//        let encoder = JSONEncoder()
+//
+//        if let encoded = try? encoder.encode(body) {
+//            config.body = encoded
+//            print("인코딩 성공")
+//        }
+//
+//        // 최대 연결 유지 시간을 설정, 서버에 설정된 최대 연결 유지 시간보다 길게 설정
+//
+//        config.idleTimeout = 10000
+//
+//        print("컨피그: \(config)")
+//
+//        let eventSource = EventSource(config: config)
+//
+//        // EventSource 연결 시작
+//        eventSource.start()
+    }
+    
 }

@@ -29,15 +29,28 @@ struct GPTDiaryDetailGuideResponse: Codable {
     let data: GPTDetailDataClass
 }
 
-// MARK: - DataClass
 struct GPTDetailDataClass: Codable {
     let details: [GPTDetailGuide]
 }
 
-// MARK: - Detail
 struct GPTDetailGuide: Codable {
     let id: Int
     let detail: String
 }
 
+//MARK: - gpt 일기 요청 모델
+struct GuideDataRequest: Codable {
+    var details: String
+}
+
+//MARK: - gpt 일기 응답 모델
+struct GPTDiaryResponse: Codable {
+    let code, message: String
+    let data: DataClass
+    
+    // DataClass 정의
+    struct DataClass: Codable {
+        let content: String
+    }
+}
 

@@ -12,7 +12,10 @@ class PageViewController: UIPageViewController {
     var guideDatas: [String] = [] 
     
     // 바텀 시트 VC dismiss 클로저 정의
-    var dismissBottomSheet : (() -> ())?
+    var dismissBottomSheet: (() -> ())?
+    
+    // 부모 VC에 데이터 전달을 위한 클로저
+    var guideDatasCompletHanelder: (([String]) -> ())?
     
     // 해당 페이지의 인덱스를 전달하기 위함
     var completeHandler : ((Int)->())?
@@ -221,9 +224,14 @@ class PageViewController: UIPageViewController {
     // index 파라미터: 이전 페이지 인덱스
     func setNextViewControllersFromIndex(index : Int){
 
+        // 마지막 페이지에서 실행된다.
         if index == pageVCArray.count - 1 {
+            // 가이드 데이터를 전달한다.
+            self.guideDatasCompletHanelder?(self.guideDatas)
+            
             // 마지막 페이지일 때 바텀 시트 VC를 내린다.
             self.dismissBottomSheet?()
+            
             return
         }
         
@@ -343,10 +351,11 @@ extension PageViewController: BottomSheetDataDelegate {
                     }
                 }
             }
-            
         }
-        
     }
+    
+    
+    
     
 }
 

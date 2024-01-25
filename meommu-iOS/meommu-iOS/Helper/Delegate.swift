@@ -27,5 +27,5 @@ protocol BottomSheetDataDelegate: AnyObject {
 
 protocol WirteVCDelegate: AnyObject {
     func getGuideData(_ data: [String])
-    func eventStart()
+    func sseEventStart()
 }

@@ -54,3 +54,29 @@ struct GPTDiaryResponse: Codable {
     }
 }
 
+// MARK: - SSEEventResponse
+struct SSEEventResponse: Codable {
+    let id, object: String
+    let created: Int
+    let model: String
+    let choices: [Choice]
+    
+    // MARK:  Choice
+    struct Choice: Codable {
+        let index: Int
+        let delta: Delta
+        let finishReason: String?
+
+        enum CodingKeys: String, CodingKey {
+            case index, delta
+            case finishReason = "finish_reason"
+        }
+    }
+    
+    // MARK:  Delta
+    struct Delta: Codable {
+        let role: String?
+        let content: String?
+    }
+    
+}

@@ -59,7 +59,7 @@ class DiaryGuideWirtePageViewController: UIViewController {
                     // 가이드 데이터 전달
                     self.writeVCDelegate?.getGuideData(self.guideDatas)
   
-                    self.writeVCDelegate?.eventStart()
+                    self.writeVCDelegate?.sseEventStart()
                     
                     // VC 해제한다.
                     self.dismiss(animated: true)

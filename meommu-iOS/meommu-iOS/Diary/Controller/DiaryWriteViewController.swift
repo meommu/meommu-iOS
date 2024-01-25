@@ -16,9 +16,14 @@ import LDSwiftEventSource
 
 class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
     
+    // SSE 통신을 위한 인스턴스
+    private var sseEventSource: EventSource?
+    
     // 유저가 선택한 가이드 데이터
     var guideData: [String] = [] {
         willSet(newVal) {
+            self.guideDataString = ""
+            
             newVal.forEach { val in
                 guideDataString.append(val)
                 // 가이드 구분을 위해 | 추가
@@ -29,10 +34,22 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     }
     
     // 서버 통신을 위해 유저의 가이드를 String으로 저장
-    var guideDataString = ""
+    private var guideDataString = ""
     
     // 강아지 이름
     var dogName: String?
+    
+    // 일기 텍스트 뷰 플레이스 홀더
+    private var textViewPlaceholder: String {
+        if let dogName {
+            return "\(dogName)의 일기를 작성해 주세요.(0/1000)"
+        }
+        return "강아지의 일기를 작성해 주세요.(0/1000)"
+    }
+    
+    // 플레이스 홀더 유뮤
+    var hasPlaceholder = true
+    
     
     // 일기 수정 상황을 판단하는 프로퍼티 & 수정 시 바뀌는 일기 데이터
     var diaryData: DiaryIdResponse.Data?
@@ -54,10 +71,9 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         
         setupDelegate()
         
-        if let name = dogName {
-            diaryContextTextView.text = dogName! + "의 일기를 작성해 주세요.(0/1000)"
-            diaryContextTextView.textColor = .lightGray
-        }
+       
+        diaryContextTextView.text = self.textViewPlaceholder
+        diaryContextTextView.textColor = .lightGray
         
         // 데이트 피커
         setAvailableDate()
@@ -200,12 +216,12 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     }
     
     
-
-
     
     
     
-  
+    
+    
+    
     
     //MARK: - 멈무일기 가이드 버튼 탭 메서드
     @IBAction func diaryGuideButtonTapped(_ sender: Any) {
@@ -269,7 +285,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
-   
+    
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
@@ -563,24 +579,32 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     // 뒤로가기 버튼
     
     
-   
+    
     
 }
 
+//MARK: - UITextViewDelegate 확장
 extension DiaryWriteViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "\(dogName!)의 일기를 작성해 주세요.(0/1000)" {
-            textView.text = ""
-            textView.textColor = UIColor(named: "Gray500")
+    
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            // 플레이스 홀더를 갖고 있으면 지우기.
+            if textView.text == textViewPlaceholder {
+                textView.text.removeAll()
+                textView.textColor = UIColor(named: "Gray500")
+                
+                self.hasPlaceholder = false
+            }
         }
-    }
-            
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "\(dogName!)의 일기를 작성해 주세요.(0/1000)"
-            textView.textColor = UIColor(named: "Gray300")
+    
+        func textViewDidEndEditing(_ textView: UITextView) {
+            // 텍스트 뷰가 비어있으면 플레이스홀더 추가하기.
+            if textView.text.isEmpty {
+                textView.text = textViewPlaceholder
+                textView.textColor = UIColor(named: "Gray300")
+                
+                self.hasPlaceholder = true
+            }
         }
-    }
 }
 
 // Date Picker 설정
@@ -589,20 +613,20 @@ extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource
         return 3
         // 년, 월, 일 두 가지 선택
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
-            case 0:
-                return availableYear.count
-            case 1:
-                return allMonth.count
-            case 2:
-                return allDate.count
-            default:
-                return 0
+        case 0:
+            return availableYear.count
+        case 1:
+            return allMonth.count
+        case 2:
+            return allDate.count
+        default:
+            return 0
         }
     }
-
+    
     // 표출할 텍스트
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
@@ -616,7 +640,7 @@ extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource
             return ""
         }
     }
-
+    
     // 파커뷰에서 선태된 행을 처리할 수 있는 메서드
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
@@ -629,74 +653,124 @@ extension DiaryWriteViewController: UIPickerViewDelegate, UIPickerViewDataSource
         default:
             break
         }
-
+        
         if(Int(todayYear) == selectedYear && Int(todayMonth)! < selectedMonth){
             pickerView.selectRow(Int(todayMonth)!-1, inComponent: 1, animated: true)
             selectedMonth = Int(todayMonth)!
         }
     }
+    
 }
 
 //MARK: - WirteVCDelegate 확장
 extension DiaryWriteViewController: WirteVCDelegate {
+    
     // 유저가 선택한 데이터 배열을 현재 VC에 저장한다.
     func getGuideData(_ data: [String]) {
         self.guideData = data
     }
     
-    // SSE 방식으로 데이터를 수신하고 싶지만, 일단은 전체 데이터를 한 번에 받아서 보여주기. ❓
-    func eventStart() {
+    // 바텀시트 마지막 페이지에서 완료시 해당 메서드를 실행한다.
+    func sseEventStart() {
+        if self.guideDataString == "" {
+            print("XXXXXXXXXXXXX")
+            return
+        }
         
-        let request = GuideDataRequest(details: self.guideDataString)
+        print("OOOOOOOOOOO")
         
-        GPTDiaryAPI.shared.getGPTDiary(with: request) { result in
-            switch result {
-            case .success(let response):
-                
-                print(response)
-                
-                DispatchQueue.main.async {
-                    // 일기 텍스트 뷰에 추가
-                    self.diaryContextTextView.text = response.data.content
-                }
-                
-            case .failure(let error):
-                // 400~500 에러
-                print("Error: \(error.message)")
+        // EventSource 인스턴스 할당
+        self.sseEventSource = GPTDiaryAPI.shared.createSSEEventSource(details: self.guideDataString, handler: self)
+        
+        // EventSource 연결 시작
+        self.sseEventSource?.start()
+    }
+}
+
+
+//MARK: - SSE 통신 관련 EventHandler 프로토콜 확장
+extension DiaryWriteViewController: EventHandler {
+    func onOpened() {
+        // SSE 연결 성공시 처리 로직 작성
+        print("SSE 연결 성공")
+        
+        // 플레이스 홀더만 남아있으면
+        if self.hasPlaceholder {
+
+            DispatchQueue.main.async {
+                //플레이스홀더를 삭제한다.
+                self.diaryContextTextView.text.removeAll()
             }
+
         }
         
         
-        
-//        guard let token = KeyChain.shared.read(key: KeyChain.shared.accessTokenKey) else {
-//            return
-//        }
-//
-//        // EventSource 오브젝트 생성
-//        var config = EventSource.Config(handler: SseEventHandler(), url: URL(string: "https://comibird.site/api/v1/gpt/stream")!)
-//
-//        // 커스텀 요청 헤더를 명시
-//        config.headers = ["Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer \(token)", "Content-Length": "76", "Host": "port-0-meommu-api-jvvy2blm5wku9j.sel5.cloudtype.app"]
-//
-//
-//        let body = GuideDataRequest(details: self.guideDataString)
-//        let encoder = JSONEncoder()
-//
-//        if let encoded = try? encoder.encode(body) {
-//            config.body = encoded
-//            print("인코딩 성공")
-//        }
-//
-//        // 최대 연결 유지 시간을 설정, 서버에 설정된 최대 연결 유지 시간보다 길게 설정
-//
-//        config.idleTimeout = 10000
-//
-//        print("컨피그: \(config)")
-//
-//        let eventSource = EventSource(config: config)
-//
-//        // EventSource 연결 시작
-//        eventSource.start()
     }
     
+    func onClosed() {
+        // SSE 연결 종료시 처리 로직 작성
+        print("SSE 연결 종료")
+    }
+    
+    func onMessage(eventType: String, messageEvent: MessageEvent) {
+        // SSE 이벤트 도착시 처리 로직 작성
+        
+        let receivedMessageEvent: SSEEventResponse
+        
+        var content: String?
+        var finishReason: String?
+       
+        
+        // JSON 문자열을 Data로 변환
+        guard let jsonData = messageEvent.data.data(using: .utf8) else {
+            print("Failed to convert string to data.")
+            self.sseEventSource?.stop()
+            return
+        }
+        
+        
+        do {
+            // JSON 디코딩
+            receivedMessageEvent = try JSONDecoder().decode(SSEEventResponse.self, from: jsonData)
+            print(receivedMessageEvent)
+            
+            content = receivedMessageEvent.choices[0].delta.content
+            finishReason = receivedMessageEvent.choices[0].finishReason
+        } catch {
+            print("Failed to decode JSON: \(error)")
+            self.sseEventSource?.stop()
+            return
+        }
+        
+        // 메시지가 끝나면 연결 끊기
+        if let finishReason {
+            print("끝남: \(finishReason)")
+            
+            // 서버 연결을 끊는다.
+            self.sseEventSource?.stop()
+            return
+            
+        }
+        
+        // content가 있으면 텍스트 뷰에 보여준다.
+        if let content {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.diaryContextTextView.text.append(content)
+            }
+            print("컨텐츠: \(content)")
+        }
+        
+    }
+    
+    
+    func onComment(comment: String) {
+        print(comment)
+    }
+    
+    func onError(error: Error) {
+        // SSE 연결 전 또는 후 오류 발생시 처리 로직 작성
+        print("EventHandler Error")
+        // error.responseCode: Int = 오류 응답 코드
+    }
 }
+

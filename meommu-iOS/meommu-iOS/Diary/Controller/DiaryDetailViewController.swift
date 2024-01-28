@@ -45,9 +45,6 @@ class DiaryDetailViewController: UIViewController {
         setupLabel()
         setupView()
         
-        print("start: \(imageScrollView.frame.width)")
-        print("start: \(imageScrollView.bounds.width)")
-        
         // NotificationCenter를 통해 알림 받기
         NotificationCenter.default.addObserver(self, selector: #selector(self.diaryDeleted), name: NSNotification.Name("diaryDeleted"), object: nil)
         
@@ -152,6 +149,16 @@ class DiaryDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        print(imageScrollView.frame)
+        print(imageScrollView.bounds)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("뷰윌\(imageScrollView.frame)")
+    }
 }
 
 //MARK: - UIScrollViewDelegate 확장
@@ -163,9 +170,10 @@ extension DiaryDetailViewController: UIScrollViewDelegate {
         // 이미지 페이지 업데이트
         let value = imageScrollView.contentOffset.x/scrollView.frame.size.width
         imagePageLabel.text = "\(round(value)) / \(imageUrls.count)"
+        
     }
     
-    // 이미지를 스크롤 뷰에 추가하느 ㄴ메서드
+    // 이미지를 스크롤 뷰에 추가하는 메서드
     func addContentScrollView() {
         // 이미지가 없는 경우 처리
         if imageUrls.isEmpty {
@@ -176,7 +184,6 @@ extension DiaryDetailViewController: UIScrollViewDelegate {
         // 이미지가 있는 경우 각 이미지를 ScrollView에 추가
         for (index, imageUrl) in imageUrls.enumerated() {
             let imageView = createImageView(at: index, imageUrl: imageUrl)
-            print("\(index): \(imageView.frame)")
             imageScrollView.addSubview(imageView)
         }
     }
@@ -193,17 +200,23 @@ extension DiaryDetailViewController: UIScrollViewDelegate {
     private func createImageView(at index: Int, imageUrl: String) -> UIImageView {
         // 주어진 인덱스와 이미지 URL을 기반으로 ImageView 생성
         let imageView = UIImageView()
-        let positionX = imageScrollView.frame.size.width * CGFloat(index)
-        print("frame:\(imageScrollView.frame.width)")
-        imageView.frame = CGRect(x: positionX, y: 0, width: imageScrollView.bounds.width, height: imageScrollView.bounds.height)
-        print("bound:\(imageScrollView.bounds.width)")
+        let positionX = self.view.frame.size.width * CGFloat(index)
+        
+        imageView.frame = CGRect(x: positionX, y: 0, width: self.view.frame.width, height: imageScrollView.bounds.height)
+
+        imageView.contentMode = .scaleToFill
+        
         // 이미지 URL이 유효한 경우 해당 URL을 통해 이미지 설정
         if let imageURL = URL(string: imageUrl) {
             imageView.af.setImage(withURL: imageURL)
         }
         
-        imageView.contentMode = .scaleAspectFit
         imageScrollView.contentSize.width = imageView.frame.width * CGFloat(index + 1)
+        
+        print("imagesScrollview.bound:\(imageScrollView.bounds)")
+        print("self.view:\(self.view.frame)")
+        print("imagesScrollview.frame:\(imageScrollView.frame)")
+        print("imageview.frame\(index): \(imageView.frame)")
         
         return imageView
     }

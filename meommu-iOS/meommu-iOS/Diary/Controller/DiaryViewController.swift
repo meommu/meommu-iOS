@@ -58,7 +58,7 @@ class DiaryViewController: UIViewController {
     //MARK: - viewDidLoad 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupDelegate()
         setupLabel()
         

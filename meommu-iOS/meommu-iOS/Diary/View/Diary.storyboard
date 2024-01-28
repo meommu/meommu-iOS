@@ -214,8 +214,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-Fo-3wf">
                                                 <rect key="frame" x="308" y="467" width="47" height="22"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1 / 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GD3-2A-f22">
-                                                        <rect key="frame" x="5" y="2.6666666666666288" width="26.666666666666671" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GD3-2A-f22">
+                                                        <rect key="frame" x="10.333333333333316" y="2.6666666666666288" width="26.666666666666671" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -225,6 +225,7 @@
                                                 <constraints>
                                                     <constraint firstItem="GD3-2A-f22" firstAttribute="centerY" secondItem="Ghh-Fo-3wf" secondAttribute="centerY" id="NCa-v9-fGI"/>
                                                     <constraint firstAttribute="height" constant="22" id="SRr-qF-Gar"/>
+                                                    <constraint firstItem="GD3-2A-f22" firstAttribute="centerX" secondItem="Ghh-Fo-3wf" secondAttribute="centerX" id="nDu-Pe-hcs"/>
                                                     <constraint firstAttribute="width" constant="47" id="uRe-Jg-mUQ"/>
                                                 </constraints>
                                             </view>

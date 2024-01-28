@@ -78,38 +78,6 @@ class DiaryDetailViewController: UIViewController {
         imagePageLabel.text = "\(currentPageNumber) / \(imageUrls.count)"
     }
     
-    //MARK: - 이미지 셋업 메서드
-    // 1. 이미지 보이기
-    // 2. 이미지 페이지 레이블 수정
-    //    private func setupImage() {
-    //        if !imageUrls.isEmpty && diaryImagePageControl.currentPage < imageUrls.count {
-    //
-    //            let imageUrl = imageUrls[diaryImagePageControl.currentPage]
-    //
-    //            loadAndDisplayImage(from: imageUrl)
-    //
-    //            // 이미지 페이지 업데이트
-    //            imagePageLabel.text = "\(diaryImagePageControl.currentPage + 1) / \(imageUrls.count)"
-    //
-    //        } else {
-    //            // ❓ 일기를 생성할 때 이미지 1장은 필수이기 때문에 필요 없을 듯?
-    //
-    //            // 이미지가 없는 경우를 처리합니다. 예를 들어, 기본 이미지를 표시하도록 설정할 수 있습니다.
-    //            diaryImageView.image = UIImage(named: "defaultImage")
-    //
-    //            // 이미지 페이지 업데이트
-    //            imagePageLabel.text = "0 / \(imageUrls.count)"
-    //        }
-    //    }
-    
-    //MARK: - 이미지 url을 받으면 이미지 뷰를 변경시키는 메서드
-    //    private func loadAndDisplayImage(from url: String) {
-    //        if let imageUrl = URL(string: url) {
-    //            diaryImageView.af.setImage(withURL: imageUrl)
-    //        }
-    //    }
-    
-    
     //MARK: - 일기 삭제 시 화면 전환 메서드
     @objc func diaryDeleted() {
         self.navigationController?.popViewController(animated: true)
@@ -168,9 +136,12 @@ extension DiaryDetailViewController: UIScrollViewDelegate {
         print("width: \(imageScrollView.frame.size.width)")
         
         // 이미지 페이지 업데이트
-        let value = imageScrollView.contentOffset.x/scrollView.frame.size.width
-        imagePageLabel.text = "\(round(value)) / \(imageUrls.count)"
+        let currentPage =  Int((self.imageScrollView.contentOffset.x + (0.5 * self.imageScrollView.frame.size.width)) / self.imageScrollView.frame.width) + 1
         
+        DispatchQueue.main.async {
+            self.imagePageLabel.text = "\(currentPage) / \(self.imageUrls.count)"
+        }
+
     }
     
     // 이미지를 스크롤 뷰에 추가하는 메서드

@@ -10,6 +10,9 @@ import UIKit
 class DiaryMainTableImageCollectionViewCell: UICollectionViewCell {
     static let identifier = "DiaryMainTableImageCollectionViewCell"
     
+    static let cellHeight = 329.0
+    static let cellWidth = 350.0
+    
     @IBOutlet weak var imageView: UIImageView!
     
     

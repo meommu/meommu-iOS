@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnC-4J-6MV">
-                        <rect key="frame" x="20" y="400" width="335" height="31.333333333333314"/>
+                        <rect key="frame" x="20" y="401.33333333333331" width="335" height="31.333333333333314"/>
                         <attributedString key="attributedText">
                             <fragment content="Title">
                                 <attributes>
@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-Mh-Yw0">
-                        <rect key="frame" x="20" y="441.33333333333331" width="335" height="20.666666666666686"/>
+                        <rect key="frame" x="20" y="442.66666666666669" width="335" height="19.333333333333314"/>
                         <color key="tintColor" name="DiaryTextColor"/>
                         <attributedString key="attributedText">
                             <fragment content="Detail">
@@ -71,12 +71,9 @@
                             <constraint firstAttribute="height" constant="18" id="IQA-Z6-fGB"/>
                         </constraints>
                     </stackView>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RMK-S3-EMc">
-                        <rect key="frame" x="0.0" y="19" width="375" height="350"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="350" id="qoK-nV-l4j"/>
-                        </constraints>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RMK-S3-EMc">
+                        <rect key="frame" x="0.0" y="19" width="375" height="351.33333333333331"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BT8-XF-l2d">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -117,9 +114,6 @@
         <namedColor name="DiaryTextColor">
             <color red="0.38400000333786011" green="0.37999999523162842" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

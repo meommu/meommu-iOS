@@ -16,6 +16,8 @@
 		26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */; };
 		26215E422AB9E5B600F28FBF /* LoginSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */; };
 		26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */; };
+		2624053D2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */; };
+		2624053E2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */; };
 		264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */; };
 		264BF3B12B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */; };
 		264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */; };
@@ -113,6 +115,8 @@
 		26215E3F2AB8A02600F28FBF /* LoginFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstViewController.swift; sourceTree = "<group>"; };
 		26215E412AB9E5B600F28FBF /* LoginSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecondViewController.swift; sourceTree = "<group>"; };
 		26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdViewController.swift; sourceTree = "<group>"; };
+		2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addLeftPadding.swift"; sourceTree = "<group>"; };
 		264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryFirstViewController.swift; sourceTree = "<group>"; };
 		264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySecondViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +450,8 @@
 				F90CDEA82ABFF910008ED1A2 /* BottomSheet */,
 				F979D7A52AB7DFDF00C52C47 /* DiaryMainTableViewCell.swift */,
 				F979D7A62AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib */,
+				2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */,
+				2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */,
 				F959A14D2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.swift */,
 				F959A14E2AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib */,
 				F991C3D32B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.swift */,
@@ -572,6 +578,7 @@
 				F93D6FA82AB974EF00591C21 /* DiaryWrite.storyboard in Resources */,
 				F979D7A82AB7DFDF00C52C47 /* DiaryMainTableViewCell.xib in Resources */,
 				F90CDEAC2ABFF947008ED1A2 /* StepOneTableViewCell.xib in Resources */,
+				2624053E2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib in Resources */,
 				F99368462AF9C79800999521 /* DiaryDatePickerCollectionViewCell.xib in Resources */,
 				F9B9CF842AF5007A009FCA26 /* DiaryDatePicker.storyboard in Resources */,
 				F933D8A62AB73982006EDA07 /* Login.storyboard in Resources */,
@@ -650,6 +657,7 @@
 				268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */,
 				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,
 				261003822AC972E2001F5E28 /* UIView+CornerRadius.swift in Sources */,
+				2624053D2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift in Sources */,
 				F959A1532AB8157E009D90A8 /* DiaryModel.swift in Sources */,
 				264BF3BE2B14CD0400FCFBEC /* SignUpAPI.swift in Sources */,
 				F9A69E2D2ACCEDA70048FC04 /* StepThreeViewController.swift in Sources */,

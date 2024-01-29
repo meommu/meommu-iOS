@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pOP-Lc-cuS">
-                        <rect key="frame" x="107.66666666666669" y="152" width="160" height="221"/>
+                        <rect key="frame" x="21" y="151.99999999999997" width="333.33333333333331" height="394.33333333333326"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcG-wI-DMY">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="333.33333333333331" height="333.33333333333331"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diaryEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-JU-Eo0">
-                                        <rect key="frame" x="5" y="5" width="150" height="150"/>
+                                        <rect key="frame" x="5" y="5" width="323.33333333333331" height="323.33333333333331"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +38,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-lL-a5W">
-                                <rect key="frame" x="0.0" y="170" width="160" height="51"/>
+                                <rect key="frame" x="0.0" y="343.33333333333331" width="333.33333333333331" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="epC-NH-m9v"/>
                                 </constraints>

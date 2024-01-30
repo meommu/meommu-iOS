@@ -268,30 +268,29 @@ extension DiaryViewController: UITableViewDataSource {
             diaryCell.diaryTitleLabel?.text = diary.title
             
             // 해당 셀의 이미지 id값으로 전체 이미지 URL 배열에서 해당 URL 받아오기.
-//            let imageUrls = diary.imageIds.compactMap { imageId in
-//                // imageResponses 배열에 안전하게 접근합니다.
-//                if let index = imageResponses.firstIndex(where: { $0.id == imageId }) {
-//                    return imageResponses[index].url
-//                } else {
-//                    return nil
-//                }
-//            }
+            let imageUrls = diary.imageIds.compactMap { imageId in
+                // imageResponses 배열에 안전하게 접근합니다.
+                if let index = imageResponses.firstIndex(where: { $0.id == imageId }) {
+                    return imageResponses[index].url
+                } else {
+                    return nil
+                }
+            }
             
-            // 일기 셀에 이미지 설정 메서드
-            // ❗️ 현재 해당 기능 메서드가 cell 클래스에서 구현되는 중
-//            diaryCell.setImageUrls(imageUrls)
+            // 해당 셀에 이미지 url 배열 전달
+            diaryCell.imageUrls = imageUrls
             
             // 일기 셀의 수벙 버튼에 액션 추가해주기 -> 수정 바텀 시트 띄우기
-//            diaryCell.diaryReviseAction = {
-//
-//                let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
-//                let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
-//
-//                // 일기 수정 뷰컨에게 다이어리 id 전달
-//                diaryReviseVC.diaryId = diary.id
-//
-//                self.presentPanModal(diaryReviseVC)
-//            }
+            diaryCell.diaryReviseAction = {
+
+                let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
+                let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
+
+                // 일기 수정 뷰컨에게 다이어리 id 전달
+                diaryReviseVC.diaryId = diary.id
+
+                self.presentPanModal(diaryReviseVC)
+            }
             
             return diaryCell
             

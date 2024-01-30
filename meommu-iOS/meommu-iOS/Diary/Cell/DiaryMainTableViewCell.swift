@@ -21,13 +21,15 @@ class DiaryMainTableViewCell: UITableViewCell {
     
     // 일기 수정 및 삭제 버튼 클로저
     var diaryReviseAction : (() -> ()) = {}
+    // 이미지 url 저장 배열
+    var imageUrls: [String] = []
     
     @IBOutlet var diaryNameLabel: UILabel!
     @IBOutlet var diaryDateLabel: UILabel!
     @IBOutlet var diaryDetailLabel: UILabel!
     @IBOutlet var diaryTitleLabel: UILabel!
     
-    
+
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
@@ -80,7 +82,7 @@ class DiaryMainTableViewCell: UITableViewCell {
 extension DiaryMainTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return imageUrls.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,8 +90,9 @@ extension DiaryMainTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiaryMainTableImageCollectionViewCell.identifier, for: indexPath) as? DiaryMainTableImageCollectionViewCell else {
             return UICollectionViewCell()
         }
-        // 더미 이미지
-        cell.imageView.image = UIImage(named: "Onboarding2")
+        
+        cell.setupImageView(imageURL: imageUrls[indexPath.row])
+        
         return cell
     }
     

@@ -25,6 +25,17 @@ class DiaryMainTableImageCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    // 셀이 재사용되기 전에 호출되는 메서드
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.prepare(image: nil)
+      }
+
+    func prepare(image: UIImage?) {
+        self.imageView.image = image
+      }
+    
     @IBAction func diaryReviseButtonTapped(_ sender: Any) {
         diaryReviseAction()
     }
@@ -36,14 +47,5 @@ class DiaryMainTableImageCollectionViewCell: UICollectionViewCell {
         }
         imageView.contentMode = .scaleAspectFill
     }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//
-//        self.prepare(image: nil)
-//      }
-//
-//    func prepare(image: UIImage?) {
-//        self.imageView.image = image
-//      }
+
 }

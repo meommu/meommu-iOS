@@ -8,9 +8,13 @@
 import UIKit
 
 class DiarySendNameViewController: UIViewController {
+    static let StoryboardName = "DiaryWrite"
+    static let identifier = "DiarySendNameViewController"
+    static let navigationIdentifier = "DiaryWriteViewController"
     
-    var diaryData: DiaryIdResponse.Data?
-    
+    // 일기 데이터
+    var diary: Diary?
+    // 일기 수정 상태 확인
     var isEdited: Bool = false
     
     
@@ -38,16 +42,33 @@ class DiarySendNameViewController: UIViewController {
         setupDelegate()
         setupButton()
         
+        setupEditedUI()
         
-        // 일기 수정하기 -> ❗️추후 다른 방식으로 수정
-        NotificationCenter.default.addObserver(self, selector: #selector(diaryEdit(_:)), name: NSNotification.Name("diaryEdit"), object: nil)
+        
     }
     
+    //MARK: - 일기 수정 VC 인스턴스 만드는 메서드
+    static func makeDiaryEditedVCInstance(diary: Diary) -> UINavigationController {
+        // 수정을 위한 일기 작성 화면 띄우기
+        let storyboard = UIStoryboard(name: DiarySendNameViewController.StoryboardName, bundle: nil)
+        let naviController = storyboard.instantiateViewController(identifier: DiarySendNameViewController.navigationIdentifier) as! UINavigationController
+        
+        // 컨트롤러는 참조 타입
+        let diaryEditedVC = naviController.viewControllers[0] as! DiarySendNameViewController
+        
+        diaryEditedVC.isEdited = true
+        diaryEditedVC.diary = diary
+        
+        return naviController
+    }
     
     //MARK: - 버튼 셋업 메서드
     private func setupButton() {
         
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        // 수정 상태일 때는 버튼 바로 활성화
+        if isEdited { return }
         
         // 작성하기 버튼 초기 상태 비활성화
         nextButton.isEnabled = false
@@ -65,20 +86,14 @@ class DiarySendNameViewController: UIViewController {
         profileView.layer.cornerRadius = 8
     }
     
-    @objc func diaryEdit(_ notification: Notification) {
-        guard let diary = notification.userInfo?["diary"] as? DiaryIdResponse.Data else { return }
-        
-        // 일기 데이터 프로터피에 저장
-        self.diaryData = diary
+    //MARK: - 일기 수정 중일 때 UI 셋업 메서드
+    func setupEditedUI() {
+        guard self.isEdited else { return }
         
         // 일기 데이터를 화면에 표시
-        self.nameTextField.text = diary.dogName
+        self.nameTextField.text = self.diary?.dogName
         
-        // 일기 수정하기 버튼 클릭
-        self.isEdited = true
     }
-    
-    
     
     
     //MARK: - 백버튼 탭 메서드
@@ -87,26 +102,29 @@ class DiarySendNameViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        // 이름이 비어있으면 버튼 비활성화
         nextButton.isEnabled = !(textField.text?.isEmpty ?? true)
     }
     
-    //MARK: - 다음 버튼
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        
-        
-            
-            // ❗️다음 화면에 일기가 수정 상황이면 데이터 전달
-            
-        }
-    
+    //MARK: - prepare 메서드
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.destination is DiaryWriteViewController {
             guard let vc = segue.destination as? DiaryWriteViewController else { return }
+            
+            // 수정 시에는 일기 데이터 전달
+            if isEdited {
+                vc.diary = diary
+                vc.isEdited = true
+                
+                vc.dogName = diary?.dogName
+                
+                return
+            }
             
             // nameTextField의 값 가져오기
             guard let dogName = nameTextField.text else { return }
             
-            vc.diaryData = diaryData
             vc.dogName = dogName
         }
     }
@@ -127,3 +145,4 @@ extension DiarySendNameViewController: UITextFieldDelegate {
     }
     
 }
+

@@ -113,7 +113,7 @@
                                         <viewLayoutGuide key="safeArea" id="a6t-UP-mBu"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <connections>
-                                            <segue destination="0qe-i2-VpE" kind="show" identifier="showDetail" id="YrS-HM-rEp"/>
+                                            <segue destination="0qe-i2-VpE" kind="show" identifier="ToDiaryDetailViewController" id="YrS-HM-rEp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

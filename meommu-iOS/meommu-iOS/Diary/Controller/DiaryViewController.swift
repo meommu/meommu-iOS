@@ -27,7 +27,7 @@ class DiaryViewController: UIViewController {
     }()
     
     // 일기 데이터를 받을 프로퍼티 선언
-    var diaries: [DiaryResponse.Data.Diary] = []
+    var diaries: [Diary] = []
     var imageResponses: [ImageResponse.Data.Image] = []
     
     // TableViewCell Xib 파일 이름 저장 프로퍼티
@@ -69,9 +69,11 @@ class DiaryViewController: UIViewController {
         fetchData(year: currentYear, month: currentMonth)
         
         // NotificationCenter를 통해 일기 삭제 알림 받기
+        //⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshData), name: NSNotification.Name("diaryDeleted"), object: nil)
         
         // NotificationCenter를 통해 일기 월별 필터링 알림 받기
+        //⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
         NotificationCenter.default.addObserver(self, selector: #selector(handleDidPickMonth(_:)), name: Notification.Name("DidPickMonth"), object: nil)
     }
     
@@ -93,6 +95,7 @@ class DiaryViewController: UIViewController {
         fetchData(year: currentYear, month: currentMonth)
     }
     
+    // 일기 데이터 새로고침 메서드
     @objc func refreshData() {
         fetchData(year: currentYear, month: currentMonth)
     }
@@ -213,9 +216,9 @@ class DiaryViewController: UIViewController {
     //MARK: - prepare 메서드
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 셀이 선택되고 디테일 뷰가 열리기 전 특정 일기의 다이어리 데이터와 이미지 데이터를 디테일 뷰에 전달
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "ToDiaryDetailViewController" {
             if let diaryDetailVC = segue.destination as? DiaryDetailViewController,
-               let selectedDiary = sender as? DiaryResponse.Data.Diary {
+               let selectedDiary = sender as? Diary {
                 
                 // 선택된 다이어리의 데이터를 디테일 뷰컨에 전달
                 diaryDetailVC.diary = selectedDiary
@@ -225,7 +228,7 @@ class DiaryViewController: UIViewController {
                 
                 print("이미지 딕셔너리: \(imageResponseDict)")
                 
-                // 선택되니 일기의 이미지 URL을 찾아서 디테일VC에 넘겨줍니다.
+                // 선택된 일기의 이미지 URL을 찾아서 디테일VC에 넘겨줍니다.
                 let imageUrls = selectedDiary.imageIds.compactMap { imageId in
                     imageResponseDict[imageId]
                 }
@@ -277,18 +280,17 @@ extension DiaryViewController: UITableViewDataSource {
                 }
             }
             
+            print("cell url \(diary.dogName): \(imageUrls)")
             // 해당 셀에 이미지 url 배열 전달
             diaryCell.imageUrls = imageUrls
             
-            // 일기 셀의 수벙 버튼에 액션 추가해주기 -> 수정 바텀 시트 띄우기
+            // 일기 셀의 수정 버튼에 액션 추가해주기 -> 수정 바텀 시트 띄우기
             diaryCell.diaryReviseAction = {
+                
+                // 수정, 삭제와 관련된 바텀 시트 생성 + 다이어리 전달
+                let diaryReviseVC = DiaryReviseViewController.makeDiaryRevieceVCInstanse(diary: diary)
 
-                let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
-                let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
-
-                // 일기 수정 뷰컨에게 다이어리 id 전달
-                diaryReviseVC.diaryId = diary.id
-
+                // 바텀 시트 띄우기
                 self.presentPanModal(diaryReviseVC)
             }
             
@@ -318,7 +320,7 @@ extension DiaryViewController: UITableViewDelegate {
         
         // 선택된 셀의 인덱스를 통해 다이어리 배열에서 특정 일기 데이터를 넘겨준다.
         let selectedDiary = diaries[indexPath.row]
-        performSegue(withIdentifier: "showDetail", sender: selectedDiary)
+        performSegue(withIdentifier: "ToDiaryDetailViewController", sender: selectedDiary)
     }
     
     

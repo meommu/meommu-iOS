@@ -18,6 +18,7 @@
 		26215E442AB9E5C400F28FBF /* LoginThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */; };
 		2624053D2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */; };
 		2624053E2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */; };
+		262405402B6A5C7C00BA310A /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624053F2B6A5C7C00BA310A /* Encodable.swift */; };
 		264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */; };
 		264BF3B12B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */; };
 		264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */; };
@@ -47,7 +48,6 @@
 		26A06DE32AFA27610039813F /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A06DE12AFA27610039813F /* AlertViewController.xib */; };
 		26A06DE52AFC01580039813F /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A06DE42AFC01580039813F /* AnnouncementTableViewCell.swift */; };
 		26F2D8D92B5AA71200EAD813 /* LDSwiftEventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 26F2D8D82B5AA71200EAD813 /* LDSwiftEventSource */; };
-		26F2D8DB2B5AA87C00EAD813 /* SseEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F2D8DA2B5AA87C00EAD813 /* SseEventHandler.swift */; };
 		26F2D8DF2B5BA8D600EAD813 /* DiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F2D8DE2B5BA8D600EAD813 /* DiaryAPI.swift */; };
 		26F2D8E12B5BAF8600EAD813 /* DiaryImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F2D8E02B5BAF8600EAD813 /* DiaryImageAPI.swift */; };
 		F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F907437F2AB73CAD00F7C503 /* Diary.storyboard */; };
@@ -117,6 +117,7 @@
 		26215E432AB9E5C400F28FBF /* LoginThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdViewController.swift; sourceTree = "<group>"; };
 		2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		2624053F2B6A5C7C00BA310A /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addLeftPadding.swift"; sourceTree = "<group>"; };
 		264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryFirstViewController.swift; sourceTree = "<group>"; };
 		264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySecondViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +151,6 @@
 		26A06DE12AFA27610039813F /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		26A06DE42AFC01580039813F /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		26A06DE62AFC01C30039813F /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
-		26F2D8DA2B5AA87C00EAD813 /* SseEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SseEventHandler.swift; sourceTree = "<group>"; };
 		26F2D8DE2B5BA8D600EAD813 /* DiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAPI.swift; sourceTree = "<group>"; };
 		26F2D8E02B5BAF8600EAD813 /* DiaryImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageAPI.swift; sourceTree = "<group>"; };
 		F907437F2AB73CAD00F7C503 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
@@ -286,6 +286,7 @@
 				264BF3C32B18E80700FCFBEC /* ToastManager.swift */,
 				264BF3C52B19B8B500FCFBEC /* KeyChain.swift */,
 				268608542B4561AC00FA823E /* Delegate.swift */,
+				2624053F2B6A5C7C00BA310A /* Encodable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -439,7 +440,6 @@
 				26F2D8DE2B5BA8D600EAD813 /* DiaryAPI.swift */,
 				26F2D8E02B5BAF8600EAD813 /* DiaryImageAPI.swift */,
 				268608462B2DB04300FA823E /* GPTDiaryAPI.swift */,
-				26F2D8DA2B5AA87C00EAD813 /* SseEventHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -626,6 +626,7 @@
 				F959853D2B0F5C1B001F28F1 /* AnnouncementViewController.swift in Sources */,
 				26215E402AB8A02600F28FBF /* LoginFirstViewController.swift in Sources */,
 				F937BCF92ABC655300D60041 /* StepOneViewController.swift in Sources */,
+				262405402B6A5C7C00BA310A /* Encodable.swift in Sources */,
 				264BF3B72B12771100FCFBEC /* PasswordRecoveryFourthViewController.swift in Sources */,
 				F90CDEAB2ABFF947008ED1A2 /* StepOneTableViewCell.swift in Sources */,
 				269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */,
@@ -650,7 +651,6 @@
 				268608512B3AD41600FA823E /* StepTwoCustomTextViewController.swift in Sources */,
 				26215E3E2AB895C500F28FBF /* Helper.swift in Sources */,
 				F9E615F22B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift in Sources */,
-				26F2D8DB2B5AA87C00EAD813 /* SseEventHandler.swift in Sources */,
 				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,
 				268608472B2DB04300FA823E /* GPTDiaryAPI.swift in Sources */,
 				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,

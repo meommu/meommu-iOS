@@ -42,6 +42,11 @@ class DiaryMainTableViewCell: UITableViewCell {
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // 일반적으로 이미지가 바뀌는 것처럼 보이는 현상을 없애기 위해서 실행
+//        self.imageCollectionView.collectionViewLayou
+    }
     
     private func registerXib(){
         imageCollectionView.register(UINib(nibName: DiaryMainTableImageCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DiaryMainTableImageCollectionViewCell.identifier)
@@ -92,6 +97,7 @@ extension DiaryMainTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         }
         
         cell.setupImageView(imageURL: imageUrls[indexPath.row])
+        cell.diaryReviseAction = self.diaryReviseAction
         
         return cell
     }

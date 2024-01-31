@@ -5,21 +5,29 @@
 //  Created by 이예빈 on 2023/09/19.
 //
 
-import UIKit
-import PhotosUI
-import MobileCoreServices
-import UniformTypeIdentifiers
 import Alamofire
-import PanModal
 import LDSwiftEventSource
+import MobileCoreServices
+import PhotosUI
+import PanModal
+import UIKit
+import UniformTypeIdentifiers
 
 
 class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
     
+    // 일기 데이터
+    var diary: Diary?
+    // 일기 수정 상태 확인
+    var isEdited: Bool = false
+    
+    // 플레이스 홀더 유무 판단
+    private var hasPlaceholder = true
+    
     // SSE 통신을 위한 인스턴스
     private var sseEventSource: EventSource?
     
-    // 유저가 선택한 가이드 데이터
+    // 유저가 선택한 가이드 전체 데이터 배열
     var guideData: [String] = [] {
         willSet(newVal) {
             self.guideDataString = ""
@@ -47,13 +55,8 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         return "강아지의 일기를 작성해 주세요.(0/1000)"
     }
     
-    // 플레이스 홀더 유뮤
-    var hasPlaceholder = true
     
     
-    // 일기 수정 상황을 판단하는 프로퍼티 & 수정 시 바뀌는 일기 데이터
-    var diaryData: DiaryIdResponse.Data?
-    var isEdited: Bool?
     
     // 이미지 캐시 생성
     let imageCache = NSCache<NSString, UIImage>()
@@ -71,7 +74,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         
         setupDelegate()
         
-       
+        
         diaryContextTextView.text = self.textViewPlaceholder
         diaryContextTextView.textColor = .lightGray
         
@@ -79,9 +82,14 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         setAvailableDate()
         createPickerView()
         
+        updateUIBasedOnEditStatus()
+        
+    }
+    
+    func updateUIBasedOnEditStatus() {
         // isEdited가 true인 경우 데이터 설정
-        if let isEdited = isEdited, isEdited {
-            if let date = diaryData?.date {
+        if isEdited {
+            if let date = diary?.date {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 if let actualDate = formatter.date(from: date) {
@@ -92,11 +100,11 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                     dateLabel.text = String(format: "%02d", components.day ?? 0) + "일"
                 }
             }
-            diaryTitleTextField.text = diaryData?.title
-            diaryContextTextView.text = diaryData?.content
+            diaryTitleTextField.text = diary?.title
+            diaryContextTextView.text = diary?.content
             
             // 이미지 ID를 사용하여 이미지 정보 가져오기
-            if let imageIds = diaryData?.imageIds {
+            if let imageIds = diary?.imageIds {
                 var params: Parameters = [:]
                 for id in imageIds {
                     params["id"] = id
@@ -137,9 +145,80 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     }
     
     
+    //MARK: - createDiary 메서드
+    private func createDiary(title: String, content: String, dogName: String, imageIds: [Int]) {
+        
+        let date = "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))"
+        
+        let createREQ = DiaryCreateRequest(date: date, dogName: dogName, title: title, content: content, imageIds: imageIds)
+        
+        DiaryAPI.shared.createDiary(with: createREQ) { result in
+            switch result {
+            case .success(let response):
+                
+                print("create Diary: \(response)")
+                
+                // API 호출이 완료되면 메인 화면으로 이동
+                DispatchQueue.main.async { [weak self] in
+                    let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+                    let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+                    self?.changeRootViewController(newViewController)
+                }
+                
+            case .failure(let error):
+                // 400~500 에러
+                print("Error: \(error.message)")
+            }
+        }
+    }
+    
+    
+    //MARK: - 일기 수정 메서드
+    private func editDiary(diaryId: Int, title: String, content: String, dogName: String, imageIds: [Int]) {
+        
+        let date = "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))"
+        
+        let editREQ = DiaryEditRequest(date: date, dogName: dogName, title: title, content: content, imageIds: imageIds)
+        
+        DiaryAPI.shared.editDiary(diaryId: diaryId, with: editREQ) { result in
+            switch result {
+            case .success(let response):
+                
+                print("create Diary: \(response)")
+                
+                // API 호출이 완료되면 메인 화면으로 이동
+                DispatchQueue.main.async { [weak self] in
+                    let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
+                    let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
+                    self?.changeRootViewController(newViewController)
+                }
+                
+            case .failure(let error):
+                // 400~500 에러
+                print("Error: \(error.message)")
+            }
+        }
+        
+    }
+    
     //MARK: - 이전 버튼 탭 메서드
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+
+    
+    
+    //MARK: - 멈무일기 가이드 버튼 탭 메서드
+    @IBAction func diaryGuideButtonTapped(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
+        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "DiaryGuideWirtePageViewController") as! DiaryGuideWirtePageViewController
+        
+        // userGuide 대리자 선정
+        stepOneVC.writeVCDelegate = self
+        
+        presentPanModal(stepOneVC)
     }
     
     //MARK: - 이미지 배열에 전달해주는 메서드
@@ -168,71 +247,6 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                 completion()
             }
         }
-    }
-    
-    
-    
-    
-    
-    //MARK: - 일기 수정 요청 메서드
-    private func editDiary(diaryId: Int, title: String, content: String, dogName: String, imageIds: [Int]) {
-        
-        guard let accessToken = getAccessTokenFromKeychain() else {
-            print("Access Token not found.")
-            return
-        }
-        
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "Authorization": "Bearer \(accessToken)"
-        ]
-        
-        let parameters: [String: Any] = [
-            "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
-            "dogName": dogName,
-            "title": title,
-            "content": content,
-            "imageIds": imageIds
-        ]
-        
-        let url = "https://comibird.site/api/v1/diaries/\(diaryId)"
-        
-        AF.request(url,
-                   method: .put,
-                   parameters: parameters,
-                   encoding: JSONEncoding.default,
-                   headers: headers)
-        .response { [self] response in
-            debugPrint(response)
-            
-            
-            // API 호출이 완료되면 메인 화면으로 이동
-            DispatchQueue.main.async { [weak self] in
-                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
-                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
-                self?.changeRootViewController(newViewController)
-            }
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //MARK: - 멈무일기 가이드 버튼 탭 메서드
-    @IBAction func diaryGuideButtonTapped(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "DiaryGuide", bundle: nil)
-        let stepOneVC = storyboard.instantiateViewController(withIdentifier: "DiaryGuideWirtePageViewController") as! DiaryGuideWirtePageViewController
-        
-        // userGuide 대리자 선정
-        stepOneVC.writeVCDelegate = self
-        
-        presentPanModal(stepOneVC)
     }
     
     
@@ -303,6 +317,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         }
     }
     
+    //MARK: - 앨범 접근 권한 설정 메서드
     // 권한 설정
     private func showPermissionAlert() {
         let alert = UIAlertController(title:"앨범 접근 권한 필요", message:"사진을 선택하기 위해 앨범 접근 권한이 필요합니다. 설정에서 앨범 접근 권한을 허용해주세요.", preferredStyle:.alert)
@@ -451,7 +466,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     
     //❗️사진, 제목, 글이 비어있을 때 얼럿 띄우기 기능 추가하기
     @IBAction func diaryWriteButtonTapped(_ sender: Any) {
-        
+        print(#function)
         guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
         var uploadedImageIds: [Int] = []
@@ -464,13 +479,18 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         
         
         if orderedImageArray.isEmpty {
+            print(111111111)
             // 이미지가 없는 경우, 바로 api 호출
-            if let isEdited = isEdited, isEdited {
-                editDiary(diaryId: diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+            if isEdited {
+                print(2222222222222)
+                guard let diaryId = diary?.id else { return }
+                editDiary(diaryId: diaryId, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
             } else {
                 createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
             }
         } else {
+            // 🔥 일기 수정 시: Error: 알 수 없는 오류가 발생했습니다.
+ 
             // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
             orderedImageArray.forEach { image in
                 imageUploadGroup.enter()
@@ -510,8 +530,8 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
             }
             
             imageUploadGroup.notify(queue: .main) {
-                if let isEdited = self.isEdited, isEdited {
-                    self.editDiary(diaryId: self.diaryData?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                if self.isEdited {
+                    self.editDiary(diaryId: self.diary?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
                 } else {
                     self.createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
                 }
@@ -527,42 +547,8 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         return accessToken
     }
     
-    private func createDiary(title: String, content: String, dogName: String, imageIds: [Int]) {
-        
-        guard let accessToken = getAccessTokenFromKeychain() else {
-            print("Access Token not found.")
-            return
-        }
-        
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "Authorization": "Bearer \(accessToken)"
-        ]
-        
-        let parameters: [String: Any] = [
-            "date": "\(yearLabel.text!.dropLast(1))-\(monthLabel.text!.dropLast(1))-\(dateLabel.text!.dropLast(1))",
-            "dogName": dogName,
-            "title": title,
-            "content": content,
-            "imageIds": imageIds
-        ]
-        
-        AF.request("https://comibird.site/api/v1/diaries",
-                   method: .post,
-                   parameters: parameters,
-                   encoding: JSONEncoding.default,
-                   headers: headers)
-        .response { response in
-            debugPrint(response)
-            
-            // API 호출이 완료되면 메인 화면으로 이동
-            DispatchQueue.main.async { [weak self] in
-                let newStoryboard = UIStoryboard(name: "Diary", bundle: nil)
-                let newViewController = newStoryboard.instantiateViewController(identifier: "DiaryViewController")
-                self?.changeRootViewController(newViewController)
-            }
-        }
-    }
+
+    
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수
     func changeRootViewController(_ viewControllerToPresent: UIViewController) {
@@ -586,25 +572,25 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
 //MARK: - UITextViewDelegate 확장
 extension DiaryWriteViewController: UITextViewDelegate {
     
-        func textViewDidBeginEditing(_ textView: UITextView) {
-            // 플레이스 홀더를 갖고 있으면 지우기.
-            if textView.text == textViewPlaceholder {
-                textView.text.removeAll()
-                textView.textColor = UIColor(named: "Gray500")
-                
-                self.hasPlaceholder = false
-            }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        // 플레이스 홀더를 갖고 있으면 지우기.
+        if textView.text == textViewPlaceholder {
+            textView.text.removeAll()
+            textView.textColor = UIColor(named: "Gray500")
+            
+            self.hasPlaceholder = false
         }
+    }
     
-        func textViewDidEndEditing(_ textView: UITextView) {
-            // 텍스트 뷰가 비어있으면 플레이스홀더 추가하기.
-            if textView.text.isEmpty {
-                textView.text = textViewPlaceholder
-                textView.textColor = UIColor(named: "Gray300")
-                
-                self.hasPlaceholder = true
-            }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        // 텍스트 뷰가 비어있으면 플레이스홀더 추가하기.
+        if textView.text.isEmpty {
+            textView.text = textViewPlaceholder
+            textView.textColor = UIColor(named: "Gray300")
+            
+            self.hasPlaceholder = true
         }
+    }
 }
 
 // Date Picker 설정
@@ -696,15 +682,13 @@ extension DiaryWriteViewController: EventHandler {
         
         // 플레이스 홀더만 남아있으면
         if self.hasPlaceholder {
-
+            
             DispatchQueue.main.async {
                 //플레이스홀더를 삭제한다.
                 self.diaryContextTextView.text.removeAll()
             }
-
+            
         }
-        
-        
     }
     
     func onClosed() {
@@ -719,7 +703,7 @@ extension DiaryWriteViewController: EventHandler {
         
         var content: String?
         var finishReason: String?
-       
+        
         
         // JSON 문자열을 Data로 변환
         guard let jsonData = messageEvent.data.data(using: .utf8) else {

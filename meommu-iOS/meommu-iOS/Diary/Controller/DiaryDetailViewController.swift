@@ -30,7 +30,7 @@ class DiaryDetailViewController: UIViewController {
     
     
     // 특정 일기 데이터 저장 프로퍼티
-    var diary : DiaryResponse.Data.Diary?
+    var diary : Diary?
     
     // 이미지 url 저장 프로포티
     var imageUrls: [String] = []
@@ -46,8 +46,14 @@ class DiaryDetailViewController: UIViewController {
         setupView()
         
         // NotificationCenter를 통해 알림 받기
+        // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
         NotificationCenter.default.addObserver(self, selector: #selector(self.diaryDeleted), name: NSNotification.Name("diaryDeleted"), object: nil)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("뷰윌\(imageScrollView.frame)")
     }
     
     //MARK: - 이미지 관련 스크롤 뷰 셋업 메서드
@@ -101,11 +107,11 @@ class DiaryDetailViewController: UIViewController {
     
     //MARK: - 일기 수정 버튼 탭 메서드
     @IBAction func diaryReviseButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "DiaryRevise", bundle: nil)
-        let diaryReviseVC = storyboard.instantiateViewController(withIdentifier: "DiaryReviseViewController") as! DiaryReviseViewController
         
-        // 해당 일기의 id 값 전달
-        diaryReviseVC.diaryId = diary?.id
+        guard let diary else { return }
+        
+        // 수정 바텀시트 만들고, 일기 전달
+        let diaryReviseVC = DiaryReviseViewController.makeDiaryRevieceVCInstanse(diary: diary)
         
         presentPanModal(diaryReviseVC)
     }
@@ -123,10 +129,7 @@ class DiaryDetailViewController: UIViewController {
         print(imageScrollView.bounds)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("뷰윌\(imageScrollView.frame)")
-    }
+
 }
 
 //MARK: - UIScrollViewDelegate 확장

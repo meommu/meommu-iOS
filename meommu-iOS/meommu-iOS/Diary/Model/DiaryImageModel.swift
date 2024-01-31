@@ -7,28 +7,29 @@
 
 import Foundation
 
+//MARK: - 이미지 다건 조회
+// 이미지 다건 조회 REQ
 struct ImageRequest: Codable {
     var imageIds: [Int]
 }
 
-
-
-//MARK: - 이미지 조회 RES 모델
+// 이미지 다건 조회 RES
 struct ImageResponse: Codable {
+    let code: String
+    let message: String
+    let data: Data?
     
     struct Data: Codable {
+        let images: [Image]
+        
         struct Image: Codable {
             let id: Int
             let url: String
         }
-
-        let images: [Image]
     }
-
-    let code: String
-    let message: String
-    let data: Data?
 }
+
+//MARK: - 
 
 struct ImageUploadResponse: Codable {
     let code: String

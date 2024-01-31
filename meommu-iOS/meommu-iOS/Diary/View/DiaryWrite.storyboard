@@ -308,12 +308,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3426" y="25"/>
+            <point key="canvasLocation" x="3420" y="39"/>
         </scene>
         <!--누구에게 보낼 건가요?-->
         <scene sceneID="pjf-aH-EcH">
             <objects>
-                <viewController id="j5M-hJ-78s" customClass="DiarySendNameViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiarySendNameViewController" id="j5M-hJ-78s" customClass="DiarySendNameViewController" customModule="meommu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HsV-lL-9ay">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,7 +368,6 @@
                                     <color key="baseBackgroundColor" name="primaryA"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="nextButtonTapped:" destination="j5M-hJ-78s" eventType="touchUpInside" id="8Xs-Ng-tgf"/>
                                     <segue destination="Y6W-OH-hqX" kind="show" identifier="DiaryWriteViewController" id="6c4-hB-Q00"/>
                                 </connections>
                             </button>

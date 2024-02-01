@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "three-dots-vertical.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "three-dots-vertical.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

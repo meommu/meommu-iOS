@@ -19,6 +19,10 @@ class DiaryImageAPI {
     // 이미지 아이디 값으로 이미지 URL을 받는 메서드
     func getAllDiaryImage(with req: ImageRequest, completion: @escaping (Result<ImageResponse, ErrorResponse>) -> Void) {
         
+        
+        
+        // id와 url을 캐쉬처리해서 캐쉬 저장되어 있으면 통신 안하고 리턴
+        
 
         let url = "\(baseURL)/api/v1/images?" + req.imageIds.map { "id=\($0)" }.joined(separator: "&")
         
@@ -39,5 +43,4 @@ class DiaryImageAPI {
         }
         
     }
-    
 }

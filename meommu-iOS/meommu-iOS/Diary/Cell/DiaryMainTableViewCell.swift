@@ -22,14 +22,16 @@ class DiaryMainTableViewCell: UITableViewCell {
     // 일기 수정 및 삭제 버튼 클로저
     var diaryReviseAction : (() -> ()) = {}
     // 이미지 url 저장 배열
-    var imageUrls: [String] = []
+    var imageUrls: [String] = []{
+        willSet{
+            print("cell")
+        }
+    }
     
     @IBOutlet var diaryNameLabel: UILabel!
     @IBOutlet var diaryDateLabel: UILabel!
     @IBOutlet var diaryDetailLabel: UILabel!
     @IBOutlet var diaryTitleLabel: UILabel!
-    
-
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
@@ -44,8 +46,11 @@ class DiaryMainTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        // 일반적으로 이미지가 바뀌는 것처럼 보이는 현상을 없애기 위해서 실행
-//        self.imageCollectionView.collectionViewLayou
+        print("reuse")
+        // ❗️컬렉션 뷰의 이미지가 재사용되기 전 reload
+        DispatchQueue.main.async {
+            self.imageCollectionView.reloadData()
+        }
     }
     
     private func registerXib(){
@@ -96,7 +101,8 @@ extension DiaryMainTableViewCell: UICollectionViewDataSource, UICollectionViewDe
             return UICollectionViewCell()
         }
         
-        cell.setupImageView(imageURL: imageUrls[indexPath.row])
+        cell.setupCell(imageURL: imageUrls[indexPath.row], count: indexPath.row + 1, total: imageUrls.count)
+        
         cell.diaryReviseAction = self.diaryReviseAction
         
         return cell
@@ -124,32 +130,3 @@ extension DiaryMainTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         }
 }
 
-
-
-
-
-// 셀이 재사용되기 전에 호출되는 메서드
-//override func prepareForReuse() {
-//    super.prepareForReuse()
-//    // 일반적으로 이미지가 바뀌는 것처럼 보이는 현상을 없애기 위해서 실행
-//    //        self.diaryImageView.image = nil
-//}
-
-//MARK: - 이미지 설정 메서드 + 이미지 개수 표
-//    func setImageUrls(_ urls: [String]) {
-//        if let firstUrl = urls.first, let url = URL(string: firstUrl) {
-//            diaryImageView.af.setImage(withURL: url)
-//        }
-//
-//        // 이미지 카운트 ❓
-//        if(urls.count > 0){
-//            imagePageLabel.text = "1 / \(urls.count)"
-//        } else {
-//            imagePageLabel.text = "0 / \(urls.count)"
-//        }
-//    }
-
-//MARK: - 다이어리 수정 버튼 탭 메서드
-//    @IBAction func diaryReviseButtonTapped(_ sender: Any) {
-//        diaryReviseAction()
-//    }

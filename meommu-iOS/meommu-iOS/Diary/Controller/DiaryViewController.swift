@@ -12,6 +12,13 @@ import PanModal
 
 class DiaryViewController: UIViewController {
     
+    // TableViewCell Xib 파일 이름 저장 프로퍼티
+    let emptyCellName = "DiaryMainEmptyTableViewCell"
+    let emptyCellReuseIdentifire = "DiaryEmptyCell"
+    
+    let mainCellName = "DiaryMainTableViewCell"
+    let mainCellReuseIdentifire = "DiaryMainCell"
+    
     // 현재 year 저장 프로퍼티
     lazy var currentYear: String = {
         let formatter = DateFormatter()
@@ -30,12 +37,6 @@ class DiaryViewController: UIViewController {
     var diaries: [Diary] = []
     var imageResponses: [ImageResponse.Data.Image] = []
     
-    // TableViewCell Xib 파일 이름 저장 프로퍼티
-    let emptyCellName = "DiaryMainEmptyTableViewCell"
-    let emptyCellReuseIdentifire = "DiaryEmptyCell"
-    
-    let mainCellName = "DiaryMainTableViewCell"
-    let mainCellReuseIdentifire = "DiaryMainCell"
     
     // 메인 로고 버튼
     @IBOutlet var meommuMainButton: UIBarButtonItem!
@@ -236,6 +237,7 @@ class DiaryViewController: UIViewController {
                 print("이미지 URLs: \(imageUrls)")
                 diaryDetailVC.imageUrls = imageUrls
             }
+            
         }
     }
 
@@ -249,7 +251,7 @@ extension DiaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return diaries.isEmpty ? 1 : diaries.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if diaries.isEmpty {

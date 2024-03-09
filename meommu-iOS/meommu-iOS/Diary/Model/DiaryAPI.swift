@@ -96,9 +96,10 @@ class DiaryAPI {
         
     }
     
+    //MARK: 일기 수정 메서드
     func editDiary(diaryId: Int, with diary: DiaryEditRequest, completion: @escaping (Result<DiaryEditResponse, ErrorResponse>) -> Void) {
         
-        let url = "\(baseURL)/api/v1/diaries\(diaryId)"
+        let url = "\(baseURL)/api/v1/diaries/\(diaryId)"
         
         guard let authorizationHeader = KeyChain.shared.getAuthorizationHeader() else {
             return print("토큰 오류")
@@ -120,7 +121,7 @@ class DiaryAPI {
                     completion(.failure(apiError))
                 } else {
                     // 서버에서 에러 응답이 아닌 다른 오류가 발생한 경우
-                    completion(.failure(ErrorResponse(code: "UNKNOWN_ERROR", message: "알 수 없는 오류가 발생했습니다.", data: nil)))
+                    completion(.failure(ErrorResponse(code: "UNKNOWN_ERROR0000", message: "알 수 없는 오류가 발생했습니다.", data: nil)))
                 }
             }
         }

@@ -14,7 +14,10 @@ import UIKit
 import UniformTypeIdentifiers
 
 
-class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PHPickerViewControllerDelegate {
+class DiaryWriteViewController: UIViewController, UITextFieldDelegate {
+    
+    // 이미지 최대 저장 수
+    private let maxImageCount = 5
     
     // 일기 데이터
     var diary: Diary?
@@ -86,7 +89,9 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         
     }
     
+    //MARK: - 수정 상태 확인 후, 뷰 띄우기
     func updateUIBasedOnEditStatus() {
+        
         // isEdited가 true인 경우 데이터 설정
         if isEdited {
             if let date = diary?.date {
@@ -137,6 +142,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     
     //MARK: - 델리게이트 셋업 메서드
     private func setupDelegate() {
+        // collectionvview delegate
         diaryImageCollectionView.delegate = self
         diaryImageCollectionView.dataSource = self
         
@@ -195,7 +201,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
                 
             case .failure(let error):
                 // 400~500 에러
-                print("Error: \(error.message)")
+                print("Error(\(error.code): \(error.message)")
             }
         }
         
@@ -206,7 +212,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    
     
     
     //MARK: - 멈무일기 가이드 버튼 탭 메서드
@@ -260,6 +266,8 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         return 6
     }
     
+    
+    //MARK: - ❌❌❌❌
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = diaryImageCollectionView.dequeueReusableCell(withReuseIdentifier: "DiaryImageButtonCell", for: indexPath) as! DiaryImageButtonCollectionViewCell
@@ -290,32 +298,7 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
         }
     }
     
-    @objc func addImage() {
-        var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 5 - imageArray.count
-        configuration.filter = .images
-        
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = self
-        present(picker, animated: true, completion: nil)
-    }
     
-    
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        for result in results {
-            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (object, error) in
-                if let image = object as? UIImage {
-                    DispatchQueue.main.async {
-                        // 이미지를 배열의 맨 뒤에 추가
-                        self?.imageArray.append(image)
-                        self?.diaryImageCollectionView.reloadData()
-                    }
-                }
-            }
-        }
-    }
     
     //MARK: - 앨범 접근 권한 설정 메서드
     // 권한 설정
@@ -464,91 +447,93 @@ class DiaryWriteViewController: UIViewController, UITextFieldDelegate, UICollect
     // 일기 내용 작성 완료
     
     
+    //MARK: -일기쓰기 완료 버튼
     //❗️사진, 제목, 글이 비어있을 때 얼럿 띄우기 기능 추가하기
     @IBAction func diaryWriteButtonTapped(_ sender: Any) {
         print(#function)
-        guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName else { return }
         
+        // 수정 상황에 따라 이미지 순서 반전해서 저장
+        let orderedImageArray = (isEdited == true) ? imageArray : imageArray.reversed()
+        
+        
+        // 이미지가 비어있는지 확인
+        guard !orderedImageArray.isEmpty else {
+            // 이미지 없을 경우 얼럿 띄우기
+            ToastManager.showToastAboveButton(message: "이미지는 필수로 업로드해야합니다.", font: .systemFont(ofSize: 16, weight: .medium), aboveUIButton: diaryGuideButton, UIButtonTopMargin: 35, in: self)
+            
+            return
+        }
+        
+        // 일기가 비어있는지 확인
+        guard let title = diaryTitleTextField.text, let content = diaryContextTextView.text, let dogName = dogName, title != "", content != "" else {
+            ToastManager.showToastAboveButton(message: "다이어리를 완성시켜주세요.", font: .systemFont(ofSize: 16, weight: .medium), aboveUIButton: diaryGuideButton, UIButtonTopMargin: 35, in: self)
+            
+            return
+        }
+        
+        
+        //MARK: 이미지 업로드
         var uploadedImageIds: [Int] = []
         let imageUploadGroup = DispatchGroup()
         
         
-        // 이미지 순서 반전
-        let orderedImageArray = isEdited == true ? imageArray : imageArray.reversed()
-        
-        
-        
-        if orderedImageArray.isEmpty {
-            print(111111111)
-            // 이미지가 없는 경우, 바로 api 호출
-            if isEdited {
-                print(2222222222222)
-                guard let diaryId = diary?.id else { return }
-                editDiary(diaryId: diaryId, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
-            } else {
-                createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
-            }
-        } else {
-            // 🔥 일기 수정 시: Error: 알 수 없는 오류가 발생했습니다.
- 
-            // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
-            orderedImageArray.forEach { image in
-                imageUploadGroup.enter()
+        // 이미지가 있는 경우, 이미지 업로드 후 일기 생성 API 호출
+        orderedImageArray.forEach { image in
+            imageUploadGroup.enter()
+            
+            AF.upload(multipartFormData: { multipartFormData in
+                let imageData: Data
+                let mimeType: String
                 
-                AF.upload(multipartFormData: { multipartFormData in
-                    let imageData: Data
-                    let mimeType: String
-                    
-                    if let jpegData = image.jpegData(compressionQuality: 0.5) {
-                        // JPEG으로 변환 가능하면서 30MB 이하인 경우
-                        guard jpegData.count <= 30 * 1024 * 1024 else { return }
-                        imageData = jpegData
-                        mimeType = "image/jpeg"
-                    } else if let pngData = image.pngData() {
-                        // PNG로 변환 가능하면서 30MB 이하인 경우
-                        guard pngData.count <= 30 * 1024 * 1024 else { return }
-                        imageData = pngData
-                        mimeType = "image/png"
-                    } else {
-                        // 변환 불가능한 경우, 기본적으로 JPEG로 설정
-                        imageData = image.jpegData(compressionQuality: 0.5) ?? Data()
-                        mimeType = "image/jpeg"
-                    }
-                    
-                    multipartFormData.append(imageData, withName: "images", fileName: "image.\(mimeType)", mimeType: mimeType)
-                    multipartFormData.append("DIARY_IMAGE".data(using: .utf8)!, withName: "category")
-                }, to: "https://comibird.site/api/v1/images")
-                .responseDecodable(of: ImageUploadResponse.self) { response in
-                    switch response.result {
-                    case .success(let imageUploadResponse):
-                        uploadedImageIds.append(contentsOf: imageUploadResponse.data.images.map { $0.id })
-                    case .failure(let error):
-                        print("Image Upload Error: \(error)")
-                    }
-                    imageUploadGroup.leave()
-                }
-            }
-            
-            imageUploadGroup.notify(queue: .main) {
-                if self.isEdited {
-                    self.editDiary(diaryId: self.diary?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                // 이미지 변환
+                if let jpegData = image.jpegData(compressionQuality: 0.5) {
+                    // JPEG으로 변환 가능하면서 30MB 이하인 경우
+                    guard jpegData.count <= 30 * 1024 * 1024 else { return }
+                    imageData = jpegData
+                    mimeType = "image/jpeg"
+                } else if let pngData = image.pngData() {
+                    // PNG로 변환 가능하면서 30MB 이하인 경우
+                    guard pngData.count <= 30 * 1024 * 1024 else { return }
+                    imageData = pngData
+                    mimeType = "image/png"
                 } else {
-                    self.createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                    // 변환 불가능한 경우, 기본적으로 JPEG로 설정
+                    imageData = image.jpegData(compressionQuality: 0.5) ?? Data()
+                    mimeType = "image/jpeg"
                 }
+                
+                
+                
+                multipartFormData.append(imageData, withName: "images", fileName: "image.\(mimeType)", mimeType: mimeType)
+                
+                multipartFormData.append("DIARY_IMAGE".data(using: .utf8)!, withName: "category")
+                
+            }, to: "https://comibird.site/api/v1/images")
+            .responseDecodable(of: ImageUploadResponse.self) { response in
+                
+                switch response.result {
+                case .success(let imageUploadResponse):
+                    uploadedImageIds.append(contentsOf: imageUploadResponse.data.images.map { $0.id })
+                case .failure(let error):
+                    print("Image Upload Error: \(error)")
+                }
+                imageUploadGroup.leave()
             }
-            
         }
+        
+        
+        //MARK: 이미지 업로드 종료 후, 일기 저장
+        imageUploadGroup.notify(queue: .main) {
+            if self.isEdited {  // 이미지 수정 요청
+                
+                self.editDiary(diaryId: self.diary?.id ?? 0, title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+                
+            } else {  // 이미지 생성 요청
+                self.createDiary(title: title, content: content, dogName: dogName, imageIds: uploadedImageIds)
+            }
+        }
+        
     }
-    
-    // 키체인에서 엑세스 토큰 가져오기
-    func getAccessTokenFromKeychain() -> String? {
-        let key = KeyChain.shared.accessTokenKey
-        let accessToken = KeyChain.shared.read(key: key)
-        return accessToken
-    }
-    
-
-    
     
     // UIWindow의 rootViewController를 변경하여 화면전환 함수
     func changeRootViewController(_ viewControllerToPresent: UIViewController) {
@@ -758,3 +743,44 @@ extension DiaryWriteViewController: EventHandler {
     }
 }
 
+
+//MARK: - UIPickerView
+extension DiaryWriteViewController: PHPickerViewControllerDelegate {
+    
+    @objc func addImage() {
+        var configuration = PHPickerConfiguration()
+        
+        // 기존 저장되어 있는 이미지까지 개수 확인
+        configuration.selectionLimit = maxImageCount - imageArray.count
+        configuration.filter = .images
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        for result in results {
+            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (object, error) in
+                if let image = object as? UIImage {
+                    DispatchQueue.main.async {
+                        // 이미지를 배열의 맨 뒤에 추가
+                        self?.imageArray.append(image)
+                        self?.diaryImageCollectionView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+//MARK: - UICollectionView 확장 코드
+extension DiaryWriteViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+}

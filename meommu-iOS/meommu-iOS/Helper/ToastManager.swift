@@ -68,11 +68,39 @@ class ToastManager {
         })
     }
 
+    static func showToastAboveButton(message: String, font: UIFont, aboveUIButton button: UIButton, UIButtonTopMargin: CGFloat, in viewController: UIViewController) {
+        let toastLabel = PaddingToastLabel()
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        toastLabel.backgroundColor = UIColor.gray400
+        toastLabel.textColor = UIColor.gray200
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10
+        toastLabel.clipsToBounds = true
+        viewController.view.addSubview(toastLabel)
+        
+        // 오토레이아웃 설정
+        NSLayoutConstraint.activate([
+            toastLabel.bottomAnchor.constraint(equalTo: button.topAnchor, constant: UIButtonTopMargin),
+            toastLabel.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            toastLabel.heightAnchor.constraint(equalToConstant: 45)
+        ])
+        
+        UIView.animate(withDuration: 3.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: { (isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+    
     
 }
 
 // 토스트 레이블에 패딩 값을 넣어주기 위함.
-class PaddingToastLabel: UILabel {
+final class PaddingToastLabel: UILabel {
     private var padding = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     
     convenience init(padding: UIEdgeInsets) {

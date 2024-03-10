@@ -123,13 +123,32 @@ class DiaryDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+    //MARK: - 공유하기 버튼 탭 메서드
     @IBAction func shareButtonTapped(_ sender: Any) {
         print(imageScrollView.frame)
         print(imageScrollView.bounds)
+        
+        var uuid = ""
+        
+        DiaryAPI.shared.makeDiaryUUID(diaryId: self.diary?.id ?? 0) { result in
+            print(self.diary?.id ?? 0)
+            switch result {
+            case .success(let response):
+                // uuid 생성
+                uuid = response.data.uuid
+                print(uuid)
+            case .failure(let error):
+                // 400~500 에러
+                print("Error: \(error.message)")
+            }
+        }
+        
     }
     
 
+    
+    
+    
 }
 
 //MARK: - UIScrollViewDelegate 확장
@@ -194,5 +213,9 @@ extension DiaryDetailViewController: UIScrollViewDelegate {
         
         return imageView
     }
+    
+    
+    
+    
 
 }

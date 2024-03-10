@@ -96,4 +96,13 @@ struct DeleteDiaryResponse: Decodable {
     let data: String?
 }
 
-
+// 일기 공유 UUID 생성 RES
+struct DiaryUUIDResponse: Codable {
+    let code, message: String
+    let data: DataClass
+    
+    struct DataClass: Codable {
+        let uuid: String
+    }
+    
+}

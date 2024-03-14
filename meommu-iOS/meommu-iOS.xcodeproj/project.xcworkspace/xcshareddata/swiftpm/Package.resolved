@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "kakao-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kakao/kakao-ios-sdk",
+      "state" : {
+        "revision" : "39640d334d2766209a1afe618bc102046969220e",
+        "version" : "2.21.0"
+      }
+    },
+    {
       "identity" : "panmodal",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/slackhq/PanModal",

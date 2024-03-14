@@ -43,6 +43,7 @@
 		268608532B3B0B2A00FA823E /* GPTDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608522B3B0B2A00FA823E /* GPTDiaryModel.swift */; };
 		268608552B4561AC00FA823E /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608542B4561AC00FA823E /* Delegate.swift */; };
 		269033022BA019BA00B6AF65 /* KakaoSDKShare in Frameworks */ = {isa = PBXBuildFile; productRef = 269033012BA019BA00B6AF65 /* KakaoSDKShare */; };
+		269033062BA2A83500B6AF65 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 269033052BA2A83500B6AF65 /* Secrets.xcconfig */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -141,6 +142,7 @@
 		268608502B3AD41600FA823E /* StepTwoCustomTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoCustomTextViewController.swift; sourceTree = "<group>"; };
 		268608522B3B0B2A00FA823E /* GPTDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTDiaryModel.swift; sourceTree = "<group>"; };
 		268608542B4561AC00FA823E /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		269033052BA2A83500B6AF65 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 		F933D8922AB73982006EDA07 = {
 			isa = PBXGroup;
 			children = (
+				269033052BA2A83500B6AF65 /* Secrets.xcconfig */,
 				F933D89D2AB73982006EDA07 /* meommu-iOS */,
 				F933D89C2AB73982006EDA07 /* Products */,
 			);
@@ -574,6 +577,7 @@
 				F9947A1A2AC2678E000F11BD /* StepTwoTableViewCell.xib in Resources */,
 				F9E615F32B200891006F9A33 /* DiaryImageButtonCollectionViewCell.xib in Resources */,
 				F959A1502AB8105F009D90A8 /* DiaryMainEmptyTableViewCell.xib in Resources */,
+				269033062BA2A83500B6AF65 /* Secrets.xcconfig in Resources */,
 				2603C7F02ADC4E8A00090A9D /* MyPageStoryboard.storyboard in Resources */,
 				F991C3D62B18BF8B00A4847B /* DiaryMonthPickerCollectionViewCell.xib in Resources */,
 				F90743802AB73CAD00F7C503 /* Diary.storyboard in Resources */,

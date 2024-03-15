@@ -28,7 +28,6 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet var imagePageLabel: UILabel!
     
     
-    
     // 특정 일기 데이터 저장 프로퍼티
     var diary : Diary?
     
@@ -124,28 +123,57 @@ class DiaryDetailViewController: UIViewController {
     }
     
     //MARK: - 공유하기 버튼 탭 메서드
+    // 버튼 두 개 연결 중
     @IBAction func shareButtonTapped(_ sender: Any) {
-        print(imageScrollView.frame)
-        print(imageScrollView.bounds)
-        
-        var uuid = ""
         
         DiaryAPI.shared.makeDiaryUUID(diaryId: self.diary?.id ?? 0) { result in
             print(self.diary?.id ?? 0)
             switch result {
             case .success(let response):
                 // uuid 생성
-                uuid = response.data.uuid
+                let uuid = response.data.uuid
                 print(uuid)
+                
+                // activityVC 띄우기 (공유 기능)
+                self.presentActivityVC(url: "https://meommu.site/diary/shared/\(uuid)")
+                
             case .failure(let error):
                 // 400~500 에러
                 print("Error: \(error.message)")
             }
         }
         
+        
     }
     
+    //MARK: - ActivityVC 관련 메서드
+    private func presentActivityVC(url: String) {
+        // activityViewController 띄우기
+        
+        // 1. UIActivityViewController 초기화, 공유 아이템 지정
+        let urlToShare: String = url
 
+        let activityViewController = UIActivityViewController(activityItems : [ urlToShare], applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = self.view
+
+        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook,UIActivity.ActivityType.postToTwitter,UIActivity.ActivityType.mail]
+
+        self.present(activityViewController, animated: true, completion: nil)
+
+        
+        // 동작 완료 후 액션
+        activityViewController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if completed {
+                print("share success")
+            } else {
+                print("share cancel")
+            }
+            if let shareError = error {
+              print("share error")
+            }
+        }
+    }
     
     
     

@@ -23,15 +23,42 @@ class DiaryMonthPickerViewController: UIViewController {
     var selectedIndexPath: IndexPath?
     
     // CollectionView 설정
-    var selectedYear = 2023
+    var selectedYear = 0
+    
+    // 현재 년도 기록 프로퍼티
+    let currentYear: String = {
+        let formatterYear = DateFormatter()
+        formatterYear.dateFormat = "yyyy"
+        
+        return formatterYear.string(from: Date())
+
+    }()
+    
     var selectedMonth: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupDelegate()
         
+        setupDelegate()
+        setupCollectionView()
+        setupLabel()
+        
+    }
+    
+    //MARK: - setupLabel 메서드
+    private func setupLabel() {
+        // 현재 년도를 초기값으로 시작
+        self.selectedYear = Int(currentYear)!
+        self.yearLabel.text = "\(selectedYear)년"
+        
+        // 미래로는 못가...
+        self.nextMonthButton.isHidden = true
+    }
+    
+    //MARK: - setupCollectionview()
+    private func setupCollectionView() {
         monthPickerCollectionView.register(UINib(nibName: "DiaryMonthPickerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "diaryMonthCell")
+        
     }
     
     //MARK: - 델리게이트 셋업 메서드
@@ -43,27 +70,47 @@ class DiaryMonthPickerViewController: UIViewController {
     // 이전 버튼을 눌렀을 때
     @IBAction func beforeYearButtonTapped(_ sender: Any) {
         selectedYear -= 1
-        yearLabel.text = "\(selectedYear)년"
+        
+        DispatchQueue.main.async { [self] in
+            self.yearLabel.text = "\(selectedYear)년"
+            
+            if Int(currentYear)! != selectedYear {
+                self.nextMonthButton.isHidden = false
+            }
+
+            
+        }
     }
     
     // 다음 버튼을 눌렀을 때
     @IBAction func nextYearButtonTapped(_ sender: Any) {
         selectedYear += 1
-        yearLabel.text = "\(selectedYear)년"
+        
+        DispatchQueue.main.async { [self] in
+            self.yearLabel.text = "\(selectedYear)년"
+            
+            if Int(currentYear)! == selectedYear {
+                self.nextMonthButton.isHidden = true
+            }
+            
+        }
     }
     
+    //MARK: - checkButtonTapped 메서드
     @IBAction func checkButtonTapped(_ sender: Any) {
         guard let month = selectedMonth else { return }
         print("\(selectedYear)년 \(month)월")
-
+        
         let userInfo = ["year": selectedYear, "month": month]
         
+        // Notification Post 메서드
         NotificationCenter.default.post(name: Notification.Name("DidPickMonth"), object: nil, userInfo: userInfo)
         
+        // 해당 뷰 해제
         dismiss(animated: true, completion: nil)
     }
     
-
+    
 }
 
 //MARK: - UICollectionView 관련 확장
@@ -76,7 +123,7 @@ extension DiaryMonthPickerViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaryMonthCell", for: indexPath) as! DiaryMonthPickerCollectionViewCell
-        cell.MonthLabel.text = "\(indexPath.row + 1)"
+        cell.MonthLabel.text = "\(indexPath.row + 1)월"
         
         cell.contentView.layer.cornerRadius = 35
         

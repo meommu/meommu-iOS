@@ -104,6 +104,7 @@ class DiaryViewController: UIViewController {
     
     //MARK: - month 선택 피커 탭 메서드
     // 바텀 시트 올리기
+    // DiaryMonthPicker
     @IBAction func diaryMonthPickerButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "DiaryMonthPicker", bundle: nil)
         let diaryMonthPickerVC = storyboard.instantiateViewController(withIdentifier: "DiaryMonthPickerViewController") as! DiaryMonthPickerViewController

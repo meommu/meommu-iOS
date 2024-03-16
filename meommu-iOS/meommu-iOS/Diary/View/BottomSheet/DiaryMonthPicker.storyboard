@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="20" y="80" width="335" height="294"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="105" translatesAutoresizingMaskIntoConstraints="NO" id="zNk-I5-M5c">
-                                        <rect key="frame" x="16.333333333333343" y="0.0" width="302.33333333333326" height="16"/>
+                                        <rect key="frame" x="15" y="0.0" width="305" height="16"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-hu-FK3">
                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -53,13 +53,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-Lw-zkP">
-                                                <rect key="frame" x="120.99999999999999" y="0.0" width="60.333333333333329" height="16"/>
+                                                <rect key="frame" x="121" y="0.0" width="63" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="textColor" name="Gray500"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cie-8i-6MX">
-                                                <rect key="frame" x="286.33333333333337" y="0.0" width="16" height="16"/>
+                                                <rect key="frame" x="289" y="0.0" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="Fwf-EP-ybu"/>
                                                     <constraint firstAttribute="height" constant="16" id="Xk3-dY-PS3"/>
@@ -103,17 +103,17 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="294" id="0Qb-7y-nco"/>
                                     <constraint firstItem="zNk-I5-M5c" firstAttribute="top" secondItem="bDr-pS-6Ir" secondAttribute="top" id="1hi-Gg-JFl"/>
                                     <constraint firstItem="zNk-I5-M5c" firstAttribute="centerX" secondItem="s13-Rc-aFh" secondAttribute="centerX" id="Afx-Xu-EzY"/>
                                     <constraint firstItem="e1a-hN-BHF" firstAttribute="top" secondItem="s13-Rc-aFh" secondAttribute="bottom" constant="10" id="Lge-0n-jeh"/>
                                     <constraint firstAttribute="trailing" secondItem="e1a-hN-BHF" secondAttribute="trailing" constant="10" id="M48-xU-P8d"/>
-                                    <constraint firstAttribute="width" constant="335" id="NK6-jS-9W9"/>
+                                    <constraint firstItem="zNk-I5-M5c" firstAttribute="leading" secondItem="bDr-pS-6Ir" secondAttribute="leading" constant="15" id="MIa-7X-rbn"/>
                                     <constraint firstItem="s13-Rc-aFh" firstAttribute="top" secondItem="zNk-I5-M5c" secondAttribute="bottom" constant="10" id="NWQ-t0-Sv2"/>
                                     <constraint firstItem="e1a-hN-BHF" firstAttribute="leading" secondItem="bDr-pS-6Ir" secondAttribute="leading" constant="10" id="SsA-Zt-bWD"/>
-                                    <constraint firstItem="s13-Rc-aFh" firstAttribute="centerX" secondItem="bDr-pS-6Ir" secondAttribute="centerX" id="rAN-td-3Ub"/>
+                                    <constraint firstAttribute="trailing" secondItem="zNk-I5-M5c" secondAttribute="trailing" constant="15" id="XX0-f6-GXI"/>
                                 </constraints>
                             </view>
                         </subviews>

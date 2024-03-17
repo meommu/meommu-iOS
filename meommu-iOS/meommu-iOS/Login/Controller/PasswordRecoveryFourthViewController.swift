@@ -59,12 +59,8 @@ class PasswordRecoveryFourthViewController: UIViewController {
     
     //MARK: - 텍스트 필드 셋업 메서드
     func setupTextField() {
-        confirmPasswordTextField.backgroundColor = .gray100
+        confirmPasswordTextField.makePasswordRecoveryTextField(placeholder: "비밀번호")
         confirmPasswordTextField.addLeftPadding()
-        
-        // border 설정
-        confirmPasswordTextField.layer.borderColor = UIColor.gray300.cgColor
-        confirmPasswordTextField.layer.borderWidth = 2.0
         
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         confirmPasswordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)

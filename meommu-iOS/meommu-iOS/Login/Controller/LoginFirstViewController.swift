@@ -49,8 +49,8 @@ class LoginFirstViewController: UIViewController {
     
     //MARK: - setupTextField 메서드
     func setupTextField() {
-        emailTextField.backgroundColor = .gray200
-        passwordTextField.backgroundColor = .gray200
+        emailTextField.makeLoginTextField(placeholder: "아이디 (이메일)")
+        passwordTextField.makeLoginTextField(placeholder: "비밀번호")
         
         emailTextField.addLeftPadding()
         passwordTextField.addLeftPadding()

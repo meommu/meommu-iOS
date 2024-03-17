@@ -13,6 +13,9 @@ class SignUpAPI {
     
     private let baseURL = "https://comibird.site"
     
+    
+//    guard let url = 
+    
     // 이메일 중복 확인 메서드
     func checkEmailDuplication(with request: CheckEmailDuplicationRequest, completion: @escaping (Result<CheckEmailDuplicationResponse, ErrorResponse>) -> Void) {
         

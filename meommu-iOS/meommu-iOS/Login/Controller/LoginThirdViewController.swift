@@ -79,10 +79,15 @@ class LoginThirdViewController: UIViewController {
     
     //MARK: - 텍스트 필드 셋업 메서드
     private func setupTextFields(){
-        // 텍스트 필드 백그라운드 컬러 설정
-        kindergartenNameTextField.backgroundColor = .gray200
-        representativeNameTextField.backgroundColor = .gray200
-        phoneNumberTextField.backgroundColor = .gray200
+        // 텍스트 필드 색상, 패딩 설정
+        kindergartenNameTextField.makeLoginTextField(placeholder: "예) 비마이펫 (2글자~13글자)")
+        representativeNameTextField.makeLoginTextField(placeholder: "예) 김숙자 (2글자~8글자)")
+        phoneNumberTextField.makeLoginTextField(placeholder: "예) 010-1234-5678")
+        
+        kindergartenNameTextField.addLeftPadding()
+        representativeNameTextField.addLeftPadding()
+        phoneNumberTextField.addLeftPadding()
+        
         
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         kindergartenNameTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)

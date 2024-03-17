@@ -100,7 +100,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rTJ-n5-XJh">
                                 <rect key="frame" x="0.0" y="138" width="375" height="582"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiaryMainCell" rowHeight="482" id="08i-yS-njd" userLabel="DiaryMainCell" customClass="DiaryMainTableViewCell" customModule="meommu_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="375" height="482"/>
@@ -111,7 +111,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="a6t-UP-mBu"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="0qe-i2-VpE" kind="show" identifier="ToDiaryDetailViewController" id="YrS-HM-rEp"/>
                                         </connections>
@@ -135,7 +135,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="63J-kF-Ica" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="3TN-Hc-ezx"/>
                             <constraint firstItem="rTJ-n5-XJh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Gxn-oq-XDa"/>
@@ -159,6 +159,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="Plus" id="hoF-uc-poh">
                                 <color key="tintColor" red="0.5647059083" green="0.5647059083" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="hic-HS-rp3" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="R1f-71-2im"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="GearSix" id="f0L-c0-MhX">
                                 <color key="tintColor" red="0.59215688710000003" green="0.59215688710000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -184,7 +187,9 @@
         <!--DiaryWriteViewController-->
         <scene sceneID="8ti-ZK-GWV">
             <objects>
-                <viewControllerPlaceholder storyboardName="DiaryWrite" referencedIdentifier="DiaryWriteViewController" id="hic-HS-rp3" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DiaryWrite" referencedIdentifier="DiaryWriteViewController" id="hic-HS-rp3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6NX-9c-HrF"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecm-V1-oyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1558" y="429"/>
@@ -336,7 +341,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lNg-SB-9Vg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="iOE-a1-9hx" secondAttribute="bottom" constant="34" id="BZq-8J-Dab"/>
                             <constraint firstItem="nFt-Mx-C33" firstAttribute="leading" secondItem="lNg-SB-9Vg" secondAttribute="leading" id="Bnf-HP-3ir"/>
@@ -397,6 +402,9 @@
             <point key="canvasLocation" x="76" y="-2"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R1f-71-2im"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="DotsThreeVertical 1" width="20" height="20"/>
         <image name="GearSix" width="24" height="24"/>
@@ -424,9 +432,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

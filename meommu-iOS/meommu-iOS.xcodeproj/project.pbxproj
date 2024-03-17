@@ -19,7 +19,7 @@
 		2624053D2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */; };
 		2624053E2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */; };
 		262405402B6A5C7C00BA310A /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624053F2B6A5C7C00BA310A /* Encodable.swift */; };
-		264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */; };
+		264BF3AF2B126CBD00FCFBEC /* UITextField extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3AE2B126CBD00FCFBEC /* UITextField extension.swift */; };
 		264BF3B12B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */; };
 		264BF3B32B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */; };
 		264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */; };
@@ -44,6 +44,7 @@
 		268608552B4561AC00FA823E /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268608542B4561AC00FA823E /* Delegate.swift */; };
 		269033022BA019BA00B6AF65 /* KakaoSDKShare in Frameworks */ = {isa = PBXBuildFile; productRef = 269033012BA019BA00B6AF65 /* KakaoSDKShare */; };
 		269033062BA2A83500B6AF65 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 269033052BA2A83500B6AF65 /* Secrets.xcconfig */; };
+		269033082BA58B9F00B6AF65 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269033072BA58B9F00B6AF65 /* Bundle.swift */; };
 		269AED462AE119D7009EADA2 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */; };
 		269AED4D2AE3BAF3009EADA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4C2AE3BAF3009EADA2 /* Login.swift */; };
 		269AED4F2AE3CFF1009EADA2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AED4E2AE3CFF1009EADA2 /* UserProfile.swift */; };
@@ -120,7 +121,7 @@
 		2624053B2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainTableImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2624053C2B67966F00BA310A /* DiaryMainTableImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryMainTableImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		2624053F2B6A5C7C00BA310A /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
-		264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addLeftPadding.swift"; sourceTree = "<group>"; };
+		264BF3AE2B126CBD00FCFBEC /* UITextField extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField extension.swift"; sourceTree = "<group>"; };
 		264BF3B02B1273D300FCFBEC /* PasswordRecoveryFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryFirstViewController.swift; sourceTree = "<group>"; };
 		264BF3B22B1276FE00FCFBEC /* PasswordRecoverySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySecondViewController.swift; sourceTree = "<group>"; };
 		264BF3B42B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryThirdViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		268608522B3B0B2A00FA823E /* GPTDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTDiaryModel.swift; sourceTree = "<group>"; };
 		268608542B4561AC00FA823E /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		269033052BA2A83500B6AF65 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		269033072BA58B9F00B6AF65 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		269AED412ADDA715009EADA2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		269AED432ADDA805009EADA2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		269AED452AE119D7009EADA2 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -283,7 +285,7 @@
 				26215E3D2AB895C500F28FBF /* Helper.swift */,
 				261003812AC972E2001F5E28 /* UIView+CornerRadius.swift */,
 				261003B32AD3AF07001F5E28 /* Color.swift */,
-				264BF3AE2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift */,
+				264BF3AE2B126CBD00FCFBEC /* UITextField extension.swift */,
 				264BF3BF2B15008B00FCFBEC /* ErrorResponse.swift */,
 				264BF3C12B187CB500FCFBEC /* String+Validation.swift */,
 				268608402B1E2B7100FA823E /* UIButton+Customization.swift */,
@@ -291,6 +293,7 @@
 				264BF3C52B19B8B500FCFBEC /* KeyChain.swift */,
 				268608542B4561AC00FA823E /* Delegate.swift */,
 				2624053F2B6A5C7C00BA310A /* Encodable.swift */,
+				269033072BA58B9F00B6AF65 /* Bundle.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -610,7 +613,7 @@
 				2686083F2B1DDE8A00FA823E /* PasswordRecovery.swift in Sources */,
 				264BF3C22B187CB500FCFBEC /* String+Validation.swift in Sources */,
 				268608432B222C5900FA823E /* UserProfileService.swift in Sources */,
-				264BF3AF2B126CBD00FCFBEC /* UITextField+addLeftPadding.swift in Sources */,
+				264BF3AF2B126CBD00FCFBEC /* UITextField extension.swift in Sources */,
 				F9E615EE2B200723006F9A33 /* DiaryImageCollectionViewCell.swift in Sources */,
 				F9592C382B2033CA00B17A25 /* DiaryImageEmptyCollectionViewCell.swift in Sources */,
 				F948D84F2AC15A8D00F965E6 /* DiaryDetailViewController.swift in Sources */,
@@ -661,6 +664,7 @@
 				F9E615F22B200891006F9A33 /* DiaryImageButtonCollectionViewCell.swift in Sources */,
 				264BF3C62B19B8B500FCFBEC /* KeyChain.swift in Sources */,
 				268608472B2DB04300FA823E /* GPTDiaryAPI.swift in Sources */,
+				269033082BA58B9F00B6AF65 /* Bundle.swift in Sources */,
 				F959853B2B0F5C06001F28F1 /* MyPageViewController.swift in Sources */,
 				268608412B1E2B7100FA823E /* UIButton+Customization.swift in Sources */,
 				264BF3B52B12770800FCFBEC /* PasswordRecoveryThirdViewController.swift in Sources */,
@@ -812,11 +816,13 @@
 		};
 		F933D8B02AB73983006EDA07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269033052BA2A83500B6AF65 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LYC8XX4ZNC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "meommu-iOS/Info.plist";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "일기 작성 화면에서 사진을 추가할 때 앨범에서 사진을 선택";
@@ -844,11 +850,13 @@
 		};
 		F933D8B12AB73983006EDA07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269033052BA2A83500B6AF65 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LYC8XX4ZNC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "meommu-iOS/Info.plist";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "일기 작성 화면에서 사진을 추가할 때 앨범에서 사진을 선택";

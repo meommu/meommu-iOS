@@ -114,10 +114,14 @@ final class LoginSecondViewController: UIViewController {
     //MARK: - 텍스트 필드 셋업 메서드
     private func setupTextFields() {
         
-        // 텍스트 필드 백그라운드 컬러 설정
-        emailTextField.backgroundColor = .gray200
-        passwordTextField.backgroundColor = .gray200
-        confirmPasswordTextField.backgroundColor = .gray200
+        // 텍스트 필드 색상, 패딩 설정
+        emailTextField.makeLoginTextField(placeholder: "이메일 (2글자 ~ 8글자)")
+        passwordTextField.makeLoginTextField(placeholder: "비밀번호")
+        confirmPasswordTextField.makeLoginTextField(placeholder: "비밀번호")
+        
+        emailTextField.addLeftPadding()
+        passwordTextField.addLeftPadding()
+        confirmPasswordTextField.addLeftPadding()
         
         // 텍스트 필드가 눌리는 이벤트에 대한 메서드 추가 - 설명 레이블 수정
         emailTextField.addTarget(self, action: #selector(emailTextFieldDidBegin(_:)), for: .editingDidBegin)
@@ -191,7 +195,7 @@ final class LoginSecondViewController: UIViewController {
         label.textColor = .success
         
         button.setTitleColor(.success, for: .normal)
-        button.layer.borderColor = UIColor.success.cgColor
+        button.layer.borderColor = UIColor.success?.cgColor
         button.layer.borderWidth = 2
         
     }

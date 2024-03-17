@@ -52,12 +52,8 @@ class PasswordRecoverySecondViewController: UIViewController {
     
     //MARK: - 텍스트 필드 셋업 메서드
     func setupTextField() {
-        checkEmailCodeTextField.backgroundColor = .gray100
+        checkEmailCodeTextField.makePasswordRecoveryTextField(placeholder: "코드")
         checkEmailCodeTextField.addLeftPadding()
-        
-        // border 설정
-        checkEmailCodeTextField.layer.borderColor = UIColor.gray300.cgColor
-        checkEmailCodeTextField.layer.borderWidth = 2.0
         
         // 모든 텍스트 필드의 입력 변경 이벤트에 대한 메서드 추가 - 다음 버튼 활성화
         checkEmailCodeTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)

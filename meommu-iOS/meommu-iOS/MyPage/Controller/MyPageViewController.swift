@@ -80,6 +80,7 @@ class MyPageViewController: UIViewController {
         pageTableView.rowHeight = 54
         // 셀 라인 없애기
         pageTableView.separatorStyle = .none
+        pageTableView.backgroundColor = .white
     }
     
     //MARK: - 로그아웃 버튼 탭 메서드

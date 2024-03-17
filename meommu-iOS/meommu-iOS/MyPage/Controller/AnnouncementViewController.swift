@@ -25,6 +25,7 @@ class AnnouncementViewController: UIViewController {
     private func setupTableView() {
         // 테이블뷰 라인 없애기
         announcementTableView.separatorStyle = .none
+        announcementTableView.backgroundColor = .white
     }
     
     func setupDelegate() {
